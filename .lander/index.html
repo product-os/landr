@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="bundle.css">
   </head>
   <body>
-    <div class="jumbotron ">
+    <nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">
+   <!-- <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+   Etcher
+ </a>
+  <ul class="nav navbar-nav">
+      <!-- Here we allow the user to specify how the item is rendered -->
+      
+      <li class="nav-item">
+        <a class="nav-link" href="">Chat on gitter</a>
+      </li>
+      <!-- Here we allow the user to specify how the item is rendered -->
+      
+      <li class="nav-item">
+        <a class="nav-link" href="">Repository</a>
+      </li>
+  </ul>
+</nav>
+<div class="jumbotron ">
   <h1 class="display-3">Etcher</h1>
   <p class="lead">Flash OS images to SD cards &amp; USB drives, safely and easily.</p>
   <hr>
@@ -44,12 +62,22 @@
     <div class="row">
         <!-- Here we allow the user to specify how the item is rendered -->
         
+        <!-- /**
+        * @param {string} partial.class
+        * @param {array} partial.title
+        * @param {string} partial.lead
+        */ -->
         <div class="">
           <h1>feature A</h1>
           <p>New stuff</p>
         </div>
         <!-- Here we allow the user to specify how the item is rendered -->
         
+        <!-- /**
+        * @param {string} partial.class
+        * @param {array} partial.title
+        * @param {string} partial.lead
+        */ -->
         <div class="">
           <h1>feature B</h1>
           <p>New stuffs</p>
@@ -57,7 +85,6 @@
     </div>
   </div>
 </div>
-<h1>Hey I'm a test</h1>
 
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
   </body>

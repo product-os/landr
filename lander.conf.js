@@ -13,6 +13,20 @@ const features = [
     image: 'mmm'
   }
 ]
+
+const navLinks = [
+  {
+    text: 'Chat on gitter',
+    href: 'https://gitter.im/resin-io/etcher',
+    template: 'nav-bar-item'
+  },
+  {
+    text: 'Repository',
+    href: 'https://github.com/resin-io/etcher',
+    template: 'nav-bar-item'
+  }
+]
+
 module.exports = {
   global: {
     sitename: "Etcher",
@@ -20,6 +34,13 @@ module.exports = {
     lead: "Flash OS images to SD cards & USB drives, safely and easily."
   },
   blocks: [
+    {
+      template: 'nav-bar',
+      context: {
+        items: navLinks,
+        class: 'p-3'
+      }
+    },
     {
       template: 'jumbotron',
       context: {
@@ -38,12 +59,6 @@ module.exports = {
         items: features,
         class: 'p-3'
       }
-    },
-    {
-      template: 'test',
-      context: {
-        title: 'hpmmrf'
-      }
-    },
+    }
   ]
 };
