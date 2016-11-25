@@ -78,12 +78,14 @@ const argv = yargs
   })
   .argv;
 
-lander.build(argv.config)
-.then(lander.serve)
-.then(() => {
-  console.log('Done');
-}).catch((err) => {
-  return showErrorAndQuit(err);
-});
+lander.build({
+  config: argv.config
+}).then(lander.compile)
+  .then(lander.serve)
+  .then(() => {
+    console.log('Done');
+  }).catch((err) => {
+    return showErrorAndQuit(err);
+  });
 
 process.on('uncaughtException', showErrorAndQuit);

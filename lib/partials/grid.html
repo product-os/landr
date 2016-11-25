@@ -1,8 +1,22 @@
-<div class="{{ class }}">
-  <h1>{{ title }}</h1>
-  <ul>
-    {{#eachJson items}}
-    <li>{{ this }}</li>
-    {{/eachJson}}
-  </ul>
+<!-- /**
+ * Section to render a grid
+ * @param {Object} partial - The context passed to the partial.
+ * @param {string} partial.title
+ * @param {string} partial.lead
+ * @param {string} partial.subTitle
+ * @param {string} partial.lead
+ * @param {array} partial.items - Array to itterate when render the grid
+ * @param {string} partial.class - Css class for parent of partial
+*/ -->
+<div class="{{ partial.class }}">
+  <div class="container">
+      {{> section-head partial=partial global=global}}
+    <div class="row">
+      {{#each partial.items}}
+        <!-- Here we allow the user to specify how the item is rendered -->
+        {{var template this.template this 'item'}}
+        {{> (lookup . 'template') partial=this global=global }}
+      {{/each}}
+    </div>
+  </div>
 </div>

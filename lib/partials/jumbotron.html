@@ -1,9 +1,11 @@
 <div class="jumbotron {{ class }}">
-  <h1 class="display-3">{{ title }}</h1>
-  <p class="lead">{{ lead }}</p>
-  <hr class="my-2">
-  <p>{{ meta }}</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{{ action.href }}" role="button">{{ action.text }}</a>
-  </p>
+  <h1 class="display-3">{{ fallback partial.title global.sitename }}</h1>
+  <p class="lead">{{ fallback partial.lead global.lead }}</p>
+  <hr>
+  <p>{{ fallback partial.meta global.version }}</p>
+    {{#if partial.action }}
+    <p>
+      <a class="btn btn-primary btn-lg" href="{{ partial.action.href }}" role="button">{{ partial.action.text }}</a>
+    </p>
+    {{/if}}
 </div>

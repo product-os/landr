@@ -1,19 +1,28 @@
 /* eslint-disable */
 const features = [
-  'test1',
-  'test2'
+  {
+    title: 'feature A',
+    lead: 'New stuff',
+    template: 'item',
+    image: 'mmm'
+  },
+  {
+    title: 'feature B',
+    lead: 'New stuffs',
+    template: 'item',
+    image: 'mmm'
+  }
 ]
 module.exports = {
-  globals: {
+  global: {
     sitename: "Etcher",
     siteurl: "http://etcher.io",
-    description: "Flash OS images to SD cards & USB drives, safely and easily."
+    lead: "Flash OS images to SD cards & USB drives, safely and easily."
   },
   blocks: [
     {
       template: 'jumbotron',
       context: {
-        title: 'hey',
         action: {
           text: 'Try Etcher',
           href: '/#downloads'
@@ -25,6 +34,7 @@ module.exports = {
       template: 'grid',
       context: {
         title: 'Features',
+        lead: 'We do all the things',
         items: features,
         class: 'p-3'
       }
