@@ -2,63 +2,67 @@
 const features = [
   {
     title: 'feature A',
-    lead: 'New stuff',
-    template: 'item',
-    image: 'mmm'
+    lead: 'New stuff'
   },
   {
     title: 'feature B',
-    lead: 'New stuffs',
-    template: 'item',
-    image: 'mmm'
+    lead: 'Old stuff'
   }
 ]
 
 const navLinks = [
   {
     text: 'Chat on gitter',
-    href: 'https://gitter.im/resin-io/etcher',
-    template: 'nav-bar-item'
+    href: 'https://gitter.im/resin-io/etcher'
   },
   {
     text: 'Repository',
-    href: 'https://github.com/resin-io/etcher',
-    template: 'nav-bar-item'
+    href: 'https://github.com/resin-io/etcher'
   }
 ]
 
-module.exports = {
-  global: {
-    sitename: "Etcher",
-    siteurl: "http://etcher.io",
-    lead: "Flash OS images to SD cards & USB drives, safely and easily."
-  },
-  blocks: [
-    {
-      template: 'nav-bar',
-      context: {
-        items: navLinks,
-        class: 'p-3'
-      }
-    },
-    {
-      template: 'jumbotron',
-      context: {
-        action: {
-          text: 'Try Etcher',
-          href: '/#downloads'
-        },
-        class: 'p-3'
-      }
-    },
-    {
-      template: 'grid',
-      context: {
-        title: 'Features',
-        lead: 'We do all the things',
-        items: features,
-        class: 'p-3'
-      }
+// grab the handlebar templates
+const jumbotron = require('lander/jumbotron.handlebars')
+const grid = require('lander/grid.handlebars')
+const navbar = require('lander/navbar.handlebars')
+
+// test custom
+const custom = require('landerCustom/custom.handlebars')
+
+// define some globals
+const site = {
+  sitename: "Etcher",
+  siteurl: "http://etcher.io",
+  lead: "Flash OS images to SD cards & USB drives, safely and easily."
+}
+
+const blocks = [
+  navbar({
+    global: site,
+    local: {
+      items: navLinks
     }
-  ]
-};
+  }),
+  jumbotron({
+    global: site,
+    local: {
+      action: {
+        text: 'Try Etcher',
+        href: '/#downloads'
+      },
+      class: 'p-3'
+    }
+  }),
+  grid({
+    global: site,
+    local: {
+      title: 'Features',
+      lead: "We do all the stuff",
+      items: features,
+      class: 'p-3'
+    }
+  }),
+  custom()
+]
+
+module.exports = blocks

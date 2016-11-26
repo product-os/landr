@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link rel="stylesheet" href="bundle.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="#">
-   <!-- <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+<head><link href="bundle.css" rel="stylesheet"></head><nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="/">
    Etcher
  </a>
   <ul class="nav navbar-nav">
       <!-- Here we allow the user to specify how the item is rendered -->
-      
       <li class="nav-item">
-        <a class="nav-link" href="">Chat on gitter</a>
+        <a class="nav-link" href="https://gitter.im/resin-io/etcher">Chat on gitter</a>
       </li>
       <!-- Here we allow the user to specify how the item is rendered -->
-      
       <li class="nav-item">
-        <a class="nav-link" href="">Repository</a>
+        <a class="nav-link" href="https://github.com/resin-io/etcher">Repository</a>
       </li>
   </ul>
 </nav>
@@ -34,58 +22,35 @@
       <a class="btn btn-primary btn-lg" href="/#downloads" role="button">Try Etcher</a>
     </p>
 </div>
-<!-- /**
- * Section to render a grid
- * @param {Object} partial - The context passed to the partial.
- * @param {string} partial.title
- * @param {string} partial.lead
- * @param {string} partial.subTitle
- * @param {string} partial.lead
- * @param {array} partial.items - Array to itterate when render the grid
- * @param {string} partial.class - Css class for parent of partial
-*/ -->
 <div class="p-3">
   <div class="container">
       <!-- /**
        * Section header
-       * @param {Object} partial - The context passed to the partial.
-       * @param {string} partial.title
-       * @param {string} partial.lead
-       * @param {string} partial.subTitle
-       * @param {string} partial.lead
-       * @param {string} partial.class
+       * @param {string} title
+       * @param {string} lead
+       * @param {string} subTitle
+       * @param {string} class
        */ -->
-      <div class="section__head p-3">
+      <div class="section__head ">
           <h1 class="section__title">Features</h1>
-          <p class="section__lead">We do all the things</p>
+          <p class="section__lead">We do all the stuff</p>
       </div>
     <div class="row">
-        <!-- Here we allow the user to specify how the item is rendered -->
-        
-        <!-- /**
-        * @param {string} partial.class
-        * @param {array} partial.title
-        * @param {string} partial.lead
-        */ -->
-        <div class="">
-          <h1>feature A</h1>
-          <p>New stuff</p>
-        </div>
-        <!-- Here we allow the user to specify how the item is rendered -->
-        
-        <!-- /**
-        * @param {string} partial.class
-        * @param {array} partial.title
-        * @param {string} partial.lead
-        */ -->
-        <div class="">
-          <h1>feature B</h1>
-          <p>New stuffs</p>
-        </div>
     </div>
   </div>
 </div>
-
-    <script type="text/javascript" src="bundle.js" charset="utf-8"></script>
-  </body>
-</html>
+<div class="container">
+  <!-- /**
+   * Section header
+   * @param {string} title
+   * @param {string} lead
+   * @param {string} subTitle
+   * @param {string} class
+   */ -->
+  <div class="section__head ">
+      <h1 class="section__title">My custom template</h1>
+      <p class="section__lead">test</p>
+  </div>
+  <p>This is the users custom handlebar element</p>
+</div>
+<script type="text/javascript" src="bundle.js"></script>

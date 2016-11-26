@@ -23,10 +23,8 @@
  */
 
 const yargs = require('yargs');
-const path = require('path');
 const chalk = require('chalk');
 const lander = require('../lib/lander');
-const configuration = require('../lib/cli/configuration');
 const packageJSON = require('../package.json');
 
 const showErrorAndQuit = (error) => {
@@ -41,22 +39,7 @@ const argv = yargs
   .usage('Usage: $0 [OPTIONS]')
   .help()
   .version(packageJSON.version)
-  .config('config', 'configuration file', (file) => {
-    try {
-      return {
-        config: configuration.parse(configuration.load(file))
-      };
-    } catch (error) {
-      showErrorAndQuit(error);
-    }
-  })
   .options({
-    config: {
-      describe: 'configuration file',
-      alias: 'c',
-      global: true,
-      default: path.join('.', `${packageJSON.name}.conf.js`)
-    },
     help: {
       describe: 'show help',
       boolean: true,
@@ -78,13 +61,10 @@ const argv = yargs
   })
   .argv;
 
-lander.build({
+lander.compile({
   config: argv.config
-}).then(lander.compile)
-  .then(lander.serve)
-  .then(() => {
-    console.log('Done');
-  }).catch((err) => {
+}).then(lander.serve)
+  .catch((err) => {
     return showErrorAndQuit(err);
   });
 

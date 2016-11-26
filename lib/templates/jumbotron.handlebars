@@ -1,0 +1,11 @@
+<div class="jumbotron {{ class }}">
+  <h1 class="display-3">{{ fallback local.title global.sitename }}</h1>
+  <p class="lead">{{ fallback local.lead global.lead }}</p>
+  <hr>
+  <p>{{ fallback local.meta global.version }}</p>
+    {{#if local.action }}
+    <p>
+      <a class="btn btn-primary btn-lg" href="{{ local.action.href }}" role="button">{{ local.action.text }}</a>
+    </p>
+    {{/if}}
+</div>

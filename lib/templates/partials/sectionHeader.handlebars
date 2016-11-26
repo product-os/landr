@@ -1,0 +1,18 @@
+<!-- /**
+ * Section header
+ * @param {string} title
+ * @param {string} lead
+ * @param {string} subTitle
+ * @param {string} class
+ */ -->
+<div class="section__head {{ class }}">
+  {{#if subTitle }}
+    <h3 class="section__sub-title">{{ subTitle }}</h3>
+  {{/if}}
+  {{#if title }}
+    <h1 class="section__title">{{ title }}</h1>
+  {{/if}}
+  {{#if lead }}
+    <p class="section__lead">{{ lead }}</p>
+  {{/if}}
+</div>
