@@ -1,4 +1,4 @@
-# gh-pages-generator
+# lander
 
 > Build websites static websites with zero configuration.
 
