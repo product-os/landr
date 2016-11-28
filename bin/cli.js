@@ -3,7 +3,7 @@
 /*
  * Copyright 2016 Resin.io
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the "License")
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
@@ -16,24 +16,24 @@
  * limitations under the License.
  */
 
-'use strict';
+'use strict'
 
 /**
  * @module Lander.CLI
  */
 
-const yargs = require('yargs');
-const chalk = require('chalk');
-const lander = require('../lib/lander');
-const packageJSON = require('../package.json');
+const yargs = require('yargs')
+const chalk = require('chalk')
+const lander = require('../lib/lander')
+const packageJSON = require('../package.json')
 
 const showErrorAndQuit = (error) => {
-  console.error(chalk.red(error.message));
-  console.error(chalk.red(error.stack));
-  console.error('Join our Gitter channel if you need any help!');
-  console.error('  https://gitter.im/resin-io/lander');
-  process.exit(1);
-};
+  console.error(chalk.red(error.message))
+  console.error(chalk.red(error.stack))
+  console.error('Join our Gitter channel if you need any help!')
+  console.error('  https://gitter.im/resin-io/lander')
+  process.exit(1)
+}
 
 const argv = yargs
   .usage('Usage: $0 [OPTIONS]')
@@ -54,18 +54,18 @@ const argv = yargs
   .example('$0 --current 1.1.0')
   .fail((message) => {
     // Prints to `stderr` by default
-    yargs.showHelp();
+    yargs.showHelp()
 
-    console.error(message);
-    process.exit(1);
+    console.error(message)
+    process.exit(1)
   })
-  .argv;
+  .argv
 
 lander.compile({
   config: argv.config
 }).then(lander.serve)
   .catch((err) => {
-    return showErrorAndQuit(err);
-  });
+    return showErrorAndQuit(err)
+  })
 
-process.on('uncaughtException', showErrorAndQuit);
+process.on('uncaughtException', showErrorAndQuit)

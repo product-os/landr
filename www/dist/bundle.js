@@ -10688,7 +10688,8 @@
 /* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var bootstrap = __webpack_require__(18);
+	'use strict'
+	__webpack_require__(18)
 
 
 /***/ },

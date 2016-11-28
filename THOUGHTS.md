@@ -14,4 +14,7 @@
 
 
 **How to handle async actions in lander.conf.js?**
+
+
 **How to handle multiple pages?**
+https://github.com/markdalgleish/static-site-generator-webpack-plugin
