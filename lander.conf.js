@@ -21,13 +21,13 @@ const navLinks = [
   }
 ]
 
-// grab the handlebar templates
-const jumbotron = require('lander/jumbotron.handlebars')
-const grid = require('lander/grid.handlebars')
-const navbar = require('lander/navbar.handlebars')
+// // grab the handlebar templates
+const jumbotron = require('lander/templates/jumbotron.handlebars')
+const grid = require('lander/templates/grid.handlebars')
+const navbar = require('lander/templates/navbar.handlebars')
 
 // test custom
-const custom = require('landerCustom/custom.handlebars')
+const custom = require('www/templates/custom.handlebars')
 
 // define some globals
 const site = {
@@ -36,18 +36,24 @@ const site = {
   lead: "Flash OS images to SD cards & USB drives, safely and easily."
 }
 
+const echo = (string) => {
+  return string
+}
+
 const blocks = [
   navbar({
     global: site,
     local: {
+      image: require('www/images/logo.png'),
       items: navLinks
     }
   }),
   jumbotron({
     global: site,
     local: {
+      image: require('www/images/feature.png'),
       action: {
-        text: 'Try Etcher',
+        text: echo('Try Etcher'),
         href: '/#downloads'
       },
       class: 'p-3'

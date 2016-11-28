@@ -3,6 +3,7 @@
   <p class="lead">{{ fallback local.lead global.lead }}</p>
   <hr>
   <p>{{ fallback local.meta global.version }}</p>
+    <img src="{{ local.image }}" class="img-fluid" alt="">
     {{#if local.action }}
     <p>
       <a class="btn btn-primary btn-lg" href="{{ local.action.href }}" role="button">{{ local.action.text }}</a>
