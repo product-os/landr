@@ -18,3 +18,5 @@
 
 **How to handle multiple pages?**
 https://github.com/markdalgleish/static-site-generator-webpack-plugin
+
+Store build in /tmp?

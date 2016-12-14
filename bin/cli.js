@@ -26,6 +26,8 @@ const yargs = require('yargs')
 const chalk = require('chalk')
 const lander = require('../lib/lander')
 const packageJSON = require('../package.json')
+const ghpages = require('gh-pages')
+const settings = require('../lib/settings')
 
 const showErrorAndQuit = (error) => {
   console.error(chalk.red(error.message))
@@ -35,7 +37,48 @@ const showErrorAndQuit = (error) => {
   process.exit(1)
 }
 
-const argv = yargs
+const dev = (argv) => {
+  lander.compile(argv)
+  .then((compiler) => {
+    console.log(chalk.green('Compile successful'))
+    return lander.serve(compiler, argv)
+  })
+  .then(() => {
+    console.log(chalk.green(`Serving on port ${argv.port}`))
+  })
+  .catch((err) => {
+    return showErrorAndQuit(err)
+  })
+}
+
+const deploy = (argv) => {
+  // always compile for prod
+  console.log('Deploying...')
+  argv.prod = true
+  lander.compile(argv)
+  .then(() => {
+    console.log(chalk.green('Compile successful'))
+    ghpages.publish(settings.buildPath, (err) => {
+      if (err)
+        throw err
+      console.log(chalk.green('Successfully deployed'))
+    })
+  })
+  .catch((err) => {
+    return showErrorAndQuit(err)
+  })
+}
+
+yargs
+  .command('dev', 'Compiles + serves lander', {
+    port: {
+      default: 3000,
+      type: 'integer',
+      describe: 'Set webpack server port',
+      alias: 'p'
+    }
+  }, dev)
+  .command('deploy', 'Pushes compiled assets to gh-pages branch on remote', {}, deploy)
   .usage('Usage: $0 [OPTIONS]')
   .help()
   .version(packageJSON.version)
@@ -49,23 +92,19 @@ const argv = yargs
       describe: 'show version number',
       boolean: true,
       alias: 'v'
+    },
+    prod: {
+      default: false,
+      boolean: true,
+      describe: 'Flag for production compile',
+      global: true
     }
   })
-  .example('$0 --current 1.1.0')
-  .fail((message) => {
+  .fail((err) => {
     // Prints to `stderr` by default
     yargs.showHelp()
-
-    console.error(message)
     process.exit(1)
   })
   .argv
-
-lander.compile({
-  config: argv.config
-}).then(lander.serve)
-  .catch((err) => {
-    return showErrorAndQuit(err)
-  })
 
 process.on('uncaughtException', showErrorAndQuit)

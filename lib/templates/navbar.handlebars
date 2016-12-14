@@ -1,11 +1,13 @@
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="/">
-   {{fallback partial.title global.sitename }}
+   {{fallback title global.sitename }}
  </a>
   <ul class="nav navbar-nav">
-    {{#each local.items}}
+    {{#each items}}
       <!-- Here we allow the user to specify how the item is rendered -->
-      {{> link text=this.text href=this.href }}
+      <li class="nav-item">
+        {{> link text=this.text href=this.href }}
+      </li>
     {{/each}}
   </ul>
 </nav>

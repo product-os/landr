@@ -2,7 +2,7 @@
   <div class="container">
       {{> sectionHeader title=local.title lead=local.lead }}
     <div class="row">
-      {{#each local.items}}
+      {{#each items}}
         <!-- Here we allow the user to specify how the item is rendered -->
         {{> item title=this.title lead=this.lead image=this.image }}
       {{/each}}
