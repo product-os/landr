@@ -25,8 +25,6 @@ const navLinks = [
 const jumbotron = require('jumbotron.handlebars')
 const grid = require('grid.handlebars')
 const navbar = require('navbar.handlebars')
-
-// test custom
 const custom = require('custom.handlebars')
 
 // define some globals
