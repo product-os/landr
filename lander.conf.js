@@ -32,7 +32,8 @@ const custom = require('custom.handlebars')
 const settings = {
   title: "Etcher",
   url: "http://etcher.io",
-  lead: "Flash OS images to SD cards & USB drives, safely and easily."
+  lead: "Flash OS images to SD cards & USB drives, safely and easily.",
+  logo: require('www/images/logo.png')
 }
 
 const blocks = [
@@ -62,7 +63,5 @@ const blocks = [
 ]
 
 module.exports = {
-  settings: 'asdf',
-  blocks: blocks,
-  settings: settings
+  blocks: blocks
 }
