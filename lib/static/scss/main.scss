@@ -1,5 +1,20 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables.scss"; // lander bootstrap config
+@import "_variables.scss"; // user bootstrap config
+@import "~bootstrap/scss/bootstrap.scss";
 
-.test {
-  color: red;
+.navbar-brand > img {
+  height: 35px;
+  width: auto;
+}
+
+.section__head {
+  text-align: center;
+}
+
+.item {
+  text-align: center;
+}
+
+.jumbotron {
+  border-radius: 0;
 }

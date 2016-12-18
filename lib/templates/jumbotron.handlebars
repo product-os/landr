@@ -1,14 +1,15 @@
 <div class="jumbotron {{ class }}">
-  <h1 class="display-3">{{ fallback title global.sitename }}</h1>
-  <p class="lead">{{ fallback lead global.lead }}</p>
-  <hr>
-  <p>{{ fallback meta global.version }}</p>
-    <img src="{{ image }}" class="img-fluid" alt="{{ image }}" />
+  <h1 class="display-3">{{{ title }}}</h1>
+  <p class="lead">{{{ lead }}}</p>
+  <p>{{ meta }}</p>
     {{#if action }}
     <p>
       <a class="btn btn-primary btn-lg" href="{{ action.href }}" role="button">
         {{ action.text }}
       </a>
     </p>
+    {{/if}}
+    {{#if image }}
+    <img src="{{ image }}" class="img-fluid" alt="{{ image }}" />
     {{/if}}
 </div>

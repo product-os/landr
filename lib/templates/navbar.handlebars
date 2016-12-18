@@ -1,13 +1,18 @@
-<nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="/">
-   {{fallback title global.sitename }}
- </a>
-  <ul class="nav navbar-nav">
-    {{#each items}}
-      <!-- Here we allow the user to specify how the item is rendered -->
-      <li class="nav-item">
-        {{> link text=this.text href=this.href }}
-      </li>
-    {{/each}}
-  </ul>
+<nav class="navbar {{ class }}">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+     {{#if image}}
+      <img src="{{ image }}" alt="{{ title }}">
+     {{else}}
+      {{ title }}
+     {{/if}}
+   </a>
+    <ul class="nav navbar-nav float-lg-right">
+      {{#each items}}
+        <li class="nav-item">
+          {{> link text=this.text href=this.href class="nav-link" }}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </nav>

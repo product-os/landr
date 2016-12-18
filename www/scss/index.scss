@@ -1,0 +1,28 @@
+.bg-blue {
+  background: #5492DE;
+  color: #fff;
+}
+
+.bg-grey {
+  background: #343636;
+  color: #fff;
+  a {
+    color: #fff;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.item {
+  padding: 10px 0;
+  img {
+    max-width: 70px;
+  }
+}
+
+.jumbotron {
+  img {
+    width: 800px;
+  }
+}

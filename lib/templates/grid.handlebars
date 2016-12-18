@@ -1,10 +1,12 @@
-<div class="{{ local.class }}">
+<div id="{{ id }}" class="{{ class }}">
   <div class="container">
-      {{> sectionHeader title=local.title lead=local.lead }}
+      {{> sectionHeader title=title lead=lead }}
     <div class="row">
       {{#each items}}
-        <!-- Here we allow the user to specify how the item is rendered -->
-        {{> item title=this.title lead=this.lead image=this.image }}
+      {{#remainder @index ../itemsPerRow}}
+    </div><div class="row p-1">
+      {{/remainder}}
+        {{> item title=this.title lead=this.lead image=this.image itemsPerRow=../itemsPerRow}}
       {{/each}}
     </div>
   </div>
