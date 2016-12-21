@@ -10,6 +10,7 @@
 
 .section__head {
   text-align: center;
+  overflow: auto;
 }
 
 .item {
@@ -18,4 +19,17 @@
 
 .jumbotron {
   border-radius: 0;
+}
+
+.navbar-brand {
+  float: none;
+}
+.navbar-nav .nav-item {
+  float: none;
+}
+
+footer {
+  img {
+    max-width: 150px;
+  }
 }

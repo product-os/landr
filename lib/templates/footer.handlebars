@@ -3,12 +3,16 @@
     <div class="row">
       <div class="col-md-8">
         {{#if image}}
-         <img src="{{ image }}" alt="{{ title }}">
+          <img class="mb-1" src="{{ image }}" alt="{{ title }}">
         {{else}}
-         {{ title }}
+          <h1>{{ title }}</h1>
         {{/if}}
-        <p>{{ lead }}</p>
-        <p class="meta">{{ meta }}</p>
+        <div class="row">
+          <div class="col-md-8">
+            <p>{{ lead }}</p>
+            <p class="text-muted">{{ meta }}</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4">
         <ul class="nav">

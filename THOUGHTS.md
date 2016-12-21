@@ -14,12 +14,6 @@
 
 ## issues
 
-- webpack regex's currently wont work with windows
-
-**How to handle async actions in lander.conf.js?**
-
-
-**How to handle multiple pages?**
-https://github.com/markdalgleish/static-site-generator-webpack-plugin
-
-Store build in /tmp?
+- Webpack's regexs' currently wont work with windows
+- Need good way to document hbs templates
+- How to handle async actions in lander.conf.js?

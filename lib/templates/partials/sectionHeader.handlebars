@@ -5,14 +5,14 @@
  * @param {string} subTitle
  * @param {string} class
  */ -->
-<div class="section__head {{ class }}">
+<div class="section__head">
   {{#if subTitle }}
-    <h3 class="section__sub-title">{{ subTitle }}</h3>
+    <h3 class="section__sub-title col-md-8 offset-md-2">{{ subTitle }}</h3>
   {{/if}}
   {{#if title }}
     <h1 class="section__title">{{ title }}</h1>
   {{/if}}
   {{#if lead }}
-    <p class="section__lead">{{ lead }}</p>
+    <p class="section__lead col-md-8 offset-md-2">{{ lead }}</p>
   {{/if}}
 </div>
