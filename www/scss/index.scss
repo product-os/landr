@@ -1,5 +1,5 @@
 .bg-blue {
-  background: #5492DE;
+  background: $brand-primary;
   color: #fff;
 }
 
@@ -15,7 +15,6 @@
 }
 
 .item {
-  padding: 10px 0;
   img {
     max-width: 70px;
   }

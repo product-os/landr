@@ -1,6 +1,7 @@
 @import "./variables.scss"; // lander bootstrap config
 @import "_variables.scss"; // user bootstrap config
 @import "~bootstrap/scss/bootstrap.scss";
+@import "index.scss"; // user bootstrap config
 
 .navbar-brand > img {
   height: 35px;

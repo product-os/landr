@@ -12,6 +12,9 @@
   - bundle.css (bundled css)
 ```
 
+## issues
+
+- webpack regex's currently wont work with windows
 
 **How to handle async actions in lander.conf.js?**
 

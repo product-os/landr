@@ -1,0 +1,24 @@
+<footer class="{{ class }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {{#if image}}
+         <img src="{{ image }}" alt="{{ title }}">
+        {{else}}
+         {{ title }}
+        {{/if}}
+        <p>{{ lead }}</p>
+        <p class="meta">{{ meta }}</p>
+      </div>
+      <div class="col-md-4">
+        <ul class="nav">
+          {{#each items}}
+            <li class="nav-item">
+              {{> link text=this.text href=this.href class="nav-link" }}
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

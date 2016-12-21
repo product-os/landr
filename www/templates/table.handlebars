@@ -1,7 +1,10 @@
-<div id="{{ id }}" class="{{ class }}">
+<div id="{{ id }}" data-downloads='{{{json data }}}' class="{{ class }}">
   <div class="container">
-      {{> sectionHeader title=title lead=lead }}
-    <div class="row">
+      {{> sectionHeader title=title lead=lead class="py-0" }}
+    <div class="row text-xs-center">
+      <a id="dynamicDownload" class="btn btn-danger btn text-center mb-1" href="{{ data.[0].Release }}" role="button">
+        Download Now
+      </a>
       <table class="table">
         <thead>
           <tr>
@@ -10,11 +13,9 @@
           {{/each }}
           </tr>
         </thead>
-
         {{#each data}}
           <tr>
           {{#each this}}
-
             <td>{{{formatLink this }}}</td>
           {{/each}}
           <tr>

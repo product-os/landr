@@ -1,5 +1,11 @@
 /* eslint-disable */
+'use strict'
+
 const version = require("json-loader!./package.json").version
+const logo = require('www/images/logo.png');
+const README = require('readme!./README.md');
+
+console.log(README)
 
 const features = [
   {
@@ -44,12 +50,13 @@ const navLinks = [
     href: 'https://github.com/resin-io/etcher'
   }
 ]
+
 const baseURL = 'https://resin-production-downloads.s3.amazonaws.com/etcher/'
 
 const downloads = [
   {
     Release: `${baseURL}${version}/Etcher-${version}-darwin-x64.dmg`,
-    OS: 'Mac',
+    OS: 'OS X',
     Architecture: 'x64 (64-bit)',
   },
   {
@@ -84,41 +91,47 @@ const downloads = [
   }
 ]
 
-// // grab the handlebar templates
+// grab the handlebar templates
 const head = require('head.handlebars')
 const jumbotron = require('jumbotron.handlebars')
 const grid = require('grid.handlebars')
 const navbar = require('navbar.handlebars')
 const table = require('table.handlebars')
+const footer = require('footer.handlebars')
 
+const gaScript = require('scripts/ga.handlebars')
+const go4SquaredScript = require('scripts/go4squared.handlebars')
+const mixpanelScript = require('scripts/mixpanel.handlebars')
 
+// Add classes control spacing
 // http://v4-alpha.getbootstrap.com/utilities/spacing/
+
 const blocks = [
   head({
-    title: "Etcher",
+    title: README.title,
     url: "http://etcher.io",
-    lead: "Flash OS images to SD cards & USB drives, safely and easily.",
+    lead: README.lead,
     image: require('www/images/interface.png')
   }),
   navbar({
-    image: require('www/images/logo.png'),
+    image: logo,
     items: navLinks,
     class: 'bg-grey'
   }),
   jumbotron({
     title: "Burn. Better.",
-    lead: "Flash OS images to SD cards & USB drives, safely and easily.",
-    image: require('www/images/product.gif'),
+    lead: README.lead,
+    image: README.logo,
     meta: `Latest version: ${version}`,
     action: {
-      text: 'Try Etcher',
+      text: `Try ${README.title}`,
       href: '#downloads'
     },
     class: 'py-3 m-0 text-xs-center bg-grey'
   }),
   grid({
     title: 'Features',
-    lead: 'We are actively maintaining etcher to consistently debug & improve',
+    lead: README.description,
     items: features,
     itemsPerRow: 3,
     class: 'py-3 bg-blue'
@@ -129,9 +142,16 @@ const blocks = [
     lead: `Latest version: ${version}`,
     data: downloads,
     class: 'py-3'
+  }),
+  footer({
+    image: logo,
+    lead: `Latest version: ${version}`,
+    items: navLinks,
+    class: 'py-3 bg-grey'
+  }),
+  gaScript({
+    token: '1234'
   })
 ]
 
-module.exports = {
-  blocks: blocks
-}
+module.exports = blocks.join('')
