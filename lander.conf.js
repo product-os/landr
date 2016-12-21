@@ -5,8 +5,6 @@ const version = require("json-loader!./package.json").version
 const logo = require('www/images/logo.png');
 const README = require('readme!./README.md');
 
-console.log(README)
-
 const features = [
   {
     title: 'Validated Burning',

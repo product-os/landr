@@ -351,6 +351,9 @@ rules:
     - error
   no-whitespace-before-property:
     - error
+  object-curly-newline:
+    - error
+    - minProperties: 1
   object-curly-spacing:
     - error
     - always
@@ -379,7 +382,7 @@ rules:
         MethodDefinition: true
   semi:
     - error
-    - never
+    - always
   semi-spacing:
     - error
     - before: false

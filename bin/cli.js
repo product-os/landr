@@ -16,58 +16,60 @@
  * limitations under the License.
  */
 
-'use strict'
+'use strict';
 
 /**
  * @module Lander.CLI
  */
 
-const yargs = require('yargs')
-const chalk = require('chalk')
-const lander = require('../lib/lander')
-const packageJSON = require('../package.json')
-const ghpages = require('gh-pages')
-const settings = require('../lib/settings')
+const yargs = require('yargs');
+const chalk = require('chalk');
+const lander = require('../lib/lander');
+const packageJSON = require('../package.json');
+const ghpages = require('gh-pages');
+const settings = require('../lib/settings');
 
 const showErrorAndQuit = (error) => {
-  console.error(chalk.red(error.message))
-  console.error(chalk.red(error.stack))
-  console.error('Join our Gitter channel if you need any help!')
-  console.error('  https://gitter.im/resin-io/lander')
-  process.exit(1)
-}
+  console.error(chalk.red(error.message));
+  console.error(chalk.red(error.stack));
+  console.error('Join our Gitter channel if you need any help!');
+  console.error('  https://gitter.im/resin-io/lander');
+  process.exit(1);
+};
 
 const dev = (argv) => {
+  console.log('compiling...');
   lander.compile(argv)
   .then((compiler) => {
-    console.log(chalk.green('Compile successful'))
-    return lander.serve(compiler, argv)
+    console.log(chalk.green('Compile successful'));
+    return lander.serve(compiler, argv);
   })
   .then(() => {
-    console.log(chalk.green(`Serving on port ${argv.port}`))
+    console.log(chalk.green(`Serving on port ${argv.port}`));
   })
   .catch((err) => {
-    return showErrorAndQuit(err)
-  })
-}
+    return showErrorAndQuit(err);
+  });
+};
 
 const deploy = (argv) => {
   // always compile for prod
-  console.log('Deploying...')
-  argv.prod = true
+  console.log('Deploying...');
+  argv.prod = true;
   lander.compile(argv)
   .then(() => {
-    console.log(chalk.green('Compile successful'))
+    console.log(chalk.green('Compile successful'));
     ghpages.publish(settings.buildPath, (err) => {
-      if (err)
-        throw err
-      console.log(chalk.green('Successfully deployed'))
-    })
+      if (err) {
+        throw err;
+      }
+      console.log(chalk.green('Successfully deployed'));
+    });
   })
   .catch((err) => {
-    return showErrorAndQuit(err)
-  })
-}
+    return showErrorAndQuit(err);
+  });
+};
 
 yargs
   .command('dev', 'Compiles + serves lander', {
@@ -102,9 +104,10 @@ yargs
   })
   .fail((err) => {
     // Prints to `stderr` by default
-    yargs.showHelp()
-    process.exit(1)
+    console.error(err);
+    yargs.showHelp();
+    process.exit(1);
   })
-  .argv
+  .argv;
 
-process.on('uncaughtException', showErrorAndQuit)
+process.on('uncaughtException', showErrorAndQuit);
