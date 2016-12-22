@@ -1,21 +1,10 @@
-// body {
-//   font-family: 'proxima-nova', sans-serif, Arial;
-// }
+body {
+  font-family: 'proxima-nova', sans-serif, Arial;
+}
 
 .bg-blue {
   background: $brand-primary;
   color: #fff;
-}
-
-.bg-grey {
-  background: #343636;
-  color: #fff;
-  a {
-    color: #fff;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
 }
 
 .item {

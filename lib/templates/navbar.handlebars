@@ -1,17 +1,16 @@
-<nav class="navbar navbar-light bg-faded {{ class }}">
+<nav class="navbar {{ class }}">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand float-xs-none" href="/">
       {{#if image}}
         <img src="{{ image }}" alt="{{ title }}">
       {{else}}
         {{ title }}
       {{/if}}
     </a>
-    <button class="navbar-toggler hidden-lg-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-      &#9776;
+    <button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
     </button>
-    <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar">
-      <ul class="nav navbar-nav float-md-right">
+    <div class="collapse navbar-toggleable-sm float-xs-none float-md-right" id="exCollapsingNavbar">
+      <ul class="nav navbar-nav">
         {{#each items}}
           <li class="nav-item">
             {{> link text=this.text href=this.href class="nav-link" }}

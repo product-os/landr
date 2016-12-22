@@ -116,7 +116,7 @@ const blocks = [
   navbar({
     image: logo,
     items: navLinks,
-    class: 'bg-grey'
+    class: 'py-1 bg-inverse navbar-dark'
   }),
   jumbotron({
     title: 'Burn. Better.',
@@ -127,7 +127,7 @@ const blocks = [
       text: `Try ${README.title}`,
       href: '#downloads'
     },
-    class: 'py-3 m-0 text-xs-center bg-grey'
+    class: 'py-3 m-0 text-xs-center bg-inverse text-white'
   }),
   grid({
     title: 'Features',
@@ -139,7 +139,7 @@ const blocks = [
   story({
     title: 'Why Etcher',
     items: content,
-    class: 'py-3 bg-grey'
+    class: 'py-3 bg-inverse text-white'
   }),
   table({
     id: 'downloads',
@@ -153,7 +153,7 @@ const blocks = [
     lead: 'Etcher is an open source project by resin.io - Modern DevOps for the Industrial Internet of Things',
     description: 'Made with love by resin.io',
     items: navLinks,
-    class: 'py-3 bg-grey'
+    class: 'py-3 bg-inverse text-white'
   }),
   // gaScript({
   //   token: '1234'

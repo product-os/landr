@@ -8,6 +8,14 @@
   width: auto;
 }
 
+.navbar-brand {
+  float: none;
+}
+
+.collapse {
+  clear: both;
+}
+
 .section__head {
   text-align: center;
   overflow: auto;
@@ -19,13 +27,6 @@
 
 .jumbotron {
   border-radius: 0;
-}
-
-.navbar-brand {
-  float: none;
-}
-.navbar-nav .nav-item {
-  float: none;
 }
 
 footer {
