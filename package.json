@@ -1,9 +1,9 @@
 {
-  "name": "@resin/lander",
+  "name": "landr",
   "version": "1.0.0",
   "description": "Experimental Static site generator",
   "bin": {
-    "lander": "./bin/cli.js"
+    "landr": "./bin/cli.js"
   },
   "preferGlobal": true,
   "scripts": {
@@ -30,7 +30,6 @@
     "jquery": "3.1.1",
     "json-loader": "0.5.4",
     "lodash": "^4.13.1",
-    "markdown": "0.5.0",
     "markdown-it": "8.2.2",
     "node-sass": "3.12.2",
     "style-loader": "0.13.1",

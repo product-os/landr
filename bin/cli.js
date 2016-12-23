@@ -19,12 +19,12 @@
 'use strict';
 
 /**
- * @module Lander.CLI
+ * @module landr.CLI
  */
 
 const yargs = require('yargs');
 const chalk = require('chalk');
-const lander = require('../lib/lander');
+const landr = require('../lib/landr');
 const packageJSON = require('../package.json');
 const Promise = require('bluebird');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
@@ -33,16 +33,16 @@ const showErrorAndQuit = (error) => {
   console.error(chalk.red(error.message));
   console.error(chalk.red(error.stack));
   console.error('Join our Gitter channel if you need any help!');
-  console.error('  https://gitter.im/resin-io/lander');
+  console.error('  https://gitter.im/resin-io/landr');
   process.exit(1);
 };
 
 const dev = (argv) => {
   console.log('compiling...');
-  lander.compile(argv)
+  landr.compile(argv)
   .then((compiler) => {
     console.log(chalk.green('Compile successful'));
-    return lander.serve(argv, compiler);
+    return landr.serve(argv, compiler);
   })
   .then(() => {
     console.log(chalk.green(`Serving on port ${argv.port}`));
@@ -56,7 +56,7 @@ const deploy = (argv) => {
   // always compile for prod
   console.log('Deploying...');
   argv.prod = true;
-  lander.compile(argv)
+  landr.compile(argv)
   .then(() => {
     console.log(chalk.green('Compile successful'));
     return ghpages.publishAsync(argv.buildDir);
@@ -70,7 +70,7 @@ const deploy = (argv) => {
 };
 
 yargs
-  .command('dev', 'Compiles + serves lander', {
+  .command('dev', 'Compiles + serves landr', {
     port: {
       describe: 'Set webpack server port',
       default: 3000,
