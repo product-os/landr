@@ -4,27 +4,26 @@ const logo = require('www/images/logo.png');
 const README = require('readme!./README.md');
 
 // grab the handlebar templates
-const head = require('head.handlebars');
-const jumbotron = require('jumbotron.handlebars');
-const grid = require('grid.handlebars');
-const navbar = require('navbar.handlebars');
-const story = require('story.handlebars');
-const table = require('table.handlebars');
-const footer = require('footer.handlebars');
-const info = require('info.handlebars');
+const head = require('head');
+const jumbotron = require('jumbotron');
+const grid = require('grid');
+const navbar = require('navbar');
+const story = require('story');
+const table = require('table');
+const footer = require('footer');
+const info = require('info');
 
 // partials
-const ghStarBtn = require('partials/github-star.handlebars');
-const btn = require('partials/button.handlebars');
-const link = require('partials/link.handlebars');
-const tweet = require('partials/btn-tweet.handlebars');
+const ghStarBtn = require('partials/github-star');
+const btn = require('partials/button');
+const link = require('partials/link');
+const tweet = require('partials/btn-tweet');
 
 // scripts
-const gaScript = require('scripts/ga.handlebars');
-const go4SquaredScript = require('scripts/go4squared.handlebars');
-const mixpanelScript = require('scripts/mixpanel.handlebars');
-const typekitScript = require('scripts/typekit.handlebars');
-const githubButtonScript = require('scripts/github-buttons.handlebars');
+const gaScript = require('scripts/ga');
+const go4SquaredScript = require('scripts/go4squared');
+const typekitScript = require('scripts/typekit');
+const githubButtonScript = require('scripts/github-buttons');
 
 const features = [
   {
@@ -142,7 +141,7 @@ const blocks = [
     lead: README.lead,
     image: README.screenshot,
     meta: `Latest version: ${version}`,
-    button: btn({
+    description: btn({
       title: `Try ${README.title}`,
       href: '#downloads',
       class: 'btn-primary btn-lg'
@@ -189,9 +188,6 @@ const blocks = [
   }),
   gaScript({
     token: '1234'
-  }),
-  mixpanelScript({
-    token: '9d6bc43e4d64eb3bd64922c969e2955f'
   }),
   go4SquaredScript({
     token: '1234'

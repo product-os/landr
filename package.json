@@ -1,7 +1,7 @@
 {
   "name": "lander",
   "version": "1.0.0",
-  "description": "Static site generator",
+  "description": "Experimental Static site generator",
   "bin": {
     "lander": "./bin/cli.js"
   },
