@@ -5,12 +5,13 @@
         {{#if image}}
           <img class="mb-1" src="{{ image }}" alt="{{ title }}">
         {{else}}
-          <h1>{{ title }}</h1>
+          <h1>{{{ title }}}</h1>
         {{/if}}
         <div class="row">
           <div class="col-md-8">
-            <p>{{ lead }}</p>
-            <p class="text-muted">{{ meta }}</p>
+            <p>{{{ lead }}}</p>
+            <p>{{{ description }}}</p>
+            <p class="text-muted">{{{ meta }}}</p>
           </div>
         </div>
       </div>

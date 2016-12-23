@@ -26,8 +26,8 @@ const yargs = require('yargs');
 const chalk = require('chalk');
 const lander = require('../lib/lander');
 const packageJSON = require('../package.json');
-const ghpages = require('gh-pages');
-const settings = require('../lib/settings');
+const Promise = require('bluebird');
+const ghpages = Promise.promisifyAll(require('gh-pages'));
 
 const showErrorAndQuit = (error) => {
   console.error(chalk.red(error.message));
@@ -42,7 +42,7 @@ const dev = (argv) => {
   lander.compile(argv)
   .then((compiler) => {
     console.log(chalk.green('Compile successful'));
-    return lander.serve(compiler, argv);
+    return lander.serve(argv, compiler);
   })
   .then(() => {
     console.log(chalk.green(`Serving on port ${argv.port}`));
@@ -59,12 +59,10 @@ const deploy = (argv) => {
   lander.compile(argv)
   .then(() => {
     console.log(chalk.green('Compile successful'));
-    ghpages.publish(settings.buildPath, (err) => {
-      if (err) {
-        throw err;
-      }
-      console.log(chalk.green('Successfully deployed'));
-    });
+    return ghpages.publishAsync(argv.buildDir);
+  })
+  .then(() => {
+    console.log(chalk.green('Successfully deployed'));
   })
   .catch((err) => {
     return showErrorAndQuit(err);
@@ -74,13 +72,19 @@ const deploy = (argv) => {
 yargs
   .command('dev', 'Compiles + serves lander', {
     port: {
+      describe: 'Set webpack server port',
       default: 3000,
       type: 'integer',
-      describe: 'Set webpack server port',
       alias: 'p'
     }
   }, dev)
-  .command('deploy', 'Pushes compiled assets to gh-pages branch on remote', {}, deploy)
+  .command('deploy', 'Pushes compiled assets to gh-pages branch on remote', {
+    prefix: {
+      describe: 'Prefixes all links with supplied string',
+      type: 'string',
+      defualt: null
+    }
+  }, deploy)
   .usage('Usage: $0 [OPTIONS]')
   .help()
   .version(packageJSON.version)
@@ -96,9 +100,15 @@ yargs
       alias: 'v'
     },
     prod: {
+      describe: 'Flag for production compile',
       default: false,
       boolean: true,
-      describe: 'Flag for production compile',
+      global: true
+    },
+    buildDir: {
+      describe: 'Prefixes all links with supplied string',
+      type: 'string',
+      default: `/tmp/${packageJSON.name}/build`,
       global: true
     }
   })

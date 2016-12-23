@@ -13,7 +13,11 @@
       <ul class="nav navbar-nav">
         {{#each items}}
           <li class="nav-item">
-            {{> link text=this.text href=this.href class="nav-link" }}
+            {{#if this.href }}
+              {{> link text=this.text href=this.href class="nav-link" }}
+            {{ else }}
+              {{{ this }}}
+            {{/if}}
           </li>
         {{/each}}
       </ul>

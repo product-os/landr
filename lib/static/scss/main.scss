@@ -1,36 +1,5 @@
 @import "./variables.scss"; // lander bootstrap config
 @import "_variables.scss"; // user bootstrap config
-@import "~bootstrap/scss/bootstrap.scss";
-@import "index.scss"; // user bootstrap config
-
-.navbar-brand > img {
-  height: 35px;
-  width: auto;
-}
-
-.navbar-brand {
-  float: none;
-}
-
-.collapse {
-  clear: both;
-}
-
-.section__head {
-  text-align: center;
-  overflow: auto;
-}
-
-.item {
-  text-align: center;
-}
-
-.jumbotron {
-  border-radius: 0;
-}
-
-footer {
-  img {
-    max-width: 150px;
-  }
-}
+@import "~bootstrap/scss/bootstrap.scss"; 
+@import "theme.scss"; // lander styles
+@import "index.scss"; // user styles

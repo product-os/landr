@@ -2,11 +2,9 @@
   <h1 class="display-3">{{{ title }}}</h1>
   <p class="lead">{{{ lead }}}</p>
   <p class="text-muted">{{ meta }}</p>
-    {{#if action }}
+    {{#if button }}
     <p>
-      <a class="btn btn-primary btn-lg" href="{{ action.href }}" role="button">
-        {{ action.text }}
-      </a>
+      {{{ button }}}
     </p>
     {{/if}}
     {{#if image }}

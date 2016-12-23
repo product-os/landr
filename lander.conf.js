@@ -1,8 +1,30 @@
 'use strict';
-
 const version = require('json-loader!./package.json').version;
 const logo = require('www/images/logo.png');
 const README = require('readme!./README.md');
+
+// grab the handlebar templates
+const head = require('head.handlebars');
+const jumbotron = require('jumbotron.handlebars');
+const grid = require('grid.handlebars');
+const navbar = require('navbar.handlebars');
+const story = require('story.handlebars');
+const table = require('table.handlebars');
+const footer = require('footer.handlebars');
+const info = require('info.handlebars');
+
+// partials
+const ghStarBtn = require('partials/github-star.handlebars');
+const btn = require('partials/button.handlebars');
+const link = require('partials/link.handlebars');
+const tweet = require('partials/btn-tweet.handlebars');
+
+// scripts
+const gaScript = require('scripts/ga.handlebars');
+const go4SquaredScript = require('scripts/go4squared.handlebars');
+const mixpanelScript = require('scripts/mixpanel.handlebars');
+const typekitScript = require('scripts/typekit.handlebars');
+const githubButtonScript = require('scripts/github-buttons.handlebars');
 
 const features = [
   {
@@ -32,7 +54,12 @@ const features = [
   },
   {
     title: 'More on the way',
-    lead: '50% faster burns, simultaneous writing for multiple drives. View our <a href="https://github.com/resin-io/etcher/milestones">roadmap</a>',
+    lead: `50% faster burns, simultaneous writing for multiple drives. View our ${link({
+      text: 'roadmap',
+      href: 'https://github.com/resin-io/etcher/milestones',
+      class: 'text-white',
+      target: '_blank'
+    })}`,
     image: require('www/images/feature.png')
   }
 ];
@@ -45,7 +72,11 @@ const navLinks = [
   {
     text: 'Repository',
     href: 'https://github.com/resin-io/etcher'
-  }
+  },
+  ghStarBtn({
+    user: 'resin-io',
+    repo: 'etcher'
+  })
 ];
 
 const baseURL = 'https://resin-production-downloads.s3.amazonaws.com/etcher/';
@@ -90,20 +121,7 @@ const downloads = [
 
 const content = [ 'Here at <a href="https://resin.io" target="_blank">resin.io</a> we have thousands of users working through our getting started process and until recently we were embarassed about the steps that involved burning an SD card. There was a separate track for each Mac/Windows/Ubuntu and several manual and error prone steps along the way.', 'To our surprise there was nothing out there that fitted our needs. So we built Etcher, a SD card burner app that is simple for end users, extensible for developers, and works on any platform.' ];
 
-// grab the handlebar templates
-const head = require('head.handlebars');
-const jumbotron = require('jumbotron.handlebars');
-const grid = require('grid.handlebars');
-const navbar = require('navbar.handlebars');
-const story = require('story.handlebars');
-const table = require('table.handlebars');
-const footer = require('footer.handlebars');
-
-const gaScript = require('scripts/ga.handlebars');
-const go4SquaredScript = require('scripts/go4squared.handlebars');
-const mixpanelScript = require('scripts/mixpanel.handlebars');
-const typekitScript = require('scripts/typekit.handlebars');
-// Add classes control spacing
+// Util classes
 // http://v4-alpha.getbootstrap.com/utilities/spacing/
 
 const blocks = [
@@ -111,7 +129,8 @@ const blocks = [
     title: README.title,
     url: 'http://etcher.io',
     lead: README.lead,
-    image: require('www/images/interface.png')
+    image: README.screenshot,
+    favicon: require('www/images/etcher.ico')
   }),
   navbar({
     image: logo,
@@ -121,12 +140,13 @@ const blocks = [
   jumbotron({
     title: 'Burn. Better.',
     lead: README.lead,
-    image: README.logo,
+    image: README.screenshot,
     meta: `Latest version: ${version}`,
-    action: {
-      text: `Try ${README.title}`,
-      href: '#downloads'
-    },
+    button: btn({
+      title: `Try ${README.title}`,
+      href: '#downloads',
+      class: 'btn-primary btn-lg'
+    }),
     class: 'py-3 m-0 text-xs-center bg-inverse text-white'
   }),
   grid({
@@ -135,6 +155,14 @@ const blocks = [
     items: features,
     itemsPerRow: 3,
     class: 'py-3 bg-blue'
+  }),
+  info({
+    title: `Version ${version} is out, spread the good news!&nbsp;&nbsp;${tweet({
+      text: 'Meet Etcher by @resin_io an awesome new way to write SD cards. Give it a shot and you\'ll never go back!',
+      url: 'https://etcher.io',
+      size: 'small'
+    })}`,
+    class: 'pt-1 text-xs-center bg-faded'
   }),
   story({
     title: 'Why Etcher',
@@ -150,23 +178,28 @@ const blocks = [
   }),
   footer({
     image: logo,
-    lead: 'Etcher is an open source project by resin.io - Modern DevOps for the Industrial Internet of Things',
-    description: 'Made with love by resin.io',
+    meta: `Etcher is an open source project by ${link({
+      text: 'resin.io',
+      href: 'https://resin.io',
+      class: 'text-white',
+      target: '_blank'
+    })} - Modern DevOps for the Industrial Internet of Things`,
     items: navLinks,
     class: 'py-3 bg-inverse text-white'
   }),
-  // gaScript({
-  //   token: '1234'
-  // }),
-  // mixpanelScript({
-  //   token: '1234'
-  // }),
-  // go4SquaredScript({
-  //   token: '1234'
-  // }),
+  gaScript({
+    token: '1234'
+  }),
+  mixpanelScript({
+    token: '9d6bc43e4d64eb3bd64922c969e2955f'
+  }),
+  go4SquaredScript({
+    token: '1234'
+  }),
   typekitScript({
     token: 'lzw7tre'
-  })
+  }),
+  githubButtonScript()
 ];
 
 module.exports = blocks.join('');
