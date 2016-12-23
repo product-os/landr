@@ -1,5 +1,5 @@
 {
-  "name": "lander",
+  "name": "@resin/lander",
   "version": "1.0.0",
   "description": "Experimental Static site generator",
   "bin": {
