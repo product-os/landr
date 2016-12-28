@@ -17,5 +17,11 @@
 - link prefix is trouble - github pages usually requires it unless it's a custom domain.
 
 #ideas
-- use react for templates?
+- component model for templates - react or https://github.com/maxogden/yo-yo or just use template literals?
 - compile to memeory and then use metalsmith as a plugin https://webpack.github.io/docs/node.js-api.html#compile-to-memory
+- use hmr instead of inline?
+- use versionist to get other git info
+
+Webpack static site plugins
+https://www.npmjs.com/package/static-webpack-plugin
+https://www.npmjs.com/package/static-site-generator-webpack-plugin

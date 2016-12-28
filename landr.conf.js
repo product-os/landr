@@ -1,17 +1,16 @@
 'use strict';
 const version = require('json-loader!./package.json').version;
-const logo = require('www/images/logo.png');
 const README = require('readme!./README.md');
-
+console.log(README)
 // grab the handlebar templates
 const head = require('head');
 const jumbotron = require('jumbotron');
 const grid = require('grid');
 const navbar = require('navbar');
 const story = require('story');
-const table = require('table');
 const footer = require('footer');
 const info = require('info');
+const test = require('test');
 
 // partials
 const ghStarBtn = require('partials/github-star');
@@ -29,36 +28,16 @@ const features = [
   {
     title: 'Validated Burning',
     lead: 'No more writing images on corrupted cards and wondering why your device isn\'t booting.',
-    image: require('www/images/validated-burning.png')
+    image: require('www/images/feature.png')
   },
   {
     title: 'Hard Drive Friendly',
     lead: 'Makes drive selection obvious to avoid wiping your entire hard-drive',
-    image: require('www/images/hard-drive.png')
+    image: require('www/images/feature.png')
   },
   {
     title: 'Open Source',
     lead: 'Made with JS, HTML, node.js and Electron. Dive in and contribute!',
-    image: require('www/images/open-source.png')
-  },
-  {
-    title: 'Cross Platform',
-    lead: 'Works for everyone,</br> no more complicated install instructions.',
-    image: require('www/images/x-platform.png')
-  },
-  {
-    title: 'Beautiful Interface',
-    lead: 'Who said burning SD cards has to be an eyesore.',
-    image: require('www/images/simple.png')
-  },
-  {
-    title: 'More on the way',
-    lead: `50% faster burns, simultaneous writing for multiple drives. View our ${link({
-      text: 'roadmap',
-      href: 'https://github.com/resin-io/etcher/milestones',
-      class: 'text-white',
-      target: '_blank'
-    })}`,
     image: require('www/images/feature.png')
   }
 ];
@@ -78,47 +57,7 @@ const navLinks = [
   })
 ];
 
-const baseURL = 'https://resin-production-downloads.s3.amazonaws.com/etcher/';
-
-const downloads = [
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-darwin-x64.dmg`,
-    OS: 'OS X',
-    Architecture: 'x64 (64-bit)'
-  },
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-linux-x64.zip`,
-    OS: 'Linux',
-    Architecture: 'x64 (64-bit)'
-  },
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-linux-x86.zip`,
-    OS: 'Linux',
-    Architecture: 'x86 (32-bit)'
-  },
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-win32-x64.exe`,
-    OS: 'Windows',
-    Architecture: 'x64 (64-bit)'
-  },
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-win32-x64.zip`,
-    OS: 'Windows',
-    Architecture: 'x64 (64-bit)'
-  },
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-win32-x86.exe`,
-    OS: 'Windows',
-    Architecture: 'x86 (32-bit)'
-  },
-  {
-    Release: `${baseURL}${version}/Etcher-${version}-win32-x86.zip`,
-    OS: 'Windows',
-    Architecture: 'x86 (32-bit)'
-  }
-];
-
-const content = [ 'Here at <a href="https://resin.io" target="_blank">resin.io</a> we have thousands of users working through our getting started process and until recently we were embarassed about the steps that involved burning an SD card. There was a separate track for each Mac/Windows/Ubuntu and several manual and error prone steps along the way.', 'To our surprise there was nothing out there that fitted our needs. So we built Etcher, a SD card burner app that is simple for end users, extensible for developers, and works on any platform.' ];
+const content = [ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' ];
 
 // Util classes
 // http://v4-alpha.getbootstrap.com/utilities/spacing/
@@ -131,20 +70,22 @@ const blocks = [
     image: README.screenshot,
     favicon: require('www/images/etcher.ico')
   }),
+  test(),
   navbar({
-    image: logo,
+    // image: logo,
+    title: README.title,
     items: navLinks,
     class: 'py-1 bg-inverse navbar-dark'
   }),
   jumbotron({
-    title: 'Burn. Better.',
+    title: 'easy peasy',
     lead: README.lead,
     image: README.screenshot,
     meta: `Latest version: ${version}`,
     description: btn({
       title: `Try ${README.title}`,
       href: '#downloads',
-      class: 'btn-primary btn-lg'
+      class: 'btn-danger btn-lg'
     }),
     class: 'py-3 m-0 text-xs-center bg-inverse text-white'
   }),
@@ -153,30 +94,23 @@ const blocks = [
     lead: README.description,
     items: features,
     itemsPerRow: 3,
-    class: 'py-3 bg-blue'
+    class: 'py-3 bg-faded'
   }),
   info({
-    title: `Version ${version} is out, spread the good news!&nbsp;&nbsp;${tweet({
-      text: 'Meet Etcher by @resin_io an awesome new way to write SD cards. Give it a shot and you\'ll never go back!',
-      url: 'https://etcher.io',
+    title: `Version <code>${version}</code> is out, spread the good news!&nbsp;&nbsp;${tweet({
+      text: 'Landr! ',
+      url: 'https://landr.io',
       size: 'small'
     })}`,
     class: 'pt-1 text-xs-center bg-faded'
   }),
   story({
-    title: 'Why Etcher',
+    title: 'Why landr?',
     items: content,
     class: 'py-3 bg-inverse text-white'
   }),
-  table({
-    id: 'downloads',
-    title: 'Downloads',
-    lead: `Latest version: ${version}`,
-    data: downloads,
-    class: 'py-3'
-  }),
   footer({
-    image: logo,
+    // image: logo,
     meta: `Etcher is an open source project by ${link({
       text: 'resin.io',
       href: 'https://resin.io',

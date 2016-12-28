@@ -38,14 +38,9 @@ const showErrorAndQuit = (error) => {
 };
 
 const dev = (argv) => {
-  console.log('compiling...');
   landr.compile(argv)
   .then((compiler) => {
-    console.log(chalk.green('Compile successful'));
     return landr.serve(argv, compiler);
-  })
-  .then(() => {
-    console.log(chalk.green(`Serving on port ${argv.port}`));
   })
   .catch((err) => {
     return showErrorAndQuit(err);
@@ -114,9 +109,7 @@ yargs
   })
   .fail((err) => {
     // Prints to `stderr` by default
-    console.error(err);
-    yargs.showHelp();
-    process.exit(1);
+    return showErrorAndQuit(err);
   })
   .argv;
 
