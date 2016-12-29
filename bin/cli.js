@@ -100,6 +100,13 @@ yargs
       boolean: true,
       global: true
     },
+    quiet: {
+      describe: 'Flag for displaying compile logs',
+      default: true,
+      boolean: true,
+      global: true,
+      alias: 'q'
+    },
     buildDir: {
       describe: 'Prefixes all links with supplied string',
       type: 'string',

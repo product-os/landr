@@ -5,6 +5,11 @@
   "bin": {
     "landr": "./bin/cli.js"
   },
+  "homepage": "https://github.com/resin-io-playground/lander",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:resin-io-playground/lander.git"
+  },
   "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

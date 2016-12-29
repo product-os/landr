@@ -1,6 +1,8 @@
 # landr
 
-> Build websites static websites for software projects with zero configuration.
+> Build static websites for software projects with zero configuration.
+
+![Logo](/www/images/landr.svg)
 
 ## Installation
 
@@ -21,7 +23,7 @@ Visit `localhost:3000`.
 
 ## How it Works
 
-Landr leverages webpack, we have custom loaders that load conventional git files like a `README`. From there we have the data as js object and can easily load it into some templates and build your site. Which updates whenever you update you're repo. 
+Landr leverages webpack, we have custom loaders that load conventional git files like a `README`. From there we have the data as js object and can easily load it into some templates and build your site. Which updates whenever you update you're repo.
 
 ## Why landr
 
