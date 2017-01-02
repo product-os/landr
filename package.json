@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Experimental Static site generator",
   "bin": {
     "landr": "./bin/cli.js"
