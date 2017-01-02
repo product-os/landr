@@ -1,4 +1,4 @@
-## ideas
+#commands
 
 `landr dev --port 3000` - builds `landr.config.js` and runs the server
 `landr deploy` - builds with --prod flag and pushes to gh-pages

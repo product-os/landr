@@ -55,7 +55,7 @@ The entry point for webpack is `$CWD/landr.conf.js`. It's responsibility is to l
 
 We currently use handlebars for templating, each template is loaded as a function that takes a object with various attributes. The function returns a string of html.
 
-You can then building a landing page by passing data too templates and chaining them together in whatever order you like.
+You can then build a landing page by passing data to templates and chaining them together in whatever order you like.
 
 Here is what a simple `landr.conf.js` would look like this.
 
@@ -126,7 +126,11 @@ Options:
   --port, -p     Set webpack server port                         [default: 3000]
 ```
 
-If everything looks pretty, run `landr deploy`:
+### If everything looks pretty, run:
+
+```
+landr deploy
+```
 
 This uses [`gh-pages`](https://www.npmjs.com/package/gh-pages) which commits the built assets from the `buildDir` to `gh-pages` branch and pushes em up to your remote.
 
@@ -145,4 +149,4 @@ Options:
   --prefix       Prefixes all links with supplied string                [string]
 ```
 
-See `[./THOUGHTS.md](https://github.com/resin-io-playground/lander/blob/master/docs/THOUGHTS.md)` mid-development ideas/doubts/concerns.
+See [`./THOUGHTS.md`](https://github.com/resin-io-playground/lander/blob/master/docs/THOUGHTS.md) mid-development ideas/doubts/concerns.
