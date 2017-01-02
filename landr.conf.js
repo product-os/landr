@@ -2,7 +2,7 @@
 const version = require('json-loader!./package.json').version;
 const README = require('readme?delimiterTag=h2!./README.md');
 
-// grab the handlebar templates
+// templates
 const head = require('head');
 const jumbotron = require('jumbotron');
 const grid = require('grid');
@@ -51,8 +51,8 @@ const navLinks = [
     href: 'https://github.com/resin-io/etcher'
   },
   ghStarBtn({
-    user: 'resin-io',
-    repo: 'etcher'
+    user: 'resin-io-playground',
+    repo: README.title
   })
 ];
 
@@ -71,19 +71,19 @@ const blocks = [
     // image: logo,
     title: README.title,
     items: navLinks,
-    class: 'py-1 bg-inverse navbar-dark'
+    class: 'py-1 bg-faded navbar-light'
   }),
   jumbotron({
-    title: 'easy peasy',
-    lead: README.lead,
-    image: README.screenshot,
+    title: README.lead,
+    lead: README.description,
+    image: README.logo,
     meta: `Latest version: ${version}`,
     description: btn({
       title: `Try ${README.title}`,
       href: `#${README.sections[0].title}`,
-      class: 'btn-danger btn-lg'
+      class: 'btn-primary btn-lg'
     }),
-    class: 'py-3 m-0 text-xs-center bg-inverse text-white'
+    class: 'py-3 m-0 bg-faded text-xs-center'
   }),
   section({
     title: README.sections[0].title,
@@ -103,7 +103,7 @@ const blocks = [
       url: 'https://landr.io',
       size: 'small'
     })}`,
-    class: 'pt-1 text-xs-center bg-faded'
+    class: 'pt-1 text-xs-center text-white bg-inverse'
   }),
   section({
     title: README.sections[3].title,

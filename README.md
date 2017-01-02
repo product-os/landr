@@ -1,8 +1,10 @@
 # landr
 
-> Build static websites for software projects with zero configuration.
+source code = website.
 
-![Logo](/www/images/landr.svg)
+> Build static websites for software projects with zero (currently a fair amount of) configuration.
+
+![Logo](https://d30y9cdsu7xlg0.cloudfront.net/png/43478-200.png)
 
 ## Installation
 
@@ -16,14 +18,19 @@ landr dev -p 3000
 
 Visit `localhost:3000`.
 
+```
+landr deploy
+```
+
 ## Features
 
 * Simple to use - install and deploy!
 * Control - extendable
+* blah blah
 
 ## How it Works
 
-Landr leverages webpack, we have custom loaders that load conventional git files like a `README`. From there we have the data as js object and can easily load it into some templates and build your site. Which updates whenever you update you're repo.
+Landr leverages webpack, we have custom loaders that load conventional source files like a `README` consumable data. We can load it into templates and build your site, therefore updating as your repository updates.
 
 ## Why landr
 

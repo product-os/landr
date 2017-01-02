@@ -28,6 +28,7 @@ const landr = require('../lib/landr');
 const packageJSON = require('../package.json');
 const Promise = require('bluebird');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
+const fs = Promise.promisifyAll(require('fs-extra'));
 
 const showErrorAndQuit = (error) => {
   console.error(chalk.red(error.message));
@@ -49,11 +50,13 @@ const dev = (argv) => {
 
 const deploy = (argv) => {
   // always compile for prod
-  console.log('Deploying...');
   argv.prod = true;
   landr.compile(argv)
   .then(() => {
-    console.log(chalk.green('Compile successful'));
+    // gh-pages stores a cache we don't want this because it throws errors when deploying multiple repos.
+    return fs.removeAsync(`${__dirname}/../node_modules/gh-pages/.cache`);
+  })
+  .then(() => {
     return ghpages.publishAsync(argv.buildDir);
   })
   .then(() => {
