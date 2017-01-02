@@ -25,18 +25,18 @@ const githubButtonScript = require('scripts/github-buttons');
 
 const features = [
   {
-    title: 'Validated Burning',
-    lead: 'No more writing images on corrupted cards and wondering why your device isn\'t booting.',
+    title: 'Feature 1',
+    lead: 'Lorem ipsum dolor sit amet, cum erat audire te, at qui harum timeam. Dicat repudiandae ad cum. Cum ei libris volutpat, iisque mediocrem ea pri, delicata dissentiet te usu.',
     image: require('www/images/feature.png')
   },
   {
-    title: 'Hard Drive Friendly',
-    lead: 'Makes drive selection obvious to avoid wiping your entire hard-drive',
+    title: 'Feature 2',
+    lead: 'Lorem ipsum dolor sit amet, cum erat audire te, at qui harum timeam. Dicat repudiandae ad cum. Cum ei libris volutpat, iisque mediocrem ea pri, delicata dissentiet te usu.',
     image: require('www/images/feature.png')
   },
   {
-    title: 'Open Source',
-    lead: 'Made with JS, HTML, node.js and Electron. Dive in and contribute!',
+    title: 'Feature 3',
+    lead: 'Lorem ipsum dolor sit amet, cum erat audire te, at qui harum timeam. Dicat repudiandae ad cum. Cum ei libris volutpat, iisque mediocrem ea pri, delicata dissentiet te usu.',
     image: require('www/images/feature.png')
   }
 ];
@@ -62,13 +62,12 @@ const navLinks = [
 const blocks = [
   head({
     title: README.title,
-    url: 'http://etcher.io',
+    url: 'https://landr.io',
     lead: README.lead,
     image: README.screenshot,
-    favicon: require('www/images/etcher.ico')
+    favicon: require('www/images/favicon.ico')
   }),
   navbar({
-    // image: logo,
     title: README.title,
     items: navLinks,
     class: 'py-1 bg-faded navbar-light'
@@ -111,8 +110,7 @@ const blocks = [
     class: 'py-3 bg-faded text-xs-center'
   }),
   footer({
-    // image: logo,
-    meta: `Etcher is an open source project by ${link({
+    meta: `${README.title} is an open source project by ${link({
       text: 'resin.io',
       href: 'https://resin.io',
       class: 'text-white',
