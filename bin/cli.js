@@ -68,6 +68,7 @@ const deploy = (argv) => {
     return fs.removeAsync(`${__dirname}/../node_modules/gh-pages/.cache`);
   })
   .then(() => {
+    console.log(chalk.yellow('Deploying...'));
     return ghpages.publishAsync(argv.buildDir);
   })
   .then(() => {
