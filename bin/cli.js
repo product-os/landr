@@ -39,9 +39,13 @@ const showErrorAndQuit = (error) => {
 };
 
 const dev = (argv) => {
-  landr.compile(argv)
+  landr.getCompiler(argv)
   .then((compiler) => {
     return landr.serve(argv, compiler);
+  })
+  .then(() => {
+    console.log(chalk.green('Successfully compiled'));
+    console.log(chalk.green(`Successfully serving on port: ${argv.port}`));
   })
   .catch((err) => {
     return showErrorAndQuit(err);
@@ -51,8 +55,15 @@ const dev = (argv) => {
 const deploy = (argv) => {
   // always compile for prod
   argv.prod = true;
-  landr.compile(argv)
-  .then(() => {
+  fs.ensureDir(argv.buildDir);
+
+  landr.getCompiler(argv)
+  .then((compiler) => {
+    // we have to run the compiler our selves because webpack dev server isn't doing it
+    return Promise.promisify(compiler.run)();
+  }).then(() => {
+    console.log(chalk.green('Successfully compiled'));
+
     // gh-pages stores a cache we don't want this because it throws errors when deploying multiple repos.
     return fs.removeAsync(`${__dirname}/../node_modules/gh-pages/.cache`);
   })

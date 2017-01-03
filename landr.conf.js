@@ -1,5 +1,5 @@
 'use strict';
-const version = require('json-loader!./package.json').version;
+const version = require('./package.json').version;
 const README = require('readme?delimiterTag=h2!./README.md');
 
 // templates
@@ -44,11 +44,11 @@ const features = [
 const navLinks = [
   {
     text: 'Chat on gitter',
-    href: 'https://gitter.im/resin-io/etcher'
+    href: 'https://gitter.im/resin-io/landr'
   },
   {
     text: 'Repository',
-    href: 'https://github.com/resin-io/etcher'
+    href: 'https://github.com/resin-io/landr'
   },
   ghStarBtn({
     user: 'resin-io-playground',
