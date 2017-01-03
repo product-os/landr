@@ -23,61 +23,9 @@
  */
 
 const yargs = require('yargs');
-const chalk = require('chalk');
-const landr = require('../lib/landr');
 const packageJSON = require('../package.json');
-const Promise = require('bluebird');
-const ghpages = Promise.promisifyAll(require('gh-pages'));
-const fs = Promise.promisifyAll(require('fs-extra'));
-
-const showErrorAndQuit = (error) => {
-  console.error(chalk.red(error.message));
-  console.error(chalk.red(error.stack));
-  console.error('Join our Gitter channel if you need any help!');
-  console.error('  https://gitter.im/resin-io/landr');
-  process.exit(1);
-};
-
-const dev = (argv) => {
-  landr.getCompiler(argv)
-  .then((compiler) => {
-    return landr.serve(argv, compiler);
-  })
-  .then(() => {
-    console.log(chalk.green('Successfully compiled'));
-    console.log(chalk.green(`Successfully serving on port: ${argv.port}`));
-  })
-  .catch((err) => {
-    return showErrorAndQuit(err);
-  });
-};
-
-const deploy = (argv) => {
-  // always compile for prod
-  argv.prod = true;
-  fs.ensureDir(argv.buildDir);
-
-  landr.getCompiler(argv)
-  .then((compiler) => {
-    // we have to run the compiler our selves because webpack dev server isn't doing it
-    return Promise.promisify(compiler.run)();
-  }).then(() => {
-    console.log(chalk.green('Successfully compiled'));
-
-    // gh-pages stores a cache we don't want this because it throws errors when deploying multiple repos.
-    return fs.removeAsync(`${__dirname}/../node_modules/gh-pages/.cache`);
-  })
-  .then(() => {
-    console.log(chalk.yellow('Deploying...'));
-    return ghpages.publishAsync(argv.buildDir);
-  })
-  .then(() => {
-    console.log(chalk.green('Successfully deployed'));
-  })
-  .catch((err) => {
-    return showErrorAndQuit(err);
-  });
-};
+const commands = require('../lib/cli/commands');
+const helpers = require('../lib/cli/helpers');
 
 yargs
   .command('dev', 'Compiles + serves landr', {
@@ -87,14 +35,18 @@ yargs
       type: 'integer',
       alias: 'p'
     }
-  }, dev)
+  }, (argv) => {
+    commands.dev(argv).catch(helpers.showErrorAndQuit);
+  })
   .command('deploy', 'Pushes compiled assets to gh-pages branch on remote', {
     prefix: {
       describe: 'Prefixes all links with supplied string',
       type: 'string',
       defualt: null
     }
-  }, deploy)
+  }, (argv) => {
+    commands.deploy(argv).catch(helpers.showErrorAndQuit);
+  })
   .usage('Usage: $0 [OPTIONS]')
   .help()
   .version(packageJSON.version)
@@ -123,7 +75,7 @@ yargs
       alias: 'q'
     },
     buildDir: {
-      describe: 'Prefixes all links with supplied string',
+      describe: 'Webpack output path',
       type: 'string',
       default: `/tmp/${packageJSON.name}/build`,
       global: true
@@ -131,8 +83,9 @@ yargs
   })
   .fail((err) => {
     // Prints to `stderr` by default
-    return showErrorAndQuit(err);
+    helpers.showErrorAndQuit(err);
   })
   .argv;
 
-process.on('uncaughtException', showErrorAndQuit);
+process.on('uncaughtException', helpers.showErrorAndQuit);
+process.on('unhandledRejection', helpers.showErrorAndQuit);
