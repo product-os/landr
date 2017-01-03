@@ -28,6 +28,7 @@ It's a simple CLI that leverages [webpack](https://webpack.github.io) in several
 
 2. Landr uses webpack to bundle `css`.
   - Landr ships with some default styles see: `/lib/static/scss`.
+  - Landr ships with [bourbons](http://bourbon.io/docs/) styles.
   - You can add your own styles by adding them to `$CWD/www/scss/index.scss`.
   - You customise all bootstrap variables adding a file `$CWD/www/scss/_variables.scss`. See all available vars: [here](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss).
 

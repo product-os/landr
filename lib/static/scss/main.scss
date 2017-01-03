@@ -1,5 +1,6 @@
 @import "./variables.scss"; // landr bootstrap config
 @import "_variables.scss"; // user bootstrap config
 @import "~bootstrap/scss/bootstrap.scss";
+@import "~bourbon/app/assets/stylesheets/_bourbon.scss";
 @import "theme.scss"; // landr styles
 @import "index.scss"; // user styles
