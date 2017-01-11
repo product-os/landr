@@ -1,6 +1,7 @@
 'use strict';
 const version = require('./package.json').version;
 const README = require('readme?delimiterTag=h2!./README.md');
+const _ = require('lodash');
 
 // templates
 const head = require('head');
@@ -56,6 +57,8 @@ const navLinks = [
   })
 ];
 
+const installation = _.find(README.sections, [ 'title', 'Installation' ]);
+
 // Util classes
 // http://v4-alpha.getbootstrap.com/utilities/spacing/
 
@@ -85,9 +88,9 @@ const blocks = [
     class: 'py-3 m-0 bg-faded text-xs-center'
   }),
   section({
-    title: README.sections[0].title,
-    content: README.sections[0].content,
-    id: README.sections[0].title,
+    title: installation.title,
+    content: installation.content,
+    id: installation.title,
     class: 'py-3 text-xs-center'
   }),
   grid({
