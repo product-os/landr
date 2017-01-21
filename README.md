@@ -38,6 +38,10 @@ You have to maintain your source code why maintain a website too?
 
 As a software company we have a growing number of websites to build and maintain. We built landr so we could focus on our projects and not their websites.
 
-## Meta
+## Developing
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+tests
+
+```
+npm test
+```
