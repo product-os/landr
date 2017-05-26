@@ -1,6 +1,6 @@
 # landr
 
-source code = website.
+source code = website
 
 > Build static websites for software projects with zero (currently a fair amount of) configuration.
 
