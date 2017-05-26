@@ -1,2 +1,8 @@
 @import "./variables.scss";
 @import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+.text-white {
+  pre {
+    color: #fff;
+  }
+}

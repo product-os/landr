@@ -1,17 +1,17 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap';
 
-function Section(props) {
-  if (props) {
-    return(
-      <div className="container">
-        <h2>{ props.title }</h2>
+const Section = ({title, content, ...props}) => {
+  return(
+    <div {...props}>
+      <div className="container p-5">
+        <h2>{ title }</h2>
         <p
-          dangerouslySetInnerHTML={{ __html: props.content }}
+          dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 class Index extends React.Component {
@@ -20,7 +20,7 @@ class Index extends React.Component {
     const readme = this.props.data.readme;
     return (
       <div>
-        <Jumbotron>
+        <Jumbotron className="mb-0">
           <h1 className="display-3">{readme.title}</h1>
           <p className="lead" dangerouslySetInnerHTML={{ __html: readme.lead }} />
           <hr className="my-2" />
@@ -35,8 +35,8 @@ class Index extends React.Component {
             dangerouslySetInnerHTML={{ __html: readme.badges }}
           />
         </Jumbotron>
-        { Section(readme.installation) }
-        { Section(readme.features) }
+        <Section className="bg-inverse text-white" {...readme.installation} />
+        <Section {...readme.features} />
       </div>
     )
   }
