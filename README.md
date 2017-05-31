@@ -1,6 +1,6 @@
 # landr
 
-source code = website.
+source code = website
 
 > Build static websites for software projects with zero (currently a fair amount of) configuration.
 
@@ -9,24 +9,20 @@ source code = website.
 ## Installation
 
 ```
-npm install landr -g
+npm i
 ```
 
 ```
-landr dev -p 3000
+npm run start
 ```
 
-Visit `localhost:3000`.
-
-```
-landr deploy
-```
+Visit `localhost:8000`.
 
 ## Features
 
 * Simple to use - install and deploy!
 * Control - extendable
-* blah blah
+* Pluggable data sources
 
 ## How it Works
 
