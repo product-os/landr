@@ -10,7 +10,7 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "gh-pages -d public"
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
