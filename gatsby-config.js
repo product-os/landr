@@ -10,5 +10,5 @@ module.exports = {
     },
     `gatsby-transformer-readme`
   ],
-  prefix: '/landr'
+  linkPrefix: '/landr'
 }
