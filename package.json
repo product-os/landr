@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
@@ -22,5 +23,8 @@
     "react-addons-transition-group": "^15.5.2",
     "react-transition-group": "^1.1.3",
     "reactstrap": "^4.6.2"
+  },
+  "devDependencies": {
+    "gh-pages": "1.0.0"
   }
 }
