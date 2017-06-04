@@ -1,9 +1,9 @@
 {
-  "name": "readme-parser",
+  "name": "md-parser-utils",
   "version": "0.0.0",
   "author": "Craig Mulligan @craig-mulligan",
-  "description": "README.md parser",
-  "main": "index.js",
+  "description": "parser utilities for markdown files",
+  "main": "src/index.js",
   "dependencies": {
     "highlight.js": "9.9.0",
     "lodash": "4.17.4",
@@ -17,8 +17,7 @@
     "highlight.js": "9.9.0",
     "js-beautify": "^1.6.3",
     "mocha": "^2.5.3",
-    "should": "^10.0.0",
-    "md-parser-utils": "0.0.0"
+    "should": "^10.0.0"
   },
   "scripts": {
     "lint": "eslint lib bin hot"

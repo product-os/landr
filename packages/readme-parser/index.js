@@ -3,12 +3,13 @@
 /**
  * @module loaders.readme
  */
-const md = require('./lib/md');
-const helpers = require('./lib/helpers');
-const filter = require("lodash/filter");
-const _ = require('./lib/lodash');
-const checks = require('./lib/checks');
 
+const md = require('md-parser-utils').md;
+const helpers = require('md-parser-utils').helpers;
+const _ = require('md-parser-utils').lodash;
+const checks = require('md-parser-utils').checks;
+
+console.log(checks)
 /**
 * @summary Parses a readme source into object
 * @function

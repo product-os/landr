@@ -19,6 +19,7 @@
     "gatsby-plugin-postcss-sass": "canary",
     "gatsby-source-filesystem": "canary",
     "gatsby-transformer-readme": "0.0.0",
+    "gatsby-transformer-changelog": "0.0.0",
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",
     "react-transition-group": "^1.1.3",

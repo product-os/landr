@@ -1,8 +1,8 @@
 {
-  "name": "readme-parser",
+  "name": "changelog-parser",
   "version": "0.0.0",
   "author": "Craig Mulligan @craig-mulligan",
-  "description": "README.md parser",
+  "description": "CHANGELOG.md parser",
   "main": "index.js",
   "dependencies": {
     "highlight.js": "9.9.0",

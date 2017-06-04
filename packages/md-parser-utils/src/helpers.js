@@ -50,19 +50,54 @@ exports.contentByTitle = (tokens, titleChecks) => {
   }
 }
 
+exports.contentByDepth = (tokens, depth) => {
+  return tokens.reduce((acc, token, index) => {
+    const tagMarker = `h${depth}`
+    if (token.tag !== tagMarker ||
+      token.type !== 'heading_open') {
+      // noop
+      return acc;
+    }
+
+    const nextToken = tokens[index + 1]
+
+    if (nextToken) {
+      acc.push({
+        title: nextToken.content,
+        content: exports.untilTag(tokens.slice(index + 3), tagMarker)
+      })
+    }
+    return acc
+  }, [])
+}
+
+function renderToken(v) {
+  // console.log(v)
+  if (_.isString(v)) {
+    return md.renderInline(v);
+  }
+
+  if (_.isArray(v)) {
+    return md.renderer.render(v, {})
+  }
+
+  if (_.isObject(v)) {
+    return exports.renderToHtml(v)
+  }
+}
+
 exports.renderToHtml = (obj) => {
-  return _.mapValues(obj, v => {
-    // console.log(v)
-    if (_.isString(v)) {
-      return md.renderInline(v);
-    }
+  if (_.isArray(obj)) {
+    return _.map(obj, v => {
+      return renderToken(v)
+    })
+  }
 
-    if (_.isArray(v)) {
-      return md.renderer.render(v, {})
-    }
+  if (_.isObject(obj)) {
+    return _.mapValues(obj, v => {
+      return renderToken(v)
+    })
+  }
 
-    if (_.isObject(v)) {
-      return exports.renderToHtml(v)
-    }
-  })
+  return renderToken(obj)
 }

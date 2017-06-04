@@ -1,0 +1,5 @@
+root = true
+
+[*.js]
+indent_style=spaces
+trim_trailing_whitespace=true
