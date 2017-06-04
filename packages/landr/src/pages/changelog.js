@@ -36,10 +36,9 @@ class Changelog extends React.Component {
   render() {
     const entries = this.props.data.allChangelog.edges;
     return (
-      <div className="container">
+      <div className="container pt-5">
         {
           entries.map((entry, i) => {
-            console.log(this.state.collapseId == i)
             return (
               <Entry
                 {...entry.node}
