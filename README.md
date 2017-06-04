@@ -9,7 +9,7 @@ source code = website
 ## Installation
 
 ```
-npm i
+npm run bootstrap
 ```
 
 ```
