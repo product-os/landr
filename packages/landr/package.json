@@ -1,0 +1,30 @@
+{
+  "name": "landr",
+  "version": "0.0.0",
+  "description": "Experimental Static site generator",
+  "homepage": "https://github.com/resin-io/landr",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:resin-io/landr.git"
+  },
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "gatsby": "canary",
+    "gatsby-link": "canary",
+    "gatsby-plugin-postcss-sass": "canary",
+    "gatsby-source-filesystem": "canary",
+    "gatsby-transformer-readme": "0.0.0",
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-addons-transition-group": "^15.5.2",
+    "react-transition-group": "^1.1.3",
+    "reactstrap": "^4.6.2"
+  },
+  "devDependencies": {
+    "gh-pages": "1.0.0"
+  }
+}

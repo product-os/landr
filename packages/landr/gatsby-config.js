@@ -1,11 +1,12 @@
+
 module.exports = {
   plugins: [
     `gatsby-plugin-postcss-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `${__dirname}../../README.md`,
+        name: `readme`,
+        path: `/Users/gaudi/work/modules/landr/README.md`,
       },
     },
     `gatsby-transformer-readme`

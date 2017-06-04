@@ -1,30 +1,22 @@
 {
   "name": "landr",
-  "version": "1.0.2",
-  "description": "Experimental Static site generator",
+  "version": "0.0.0",
+  "description": "Source code = website",
   "homepage": "https://github.com/resin-io/landr",
   "repository": {
     "type": "git",
     "url": "git@github.com:resin-io/landr.git"
   },
   "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+    "bootstrap": "lerna bootstrap --npm-client=yarn",
+    "start": "lerna run start --parallel --scope landr",
+    "watch": "lerna run --parallel watch",
+    "build": "lerna run build",
+    "publish": "lerna publish --skip-git --ignore landr",
+    "deploy": "lerna run --scope landr"
   },
+  "devDependencies": {},
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
-    "gatsby": "canary",
-    "gatsby-link": "canary",
-    "gatsby-plugin-postcss-sass": "canary",
-    "gatsby-source-filesystem": "canary",
-    "gatsby-transformer-readme": "github:craig-mulligan/gatsby-transformer-readme",
-    "react-addons-css-transition-group": "^15.5.2",
-    "react-addons-transition-group": "^15.5.2",
-    "react-transition-group": "^1.1.3",
-    "reactstrap": "^4.6.2"
-  },
-  "devDependencies": {
-    "gh-pages": "1.0.0"
+    "lerna": "^2.0.0-rc.5"
   }
 }
