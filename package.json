@@ -13,7 +13,7 @@
     "watch": "lerna run --parallel watch",
     "build": "lerna run --parallel build",
     "publish": "lerna publish --skip-git --ignore landr",
-    "deploy": "lerna run --scope landr"
+    "deploy": "lerna run deploy --scope landr"
   },
   "devDependencies": {},
   "dependencies": {

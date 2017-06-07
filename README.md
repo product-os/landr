@@ -9,11 +9,11 @@ source code = website
 ## Installation
 
 ```
-npm run bootstrap
+yarn run bootstrap
 ```
 
 ```
-npm run start
+yarn start
 ```
 
 Visit `localhost:8000`.
