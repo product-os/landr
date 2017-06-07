@@ -10,7 +10,8 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+    "build:prefix": "NODE_ENV=dev gatsby build --prefix-links",
+    "deploy": "npm run build:prefix && gh-pages -d public"
   },
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
@@ -18,8 +19,8 @@
     "gatsby-link": "canary",
     "gatsby-plugin-postcss-sass": "canary",
     "gatsby-source-filesystem": "canary",
-    "gatsby-transformer-readme": "0.0.0",
-    "gatsby-transformer-changelog": "0.0.0",
+    "gatsby-plugin-readme": "0.0.0",
+    "gatsby-plugin-changelog": "0.0.0",
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",
     "react-transition-group": "^1.1.3",

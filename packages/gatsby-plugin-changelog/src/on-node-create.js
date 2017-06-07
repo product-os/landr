@@ -2,13 +2,12 @@ const crypto = require(`crypto`)
 const changelogParser = require('changelog-parser')
 const _ = require('lodash')
 
-console.log("ahdhfhdfhdhhdfh 😄")
 module.exports = async function onNodeCreate({
   node,
   getNode,
   loadNodeContent,
   boundActionCreators,
-}) {
+}, pluginOptions) {
 
   const { createNode, createParentChildLink } = boundActionCreators
 
@@ -24,7 +23,7 @@ module.exports = async function onNodeCreate({
   }
 
   const content = await loadNodeContent(node)
-  const entries = changelogParser(content, 2)
+  const entries = changelogParser(content, pluginOptions.headerDepth || 2)
 
   const EntryNodes = entries.map((obj, i) => {
 

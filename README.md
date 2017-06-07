@@ -26,7 +26,7 @@ Visit `localhost:8000`.
 
 ## How it Works
 
-Landr leverages webpack, we have custom loaders that load conventional source files like a `README` consumable data. We can load it into templates and build your site, therefore updating as your repository updates.
+Landr leverages gatsbyjs, we have custom plugins that load conventional source files like a `README` as consumable data.
 
 ## Why landr
 

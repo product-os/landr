@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-transformer-changelog",
+  "name": "gatsby-plugin-readme",
   "version": "0.0.0",
-  "description": "Gatsby transformer plugin for changelog files",
+  "description": "Gatsby transformer plugin for readme files",
   "scripts": {
     "build": "babel src --out-dir dist --ignore __tests__",
     "watch": "babel -w src --out-dir dist --ignore __tests__"
@@ -14,7 +14,9 @@
   "author": "Craig Mulligan",
   "license": "MIT",
   "dependencies": {
-    "changelog-parser": "0.0.0"
+    "graphql": "0.10.1",
+    "readme-parser": "0.0.0",
+    "reactstrap": "4.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

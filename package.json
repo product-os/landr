@@ -11,7 +11,7 @@
     "bootstrap": "lerna bootstrap --npm-client=yarn",
     "start": "lerna run start --parallel --scope landr",
     "watch": "lerna run --parallel watch",
-    "build": "lerna run build",
+    "build": "lerna run --parallel build",
     "publish": "lerna publish --skip-git --ignore landr",
     "deploy": "lerna run --scope landr"
   },

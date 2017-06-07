@@ -10,14 +10,24 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-readme`,
+      options: {
+        headerDepth: 2
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `readme`,
+        name: `changelog`,
         path: `/Users/gaudi/work/modules/landr/CHANGELOG.md`,
       },
     },
-    `gatsby-transformer-readme`,
-    `gatsby-transformer-changelog`
+    {
+      resolve: `gatsby-plugin-changelog`,
+      options: {
+        headerDepth: 2
+      },
+    },
   ],
   linkPrefix: '/landr'
 }

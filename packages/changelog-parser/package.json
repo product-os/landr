@@ -5,26 +5,18 @@
   "description": "CHANGELOG.md parser",
   "main": "index.js",
   "dependencies": {
-    "highlight.js": "9.9.0",
-    "lodash": "4.17.4",
-    "markdown-it": "8.2.2"
+    "md-parser-utils": "0.0.0"
   },
   "license": "MIT",
   "devDependencies": {
     "babel-core": "6.22.1",
-    "babel-loader": "6.2.10",
-    "eslint": "^3.1.1",
-    "highlight.js": "9.9.0",
-    "js-beautify": "^1.6.3",
-    "mocha": "^2.5.3",
-    "should": "^10.0.0",
-    "md-parser-utils": "0.0.0"
+    "babel-loader": "6.2.10"
   },
   "scripts": {
     "lint": "eslint lib bin hot"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:craig-mulligan/readme-loader.git"
+    "url": "git@github.com:resin-io/landr.git"
   }
 }

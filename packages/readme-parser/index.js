@@ -9,7 +9,6 @@ const helpers = require('md-parser-utils').helpers;
 const _ = require('md-parser-utils').lodash;
 const checks = require('md-parser-utils').checks;
 
-console.log(checks)
 /**
 * @summary Parses a readme source into object
 * @function

@@ -24,7 +24,7 @@ class Layout extends React.Component {
         <Navbar color="faded" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
           <Link
-            className="brand" to="/">
+            className="navbar-brand" to="/">
             landr
           </Link>
           <Collapse isOpen={this.state.isOpen} navbar>

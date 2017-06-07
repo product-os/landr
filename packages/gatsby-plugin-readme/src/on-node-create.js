@@ -9,7 +9,6 @@ module.exports = async function onNodeCreate({
 
   const { createNode, createParentChildLink } = boundActionCreators
 
-  console.log(node, createNode, loadNodeContent)
   // We are only concerned with readmes
   // console.log(node.name)
   if (node.name !== `README`) {

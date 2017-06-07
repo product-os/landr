@@ -24,8 +24,5 @@ module.exports = function(source, depth) {
 
   const entries = helpers.contentByDepth(tree, depth)
 
-  // console.log(entries)
-
-  console.log(_.isArray(helpers.renderToHtml(entries)))
   return helpers.renderToHtml(entries)
 };

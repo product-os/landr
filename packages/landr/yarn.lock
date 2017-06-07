@@ -2455,9 +2455,9 @@ gatsby-source-filesystem@canary:
     pretty-bytes "^4.0.2"
     slash "^1.0.0"
 
-"gatsby-transformer-readme@github:craig-mulligan/gatsby-transformer-readme":
+"gatsby-plugin-readme@github:craig-mulligan/gatsby-plugin-readme":
   version "1.0.0"
-  resolved "https://codeload.github.com/craig-mulligan/gatsby-transformer-readme/tar.gz/0710b654e94e17831197477521b8e96f99ba8695"
+  resolved "https://codeload.github.com/craig-mulligan/gatsby-plugin-readme/tar.gz/0710b654e94e17831197477521b8e96f99ba8695"
   dependencies:
     readme-parser "github:craig-mulligan/readme-parser"
 
