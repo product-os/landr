@@ -43,3 +43,6 @@ bower_components
 
 # Temporal CLI test data
 tests/cli/temporal
+
+# Dist
+dist

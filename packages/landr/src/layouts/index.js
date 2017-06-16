@@ -1,7 +1,15 @@
-import React from 'react'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import '../styles/index.scss'
-import Link from "gatsby-link"
+import React from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap';
+import 'www/styles/index.scss';
+import Link from 'gatsby-link';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -23,10 +31,7 @@ class Layout extends React.Component {
       <div>
         <Navbar color="faded" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <Link
-            className="navbar-brand" to="/">
-            landr
-          </Link>
+          <Link className="navbar-brand" to="/" />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
@@ -37,8 +42,8 @@ class Layout extends React.Component {
         </Navbar>
         {this.props.children()}
       </div>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

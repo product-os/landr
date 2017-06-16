@@ -3,24 +3,16 @@
   "version": "0.0.0",
   "author": "Craig Mulligan @craig-mulligan",
   "description": "parser utilities for markdown files",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "highlight.js": "9.9.0",
     "lodash": "4.17.4",
     "markdown-it": "8.2.2"
   },
   "license": "MIT",
-  "devDependencies": {
-    "babel-core": "6.22.1",
-    "babel-loader": "6.2.10",
-    "eslint": "^3.1.1",
-    "highlight.js": "9.9.0",
-    "js-beautify": "^1.6.3",
-    "mocha": "^2.5.3",
-    "should": "^10.0.0"
-  },
   "scripts": {
-    "lint": "eslint lib bin hot"
+    "build": "babel lib --out-dir dist",
+    "watch": "babel -w lib --out-dir dist"
   },
   "repository": {
     "type": "git",
