@@ -9,7 +9,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --npm-client=yarn",
-    "start": "lerna run start --parallel --scope landr",
+    "start": "yarn run bootstrap && yarn run watch",
     "watch": "lerna run --parallel watch",
     "build": "lerna run --parallel build",
     "publish": "lerna publish --skip-git --ignore landr",

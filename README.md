@@ -121,21 +121,11 @@ As a software company we have a growing number of websites to build and maintain
 ## Contributing
 
 ```
-yarn run bootstrap
-```
-
-```
 yarn start
 ```
 
-Visit `localhost:8000`.
+Get to work. 👷
 
 ## License
 
-Copyright 2016 Resinio Ltd.
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
-
-<http://www.apache.org/licenses/LICENSE-2.0>
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Landr is free software, and may be redistributed under the terms specified in the [license](LICENSE).
