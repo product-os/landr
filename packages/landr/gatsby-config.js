@@ -32,6 +32,7 @@
           userDir: '/Users/gaudi/work/modules/landr'
         },
       },
-    ]
+    ],
+    pathPrefix: '/landr'
   }
   

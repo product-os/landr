@@ -24,7 +24,7 @@ npm i -g landr
 
 From the root of your local git repo run:
 ```
-landr serve
+landr develop
 ```
 Visit `http://localhost:8080`.
 

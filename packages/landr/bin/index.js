@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 const program = require('commander');
+const Promise = require('bluebird')
 const packageJson = require('../package.json');
 const path = require('path');
 const _ = require('lodash');
 const config = require('../dist/config');
 const eject = require('../dist/eject');
 const fs = require('fs-extra');
+const ghpages = Promise.promisifyAll(require('gh-pages'));
+const gitInfo = require('gitinfo')({
+  gitPath: process.cwd()
+})
+
 console.log('bin/cli: time since started:', process.uptime());
 
 process.on('unhandledRejection', error => {
@@ -18,12 +24,11 @@ const directory = path.resolve(`${__dirname}/..`);
 const userDirectory = process.cwd();
 
 const writeConfigFiles = Object.keys(config).map(file => {
-  fs.outputFile(`${__dirname}/../${file}`, config[file](userDirectory));
+  return fs.outputFile(`${__dirname}/../${file}`, config[file](userDirectory, gitInfo));
 });
 
 program.version(packageJson.version).usage('[command] [options]');
 
-console.time('time to load develop');
 program
   .command('develop')
   .description(
@@ -53,12 +58,11 @@ program
     'Build site with link paths prefixed (set prefix in your config).'
   )
   .action(command => {
-    // Set NODE_ENV to 'production'
     process.env.NODE_ENV = 'production';
 
     const build = require('gatsby/dist/utils/build');
     Promise.all(writeConfigFiles)
-      .then(data => {
+      .then(() => {
         const p = Object.assign(command, { directory });
         return build(p);
       })
@@ -122,6 +126,37 @@ program
     eject[type](userDirectory, name).then(() => {
       console.log('Done!');
     });
+  });
+
+program
+  .command('deploy')
+  .description('Serve built site.')
+  .option(
+    '--prefix-paths',
+    'Build site with link paths prefixed (set prefix in your config).'
+  )
+  .option('-p, --port <port>', 'Set port. Defaults to 9000', '9000')
+  .option('-o, --open', 'Open the site in your browser for you.')
+  .action(command => {
+    process.env.NODE_ENV = 'production';
+
+    const build = require('gatsby/dist/utils/build');
+    Promise.all(writeConfigFiles)
+      .then(() => {
+        const p = Object.assign(command, { directory });
+        return build(p);
+      })
+      .then(() => {
+        console.log('Done building in', process.uptime(), 'seconds');
+        return ghpages.publishAsync(`${__dirname}/../public`);
+      })
+      .then(() => {
+        console.log('Done deploying in', process.uptime(), 'seconds');
+        process.exit();
+      })
+      .catch((err) => {
+        console.log('err', err)
+      });
   });
 
 program.on('--help', () => {
