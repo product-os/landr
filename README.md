@@ -15,7 +15,7 @@ It'll first look for a git remote from `github.com` and retrieve some basic info
 
 This allows the maintenance of your website to be a side effect of keeping your software project inline with standard github conventions.
 
-## Quick start guide
+<!-- ## Quick start guide -->
 
 Install:
 ```

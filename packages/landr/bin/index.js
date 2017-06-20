@@ -12,6 +12,8 @@ const gitInfo = require('gitinfo')({
   gitPath: process.cwd()
 })
 
+gitInfo.getConfig();
+
 console.log('bin/cli: time since started:', process.uptime());
 
 process.on('unhandledRejection', error => {
