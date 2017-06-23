@@ -8,9 +8,22 @@ const config = require('../dist/config');
 const eject = require('../dist/eject');
 const fs = require('fs-extra');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
+const CWD = process.cwd();
 const gitInfo = require('gitinfo')({
-  gitPath: process.cwd()
+  gitPath: CWD
 })
+
+const handleError = (err) => {
+  console.log('Oops, something when wrong :(', err)
+}
+
+const isGitRepo = (path) => {
+  if (!fs.exists(`${CWD}/.git`)) {
+    throw new Error('This is not a .git repo');
+  }
+  return Promise.resolve();
+
+}
 
 gitInfo.getConfig();
 
@@ -23,7 +36,7 @@ process.on('unhandledRejection', error => {
 const defaultHost = 'localhost';
 
 const directory = path.resolve(`${__dirname}/..`);
-const userDirectory = process.cwd();
+const userDirectory = CWD;
 
 const writeConfigFiles = Object.keys(config).map(file => {
   return fs.outputFile(`${__dirname}/../${file}`, config[file](userDirectory, gitInfo));
@@ -49,7 +62,8 @@ program
     Promise.all(writeConfigFiles).then(() => {
       const p = Object.assign(command, { directory });
       develop(p);
-    });
+    })
+    .catch(handleError);
   });
 
 program
@@ -71,7 +85,8 @@ program
       .then(() => {
         console.log(`Done building in`, process.uptime(), `seconds`);
         process.exit();
-      });
+      })
+      .catch(handleError);
   });
 
 program
@@ -87,7 +102,8 @@ program
   .action(command => {
     const serve = require('gatsby/dist/utils/serve');
     const p = Object.assign(command, { directory });
-    serve(p);
+    serve(p)
+    .catch(handleError);
   });
 
 program
@@ -106,8 +122,7 @@ program
     '-p, --page <name>',
     'Eject a page. Will write to <rootDir>/www/pages/<name>.js'
   )
-  .action(function(command) {
-    // TODO this is messy probably should refactor to sub commands.
+  .action((command) => {
     let type;
     let name;
     if (command.page) {
@@ -124,7 +139,7 @@ program
       name = command.component;
     }
 
-    console.log(name);
+    console.log(eject['style']);
     eject[type](userDirectory, name).then(() => {
       console.log('Done!');
     });
@@ -156,9 +171,7 @@ program
         console.log('Done deploying in', process.uptime(), 'seconds');
         process.exit();
       })
-      .catch((err) => {
-        console.log('err', err)
-      });
+      .catch(handleError);
   });
 
 program.on('--help', () => {

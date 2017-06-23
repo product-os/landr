@@ -25,6 +25,7 @@
     "gatsby-plugin-postcss-sass": "next",
     "landr-plugin-readme": "0.0.0",
     "gatsby-source-filesystem": "next",
+    "gatsby-source-github-repo": "0.0.0",
     "landr-components": "0.0.0",
     "lodash": "^4.17.4",
     "slash": "1.0.0",

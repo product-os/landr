@@ -1,5 +1,6 @@
 const crypto = require(`crypto`);
 const readmeParser = require('readme-parser');
+const TYPE = require('./type');
 
 module.exports = async function onNodeCreate({
   node,
@@ -8,11 +9,11 @@ module.exports = async function onNodeCreate({
   boundActionCreators
 }) {
   const { createNode, createParentChildLink } = boundActionCreators;
-
   // We are only concerned with readmes
-  // console.log(node.name)
-  if (node.name !== `README`) {
-    return;
+
+  if (node.name !== 'README') {
+    return
+    // console.log(JSON.stringify(node, null, 2));
   }
 
   // We only care about markdown content
@@ -21,9 +22,14 @@ module.exports = async function onNodeCreate({
   }
 
   const content = await loadNodeContent(node);
-  const data = readmeParser(content);
+  const readmeData = readmeParser(content);
+  const data = {
+    ...TYPE,
+    ...readmeData
+  };
 
   const objStr = JSON.stringify(data);
+
   const contentDigest = crypto.createHash(`md5`).update(objStr).digest(`hex`);
 
   const readmeNode = {
@@ -34,7 +40,7 @@ module.exports = async function onNodeCreate({
     internal: {
       contentDigest,
       type: `Readme`,
-      mediaType: `application/json`,
+      mediaType: 'text/x-markdown',
       content: objStr
     }
   };

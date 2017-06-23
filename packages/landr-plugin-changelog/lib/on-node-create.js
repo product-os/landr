@@ -7,9 +7,7 @@ module.exports = async function onNodeCreate(
   pluginOptions
 ) {
   const { createNode, createParentChildLink } = boundActionCreators;
-
-  // We are only concerned with readmes
-  // console.log(node.name)
+  // We are only concerned with changelog
   if (node.name !== 'CHANGELOG') {
     return;
   }
@@ -19,11 +17,12 @@ module.exports = async function onNodeCreate(
     return;
   }
 
+  console.log(node.children)
+
   const content = await loadNodeContent(node);
   const entries = changelogParser(content, pluginOptions.headerDepth || 2);
 
   const EntryNodes = entries.map((obj, i) => {
-    if (!obj.title) return;
     const objStr = JSON.stringify(obj);
     const contentDigest = crypto.createHash('md5').update(objStr).digest(`hex`);
 
@@ -34,7 +33,7 @@ module.exports = async function onNodeCreate(
       parent: node.id,
       internal: {
         contentDigest,
-        mediaType: 'application/json',
+        mediaType: 'text/x-markdown',
         // TODO make choosing the "type" a lot smarter. This assumes
         // the parent node is a file.
         // PascalCase
@@ -48,6 +47,10 @@ module.exports = async function onNodeCreate(
     createNode(j);
     createParentChildLink({ parent: node, child: j });
   });
+
+  const oldNodes = node.children.filter(n => {
+    return _.some(EntryNodes, ['id', n.id]);
+  })
 
   return;
 };

@@ -1,25 +1,5 @@
 import React from 'react';
-import { Collapse } from 'reactstrap';
-
-const Entry = ({ title, content, collapse, toggle, ...props }) => {
-  return (
-    <div {...props}>
-      <div className="py-2">
-        <h2
-          onClick={() => {
-            toggle(props.id);
-          }}
-        >
-          {title}
-        </h2>
-        <Collapse isOpen={collapse}>
-          <p className="py-2" dangerouslySetInnerHTML={{ __html: content }} />
-        </Collapse>
-        <hr />
-      </div>
-    </div>
-  );
-};
+import ChangelogEntry, { ChangelogQuery } from 'www/components/ChangelogEntry';
 
 class Changelog extends React.Component {
   constructor(props) {
@@ -42,7 +22,7 @@ class Changelog extends React.Component {
       <div className="container pt-5">
         {entries.map((entry, i) => {
           return (
-            <Entry
+            <ChangelogEntry
               {...entry.node}
               key={i}
               collapse={this.state.collapseId == i}
@@ -63,8 +43,7 @@ query changelog {
   allChangelog {
     edges {
       node {
-        title
-        content
+        ...Changelog_query
       }
     }
   }

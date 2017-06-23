@@ -22,6 +22,8 @@ const { md, helpers } = parserUtils;
 module.exports = function(source, depth) {
   const tree = md.parse(source, {});
 
+  // console.log({entries, depth})
+
   const entries = helpers.contentByDepth(tree, depth);
 
   return helpers.renderToHtml(entries);

@@ -1,3 +1,3 @@
-"use strict";
+'use strict';
 
-exports.onCreateNode = require(`./dist/on-node-create`);
+exports.onCreateNode = require('./dist/on-node-create');

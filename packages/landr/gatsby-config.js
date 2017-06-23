@@ -3,6 +3,13 @@
   module.exports = {
     plugins: [
       {
+        resolve: 'gatsby-source-github-repo',
+        options: {
+          owner: 'resin-io',
+          repo: 'landr',
+        },
+      },
+      {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'readme',

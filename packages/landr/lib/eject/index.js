@@ -7,7 +7,7 @@ const resinComponentsDir = path.resolve(
 );
 
 const ejectFile = (userDirectory, file, type) => {
-  fs
+  return fs
     .copy(
       `${resinComponentsDir}/www/${type.name}/${file}.${type.ext}`,
       `${userDirectory}/www/${type.name}/${file}.${type.ext}`

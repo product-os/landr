@@ -14,14 +14,15 @@ const Section = ({ title, content, ...props }) => {
 
 class Index extends React.Component {
   render() {
-    const readme = this.props.data.readme;
+    const { readme, repo } = this.props.data;
     return (
       <div>
         <Jumbotron
-          title={readme.title}
-          lead={readme.lead}
-          badges={readme.badges}
+          repo={repo}
         />
+        <div>
+          <p className="text-center">We have {repo.forks_count} forks, {repo.stargazers_count} stars. </p>
+        </div>
         <Section className="bg-inverse text-white" {...readme.installation} />
         <Section {...readme.features} />
       </div>
@@ -33,9 +34,11 @@ export default Index;
 
 export const pageQuery = graphql`
 query index {
+  repo {
+    name
+    description
+  }
   readme {
-    title
-    lead
     badges
     installation {
       title

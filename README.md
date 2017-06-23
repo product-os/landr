@@ -4,10 +4,6 @@ source code = website
 
 > Build a website for your software projects with one command (and zero configuration).
 
-```
-landr deploy
-```
-
 ## How it works
 
 When you run landr on your local repository, it gathers info by leveraging standard conventions.
@@ -15,7 +11,7 @@ It'll first look for a git remote from `github.com` and retrieve some basic info
 
 This allows the maintenance of your website to be a side effect of keeping your software project inline with standard github conventions.
 
-<!-- ## Quick start guide -->
+## Quick start guide
 
 Install:
 ```
@@ -100,7 +96,7 @@ landr eject --layout index
 
 I know, we said there is zero configuration, but there are some cases where configuration is necessary for example if you need to add analytics tokens, or ignore certain files.
 
-landr allows configuration via a `landr.conf.js` file in `<project-root>/www` it must export a config object.
+landr allows configuration via a `landr.conf.js` file in `<project-root>/www/` it must export a config object.
 
 ```js
 // www/landr.conf.js
