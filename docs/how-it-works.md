@@ -50,7 +50,6 @@ Landr is built in a module style, as many of the packages may be useful in other
   - Utilities to help markdown parsers.
 - landr
   - core set of modules for parsing configuration and providing api for landr-cli.
-  - holds `layouts`, `pages`, and `components`. All of which are react components.
-  - currently the root directory of where the site is built from.
-- landr-cli
+  - currently the root directory of where the site is built from (this may change)
 - landr-components
+  - holds `layouts`, `pages`, and `components`. All of which are react components.

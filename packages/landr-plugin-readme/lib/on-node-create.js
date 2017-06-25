@@ -12,7 +12,7 @@ module.exports = async function onNodeCreate({
   // We are only concerned with readmes
 
   if (node.name !== 'README') {
-    return
+    return;
     // console.log(JSON.stringify(node, null, 2));
   }
 

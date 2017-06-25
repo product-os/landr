@@ -43,7 +43,8 @@ query changelog {
   allChangelog {
     edges {
       node {
-        ...Changelog_query
+        title
+        content
       }
     }
   }

@@ -37,6 +37,8 @@ query index {
   repo {
     name
     description
+    forks_count
+    stargazers_count
   }
   readme {
     badges

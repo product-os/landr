@@ -17,7 +17,7 @@ module.exports = async function onNodeCreate(
     return;
   }
 
-  console.log(node.children)
+  console.log(node.children);
 
   const content = await loadNodeContent(node);
   const entries = changelogParser(content, pluginOptions.headerDepth || 2);
@@ -50,7 +50,7 @@ module.exports = async function onNodeCreate(
 
   const oldNodes = node.children.filter(n => {
     return _.some(EntryNodes, ['id', n.id]);
-  })
+  });
 
   return;
 };

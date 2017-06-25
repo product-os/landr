@@ -19,7 +19,7 @@
     "commander": "^2.9.0",
     "fs-extra": "3.0.1",
     "fs-jetpack": "1.0.0",
-    "gatsby": "next",
+    "gatsby": "canary",
     "gatsby-link": "next",
     "landr-plugin-changelog": "0.0.0",
     "gatsby-plugin-postcss-sass": "next",

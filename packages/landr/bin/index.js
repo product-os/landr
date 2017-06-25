@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander');
-const Promise = require('bluebird')
+const Promise = require('bluebird');
 const packageJson = require('../package.json');
 const path = require('path');
 const _ = require('lodash');
@@ -11,19 +11,18 @@ const ghpages = Promise.promisifyAll(require('gh-pages'));
 const CWD = process.cwd();
 const gitInfo = require('gitinfo')({
   gitPath: CWD
-})
+});
 
-const handleError = (err) => {
-  console.log('Oops, something when wrong :(', err)
-}
+const handleError = err => {
+  console.log('Oops, something when wrong :(', err);
+};
 
-const isGitRepo = (path) => {
+const isGitRepo = path => {
   if (!fs.exists(`${CWD}/.git`)) {
     throw new Error('This is not a .git repo');
   }
   return Promise.resolve();
-
-}
+};
 
 gitInfo.getConfig();
 
@@ -39,7 +38,10 @@ const directory = path.resolve(`${__dirname}/..`);
 const userDirectory = CWD;
 
 const writeConfigFiles = Object.keys(config).map(file => {
-  return fs.outputFile(`${__dirname}/../${file}`, config[file](userDirectory, gitInfo));
+  return fs.outputFile(
+    `${__dirname}/../${file}`,
+    config[file](userDirectory, gitInfo)
+  );
 });
 
 program.version(packageJson.version).usage('[command] [options]');
@@ -59,11 +61,12 @@ program
   .option('-o, --open', 'Open the site in your browser for you.')
   .action(command => {
     const develop = require('gatsby/dist/utils/develop');
-    Promise.all(writeConfigFiles).then(() => {
-      const p = Object.assign(command, { directory });
-      develop(p);
-    })
-    .catch(handleError);
+    Promise.all(writeConfigFiles)
+      .then(() => {
+        const p = Object.assign(command, { directory });
+        develop(p);
+      })
+      .catch(handleError);
   });
 
 program
@@ -102,8 +105,7 @@ program
   .action(command => {
     const serve = require('gatsby/dist/utils/serve');
     const p = Object.assign(command, { directory });
-    serve(p)
-    .catch(handleError);
+    serve(p).catch(handleError);
   });
 
 program
@@ -122,7 +124,7 @@ program
     '-p, --page <name>',
     'Eject a page. Will write to <rootDir>/www/pages/<name>.js'
   )
-  .action((command) => {
+  .action(command => {
     let type;
     let name;
     if (command.page) {
