@@ -1,0 +1,29 @@
+{
+  "name": "gatsby-source-github-repo",
+  "version": "0.0.0",
+  "description": "Gatsby source plugin for github repo API",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel lib --out-dir dist",
+    "watch": "babel -w lib --out-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resin-io/landr.git"
+  },
+  "keywords": [
+    "landr",
+    "static-site",
+    "gatsby"
+  ],
+  "dependencies": {
+     "github":"9.2.0",
+     "lodash": "4.17.4"
+  },
+  "author": "craig-mulligan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/resin-io/landr/issues"
+  },
+  "homepage": "https://github.com/resin-io/landr#readme"
+}

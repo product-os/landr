@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Craig Mulligan @craig-mulligan",
   "description": "README.md parser",
-  "main": "index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "md-parser-utils": "0.0.0"
   },
@@ -13,7 +13,8 @@
     "babel-loader": "6.2.10"
   },
   "scripts": {
-    "lint": "eslint lib bin hot"
+    "build": "babel index.js --out-dir dist",
+    "watch": "babel -w index.js --out-dir dist"
   },
   "repository": {
     "type": "git",

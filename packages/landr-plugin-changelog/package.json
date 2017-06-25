@@ -1,0 +1,19 @@
+{
+  "name": "landr-plugin-changelog",
+  "version": "0.0.0",
+  "description": "Gatsby transformer plugin for changelog files",
+  "scripts": {
+    "build": "babel lib --out-dir dist",
+    "watch": "babel -w lib --out-dir dist"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "readme"
+  ],
+  "author": "Craig Mulligan",
+  "license": "MIT",
+  "dependencies": {
+    "changelog-parser": "0.0.0"
+  }
+}

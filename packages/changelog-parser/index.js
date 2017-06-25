@@ -4,9 +4,9 @@
  * @module loaders.readme
  */
 
-const md = require('md-parser-utils').md;
-const helpers = require('md-parser-utils').helpers;
-const _ = require('md-parser-utils').lodash
+const parserUtils = require('md-parser-utils');
+
+const { md, helpers } = parserUtils;
 
 /**
 * @summary Parses a readme source into object
@@ -22,7 +22,9 @@ const _ = require('md-parser-utils').lodash
 module.exports = function(source, depth) {
   const tree = md.parse(source, {});
 
-  const entries = helpers.contentByDepth(tree, depth)
+  // console.log({entries, depth})
 
-  return helpers.renderToHtml(entries)
+  const entries = helpers.contentByDepth(tree, depth);
+
+  return helpers.renderToHtml(entries);
 };

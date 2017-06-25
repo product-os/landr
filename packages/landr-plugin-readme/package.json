@@ -1,0 +1,20 @@
+{
+  "name": "landr-plugin-readme",
+  "version": "0.0.0",
+  "description": "Gatsby transformer plugin for readme files",
+  "scripts": {
+    "build": "babel lib --out-dir dist --ignore __tests__",
+    "watch": "babel -w lib --out-dir dist --ignore __tests__"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "readme"
+  ],
+  "author": "Craig Mulligan",
+  "license": "MIT",
+  "dependencies": {
+    "readme-parser": "0.0.0",
+    "graphql": "*"
+  }
+}

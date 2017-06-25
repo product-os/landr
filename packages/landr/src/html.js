@@ -1,24 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-let stylesStr
+let stylesStr;
 if (process.env.NODE_ENV === 'production') {
   try {
-    stylesStr = require('!raw-loader!../public/styles.css')
+    stylesStr = require('!raw-loader!../public/styles.css');
   } catch (e) {
-    console.log(e)
+    console.log(e);
   }
 }
 
 module.exports = React.createClass({
   render() {
-    let css
+    let css;
     if (process.env.NODE_ENV === `production`) {
       css = (
         <style
           id="gatsby-inlined-css"
           dangerouslySetInnerHTML={{ __html: stylesStr }}
         />
-      )
+      );
     }
     // TODO: Handle meta tags with helmet from layout component
     return (
@@ -42,6 +42,6 @@ module.exports = React.createClass({
           {this.props.postBodyComponents}
         </body>
       </html>
-    )
-  },
-})
+    );
+  }
+});

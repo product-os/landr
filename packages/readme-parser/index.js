@@ -3,11 +3,9 @@
 /**
  * @module loaders.readme
  */
+const parserUtils = require('md-parser-utils');
 
-const md = require('md-parser-utils').md;
-const helpers = require('md-parser-utils').helpers;
-const _ = require('md-parser-utils').lodash;
-const checks = require('md-parser-utils').checks;
+const { md, helpers, _, checks } = parserUtils;
 
 /**
 * @summary Parses a readme source into object
@@ -29,55 +27,48 @@ module.exports = function(source) {
   const tree = md.parse(source, {});
 
   const obj = {
-    title: (tokens => (
+    title: (tokens =>
       _(tokens)
         .chain()
         .filterByType('heading')
         .filter(t => !helpers.tokenContains(t, checks.badges))
         .head()
         .getContent()
-        .value()
-      )
-    )(_.cloneDeep(tree)),
-    lead: (tokens => (
+        .value())(_.cloneDeep(tree)),
+    lead: (tokens =>
       _(tokens)
         .chain()
         .filterByType('paragraph')
         .filter(t => !helpers.tokenContains(t, checks.badges))
         .head()
         .getContent()
-        .value()
-      )
-    )(_.cloneDeep(tree)),
-    badges: (tokens => (
+        .value())(_.cloneDeep(tree)),
+    badges: (tokens =>
       _(tokens)
         .filterByType('paragraph')
         .filter(t => helpers.tokenContains(t, checks.badges))
         .getContent()
-        .join('')
-      )
-    )(_.cloneDeep(tree)),
+        .join(''))(_.cloneDeep(tree)),
     images: {
-      logo:(tokens => (
+      logo: (tokens =>
         _(tokens)
           .chain()
           .find(t => new RegExp('logo', 'i').test(t.content))
           .getContent()
           .getUrl()
-          .value()
-        )
-      )(_.cloneDeep(tree)),
-      screenshot:(tokens => (
+          .value())(_.cloneDeep(tree)),
+      screenshot: (tokens =>
         _(tokens)
           .chain()
           .find(t => new RegExp('screenshot', 'i').test(t.content))
           .getContent()
           .getUrl()
-          .value()
-        )
-      )(_.cloneDeep(tree))
+          .value())(_.cloneDeep(tree))
     },
-    installation: helpers.contentByTitle(_.cloneDeep(tree), checks.installation),
+    installation: helpers.contentByTitle(
+      _.cloneDeep(tree),
+      checks.installation
+    ),
     features: helpers.contentByTitle(_.cloneDeep(tree), checks.features),
     contribute: helpers.contentByTitle(_.cloneDeep(tree), checks.contribute),
     license: helpers.contentByTitle(_.cloneDeep(tree), checks.license)

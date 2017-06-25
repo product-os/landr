@@ -1,30 +1,35 @@
 {
   "name": "landr",
   "version": "0.0.0",
-  "description": "Experimental Static site generator",
+  "description": "Source code = website",
   "homepage": "https://github.com/resin-io/landr",
   "repository": {
     "type": "git",
     "url": "git@github.com:resin-io/landr.git"
   },
+  "bin": {
+    "landr": "./bin/index.js"
+  },
   "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "build:prefix": "NODE_ENV=dev gatsby build --prefix-links",
-    "deploy": "npm run build:prefix && gh-pages -d public"
+    "build": "babel lib --out-dir dist",
+    "watch": "babel -w lib --out-dir dist"
   },
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
+    "bluebird": "^3.5.0",
+    "commander": "^2.9.0",
+    "fs-extra": "3.0.1",
+    "fs-jetpack": "1.0.0",
     "gatsby": "canary",
-    "gatsby-link": "canary",
-    "gatsby-plugin-postcss-sass": "canary",
-    "gatsby-source-filesystem": "canary",
-    "gatsby-plugin-readme": "0.0.0",
-    "gatsby-plugin-changelog": "0.0.0",
-    "react-addons-css-transition-group": "^15.5.2",
-    "react-addons-transition-group": "^15.5.2",
-    "react-transition-group": "^1.1.3",
-    "reactstrap": "^4.6.2"
+    "gatsby-link": "next",
+    "landr-plugin-changelog": "0.0.0",
+    "gatsby-plugin-postcss-sass": "next",
+    "landr-plugin-readme": "0.0.0",
+    "gatsby-source-filesystem": "next",
+    "gatsby-source-github-repo": "0.0.0",
+    "landr-components": "0.0.0",
+    "lodash": "^4.17.4",
+    "slash": "1.0.0",
+    "gitinfo": "2.1.14"
   },
   "devDependencies": {
     "gh-pages": "1.0.0"
