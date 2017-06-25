@@ -17,7 +17,8 @@
     "gatsby"
   ],
   "dependencies": {
-     "github":"9.2.0"
+     "github":"9.2.0",
+     "lodash": "4.17.4"
   },
   "author": "craig-mulligan",
   "license": "ISC",
