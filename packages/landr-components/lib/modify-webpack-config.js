@@ -7,10 +7,13 @@ const modifyWebpackConfig = (gatsby, pluginOpts) => {
   webpackConfig.merge({
     resolve: {
       modulesDirectories: [
-        path.resolve(`${pluginOpts.userDir}`),
+        path.resolve(`${pluginOpts.cwd}/.landr`),
+        path.resolve(`${pluginOpts.cwd}/node_modules/landr/node_modules`),
+        path.resolve(`${pluginOpts.cwd}`),
         path.resolve(`${__dirname}/../`),
-        path.resolve(`${pluginOpts.userDir}/node_modules`),
-        path.resolve(`${__dirname}/../node_modules`)
+        path.resolve(`${pluginOpts.cwd}/node_modules`),
+        path.resolve(`${pluginOpts.cwd}/packages/landr/node_modules`),
+        path.resolve(`${pluginOpts.cwd}/packages/landr/node_modules/gatsby/node_modules`)
       ]
     }
   });

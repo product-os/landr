@@ -10,8 +10,8 @@ const createPages = ({ graphql, boundActionCreators }, pluginOptions) => {
     return files.forEach(file => {
       let pagePath = path.resolve(`${__dirname}/../www/pages/${file}`);
 
-      if (fs.existsSync(`${pluginOptions.userDir}/www/pages/${file}`)) {
-        pagePath = path.resolve(`${pluginOptions.userDir}/www/pages/${file}`);
+      if (fs.existsSync(`${pluginOptions.cwd}/www/pages/${file}`)) {
+        pagePath = path.resolve(`${pluginOptions.cwd}/www/pages/${file}`);
       }
 
       // todo this doesn't take child folders into account.

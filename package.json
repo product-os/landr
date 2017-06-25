@@ -8,7 +8,7 @@
     "url": "git@github.com:resin-io/landr.git"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap --npm-client=yarn",
+    "bootstrap": "lerna bootstrap --npm-client=yarn --hoist",
     "start": "yarn run bootstrap && yarn run watch",
     "watch": "lerna run --parallel watch",
     "build": "lerna run --parallel build",

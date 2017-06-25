@@ -34,12 +34,6 @@ export default Index;
 
 export const pageQuery = graphql`
 query index {
-  repo {
-    name
-    description
-    forks_count
-    stargazers_count
-  }
   readme {
     badges
     installation {

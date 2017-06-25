@@ -8,9 +8,9 @@ const config = require('../dist/config');
 const eject = require('../dist/eject');
 const fs = require('fs-extra');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
-const CWD = process.cwd();
+const cwd = process.cwd();
 const gitInfo = require('gitinfo')({
-  gitPath: CWD
+  gitPath: cwd
 })
 
 const handleError = (err) => {
@@ -18,7 +18,7 @@ const handleError = (err) => {
 }
 
 const isGitRepo = (path) => {
-  if (!fs.exists(`${CWD}/.git`)) {
+  if (!fs.exists(`${cwd}/.git`)) {
     throw new Error('This is not a .git repo');
   }
   return Promise.resolve();
@@ -35,15 +35,18 @@ process.on('unhandledRejection', error => {
 
 const defaultHost = 'localhost';
 
-const directory = path.resolve(`${__dirname}/..`);
-const userDirectory = CWD;
+const buildDir = `${cwd}/.landr`;
 
+const copyRequireFiles = [
+  fs.copy(`${__dirname}/../layouts`, `${buildDir}/src`),
+  fs.ensureDir(`${buildDir}/node_modules`)
+]
 const writeConfigFiles = Object.keys(config).map(file => {
-  return fs.outputFile(`${__dirname}/../${file}`, config[file](userDirectory, gitInfo));
+  return fs.outputFile(`${buildDir}/${file}`, config[file](buildDir, cwd, gitInfo));
 });
 
 program.version(packageJson.version).usage('[command] [options]');
-
+  console.log(buildDir)
 program
   .command('develop')
   .description(
@@ -59,9 +62,13 @@ program
   .option('-o, --open', 'Open the site in your browser for you.')
   .action(command => {
     const develop = require('gatsby/dist/utils/develop');
-    Promise.all(writeConfigFiles).then(() => {
-      const p = Object.assign(command, { directory });
-      develop(p);
+    Promise.all([
+      ...writeConfigFiles,
+      ...copyRequireFiles
+    ])
+    .then(() => {
+      const p = Object.assign(command, { directory: buildDir });
+      return develop(p);
     })
     .catch(handleError);
   });
@@ -79,7 +86,7 @@ program
     const build = require('gatsby/dist/utils/build');
     Promise.all(writeConfigFiles)
       .then(() => {
-        const p = Object.assign(command, { directory });
+        const p = Object.assign(command, { buildDir });
         return build(p);
       })
       .then(() => {
@@ -101,7 +108,7 @@ program
   .option('-o, --open', 'Open the site in your browser for you.')
   .action(command => {
     const serve = require('gatsby/dist/utils/serve');
-    const p = Object.assign(command, { directory });
+    const p = Object.assign(command, { buildDir });
     serve(p)
     .catch(handleError);
   });
@@ -116,7 +123,6 @@ program
   .option(
     '-s, --style',
     'Eject a global styles. Will write to <rootDir>/www/styles/index.scss'
-    // eject.style(userDirectory)
   )
   .option(
     '-p, --page <name>',
@@ -139,8 +145,7 @@ program
       name = command.component;
     }
 
-    console.log(eject['style']);
-    eject[type](userDirectory, name).then(() => {
+    eject[type](cwd, name).then(() => {
       console.log('Done!');
     });
   });
