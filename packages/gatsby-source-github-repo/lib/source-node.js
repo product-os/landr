@@ -21,7 +21,7 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
   }
   // to get around github rate limiting we only refresh data every 10 mins
   if (lastFetched && (Date.now() - TEN_MINS < lastFetched)) {
-    console.log('*not* refetching github data');
+    console.log('*not* re-fetching github data');
     return;
   }
 
