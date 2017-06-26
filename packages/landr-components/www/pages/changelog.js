@@ -39,12 +39,11 @@ class Changelog extends React.Component {
 export default Changelog;
 
 export const pageQuery = graphql`
-query changelog {
+query AllEntries {
   allChangelog {
     edges {
       node {
-        title
-        content
+        ...Entry_details
       }
     }
   }
