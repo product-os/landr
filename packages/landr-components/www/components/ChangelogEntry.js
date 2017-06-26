@@ -23,8 +23,9 @@ const Entry = ({ title, content, collapse, toggle, ...props }) => {
 
 export default Entry;
 
-export const ChangelogQuery = graphql`
-fragment Changelog_query on Changelog {
-  title
-}
+export const entryFragment = graphql`
+  fragment Entry_details on Changelog {
+    title
+    content
+  }
 `

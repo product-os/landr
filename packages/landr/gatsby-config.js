@@ -6,14 +6,14 @@
         resolve: 'gatsby-source-github-repo',
         options: {
           owner: 'resin-io',
-          repo: 'versionist',
+          repo: 'landr',
         },
       },
       {
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'readme',
-          path: '/Users/gaudi/work/modules/versionist/README.md',
+          path: '/Users/gaudi/work/modules/landr/README.md',
         },
       },
       'gatsby-plugin-postcss-sass',
@@ -24,7 +24,7 @@
         resolve: 'gatsby-source-filesystem',
         options: {
           name: 'changelog',
-          path: '/Users/gaudi/work/modules/versionist/CHANGELOG.md',
+          path: '/Users/gaudi/work/modules/landr/CHANGELOG.md',
         },
       },
       {
@@ -36,10 +36,10 @@
       {
         resolve: 'landr-components',
         options: {
-          userDir: '/Users/gaudi/work/modules/versionist'
+          userDir: '/Users/gaudi/work/modules/landr'
         },
       },
     ],
-    pathPrefix: '/versionist'
+    pathPrefix: '/landr'
   }
   
