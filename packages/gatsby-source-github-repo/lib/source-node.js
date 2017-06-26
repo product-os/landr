@@ -36,7 +36,7 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     *****************************
     `
     );
-    return;
+    // return;
   }
 
   let { data: repoData } = await github.repos.get({ owner, repo });
