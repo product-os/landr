@@ -40,7 +40,7 @@ We'll currently build these pages based on the info we can infer from a repo.
   - Features
     - list of features
   - Changelog (Last entry, with link to view more)
-    - link to `/contribute`
+    - link to `/changelog`
   - Contribute
     - (Top 5 contributors / order by commits )
     - Issue explorer (default tag is `help wanted`)
@@ -52,7 +52,7 @@ We'll currently build these pages based on the info we can infer from a repo.
   - accordion list view of every entry from `changelog.md` or fallback to pulling from github releases
 - /contribute
   - list of contributors
-  - stats from github api (health score/langauges etc.)
+  - stats from github api (health score/languages etc.)
   - instructions from `CONTRIBUTING.md`
 
 ## Customizing
@@ -76,9 +76,36 @@ landr eject --component jumbotron
 
 Will write a file `<project-root>/www/components/jumbotron.js` you can make any customizations you like.
 
+The component is a standard [react.js](https://facebook.github.io/react/) but you can also export a [graphql query fragment](http://graphql.org/learn/queries/#fragments) to customize the data we as react `props`.
+
+Heres an example:
+
+```
+import React from 'react';
+import { Jumbotron } from 'reactstrap';
+
+export default ({ repo }) => {
+  return (
+    <Jumbotron className="mb-0">
+      <div className="container">
+        <h1 className="display-3">{repo.name}</h1>
+        <p className="lead">{repo.description}</p>
+        <hr className="my-2" />
+      </div>
+    </Jumbotron>
+  );
+};
+
+export graphql`
+  fragment JumbotronRepoFragment on Repo {
+    id
+  }
+`
+```
+
 ### Pages
 
-Sometime's you'll want to change the entire layout of page.
+Most times you'll only need to update components but if you need you can customise an entire page.
 
 ```
 landr eject --page index
@@ -102,8 +129,8 @@ landr allows configuration via a `landr.conf.js` file in `<project-root>/www/` i
 // www/landr.conf.js
 module.exports = {
   analytics: {
-    mixpanel: <token>
-    googleAnalytics: <token>
+    mixpanel: <mixpanel-id>
+    googleAnalytics: <ga-id>
   }
 }
 ```
@@ -117,9 +144,16 @@ As a software company we have a growing number of websites to build and maintain
 ## Contributing
 
 ```
-yarn start
+yarn
 ```
 
+```
+yarn run bootstrap
+```
+
+```
+yarn start
+```
 Get to work. 👷
 
 ## License
