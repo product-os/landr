@@ -12,9 +12,3 @@ export default ({ repo }) => {
     </Jumbotron>
   );
 };
-
-export const JumbotronQuery = graphql`
-  fragment JumbotronQuery on Repo {
-    id
-  }
-`

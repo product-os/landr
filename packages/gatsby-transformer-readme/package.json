@@ -1,5 +1,5 @@
 {
-  "name": "landr-plugin-readme",
+  "name": "gatsby-transformer-readme",
   "version": "0.0.0",
   "description": "Gatsby transformer plugin for readme files",
   "scripts": {

@@ -1,5 +1,5 @@
 {
-  "name": "landr-plugin-changelog",
+  "name": "gatsby-transformer-changelog",
   "version": "0.0.0",
   "description": "Gatsby transformer plugin for changelog files",
   "scripts": {

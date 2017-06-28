@@ -1,5 +1,5 @@
 {
-  "name": "landr-components",
+  "name": "gatsby-plugin-landr",
   "version": "0.0.0",
   "description": "collection of landr react-components",
   "main": "index.js",

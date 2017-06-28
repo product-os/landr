@@ -17,9 +17,9 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
   let status;
   if (
     store.getState().status.plugins &&
-    store.getState().status.plugins['gatsby-source-github-repo']
+    store.getState().status.plugins['gatsby-source-github']
   ) {
-    status = store.getState().status.plugins['gatsby-source-github-repo'];
+    status = store.getState().status.plugins['gatsby-source-github'];
   }
 
   // this will get fixed when we fix gatsby .cache location
