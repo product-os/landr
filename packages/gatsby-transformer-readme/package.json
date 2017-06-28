@@ -1,6 +1,6 @@
 {
   "name": "gatsby-transformer-readme",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.c2e09d90",
   "description": "Gatsby transformer plugin for readme files",
   "scripts": {
     "build": "babel lib --out-dir dist --ignore __tests__",
@@ -14,7 +14,7 @@
   "author": "Craig Mulligan",
   "license": "MIT",
   "dependencies": {
-    "readme-parser": "0.0.0",
-    "graphql": "*"
+    "graphql": "*",
+    "readme-parser": "^0.0.0-alpha.c2e09d90"
   }
 }

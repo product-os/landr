@@ -1,7 +1,0 @@
-node_modules
-coverage
-example/dist
-
-*.sw*
-
-npm-debug.log
