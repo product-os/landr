@@ -1,16 +1,8 @@
 import React from 'react';
 import Jumbotron from 'www/components/Jumbotron';
-
-const Section = ({ title, content, ...props }) => {
-  return (
-    <div {...props}>
-      <div className="container py-5">
-        <h2>{title}</h2>
-        <p dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
-    </div>
-  );
-};
+import Contributors from 'www/components/Contributors';
+import Section from 'www/components/Section';
+import Stats from 'www/components/Stats';
 
 class Index extends React.Component {
   render() {
@@ -20,11 +12,10 @@ class Index extends React.Component {
         <Jumbotron
           repo={repo}
         />
-        <div>
-          <p className="text-center">We have {repo.forks_count} forks, {repo.stargazers_count} stars. </p>
-        </div>
-        <Section className="bg-inverse text-white" {...readme.installation} />
+        <Stats repo={repo} />
+        <Section className="bg-inverse text-white py-5" {...readme.installation} />
         <Section {...readme.features} />
+        <Contributors contributors={repo.contributors}/>
       </div>
     );
   }
@@ -39,6 +30,12 @@ query index {
     description
     forks_count
     stargazers_count
+    contributors {
+      avatar_url
+      login
+      contributions
+      followers_url
+    }
   }
   readme {
     badges

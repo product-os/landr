@@ -4,7 +4,7 @@ module.exports = (userDir, gitInfo) => {
   module.exports = {
     plugins: [
       {
-        resolve: 'gatsby-source-github-repo',
+        resolve: 'gatsby-source-github',
         options: {
           owner: '${gitInfo.getUsername()}',
           repo: '${gitInfo.getName()}',
@@ -19,7 +19,7 @@ module.exports = (userDir, gitInfo) => {
       },
       'gatsby-plugin-postcss-sass',
       {
-        resolve: 'landr-plugin-readme',
+        resolve: 'gatsby-transformer-readme',
       },
       {
         resolve: 'gatsby-source-filesystem',
@@ -29,13 +29,13 @@ module.exports = (userDir, gitInfo) => {
         },
       },
       {
-        resolve: 'landr-plugin-changelog',
+        resolve: 'gatsby-transformer-changelog',
         options: {
           headerDepth: 2
         },
       },
       {
-        resolve: 'landr-components',
+        resolve: 'gatsby-plugin-landr',
         options: {
           userDir: '${userDir}'
         },

@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-source-github-repo",
-  "version": "0.0.0",
+  "name": "gatsby-source-github",
+  "version": "0.0.0-alpha.c2e09d90",
   "description": "Gatsby source plugin for github repo API",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
     "gatsby"
   ],
   "dependencies": {
-     "github":"9.2.0",
-     "lodash": "4.17.4"
+    "github": "9.2.0",
+    "lodash": "4.17.4"
   },
   "author": "craig-mulligan",
   "license": "ISC",

@@ -10,17 +10,19 @@ Landr is built in a module style, as many of the packages may be useful in other
   - Parses a changelog into
 - readme-parser
   - Parses a readme.md into object
-- gatby-plugin-readme
+- gatby-transformer-readme
   - Adds readme object `readme-parser` to graphql server so that it can be queried from templates
-- gatby-plugin-changelog
+- gatby-transformer-changelog
   - Adds changelog object `readme-changelog` to graphql server so that it can be queried from templates
 - md-parser-utils
   - Utilities to help markdown parsers.
 - landr
   - core set of modules for parsing configuration and providing api for landr-cli.
   - currently the root directory of where the site is built from (this may change)
-- landr-components
+- gatsby-plugin-landr
   - holds `layouts`, `pages`, and `components`. All of which are react components.
+  - add landr specific webpack config
+  - adds landr specific pages
 - gatsby-source-github
   - pulls repo data from the github api.
 

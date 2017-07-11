@@ -5,6 +5,11 @@ const modifyWebpackConfig = (gatsby, pluginOpts) => {
   const stage = gatsby.stage;
 
   webpackConfig.merge({
+    module: {
+      noParse: [
+        /node_modules\/reactstrap-tether\/dist\/js\/tether.js/
+      ]
+    },
     resolve: {
       modulesDirectories: [
         path.resolve(`${pluginOpts.userDir}`),

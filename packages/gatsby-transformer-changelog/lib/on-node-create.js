@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const changelogParser = require('changelog-parser');
+const changelogParser = require('changelog-parse');
 const _ = require('lodash');
 
 module.exports = async function onNodeCreate(
@@ -16,8 +16,6 @@ module.exports = async function onNodeCreate(
   if (node.internal.mediaType !== 'text/x-markdown') {
     return;
   }
-
-  console.log(node.children);
 
   const content = await loadNodeContent(node);
   const entries = changelogParser(content, pluginOptions.headerDepth || 2);
