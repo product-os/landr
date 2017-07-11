@@ -1,0 +1,17 @@
+{
+  "name": "readme-loader-example",
+  "version": "1.0.0",
+  "description": "loads a constiety of readmes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "webpack": "2.2.1"
+  }
+}
