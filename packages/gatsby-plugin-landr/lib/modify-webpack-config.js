@@ -1,9 +1,12 @@
 const path = require('path');
+const genBabelConfig = require('gatsby/dist/utils/babel-config');
 
 const modifyWebpackConfig = (gatsby, pluginOpts) => {
   let webpackConfig = gatsby.config;
   const stage = gatsby.stage;
+  const babelConfig = await genBabelConfig({ directory: pluginOpts.userDir }, stage);
 
+  // landr specific resolves
   webpackConfig.merge({
     module: {
       noParse: [
@@ -19,6 +22,24 @@ const modifyWebpackConfig = (gatsby, pluginOpts) => {
       ]
     }
   });
+
+  // remove default gatsby js loader
+  webpackConfig.removeLoader('js')
+
+  // landr specific js loader
+  webpackConfig.loader(`js`, {
+    test: /\.jsx?$/, // Accept either .js or .jsx files.
+    // exclude: /(node_modules|bower_components)/,
+    include: [
+      path.resolve(__dirname, "../www"),
+      /node_modules\/landr\/src/,
+      /node_modules\/landr\/.cache/,
+      path.resolve(pluginOpts.userDir, "www"),
+      path.resolve(pluginOpts.userDir, ".cache"),
+    ],
+    loader: `babel`,
+    query: babelConfig,
+  })
 
   return webpackConfig;
 };
