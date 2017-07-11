@@ -12,7 +12,7 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     _.values(store.getState().nodes).find(n => n.internal.type === `Repo`)
   );
 
-  var TEN_MINS = 10 * 60000;
+  const TEN_MINS = 10 * 60000;
 
   let status;
   if (
@@ -43,7 +43,8 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
 
   const repoMetaData = await Promise.all([
     github.repos.getReleases({ owner, repo }),
-    github.repos.getContributors({ owner, repo })
+    github.repos.getContributors({ owner, repo }),
+    github.repos.getCommits({ owner, repo })
   ]).catch(err => {
     console.log(err);
   });
@@ -51,7 +52,8 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
   const allData = {
     ...repoData,
     releases: repoMetaData[0].data,
-    contributors: repoMetaData[1].data
+    contributors: repoMetaData[1].data,
+    commits: repoMetaData[2].data
   };
 
   setPluginStatus({
