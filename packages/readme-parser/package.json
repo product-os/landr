@@ -1,11 +1,11 @@
 {
   "name": "readme-parser",
-  "version": "0.0.0-alpha.c2e09d90",
+  "version": "0.0.0-beta1.0",
   "author": "Craig Mulligan @craig-mulligan",
   "description": "README.md parser",
   "main": "dist/index.js",
   "dependencies": {
-    "md-parser-utils": "^0.0.0-alpha.c2e09d90"
+    "md-parser-utils": "^0.0.0-beta1.0"
   },
   "license": "MIT",
   "devDependencies": {

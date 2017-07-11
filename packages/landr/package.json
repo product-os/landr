@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "1.0.2-alpha.c2e09d90",
+  "version": "1.0.2-beta1.0",
   "description": "Source code = website",
   "homepage": "https://github.com/resin-io/landr",
   "repository": {
@@ -18,18 +18,17 @@
     "bluebird": "^3.5.0",
     "commander": "^2.9.0",
     "fs-extra": "3.0.1",
-    "fs-jetpack": "1.0.0",
-    "gatsby": "canary",
-    "gatsby-link": "next",
-    "gatsby-plugin-landr": "^0.0.0-alpha.c2e09d90",
-    "gatsby-plugin-postcss-sass": "next",
-    "gatsby-source-filesystem": "next",
-    "gatsby-source-github": "^0.0.0-alpha.c2e09d90",
-    "gatsby-transformer-changelog": "^0.0.0-alpha.c2e09d90",
-    "gatsby-transformer-readme": "^0.0.0-alpha.c2e09d90",
+    "gatsby": "^1.0.1",
+    "gatsby-link": "^1.0.1",
+    "gatsby-plugin-landr": "^0.0.0-beta1.0",
+    "gatsby-plugin-postcss-sass": "^1.0.1",
+    "gatsby-source-filesystem": "^1.0.1",
+    "gatsby-source-github": "^0.0.0-beta1.0",
+    "gatsby-transformer-changelog": "^0.0.0-beta1.0",
+    "gatsby-transformer-readme": "^0.0.0-beta1.0",
+    "gh-pages": "1.0.0",
     "gitinfo": "2.1.14",
     "lodash": "^4.17.4",
-    "slash": "1.0.0",
-    "gh-pages": "1.0.0"
+    "slash": "1.0.0"
   }
 }

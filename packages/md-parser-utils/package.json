@@ -1,6 +1,6 @@
 {
   "name": "md-parser-utils",
-  "version": "0.0.0-alpha.c2e09d90",
+  "version": "0.0.0-beta1.0",
   "author": "Craig Mulligan @craig-mulligan",
   "description": "parser utilities for markdown files",
   "main": "dist/index.js",
