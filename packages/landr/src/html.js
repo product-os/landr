@@ -1,37 +1,35 @@
-import React from 'react';
+import React from "react"
+import PropTypes from "prop-types"
 
-let stylesStr;
-if (process.env.NODE_ENV === 'production') {
-  try {
-    stylesStr = require('!raw-loader!../public/styles.css');
-  } catch (e) {
-    console.log(e);
+const BUILD_TIME = new Date().getTime()
+
+export default class HTML extends React.Component {
+  static propTypes = {
+    body: PropTypes.string,
   }
-}
 
-module.exports = React.createClass({
   render() {
-    let css;
-    if (process.env.NODE_ENV === `production`) {
+    let css
+    if (process.env.NODE_ENV === "production") {
       css = (
         <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
+          dangerouslySetInnerHTML={{
+            __html: require("!raw!../public/styles.css"),
+          }}
         />
-      );
+      )
     }
-    // TODO: Handle meta tags with helmet from layout component
+
     return (
-      <html op="news" lang="en">
+      <html lang="en">
         <head>
-          {this.props.headComponents}
-          <meta name="referrer" content="origin" />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          {this.props.headComponents}
           {css}
         </head>
         <body>
@@ -42,6 +40,6 @@ module.exports = React.createClass({
           {this.props.postBodyComponents}
         </body>
       </html>
-    );
+    )
   }
-});
+}

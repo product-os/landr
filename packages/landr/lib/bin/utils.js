@@ -2,9 +2,9 @@ const fs = require('fs-extra');
 
 exports.changeCWD = (directory) => {
   try {
-    return Promise.resolve(process.chdir(directory));
+    return process.chdir(directory);
   } catch (err) {
-    throw new Error(`chdir: ${err}`);
+    console.error(`chdir: ${err}`);
   }
 }
 

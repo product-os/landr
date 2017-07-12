@@ -7,15 +7,15 @@ const _ = require('lodash');
 const config = require('../config');
 const eject = require('../eject');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
-const CWD = process.cwd();
+const repoDir = process.cwd();
 const utils = require('./utils');
 const gitInfo = require('gitinfo')({
-  gitPath: CWD
+  gitPath: repoDir
 })
 gitInfo.getConfig();
 const defaultHost = 'localhost';
 const directory = path.resolve(`${__dirname}/../../`);
-const repoDir = CWD;
+utils.changeCWD(directory);
 program.version(packageJson.version).usage('[command] [options]');
 
 program
@@ -37,7 +37,6 @@ program
     Promise.each([
       utils.isGitRepo(),
       Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
-      utils.changeCWD(directory),
       develop(p)
     ], () => {})
     .catch(utils.handleError);
@@ -57,9 +56,11 @@ program
     Promise.each([
       utils.isGitRepo(),
       Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
-      utils.changeCWD(directory),
-      build(p)
+      build(p),
     ], () => {})
+    .then(() => {
+      process.exit()
+    })
     .catch(utils.handleError);
   });
 
@@ -74,13 +75,10 @@ program
   .option('-p, --port <port>', 'Set port. Defaults to 9000', '9000')
   .option('-o, --open', 'Open the site in your browser for you.')
   .action(command => {
+    utils.changeCWD(directory)
     const serve = require('gatsby/dist/utils/serve');
-    changeCWD(directory)
-    .then(() => {
-      const p = Object.assign(command, { directory });
-      serve(p)
-    })
-    .catch(utils.handleError);
+    const p = Object.assign(command, { directory });
+    serve(p)
   });
 
 program
@@ -97,11 +95,12 @@ program
     Promise.each([
       utils.isGitRepo(),
       Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
-      utils.changeCWD(directory),
       build(p),
-      ghpages.publishAsync(`${__dirname}/../public`),
-      process.exit()
+      ghpages.publishAsync(`${__dirname}/../../public`),
     ], () => {})
+    .then(() => {
+      process.exit()
+    })
     .catch(utils.handleError);
   });
 

@@ -12,6 +12,13 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     _.values(store.getState().nodes).find(n => n.internal.type === `Repo`)
   );
 
+  if (process.env.GH_TOKEN) {
+    github.authenticate({
+      type: 'token',
+      token: process.env.GH_TOKEN,
+    });
+  }
+
   const TEN_MINS = 10 * 60000;
 
   let status;
