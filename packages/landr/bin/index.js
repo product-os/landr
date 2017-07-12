@@ -13,6 +13,15 @@ const gitInfo = require('gitinfo')({
   gitPath: CWD
 });
 
+const changeCWD = (directory) => {
+  try {
+    process.chdir(directory);
+    console.log(`New directory: ${process.cwd()}`);
+  } catch (err) {
+    console.error(`chdir: ${err}`);
+  }
+}
+
 const handleError = err => {
   console.log('Oops, something when wrong :(', err);
 };

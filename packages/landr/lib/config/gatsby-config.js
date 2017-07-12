@@ -6,38 +6,38 @@ module.exports = (userDir, gitInfo) => {
   module.exports = {
     plugins: [
       {
-        resolve: '${nodeModulesPath}/gatsby-source-github',
+        resolve: 'gatsby-source-github',
         options: {
           owner: '${gitInfo.getUsername()}',
           repo: '${gitInfo.getName()}',
         },
       },
       {
-        resolve: '${nodeModulesPath}/gatsby-source-filesystem',
+        resolve: 'gatsby-source-filesystem',
         options: {
           name: 'readme',
           path: '${userDir}/README.md',
         },
       },
-      '${nodeModulesPath}/gatsby-plugin-postcss-sass',
+      'gatsby-plugin-postcss-sass',
       {
-        resolve: '${nodeModulesPath}/gatsby-transformer-readme',
+        resolve: 'gatsby-transformer-readme',
       },
       {
-        resolve: '${nodeModulesPath}/gatsby-source-filesystem',
+        resolve: 'gatsby-source-filesystem',
         options: {
           name: 'changelog',
           path: '${userDir}/CHANGELOG.md',
         },
       },
       {
-        resolve: '${nodeModulesPath}/gatsby-transformer-changelog',
+        resolve: 'gatsby-transformer-changelog',
         options: {
           headerDepth: 2
         },
       },
       {
-        resolve: '${nodeModulesPath}/gatsby-plugin-landr',
+        resolve: 'gatsby-plugin-landr',
         options: {
           userDir: '${userDir}'
         },

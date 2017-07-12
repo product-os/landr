@@ -31,7 +31,7 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
     test: /\.jsx?$/, // Accept either .js or .jsx files.
     include: [
       path.resolve(__dirname, '../www'),
-      path.resolve(__dirname, '../../landr/www'),
+      path.resolve(__dirname, '../../landr/src'),
       path.resolve(__dirname, '../../landr/.cache'),
       /node_modules\/landr\/www/,
       /node_modules\/landr\/.cache/,
