@@ -4,7 +4,7 @@ const genBabelConfig = require('gatsby/dist/utils/babel-config');
 const modifyWebpackConfig = async (gatsby, pluginOpts) => {
   let webpackConfig = gatsby.config;
   const stage = gatsby.stage;
-  const babelConfig = await genBabelConfig({ directory: pluginOpts.userDir }, stage);
+  const babelConfig = await genBabelConfig({ directory: pluginOpts.repoDir }, stage);
 
   // landr specific resolves
   webpackConfig.merge({
@@ -15,9 +15,9 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
     },
     resolve: {
       modulesDirectories: [
-        path.resolve(`${pluginOpts.userDir}`),
+        path.resolve(`${pluginOpts.repoDir}`),
         path.resolve(`${__dirname}/../`),
-        path.resolve(`${pluginOpts.userDir}/node_modules`),
+        path.resolve(`${pluginOpts.repoDir}/node_modules`),
         path.resolve(`${__dirname}/../node_modules`)
       ]
     }
@@ -35,8 +35,8 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
       path.resolve(__dirname, '../../landr/.cache'),
       /node_modules\/landr\/www/,
       /node_modules\/landr\/.cache/,
-      path.resolve(pluginOpts.userDir, 'www'),
-      path.resolve(pluginOpts.userDir, '.cache'),
+      path.resolve(pluginOpts.repoDir, 'www'),
+      path.resolve(pluginOpts.repoDir, '.cache'),
     ],
     loader: `babel`,
     query: babelConfig,

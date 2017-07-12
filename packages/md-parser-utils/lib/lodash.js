@@ -20,7 +20,6 @@ _.mixin({
     }),
   getUrl: val => {
     if (val) {
-      console.log(val);
       return val.match(regex.href)[0];
     }
     return null;
