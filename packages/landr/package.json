@@ -8,7 +8,7 @@
     "url": "git@github.com:resin-io/landr.git"
   },
   "bin": {
-    "landr": "./bin/index.js"
+    "landr": "./dist/bin/index.js"
   },
   "scripts": {
     "build": "babel lib --out-dir dist",
@@ -26,6 +26,7 @@
     "gatsby-source-github": "^0.0.0-alpha.c2e09d90",
     "gatsby-transformer-changelog": "^0.0.0-alpha.c2e09d90",
     "gatsby-transformer-readme": "^0.0.0-alpha.c2e09d90",
+    "gh-pages": "1.0.0",
     "gitinfo": "2.1.14",
     "lodash": "^4.17.4",
     "slash": "1.0.0"

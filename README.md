@@ -15,7 +15,7 @@ This allows the maintenance of your website to be a side effect of keeping your 
 
 Install:
 ```
-npm i -g landr
+npm i -g landr@canary
 ```
 
 From the root of your local git repo run:
