@@ -72,6 +72,7 @@ program
     const develop = require('gatsby/dist/utils/develop');
     Promise.all(writeConfigFiles)
       .then(() => {
+        changeCWD(directory);
         const p = Object.assign(command, { directory });
         develop(p);
       })
@@ -87,10 +88,10 @@ program
   )
   .action(command => {
     process.env.NODE_ENV = 'production';
-
     const build = require('gatsby/dist/utils/build');
     Promise.all(writeConfigFiles)
       .then(() => {
+        changeCWD(directory);
         const p = Object.assign(command, { directory });
         return build(p);
       })
@@ -114,7 +115,8 @@ program
   .action(command => {
     const serve = require('gatsby/dist/utils/serve');
     const p = Object.assign(command, { directory });
-    serve(p).catch(handleError);
+    changeCWD(directory);
+    serve(p);
   });
 
 program
@@ -150,7 +152,6 @@ program
       name = command.component;
     }
 
-    console.log(eject['style']);
     eject[type](userDirectory, name).then(() => {
       console.log('Done!');
     });
@@ -158,13 +159,11 @@ program
 
 program
   .command('deploy')
-  .description('Serve built site.')
+  .description('Deploy built site to gh-pages')
   .option(
     '--prefix-paths',
     'Build site with link paths prefixed (set prefix in your config).'
   )
-  .option('-p, --port <port>', 'Set port. Defaults to 9000', '9000')
-  .option('-o, --open', 'Open the site in your browser for you.')
   .action(command => {
     process.env.NODE_ENV = 'production';
 
@@ -172,6 +171,7 @@ program
     Promise.all(writeConfigFiles)
       .then(() => {
         const p = Object.assign(command, { directory });
+        changeCWD(directory);
         return build(p);
       })
       .then(() => {

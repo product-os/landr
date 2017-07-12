@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default ({ title, content, children, ...props }) => {
-  console.log(children)
   return (
     <div {...props}>
       <div className="container py-2">

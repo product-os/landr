@@ -2,7 +2,6 @@ import React from 'react';
 import { Media } from 'reactstrap';
 
 export default ({ contributor }) => {
-  console.log(contributor)
   return (
     <Media>
       <Media className="pr-2 py-2" left href={contributor.followers_url}>
