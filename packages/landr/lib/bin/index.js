@@ -13,7 +13,6 @@ const fs = require('fs-extra');
 const gitInfo = require('gitinfo')({
   gitPath: repoDir
 })
-const link = require('fs-symlink')
 gitInfo.getConfig();
 const defaultHost = 'localhost';
 
