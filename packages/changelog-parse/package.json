@@ -1,11 +1,11 @@
 {
   "name": "changelog-parse",
-  "version": "0.0.0-beta1.0",
+  "version": "0.0.0-beta1.1",
   "author": "Craig Mulligan @craig-mulligan",
   "description": "CHANGELOG.md parser",
   "main": "dist/index.js",
   "dependencies": {
-    "md-parser-utils": "^0.0.0-alpha.c2e09d90-alpha.bc633cb7-alpha.bc633cb7"
+    "md-parser-utils": "^0.0.0-beta1.1"
   },
   "license": "MIT",
   "scripts": {

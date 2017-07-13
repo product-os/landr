@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-landr",
-  "version": "0.0.0-beta2.0",
+  "version": "0.0.0-beta2.1",
   "description": "collection of landr react-components",
   "main": "index.js",
   "scripts": {
