@@ -3,7 +3,7 @@ const _ = require('lodash');
 const fs = require('fs-extra');
 
 const resinComponentsDir = path.resolve(
-  `${__dirname}/../../node_modules/landr-components/`
+`${__dirname}/../../node_modules/gatsby-plugin-landr/`
 );
 
 const ejectFile = (userDirectory, file, type) => {
