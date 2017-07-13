@@ -9,13 +9,22 @@ const eject = require('../eject');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
 const repoDir = process.cwd();
 const utils = require('./utils');
+const fs = require('fs-extra');
 const gitInfo = require('gitinfo')({
   gitPath: repoDir
 })
+const link = require('fs-symlink')
 gitInfo.getConfig();
 const defaultHost = 'localhost';
-const directory = path.resolve(`${__dirname}/../../`);
-utils.changeCWD(directory);
+
+// setup site build dir
+const directory = `/tmp/landr/${gitInfo.getUsername()}/${gitInfo.getName()}`
+fs.ensureDir(directory)
+.then(fs.copy(`${__dirname}/../../src`, `${directory}/src`))
+.then(fs.ensureDir(`${directory}/node_modules`))
+.then(utils.changeCWD(directory))
+.catch(utils.handleError);
+
 program.version(packageJson.version).usage('[command] [options]');
 
 program
@@ -36,7 +45,7 @@ program
     const p = Object.assign(command, { directory });
     Promise.each([
       utils.isGitRepo(),
-      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
+      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo, directory)),
       develop(p)
     ], () => {})
     .catch(utils.handleError);
@@ -55,7 +64,7 @@ program
     const p = Object.assign(command, { directory });
     Promise.each([
       utils.isGitRepo(),
-      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
+      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo, directory)),
       build(p),
     ], () => {})
     .then(() => {
@@ -75,7 +84,6 @@ program
   .option('-p, --port <port>', 'Set port. Defaults to 9000', '9000')
   .option('-o, --open', 'Open the site in your browser for you.')
   .action(command => {
-    utils.changeCWD(directory)
     const serve = require('gatsby/dist/utils/serve');
     const p = Object.assign(command, { directory });
     serve(p)
@@ -96,7 +104,7 @@ program
       utils.isGitRepo(),
       Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
       build(p),
-      ghpages.publishAsync(`${__dirname}/../../public`),
+      ghpages.publishAsync(`${directory}/public`),
     ], () => {})
     .then(() => {
       process.exit()

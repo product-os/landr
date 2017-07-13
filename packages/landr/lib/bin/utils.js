@@ -1,4 +1,5 @@
 const fs = require('fs-extra');
+const path = require('path')
 
 exports.changeCWD = (directory) => {
   try {
@@ -20,11 +21,11 @@ exports.handleError = err => {
   process.exit(1)
 };
 
-exports.writeConfigFiles = (config, repoDir, gitInfo) => {
+exports.writeConfigFiles = (config, repoDir, gitInfo, dest) => {
   return Object.keys(config).map(file => {
     return fs.outputFile(
-      `${__dirname}/../../${file}`,
-      config[file](repoDir, gitInfo)
+      `${dest}/${file}`,
+      config[file](repoDir, path.resolve(`${__dirname}/../../`), gitInfo)
     );
   });
 };
