@@ -15,7 +15,7 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
   if (process.env.GH_TOKEN) {
     github.authenticate({
       type: 'token',
-      token: process.env.GH_TOKEN,
+      token: process.env.GH_TOKEN
     });
   }
 
@@ -34,10 +34,11 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     status &&
     Date.now() - TEN_MINS < status.lastFetched &&
     status.repo === repo &&
-    status.owner === owner
+    status.owner === owner &&
+    !process.env.GH_TOKEN
   ) {
     console.warn(
-    `
+      `
     *****************************
     NOT FETCHING NEW GITHUB DATA
     *****************************

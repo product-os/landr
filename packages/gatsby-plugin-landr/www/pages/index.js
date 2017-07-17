@@ -30,11 +30,16 @@ query index {
     description
     forks_count
     stargazers_count
+    releases {
+      id
+      tag_name
+      html_url
+    }
     contributors {
       avatar_url
       login
       contributions
-      followers_url
+      html_url
     }
   }
   readme {

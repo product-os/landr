@@ -12,17 +12,18 @@ const utils = require('./utils');
 const fs = require('fs-extra');
 const gitInfo = require('gitinfo')({
   gitPath: repoDir
-})
+});
 gitInfo.getConfig();
 const defaultHost = 'localhost';
 
 // setup site build dir
-const directory = `/tmp/landr/${gitInfo.getUsername()}/${gitInfo.getName()}`
-fs.ensureDir(directory)
-.then(fs.copy(`${__dirname}/../../src`, `${directory}/src`))
-.then(fs.ensureDir(`${directory}/node_modules`))
-.then(utils.changeCWD(directory))
-.catch(utils.handleError);
+const directory = `/tmp/landr/${gitInfo.getUsername()}/${gitInfo.getName()}`;
+fs
+  .ensureDir(directory)
+  .then(fs.copy(`${__dirname}/../../src`, `${directory}/src`))
+  .then(fs.ensureDir(`${directory}/node_modules`))
+  .then(utils.changeCWD(directory))
+  .catch(utils.handleError);
 
 program.version(packageJson.version).usage('[command] [options]');
 
@@ -42,12 +43,16 @@ program
   .action(command => {
     const develop = require('gatsby/dist/utils/develop');
     const p = Object.assign(command, { directory });
-    Promise.each([
-      utils.isGitRepo(),
-      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo, directory)),
-      develop(p)
-    ], () => {})
-    .catch(utils.handleError);
+    Promise.each(
+      [
+        utils.isGitRepo(),
+        Promise.all(
+          utils.writeConfigFiles(config, repoDir, gitInfo, directory)
+        ),
+        develop(p)
+      ],
+      () => {}
+    ).catch(utils.handleError);
   });
 
 program
@@ -61,15 +66,20 @@ program
     process.env.NODE_ENV = 'production';
     const build = require('gatsby/dist/utils/build');
     const p = Object.assign(command, { directory });
-    Promise.each([
-      utils.isGitRepo(),
-      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo, directory)),
-      build(p),
-    ], () => {})
-    .then(() => {
-      process.exit()
-    })
-    .catch(utils.handleError);
+    Promise.each(
+      [
+        utils.isGitRepo(),
+        Promise.all(
+          utils.writeConfigFiles(config, repoDir, gitInfo, directory)
+        ),
+        build(p)
+      ],
+      () => {}
+    )
+      .then(() => {
+        process.exit();
+      })
+      .catch(utils.handleError);
   });
 
 program
@@ -85,7 +95,7 @@ program
   .action(command => {
     const serve = require('gatsby/dist/utils/serve');
     const p = Object.assign(command, { directory });
-    serve(p)
+    serve(p);
   });
 
 program
@@ -99,16 +109,23 @@ program
     process.env.NODE_ENV = 'production';
     const build = require('gatsby/dist/utils/build');
     const p = Object.assign(command, { directory });
-    Promise.each([
-      utils.isGitRepo(),
-      Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
-      build(p),
-      ghpages.publishAsync(`${directory}/public`),
-    ], () => {})
-    .then(() => {
-      process.exit()
-    })
-    .catch(utils.handleError);
+    Promise.each(
+      [
+        utils.isGitRepo(),
+        Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
+        build(p),
+        ghpages.publishAsync(`${__dirname}/../../public`, {
+          message: 'Deployed by landr 🏠',
+          branch: 'gh-pages',
+          repo: `https://github.com/${gitInfo.getUsername()}/${gitInfo.getName()}.git`
+        })
+      ],
+      () => {}
+    )
+      .then(() => {
+        process.exit();
+      })
+      .catch(utils.handleError);
   });
 
 program
@@ -148,15 +165,14 @@ program
     });
   });
 
-program
-  .on('--help', () => {
-    console.log(
-      `To show subcommand help:
+program.on('--help', () => {
+  console.log(
+    `To show subcommand help:
 
       landr [command] -h
       `
-    );
-  });
+  );
+});
 
 // If the user types an unknown sub-command, just display the help.
 const subCmd = process.argv.slice(2, 3)[0];
@@ -170,5 +186,5 @@ if (!_.includes(cmds, subCmd)) {
 }
 
 process.on('unhandledRejection', err => {
-  utils.handleError(err)
+  utils.handleError(err);
 });

@@ -4,14 +4,15 @@ const genBabelConfig = require('gatsby/dist/utils/babel-config');
 const modifyWebpackConfig = async (gatsby, pluginOpts) => {
   let webpackConfig = gatsby.config;
   const stage = gatsby.stage;
-  const babelConfig = await genBabelConfig({ directory: pluginOpts.repoDir }, stage);
+  const babelConfig = await genBabelConfig(
+    { directory: pluginOpts.repoDir },
+    stage
+  );
 
   // landr specific resolves
   webpackConfig.merge({
     module: {
-      noParse: [
-        /node_modules\/reactstrap-tether\/dist\/js\/tether.js/
-      ]
+      noParse: [/node_modules\/reactstrap-tether\/dist\/js\/tether.js/]
     },
     resolve: {
       modulesDirectories: [
@@ -24,13 +25,13 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
       ]
     },
     resolveLoader: {
-      root: [path.resolve(pluginOpts.landrDir, `node_modules`)],
+      root: [path.resolve(pluginOpts.landrDir, `node_modules`)]
       // modulesDirectories: [path.resolve(pluginOpts.landrDir, `node_modules`)]
     }
   });
 
   // remove default gatsby js loader
-  webpackConfig.removeLoader('js')
+  webpackConfig.removeLoader('js');
   // landr specific js loader
   webpackConfig.loader('js', {
     test: /\.jsx?$/, // Accept either .js or .jsx files.
@@ -42,11 +43,11 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
       /node_modules\/landr\/.cache/,
       path.resolve(pluginOpts.repoDir, 'www'),
       path.resolve(process.cwd(), '.cache'),
-      path.resolve(process.cwd(), 'src'),
+      path.resolve(process.cwd(), 'src')
     ],
     loader: `babel`,
-    query: babelConfig,
-  })
+    query: babelConfig
+  });
 
   return webpackConfig;
 };

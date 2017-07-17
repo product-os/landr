@@ -1,13 +1,13 @@
 const fs = require('fs-extra');
-const path = require('path')
+const path = require('path');
 
-exports.changeCWD = (directory) => {
+exports.changeCWD = directory => {
   try {
     return process.chdir(directory);
   } catch (err) {
     console.error(`chdir: ${err}`);
   }
-}
+};
 
 exports.isGitRepo = dirPath => {
   if (!fs.exists(`${dirPath}/.git`)) {
@@ -18,7 +18,7 @@ exports.isGitRepo = dirPath => {
 
 exports.handleError = err => {
   console.error('Oops, something when wrong :(', err);
-  process.exit(1)
+  process.exit(1);
 };
 
 exports.writeConfigFiles = (config, repoDir, gitInfo, dest) => {
