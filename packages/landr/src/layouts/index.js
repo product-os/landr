@@ -27,7 +27,6 @@ class Layout extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         <Navbar color="faded" light toggleable>
@@ -48,11 +47,3 @@ class Layout extends React.Component {
 }
 
 export default Layout;
-
-export const pageQuery = graphql`
-query layout {
-  repo {
-    name
-    description
-  }
-}`
