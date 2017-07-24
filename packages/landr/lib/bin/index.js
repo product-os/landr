@@ -11,7 +11,8 @@ const repoDir = process.cwd();
 const utils = require('./utils');
 const fs = require('fs-extra');
 const gitInfo = require('gitinfo')({
-  gitPath: repoDir
+  gitPath: repoDir,
+  defaultBranchName: 'master'
 });
 gitInfo.getConfig();
 const defaultHost = 'localhost';
@@ -117,7 +118,7 @@ program
         ghpages.publishAsync(`${__dirname}/../../public`, {
           message: 'Deployed by landr 🏠',
           branch: 'gh-pages',
-          repo: `https://github.com/${gitInfo.getUsername()}/${gitInfo.getName()}.git`
+          repo: gitInfo.getGithubUrl()
         })
       ],
       () => {}
