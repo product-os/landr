@@ -22,6 +22,7 @@ const createPages = ({ graphql, boundActionCreators }, pluginOptions) => {
 
       createPage({
         path: routeName,
+        layout: 'index',
         component: slash(pagePath)
       });
     });
