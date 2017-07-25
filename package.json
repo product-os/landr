@@ -8,12 +8,12 @@
     "url": "git@github.com:resin-io/landr.git"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "start": "yarn run bootstrap && yarn run watch",
+    "start": "yarn run watch",
     "watch": "lerna run --parallel watch",
     "build": "lerna run --parallel build",
     "publish": "lerna publish --skip-git --ignore landr",
     "deploy": "lerna run deploy --scope landr",
+    "post_install": "lerna bootstrap",
     "prettier": "prettier --single-quote --write \"packages/*/{index.js,+(lib|bin)/**/*.js}\""
   },
   "devDependencies": {
