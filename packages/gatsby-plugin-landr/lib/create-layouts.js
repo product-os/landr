@@ -8,15 +8,17 @@ const createLayouts = ({ graphql, boundActionCreators }, pluginOptions) => {
 
   return fs.readdirAsync(`${__dirname}/../www/layouts`).then(files => {
     return files.forEach(file => {
-      let pagePath = path.resolve(`${__dirname}/../www/layouts/${file}`);
+      let layoutPath = path.resolve(`${__dirname}/../www/layouts/${file}`);
 
       if (fs.existsSync(`${pluginOptions.repoDir}/www/layouts/${file}`)) {
-        pagePath = path.resolve(`${pluginOptions.repoDir}/www/layouts/${file}`);
+        layoutPath = path.resolve(
+          `${pluginOptions.repoDir}/www/layouts/${file}`
+        );
       }
 
       createLayout({
         id: path.parse(file).name,
-        component: slash(pagePath)
+        component: slash(layoutPath)
       });
     });
   });

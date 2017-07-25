@@ -122,12 +122,12 @@ program
   .command('eject')
   .description('Eject a page, component or global styles')
   .action(async command => {
-    const choices = ['page', 'style', 'component'];
+    const choices = ['page', 'style', 'component', 'layout'];
 
     const { ejectType } = await inquirer.prompt({
       type: 'list',
       name: 'ejectType',
-      message: 'What do you want to eject?',
+      message: 'What would you like to eject?',
       choices: choices
     });
 
