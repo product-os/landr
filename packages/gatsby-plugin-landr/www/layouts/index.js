@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 import 'www/styles/index.scss';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -27,9 +28,23 @@ class Layout extends React.Component {
   }
 
   render() {
-    console.log(this.props.data);
+    const { data, location } = this.props;
     return (
       <div>
+        <Helmet
+          defaultTitle={`${data.repo.name} - ${this.props.location.pathname.substring(1)}`}
+          titleTemplate={`%s | ${data.repo.name}`}
+          meta={[
+            {
+              name: 'og:type',
+              content: 'website',
+            },
+            {
+              name: 'og:site_name',
+              content: data.repo.name,
+            },
+          ]}
+        />
         <Navbar color="faded" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
           <Link className="navbar-brand" to="/" />
@@ -54,8 +69,6 @@ query layoutDefault {
   repo {
     name
     description
-    forks_count
-    stargazers_count
   }
 }
 `;
