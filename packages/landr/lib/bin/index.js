@@ -5,11 +5,13 @@ const packageJson = require('../../package.json');
 const path = require('path');
 const _ = require('lodash');
 const config = require('../config');
-const eject = require('../eject');
+const { ejectFile, getOpts } = require('../eject');
 const ghpages = Promise.promisifyAll(require('gh-pages'));
 const repoDir = process.cwd();
 const utils = require('./utils');
 const fs = require('fs-extra');
+const inquirer = require('inquirer');
+
 const gitInfo = require('gitinfo')({
   gitPath: repoDir,
   defaultBranchName: 'master'
@@ -41,19 +43,16 @@ program
   )
   .option('-p, --port <port>', 'Set port. Defaults to 8000', '8000')
   .option('-o, --open', 'Open the site in your browser for you.')
-  .action(command => {
+  .action(async command => {
     const develop = require('gatsby/dist/utils/develop');
-    const p = Object.assign(command, { directory });
-    Promise.each(
-      [
-        utils.isGitRepo(),
-        Promise.all(
-          utils.writeConfigFiles(config, repoDir, gitInfo, directory)
-        ),
-        develop(p)
-      ],
-      () => {}
-    ).catch(utils.handleError);
+    try {
+      const p = Object.assign(command, { directory });
+      await utils.isGitRepo();
+      await utils.writeConfigFiles(config, repoDir, gitInfo, directory);
+      await develop(p);
+    } catch (e) {
+      utils.handleError(e);
+    }
   });
 
 program
@@ -63,24 +62,18 @@ program
     '--prefix-paths',
     'Build site with link paths prefixed (set prefix in your config).'
   )
-  .action(command => {
+  .action(async command => {
     process.env.NODE_ENV = 'production';
     const build = require('gatsby/dist/utils/build');
     const p = Object.assign(command, { directory });
-    Promise.each(
-      [
-        utils.isGitRepo(),
-        Promise.all(
-          utils.writeConfigFiles(config, repoDir, gitInfo, directory)
-        ),
-        build(p)
-      ],
-      () => {}
-    )
-      .then(() => {
-        process.exit();
-      })
-      .catch(utils.handleError);
+    try {
+      const p = Object.assign(command, { directory });
+      await utils.isGitRepo();
+      await utils.writeConfigFiles(config, repoDir, gitInfo, directory);
+      await build(p);
+    } catch (e) {
+      utils.handleError(e);
+    }
   });
 
 program
@@ -106,64 +99,48 @@ program
     '--prefix-paths',
     'Build site with link paths prefixed (set prefix in your config).'
   )
-  .action(command => {
+  .action(async command => {
     process.env.NODE_ENV = 'production';
     const build = require('gatsby/dist/utils/build');
     const p = Object.assign(command, { directory });
-    Promise.each(
-      [
-        utils.isGitRepo(),
-        Promise.all(utils.writeConfigFiles(config, repoDir, gitInfo)),
-        build(p),
-        ghpages.publishAsync(`${__dirname}/../../public`, {
-          message: 'Deployed by landr 🏠',
-          branch: 'gh-pages',
-          repo: gitInfo.getGithubUrl()
-        })
-      ],
-      () => {}
-    )
-      .then(() => {
-        process.exit();
-      })
-      .catch(utils.handleError);
+    try {
+      const p = Object.assign(command, { directory });
+      await utils.isGitRepo();
+      await utils.writeConfigFiles(config, repoDir, gitInfo, directory);
+      await build(p);
+      await ghpages.publishAsync(`${__dirname}/../../public`, {
+        message: 'Deployed by landr 🏠',
+        branch: 'gh-pages',
+        repo: gitInfo.getGithubUrl()
+      });
+    } catch (e) {
+      utils.handleError(e);
+    }
   });
 
 program
   .command('eject')
   .description('Eject a page, component or global styles')
-  .option(
-    '-c, --component <name>',
-    'Eject a single component. Will write to <rootDir>/www/component/<name>.js'
-  )
-  .option(
-    '-s, --style',
-    'Eject a global styles. Will write to <rootDir>/www/styles/index.scss'
-  )
-  .option(
-    '-p, --page <name>',
-    'Eject a page. Will write to <rootDir>/www/pages/<name>.js'
-  )
-  .action(command => {
-    let type;
-    let name;
-    if (command.page) {
-      type = 'page';
-      name = command.page;
-    }
+  .action(async command => {
+    const choices = ['page', 'style', 'component'];
 
-    if (command.style) {
-      (type = 'style'), (name = 'index');
-    }
-
-    if (command.component) {
-      type = 'component';
-      name = command.component;
-    }
-
-    eject[type](repoDir, name).then(() => {
-      console.log('Done!');
+    const { ejectType } = await inquirer.prompt({
+      type: 'list',
+      name: 'ejectType',
+      message: 'What do you want to eject?',
+      choices: choices
     });
+
+    const opts = await getOpts(ejectType);
+
+    const { file } = await inquirer.prompt({
+      type: 'list',
+      name: 'file',
+      message: `Select a ${ejectType}`,
+      choices: opts
+    });
+
+    await ejectFile(repoDir, ejectType, file);
   });
 
 program.on('--help', () => {
