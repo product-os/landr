@@ -13,7 +13,6 @@ module.exports = async function onNodeCreate({
 
   if (node.name !== 'README') {
     return;
-    // console.log(JSON.stringify(node, null, 2));
   }
 
   // We only care about markdown content
