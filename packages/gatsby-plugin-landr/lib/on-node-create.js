@@ -1,26 +1,31 @@
 const path = require('path');
 
 module.exports = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
-  let slug
-  if (
-    node.internal.type === `MarkdownRemark`
-  ) {
-    const fileNode = getNode(node.parent)
+  // Create a slug field for every markdown page created.
+  const { createNodeField } = boundActionCreators;
+  let slug;
+  if (node.internal.type === 'MarkdownRemark') {
+    const fileNode = getNode(node.parent);
     if (fileNode.internal.type !== 'File') {
       return;
     }
-    // console.log(fileNode)
-    const parsedFilePath = path.parse(fileNode.relativePath)
-    if (parsedFilePath.name !== `index` && parsedFilePath.dir !== ``) {
-      slug = `/docs/${parsedFilePath.dir}/${parsedFilePath.name}/`
-    } else if (parsedFilePath.dir === ``) {
-      slug = `/docs/${parsedFilePath.name}/`
-    } else {
-      slug = `/docs/${parsedFilePath.dir}/`
+    const parsedFilePath = path.parse(fileNode.relativePath);
+    if (!parsedFilePath.name) {
+      return;
     }
+    const checkForIndex = fileName => {
+      if (fileName === 'index') {
+        return '';
+      } else {
+        return fileName;
+      }
+    };
+
+    const slug = `/docs/${parsedFilePath.dir}/${checkForIndex(
+      parsedFilePath.name
+    )}`.replace('//', '/');
 
     // Add slug as a field on the node.
-    createNodeField({ node, name: `slug`, value: slug })
+    createNodeField({ node, name: `slug`, value: slug.replace() });
   }
-}
+};

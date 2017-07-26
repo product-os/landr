@@ -2,48 +2,92 @@ const path = require('path');
 const Promise = require('bluebird');
 const slash = require('slash');
 const fs = Promise.promisifyAll(require('fs'));
+const _ = require('lodash');
 
-const getCorrectPath = (repoDir) => {
-    return (file) => {
-      let p = path.resolve(`${__dirname}/../www/${file}`);
+const getCorrectPath = repoDir => {
+  return file => {
+    let p = path.resolve(`${__dirname}/../www/${file}`);
 
-      if (fs.existsSync(`${repoDir}/www/${file}`)) {
-        prom = path.resolve(`${repoDir}/www/${file}`);
-      }
-      return p;
+    if (fs.existsSync(`${repoDir}/www/${file}`)) {
+      prom = path.resolve(`${repoDir}/www/${file}`);
     }
-}
+    return p;
+  };
+};
 
-const createPages = ({ graphql, boundActionCreators }, pluginOptions) => {
-  const { createPage } = boundActionCreators;
+const createPages = (
+  { graphql, boundActionCreators, store },
+  pluginOptions
+) => {
+  const { createPage, createNodeField } = boundActionCreators;
 
-  const standardPages = fs.readdirAsync(`${__dirname}/../www/pages`).then(files => {
-    return files.forEach(file => {
-      const pagePath = getCorrectPath(pluginOptions.repoDir)(`pages/${file}`);
+  const standardPages = fs
+    .readdirAsync(`${__dirname}/../www/pages`)
+    .then(files => {
+      return files.forEach(file => {
+        const pagePath = getCorrectPath(pluginOptions.repoDir)(`pages/${file}`);
 
-      // todo this doesn't take child folders into account.
-      let routeName = path.parse(file).name;
-      if (file === 'index.js') {
-        routeName = '/';
-      }
+        // todo this doesn't take child folders into account.
+        let routeName = path.parse(file).name;
+        if (file === 'index.js') {
+          routeName = '/';
+        }
 
-      createPage({
-        path: routeName,
-        layout: 'index',
-        component: slash(pagePath)
+        createPage({
+          path: routeName,
+          layout: 'index',
+          component: slash(pagePath),
+          context: {
+            title: _.startCase(path.parse(file).name)
+          }
+        });
       });
     });
-  });
 
   const docsPages = graphql(
-  `
-    {
-      allMarkdownRemark(
-        limit: 1000
-        filter: {
-          fileAbsolutePath: { regex: "/docs/" }
+    `
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              id
+              fileAbsolutePath
+              fields {
+                slug
+              }
+            }
+          }
         }
-      ) {
+      }
+    `
+  )
+    .then(result => {
+      if (result.errors) {
+        return Promise.reject(result.errors);
+      }
+
+      const index = result.data.allMarkdownRemark.edges.find(edge => {
+        return edge.node.fields && edge.node.fields.slug === '/docs/';
+      });
+      if (index) {
+        return;
+      }
+
+      const readme = result.data.allMarkdownRemark.edges.find(edge => {
+        return _.includes(edge.node.fileAbsolutePath, 'README');
+      });
+
+      const node = store.getState().nodes[readme.node.id];
+      if (node) {
+        createNodeField({ node, name: `slug`, value: '/docs/' });
+      }
+    })
+    .then(() =>
+      graphql(
+        // TODO filter by slug
+        `
+    {
+      allMarkdownRemark {
         edges {
           node {
             fileAbsolutePath
@@ -55,30 +99,43 @@ const createPages = ({ graphql, boundActionCreators }, pluginOptions) => {
       }
     }
   `
-  ).then(result => {
-    if (result.errors) {
-      console.log(result.errors)
-    }
+      )
+    )
+    .then(result => {
+      if (result.errors) {
+        return Promise.reject(result.errors);
+      }
 
-    const getRouteName = (fileAbsolutePath) => {
-      const pathSplit = fileAbsolutePath.split(path.sep);
-      const docsIndex = pathSplit.findIndex((p) => p === 'docs');
-      return pathSplit.splice(docsIndex).join('/');
-    }
+      const getTitle = node => {
+        try {
+          return node.frontmatter.title;
+        } catch (e) {
+          return _.startCase(path.parse(node.fileAbsolutePath).name);
+        }
+      };
 
-    // Create blog posts pages.
-    result.data.allMarkdownRemark.edges.forEach(edge => {
-      createPage({
-        path: edge.node.fields.slug, // required
-        component: getCorrectPath(pluginOptions.repoDir)(`templates/docs.js`),
-        context: {
-          slug: edge.node.fields.slug,
-        },
-      })
+      // Create docs pages.
+      result.data.allMarkdownRemark.edges.forEach(edge => {
+        if (
+          !edge.node.fields ||
+          edge.node.fields.slug.slice(0, 6) !== '/docs/'
+        ) {
+          return;
+        }
+        createPage({
+          path: edge.node.fields.slug, // required
+          layout: 'docs',
+          component: getCorrectPath(pluginOptions.repoDir)(`templates/docs.js`),
+          context: {
+            title: getTitle(edge.node),
+            slug: edge.node.fields.slug
+          }
+        });
+      });
     })
-  });
+    .catch(e => console.warn(e));
 
-  return Promise.all([standardPages]);
+  return Promise.all([standardPages, docsPages]);
 };
 
 module.exports = createPages;

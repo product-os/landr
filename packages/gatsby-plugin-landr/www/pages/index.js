@@ -9,13 +9,14 @@ class Index extends React.Component {
     const { readme, repo } = this.props.data;
     return (
       <div>
-        <Jumbotron
-          repo={repo}
-        />
+        <Jumbotron repo={repo} />
         <Stats repo={repo} />
-        <Section className="bg-inverse text-white py-5" {...readme.installation} />
+        <Section
+          className="bg-inverse text-white py-5"
+          {...readme.installation}
+        />
         <Section {...readme.features} />
-        <Contributors contributors={repo.contributors}/>
+        <Contributors contributors={repo.contributors} />
       </div>
     );
   }

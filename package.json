@@ -14,7 +14,7 @@
     "publish": "lerna publish --skip-git --ignore landr",
     "deploy": "lerna run deploy --scope landr",
     "post_install": "lerna bootstrap",
-    "prettier": "prettier --single-quote --write \"packages/*/{index.js,+(lib|bin)/**/*.js}\""
+    "prettier": "prettier --single-quote --write \"packages/*/{index.js,+(lib|bin|www)/**/*.js}\""
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -24,5 +24,8 @@
     "lerna": "^2.0.0-rc.5",
     "babel-runtime": "^6.23.0",
     "prettier": "1.4.4"
+  },
+  "dependencies": {
+    "react-icons": "2.2.5"
   }
 }

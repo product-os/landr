@@ -21,12 +21,6 @@ const defaultHost = 'localhost';
 
 // setup site build dir
 const directory = `/tmp/landr/${gitInfo.getUsername()}/${gitInfo.getName()}`;
-fs
-  .ensureDir(directory)
-  .then(fs.copy(`${__dirname}/../../src`, `${directory}/src`))
-  .then(fs.ensureDir(`${directory}/node_modules`))
-  .then(utils.changeCWD(directory))
-  .catch(utils.handleError);
 
 program.version(packageJson.version).usage('[command] [options]');
 
@@ -47,7 +41,8 @@ program
     const develop = require('gatsby/dist/utils/develop');
     try {
       const p = Object.assign(command, { directory });
-      await utils.isGitRepo();
+      await utils.isGitRepo(process.cwd());
+      await utils.setupBuildDir(directory);
       await utils.writeConfigFiles(config, repoDir, gitInfo, directory);
       await develop(p);
     } catch (e) {
@@ -63,14 +58,17 @@ program
     'Build site with link paths prefixed (set prefix in your config).'
   )
   .action(async command => {
+    process.env.UV_THREADPOOL_SIZE = 100;
     process.env.NODE_ENV = 'production';
     const build = require('gatsby/dist/utils/build');
     const p = Object.assign(command, { directory });
     try {
       const p = Object.assign(command, { directory });
-      await utils.isGitRepo();
+      await utils.isGitRepo(process.cwd());
+      await utils.setupBuildDir(directory);
       await utils.writeConfigFiles(config, repoDir, gitInfo, directory);
       await build(p);
+      process.exit();
     } catch (e) {
       utils.handleError(e);
     }
@@ -105,14 +103,16 @@ program
     const p = Object.assign(command, { directory });
     try {
       const p = Object.assign(command, { directory });
-      await utils.isGitRepo();
+      await utils.isGitRepo(process.cwd());
+      await utils.setupBuildDir(directory);
       await utils.writeConfigFiles(config, repoDir, gitInfo, directory);
       await build(p);
-      await ghpages.publishAsync(`${__dirname}/../../public`, {
+      await ghpages.publishAsync(`${directory}/public`, {
         message: 'Deployed by landr 🏠',
         branch: 'gh-pages',
         repo: gitInfo.getGithubUrl()
       });
+      process.exit();
     } catch (e) {
       utils.handleError(e);
     }
