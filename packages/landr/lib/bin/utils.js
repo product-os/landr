@@ -29,3 +29,11 @@ exports.writeConfigFiles = (config, repoDir, gitInfo, dest) => {
     );
   });
 };
+
+exports.setupBuildDir = directory => {
+  return fs
+    .ensureDir(directory)
+    .then(fs.copy(`${__dirname}/../../src`, `${directory}/src`))
+    .then(fs.ensureDir(`${directory}/node_modules`))
+    .then(exports.changeCWD(directory))
+}

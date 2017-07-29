@@ -6,7 +6,7 @@ export default ({ title, content, children, ...props }) => {
       <div className="container py-2">
         <h2>{title}</h2>
         <p dangerouslySetInnerHTML={{ __html: content }} />
-        { children }
+        {children}
       </div>
     </div>
   );

@@ -35,6 +35,56 @@ module.exports = (repoDir, landrDir, gitInfo) => {
         },
       },
       {
+        resolve: '${landrDir}/node_modules/gatsby-source-filesystem',
+        options: {
+          name: 'changelog',
+          path: '${repoDir}/docs',
+        },
+      },
+      {
+        resolve: '${landrDir}/node_modules/gatsby-transformer-sharp',
+      },
+      {
+        resolve: '${landrDir}/node_modules/gatsby-transformer-remark',
+        options: {
+          plugins: [
+            {
+              resolve: '${landrDir}/node_modules/gatsby-remark-images',
+              options: {
+                maxWidth: 740,
+              },
+            },
+            {
+              resolve: '${landrDir}/node_modules/gatsby-remark-responsive-iframe',
+              options: {
+                wrapperStyle: 'margin-bottom: 1.0725rem',
+              },
+            },
+            {
+              resolve: '${landrDir}/node_modules/gatsby-remark-copy-linked-files',
+            },
+            {
+              resolve: '${landrDir}/node_modules/gatsby-remark-smartypants',
+              options: {
+                dashes: 'oldschool',
+              },
+            },
+            {
+              resolve: '${landrDir}/node_modules/gatsby-remark-prismjs',
+            },
+            {
+              resolve: '${landrDir}/node_modules/gatsby-remark-autolink-headers',
+            },
+          ],
+        },
+      },
+      {
+        resolve: '${landrDir}/node_modules/gatsby-plugin-sharp',
+      },
+      {
+        resolve: '${landrDir}/node_modules/gatsby-plugin-catch-links',
+      },
+      {
         resolve: '${landrDir}/node_modules/gatsby-plugin-landr',
         options: {
           repoDir: '${repoDir}',

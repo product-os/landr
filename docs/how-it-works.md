@@ -35,7 +35,7 @@ TODO
 
 We parse you README.md into a query-able object.   
 
-```
+```javascript
 {
   title, // First heading in file
   lead, // First <p> in file
@@ -62,7 +62,7 @@ We parse you README.md into a query-able object.
 
 We parse you CHANGELOG.md into a query-able object. It'll pull every h2 and it's child content into a any entry.
 
-```
+```graphql
 {
   entries [
     {

@@ -1,19 +1,21 @@
 import React from 'react';
-import Link from "gatsby-link"
+import Link from 'gatsby-link';
 
 export default ({ repo }) => {
-  const latestRelease = repo.releases[0]
+  const latestRelease = repo.releases[0];
   return (
     <p className="text-center py-2 my-0 bg-faded">
       Latest version -
       <code>
-      <a href={latestRelease.html_url} target="_blank">
-        {latestRelease.tag_name.substring(latestRelease.tag_name.indexOf('@') + 1)}
-      </a>
+        <a href={latestRelease.html_url} target="_blank">
+          {latestRelease.tag_name.substring(
+            latestRelease.tag_name.indexOf('@') + 1
+          )}
+        </a>
       </code>
-      <br/>
+      <br />
       {repo.forks_count} forks, {repo.stargazers_count} stars.
-      <br/>
+      <br />
       <Link to="/changelog">View changelog</Link>
     </p>
   );

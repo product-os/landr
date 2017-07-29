@@ -1,66 +1,13 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap';
-import 'www/styles/index.scss';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
+import Base from 'www/layouts/_base';
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  render() {
-    const { data, location } = this.props;
-    return (
-      <div>
-        <Helmet
-          defaultTitle={`${data.repo.name} - ${this.props.location.pathname.substring(1)}`}
-          titleTemplate={`%s | ${data.repo.name}`}
-          meta={[
-            {
-              name: 'og:type',
-              content: 'website',
-            },
-            {
-              name: 'og:site_name',
-              content: data.repo.name,
-            },
-          ]}
-        />
-        <Navbar color="faded" light toggleable>
-          <NavbarToggler right onClick={this.toggle} />
-          <Link className="navbar-brand" to="/" />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link to="/changelog">Changelog</Link>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-        {this.props.children()}
-      </div>
-    );
-  }
-}
+const Layout = ({ children, ...props }) => {
+  return (
+    <Base {...props}>
+      {children()}
+    </Base>
+  );
+};
 
 export default Layout;
 
@@ -69,6 +16,6 @@ query layoutDefault {
   repo {
     name
     description
+    html_url
   }
-}
-`;
+}`;
