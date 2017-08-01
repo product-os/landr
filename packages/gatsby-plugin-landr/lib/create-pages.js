@@ -25,10 +25,16 @@ const createPages = (
     .readdirAsync(`${__dirname}/../www/pages`)
     .then(files => {
       return files.forEach(file => {
+        let routeName = path.parse(file).name;
+
+        if (routeName.slice(0, 1) === `_`) {
+          // this is so we can have _templates in /pages folder
+          return;
+        }
         const pagePath = getCorrectPath(pluginOptions.repoDir)(`pages/${file}`);
 
         // todo this doesn't take child folders into account.
-        let routeName = path.parse(file).name;
+
         if (file === 'index.js') {
           routeName = '/';
         }
@@ -123,7 +129,7 @@ const createPages = (
       createPage({
         path: edge.node.fields.slug, // required
         layout: 'docs',
-        component: getCorrectPath(pluginOptions.repoDir)(`templates/docs.js`),
+        component: getCorrectPath(pluginOptions.repoDir)(`pages/_docs.js`),
         context: {
           title: getTitle(edge.node),
           slug: edge.node.fields.slug

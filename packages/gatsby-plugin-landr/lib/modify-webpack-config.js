@@ -23,7 +23,6 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
     },
     resolveLoader: {
       root: [path.resolve(pluginOpts.landrDir, `node_modules`)]
-      // modulesDirectories: [path.resolve(pluginOpts.landrDir, `node_modules`)]
     }
   });
 
