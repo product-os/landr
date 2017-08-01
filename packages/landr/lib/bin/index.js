@@ -20,7 +20,7 @@ gitInfo.getConfig();
 const defaultHost = 'localhost';
 
 // setup site build dir
-const directory = `/tmp/landr/${gitInfo.getUsername()}/${gitInfo.getName()}`;
+const directory = `${process.env.HOME}/.landr/${gitInfo.getUsername()}/${gitInfo.getName()}`;
 
 program.version(packageJson.version).usage('[command] [options]');
 
