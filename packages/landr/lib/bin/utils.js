@@ -22,12 +22,14 @@ exports.handleError = err => {
 };
 
 exports.writeConfigFiles = (config, repoDir, gitInfo, dest) => {
-  return Object.keys(config).map(file => {
-    return fs.outputFile(
-      `${dest}/${file}`,
-      config[file](repoDir, path.resolve(`${__dirname}/../../`), gitInfo)
-    );
-  });
+  return Promise.all[
+    Object.keys(config).map(file => {
+      return fs.outputFile(
+        `${dest}/${file}`,
+        config[file](repoDir, path.resolve(`${__dirname}/../../`), gitInfo)
+      );
+    })
+  ];
 };
 
 exports.setupBuildDir = directory => {
