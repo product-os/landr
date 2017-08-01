@@ -1,5 +1,5 @@
 import React from 'react';
-import Jumbotron from 'www/components/Jumbotron';
+import Hero from 'www/components/Hero';
 import Contributors from 'www/components/Contributors';
 import Section from 'www/components/Section';
 import Stats from 'www/components/Stats';
@@ -9,7 +9,7 @@ class Index extends React.Component {
     const { readme, repo } = this.props.data;
     return (
       <div>
-        <Jumbotron repo={repo} />
+        <Hero repo={repo} />
         <Stats repo={repo} />
         <Section
           className="bg-inverse text-white py-5"

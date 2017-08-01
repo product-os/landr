@@ -17,7 +17,6 @@ module.exports = (repoDir, landrDir, gitInfo) => {
           path: '${repoDir}/README.md',
         },
       },
-      '${landrDir}/node_modules/gatsby-plugin-postcss-sass',
       {
         resolve: '${landrDir}/node_modules/gatsby-transformer-readme',
       },
@@ -84,6 +83,7 @@ module.exports = (repoDir, landrDir, gitInfo) => {
       {
         resolve: '${landrDir}/node_modules/gatsby-plugin-catch-links',
       },
+      '${landrDir}/node_modules/gatsby-plugin-styled-components',
       {
         resolve: '${landrDir}/node_modules/gatsby-plugin-landr',
         options: {

@@ -4,7 +4,6 @@ import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
 import startCase from 'lodash/startCase';
 import kebabCase from 'lodash/kebabCase';
 import Base from 'www/layouts/_base';
-import 'prismjs/themes/prism-solarizedlight.css';
 
 const DocsLayout = ({ children, ...props }) => {
   return (

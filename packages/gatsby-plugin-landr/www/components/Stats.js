@@ -1,22 +1,29 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import ReactLink from 'gatsby-link';
+import { Text, Column, Code, Link } from 'rebass';
 
 export default ({ repo }) => {
   const latestRelease = repo.releases[0];
   return (
-    <p className="text-center py-2 my-0 bg-faded">
-      Latest version -
-      <code>
-        <a href={latestRelease.html_url} target="_blank">
+    <Column py={3} bg='gray9' color='white'>
+      <Text center>
+        <Code>
+          <Link
+            href={latestRelease.html_url}
+            target="_blank"
+          >
           {latestRelease.tag_name.substring(
             latestRelease.tag_name.indexOf('@') + 1
           )}
-        </a>
-      </code>
-      <br />
-      {repo.forks_count} forks, {repo.stargazers_count} stars.
-      <br />
-      <Link to="/changelog">View changelog</Link>
-    </p>
+          </Link>
+        </Code>
+          &nbsp;-&nbsp;
+        <Link
+          is={ReactLink}
+          to="/changelog">
+          See what is new!
+        </Link>
+      </Text>
+    </Column>
   );
 };
