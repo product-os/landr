@@ -1,62 +1,70 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
+import { Flex, Box, Container, Row, Column, NavLink } from 'rebass';
 import startCase from 'lodash/startCase';
 import kebabCase from 'lodash/kebabCase';
 import Base from 'www/layouts/_base';
-import 'prismjs/themes/prism-solarizedlight.css';
 
 const DocsLayout = ({ children, ...props }) => {
   return (
     <Base {...props}>
-      <Row>
-        <Col xs="3" className="py-3 bg-faded">
-          <Nav vertical>
+      <Flex wrap>
+        <Box width={[ 1, 1/4 ]} bg='gray9' color='white'>
+          <nav>
+            <Flex wrap py={0}>
             {props.data.allMarkdownRemark.edges.map(({ node }) => {
               const path = node.fields.slug;
               return (
-                <NavItem key={path}>
-                  <Link
-                    className={`nav-link ${props.location.pathname === path
-                      ? 'active'
-                      : ''}`}
-                    to={path}
+              <Box
+                w={1}
+                key={path}>
+                <NavLink
+                  w={1}
+                  is={Link}
+                  active={props.location.pathname + props.location.hash === path}
+                  to={path}
                   >
-                    {path.slice(5) === '/'
-                      ? 'Introduction'
-                      : startCase(path.slice(5))}
-                  </Link>
-                  <Nav vertical className="px-2">
-                    {node.headings &&
-                      node.headings.map((h, i) => {
-                        if (h.depth !== 2) {
-                          return;
-                        }
-                        const hashPath = path + '#' + kebabCase(h.value);
-                        return (
-                          <NavItem key={i}>
-                            <Link
-                              className={`nav-link ${props.location.pathname ===
-                                hashPath
-                                ? 'active'
-                                : ''}`}
-                              to={`${hashPath}`}
-                            >
-                              {h.value}
-                            </Link>
-                          </NavItem>
-                        );
-                      })}
-                  </Nav>
-                </NavItem>
+                  {path.slice(5) === '/'
+                    ? 'Introduction'
+                    : startCase(path.slice(5))}
+                </NavLink>
+                <nav>
+                  {node.headings &&
+                    node.headings.map((h, i) => {
+                      if (h.depth !== 2) {
+                        return;
+                      }
+                      const hashPath = path + '#' + kebabCase(h.value);
+                      return (
+                        <NavLink
+                          w={1}
+                          pl={4}
+                          key={hashPath}
+                          is={Link}
+                          key={hashPath}
+                          // active={(props.location.pathname + props.location.hash) === hashPath}
+                          to={hashPath}
+                          >
+                            {h.value}
+                        </NavLink>
+                      );
+                    })}
+                  </nav>
+                </Box>
               );
             })}
-          </Nav>
-        </Col>
-        <Col xs="7" className="py-3">
+            </Flex>
+          </nav>
+        </Box>
+        <Box width={
+          [
+            1,
+            3/4
+          ]
+        }>
           {children()}
-        </Col>
-      </Row>
+        </Box>
+      </Flex>
     </Base>
   );
 };

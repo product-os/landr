@@ -25,10 +25,16 @@ const createPages = (
     .readdirAsync(`${__dirname}/../www/pages`)
     .then(files => {
       return files.forEach(file => {
+        let routeName = path.parse(file).name;
+
+        if (routeName.slice(0, 1) === `_`) {
+          // this is so we can have _templates in /pages folder
+          return;
+        }
         const pagePath = getCorrectPath(pluginOptions.repoDir)(`pages/${file}`);
 
         // todo this doesn't take child folders into account.
-        let routeName = path.parse(file).name;
+
         if (file === 'index.js') {
           routeName = '/';
         }
@@ -61,31 +67,30 @@ const createPages = (
       }
     `
   )
-    .then(result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
+  .then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
 
-      const index = result.data.allMarkdownRemark.edges.find(edge => {
-        return edge.node.fields && edge.node.fields.slug === '/docs/';
-      });
-      if (index) {
-        return;
-      }
+    const index = result.data.allMarkdownRemark.edges.find(edge => {
+      return edge.node.fields && edge.node.fields.slug === '/docs/';
+    });
+    if (index) {
+      return;
+    }
 
-      const readme = result.data.allMarkdownRemark.edges.find(edge => {
-        return _.includes(edge.node.fileAbsolutePath, 'README');
-      });
+    const readme = result.data.allMarkdownRemark.edges.find(edge => {
+      return _.includes(edge.node.fileAbsolutePath, 'README');
+    });
 
-      const node = store.getState().nodes[readme.node.id];
-      if (node) {
-        createNodeField({ node, name: `slug`, value: '/docs/' });
-      }
-    })
-    .then(() =>
-      graphql(
-        // TODO filter by slug
-        `
+    const node = store.getState().nodes[readme.node.id];
+    if (node) {
+      createNodeField({ node, name: `slug`, value: '/docs/' });
+    }
+  })
+  .then(() =>
+    graphql(
+    `
     {
       allMarkdownRemark {
         edges {
@@ -99,41 +104,40 @@ const createPages = (
       }
     }
   `
-      )
-    )
-    .then(result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
+  ))
+  .then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
+
+    const getTitle = node => {
+      try {
+        return node.frontmatter.title;
+      } catch (e) {
+        return _.startCase(path.parse(node.fileAbsolutePath).name);
       }
+    };
 
-      const getTitle = node => {
-        try {
-          return node.frontmatter.title;
-        } catch (e) {
-          return _.startCase(path.parse(node.fileAbsolutePath).name);
+    // Create docs pages.
+    result.data.allMarkdownRemark.edges.forEach(edge => {
+      if (
+        !edge.node.fields ||
+        edge.node.fields.slug.slice(0, 6) !== '/docs/'
+      ) {
+        return;
+      }
+      createPage({
+        path: edge.node.fields.slug, // required
+        layout: 'docs',
+        component: getCorrectPath(pluginOptions.repoDir)(`pages/_docs.js`),
+        context: {
+          title: getTitle(edge.node),
+          slug: edge.node.fields.slug
         }
-      };
-
-      // Create docs pages.
-      result.data.allMarkdownRemark.edges.forEach(edge => {
-        if (
-          !edge.node.fields ||
-          edge.node.fields.slug.slice(0, 6) !== '/docs/'
-        ) {
-          return;
-        }
-        createPage({
-          path: edge.node.fields.slug, // required
-          layout: 'docs',
-          component: getCorrectPath(pluginOptions.repoDir)(`templates/docs.js`),
-          context: {
-            title: getTitle(edge.node),
-            slug: edge.node.fields.slug
-          }
-        });
       });
-    })
-    .catch(e => console.warn(e));
+    });
+  })
+  .catch(e => console.warn(e));
 
   return Promise.all([standardPages, docsPages]);
 };

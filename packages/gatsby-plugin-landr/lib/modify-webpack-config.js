@@ -11,9 +11,6 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
 
   // landr specific resolves
   webpackConfig.merge({
-    module: {
-      noParse: [/node_modules\/reactstrap-tether\/dist\/js\/tether.js/]
-    },
     resolve: {
       modulesDirectories: [
         path.resolve(`${pluginOpts.repoDir}`),
@@ -26,7 +23,6 @@ const modifyWebpackConfig = async (gatsby, pluginOpts) => {
     },
     resolveLoader: {
       root: [path.resolve(pluginOpts.landrDir, `node_modules`)]
-      // modulesDirectories: [path.resolve(pluginOpts.landrDir, `node_modules`)]
     }
   });
 

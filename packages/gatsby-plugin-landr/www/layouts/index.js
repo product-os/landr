@@ -1,7 +1,7 @@
 import React from 'react';
 import Base from 'www/layouts/_base';
 
-const Layout = ({ children, ...props }) => {
+const IndexLayout = ({ children, ...props }) => {
   return (
     <Base {...props}>
       {children()}
@@ -9,10 +9,10 @@ const Layout = ({ children, ...props }) => {
   );
 };
 
-export default Layout;
+export default IndexLayout;
 
-export const layoutQuery = graphql`
-query layoutDefault {
+export const IndexLayoutQuery = graphql`
+query IndexLayout {
   repo {
     name
     description

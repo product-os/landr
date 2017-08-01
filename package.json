@@ -24,8 +24,5 @@
     "lerna": "^2.0.0-rc.5",
     "babel-runtime": "^6.23.0",
     "prettier": "1.4.4"
-  },
-  "dependencies": {
-    "react-icons": "2.2.5"
   }
 }

@@ -1,18 +1,18 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from 'reactstrap';
-import 'www/styles/index.scss';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import lowerCase from 'lodash/lowerCase';
 import GithubIcon from 'react-icons/lib/go/mark-github';
+import { Provider, Heading, Button, Toolbar, Navlink, NavLink } from 'rebass';
+import theme from 'www/theme';
+import { injectGlobal } from 'styled-components';
+import 'prismjs/themes/prism-solarizedlight.css';
+
+injectGlobal`
+* { box-sizing: border-box; }
+body { margin: 0; }
+ul { list-style: none; }
+`;
 
 class Layout extends React.Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Layout extends React.Component {
   render() {
     const { data, location } = this.props;
     return (
-      <div>
+      <Provider theme={theme}>
         <Helmet
           defaultTitle={this.pageTitle(
             data.repo.name,
@@ -57,31 +57,25 @@ class Layout extends React.Component {
             }
           ]}
         />
-        <Navbar color="faded" light toggleable>
-          <NavbarToggler right onClick={this.toggle} />
-          <Link className="navbar-brand" to="/">{data.repo.name}</Link>
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Link className="nav-link" to="/docs">Docs</Link>
-              </NavItem>
-              <NavItem>
-                <Link className="nav-link" to="/changelog">Changelog</Link>
-              </NavItem>
-              <NavItem>
-                <a
-                  className="nav-link"
-                  href={data.repo.html_url}
-                  target="_blank"
-                >
-                  <GithubIcon />
-                </a>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+        <Toolbar>
+        	<NavLink to="/" is={Link}>
+            {data.repo.name}
+        	</NavLink>
+          <NavLink ml="auto" to="/changelog" is={Link}>
+        		Changelog
+          </NavLink>
+        	<NavLink to="/docs" is={Link}>
+            Docs
+          </NavLink>
+          <NavLink
+            href={data.repo.html_url}
+            target="_blank"
+          >
+            <GithubIcon />
+          </NavLink>
+        </Toolbar>
         {this.props.children}
-      </div>
+      </Provider>
     );
   }
 }

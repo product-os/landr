@@ -82,23 +82,29 @@ Heres an example:
 
 ```
 import React from 'react';
-import { Jumbotron } from 'reactstrap';
+import { Banner, Heading, Text, Lead } from 'rebass';
 
 export default ({ repo }) => {
   return (
-    <Jumbotron className="mb-0">
-      <div className="container">
-        <h1 className="display-3">{repo.name}</h1>
-        <p className="lead">{repo.description}</p>
-        <hr className="my-2" />
-      </div>
-    </Jumbotron>
+    <Banner
+    	color='white'
+    	bg='gray9'
+      >
+    	<Heading
+    		f={[ 4, 5, 6, 7 ]}>
+    		{repo.name}
+    	</Heading>
+      <Lead>
+      	{repo.description}
+      </Lead>
+    </Banner>
   );
 };
 
 export graphql`
-  fragment JumbotronRepoFragment on Repo {
-    id
+  fragment HeroRepoFragment on Repo {
+    name
+    description
   }
 `
 ```
