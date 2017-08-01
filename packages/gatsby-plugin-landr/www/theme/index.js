@@ -33,7 +33,7 @@ export default {
     700
   ],
   colors: {
-    ...colors
+    ...colors,
   },
   radius: 4,
   font: '-apple-system, BlinkMacSystemFont, sans-serif',

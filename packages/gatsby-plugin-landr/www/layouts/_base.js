@@ -4,13 +4,14 @@ import Helmet from 'react-helmet';
 import lowerCase from 'lodash/lowerCase';
 import GithubIcon from 'react-icons/lib/go/mark-github';
 import { Provider, Heading, Button, Toolbar, Navlink, NavLink } from 'rebass';
-import { theme } from 'www/theme';
+import theme from 'www/theme';
 import { injectGlobal } from 'styled-components';
 import 'prismjs/themes/prism-solarizedlight.css';
 
 injectGlobal`
 * { box-sizing: border-box; }
 body { margin: 0; }
+ul { list-style: none; }
 `;
 
 class Layout extends React.Component {
