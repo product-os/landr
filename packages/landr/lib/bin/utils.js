@@ -11,13 +11,13 @@ exports.changeCWD = directory => {
 
 exports.isGitRepo = dirPath => {
   if (!fs.exists(`${dirPath}/.git`)) {
-    throw new Error('This is not a .git repo');
+    Promise.reject(Error('This is not a .git repo'));
   }
   return Promise.resolve();
 };
 
 exports.handleError = err => {
-  console.error('Oops, something when wrong :(', err);
+  console.error('Oops, something went wrong :(', err);
   process.exit(1);
 };
 
@@ -33,7 +33,7 @@ exports.writeConfigFiles = (config, repoDir, gitInfo, dest) => {
 exports.setupBuildDir = directory => {
   return fs
     .ensureDir(directory)
-    .then(fs.copy(`${__dirname}/../../src`, `${directory}/src`))
-    .then(fs.ensureDir(`${directory}/node_modules`))
-    .then(exports.changeCWD(directory))
+    .then(() => fs.copy(`${__dirname}/../../src`, `${directory}/src`))
+    .then(() => fs.ensureDir(`${directory}/node_modules`))
+    .then(() => exports.changeCWD(directory))
 }
