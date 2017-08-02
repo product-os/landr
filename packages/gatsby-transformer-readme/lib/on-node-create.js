@@ -1,6 +1,5 @@
 const crypto = require(`crypto`);
-const readmeParser = require('readme-parser');
-const TYPE = require('./type');
+const readmeParser = require('./parser');
 
 module.exports = async function onNodeCreate({
   node,
@@ -21,11 +20,7 @@ module.exports = async function onNodeCreate({
   }
 
   const content = await loadNodeContent(node);
-  const readmeData = readmeParser(content);
-  const data = {
-    ...TYPE,
-    ...readmeData
-  };
+  const data = readmeParser(content);
 
   const objStr = JSON.stringify(data);
 
@@ -39,7 +34,6 @@ module.exports = async function onNodeCreate({
     internal: {
       contentDigest,
       type: `Readme`,
-      mediaType: 'text/x-markdown',
       content: objStr
     }
   };
