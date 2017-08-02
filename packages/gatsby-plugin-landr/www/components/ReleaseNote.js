@@ -9,6 +9,7 @@ export default ({ repo }) => {
       <Text center>
         <Code>
           <Link
+            color='white'
             href={latestRelease.html_url}
             target="_blank"
           >
@@ -19,9 +20,10 @@ export default ({ repo }) => {
         </Code>
           &nbsp;-&nbsp;
         <Link
+          color='white'
           is={ReactLink}
           to="/changelog">
-          See what is new!
+          See what&#39;s new!
         </Link>
       </Text>
     </Column>

@@ -34,7 +34,6 @@ const createPages = (
         const pagePath = getCorrectPath(pluginOptions.repoDir)(`pages/${file}`);
 
         // todo this doesn't take child folders into account.
-
         if (file === 'index.js') {
           routeName = '/';
         }

@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from 'www/components/Hero';
 import Contributors from 'www/components/Contributors';
 import Section from 'www/components/Section';
-import Stats from 'www/components/Stats';
+import ReleaseNote from 'www/components/ReleaseNote';
 
 class Index extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Index extends React.Component {
     return (
       <div>
         <Hero repo={repo} />
-        <Stats repo={repo} />
+        <ReleaseNote repo={repo} />
         <Section
           className="bg-inverse text-white py-5"
           {...readme.installation}

@@ -12,6 +12,13 @@ injectGlobal`
 * { box-sizing: border-box; }
 body { margin: 0; }
 ul { list-style: none; }
+blockquote {
+  font-style: italic;
+  padding: 20px;
+  > p {
+    box-shadow: inset 0 -5px 0px 0px ${theme.colors.yellow3};
+  }
+}
 `;
 
 class Layout extends React.Component {
@@ -46,6 +53,13 @@ class Layout extends React.Component {
             this.props.location.pathname
           )}
           titleTemplate={`%s | ${data.repo.name}`}
+          link={[
+            {
+              rel:"shortcut icon",
+              href:"/static/favicon.ico",
+              type:"image/x-icon"
+            }
+          ]}
           meta={[
             {
               name: 'og:type',
