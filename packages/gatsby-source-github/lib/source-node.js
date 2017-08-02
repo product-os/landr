@@ -82,7 +82,6 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     children: [],
     internal: {
       type: 'Repo',
-      mediaType: 'text/x-gh',
       contentDigest
     }
   };

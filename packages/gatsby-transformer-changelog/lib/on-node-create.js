@@ -1,6 +1,7 @@
 const crypto = require('crypto');
-const changelogParser = require('changelog-parse');
+const changelogParser = require('./parser');
 const _ = require('lodash');
+
 
 module.exports = async function onNodeCreate(
   { node, getNode, loadNodeContent, boundActionCreators },
@@ -31,10 +32,6 @@ module.exports = async function onNodeCreate(
       parent: node.id,
       internal: {
         contentDigest,
-        mediaType: 'text/x-markdown',
-        // TODO make choosing the "type" a lot smarter. This assumes
-        // the parent node is a file.
-        // PascalCase
         type: 'Changelog',
         content: objStr
       }

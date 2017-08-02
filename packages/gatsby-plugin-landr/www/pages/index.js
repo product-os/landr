@@ -13,7 +13,15 @@ class Index extends React.Component {
         <ReleaseNote repo={repo} />
         <Section
           className="bg-inverse text-white py-5"
-          {...readme.installation}
+          {...readme.sections.find((s) => s.title === 'Quick start guide')}
+        />
+        <Section
+          className="bg-inverse text-white py-5"
+          {...readme.sections.find((s) => s.title === 'How it works')}
+        />
+        <Section
+          className="bg-inverse text-white py-5"
+          {...readme.sections.find((s) => s.title === 'Why landr')}
         />
         <Section {...readme.features} />
         <Contributors contributors={repo.contributors} />
@@ -44,8 +52,7 @@ query index {
     }
   }
   readme {
-    badges
-    installation {
+    sections {
       title
       content
     }
