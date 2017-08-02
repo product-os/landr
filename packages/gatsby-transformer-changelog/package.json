@@ -14,6 +14,10 @@
   "author": "Craig Mulligan",
   "license": "MIT",
   "dependencies": {
-    "changelog-parse": "^0.0.0-beta1.1"
+    "changelog-parse": "^0.0.0-beta1.1",
+    "hast-util-to-html": "3.1.0",
+    "rehype": "5.0.0",
+    "remark": "8.0.0",
+    "unist-util-select": "1.5.0"
   }
 }
