@@ -7,13 +7,7 @@ class Changelog extends React.Component {
     return (
       <div className="container pt-5">
         {entries.map((entry, i) => {
-          return (
-            <Section
-              {...entry.node}
-              key={i}
-              id={i}
-            />
-          );
+          return <Section {...entry.node} key={i} id={i} />;
         })}
       </div>
     );
@@ -23,14 +17,14 @@ class Changelog extends React.Component {
 export default Changelog;
 
 export const pageQuery = graphql`
-query AllEntries {
-  allChangelog {
-    edges {
-      node {
-        title
-        content
+  query AllEntries {
+    allChangelog {
+      edges {
+        node {
+          title
+          html
+        }
       }
     }
   }
-}
 `;

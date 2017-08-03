@@ -17,7 +17,6 @@ const createLayouts = ({ graphql, boundActionCreators }, pluginOptions) => {
       }
 
       createLayout({
-        id: path.parse(file).name,
         component: slash(layoutPath)
       });
     });

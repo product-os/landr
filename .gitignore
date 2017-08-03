@@ -1,6 +1,7 @@
 #landr
 public
 packages/landr/gatsby-config.js
+package-lock.json
 
 .cache
 

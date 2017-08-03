@@ -1,6 +1,6 @@
 {
   "name": "gatsby-transformer-changelog",
-  "version": "0.0.0-beta1.1",
+  "version": "0.0.0-beta1.2",
   "description": "Gatsby transformer plugin for changelog files",
   "scripts": {
     "build": "babel lib --out-dir dist",
@@ -15,6 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "hast-util-to-html": "3.1.0",
+    "mdast-util-heading-range": "2.0.2",
+    "mdast-util-to-hast": "2.4.2",
     "remark": "8.0.0",
     "unist-util-select": "1.5.0"
   }

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-transformer-readme",
-  "version": "0.0.0-beta1.1",
+  "version": "0.0.0-beta1.2",
   "description": "Gatsby transformer plugin for readme files",
   "scripts": {
     "build": "babel lib --out-dir dist --ignore __tests__",
@@ -14,9 +14,10 @@
   "author": "Craig Mulligan",
   "license": "MIT",
   "dependencies": {
-    "hast-util-select": "1.0.1",
-    "hast-util-to-html": "3.1.0",
-    "mdast-util-to-hast": "2.4.2",
+    "mdast-util-heading-range": "2.0.2",
+    "mdast-util-to-string": "1.0.4",
+    "remark": "8.0.0",
+    "remark-stringify": "4.0.0",
     "unist-util-select": "1.5.0"
   }
 }

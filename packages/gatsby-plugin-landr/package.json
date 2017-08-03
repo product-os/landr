@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-landr",
-  "version": "0.0.0-beta2.1",
+  "version": "0.0.0-beta2.2",
   "description": "collection of landr react-components",
   "main": "index.js",
   "scripts": {
@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "slash": "1.0.0",
-    "gatsby": "github:craig-mulligan/gatsby#f7ef3717807dc1cbe74a1b80576d058490dc5a8b",
-    "react-icons": "2.2.5"
+    "gatsby": "^1.8.4",
+    "react-icons": "2.2.5",
+    "slash": "1.0.0"
   },
   "homepage": "https://github.com/resin-io/landr#readme"
 }

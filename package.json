@@ -11,18 +11,21 @@
     "start": "yarn run watch",
     "watch": "lerna run --parallel watch",
     "build": "lerna run --parallel build",
-    "publish": "lerna publish --skip-git --ignore landr",
+    "publish": "lerna publish",
     "deploy": "lerna run deploy --scope landr",
-    "post_install": "lerna bootstrap",
+    "postinstall": "lerna bootstrap --npm-client=yarn",
     "prettier": "prettier --single-quote --write \"packages/*/{index.js,+(lib|bin|www)/**/*.js}\""
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.5.1",
+    "babel-preset-env": "1.6.0",
     "lerna": "^2.0.0-rc.5",
     "babel-runtime": "^6.23.0",
-    "prettier": "1.4.4"
+    "prettier": "1.5.3"
+  },
+  "dependencies": {
+    "regenerator-runtime": "0.11.0"
   }
 }

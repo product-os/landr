@@ -3,15 +3,18 @@ import Section from 'www/components/Section';
 import Contributor from 'www/components/Contributor';
 import { Flex, Box } from 'rebass';
 
-export default ({ contributors }) => {
+export default ({ contributors, ...props }) => {
   return (
-    <Section title="Contributors">
-      <Flex justify='center'>
+    <Section {...props} title="Contributors">
+      <Flex justify="center">
         <Box>
           {contributors &&
             contributors.map(contributor => {
               return (
-                <Contributor key={contributor.login} contributor={contributor} />
+                <Contributor
+                  key={contributor.login}
+                  contributor={contributor}
+                />
               );
             })}
         </Box>

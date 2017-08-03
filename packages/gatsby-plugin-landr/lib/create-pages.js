@@ -9,7 +9,7 @@ const getCorrectPath = repoDir => {
     let p = path.resolve(`${__dirname}/../www/${file}`);
 
     if (fs.existsSync(`${repoDir}/www/${file}`)) {
-      prom = path.resolve(`${repoDir}/www/${file}`);
+      p = path.resolve(`${repoDir}/www/${file}`);
     }
     return p;
   };
@@ -51,93 +51,95 @@ const createPages = (
 
   const docsPages = graphql(
     `
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              id
-              fileAbsolutePath
-              fields {
-                slug
+        {
+          allMarkdownRemark {
+            edges {
+              node {
+                id
+                fileAbsolutePath
+                fields {
+                  slug
+                }
               }
             }
           }
         }
-      }
-    `
+      `
   )
-  .then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
-
-    const index = result.data.allMarkdownRemark.edges.find(edge => {
-      return edge.node.fields && edge.node.fields.slug === '/docs/';
-    });
-    if (index) {
-      return;
-    }
-
-    const readme = result.data.allMarkdownRemark.edges.find(edge => {
-      return _.includes(edge.node.fileAbsolutePath, 'README');
-    });
-
-    const node = store.getState().nodes[readme.node.id];
-    if (node) {
-      createNodeField({ node, name: `slug`, value: '/docs/' });
-    }
-  })
-  .then(() =>
-    graphql(
-    `
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fileAbsolutePath
-            fields {
-              slug
-            }
-          }
-        }
+    .then(result => {
+      // If there is no /docs/index.md
+      // we make the markdown node slug /docs/
+      if (result.errors) {
+        return Promise.reject(result.errors);
       }
-    }
-  `
-  ))
-  .then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors);
-    }
 
-    const getTitle = node => {
-      try {
-        return node.frontmatter.title;
-      } catch (e) {
-        return _.startCase(path.parse(node.fileAbsolutePath).name);
-      }
-    };
-
-    // Create docs pages.
-    result.data.allMarkdownRemark.edges.forEach(edge => {
-      if (
-        !edge.node.fields ||
-        edge.node.fields.slug.slice(0, 6) !== '/docs/'
-      ) {
+      const index = result.data.allMarkdownRemark.edges.find(edge => {
+        return edge.node.fields && edge.node.fields.slug === '/docs/';
+      });
+      if (index) {
         return;
       }
-      createPage({
-        path: edge.node.fields.slug, // required
-        layout: 'docs',
-        component: getCorrectPath(pluginOptions.repoDir)(`pages/_docs.js`),
-        context: {
-          title: getTitle(edge.node),
-          slug: edge.node.fields.slug
-        }
-      });
-    });
-  })
-  .catch(e => console.warn(e));
 
+      const readme = result.data.allMarkdownRemark.edges.find(edge => {
+        return _.includes(edge.node.fileAbsolutePath, 'README');
+      });
+
+      const node = store.getState().nodes[readme.node.id];
+      if (node) {
+        createNodeField({ node, name: `slug`, value: '/docs/' });
+      }
+    })
+    .then(() =>
+      graphql(
+        `
+          {
+            allMarkdownRemark {
+              edges {
+                node {
+                  fileAbsolutePath
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }
+        `
+      )
+    )
+    .then(result => {
+      if (result.errors) {
+        return Promise.reject(result.errors);
+      }
+
+      const getTitle = node => {
+        try {
+          return node.frontmatter.title;
+        } catch (e) {
+          return _.startCase(path.parse(node.fileAbsolutePath).name);
+        }
+      };
+
+      // Create docs pages.
+      result.data.allMarkdownRemark.edges.forEach(edge => {
+        if (
+          !edge.node.fields ||
+          edge.node.fields.slug.slice(0, 6) !== '/docs/'
+        ) {
+          return;
+        }
+        createPage({
+          path: edge.node.fields.slug, // required
+          layout: 'docs',
+          component: getCorrectPath(pluginOptions.repoDir)(`pages/_docs.js`),
+          context: {
+            title: getTitle(edge.node),
+            slug: edge.node.fields.slug
+          }
+        });
+      });
+    })
+    .catch(e => console.warn(e));
   return Promise.all([standardPages, docsPages]);
 };
 

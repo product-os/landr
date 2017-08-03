@@ -3,28 +3,29 @@ import Hero from 'www/components/Hero';
 import Contributors from 'www/components/Contributors';
 import Section from 'www/components/Section';
 import ReleaseNote from 'www/components/ReleaseNote';
+import Issues from 'www/components/Issues';
+import 'prismjs/themes/prism-solarizedlight.css';
 
 class Index extends React.Component {
   render() {
-    const { readme, repo } = this.props.data;
+    const { allReadmeSection, repo, issues } = this.props.data;
     return (
       <div>
         <Hero repo={repo} />
         <ReleaseNote repo={repo} />
-        <Section
-          className="bg-inverse text-white py-5"
-          {...readme.sections.find((s) => s.title === 'Quick start guide')}
-        />
-        <Section
-          className="bg-inverse text-white py-5"
-          {...readme.sections.find((s) => s.title === 'How it works')}
-        />
-        <Section
-          className="bg-inverse text-white py-5"
-          {...readme.sections.find((s) => s.title === 'Why landr')}
-        />
-        <Section {...readme.features} />
-        <Contributors contributors={repo.contributors} />
+        {allReadmeSection &&
+          allReadmeSection.edges.map(edge => {
+            const node = edge.node;
+            return (
+              <Section
+                py={4}
+                html={node.childMarkdownRemark.html}
+                title={node.title}
+              />
+            );
+          })}
+        <Issues repo={repo} />
+        <Contributors py={4} contributors={repo.contributors} />
       </div>
     );
   }
@@ -33,29 +34,45 @@ class Index extends React.Component {
 export default Index;
 
 export const pageQuery = graphql`
-query index {
-  repo {
-    name
-    description
-    forks_count
-    stargazers_count
-    releases {
-      id
-      tag_name
+  query index {
+    repo {
+      name
+      full_name
+      description
+      forks_count
+      stargazers_count
       html_url
+      releases {
+        id
+        tag_name
+        html_url
+      }
+      issues {
+        id
+        title
+        labels {
+          id
+          name
+        }
+      }
+      contributors {
+        avatar_url
+        login
+        contributions
+        html_url
+      }
     }
-    contributors {
-      avatar_url
-      login
-      contributions
-      html_url
+    allReadmeSection(
+      filter: { title: { regex: "/(start)|(How it works)|(Why)/" } }
+    ) {
+      edges {
+        node {
+          title
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
     }
   }
-  readme {
-    sections {
-      title
-      content
-    }
-  }
-}
 `;
