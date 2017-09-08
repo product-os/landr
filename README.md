@@ -1,6 +1,6 @@
 # landr
 
-source code = website
+source code = website!
 
 > Build a website for your software projects with one command (and zero configuration).
 
@@ -18,7 +18,7 @@ Install:
 npm i -g landr@canary
 ```
 
-From the root of your local git repo run:
+From the root of your local `.git` repo run:
 ```
 landr develop
 ```
@@ -147,19 +147,23 @@ You have to maintain your source code why maintain a website too?
 
 As a software company we have a growing number of websites to build and maintain. We built landr so we could focus on our projects and not their websites.
 
+Most OS websites the same, the have a hero, a getting started and some docs. There is definitely room for automation.
+
+![etcher homepage](./docs/images/etcher.png)
+![Lerna homepage](./docs/images/lerna.png)
+![Styled components homepage](/docs/images/styled-components.png)
+
+
 ## Contributing
 
 ```
-yarn
+npm i
 ```
 
 ```
-yarn run bootstrap
+cd packages/landr && npm link
 ```
 
-```
-yarn start
-```
 Get to work. 👷
 
 ## License

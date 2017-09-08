@@ -9,10 +9,12 @@ module.exports = ({ node, boundActionCreators, getNode }) => {
     if (fileNode.internal.type !== 'File') {
       return;
     }
+
     const parsedFilePath = path.parse(fileNode.relativePath);
     if (!parsedFilePath.name) {
       return;
     }
+
     const checkForIndex = fileName => {
       if (fileName === 'index') {
         return '';
@@ -27,5 +29,6 @@ module.exports = ({ node, boundActionCreators, getNode }) => {
 
     // Add slug as a field on the node.
     createNodeField({ node, name: `slug`, value: slug.replace() });
+    createNodeField({ node, name: `title`, value: parsedFilePath.name });
   }
 };

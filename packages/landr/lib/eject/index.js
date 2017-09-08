@@ -9,14 +9,14 @@ const resinComponentsDir = path.resolve(
 const ejectFile = (userDirectory, type, file) => {
   return fs
     .copy(
-      `${resinComponentsDir}/www/${type}s/${file}`,
-      `${userDirectory}/www/${type}s/${file}`
+      `${resinComponentsDir}/www/${type}/${file}`,
+      `${userDirectory}/www/${type}/${file}`
     )
     .then(() => console.log('success!'));
 };
 
 const getOpts = type => {
-  return fs.readdir(`${resinComponentsDir}/www/${type}s`);
+  return fs.readdir(`${resinComponentsDir}/www/${type}`);
 };
 
 module.exports = {

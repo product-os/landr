@@ -1,14 +1,19 @@
 import React from 'react';
-import { Container, Subhead, Text } from 'rebass';
+import { Container, Subhead, Text, Box } from 'rebass';
 
-export default ({ title, content, children, ...props }) => {
+export default ({ title, content, html, children, ...props }) => {
   return (
-    <div {...props}>
+    <Box {...props}>
       <Container py={2}>
-        <Subhead dangerouslySetInnerHTML={{ __html: title }} center></Subhead>
-        <Text center dangerouslySetInnerHTML={{ __html: content }} />
+        <Subhead center>
+          {title}
+        </Subhead>
+        <div
+          style={{ textAlign: 'center' }}
+          dangerouslySetInnerHTML={{ __html: html || content }}
+        />
         {children}
       </Container>
-    </div>
+    </Box>
   );
 };

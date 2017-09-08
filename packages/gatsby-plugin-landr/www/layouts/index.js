@@ -12,10 +12,15 @@ const IndexLayout = ({ children, ...props }) => {
 export default IndexLayout;
 
 export const IndexLayoutQuery = graphql`
-query IndexLayout {
-  repo {
-    name
-    description
-    html_url
+  query IndexLayout {
+    repo {
+      name
+      description
+      html_url
+      owner {
+        login
+        html_url
+      }
+    }
   }
-}`;
+`;

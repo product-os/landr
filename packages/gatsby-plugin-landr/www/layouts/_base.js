@@ -1,25 +1,13 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import lowerCase from 'lodash/lowerCase';
-import GithubIcon from 'react-icons/lib/go/mark-github';
-import { Provider, Heading, Button, Toolbar, Navlink, NavLink } from 'rebass';
-import theme from 'www/theme';
+import { Provider } from 'rebass';
+import theme, { globalStyles } from 'www/theme';
+import Nav from 'www/components/Nav';
 import { injectGlobal } from 'styled-components';
-import 'prismjs/themes/prism-solarizedlight.css';
+import Footer from 'www/components/Footer';
 
-injectGlobal`
-* { box-sizing: border-box; }
-body { margin: 0; }
-ul { list-style: none; }
-blockquote {
-  font-style: italic;
-  padding: 20px;
-  > p {
-    box-shadow: inset 0 -5px 0px 0px ${theme.colors.yellow3};
-  }
-}
-`;
+injectGlobal`${globalStyles}`;
 
 class Layout extends React.Component {
   constructor(props) {
@@ -55,9 +43,9 @@ class Layout extends React.Component {
           titleTemplate={`%s | ${data.repo.name}`}
           link={[
             {
-              rel:"shortcut icon",
-              href:"/static/favicon.ico",
-              type:"image/x-icon"
+              rel: 'shortcut icon',
+              href: '/static/favicon.ico',
+              type: 'image/x-icon'
             }
           ]}
           meta={[
@@ -71,24 +59,9 @@ class Layout extends React.Component {
             }
           ]}
         />
-        <Toolbar>
-        	<NavLink to="/" is={Link}>
-            {data.repo.name}
-        	</NavLink>
-          <NavLink ml="auto" to="/changelog" is={Link}>
-        		Changelog
-          </NavLink>
-        	<NavLink to="/docs" is={Link}>
-            Docs
-          </NavLink>
-          <NavLink
-            href={data.repo.html_url}
-            target="_blank"
-          >
-            <GithubIcon />
-          </NavLink>
-        </Toolbar>
+        <Nav repo={data.repo} activePath={this.props.location.pathname} />
         {this.props.children}
+        <Footer repo={data.repo} />
       </Provider>
     );
   }

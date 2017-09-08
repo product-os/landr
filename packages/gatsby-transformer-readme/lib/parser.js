@@ -1,75 +1,49 @@
-const remark = require('remark');
+const Remark = require('remark');
 const heading = require('mdast-util-heading-range');
-const hastToHTML = require('hast-util-to-html');
-const toHAST = require('mdast-util-to-hast');
 const _ = require('lodash');
 const select = require('unist-util-select');
-const TYPE = require('./type');
+const toString = require('mdast-util-to-string');
+
+const remark = new Remark().data(`settings`, {
+  commonmark: true,
+  footnotes: true,
+  pedantic: true
+});
 
 const sections = (ast, depth) => {
-  let readmeSections = []
-  let cachedLength
+  let readmeSections = [];
+  let isEnd = true;
 
-  while(ast.children.length !== cachedLength) {
-    cachedLength = ast.children.length;
-    heading(ast, (string, node) => {
-      return node.depth === depth;
-    }, (start, nodes, end, scope) => {
-      const range = [
-        start,
-        ...nodes
-      ]
-      ast.children = ast.children.slice(range.length, ast.children.length);
-      readmeSections.push({
-        title: start.children[0].value,
-        content: getHTML(nodes)
-      })
-    });
-  };
+  while (isEnd) {
+    heading(
+      ast,
+      (string, node) => {
+        return node.depth === depth;
+      },
+      (start, nodes, end, scope) => {
+        const range = [start, ...nodes];
+        ast.children = ast.children.slice(range.length, ast.children.length);
+        isEnd = end;
+        readmeSections.push({
+          title: toString(start),
+          content:
+            remark.stringify({
+              type: 'root',
+              children: nodes
+            }) + '\n'
+        });
+      }
+    );
+  }
   return readmeSections;
 };
 
-const getHTML = (ast) => {
-  if (_.isArray(ast)) {
-    ast = { type: 'root', children: ast }
-  }
-  return hastToHTML(toHAST(ast, { allowDangerousHTML: true }), {
-    allowDangerousHTML: true,
-  })
-}
-
-const prepNodes = () => {
-  return Promise.all(
-    pluginOptions.plugins.map(plugin => {
-      const requiredPlugin = require(plugin.resolve)
-      if (_.isFunction(requiredPlugin)) {
-        return requiredPlugin(
-          {
-            markdownAST,
-            markdownNode,
-            getNode,
-            files,
-            pathPrefix,
-          },
-          plugin.pluginOptions
-        )
-      } else {
-        return Promise.resolve()
-      }
-    })
-  ).then(() => {
-    resolve(markdownAST)
-  })
-}
-
-const readmeParser = (content) => {
+const readmeParser = content => {
   const ast = remark.parse(content);
-  const rdMe = {
-    sections: sections(ast, 2),
-    images: select(ast, 'image')
-  }
-
-  return rdMe;
-}
+  return {
+    images: select(ast, 'image'),
+    sections: sections(ast, 2)
+  };
+};
 
 module.exports = readmeParser;

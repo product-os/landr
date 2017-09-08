@@ -60,9 +60,6 @@ module.exports = (repoDir, landrDir, gitInfo) => {
               },
             },
             {
-              resolve: '${landrDir}/node_modules/gatsby-remark-copy-linked-files',
-            },
-            {
               resolve: '${landrDir}/node_modules/gatsby-remark-smartypants',
               options: {
                 dashes: 'oldschool',

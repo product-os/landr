@@ -2,7 +2,6 @@ const crypto = require('crypto');
 const changelogParser = require('./parser');
 const _ = require('lodash');
 
-
 module.exports = async function onNodeCreate(
   { node, getNode, loadNodeContent, boundActionCreators },
   pluginOptions
@@ -26,14 +25,15 @@ module.exports = async function onNodeCreate(
     const contentDigest = crypto.createHash('md5').update(objStr).digest(`hex`);
 
     return {
-      ...obj,
+      title: obj.title,
       id: obj.id ? obj.id : `${node.id} [${i}] >>> changelog`,
       children: [],
       parent: node.id,
       internal: {
         contentDigest,
+        mediaType: 'text/x-markdown',
         type: 'Changelog',
-        content: objStr
+        content: obj.content
       }
     };
   });

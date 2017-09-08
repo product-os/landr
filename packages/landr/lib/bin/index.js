@@ -20,7 +20,8 @@ gitInfo.getConfig();
 const defaultHost = 'localhost';
 
 // setup site build dir
-const directory = `${process.env.HOME}/.landr/${gitInfo.getUsername()}/${gitInfo.getName()}`;
+const directory = `${process.env
+  .HOME}/.landr/${gitInfo.getUsername()}/${gitInfo.getName()}`;
 
 program.version(packageJson.version).usage('[command] [options]');
 
@@ -122,7 +123,7 @@ program
   .command('eject')
   .description('Eject a page, component or global styles')
   .action(async command => {
-    const choices = ['page', 'style', 'component', 'layout'];
+    const choices = ['pages', 'components', 'layouts', 'theme'];
 
     const { ejectType } = await inquirer.prompt({
       type: 'list',

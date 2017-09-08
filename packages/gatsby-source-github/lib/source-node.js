@@ -37,13 +37,13 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     status.owner === owner &&
     !process.env.GH_TOKEN
   ) {
-    console.warn(
-      `
-    *****************************
-    NOT FETCHING NEW GITHUB DATA
-    *****************************
-    `
-    );
+    // console.warn(
+    //   `
+    // *****************************
+    // NOT FETCHING NEW GITHUB DATA
+    // *****************************
+    // `
+    // );
     return;
   }
 
@@ -52,7 +52,8 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
   const repoMetaData = await Promise.all([
     github.repos.getReleases({ owner, repo }),
     github.repos.getContributors({ owner, repo }),
-    github.repos.getCommits({ owner, repo })
+    github.repos.getCommits({ owner, repo }),
+    github.issues.getForRepo({ owner, repo })
   ]).catch(err => {
     console.log(err);
   });
@@ -61,7 +62,8 @@ module.exports = async ({ boundActionCreators, store }, { owner, repo }) => {
     ...repoData,
     releases: repoMetaData[0].data,
     contributors: repoMetaData[1].data,
-    commits: repoMetaData[2].data
+    commits: repoMetaData[2].data,
+    issues: repoMetaData[3].data
   };
 
   setPluginStatus({

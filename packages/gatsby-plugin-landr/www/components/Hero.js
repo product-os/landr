@@ -1,19 +1,18 @@
 import React from 'react';
 import { Banner, Heading, Text, Lead } from 'rebass';
+import { withTheme } from 'styled-components';
 
-export default ({ repo }) => {
+const Hero = ({ repo, theme, dark }) => {
   return (
-    <Banner
-    	color='white'
-    	bg='gray9'
-      >
-    	<Heading
-    		f={[ 4, 5, 6, 7 ]}>
-    		{repo.name}
-    	</Heading>
+    <Banner color={theme.text(dark)} bg={theme.bg(dark)}>
+      <Heading f={[4, 5, 6, 7]}>
+        {repo.name}
+      </Heading>
       <Lead>
-      	{repo.description}
+        {repo.description}
       </Lead>
     </Banner>
   );
 };
+
+export default withTheme(Hero);
