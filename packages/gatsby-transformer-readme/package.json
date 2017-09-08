@@ -1,6 +1,6 @@
 {
   "name": "gatsby-transformer-readme",
-  "version": "0.0.0-beta1.2",
+  "version": "0.0.0-beta1.3",
   "description": "Gatsby transformer plugin for readme files",
   "scripts": {
     "build": "babel lib --out-dir dist --ignore __tests__",
