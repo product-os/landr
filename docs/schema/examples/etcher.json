@@ -1,0 +1,133 @@
+{
+  "name": "etcher",
+  "lead": "Burn. Better.",
+  "description": "Burn images to SD cards & USB drives, safely and easily.",
+  "logo": "/etcher-io.png",
+  "screenshot": "/screenshot.png",
+  "features": [
+    {
+			"title": "Validated Burning",
+			"image": "sd",
+			"description": "No more writing images on corrupted cards and wondering why your device isn't booting."
+		},
+		{
+			"title": "Hard Drive Friendly",
+			"image": "hd",
+			"description": "Makes drive selection obvious to avoid wiping your entire hard-drive"
+		},
+		{
+			"title": "Beautiful Interface",
+			"image": "simple",
+			"description": "Who said burning SD cards has to be an eyesore."
+		},
+		{
+			"title": "Open Source",
+			"image": "open-source",
+			"description": "Made with JS, HTML, node.js and <a target='_blank' href='http://electron.atom.io/'>Electron</a>. Dive in and contribute!"
+		},
+		{
+			"title": "Cross Platform",
+			"image": "cross-platform",
+			"description": "Works for everyone,<br/>no more complicated install instructions."
+		},
+		{
+			"title": "More on the way",
+			"image": "coming-soon",
+			"description": "50% faster burns, simultaneous writing for multiple drives.<br/><a target='_blank' href='https://github.com/resin-io/etcher/milestones'>View our roadmap</a>"
+		}
+  ],
+  "analytics":  {
+    "debug": true,
+    "mixpanelToken": "0b4c23e0072d8dee7cf8ac7ab7c4a216",
+    "gaSite": "etcher.io",
+    "gaId": "UA-45671959-2",
+    "gosquaredId": "GSN-954701-N",
+    "prefix": "Etcher Website"
+  },
+  "nav": {
+    "header": [
+      {
+        "text": "Changelog",
+        "href": "/changelog"
+      },
+      {
+        "text": "CLI",
+        "href": "/cli"
+      },
+      {
+        "text": "Chat",
+        "href": "https://gitter.im/resin-io/etcher",
+        "_blank": true
+      },
+      {
+        "text": "Mailing List",
+        "href": "http://eepurl.com/cJ4fkX",
+        "_blank": true
+      },
+      {
+        "text": "Help",
+        "href": "https://github.com/resin-io/etcher/blob/master/SUPPORT.md",
+        "_blank": true
+      }
+    ],
+    "footer": [
+      {
+        "text": "Changelog",
+        "href": "/changelog"
+      },
+      {
+        "text": "CLI",
+        "href": "/cli"
+      },
+      {
+        "text": "Chat",
+        "href": "https://gitter.im/resin-io/etcher",
+        "_blank": true
+      },
+      {
+        "text": "Contact",
+        "href": "mailto:hello@etcher.io",
+        "_blank": true
+      },
+      {
+        "text": "About Us",
+        "href": "https://resin.io",
+        "_blank": true
+      },
+      {
+        "text": "Blog",
+        "href": "https://resin.io/blog",
+        "_blank": true
+      },
+      {
+        "text": "Mailing List",
+        "href": "http://eepurl.com/cJ4fkX",
+        "_blank": true
+      },
+      {
+        "text": "Help",
+        "href": "https://github.com/resin-io/etcher/blob/master/SUPPORT.md",
+        "_blank": true
+      }
+    ]
+  },
+  "releases": [
+    {
+      "html_url": "https://github.com/octocat/Hello-World/releases/v1.0.0",
+      "tag_name": "v1.0.0",
+      "name": "v1.0.0",
+      "body": "Description of the release",
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip",
+          "name": "example.zip",
+          "label": "short description",
+          "state": "uploaded",
+          "content_type": "application/zip",
+          "size": 1024,
+          "download_count": 42
+        }
+      ]
+    }
+  ]
+}
