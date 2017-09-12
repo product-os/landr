@@ -2,39 +2,41 @@
   "name": "etcher",
   "lead": "Burn. Better.",
   "description": "Burn images to SD cards & USB drives, safely and easily.",
-  "logo": "/etcher-io.png",
-  "screenshot": "/screenshot.png",
+  "logo": "/images/etcher-io.png",
+  "screenshot": [
+    "/images/screenshot.png"
+  ],
   "features": [
     {
-			"title": "Validated Burning",
-			"image": "sd",
-			"description": "No more writing images on corrupted cards and wondering why your device isn't booting."
-		},
-		{
-			"title": "Hard Drive Friendly",
-			"image": "hd",
-			"description": "Makes drive selection obvious to avoid wiping your entire hard-drive"
-		},
-		{
-			"title": "Beautiful Interface",
-			"image": "simple",
-			"description": "Who said burning SD cards has to be an eyesore."
-		},
-		{
-			"title": "Open Source",
-			"image": "open-source",
-			"description": "Made with JS, HTML, node.js and <a target='_blank' href='http://electron.atom.io/'>Electron</a>. Dive in and contribute!"
-		},
-		{
-			"title": "Cross Platform",
-			"image": "cross-platform",
-			"description": "Works for everyone,<br/>no more complicated install instructions."
-		},
-		{
-			"title": "More on the way",
-			"image": "coming-soon",
-			"description": "50% faster burns, simultaneous writing for multiple drives.<br/><a target='_blank' href='https://github.com/resin-io/etcher/milestones'>View our roadmap</a>"
-		}
+    	"title": "Validated Burning",
+    	"image": "/images/sd.png",
+    	"description": "No more writing images on corrupted cards and wondering why your device isn't booting."
+    },
+    {
+    	"title": "Hard Drive Friendly",
+    	"image": "/images/hd.png",
+    	"description": "Makes drive selection obvious to avoid wiping your entire hard-drive"
+    },
+    {
+    	"title": "Beautiful Interface",
+    	"image": "/images/simple.png",
+    	"description": "Who said burning SD cards has to be an eyesore."
+    },
+    {
+    	"title": "Open Source",
+    	"image": "/images/open-source.png",
+    	"description": "Made with JS, HTML, node.js and <a target='_blank' href='http://electron.atom.io/'>Electron</a>. Dive in and contribute!"
+    },
+    {
+    	"title": "Cross Platform",
+    	"image": "/images/cross-platform.png",
+    	"description": "Works for everyone,<br/>no more complicated install instructions."
+    },
+    {
+    	"title": "More on the way",
+    	"image": "/images/coming-soon.png",
+    	"description": "50% faster burns, simultaneous writing for multiple drives.<br/><a target='_blank' href='https://github.com/resin-io/etcher/milestones'>View our roadmap</a>"
+    }
   ],
   "analytics":  {
     "debug": true,
@@ -43,73 +45,6 @@
     "gaId": "UA-45671959-2",
     "gosquaredId": "GSN-954701-N",
     "prefix": "Etcher Website"
-  },
-  "nav": {
-    "header": [
-      {
-        "text": "Changelog",
-        "href": "/changelog"
-      },
-      {
-        "text": "CLI",
-        "href": "/cli"
-      },
-      {
-        "text": "Chat",
-        "href": "https://gitter.im/resin-io/etcher",
-        "_blank": true
-      },
-      {
-        "text": "Mailing List",
-        "href": "http://eepurl.com/cJ4fkX",
-        "_blank": true
-      },
-      {
-        "text": "Help",
-        "href": "https://github.com/resin-io/etcher/blob/master/SUPPORT.md",
-        "_blank": true
-      }
-    ],
-    "footer": [
-      {
-        "text": "Changelog",
-        "href": "/changelog"
-      },
-      {
-        "text": "CLI",
-        "href": "/cli"
-      },
-      {
-        "text": "Chat",
-        "href": "https://gitter.im/resin-io/etcher",
-        "_blank": true
-      },
-      {
-        "text": "Contact",
-        "href": "mailto:hello@etcher.io",
-        "_blank": true
-      },
-      {
-        "text": "About Us",
-        "href": "https://resin.io",
-        "_blank": true
-      },
-      {
-        "text": "Blog",
-        "href": "https://resin.io/blog",
-        "_blank": true
-      },
-      {
-        "text": "Mailing List",
-        "href": "http://eepurl.com/cJ4fkX",
-        "_blank": true
-      },
-      {
-        "text": "Help",
-        "href": "https://github.com/resin-io/etcher/blob/master/SUPPORT.md",
-        "_blank": true
-      }
-    ]
   },
   "releases": [
     {
@@ -128,6 +63,18 @@
           "download_count": 42
         }
       ]
+    }
+  ],
+  "changelog": [
+    {
+      "version": "v0.1.1",
+      "date": 1505221853777,
+      "body": "The 2 release of etcher!"
+    },
+    {
+      "version": "v0.1.0",
+      "date": 1505221814561,
+      "body": "The first release of etcher!"
     }
   ]
 }

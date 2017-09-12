@@ -1,13 +1,34 @@
 {
   "definitions": {
+    "changelogEntry": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^v(?:(\\d+)\\.)?(?:(\\d+)\\.)?(\\*|\\d+)$"
+        },
+        "date": {
+          "type": "integer",
+          "description": "ms timestamp"
+        },
+        "body": {
+          "type": "string",
+          "description": "Changelog entry body"
+        }
+      }
+    },
     "feature": {
       "type": "object",
       "properties": {
         "title": { "type": "string" },
-        "image": { "type": "string" },
+        "image": { "$ref": "#/definitions/image" },
         "description": { "type": "string" }
       },
       "required": ["title"]
+    },
+    "image": {
+      "type": "string",
+      "pattern": "^(.+)/([^/]+)$"
     },
     "analytics": {
       "type": "object",
@@ -74,11 +95,14 @@
       "description": "Repo description"
     },
     "logo": {
-      "type": "string",
+      "$ref": "#/definitions/image",
       "description": "Repo Logo image"
     },
     "screenshot": {
-      "type": "string",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/image"
+      },
       "description": "Repo screenshot image"
     },
     "features": {
@@ -102,6 +126,12 @@
     "releases": {
       "type": "array",
       "items": { "$ref": "#/definitions/release" }
+    },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/changelogEntry"
+      }
     }
   },
   "required": ["name", "description"]
