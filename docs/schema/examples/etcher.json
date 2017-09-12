@@ -1,0 +1,80 @@
+{
+  "name": "etcher",
+  "lead": "Burn. Better.",
+  "description": "Burn images to SD cards & USB drives, safely and easily.",
+  "logo": "/images/etcher-io.png",
+  "screenshot": [
+    "/images/screenshot.png"
+  ],
+  "features": [
+    {
+    	"title": "Validated Burning",
+    	"image": "/images/sd.png",
+    	"description": "No more writing images on corrupted cards and wondering why your device isn't booting."
+    },
+    {
+    	"title": "Hard Drive Friendly",
+    	"image": "/images/hd.png",
+    	"description": "Makes drive selection obvious to avoid wiping your entire hard-drive"
+    },
+    {
+    	"title": "Beautiful Interface",
+    	"image": "/images/simple.png",
+    	"description": "Who said burning SD cards has to be an eyesore."
+    },
+    {
+    	"title": "Open Source",
+    	"image": "/images/open-source.png",
+    	"description": "Made with JS, HTML, node.js and <a target='_blank' href='http://electron.atom.io/'>Electron</a>. Dive in and contribute!"
+    },
+    {
+    	"title": "Cross Platform",
+    	"image": "/images/cross-platform.png",
+    	"description": "Works for everyone,<br/>no more complicated install instructions."
+    },
+    {
+    	"title": "More on the way",
+    	"image": "/images/coming-soon.png",
+    	"description": "50% faster burns, simultaneous writing for multiple drives.<br/><a target='_blank' href='https://github.com/resin-io/etcher/milestones'>View our roadmap</a>"
+    }
+  ],
+  "analytics":  {
+    "debug": true,
+    "mixpanelToken": "0b4c23e0072d8dee7cf8ac7ab7c4a216",
+    "gaSite": "etcher.io",
+    "gaId": "UA-45671959-2",
+    "gosquaredId": "GSN-954701-N",
+    "prefix": "Etcher Website"
+  },
+  "releases": [
+    {
+      "html_url": "https://github.com/octocat/Hello-World/releases/v1.0.0",
+      "tag_name": "v1.0.0",
+      "name": "v1.0.0",
+      "body": "Description of the release",
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip",
+          "name": "example.zip",
+          "label": "short description",
+          "state": "uploaded",
+          "content_type": "application/zip",
+          "size": 1024,
+          "download_count": 42
+        }
+      ]
+    }
+  ],
+  "changelog": [
+    {
+      "version": "v0.1.1",
+      "date": 1505221853777,
+      "body": "The 2 release of etcher!"
+    },
+    {
+      "version": "v0.1.0",
+      "date": 1505221814561,
+      "body": "The first release of etcher!"
+    }
+  ]
+}
