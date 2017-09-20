@@ -1,5 +1,5 @@
 {
-  "name": "nest",
+  "name": "landr",
   "version": "0.1.0",
   "description": "Source code === website",
   "main": "./lib/cli.js",
@@ -20,6 +20,7 @@
     "babel-runtime": "^6.6.1",
     "capitano": "1.7.4",
     "debug": "^3.0.1",
+    "deepmerge": "^1.5.1",
     "find-up": "2.1.0",
     "gitinfo": "2.2.0",
     "graphql-client": "2.0.0",
