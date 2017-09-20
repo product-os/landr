@@ -6,6 +6,11 @@
   "screenshot": [
     "/images/screenshot.png"
   ],
+  "owner": {
+    "login": "resin-io",
+    "avatar_url": "https://avatars2.githubusercontent.com/u/6157842?v=4",
+    "html_url": "https://github.com/resin-io"
+  },
   "features": [
     {
     	"title": "Validated Burning",
@@ -48,10 +53,11 @@
   },
   "releases": [
     {
+      "name": "v0.1.1 - first beta",
+      "version": "v0.1.1",
+      "date": 1505221853777,
+      "body": "The 2 release of etcher!",
       "html_url": "https://github.com/octocat/Hello-World/releases/v1.0.0",
-      "tag_name": "v1.0.0",
-      "name": "v1.0.0",
-      "body": "Description of the release",
       "assets": [
         {
           "browser_download_url": "https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip",
@@ -65,16 +71,11 @@
       ]
     }
   ],
-  "changelog": [
+  "contributors": [
     {
-      "version": "v0.1.1",
-      "date": 1505221853777,
-      "body": "The 2 release of etcher!"
-    },
-    {
-      "version": "v0.1.0",
-      "date": 1505221814561,
-      "body": "The first release of etcher!"
+      "login": "resin-io",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6157842?v=4",
+      "html_url": "https://github.com/resin-io"
     }
   ]
 }

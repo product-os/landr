@@ -1,33 +1,41 @@
 {
-  "name": "landr",
-  "version": "0.0.0",
-  "description": "Source code = website",
-  "homepage": "https://github.com/resin-io/landr",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:resin-io/landr.git"
-  },
+  "name": "nest",
+  "version": "0.1.0",
+  "description": "Source code === website",
+  "main": "./lib/cli.js",
+  "bin": "./lib/cli.js",
   "scripts": {
-    "start": "yarn run watch",
-    "watch": "lerna run --parallel watch",
-    "build": "lerna run --parallel build",
-    "publish": "lerna publish",
-    "deploy": "lerna run deploy --scope landr",
-    "postinstall": "lerna bootstrap --npm-client=yarn",
-    "prettier": "prettier --single-quote --write \"packages/*/{index.js,+(lib|bin|www)/**/*.js}\"",
-    "validate-schema": "ajv -s docs/schema/index.json -d 'docs/schema/examples/*.json'"
+    "standard": "standard --fix 'lib/**/*.js'"
+  },
+  "author": "Craig Mulligan",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-styled-components": "1.2.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-es2016": "^6.0.10",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.6.1",
+    "capitano": "1.7.4",
+    "debug": "^3.0.1",
+    "find-up": "2.1.0",
+    "gitinfo": "2.2.0",
+    "graphql-client": "2.0.0",
+    "lodash": "^4.17.4",
+    "mkdirp-then": "1.2.0",
+    "node-libs-browser": "^0.5.2",
+    "react": "15.6.1",
+    "react-dom": "^15.6.1",
+    "react-icons": "^2.2.5",
+    "react-router": "^0.13.3",
+    "rebass": "^1.0.4",
+    "static-site-generator-webpack-plugin": "^3.4.1",
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
   },
   "devDependencies": {
-    "ajv-cli": "2.1.0",
-    "babel-cli": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.6.0",
-    "babel-runtime": "^6.23.0",
-    "lerna": "^2.0.0-rc.5",
-    "prettier": "1.5.3"
-  },
-  "dependencies": {
-    "regenerator-runtime": "0.11.0"
+    "standard": "10.0.3"
   }
 }
