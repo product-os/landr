@@ -1,0 +1,122 @@
+{
+  "definitions": {
+    "contributor": {
+      "type": "object",
+      "properties": {
+        "login": { "type": "string" },
+        "avatar_url": { "type": "string" },
+        "html_url": { "type": "string" }
+      }
+    },
+    "feature": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "image": { "$ref": "#/definitions/image" },
+        "description": { "type": "string" }
+      },
+      "required": ["title"]
+    },
+    "image": {
+      "type": "string",
+      "pattern": "^(.+)/([^/]+)$"
+    },
+    "analytics": {
+      "type": "object",
+      "properties": {
+        "debug": { "type": "boolean", "default": false },
+        "gaSite": { "type": "string" },
+        "gaId": { "type": "string" },
+        "gosquaredId": { "type": "string" },
+        "mixpanelId": { "type": "string" },
+        "prefix": {
+          "type": "string",
+          "description": "Prefix all events with this string"
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "href": { "type": "string" },
+        "_blank": { "type": "boolean", "default": false }
+      },
+      "required": [ "text", "href" ]
+    },
+    "release": {
+      "properties": {
+        "html_url": { "type": "string", "description": "github url" },
+        "name": { "type": "string", "description": "github release name" },
+        "version": {
+          "type": "string",
+          "pattern": "^v(?:(\\d+)\\.)?(?:(\\d+)\\.)?(\\*|\\d+)$"
+        },
+        "date": {
+          "type": "integer",
+          "description": "ms timestamp"
+        },
+        "body": {
+          "type": "string",
+          "description": "Changelog entry body"
+        },
+        "assets": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/asset" }
+        }
+      },
+      "required": [ "html_url", "name", "assets" ]
+    },
+    "asset": {
+      "type": "object",
+      "properties": {
+        "browser_download_url": { "type": "string" },
+        "name": { "type": "string" },
+        "label": { "type": "string" },
+        "size": { "type": "integer" }
+      },
+      "required": [ "browser_download_url", "name" ]
+    }
+  },
+  "title": "Landr",
+  "description": "A representation of a data needed to build a landr website",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Repo Name",
+      "source": ".git"
+    },
+    "owner": { "$ref": "#/definitions/contributor" },
+    "lead": {
+      "type": "string",
+      "description": "Punchy Repo description"
+    },
+    "description": {
+      "type": "string",
+      "description": "Repo description"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "ref": "#/definitions/contributor"
+      }
+    },
+    "logo": {
+      "$ref": "#/definitions/image",
+      "description": "Repo Logo image"
+    },
+    "screenshot": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/image"
+      },
+      "description": "Repo screenshot image"
+    },
+    "releases": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/release" }
+    }
+  },
+  "required": ["name", "description", "contributors", "owner"]
+}
