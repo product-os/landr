@@ -35,6 +35,8 @@
     "react-router-config": "1.0.0-beta.4",
     "react-router-dom": "^4.1.1",
     "rebass": "^1.0.4",
+    "remark": "8.0.0",
+    "remark-html": "6.0.1",
     "require-from-string": "2.0.1",
     "webpack": "3.6.0",
     "webpack-isomorphic-compiler": "1.1.0",
