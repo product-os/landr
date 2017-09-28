@@ -2,8 +2,8 @@
   "name": "landr",
   "version": "0.1.0",
   "description": "Source code === website",
-  "main": "./lib/cli.js",
-  "bin": "./lib/cli.js",
+  "main": "./lib/bin/index.js",
+  "bin": "./lib/bin/index.js",
   "scripts": {
     "standard": "standard --fix 'lib/**/*.js'"
   },
