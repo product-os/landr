@@ -41,6 +41,7 @@
     "remark-html": "6.0.1",
     "require-from-string": "2.0.1",
     "stats-webpack-plugin": "0.6.1",
+    "underscore.string": "3.3.4",
     "webpack": "3.6.0",
     "webpack-isomorphic-compiler": "1.1.0",
     "webpack-isomorphic-dev-middleware": "1.2.0",
