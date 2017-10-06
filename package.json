@@ -32,7 +32,7 @@
     "mkdirp-then": "1.2.0",
     "qs": "6.5.1",
     "react": "16.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "16.0.0",
     "react-helmet": "5.2.0",
     "react-icons": "^2.2.5",
     "react-router": "^4.2.0",
@@ -42,7 +42,7 @@
     "remark": "8.0.0",
     "remark-html": "6.0.1",
     "require-from-string": "2.0.1",
-    "resin-components": "1.14.0",
+    "resin-components": "^1.14.0",
     "resin-event-log": "1.7.0",
     "sniffr": "1.1.4",
     "stats-webpack-plugin": "0.6.1",
@@ -53,8 +53,7 @@
     "webpack-stats-plugin": "0.1.5"
   },
   "devDependencies": {
-    "standard": "10.0.3",
-    "webpack-bundle-analyzer": "2.9.0"
+    "standard": "10.0.3"
   },
   "standard": {
     "ignore": [
