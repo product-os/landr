@@ -25,6 +25,11 @@ landr
 
 Visit `http://localhost:3000`.
 
+`prefixPaths` flag is useful when deploying to gh-pages where you need the `/<repository-name>` prefixed.
+```
+landr build --prefixPaths
+```
+
 Deploy to github pages:
 ```
 landr deploy
@@ -34,7 +39,7 @@ landr deploy
 
 I know, we said there is zero configuration, but there are some cases where configuration is necessary for example if you need to add analytics tokens, or ignore certain files.
 
-landr allows configuration via a `landr.conf.js` file in `<project-root>/www/` it must export a config object.
+landr allows configuration via a `landr.conf.js` file the repository root it must export a config object.
 
 ```js
 // landr.conf.js
@@ -59,6 +64,10 @@ Most OS websites the same, the have a hero, a getting started and some docs. The
 
 ```
 npm i
+```
+
+```
+npm link
 ```
 
 Get to work. 👷
