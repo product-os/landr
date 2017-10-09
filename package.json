@@ -5,7 +5,7 @@
   "main": "./lib/bin/index.js",
   "bin": "./lib/bin/index.js",
   "scripts": {
-    "standard": "standard --fix 'lib/**/*.js'"
+    "prettier": "prettier --single-quote --semi false --write 'lib/**/*.js'"
   },
   "author": "Craig Mulligan",
   "license": "MIT",
@@ -56,7 +56,7 @@
     "webpack-stats-plugin": "0.1.5"
   },
   "devDependencies": {
-    "standard": "10.0.3"
+    "prettier": "1.7.4"
   },
   "standard": {
     "ignore": [
