@@ -42,7 +42,7 @@
     "remark": "8.0.0",
     "remark-html": "6.0.1",
     "require-from-string": "2.0.1",
-    "resin-components": "1.14.1",
+    "resin-components": "1.14.3",
     "resin-event-log": "1.7.0",
     "sniffr": "1.1.4",
     "stats-webpack-plugin": "0.6.1",
