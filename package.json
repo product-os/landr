@@ -50,7 +50,7 @@
     "remark": "8.0.0",
     "remark-html": "6.0.1",
     "require-from-string": "2.0.1",
-    "resin-components": "1.14.3",
+    "resin-components": "1.21.0",
     "resin-event-log": "1.7.0",
     "sniffr": "1.1.4",
     "source-map-support": "0.5.0",
