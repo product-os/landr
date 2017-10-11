@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "1.0.2-beta2.7",
+  "version": "1.0.2-beta2.8",
   "description": "Source code === website",
   "main": "./dist/bin/index.js",
   "bin": "./dist/bin/index.js",
@@ -50,6 +50,7 @@
     "resin-components": "1.14.3",
     "resin-event-log": "1.7.0",
     "sniffr": "1.1.4",
+    "source-map-support": "0.5.0",
     "stats-webpack-plugin": "0.6.1",
     "underscore.string": "3.3.4",
     "webpack": "3.6.0",
