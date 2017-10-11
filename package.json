@@ -1,25 +1,28 @@
 {
   "name": "landr",
-  "version": "0.1.0",
+  "version": "1.0.2-beta2.7",
   "description": "Source code === website",
-  "main": "./lib/bin/index.js",
-  "bin": "./lib/bin/index.js",
+  "main": "./dist/bin/index.js",
+  "bin": "./dist/bin/index.js",
   "scripts": {
+    "build": "babel lib --out-dir dist --copy-files",
+    "watch": "babel -w lib --out-dir dist --copy-files",
     "prettier": "prettier --single-quote --semi false --write 'lib/**/*.js'"
   },
   "author": "Craig Mulligan",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "arch": "2.1.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-styled-components": "1.2.0",
+    "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bluebird": "3.5.0",
     "capitano": "1.7.4",
-    "debug": "^3.1.0",
+    "debug": "3.1.0",
     "deepmerge": "^1.5.2",
     "express": "4.16.0",
     "file-loader": "1.1.4",
@@ -32,6 +35,8 @@
     "lodash-webpack-plugin": "0.11.4",
     "mkdirp-then": "1.2.0",
     "path-parse": "1.0.5",
+    "preact": "8.2.5",
+    "preact-compat": "3.17.0",
     "qs": "6.5.1",
     "react-helmet": "5.2.0",
     "react-icons": "^2.2.5",
@@ -53,6 +58,8 @@
     "webpack-stats-plugin": "0.1.5"
   },
   "devDependencies": {
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "prettier": "1.7.4"
   },
   "standard": {
