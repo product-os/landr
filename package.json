@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "1.0.3",
+  "version": "1.0.3-beta0.0.1",
   "description": "Source code === website",
   "main": "./dist/bin/index.js",
   "bin": "./dist/bin/index.js",
@@ -50,6 +50,7 @@
     "react-twitter-widgets": "1.7.1",
     "redux": "3.7.2",
     "remark": "8.0.0",
+    "remark-highlight.js": "5.0.0",
     "remark-html": "6.0.1",
     "require-from-string": "2.0.1",
     "resin-components": "1.21.0",
