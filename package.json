@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "1.0.2-beta2.10",
+  "version": "1.0.2-beta2.11",
   "description": "Source code === website",
   "main": "./dist/bin/index.js",
   "bin": "./dist/bin/index.js",
