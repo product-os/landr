@@ -7,7 +7,9 @@
   "scripts": {
     "build": "babel lib --out-dir dist --copy-files",
     "watch": "babel -w lib --out-dir dist --copy-files",
-    "prettier": "prettier --single-quote --semi false --write 'lib/**/*.js'"
+    "prettier": "prettier --single-quote --semi false --write '{lib/**/*.js,tests/**/*.spec.js}'",
+    "test": "mocha tests --recursive --compilers js:babel-core/register",
+    "ci": "npm run build && npm test"
   },
   "author": "Craig Mulligan",
   "license": "Apache-2.0",
@@ -39,6 +41,7 @@
     "mdast-util-heading-range": "2.1.0",
     "mdast-util-to-string": "1.0.4",
     "mkdirp-then": "1.2.0",
+    "mochainon": "2.0.0",
     "path-parse": "1.0.5",
     "preact": "8.2.5",
     "preact-compat": "3.17.0",
@@ -66,8 +69,11 @@
     "webpack-stats-plugin": "0.1.5"
   },
   "devDependencies": {
+    "babel-cli": "6.26.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "mocha": "4.0.1",
+    "mochainon": "2.0.0",
     "prettier": "1.7.4"
   },
   "standard": {
