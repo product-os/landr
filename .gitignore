@@ -1,5 +1,6 @@
 #landr
 package-lock.json
+tests/DUMMY/.landr
 
 .cache
 

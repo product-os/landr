@@ -27,7 +27,7 @@ describe('.getConfig()', () => {
       dev: true,
       dir: ROOT,
       distDir: resolvePath('.landr/dist'),
-      remoteUrl: 'git@github.com:foo/bar.git'
+      remoteUrl: 'git@github.com:facebook/react.git'
     })
   })
 
@@ -51,6 +51,6 @@ describe('.getConfig()', () => {
       ...DUMMY_OPTS,
       prefixPaths: true
     })
-    m.chai.expect(config.pathPrefix).to.equal('/bar')
+    m.chai.expect(config.pathPrefix).to.equal('/react')
   })
 })
