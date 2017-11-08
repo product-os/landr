@@ -7,5 +7,8 @@ cache:
     - "node_modules"
 
 script:
-  - ls  tests/DUMMY/dummy_git
-  - npm run ci
+  - npm i
+  - npm run prettier-check
+  - npm run lint
+  - npm run build
+  - npm run test

@@ -31,13 +31,13 @@ const customPlugin = {
     }
   },
   actions: {
-    addFoo: (payload) => {
+    addFoo: payload => {
       return {
         type: 'ADD_FOO',
         payload
       }
     },
-    addBar: (payload) => {
+    addBar: payload => {
       return {
         type: 'ADD_BAR',
         payload
@@ -68,14 +68,14 @@ describe('collector', () => {
   })
 
   it('Should accept and run custom plugins', async () => {
-    const data = await collector(GIT_PATH, [ customPlugin ])
+    const data = await collector(GIT_PATH, [customPlugin])
     m.chai.expect(data.foo).to.equal('dummy foo data')
     m.chai.expect(data.bar).to.equal('dummy bar data')
   })
 
   it('Should accept plugins with middleware', async () => {
-    const data = await collector(GIT_PATH, [ customPlugin, upperCasePlugin ])
+    const data = await collector(GIT_PATH, [customPlugin, upperCasePlugin])
     m.chai.expect(data.foo).to.equal('DUMMY FOO DATA')
     m.chai.expect(data.bar).to.equal('DUMMY BAR DATA')
   })
-}).timeout(5000);
+}).timeout(5000)
