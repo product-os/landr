@@ -25,30 +25,19 @@ landr
 
 Visit `http://localhost:3000`.
 
-`prefixPaths` flag is useful when deploying to gh-pages where you need the `/<repository-name>` prefixed.
+Build site:
 ```
-landr build --prefixPaths
+landr build
+```
+
+View built site locally:
+```
+landr serve
 ```
 
 Deploy to github pages:
 ```
 landr deploy
-```
-
-### Configuration
-
-I know, we said there is zero configuration, but there are some cases where configuration is necessary for example if you need to add analytics tokens, or ignore certain files.
-
-landr allows configuration via a `landr.conf.js` file the repository root it must export a config object.
-
-```js
-// landr.conf.js
-module.exports = {
-  analytics: {
-    mixpanel: <mixpanel-id>
-    googleAnalytics: <ga-id>
-  }
-}
 ```
 
 ## Why landr
