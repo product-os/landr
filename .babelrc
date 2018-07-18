@@ -1,3 +1,10 @@
 {
-  "extends": "@resin.io/react-static/.babelrc"
+  "extends": "@resin.io/react-static/.babelrc",
+  "presets": [
+    "react",
+    "env"
+  ],
+  "plugins": [
+    ["transform-class-properties", { "spec": true }]
+  ]
 }
