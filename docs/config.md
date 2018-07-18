@@ -10,14 +10,8 @@ A simple project will not need a config file, if you'd like to `landr.conf.js` f
 
 ```javascript
 {
-  // A theme to inherit from, this means that the remainder of the config will
-  // be inherited from this theme as well as source files.
-  // For example, the config.getRoutes() function will automatically be
-  // inherited from 'landr-theme-resin' if not set.
-  // Any components required with `@landr/<component>` will be resolved
-  // via your `.landr/components` folder and then fallback to `theme-folder/components`
-  // interrogator collects data from your repository and hands it back to landr
-  // config for static site theme
+  // A relative path to a theme that landr should use, or the name of built-in
+  // landr theme. Defaults to `landr-theme-resin`
   theme: 'landr-theme-resin',
   settings: {
     // these are configuration settings unique to each theme
