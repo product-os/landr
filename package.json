@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Source code === website",
   "main": "./dist/lib/index.js",
   "bin": "./dist/bin/index.js",
@@ -18,6 +18,7 @@
   "author": "Craig Mulligan",
   "license": "Apache-2.0",
   "dependencies": {
+    "@octokit/rest": "^15.9.4",
     "@resin.io/react-static": "^4.0.4",
     "arch": "2.1.0",
     "babel-core": "^6.26.0",
@@ -33,13 +34,13 @@
     "express": "4.16.0",
     "file-loader": "1.1.4",
     "fs-jetpack": "1.2.0",
-    "gh-pages": "1.0.0",
-    "github": "11.0.0",
+    "gh-pages": "1.2.0",
     "github-buttons": "git+https://github.com/ntkme/github-buttons.git#master",
     "gitinfo": "2.2.0",
     "lodash": "^4.17.4",
     "mdast-util-heading-range": "2.1.0",
     "mdast-util-to-string": "1.0.4",
+    "micro": "^9.3.2",
     "mkdirp": "^0.5.1",
     "path-parse": "1.0.5",
     "prop-types": "^15.6.0",
@@ -53,10 +54,9 @@
     "remark-html": "6.0.1",
     "resin-components": "^2.3.0",
     "resin-event-log": "1.7.0",
-    "serve": "^6.4.1",
+    "serve-handler": "^3.3.0",
     "sniffr": "1.1.4",
-    "styled-components": "^2.2.3",
-    "underscore.string": "3.3.4"
+    "styled-components": "^2.2.3"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
