@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Source code === website",
   "main": "./dist/lib/index.js",
   "bin": "./dist/bin/index.js",
@@ -13,7 +13,8 @@
     "mocha": "mocha tests --recursive --compilers js:babel-core/register",
     "docs": "jsdoc2md 'lib/index.js' > docs/theme.md",
     "prettier-check": "prettier-check --single-quote --no-semi 'lib/{bin,core,data}/**/*.js'",
-    "lint": "eslint 'lib/**/*.js'"
+    "lint": "eslint 'lib/**/*.js'",
+    "prepublish": "npm run build"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",
