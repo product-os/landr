@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "2.0.0-beta0.0.6",
+  "version": "2.0.0",
   "description": "Source code === website",
   "main": "./dist/lib/index.js",
   "bin": "./dist/bin/index.js",
@@ -23,10 +23,8 @@
     "babel-core": "^6.26.0",
     "babel-plugin-styled-components": "1.2.0",
     "babel-polyfill": "6.26.0",
-    "babel-preset-env": "1.6.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "bluebird": "3.5.0",
     "capitano": "1.7.4",
     "color": "^2.0.1",
@@ -63,7 +61,7 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-eslint": "^8.0.2",
-    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
     "eslint": "4.12.0",
     "eslint-config-prettier": "^2.9.0",
