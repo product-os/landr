@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Source code === website",
   "main": "./dist/lib/index.js",
   "bin": "./dist/bin/index.js",
@@ -15,8 +15,12 @@
     "prettier-check": "prettier-check --single-quote --no-semi 'lib/{bin,core,data}/**/*.js'",
     "lint": "eslint 'lib/**/*.js'"
   },
-  "author": "Craig Mulligan",
+  "author": "Resin Inc. <hello@etcher.io>",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:resin-io/landr.git"
+  },
   "dependencies": {
     "@octokit/rest": "^15.9.4",
     "@resin.io/react-static": "^4.0.4",
