@@ -1,0 +1,15 @@
+## v0.1.0 - 2018-10-01
+
+* Docs: Expose the section ids for linking [Dimitrios Lytras]
+* Docs: Include links in headings [Dimitrios Lytras]
+* Assets: Include PDF [Dimitrios Lytras]
+* Theme: Allow users to provide a custom theme [Lucian Buzzo]
+* Package.json: Run build before publishing [Lucian Buzzo]
+* Package.json: Fix typo in author email address [Lucian Buzzo]
+* Package.json: Update author field and add repository field [Lucian Buzzo]
+* Dependencies: Update dependencies to mitigate security vulnerabilities [Lucian Buzzo]
+* Babel: Update to babel-preset-env [Lucian Buzzo]
+* Config: Fix missing default theme and assets directory [Lucian Buzzo]
+* 66 clean config (#69) [Craig Mulligan]
+* Add gzip compression on view command [craig-mulligan]
+* Allow untracked local branches (#41) [Craig Mulligan]
