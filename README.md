@@ -1,66 +1,32 @@
-# landr
+<h1 align="center">
+    Landr
+</h1>
 
-source code = website!
+## 🚀 Quick start
 
-> Build a website for your software projects with one command.
+1. Install landr
 
-## How it works
-
-When you run landr on your local repository, it gathers info by leveraging standard conventions.
-It'll first look for a git remote from `github.com` and retrieve some basic information about your project from the github api (`contribution stats`, `releases`), it will then parse standard files like `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md` & `/docs`, it'll then use the data to build out beautiful pages for your website.
-
-This allows the maintenance of your website to be a side effect of keeping your software project inline with standard github conventions.
-
-## Quick start guide
-
-Install:
-```
-npm i -g landr
+```bash
+npm install landr
 ```
 
-From the root of your local `.git` repo run:
-```
-landr
-```
+2. Add the a npm script entry in your `package.json` file
 
-Visit `http://localhost:3000`.
-
-Build site:
-```
-landr build
+```json
+"scripts": {
+  "landr": "landr"
+}
 ```
 
-View built site locally:
-```
-landr serve
-```
-
-Deploy to github pages:
-```
-landr deploy
+3. Run the CLI
+```bash
+GITHUB_TOKEN=[your token] npm run landr
 ```
 
-## Why landr
+4. Landr will push the changes to the `gh-pages` branch.
 
-You have to maintain your source code why maintain a website too?
+## Under the Hood
 
-As a software company we have a growing number of websites to build and maintain. We built landr so we could focus on our projects and not their websites.
+1.  Landr will scan the repo utilizing [Scrutinizer](https://github.com/balena-io-modules/scrutinizer).
 
-Most OS websites the same, the have a hero, a getting started and some docs. There is definitely room for automation.
-
-
-## Contributing
-
-```
-npm i
-```
-
-```
-npm link
-```
-
-Get to work. 👷
-
-## License
-
-Landr is free software, and may be redistributed under the terms specified in the [license](LICENSE).
+2.  Then it will persist the data, and pass it over to [React Static](https://github.com/nozzle/react-static) which will produce a single page website. For styling we\'ll use our very own [Rendition](https://github.com/balena-io-modules/rendition).
