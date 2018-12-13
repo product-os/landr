@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 import capitano from 'capitano';
-// import doxx from 'doxx'
+import path from 'path';
+import doxx from '@resin.io/doxx';
 import _ from 'lodash';
 import { getRepoInformation } from './functions';
+
+const DOXX_CONFIG = {
+  rootDir: path.resolve(__dirname, '..'),
+  destDir: 'contents',
+};
 
 const errorHandler = error => {
   console.error(error);
@@ -14,7 +20,7 @@ capitano.command({
   description: 'Get repo metadata',
   action: async () => {
     try {
-      getRepoInformation();
+      await getRepoInformation();
     } catch (error) {
       errorHandler(error);
     }
@@ -26,8 +32,7 @@ capitano.command({
   description: 'Prepare docs',
   action: async () => {
     try {
-      console.log('test');
-      // doxx()
+      // doxx(DOXX_CONFIG);
     } catch (error) {
       errorHandler(error);
     }

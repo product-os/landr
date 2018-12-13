@@ -20,7 +20,16 @@ const getRepoInformation = async () => {
 
   // const faq = await crawler.getMarkdownFile('');
   const changelog = await crawler.getFile('CHANGELOG.md');
-  console.log(changelog);
+
+  return {
+    metadata,
+    latestRelease,
+    readme,
+    contributors,
+    frequency,
+    commitActivity,
+    changelog,
+  };
 };
 
-module.exports = { getRepoInformation };
+export { getRepoInformation };

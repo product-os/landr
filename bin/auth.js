@@ -22,4 +22,4 @@ const repoNamespace = {
   repo: ghHelper.getName(),
 };
 
-module.exports = { backend, repoNamespace };
+export { backend, repoNamespace };
