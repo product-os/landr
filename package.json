@@ -2,10 +2,10 @@
   "name": "landr",
   "version": "2.3.1",
   "description": "Source code === website",
-  "main": "./bin/index.js",
+  "main": "./bin/commands.js",
   "scripts": {
     "prettier": "prettier --single-quote --no-semi --write 'lib/{bin,core,data}/**/*.js'",
-    "prep": "./bin/index.js"
+    "bin": "nodemon --exec babel-node ./bin/commands.js"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",
@@ -14,12 +14,13 @@
     "url": "git@github.com:resin-io/landr.git"
   },
   "dependencies": {
-    "@octokit/rest": "^15.9.4",
+    "@octokit/rest": "^16.1.0",
     "@resin.io/doxx": "^0.11.1",
     "arch": "2.1.0",
     "bluebird": "3.5.0",
     "capitano": "^1.8.2",
     "deepmerge": "1.5.2",
+    "doxx": "^2.1.1",
     "express": "4.16.0",
     "file-loader": "1.1.4",
     "fs-jetpack": "1.2.0",
@@ -30,11 +31,14 @@
     "micro": "^9.3.2",
     "mkdirp": "^0.5.1",
     "path-parse": "1.0.5",
-    "prop-types": "^15.6.0",
     "qs": "6.5.1",
     "scrutinizer": "^1.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.18.8",
     "prettier": "1.7.4",
     "prettier-check": "^2.0.0"
   }
