@@ -4,7 +4,8 @@ import fs from 'fs';
 
 const CWD = process.cwd();
 
-export const getRepoInformation = async () => {
+// TODO: Clean up. Will dump everything here for now
+export const generateConfiguration = async () => {
   const crawler = new Crawler({ backend, repoNamespace });
 
   const metadata = await crawler.getRepoMetadata();
@@ -13,44 +14,25 @@ export const getRepoInformation = async () => {
   const contributors = await crawler.getContributors();
   const frequency = await crawler.getCodeFrequencyStats();
   const commitActivity = await crawler.getCommitActivityStats();
-
-  // const faq = await crawler.getMarkdownFile('');
   const changelog = await crawler.getFile('CHANGELOG.md');
 
-  return {
-    metadata,
-    latestRelease,
-    readme,
-    contributors,
-    frequency,
-    commitActivity,
-    changelog,
-  };
-};
-
-export const generateConfiguration = async ({
-  metadata,
-  latestRelease,
-  readme,
-  contributors,
-  frequency,
-  commitActivity,
-}) => {
   const siteConfig = {};
 
+  // Basic
   siteConfig.title = metadata.name;
   siteConfig.tagline = metadata.description;
   siteConfig.url = metadata.html_url;
   siteConfig.baseUrl = '/';
   siteConfig.projectName = metadata.name;
   siteConfig.organizationName = metadata.owner.login;
-  siteConfig.headerLinks = [{ page: 'changelog', label: 'Changelog' }];
-  siteConfig.headerIcon = 'img/docusaurus.svg';
-  siteConfig.footerIcon = 'img/docusaurus.svg';
+  siteConfig.headerLinks = [
+    { page: 'changelog', label: 'Changelog' },
+    { href: metadata.html_url, label: 'Github' },
+  ];
   siteConfig.favicon = 'img/favicon.png';
   siteConfig.colors = {
-    primaryColor: '#202020',
-    secondaryColor: '#efefef',
+    primaryColor: '#000000',
+    secondaryColor: '#1CBB33',
   };
   siteConfig.copyright = `Copyright © ${new Date().getFullYear()} ${metadata
     .owner.login}`;
@@ -62,6 +44,10 @@ export const generateConfiguration = async ({
   siteConfig.cleanUrl = true;
   siteConfig.ogImage = 'img/docusaurus.png';
   siteConfig.twitterImage = 'img/docusaurus.png';
+
+  // Releases
+  siteConfig.releases = latestRelease;
+  siteConfig.changelog = changelog;
 
   const body = `module.exports=${JSON.stringify(siteConfig)}`;
 

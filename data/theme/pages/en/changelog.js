@@ -14,7 +14,7 @@ function Changelog(props) {
   return (
     <div className="docMainWrapper wrapper">
       <Container className="mainContainer documentContainer postContainer">
-        Changelog
+        {siteConfig.changelog}
       </Container>
     </div>
   );
