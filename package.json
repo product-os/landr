@@ -2,10 +2,10 @@
   "name": "landr",
   "version": "2.3.1",
   "description": "Source code === website",
-  "main": "./bin/commands.js",
+  "main": "./bin/entry.js",
   "scripts": {
     "prettier": "prettier --single-quote --no-semi --write 'lib/{bin,core,data}/**/*.js'",
-    "bin": "nodemon --exec babel-node ./bin/commands.js"
+    "start": "babel-node ./bin/entry.js"
   },
   "author": "Resin Inc. <hello@resin.io>",
   "license": "Apache-2.0",
@@ -16,8 +16,8 @@
   "dependencies": {
     "@octokit/rest": "^16.1.0",
     "arch": "2.1.0",
-    "bluebird": "3.5.0",
-    "capitano": "^1.8.2",
+    "bluebird": "^3.5.3",
+    "chalk": "^2.4.2",
     "deepmerge": "1.5.2",
     "doxx": "^2.1.1",
     "express": "4.16.0",
@@ -31,7 +31,8 @@
     "mkdirp": "^0.5.1",
     "path-parse": "1.0.5",
     "qs": "6.5.1",
-    "scrutinizer": "^1.1.0"
+    "scrutinizer": "^1.1.0",
+    "shelljs": "^0.8.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -3,10 +3,10 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "source code = website 🏠",
+    "tagline": "A website for testing",
     "docs": {},
     "links": {
-      "Changelog": "Changelog"
+      "Help": "Help"
     },
     "categories": {
       "Docusaurus": "Docusaurus",
