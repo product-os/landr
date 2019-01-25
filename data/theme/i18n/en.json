@@ -6,7 +6,8 @@
     "tagline": "source code = website 🏠",
     "docs": {},
     "links": {
-      "Changelog": "Changelog"
+      "Changelog": "Changelog",
+      "Github": "Github"
     },
     "categories": {
       "Docusaurus": "Docusaurus",

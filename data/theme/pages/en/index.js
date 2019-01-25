@@ -1,4 +1,5 @@
 const React = require('react');
+const Rendition = require('rendition');
 
 const CompLibrary = require('../../core/CompLibrary.js');
 
@@ -45,54 +46,39 @@ class HomeSplash extends React.Component {
 
 class Index extends React.Component {
   render() {
-    const { config: siteConfig, language = '' } = this.props;
-    const { baseUrl } = siteConfig;
-
-    const Block = props => (
-      <Container
-        padding={['bottom', 'top']}
-        id={props.id}
-        background={props.background}
-      >
-        <GridBlock
-          align="center"
-          contents={props.children}
-          layout={props.layout}
-        />
-      </Container>
-    );
+    const { config: siteConfig } = this.props;
 
     const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'Feature 1',
-            title: 'Feature One',
-          },
-          {
-            content: 'Feature 1',
-            title: 'Feature One',
-          },
-          {
-            content: 'Feature 1',
-            title: 'Feature One',
-          },
-          {
-            content: 'Feature 2',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
+      <Rendition.Flex>
+        <Rendition.Box>
+          <Rendition.Card>
+            This renders a rendition Card component
+          </Rendition.Card>
+        </Rendition.Box>
+        <Rendition.Box>
+          <Rendition.Card>
+            This renders a rendition Card component
+          </Rendition.Card>
+        </Rendition.Box>
+        <Rendition.Box>
+          <Rendition.Card>
+            This renders a rendition Card component
+          </Rendition.Card>
+        </Rendition.Box>
+        <Rendition.Box>
+          <Rendition.Card>
+            This renders a rendition Card component
+          </Rendition.Card>
+        </Rendition.Box>
+      </Rendition.Flex>
     );
 
     return (
-      <div>
+      <Rendition.Provider>
         <HomeSplash siteConfig={siteConfig} />
-        <div className="mainContainer">
-          <div>This is a placeholder section</div>
-          <Features />
-        </div>
-      </div>
+        <Rendition.Alert>This is an Rendition alert</Rendition.Alert>
+        <Features />
+      </Rendition.Provider>
     );
   }
 }

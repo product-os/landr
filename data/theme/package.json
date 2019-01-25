@@ -11,6 +11,7 @@
     "docusaurus": "^1.6.2"
   },
   "dependencies": {
+    "rendition": "^4.45.0",
     "styled-components": "^4.1.3"
   }
 }
