@@ -116,7 +116,7 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
   integrity sha1-MvxLn82vhF/N9+c7uXysImHwqwo=
 
-capitano@^1.8.0:
+capitano@^1.8.0, capitano@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/capitano/-/capitano-1.9.0.tgz#930b516fd63342b0747c24c2e08369c0f39ce882"
   integrity sha512-0WILhFDl2WApOiwnb6KQQe0i6jKcsltlg2JpnPkKfz6Zk14G2s3ZIGrfdkidl5key3DvjNc2A1NdIGfQChU1ow==

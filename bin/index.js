@@ -1,94 +1,65 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const shell = require('shelljs');
-const scrutinizer = require('scrutinizer');
-const gitInfo = require('gitinfo');
-const ghPages = require('gh-pages');
+const capitano = require('capitano');
+const landr = require('./landr');
 
-const { log } = console;
-const rootPath = process.cwd();
-const landrPath = path.resolve(__dirname, '..');
+const showHelp = () => {
+  console.error(`Usage: landr (preview)`);
 
-// Get the git repo metadata
-const ghHelper = gitInfo({
-  defaultBranchName: 'master',
-  gitPath: path.resolve(rootPath, '.git'),
+  console.log('Commands:\n');
+  for (const command of capitano.state.commands) {
+    if (command.isWildcard()) continue;
+
+    console.log(`\t${command.signature}\t\t${command.description}`);
+    for (const option of command.options) {
+      console.log(
+        `\t  ${option.alias ? '-' + option.alias + ', ' : ''}--${
+          option.signature
+        }`
+      );
+      if (option.description) console.log(`\t\t${option.description}`);
+    }
+  }
+};
+
+capitano.command({
+  signature: '*',
+  action: () => {
+    showHelp();
+    process.exit(1);
+  },
 });
 
-const githubUrl = ghHelper.getGithubUrl();
-const sshUrl = githubUrl.replace('https://', 'git@') + '.git';
+capitano.command({
+  signature: 'deploy',
+  description:
+    'Build a website out of the Github metadata and publish it in Github Pages',
+  action: ({ help }) => {
+    if (help) {
+      showHelp();
+      process.exit(1);
+    }
 
-// Fetch the scrutinizer data
-const generateConfiguration = async () => {
-  // TODO: do local search first
-  const results = await scrutinizer.remote(sshUrl, {
-    reference: 'master',
-    progress: state =>
-      log(chalk.blue(`Fetching data: ${state.percentage}% ...`)),
-  });
+    landr();
+  },
+});
 
-  // Persist the website config
-  results.githubUrl = githubUrl;
-  const body = `module.exports=${JSON.stringify(results)}`;
+capitano.command({
+  signature: 'preview',
+  description: 'Spin off a preview of the generated landr website',
+  action: ({ help }) => {
+    if (help) {
+      showHelp();
+      process.exit(1);
+    }
 
-  fs.writeFileSync(landrPath + '/theme/config.js', body);
-};
+    landr({ isPreview: true });
+  },
+});
 
-// Install the dependencies that React-Static needs, and build the app
-const buildFiles = async () => {
-  await shell.cd('theme');
+capitano.run(process.argv, err => {
+  if (!err) return;
 
-  log(chalk.yellow('Removing node_modules'));
-  await shell.rm('-rf', './node_modules');
-
-  let useYarn = !!shell.which('yarn');
-
-  if (useYarn) {
-    log(chalk.blue('Installing dependencies'));
-    await shell.exec('yarn install');
-
-    log(chalk.blue('Building'));
-    await shell.exec('yarn build');
-  } else {
-    log(chalk.blue('Installing dependencies'));
-    await shell.exec('npm install');
-
-    log(chalk.blue('Building'));
-    await shell.exec('npm run build');
-  }
-};
-
-const deploy = async () => {
-  await ghPages.publish('dist', {
-    message: 'Deployed by landr 🏠',
-    branch: 'gh-pages',
-    repo: githubUrl,
-  });
-};
-
-const run = async () => {
-  if (!process.env.GITHUB_TOKEN) {
-    // TODO: fallback to local if there isn't any token
-    log(chalk.red('Please provide a `GITHUB_TOKEN`'));
-    return;
-  }
-
-  // Verify that all the shell commands are called relatively to the Landr directory
-  if (rootPath !== landrPath) {
-    shell.cd(landrPath);
-  }
-
-  try {
-    await generateConfiguration();
-    await buildFiles();
-    await deploy();
-    log(chalk.green('Website successfully build and deployed 🏠`'));
-  } catch (e) {
-    log(chalk.red(e));
-  }
-};
-
-run();
+  showHelp();
+  throw err;
+});

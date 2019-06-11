@@ -13,6 +13,7 @@
     "landr": "./bin/index.js"
   },
   "dependencies": {
+    "capitano": "^1.9.0",
     "chalk": "^2.4.2",
     "gh-pages": "^2.0.1",
     "gitinfo": "^2.2.0",
