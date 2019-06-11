@@ -1,12 +1,12 @@
 import React from 'react';
-import _ from 'lodash';
+import get from 'lodash/get';
 import { Box, Container, Txt, Button, Flex, Heading } from 'rendition';
 import { withTheme } from 'styled-components';
 
 const RELEASES_PATH = '/releases/tag/';
 
 const Hero = (props) => {
-  const latestVersion = _.get(props, 'latestRelease.tagName');
+  const latestVersion = get(props, 'latestRelease.tagName');
   const { name, description } = props
 
   return (

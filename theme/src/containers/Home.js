@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { Box } from 'rendition';
-import _ from 'lodash';
 import { withTheme } from 'styled-components';
 import { withSiteData } from 'react-static';
 

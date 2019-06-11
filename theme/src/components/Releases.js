@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import _ from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { Container, Button, Table } from 'rendition';
 import { withTheme } from 'styled-components';
 
@@ -17,7 +17,7 @@ const columns = [
 ];
 
 const Releases = memo(({ assets, ...rest }) => {
-  if (_.isEmpty(assets)) {
+  if (isEmpty(assets)) {
     return null;
   }
 
