@@ -5,12 +5,12 @@
 ## 🚀 Quick start
 
 1. Navigate to the repository
-2. run `GITHUB_TOKEN=[your token] npx landr`
+2. run `GITHUB_TOKEN=[your token] npx landr deploy`
 3. Landr will push the changes to the `gh-pages` branch.
 
 > We encourage using `npx` as opposed to installing landr globally. `npx` comes bundled with NPM version 5.2+. More info can be found [here](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
-## Using Landr as a dependency
+## Alternatively using Landr as a dependency
 
 1. Install landr
 
@@ -20,7 +20,8 @@
 
 ```json
   "scripts": {
-    "landr": "landr"
+    "landr": "landr deploy",
+    "landr-preview": "landr preview"
   }
 ```
 
@@ -28,6 +29,13 @@
 `GITHUB_TOKEN=[your token] npm run landr`
 
 1. Landr will push the changes to the `gh-pages` branch.
+
+## Commands
+
+Landr exposes two commands
+
+1. `deploy` - Generates the artifacts and pushes to Github pages
+2. `preview` - Generates the artifacts and starts a local server
 
 ## Under the Hood
 
