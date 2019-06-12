@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
 const capitano = require('capitano');
-const landr = require('./landr');
+
+const deploy = require('./deploy');
+const build = require('./build');
+const preview = require('./preview');
 
 const showHelp = () => {
   console.error(`Usage: landr (preview)`);
@@ -31,29 +34,43 @@ capitano.command({
 });
 
 capitano.command({
-  signature: 'deploy',
-  description:
-    'Build a website out of the Github metadata and publish it in Github Pages',
-  action: ({ help }) => {
+  signature: 'build',
+  description: 'Build a website out of the Github metadata',
+  action: async ({ help }) => {
     if (help) {
       showHelp();
       process.exit(1);
     }
 
-    landr();
+    await build();
+  },
+});
+
+capitano.command({
+  signature: 'deploy',
+  description: 'Build & publish the website in Github Pages',
+  action: async ({ help }) => {
+    if (help) {
+      showHelp();
+      process.exit(1);
+    }
+
+    await build();
+    await deploy();
   },
 });
 
 capitano.command({
   signature: 'preview',
-  description: 'Spin off a preview of the generated landr website',
-  action: ({ help }) => {
+  description: 'Build & spin off a preview of the generated landr website',
+  action: async ({ help }) => {
     if (help) {
       showHelp();
       process.exit(1);
     }
 
-    landr({ isPreview: true });
+    await build();
+    preview();
   },
 });
 
