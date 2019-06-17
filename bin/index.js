@@ -5,9 +5,10 @@ const capitano = require('capitano');
 const deploy = require('./deploy');
 const build = require('./build');
 const preview = require('./preview');
+const { print } = require ('./utils')
 
 const showHelp = () => {
-  console.error(`Usage: landr (preview)`);
+  console.log(`Usage: landr (preview)`);
 
   console.log('Commands:\n');
   for (const command of capitano.state.commands) {
@@ -77,6 +78,6 @@ capitano.command({
 capitano.run(process.argv, err => {
   if (!err) return;
 
-  showHelp();
+  print.danger('\nAn error occurred:')
   throw err;
 });
