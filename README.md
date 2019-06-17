@@ -2,6 +2,9 @@
     Landr
 </h1>
 
+> Build a website for your software projects with one command.
+
+
 ## 🚀 Quick start
 
 1. Navigate to the repository
@@ -16,7 +19,7 @@
 
 `npm install landr`
 
-1. Add the a npm script entry in your `package.json` file
+1. Add the following to the script entry in the project's `package.json` file
 
 ```json
   "scripts": {
@@ -28,7 +31,7 @@
 3. Run the CLI
 `GITHUB_TOKEN=[your token] npm run landr`
 
-1. Landr will push the changes to the `gh-pages` branch.
+1. Landr will push the generated files to the `gh-pages` branch.
 
 ## Commands
 
