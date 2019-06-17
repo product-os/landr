@@ -12,8 +12,8 @@ const Home = memo(props => {
   return (
     <Box mb={5}>
       <Hero {...props} />
-      <Releases mt={5} assets={props.latestRelease.asssets} />
-      <Readme mt={5} markdown={props.readme} />
+      {props.latestRelease && <Releases mt={5} assets={props.latestRelease.asssets} />}
+      {props.readme && <Readme mt={5} markdown={props.readme} />}
     </Box>
   );
 });
