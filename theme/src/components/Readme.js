@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Heading, Card, Divider, Txt, Link } from 'rendition';
+import { Container, Heading, Card, Link } from 'rendition';
 import ReactMarkdown from 'react-markdown';
 
 import CodeBlock from './CodeBlock';
@@ -19,7 +19,10 @@ const renderers = {
   code: CodeBlock,
   inlineCode: CodeBlock,
   heading: ({ level, ...rest }) =>
-    React.createElement(headingLevelsToComponent[level], rest),
+    React.createElement(headingLevelsToComponent[level], {
+      ...rest,
+      ...{ mt: 24, mb: 16 },
+    }),
   link: props => <Link {...props} blank />,
 };
 

@@ -16,6 +16,9 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+body {
+  color: #514e58;
+}
 `;
 
 const App = () => (
