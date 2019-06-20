@@ -12,7 +12,7 @@ const deploy = async () => {
     repo: githubUrl,
   });
 
-  print.success('Website successfully build and deployed 🏠`');
+  print.success('Website successfully build and deployed 🏠');
 };
 
 module.exports = deploy;
