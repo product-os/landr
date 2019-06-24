@@ -3,7 +3,7 @@
 const capitano = require('capitano');
 
 const deploy = require('./deploy');
-const build = require('./build');
+const {generateConfiguration, buildStaticWebsite} = require('./build');
 const preview = require('./preview');
 const { print } = require ('./utils')
 
@@ -56,7 +56,8 @@ capitano.command({
       process.exit(1);
     }
 
-    await build();
+    await generateConfiguration();
+    await buildStaticWebsite();
     await deploy();
   },
 });
@@ -70,7 +71,8 @@ capitano.command({
       process.exit(1);
     }
 
-    await build();
+    await generateConfiguration();
+    await buildStaticWebsite();
     preview();
   },
 });

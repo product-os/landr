@@ -8,14 +8,14 @@ const {
   landrPath,
   runFromTheme,
   isUsingYarn,
-  getGithubUrl
+  getGithubUrl,
 } = require('./utils');
 
 // Fetch the scrutinizer data
 const generateConfiguration = async () => {
   if (!process.env.GITHUB_TOKEN) {
     // TODO: fallback to local if there isn't any token
-    throw new Error('Please provide a `GITHUB_TOKEN');
+    throw new Error('Please provide a `GITHUB_TOKEN`');
   }
 
   const githubUrl = getGithubUrl();
@@ -35,6 +35,8 @@ const generateConfiguration = async () => {
   const body = `module.exports=${JSON.stringify(results)}`;
 
   fs.writeFileSync(landrPath + '/theme/config.js', body);
+
+  return results;
 };
 
 // Install the dependencies that React-Static needs, and build the app
@@ -52,9 +54,4 @@ const buildStaticWebsite = async () => {
   shell.exec(useYarn ? 'yarn build' : 'npm run build');
 };
 
-const build = async () => {
-  await generateConfiguration();
-  await buildStaticWebsite();
-};
-
-module.exports = build;
+module.exports = { generateConfiguration, buildStaticWebsite };
