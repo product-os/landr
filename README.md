@@ -1,66 +1,47 @@
-# landr
-
-source code = website!
+<h1 align="center">
+    Landr
+</h1>
 
 > Build a website for your software projects with one command.
 
-## How it works
 
-When you run landr on your local repository, it gathers info by leveraging standard conventions.
-It'll first look for a git remote from `github.com` and retrieve some basic information about your project from the github api (`contribution stats`, `releases`), it will then parse standard files like `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md` & `/docs`, it'll then use the data to build out beautiful pages for your website.
+## 🚀 Quick start
 
-This allows the maintenance of your website to be a side effect of keeping your software project inline with standard github conventions.
+1. Navigate to the repository
+2. run `GITHUB_TOKEN=[your token] npx landr deploy`
+3. Landr will push the changes to the `gh-pages` branch.
 
-## Quick start guide
+> We encourage using `npx` as opposed to installing landr globally. `npx` comes bundled with NPM version 5.2+. More info can be found [here](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
-Install:
-```
-npm i -g landr
-```
+## Alternatively using Landr as a dependency
 
-From the root of your local `.git` repo run:
-```
-landr
-```
+1. Install landr
 
-Visit `http://localhost:3000`.
+`npm install landr`
 
-Build site:
-```
-landr build
+1. Add the following to the script entry in the project's `package.json` file
+
+```json
+  "scripts": {
+    "landr": "landr deploy",
+    "landr-preview": "landr preview"
+  }
 ```
 
-View built site locally:
-```
-landr serve
-```
+3. Run the CLI
+`GITHUB_TOKEN=[your token] npm run landr`
 
-Deploy to github pages:
-```
-landr deploy
-```
+1. Landr will push the generated files to the `gh-pages` branch.
 
-## Why landr
+## Commands
 
-You have to maintain your source code why maintain a website too?
+Landr exposes two commands
 
-As a software company we have a growing number of websites to build and maintain. We built landr so we could focus on our projects and not their websites.
+1. `deploy` - Generates the artifacts and pushes to Github pages
+2. `preview` - Generates the artifacts and starts a local server
 
-Most OS websites the same, the have a hero, a getting started and some docs. There is definitely room for automation.
+## Under the Hood
 
+1.  Landr will scan the repo utilizing [Scrutinizer](https://github.com/balena-io-modules/scrutinizer).
 
-## Contributing
-
-```
-npm i
-```
-
-```
-npm link
-```
-
-Get to work. 👷
-
-## License
-
-Landr is free software, and may be redistributed under the terms specified in the [license](LICENSE).
+2.  Then it will persist the data, and pass it over to [React Static](https://github.com/nozzle/react-static) which will produce a single page website. For styling, we\'ll use our very own [Rendition](https://github.com/balena-io-modules/rendition).
