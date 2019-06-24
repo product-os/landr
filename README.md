@@ -19,7 +19,7 @@
 
 `npm install landr`
 
-1. Add the following to the script entry in the project's `package.json` file
+2. Add the following to the script entry in the project's `package.json` file
 
 ```json
   "scripts": {
@@ -31,7 +31,7 @@
 3. Run the CLI
 `GITHUB_TOKEN=[your token] npm run landr`
 
-1. Landr will push the generated files to the `gh-pages` branch.
+4. Landr will push the generated files to the `gh-pages` branch.
 
 ## Commands
 
