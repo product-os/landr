@@ -20,5 +20,5 @@ export const CodeBlock = ({ language, value, ...rest }) => {
 };
 
 export const InlineCodeBlock = props => (
-  <CodeBlock customStyle={inlineCodeStyles} {...props} />
+  <CodeBlock {...props} customStyle={inlineCodeStyles} />
 );

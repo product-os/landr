@@ -43,7 +43,7 @@ capitano.command({
       process.exit(1);
     }
 
-    await build();
+    await generateConfiguration();
   },
 });
 
