@@ -19,6 +19,6 @@ export const CodeBlock = ({ language, value, ...rest }) => {
   );
 };
 
-export const InlineCodeBlock = props => (
-  <CodeBlock {...props} customStyle={inlineCodeStyles} />
-);
+export const InlineCodeBlock = ({ inline, ...props }) => {
+  return <CodeBlock {...props} customStyle={inlineCodeStyles} />;
+};
