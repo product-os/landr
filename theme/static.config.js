@@ -31,10 +31,11 @@ export default {
   Document: class CustomHtml extends Component {
     render() {
       const { Html, Head, Body, children, renderMeta } = this.props;
-
       return (
         <Html>
           <Head>
+            <title>{CONFIG.name}</title>
+            <meta name="description" content={CONFIG.description} />
             <meta charSet="UTF-8" />
             <meta
               name="viewport"
