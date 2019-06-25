@@ -5,15 +5,17 @@
   "author": "Balena <hello@balena.io>",
   "license": "Apache-2.0",
   "main": "./bin/index.js",
+  "bin": {
+    "landr": "./bin/index.js"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write '**/*.js'",
+    "pre-commit": "lint-staged"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:balena-io/landr.git"
-  },
-  "bin": {
-    "landr": "./bin/index.js"
   },
   "dependencies": {
     "capitano": "^1.9.0",
@@ -30,6 +32,15 @@
   "jest": {
     "setupFilesAfterEnv": [
       "jest-chain"
+    ]
+  },
+  "pre-commit": [
+    "pre-commit"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
     ]
   }
 }
