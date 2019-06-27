@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.jsx bin lib test scripts && csslint lib/*.css",
-    "unit": "nyc --reporter=html --extension .js --extension .jsx --compact=false ava",
+    "unit": "nyc --exclude scripts --exclude test --reporter=html --extension .js --extension .jsx --compact=false ava",
     "test": "npm run lint && npm run unit"
   },
   "repository": {
