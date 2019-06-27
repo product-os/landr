@@ -21,9 +21,9 @@
       "branch": "master"
     },
     "links": {
-      "issueTracker": "https://github.com/jviotti/landr/issues",
+      "issueTracker": "https://github.com/balena-io/landr/issues",
       "homepage": "https://www.balena.io/landr",
-      "repository": "https://github.com/jviotti/landr"
+      "repository": "https://github.com/balena-io/landr"
     },
     "dns": {
       "cname": "balena.io/landr"
@@ -498,9 +498,9 @@
                       ": Generate a website out of the current repo, attempting to find a\n",
                       [
                         "inlinecode",
-                        "scrutinizer.json"
+                        "meta.json"
                       ],
-                      " file in the current branch and deploy it to Netlify,\ncreating a site and prompting the user for login if needed"
+                      " file in the current branch and deploy it to Netlify, creating a\nsite and prompting the user for login if needed"
                     ]
                   ],
                   [
@@ -514,7 +514,7 @@
                       ": Only generate a website out of the current\nrepo, attempting to find a ",
                       [
                         "inlinecode",
-                        "scrutinizer.json"
+                        "meta.json"
                       ],
                       " file in the current branch"
                     ]
@@ -741,9 +741,9 @@
                       ": Generate a website out of the current repo, attempting to find a\n",
                       [
                         "inlinecode",
-                        "scrutinizer.json"
+                        "meta.json"
                       ],
-                      " file in the current branch and deploy it to Netlify,\ncreating a site and prompting the user for login if needed"
+                      " file in the current branch and deploy it to Netlify, creating a\nsite and prompting the user for login if needed"
                     ]
                   ],
                   [
@@ -757,7 +757,7 @@
                       ": Only generate a website out of the current\nrepo, attempting to find a ",
                       [
                         "inlinecode",
-                        "scrutinizer.json"
+                        "meta.json"
                       ],
                       " file in the current branch"
                     ]
@@ -984,9 +984,9 @@
                       ": Generate a website out of the current repo, attempting to find a\n",
                       [
                         "inlinecode",
-                        "scrutinizer.json"
+                        "meta.json"
                       ],
-                      " file in the current branch and deploy it to Netlify,\ncreating a site and prompting the user for login if needed"
+                      " file in the current branch and deploy it to Netlify, creating a\nsite and prompting the user for login if needed"
                     ]
                   ],
                   [
@@ -1000,7 +1000,7 @@
                       ": Only generate a website out of the current\nrepo, attempting to find a ",
                       [
                         "inlinecode",
-                        "scrutinizer.json"
+                        "meta.json"
                       ],
                       " file in the current branch"
                     ]

@@ -3,7 +3,7 @@ Contributing to Landr
 
 We're happy you're interested in Landr! Make sure to take a look at the
 [architecture
-document](https://github.com/jviotti/landr/blob/master/ARCHITECTURE.md), which
+document](https://github.com/balena-io/landr/blob/master/ARCHITECTURE.md), which
 describes how Landr works.
 
 The main areas we would love to get your with are:

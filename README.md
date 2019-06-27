@@ -38,23 +38,23 @@ Examples
 - https://www.balena.io/engine/ - A container engine built for IoT
 
 Do you know of any Landr website we missed? [Let us
-know!](https://github.com/jviotti/landr/issues/new)
+know!](https://github.com/balena-io/landr/issues/new)
 
 Getting Help
 ------------
 
 If you're having any problem, please [raise an
-issue](https://github.com/jviotti/landr/issues/new) on GitHub and the Balena.io
+issue](https://github.com/balena-io/landr/issues/new) on GitHub and the Balena.io
 team will be happy to help.
 
 Contributing
 ------------
 
 Do you want to help make Landr better? Take a look at our [Contributing
-Guide](https://github.com/jviotti/landr/blob/master/CONTRIBUTING.md).
+Guide](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md).
 
 License
 -------
 
 Landr is free software, and may be redistributed under the terms specified in
-the [license](https://github.com/jviotti/landr/blob/master/LICENSE).
+the [license](https://github.com/balena-io/landr/blob/master/LICENSE).
