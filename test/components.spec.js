@@ -22,4 +22,17 @@ for (const component of _.toPairs(components)) {
   ava(`${component[0]} should have a ${component[0]} name property`, (test) => {
     test.is(component[0], component[1].name)
   })
+
+  ava(`${component[0]} should have variants function`, (test) => {
+    test.true(_.isFunction(component[1].variants))
+  })
+
+  ava(`${component[0]} should have render function`, (test) => {
+    test.true(_.isFunction(component[1].render))
+  })
+
+  ava(`${component[0]} should not export anything else`, (test) => {
+    const expected = [ 'name', 'variants', 'render' ]
+    test.deepEqual(_.sortBy(_.keys(component[1])), _.sortBy(expected))
+  })
 }
