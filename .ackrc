@@ -1,0 +1,5 @@
+--ignore-dir=node_modules
+--ignore-dir=.tmp
+--ignore-dir=artifacts
+--ignore-dir=dist
+--ignore-dir=www

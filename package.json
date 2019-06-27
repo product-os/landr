@@ -1,0 +1,69 @@
+{
+  "name": "landr",
+  "version": "1.0.0",
+  "description": "Generate great websites for your projects with no configuration",
+  "main": "bin/cli.js",
+  "bin": {
+    "landr": "./bin/cli.js"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.jsx bin lib test scripts && csslint lib/*.css",
+    "unit": "nyc --reporter=html --extension .js --extension .jsx --compact=false ava",
+    "test": "npm run lint && npm run unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jviotti/landr.git"
+  },
+  "keywords": [
+    "website",
+    "generation",
+    "docs",
+    "project"
+  ],
+  "author": "Juan Cruz Viotti <jv@jviotti.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jviotti/landr/issues"
+  },
+  "homepage": "https://github.com/jviotti/landr",
+  "ava": {
+    "verbose": true,
+    "failWithoutAssertions": true,
+    "files": [
+      "test/**/*.spec.js"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^2.1.0",
+    "csslint": "^1.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsdoc": "^8.3.0",
+    "eslint-plugin-lodash": "^5.1.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "markdown": "^0.5.0",
+    "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "bluebird": "^3.5.5",
+    "chalk": "^2.4.2",
+    "generatorics": "^1.1.0",
+    "lodash": "^4.17.11",
+    "netlify": "^2.4.6",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-static": "^7.1.0",
+    "react-static-plugin-reach-router": "^7.0.10",
+    "react-static-plugin-sitemap": "^7.0.10",
+    "rendition": "^9.3.1",
+    "rfdc": "^1.1.4",
+    "rimraf": "^2.6.3",
+    "shelljs": "^0.8.3"
+  }
+}
