@@ -31,7 +31,8 @@
     "verbose": true,
     "failWithoutAssertions": true,
     "files": [
-      "test/**/*.spec.js"
+      "test/**/*.spec.js",
+      "test/**/*.spec.jsx"
     ],
     "require": [
       "./scripts/babel-test-register.js"
@@ -40,6 +41,8 @@
   "devDependencies": {
     "ava": "^2.1.0",
     "csslint": "^1.0.5",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.3",
