@@ -24,3 +24,28 @@ ava('should generate at least one route for the current repo', (test) => {
   const result = generator(CONTRACT, THEME)
   test.false(_.isEmpty(result))
 })
+
+ava('should generate non blank pages for the current repo', (test) => {
+  const result = generator(CONTRACT, THEME)
+  for (const combination of _.values(result)) {
+    test.true(_.isArray(combination))
+    test.true(combination.length > 0)
+  }
+})
+
+ava('should generate unique combinations for the current repo routes', (test) => {
+  const result = generator(CONTRACT, THEME)
+  for (const combination of _.values(result)) {
+    const components = _.map(combination, 'component')
+    test.is(components.length, _.uniq(components).length)
+  }
+})
+
+ava('should generate combinations with non blank options for the current repo', (test) => {
+  const result = generator(CONTRACT, THEME)
+  for (const combination of _.values(result)) {
+    for (const element of combination) {
+      test.false(_.isEmpty(element.options))
+    }
+  }
+})
