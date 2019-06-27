@@ -32,6 +32,9 @@
     "failWithoutAssertions": true,
     "files": [
       "test/**/*.spec.js"
+    ],
+    "require": [
+      "./scripts/babel-test-register.js"
     ]
   },
   "devDependencies": {
