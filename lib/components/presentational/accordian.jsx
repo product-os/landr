@@ -46,7 +46,7 @@ const Accordian = ({
           () => {
             toggle(index)
           },
-          [ index ]
+          [ index, openIndex ]
         )
 
         return (
