@@ -1,6 +1,16 @@
 <img src="./banner.png" height="200" />
 
-Generate great websites for your projects with no configuration.
+Generate great websites for your projects with zero configuration.
+
+- **Functional Websites**: Landr presents your project and its documentation in
+  a gorgeous and UX friendly way to your end users. Landr can help you present
+  your project in the best possible way while you focus on shipping features
+- **Follows OSS Conventions**: Landr understands most common repository
+  conventions, and makes use of them fully. Build a great repository and get a
+  great website for it. Its a win-win
+- **Fully Automatic**: Landr requiures no configuration at all. It is smart
+  enough to figure out what it needs on its own. Point it to a repository, hold
+  tight, and let Landr do its magic
 
 Installation
 ------------
