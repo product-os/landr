@@ -31,7 +31,8 @@ export const variants = (metadata) => {
       title: metadata.data.tagline,
       description: metadata.data.description,
       packageName: metadata.data.name,
-      type: metadata.data.type
+      type: metadata.data.type,
+      repositoryUrl: metadata.data.links.repository
     })
   }
 
@@ -39,7 +40,8 @@ export const variants = (metadata) => {
     combinations.push({
       title: metadata.data.tagline,
       packageName: metadata.data.name,
-      type: metadata.data.type
+      type: metadata.data.type,
+      repositoryUrl: metadata.data.links.repository
     })
   }
 
@@ -47,6 +49,13 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
+  const [ user, repo ] = props.repositoryUrl
+    .split('/')
+    .slice(
+      props.repositoryUrl.split('/').length - 2,
+      props.repositoryUrl.split('/').length
+    )
+
   return (
     <Box bg={'#6997c3'} color="#fff" mb={5} py={6}>
       <Container>
@@ -55,6 +64,17 @@ export const render = (props) => {
           {props.description && <Txt fontSize={3}>{props.description}</Txt>}
         </Flex>
         {props.type === 'npm' && <Terminal packageName={props.packageName} />}
+        {props.repositoryUrl && (
+          <Txt align="center" mt={2}>
+            <iframe
+              src={`https://ghbtns.com/github-btn.html?user=${user}&repo=${repo}&type=star&count=true&size=large`}
+              frameBorder="0"
+              scrolling="0"
+              width="160px"
+              height="30px"
+            />
+          </Txt>
+        )}
       </Container>
     </Box>
   )
