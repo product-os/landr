@@ -1,5 +1,9 @@
 <img src="./banner.png" height="200" />
 
+[![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md)
+
 Generate great websites for your projects with zero configuration.
 
 - **Functional Websites**: Landr renders your project and its documentation in
