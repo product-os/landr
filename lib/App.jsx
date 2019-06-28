@@ -27,6 +27,7 @@ import './global.css'
 
 import 'typeface-nunito'
 import 'circular-std'
+import 'react-typist/dist/Typist.css'
 
 const App = ({
   contract

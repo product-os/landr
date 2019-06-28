@@ -4,7 +4,6 @@ import {
   Box, Flex, Txt
 } from 'rendition'
 import Typist from 'react-typist'
-import 'react-typist/dist/Typist.css'
 
 const TerminalView = styled(Flex) `
   font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
