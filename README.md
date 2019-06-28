@@ -28,7 +28,7 @@ Installation
 2. Go to a Balena CI powered repo:
 
     ```sh
-    cd path/to/<repository>
+    cd path/to/repository
     ```
 
 3. Generate your website:
