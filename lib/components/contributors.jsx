@@ -55,9 +55,9 @@ export const render = (props) => {
         <Link
           href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
           tooltip={contributor.username}
+          blank
         >
           <Img
-            blank
             src={contributor.avatar}
             style={{
               height: '65px',
