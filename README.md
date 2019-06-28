@@ -35,6 +35,15 @@ Installation
 
 Head over to our documentation in order to learn more!
 
+Motivation
+----------
+
+Creating a website for a project is hard and time-consuming. Yet, a great
+website is one of the best ways to promote a project. Landr aims to capture our
+experience presenting a wide variety of open source projects on the web, so
+that having a website that can compete with your favourite massively popular
+open source project is not only possible, but comes with zero overhead.
+
 Examples
 --------
 
@@ -54,14 +63,15 @@ Getting Help
 ------------
 
 If you're having any problem, please [raise an
-issue](https://github.com/balena-io/landr/issues/new) on GitHub and the Balena.io
+issue](https://github.com/balena-io/landr/issues/new) on GitHub and the Landr
 team will be happy to help.
 
 Contributing
 ------------
 
 Do you want to help make Landr better? Take a look at our [Contributing
-Guide](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md).
+Guide](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md). Hope to
+see you around!
 
 License
 -------
