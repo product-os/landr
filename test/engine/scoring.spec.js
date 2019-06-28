@@ -16,7 +16,7 @@
 
 const ava = require('ava')
 const scoring = require('../../lib/engine/scoring')
-const TEST_THEME = require('./test-theme.json')
+const TEST_THEME = require('../../default-theme.json')
 
 ava('.getScoreMap() should get the score map of an empty combination', (test) => {
   const map = scoring.getScoreMap([])

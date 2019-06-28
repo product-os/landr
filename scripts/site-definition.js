@@ -16,7 +16,7 @@
 
 const generator = require('../lib/generator')
 const CONTRACT = require('../meta.json')
-const THEME = require('../test/engine/test-theme.json')
+const THEME = require('../../default-theme.json')
 
 const result = generator(CONTRACT, THEME)
 console.log(JSON.stringify(result, null, 2))

@@ -18,7 +18,7 @@ const ava = require('ava')
 const _ = require('lodash')
 const generator = require('../lib/generator')
 const CONTRACT = require('../meta.json')
-const THEME = require('./engine/test-theme.json')
+const THEME = require('../default-theme.json')
 
 ava('should generate at least one route for the current repo', (test) => {
   const result = generator(CONTRACT, THEME)
