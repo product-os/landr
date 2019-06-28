@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import sortBy from 'lodash/sortBy'
 import {
   Box, Img, Container, Flex, Link, Heading, Txt
 } from 'rendition'
@@ -49,26 +50,27 @@ const PlaceholderPhoto = styled(Flex) `
 `
 
 export const render = (props) => {
-  const list = props.contributors.map((contributor) => {
-    return (
-      <Box key={contributor.username} px={2}>
-        <Link
-          href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
-          tooltip={contributor.username}
-          blank
-        >
-          <Img
-            src={contributor.avatar}
-            style={{
-              height: '65px',
-              borderRadius: 8,
-              boxShadow: '0px 2px 3px #5f5f5f;'
-            }}
-          />
-        </Link>
-      </Box>
-    )
-  })
+  const list = sortBy(props.contributors, 'username')
+    .map((contributor) => {
+      return (
+        <Box key={contributor.username} px={2}>
+          <Link
+            href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
+            tooltip={contributor.username}
+            blank
+          >
+            <Img
+              src={contributor.avatar}
+              style={{
+                height: '65px',
+                borderRadius: 8,
+                boxShadow: '0px 2px 3px #5f5f5f;'
+              }}
+            />
+          </Link>
+        </Box>
+      )
+    })
 
   const CTA = (
     <>
