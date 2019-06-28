@@ -16,7 +16,7 @@
 
 const ava = require('ava')
 const router = require('../../lib/engine/router')
-const TEST_THEME = require('./test-theme.json')
+const TEST_THEME = require('../../default-theme.json')
 
 ava('.getPath() should get the path of a root route', (test) => {
   const path = router.getPath({

@@ -16,7 +16,7 @@
 
 const ava = require('ava')
 const ui = require('../../lib/engine/ui')
-const TEST_THEME = require('./test-theme.json')
+const TEST_THEME = require('../../default-theme.json')
 
 ava('.getVariants() should get all variants of a component', (test) => {
   const variants = ui.getVariants({

@@ -22,6 +22,7 @@ const Bluebird = require('bluebird')
 const rimraf = require('rimraf')
 const chalk = require('chalk')
 
+const theme = require('./theme')
 const netlify = require('./netlify')
 const packageJSON = require('../package.json')
 
@@ -122,6 +123,8 @@ Bluebird.try(async () => {
     ? await netlify.setupSite(TOKEN_NETLIFY, contractData.data.name)
     : {}
 
+  const siteTheme = await theme(contractData.data.images.banner)
+
   // TODO: Don't output react-static log information,
   // as it has details that are non Landr related, such
   // as instructions to deploy to Netlify directly.
@@ -135,7 +138,8 @@ Bluebird.try(async () => {
     env: Object.assign({}, process.env, {
       LANDR_CONTRACT_PATH: contract,
       LANDR_OUTPUT_DIRECTORY: OPTIONS_OUTPUT_DIRECTORY,
-      LANDR_DEPLOY_URL: siteOptions.url
+      LANDR_DEPLOY_URL: siteOptions.url,
+      LANDR_THEME: JSON.stringify(siteTheme)
     })
   })
 

@@ -16,7 +16,7 @@
 
 const ava = require('ava')
 const generator = require('../../lib/engine/generator')
-const TEST_THEME = require('./test-theme.json')
+const TEST_THEME = require('../../default-theme.json')
 
 ava('.getCombinations() should generator combinations for a given input', (test) => {
   const components = [
