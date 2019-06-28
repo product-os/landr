@@ -1,0 +1,36 @@
+{
+  "vibrant": {
+    "dark": {
+      "title": "#fff",
+      "text": "#fff",
+      "color": "#9a5904"
+    },
+    "light": {
+      "title": "#fff",
+      "text": "#000",
+      "color": "#fbc91f"
+    },
+    "normal": {
+      "title": "#fff",
+      "text": "#000",
+      "color": "#eb8b04"
+    }
+  },
+  "muted": {
+    "dark": {
+      "title": "#fff",
+      "text": "#fff",
+      "color": "#955603"
+    },
+    "light": {
+      "title": "#fff",
+      "text": "#fff",
+      "color": "#967402"
+    },
+    "normal": {
+      "title": "#fff",
+      "text": "#fff",
+      "color": "#965802"
+    }
+  }
+}

@@ -90,7 +90,9 @@ ava('.getCombinations() should generator combinations for a given input', (test)
     }
   }
 
-  const result = generator.getCombinations(components, metadata, [
+  const result = []
+
+  for (const combination of generator.getCombinations(components, metadata, [
     {
       title: 'Homepage',
       path: [],
@@ -103,7 +105,9 @@ ava('.getCombinations() should generator combinations for a given input', (test)
         hello: 'world'
       }
     }
-  ], [ 'docs' ], TEST_THEME)
+  ], [ 'docs' ], TEST_THEME)) {
+    result.push(combination)
+  }
 
   test.deepEqual(result, [
     [
@@ -246,7 +250,8 @@ ava('.getCombinations() should generator combinations for a given input', (test)
 })
 
 ava('.filterCombinations() should remove redundand combinations given no rules', (test) => {
-  const result = generator.filterCombinations([
+  const result = []
+  for (const combination of generator.filterCombinations([
     [
       {
         component: 'Foo',
@@ -310,7 +315,9 @@ ava('.filterCombinations() should remove redundand combinations given no rules',
         hello: 'world'
       }
     }
-  ], [ 'docs' ])
+  ], [ 'docs' ])) {
+    result.push(combination)
+  }
 
   test.deepEqual(result, [
     [
@@ -334,7 +341,8 @@ ava('.filterCombinations() should remove redundand combinations given no rules',
 })
 
 ava('.filterCombinations() should process a set of rules', (test) => {
-  const result = generator.filterCombinations([
+  const result = []
+  for (const validCombination of generator.filterCombinations([
     [
       {
         component: 'Foo',
@@ -402,7 +410,9 @@ ava('.filterCombinations() should process a set of rules', (test) => {
         hello: 'world'
       }
     }
-  ], [ 'docs' ])
+  ], [ 'docs' ])) {
+    result.push(validCombination)
+  }
 
   test.deepEqual(result, [
     [
