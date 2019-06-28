@@ -60,7 +60,7 @@ sites:
 - https://www.balena.io/engine/ - A container engine built for IoT
 
 Do you know of any Landr website we missed? [Let us
-know!](https://github.com/balena-io/landr/issues/new)
+know!](https://github.com/balena-io/landr/issues/new?labels=examples&title=Add%20this%20Landr%20website%20to%20the%20examples)
 
 Getting Help
 ------------
