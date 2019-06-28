@@ -16,12 +16,10 @@
 
 import React from 'react'
 import {
-  Box,
-  Container,
-  Txt,
-  Flex,
-  Heading
+  Box, Container, Txt, Flex, Heading
 } from 'rendition'
+
+import Terminal from './presentational/terminal'
 
 export const name = 'Jumbotron'
 
@@ -31,13 +29,19 @@ export const variants = (metadata) => {
   if (metadata.data.tagline && metadata.data.description) {
     combinations.push({
       title: metadata.data.tagline,
-      description: metadata.data.description
+      description: metadata.data.description,
+      packageName: metadata.data.name,
+      type: metadata.data.type,
+      repositoryUrl: metadata.data.links.repository
     })
   }
 
   if (metadata.data.tagline) {
     combinations.push({
-      title: metadata.data.tagline
+      title: metadata.data.tagline,
+      packageName: metadata.data.name,
+      type: metadata.data.type,
+      repositoryUrl: metadata.data.links.repository
     })
   }
 
@@ -45,13 +49,32 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
+  const [ user, repo ] = props.repositoryUrl
+    .split('/')
+    .slice(
+      props.repositoryUrl.split('/').length - 2,
+      props.repositoryUrl.split('/').length
+    )
+
   return (
-    <Box bg={'#2a5070'} color="#fff" mb={5} py={6}>
+    <Box bg={'#6997c3'} color="#fff" mb={5} py={6}>
       <Container>
         <Flex flexDirection="column" alignItems="center">
           <Heading.h1>{props.title}</Heading.h1>
-          {props.description && (<Txt fontSize={3}>{props.description}</Txt>)}
+          {props.description && <Txt fontSize={3}>{props.description}</Txt>}
         </Flex>
+        {props.type === 'npm' && <Terminal packageName={props.packageName} />}
+        {props.repositoryUrl && (
+          <Txt align="center" mt={2}>
+            <iframe
+              src={`https://ghbtns.com/github-btn.html?user=${user}&repo=${repo}&type=star&count=true&size=large`}
+              frameBorder="0"
+              scrolling="0"
+              width="160px"
+              height="30px"
+            />
+          </Txt>
+        )}
       </Container>
     </Box>
   )

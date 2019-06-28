@@ -60,7 +60,7 @@ export const render = (props) => {
     : (<Txt>{props.name}</Txt>)
 
   return (
-    <Box p={3} bg={'#2a5070'} color="#fff">
+    <Box p={3} bg={'#6997c3'} color="#fff">
       <Container>
         <Flex justifyContent="space-between" alignItems="center">
           <Link color='white' href={'/'}>{Brand}</Link>
