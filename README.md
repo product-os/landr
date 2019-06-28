@@ -37,7 +37,8 @@ Installation
     landr
     ```
 
-Head over to our documentation in order to learn more!
+[Head over to our documentation in order to learn
+more!](https://github.com/balena-io/landr/tree/master/docs)
 
 Motivation
 ----------
