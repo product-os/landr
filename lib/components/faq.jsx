@@ -45,7 +45,7 @@ export const render = props => {
   return (
     <Box p={3} my={3}>
       <Container>
-        <Box mb={4}>
+        <Box>
           <Heading.h2 align="center" mb={4}>
             Frequently asked questions
           </Heading.h2>
