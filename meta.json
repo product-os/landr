@@ -1146,6 +1146,16 @@
           "owner": "balena-io",
           "repo": "etcher",
           "description": "Flash OS images to SD cards & USB drives, safely and easily"
+        },
+        {
+          "owner": "balena-io",
+          "repo": "balenaEngine",
+          "description": "An engine purpose-built for embedded and IoT use cases, based on Moby Project technology from Docker"
+        },
+        {
+          "owner": "balena-io",
+          "repo": "balenaOS",
+          "description": "A host OS tailored for containers, designed for reliability, proven in production"
         }
       ]
     },
