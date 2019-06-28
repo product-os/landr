@@ -14,45 +14,71 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box,
-  Img,
-  Container,
-  Txt
-} from 'rendition'
+import React from 'react';
+import { Box, Img, Container, Flex, Link, Heading, Txt } from 'rendition';
 
-export const name = 'Contributors'
+export const name = 'Contributors';
 
-export const variants = (metadata) => {
-  const combinations = []
+export const variants = metadata => {
+  const combinations = [];
 
   if (metadata.data.contributors) {
     combinations.push({
-      contributors: metadata.data.contributors
-    })
+      contributors: metadata.data.contributors,
+    });
   }
 
-  return combinations
-}
+  return combinations;
+};
+
+const GITHUB_PROFILE_PATH = `https://github.com`;
 
 export const render = (props) => {
-  const contributors = props.contributors.map((contributor) => {
+  const contributors = props.contributors.map(contributor => {
     return (
-      <div key={contributor.username}>
-        <Img style={{
-          height: '50px'
-        }} src={contributor.avatar} />
-        <Txt>{contributor.username}</Txt>
-      </div>
-    )
-  })
+      <Box key={contributor.username} px={2}>
+        <Link
+          href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
+          tooltip={contributor.username}
+        >
+          <Img
+            blank
+            src={contributor.avatar}
+            style={{
+              height: '65px',
+              borderRadius: 8,
+              boxShadow: '0px 2px 3px #5f5f5f;',
+            }}
+          />
+        </Link>
+      </Box>
+    );
+  });
 
   return (
-    <Box p={3}>
-      <Container>
-        {contributors}
+    <Box p={3} my={3}>
+      <Container textAlign="center">
+        <Box mb={4}>
+          <Heading.h2 mb={1}>Team</Heading.h2>
+          <Txt fontSize={16}>
+            Help Landr improve, by joining the contributors' team.
+          </Txt>
+          <Txt fontSize={16}>
+            Jump in and get your hands dirty with some selected{' '}
+            <Link
+              blank
+              href="https://github.com/balena-io/landr/labels/good%20first%20issue"
+            >
+              good first issues!
+            </Link>
+          </Txt>
+        </Box>
+        <Flex mx={-2} flexWrap="wrap" justifyContent="center">
+          {contributors}
+        </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
+
+// TODO: If there are more that X contributors -> link to a new page
