@@ -16,7 +16,7 @@
 
 import React from 'react';
 import get from 'lodash/get';
-import { Box, Divider, Container, Flex, Link, Heading, Txt } from 'rendition';
+import { Box, Divider, Container, Heading } from 'rendition';
 import Accordian from './presentational/accordian';
 
 export const name = 'Faq';
