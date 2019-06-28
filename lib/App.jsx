@@ -26,7 +26,7 @@ import {
 import './global.css'
 
 import 'typeface-nunito'
-import "circular-std";
+import 'circular-std'
 
 const App = ({
   contract

@@ -14,39 +14,41 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box, Container, Txt, Flex, Heading } from 'rendition';
+import React from 'react'
+import {
+  Box, Container, Txt, Flex, Heading
+} from 'rendition'
 
-import Terminal from './presentational/terminal';
+import Terminal from './presentational/terminal'
 
-export const name = 'Jumbotron';
+export const name = 'Jumbotron'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (metadata.data.tagline && metadata.data.description) {
     combinations.push({
       title: metadata.data.tagline,
       description: metadata.data.description,
       packageName: metadata.data.name,
-      type: metadata.data.type,
-    });
+      type: metadata.data.type
+    })
   }
 
   if (metadata.data.tagline) {
     combinations.push({
       title: metadata.data.tagline,
       packageName: metadata.data.name,
-      type: metadata.data.type,
-    });
+      type: metadata.data.type
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-export const render = props => {
+export const render = (props) => {
   return (
-    <Box bg={'#2a5070'} color="#fff" mb={5} py={6}>
+    <Box bg={'#6997c3'} color="#fff" mb={5} py={6}>
       <Container>
         <Flex flexDirection="column" alignItems="center">
           <Heading.h1>{props.title}</Heading.h1>
@@ -55,5 +57,5 @@ export const render = props => {
         {props.type === 'npm' && <Terminal packageName={props.packageName} />}
       </Container>
     </Box>
-  );
-};
+  )
+}

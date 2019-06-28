@@ -14,33 +14,37 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import get from 'lodash/get';
-import { Box, Divider, Container, Heading } from 'rendition';
-import Accordian from './presentational/accordian';
+import React from 'react'
+import get from 'lodash/get'
+import {
+  Box, Divider, Container, Heading
+} from 'rendition'
+import Accordian from './presentational/accordian'
 
-export const name = 'Faq';
+export const name = 'Faq'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
-  const latestVersion = metadata.version;
+  const latestVersion = metadata.version
   if (
-    get(metadata, ['data', 'docs', 'tags', latestVersion, 'users', 'faq'], null)
+    get(metadata, [ 'data', 'docs', 'tags', latestVersion, 'users', 'faq' ], null)
   ) {
     combinations.push({
-      faq: metadata.data.docs.tags[latestVersion].users.faq,
-    });
+      faq: metadata.data.docs.tags[latestVersion].users.faq
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-export const render = props => {
-  const items = props.faq.map(faq => ({
-    title: faq.title,
-    content: faq.content[1],
-  }));
+export const render = (props) => {
+  const items = props.faq.map((faq) => {
+    return {
+      title: faq.title,
+      content: faq.content[1]
+    }
+  })
 
   return (
     <Box p={3} my={3}>
@@ -54,5 +58,5 @@ export const render = props => {
         </Box>
       </Container>
     </Box>
-  );
-};
+  )
+}

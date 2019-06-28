@@ -1,10 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Box, Flex, Txt } from 'rendition';
-import Typist from 'react-typist';
-import 'react-typist/dist/Typist.css';
+import React from 'react'
+import styled from 'styled-components'
+import {
+  Box, Flex, Txt
+} from 'rendition'
+import Typist from 'react-typist'
+import 'react-typist/dist/Typist.css'
 
-const TerminalView = styled(Flex)`
+const TerminalView = styled(Flex) `
   font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
     'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
@@ -17,63 +19,67 @@ const TerminalView = styled(Flex)`
   flex-direction: column;
   font-size: 16px;
   box-shadow: 0px 2px 13px #140e0e;
-`;
+`
 
-const Bullet = styled(Box)`
+const Bullet = styled(Box) `
   display: inline-box;
   border-radius: 12px;
   height: 12px;
   width: 12px;
   margin: 0 4px;
-`;
+`
 
-const Body = styled(Box)`
+const Body = styled(Box) `
   padding: 16px 24px;
   flex: 1;
-`;
+`
 
 const codeStyles = {
   color: '#c1c1c1',
   fontWeight: 600,
   letterSpacing: '-0.3px',
-  lineHeight: 2,
-};
+  lineHeight: 2
+}
 
 const commentStyles = {
   color: 'gray',
   fontWeight: 600,
   letterSpacing: '-0.3px',
-  lineHeight: 2,
-};
+  lineHeight: 2
+}
 
-const TerminalArrow = () => (
-  <Txt.span mr={2} color="#28cd41">
+const TerminalArrow = () => {
+  return (
+    <Txt.span mr={2} color="#28cd41">
     ~
-  </Txt.span>
-);
+    </Txt.span>
+  )
+}
 
 class Terminal extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       commands: [
-        <Txt.span style={codeStyles}>
+        <Txt.span key={1} style={codeStyles}>
           <TerminalArrow />
           npm install {this.props.packageName}
         </Txt.span>,
-        <br />,
-        <Txt.span style={commentStyles}>// Alternatively ...</Txt.span>,
-        <br />,
-        <Txt.span style={codeStyles}>
+        <br key={2} />,
+        <Txt.span key={1} style={commentStyles}>// Alternatively ...</Txt.span>,
+        <br key={3} />,
+        <Txt.span key={4} style={codeStyles}>
           <TerminalArrow />
           yarn add {this.props.packageName}
-        </Txt.span>,
-      ],
-    };
+        </Txt.span>
+      ]
+    }
   }
 
-  render() {
-    const { commands } = this.state;
+  render () {
+    const {
+      commands
+    } = this.state
 
     // The colors are taken from here https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/color/
     // Trying to replicate the macOS terminal look and feel
@@ -88,8 +94,8 @@ class Terminal extends React.Component {
           <Typist>{commands}</Typist>
         </Body>
       </TerminalView>
-    );
+    )
   }
 }
 
-export default Terminal;
+export default Terminal

@@ -14,27 +14,29 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box, Img, Container, Flex, Link, Heading, Txt } from 'rendition';
-import styled from 'styled-components';
+import React from 'react'
+import {
+  Box, Img, Container, Flex, Link, Heading, Txt
+} from 'rendition'
+import styled from 'styled-components'
 
-export const name = 'Contributors';
+export const name = 'Contributors'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (metadata.data.contributors) {
     combinations.push({
-      contributors: metadata.data.contributors,
-    });
+      contributors: metadata.data.contributors
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-const GITHUB_PROFILE_PATH = `https://github.com`;
+const GITHUB_PROFILE_PATH = 'https://github.com'
 
-const PlaceholderPhoto = styled(Flex)`
+const PlaceholderPhoto = styled(Flex) `
   font-size: 12px;
   padding: 8px;
   height: 65px;
@@ -44,10 +46,10 @@ const PlaceholderPhoto = styled(Flex)`
   justify-content: center;
   align-items: center;
   box-shadow: 0px 2px 3px #5f5f5f;
-`;
+`
 
-export const render = props => {
-  const list = props.contributors.map(contributor => {
+export const render = (props) => {
+  const list = props.contributors.map((contributor) => {
     return (
       <Box key={contributor.username} px={2}>
         <Link
@@ -60,13 +62,13 @@ export const render = props => {
             style={{
               height: '65px',
               borderRadius: 8,
-              boxShadow: '0px 2px 3px #5f5f5f;',
+              boxShadow: '0px 2px 3px #5f5f5f;'
             }}
           />
         </Link>
       </Box>
-    );
-  });
+    )
+  })
 
   const CTA = (
     <>
@@ -84,7 +86,7 @@ export const render = props => {
         </Link>
       </Txt>
     </>
-  );
+  )
 
   return (
     <Box p={3} my={3}>
@@ -101,7 +103,7 @@ export const render = props => {
         <Box mt={3}>{CTA}</Box>
       </Container>
     </Box>
-  );
-};
+  )
+}
 
 // TODO: If there are more that X contributors -> link to a new page

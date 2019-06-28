@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from 'react';
+import React from 'react'
 import {
   Box,
   Badge,
@@ -23,27 +23,29 @@ import {
   Link,
   Heading,
   Txt,
-  Divider,
-} from 'rendition';
+  Divider
+} from 'rendition'
 
-export const name = 'Users';
+export const name = 'Users'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (metadata.data.github.usedBy) {
     combinations.push({
-      users: metadata.data.github.usedBy,
-    });
+      users: metadata.data.github.usedBy
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-const GITHUB_PROFILE_PATH = `https://github.com`;
+const GITHUB_PROFILE_PATH = 'https://github.com'
 
-export const render = props => {
-  const list = props.users.map(({ repo, owner, description }) => {
+export const render = (props) => {
+  const list = props.users.map(({
+    repo, owner, description
+  }) => {
     return (
       <>
         <Flex py={3} alignItems="center">
@@ -58,15 +60,15 @@ export const render = props => {
             px={3}
             fontSize={20}
             blank
-            href={GITHUB_PROFILE_PATH + '/' + owner + '/' + repo}
+            href={`${GITHUB_PROFILE_PATH}/${owner}/${repo}`}
           >
             ↗
           </Link>
         </Flex>
         <Divider m={0} height={1} color={'#c1c7dd'} />
       </>
-    );
-  });
+    )
+  })
 
   return (
     <Box p={3} my={3}>
@@ -78,5 +80,5 @@ export const render = props => {
         {list}
       </Container>
     </Box>
-  );
-};
+  )
+}

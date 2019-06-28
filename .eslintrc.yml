@@ -349,9 +349,6 @@ rules:
   lodash/identity-shorthand:
     - error
     - always
-  lodash/import-scope:
-    - error
-    - full
   lodash/matches-prop-shorthand:
     - error
     - always
