@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import _ from 'lodash'
 import {
   Box,
   Img,
@@ -26,18 +27,36 @@ import {
 
 export const name = 'Navigation'
 
-export const variants = (metadata) => {
+export const variants = (metadata, context, route, routes) => {
   const combinations = []
+
+  const toplevelRoutes = routes.filter((definition) => {
+    return definition.path.length === 1
+  }).map((definition) => {
+    return {
+      name: _.capitalize(definition.path[0]),
+      url: `/${definition.path[0]}`
+    }
+  })
+
+  if (metadata.data.links.repository) {
+    toplevelRoutes.push({
+      name: 'GitHub',
+      url: metadata.data.links.repository
+    })
+  }
 
   if (metadata.data.images.banner && metadata.data.links.repository) {
     combinations.push({
       logo: metadata.data.images.banner,
+      routes: toplevelRoutes,
       githubUrl: metadata.data.links.repository
     })
   }
 
   if (metadata.data.images.banner) {
     combinations.push({
+      routes: toplevelRoutes,
       logo: metadata.data.images.banner
     })
   }
@@ -45,6 +64,7 @@ export const variants = (metadata) => {
   if (metadata.data.name && metadata.data.links.repository) {
     combinations.push({
       name: metadata.data.name,
+      routes: toplevelRoutes,
       githubUrl: metadata.data.links.repository
     })
   }
@@ -59,16 +79,21 @@ export const render = (props) => {
     }} src={props.logo} />)
     : (<Txt>{props.name}</Txt>)
 
+  const links = props.routes.map((route, index) => {
+    return (<Link key={index} style={{
+      marginLeft: 15
+    }} color="#fff" href={route.url} aria-labelledby={route.name}>
+      {route.name}
+    </Link>)
+  })
+
   return (
     <Box p={3} bg={'#6997c3'} color="#fff">
       <Container>
         <Flex justifyContent="space-between" alignItems="center">
           <Link color='white' href={'/'}>{Brand}</Link>
           <Flex fontSize={'1.1em'}>
-            <Link blank color="#fff"
-              href={props.githubUrl} aria-labelledby='Github'>
-              GitHub
-            </Link>
+            {links}
           </Flex>
         </Flex>
       </Container>
