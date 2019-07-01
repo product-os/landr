@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import _ from 'lodash'
 import {
   Box, Container, Txt, Flex, Heading
 } from 'rendition'
@@ -26,11 +27,26 @@ export const name = 'Jumbotron'
 export const variants = (metadata) => {
   const combinations = []
 
+  const steps = metadata.data.installation.steps.reduce((accumulator, step) => {
+    accumulator.push({
+      command: _.last(step[0]).replace(/\n/g, ''),
+      comment: true
+    })
+
+    accumulator.push({
+      command: _.last(_.last(_.last(step))).replace(/\n/g, ''),
+      comment: false
+    })
+
+    return accumulator
+  }, [])
+
   if (metadata.data.tagline && metadata.data.description) {
     combinations.push({
       title: metadata.data.tagline,
       description: metadata.data.description,
       packageName: metadata.data.name,
+      steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository
     })
@@ -40,6 +56,7 @@ export const variants = (metadata) => {
     combinations.push({
       title: metadata.data.tagline,
       packageName: metadata.data.name,
+      steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository
     })
@@ -56,22 +73,7 @@ export const render = (props) => {
       props.repositoryUrl.split('/').length
     )
 
-  const commands = props.type === 'npm'
-    ? [
-      {
-        command: `npm install ${props.packageName}`,
-        comment: false
-      },
-      {
-        command: '// Alternatively ...',
-        comment: true
-      },
-      {
-        command: `yarn add ${props.packageName}`,
-        comment: false
-      }
-    ]
-    : []
+  const commands = props.steps || []
 
   return (
     <Box bg={'#6997c3'} color="#fff" mb={5} py={6}>

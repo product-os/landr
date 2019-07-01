@@ -11,7 +11,7 @@ const TerminalView = styled(Flex) `
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
     monospace;
   max-width: 600px;
-  height: 200px;
+  height: 280px;
   background: black;
   border-radius: 4px;
   margin: 24px auto 16px;
@@ -67,7 +67,7 @@ class Terminal extends React.Component {
         if (definition.comment) {
           accumulator.push(<Txt.span
             key={accumulator.length}
-            style={commentStyles}>{definition.command}</Txt.span>)
+            style={commentStyles}># {definition.command}</Txt.span>)
         } else {
           accumulator.push(<Txt.span key={accumulator.length} style={codeStyles}>
             <TerminalArrow />
