@@ -42,6 +42,7 @@ export const variants = (metadata, context) => {
   if (context.article) {
     combinations.push({
       title: context.article.content.title,
+      toc: context.toc,
       link: `${metadata.data.links.repository}/edit/master/${context.article.content.filename}`,
       jsonml: context.article.content.data
     })
@@ -51,9 +52,17 @@ export const variants = (metadata, context) => {
 }
 
 export const render = (props) => {
+  const toc = props.toc.map((page, index) => {
+    const url = `/${page.path.join('/')}`
+    return (<li key={index}>
+      <Link href={url}>{page.content.title}</Link>
+    </li>)
+  })
+
   return (
     <Box p={3}>
       <Container>
+        <ul>{toc}</ul>
         <Link href={props.link}>Edit on GitHub</Link>
         <JsonML data={props.jsonml} />
       </Container>
