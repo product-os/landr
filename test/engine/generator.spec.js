@@ -18,7 +18,7 @@ const ava = require('ava')
 const generator = require('../../lib/engine/generator')
 const TEST_THEME = require('../../default-theme.json')
 
-ava('.getCombinations() should generator combinations for a given input', (test) => {
+ava('.getCombinations() should generate combinations for a given input', (test) => {
   const components = [
     {
       name: 'Foo',
@@ -105,7 +105,7 @@ ava('.getCombinations() should generator combinations for a given input', (test)
         hello: 'world'
       }
     }
-  ], [ 'docs' ], TEST_THEME)) {
+  ], [ 'docs' ], TEST_THEME, [])) {
     result.push(combination)
   }
 
@@ -432,5 +432,142 @@ ava('.filterCombinations() should process a set of rules', (test) => {
         }
       }
     ]
+  ])
+})
+
+ava('.getCombinations() should filter out combinations given scoped rules', (test) => {
+  const components = [
+    {
+      name: 'Foo',
+      variants: (metadata) => {
+        const combinations = []
+
+        combinations.push({
+          license: metadata.data.license
+        })
+
+        return combinations
+      }
+    },
+    {
+      name: 'Bar',
+      variants: (metadata) => {
+        const combinations = []
+
+        if (metadata.data.name && metadata.data.tagline) {
+          combinations.push({
+            title: metadata.data.name,
+            subtitle: metadata.data.tagline
+          })
+        }
+
+        if (metadata.data.name) {
+          combinations.push({
+            title: metadata.data.name
+          })
+        }
+
+        if (metadata.data.tagline) {
+          combinations.push({
+            title: metadata.data.tagline
+          })
+        }
+
+        return combinations
+      }
+    },
+    {
+      name: 'Baz',
+      variants: (metadata) => {
+        const combinations = []
+
+        if (metadata.data.url) {
+          combinations.push({
+            link: metadata.data.url
+          })
+        }
+
+        return combinations
+      }
+    }
+  ]
+
+  const metadata = {
+    slug: 'repository-test',
+    type: 'repository',
+    version: '1.0.0',
+    markers: [],
+    tags: [],
+    links: {},
+    active: true,
+    data: {
+      license: 'Apache-2.0',
+      name: 'landr',
+      tagline: 'Repository + Landr = Website'
+    }
+  }
+
+  const result = []
+
+  for (const combination of generator.getCombinations(components, metadata, [
+    {
+      title: 'Homepage',
+      path: [],
+      context: {}
+    },
+    {
+      title: 'Documentation',
+      path: [ 'docs' ],
+      context: {
+        hello: 'world'
+      }
+    }
+  ], [ 'docs' ], TEST_THEME, [
+    // This one should not be evaluated
+    (ruleCombination) => {
+      return ruleCombination[0].component === 'Bar'
+    },
+    {
+      scope: [ 'Foo' ],
+      fn: (ruleCombination) => {
+        return !ruleCombination.some((element) => {
+          return element.component === 'Foo'
+        })
+      }
+    }
+  ])) {
+    result.push(combination)
+  }
+
+  test.deepEqual(result, [
+    [
+      {
+        component: 'Bar',
+        rank: 1,
+        options: {
+          title: 'landr',
+          subtitle: 'Repository + Landr = Website'
+        }
+      }
+    ],
+    [
+      {
+        component: 'Bar',
+        rank: 2,
+        options: {
+          title: 'landr'
+        }
+      }
+    ],
+    [
+      {
+        component: 'Bar',
+        rank: 3,
+        options: {
+          title: 'Repository + Landr = Website'
+        }
+      }
+    ],
+    []
   ])
 })
