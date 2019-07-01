@@ -20,19 +20,6 @@ const _ = require('lodash')
 const path = require('path')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
-const fileExists = (file) => {
-  try {
-    fs.statSync(file)
-    return true
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      return false
-    }
-
-    throw error
-  }
-}
-
 const getInstallationSteps = (readme) => {
   const tree = _.tail(markdown.parse(readme))
   const startIndex = _.findIndex(tree, (node) => {
@@ -159,55 +146,38 @@ console.log(JSON.stringify({
       return name.slice(1)
     }),
 
-    security: parseMarkdown('SECURITY.md'),
-    developers: {
+    faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
+
+    contributing: {
       architecture: parseMarkdown('ARCHITECTURE.md'),
       guide: parseMarkdown('CONTRIBUTING.md'),
       codeOfConduct: parseMarkdown('CODE_OF_CONDUCT.md'),
-      conventions: {
-        editorconfig: fileExists(path.join(PROJECT_DIRECTORY, '.editorconfig'))
-      }
+      security: parseMarkdown('SECURITY.md')
     },
+
+    installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
 
     docs: {
       latest: '1.0.0',
       tags: {
-        '1.0.0': {
-          users: {
-            faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
-            installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8'))
-          },
-          pages: [
-            parseMarkdown('docs/cli.md')
-          ],
-          tutorials: [
-            parseMarkdown('docs/guides/running-landr-in-ci.md')
-          ]
-        },
-        '0.1.1': {
-          users: {
-            faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
-            installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8'))
-          },
-          pages: [
-            parseMarkdown('docs/cli.md')
-          ],
-          tutorials: [
-            parseMarkdown('docs/guides/running-landr-in-ci.md')
-          ]
-        },
-        '0.1.0': {
-          users: {
-            faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
-            installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8'))
-          },
-          pages: [
-            parseMarkdown('docs/cli.md')
-          ],
-          tutorials: [
-            parseMarkdown('docs/guides/running-landr-in-ci.md')
-          ]
-        }
+        '1.0.0': [
+          parseMarkdown('docs/01-getting-started.md'),
+          parseMarkdown('docs/02-cli.md'),
+          parseMarkdown('docs/03-conventions.md'),
+          parseMarkdown('docs/04-running-landr-in-ci.md')
+        ],
+        '0.1.1': [
+          parseMarkdown('docs/01-getting-started.md'),
+          parseMarkdown('docs/02-cli.md'),
+          parseMarkdown('docs/03-conventions.md'),
+          parseMarkdown('docs/04-running-landr-in-ci.md')
+        ],
+        '0.1.0': [
+          parseMarkdown('docs/01-getting-started.md'),
+          parseMarkdown('docs/02-cli.md'),
+          parseMarkdown('docs/03-conventions.md'),
+          parseMarkdown('docs/04-running-landr-in-ci.md')
+        ]
       }
     },
 

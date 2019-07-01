@@ -15,7 +15,6 @@
  */
 
 import React from 'react'
-import get from 'lodash/get'
 import {
   Box, Divider, Container, Heading
 } from 'rendition'
@@ -26,12 +25,9 @@ export const name = 'Faq'
 export const variants = (metadata) => {
   const combinations = []
 
-  const latestVersion = metadata.version
-  if (
-    get(metadata, [ 'data', 'docs', 'tags', latestVersion, 'users', 'faq' ], null)
-  ) {
+  if (metadata.data.faq) {
     combinations.push({
-      faq: metadata.data.docs.tags[latestVersion].users.faq
+      faq: metadata.data.faq
     })
   }
 
