@@ -32,7 +32,7 @@ Routes
 ------
 
 The routes that Landr will statically generate are defined in
-`[lib/routes.js](https://github.com/balena-io/landr/blob/master/lib/routes.js)`.
+[`lib/routes.js`](https://github.com/balena-io/landr/blob/master/lib/routes.js).
 This file contains a function that takes `meta.json` and returns an array of
 routes that Landr will render. Each route contains the following properties:
 
