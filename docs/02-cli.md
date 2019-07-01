@@ -1,5 +1,5 @@
-Landr CLI
-=========
+CLI
+===
 
 The Landr CLI is able to generate websites and deploy them to Netlify and it
 features the following small set of commands:

@@ -1,5 +1,5 @@
-Running Landr in CI
-===================
+Running in CI
+=============
 
 The Landr project makes use of [Netlify](https://www.netlify.com) to deploy the
 generated website. For this reason, you will need to generate a Netlify
