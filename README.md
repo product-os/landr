@@ -16,6 +16,9 @@ Generate great websites for your projects with zero configuration.
   enough to figure out what it needs on its own. Point it to a repository, hold
   tight, and let Landr do its magic
 
+**Landr is alpha software** and its under heavy development, so various things
+might be broken in the best case!
+
 Installation
 ------------
 
