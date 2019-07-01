@@ -56,6 +56,23 @@ export const render = (props) => {
       props.repositoryUrl.split('/').length
     )
 
+  const commands = props.type === 'npm'
+    ? [
+      {
+        command: `npm install ${props.packageName}`,
+        comment: false
+      },
+      {
+        command: '// Alternatively ...',
+        comment: true
+      },
+      {
+        command: `yarn add ${props.packageName}`,
+        comment: false
+      }
+    ]
+    : []
+
   return (
     <Box bg={'#6997c3'} color="#fff" mb={5} py={6}>
       <Container>
@@ -63,7 +80,7 @@ export const render = (props) => {
           <Heading.h1>{props.title}</Heading.h1>
           {props.description && <Txt fontSize={3}>{props.description}</Txt>}
         </Flex>
-        {props.type === 'npm' && <Terminal packageName={props.packageName} />}
+        {commands.length > 0 && <Terminal commands={commands} />}
         {props.repositoryUrl && (
           <Txt align="center" mt={2}>
             <iframe
