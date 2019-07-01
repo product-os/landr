@@ -36,13 +36,15 @@ const JsonML = ({
   }}/>)
 }
 
-export const variants = (metadata, context) => {
+export const variants = (metadata, context, route) => {
   const combinations = []
 
   if (context.article) {
     combinations.push({
       title: context.article.content.title,
+      current: route.path,
       toc: context.toc,
+      versions: context.versions || [],
       link: `${metadata.data.links.repository}/edit/master/${context.article.content.filename}`,
       jsonml: context.article.content.data
     })
@@ -59,10 +61,18 @@ export const render = (props) => {
     </li>)
   })
 
+  const versions = props.versions.map((version, index) => {
+    const url = `/${props.current.join('/')}/${version}`
+    return (<li key={index}>
+      <Link href={url}>{version}</Link>
+    </li>)
+  })
+
   return (
     <Box p={3}>
       <Container>
         <ul>{toc}</ul>
+        {versions.length > 0 && versions}
         <Link href={props.link}>Edit on GitHub</Link>
         <JsonML data={props.jsonml} />
       </Container>
