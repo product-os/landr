@@ -17,15 +17,21 @@
 import React from 'react'
 import _ from 'lodash'
 import {
-  Box, Container, Txt, Flex, Heading
+  Box, Button, Container, Txt, Flex, Heading
 } from 'rendition'
 
 import Terminal from './presentational/terminal'
 
 export const name = 'Jumbotron'
 
-export const variants = (metadata) => {
+export const variants = (metadata, context, route, routes) => {
   const combinations = []
+
+  const entrypoint = metadata.data.docs.tags[metadata.data.docs.latest][0]
+  const entryUrl = _.find(routes, (definition) => {
+    return definition.context.article &&
+      definition.context.article.content.filename === entrypoint.filename
+  })
 
   const steps = metadata.data.installation.steps.reduce((accumulator, step) => {
     accumulator.push({
@@ -41,11 +47,12 @@ export const variants = (metadata) => {
     return accumulator
   }, [])
 
-  if (metadata.data.tagline && metadata.data.description) {
+  if (metadata.data.tagline && metadata.data.description && entryUrl) {
     combinations.push({
       title: metadata.data.tagline,
       description: metadata.data.description,
       packageName: metadata.data.name,
+      action: `/${entryUrl.path.join('/')}`,
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository
@@ -92,6 +99,12 @@ export const render = (props) => {
               width="160px"
               height="30px"
             />
+          </Txt>
+        )}
+
+        {props.action && (
+          <Txt align="center" mt={2}>
+            <Button m={2} href={props.action} primary>Get started!</Button>
           </Txt>
         )}
       </Container>
