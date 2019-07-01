@@ -11,7 +11,7 @@ const TerminalView = styled(Flex) `
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
     monospace;
   max-width: 600px;
-  height: 200px;
+  height: 280px;
   background: black;
   border-radius: 4px;
   margin: 24px auto 16px;
@@ -59,19 +59,24 @@ class Terminal extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      commands: [
-        <Txt.span key={1} style={codeStyles}>
-          <TerminalArrow />
-          npm install {this.props.packageName}
-        </Txt.span>,
-        <br key={2} />,
-        <Txt.span key={1} style={commentStyles}>// Alternatively ...</Txt.span>,
-        <br key={3} />,
-        <Txt.span key={4} style={codeStyles}>
-          <TerminalArrow />
-          yarn add {this.props.packageName}
-        </Txt.span>
-      ]
+      commands: props.commands.reduce((accumulator, definition, index) => {
+        if (index !== 0) {
+          accumulator.push(<br key={accumulator.length} />)
+        }
+
+        if (definition.comment) {
+          accumulator.push(<Txt.span
+            key={accumulator.length}
+            style={commentStyles}># {definition.command}</Txt.span>)
+        } else {
+          accumulator.push(<Txt.span key={accumulator.length} style={codeStyles}>
+            <TerminalArrow />
+            {definition.command}
+          </Txt.span>)
+        }
+
+        return accumulator
+      }, [])
     }
   }
 

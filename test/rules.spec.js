@@ -20,7 +20,9 @@ const rules = require('../lib/rules')
 
 ava('should be a list of functions', (test) => {
   test.true(_.isArray(rules))
-  test.true(_.every(rules, _.isFunction))
+  test.true(_.every(rules, (rule) => {
+    return _.isFunction(rule) || _.isFunction(rule.fn)
+  }))
 })
 
 ava('should not be empty', (test) => {

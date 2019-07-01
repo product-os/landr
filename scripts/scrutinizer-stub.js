@@ -20,6 +20,16 @@ const _ = require('lodash')
 const path = require('path')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
+const getHighlights = (readme) => {
+  const tree = _.tail(markdown.parse(readme))
+  return tree[3].slice(1).map((highlight) => {
+    return {
+      title: highlight.slice(1)[0][1],
+      description: highlight.slice(1)[1].replace(/^:\s+/, '')
+    }
+  })
+}
+
 const getInstallationSteps = (readme) => {
   const tree = _.tail(markdown.parse(readme))
   const startIndex = _.findIndex(tree, (node) => {
@@ -155,6 +165,7 @@ console.log(JSON.stringify({
       security: parseMarkdown('SECURITY.md')
     },
 
+    highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
     installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
 
     docs: {

@@ -24,19 +24,19 @@ Installation
 
 1. Install the Landr CLI:
 
-    ```sh
+    ```
     npm install --global landr
     ```
 
 2. Go to a Balena CI powered repo:
 
-    ```sh
+    ```
     cd path/to/repository
     ```
 
 3. Generate your website:
 
-    ```sh
+    ```
     landr
     ```
 
