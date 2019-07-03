@@ -15,8 +15,11 @@
  */
 
 const ava = require('ava')
+const path = require('path')
 const _ = require('lodash')
+const fs = require('fs')
 const components = require('../lib/components')
+const COMPONENTS_PATH = path.resolve(__dirname, '..', 'lib', 'components')
 
 for (const component of _.toPairs(components)) {
   ava(`${component[0]} should have a ${component[0]} name property`, (test) => {
@@ -34,5 +37,20 @@ for (const component of _.toPairs(components)) {
   ava(`${component[0]} should not export anything else`, (test) => {
     const expected = [ 'name', 'variants', 'render' ]
     test.deepEqual(_.sortBy(_.keys(component[1])), _.sortBy(expected))
+  })
+}
+
+for (const file of fs.readdirSync(COMPONENTS_PATH)) {
+  const extension = path.extname(file)
+  if ([ '.css', '' ].includes(extension) || file === 'index.js') {
+    continue
+  }
+
+  const name = _.startCase(path.basename(file, extension))
+    .replace(/\s/g, '')
+
+  ava(`${file} should be exported as ${name}`, (test) => {
+    test.truthy(components[name])
+    test.is(components[name].name, name)
   })
 }
