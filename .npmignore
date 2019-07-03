@@ -1,1 +1,8 @@
 docs
+coverage
+test
+scripts
+.nyc_output
+.tmp
+.tgz
+dist

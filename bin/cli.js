@@ -132,6 +132,13 @@ Bluebird.try(async () => {
   const {
     code
   } = shell.exec(command, {
+    // The react-static project assumes in many places
+    // that the root directory is the current working
+    // directory, which may not be the case when Landr
+    // is globally installed.
+    // Fixing react-static doesn't seem easy, so this
+    // is more of a workaround.
+    cwd: path.resolve(__dirname, '..'),
 
     // We need to merge `process.env` as otherwise we
     // completely override the environment, including
