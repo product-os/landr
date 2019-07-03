@@ -49,6 +49,7 @@ const printHeader = () => {
 \\____/\\__,_|_| |_|\\__,_|_|
 `)
   console.error(packageJSON.description)
+  console.error(`Version v${packageJSON.version}`)
   console.error()
 }
 
