@@ -10,8 +10,9 @@
     "lint": "eslint --ext .js,.jsx bin lib test scripts && csslint lib/**/*.css",
     "unit": "nyc --exclude scripts --exclude test --reporter=html --extension .js --extension .jsx --compact=false ava",
     "build": "./bin/cli.js build",
+    "test-e2e": "node test/site/no-uncaught-errors.js ./dist",
     "test-npm": "rm -f land-*.tgz && npm pack && npm install --global ./landr-$npm_package_version.tgz && landr build && rm landr-*.tgz",
-    "test": "npm run lint && npm run unit && npm run build && npm run test-npm",
+    "test": "npm run lint && npm run unit && npm run build && npm run test-npm && npm run test-e2e",
     "start": "npm run build"
   },
   "repository": {
@@ -56,7 +57,9 @@
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-standard": "^4.0.0",
     "file-type": "^12.0.0",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "puppeteer": "^1.18.1",
+    "serve-handler": "^6.0.2"
   },
   "dependencies": {
     "@babel/register": "^7.4.0",
