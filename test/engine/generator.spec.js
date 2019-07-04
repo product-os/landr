@@ -105,7 +105,9 @@ ava('.getCombinations() should generate combinations for a given input', (test) 
         hello: 'world'
       }
     }
-  ], [ 'docs' ], TEST_THEME, [])) {
+  ], [ 'docs' ], {
+    theme: TEST_THEME
+  }, [])) {
     result.push(combination)
   }
 
@@ -522,7 +524,9 @@ ava('.getCombinations() should filter out combinations given scoped rules', (tes
         hello: 'world'
       }
     }
-  ], [ 'docs' ], TEST_THEME, [
+  ], [ 'docs' ], {
+    theme: TEST_THEME
+  }, [
     // This one should not be evaluated
     (ruleCombination) => {
       return ruleCombination[0].component === 'Bar'

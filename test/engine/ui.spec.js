@@ -59,7 +59,9 @@ ava('.getVariants() should get all variants of a component', (test) => {
         hello: 'world'
       }
     }
-  ], [ 'docs' ], TEST_THEME)
+  ], [ 'docs' ], {
+    theme: TEST_THEME
+  })
 
   test.deepEqual(variants, [
     {
@@ -145,7 +147,9 @@ ava('.getVariants() should return no variants given an invalid path', (test) => 
         hello: 'world'
       }
     }
-  ], [ 'test' ], TEST_THEME)
+  ], [ 'test' ], {
+    theme: TEST_THEME
+  })
 
   test.deepEqual(variants, [])
 })

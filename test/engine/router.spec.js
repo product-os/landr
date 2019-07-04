@@ -16,7 +16,6 @@
 
 const ava = require('ava')
 const router = require('../../lib/engine/router')
-const TEST_THEME = require('../../default-theme.json')
 
 ava('.getPath() should get the path of a root route', (test) => {
   const path = router.getPath({
@@ -43,11 +42,9 @@ ava('.getContext() should get an empty object context', (test) => {
     title: 'Homepage',
     path: [],
     context: {}
-  }, TEST_THEME)
-
-  test.deepEqual(context, {
-    theme: TEST_THEME
   })
+
+  test.deepEqual(context, {})
 })
 
 ava('.getContext() should get an null object context', (test) => {
@@ -55,11 +52,9 @@ ava('.getContext() should get an null object context', (test) => {
     title: 'Homepage',
     path: [],
     context: null
-  }, TEST_THEME)
-
-  test.deepEqual(context, {
-    theme: TEST_THEME
   })
+
+  test.deepEqual(context, {})
 })
 
 ava('.getContext() should get a non empty object context', (test) => {
@@ -70,16 +65,15 @@ ava('.getContext() should get a non empty object context', (test) => {
       foo: 'bar',
       bar: 'baz'
     }
-  }, TEST_THEME)
+  })
 
   test.deepEqual(context, {
     foo: 'bar',
-    bar: 'baz',
-    theme: TEST_THEME
+    bar: 'baz'
   })
 })
 
-ava('.getContext() should override a route theme object', (test) => {
+ava('.getContext() should not override a route theme object', (test) => {
   const context = router.getContext({
     title: 'Homepage',
     path: [],
@@ -88,10 +82,12 @@ ava('.getContext() should override a route theme object', (test) => {
         foo: 'bar'
       }
     }
-  }, TEST_THEME)
+  })
 
   test.deepEqual(context, {
-    theme: TEST_THEME
+    theme: {
+      foo: 'bar'
+    }
   })
 })
 
