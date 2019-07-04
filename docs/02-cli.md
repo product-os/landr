@@ -20,6 +20,12 @@ in `dist`. Any existing `dist` directory will be removed.
 |-----------|-------------|-----------|---------|
 | `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |
 
+This command supports the following environment variables:
+
+| Name | Description | Optional? |
+|-----------|-------------|-----------|
+| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |
+
 ### Examples:
 
 ```sh
@@ -54,6 +60,7 @@ This command supports the following environment variables:
 | Name | Description | Optional? |
 |-----------|-------------|-----------|
 | `NETLIFY_AUTH_TOKEN` | You Netlify token | N |
+| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |
 
 ### Examples:
 

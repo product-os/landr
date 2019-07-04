@@ -147,6 +147,7 @@ Bluebird.try(async () => {
       LANDR_CONTRACT_PATH: contract,
       LANDR_OUTPUT_DIRECTORY: OPTIONS_OUTPUT_DIRECTORY,
       LANDR_DEPLOY_URL: siteOptions.url,
+      LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
       LANDR_THEME: JSON.stringify(siteTheme)
     })
   })
