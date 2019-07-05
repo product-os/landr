@@ -40,6 +40,7 @@ export const render = (props) => {
     <Head>
       <meta charSet="UTF-8" />
       <title>{props.title} - Home</title>
+      <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico" />
     </Head>
   )
 }
