@@ -17,6 +17,7 @@
  */
 
 const path = require('path')
+const tmp = require('tmp')
 const shell = require('shelljs')
 const Bluebird = require('bluebird')
 const rimraf = require('rimraf')
@@ -33,6 +34,10 @@ const OPTION_DEPLOY = OPTION_COMMAND === 'deploy' && TOKEN_NETLIFY
 const OPTION_CONTRACT_PATH = process.argv[3]
 const OPTIONS_OUTPUT_DIRECTORY = path.resolve(process.cwd(), 'dist')
 const projectRoot = path.resolve(__dirname, '..')
+
+const TMP_DIRECTORY = tmp.dirSync({
+  prefix: `${packageJSON.name}-`
+}).name
 
 // Get a list of paths were the contract file might live
 // in. The choice is just one if the user passes it as
@@ -112,6 +117,7 @@ Bluebird.try(async () => {
   }
 
   log(`Running from ${contract} into ${OPTIONS_OUTPUT_DIRECTORY}`)
+  log(`Using temporary directory ${TMP_DIRECTORY}`)
 
   // Wipe out output directory so that we start fresh everytime.
   rimraf.sync(OPTIONS_OUTPUT_DIRECTORY)
@@ -147,6 +153,7 @@ Bluebird.try(async () => {
       LANDR_CONTRACT_PATH: contract,
       LANDR_OUTPUT_DIRECTORY: OPTIONS_OUTPUT_DIRECTORY,
       LANDR_DEPLOY_URL: siteOptions.url,
+      LANDR_TMP_DIRECTORY: TMP_DIRECTORY,
       LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
       LANDR_THEME: JSON.stringify(siteTheme)
     })
