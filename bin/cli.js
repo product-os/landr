@@ -21,7 +21,6 @@ const shell = require('shelljs')
 const Bluebird = require('bluebird')
 const rimraf = require('rimraf')
 const chalk = require('chalk')
-const recursiveCopy = require('recursive-copy')
 
 const theme = require('./theme')
 const netlify = require('./netlify')
@@ -114,11 +113,8 @@ Bluebird.try(async () => {
 
   log(`Running from ${contract} into ${OPTIONS_OUTPUT_DIRECTORY}`)
 
-  const localDist = path.join(projectRoot, 'dist')
-
   // Wipe out output directory so that we start fresh everytime.
   rimraf.sync(OPTIONS_OUTPUT_DIRECTORY)
-  rimraf.sync(localDist)
 
   if (!contractData.data.name) {
     abort('The contract does not have a name')
@@ -149,7 +145,7 @@ Bluebird.try(async () => {
     // important variables like `PATH`.
     env: Object.assign({}, process.env, {
       LANDR_CONTRACT_PATH: contract,
-      LANDR_OUTPUT_DIRECTORY: localDist,
+      LANDR_OUTPUT_DIRECTORY: OPTIONS_OUTPUT_DIRECTORY,
       LANDR_DEPLOY_URL: siteOptions.url,
       LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
       LANDR_THEME: JSON.stringify(siteTheme)
@@ -158,10 +154,6 @@ Bluebird.try(async () => {
 
   if (code !== 0) {
     abort(`Command failed with code ${code}: ${command}`)
-  }
-
-  if (localDist !== OPTIONS_OUTPUT_DIRECTORY) {
-    await recursiveCopy(localDist, OPTIONS_OUTPUT_DIRECTORY)
   }
 
   log('Site generated successfully')
