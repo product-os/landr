@@ -29,7 +29,7 @@ for (const options of [
 ]) {
   for (const fn of [ 'track' ]) {
     ava(`given settings ${JSON.stringify(options)} it should expose .${fn}()`, (test) => {
-      const instance = analytics(options)
+      const instance = analytics('mysite', options)
       test.true(_.isFunction(instance[fn]))
     })
   }
@@ -37,7 +37,7 @@ for (const options of [
 
 ava('should throw given an invalid analytics provider', (test) => {
   test.throws(() => {
-    return analytics({
+    return analytics('mysite', {
       type: 'foobar',
       token: 'xxx'
     })
