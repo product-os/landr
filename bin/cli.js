@@ -19,6 +19,7 @@
 const path = require('path')
 const shell = require('shelljs')
 const Bluebird = require('bluebird')
+const gitBranch = require('git-branch')
 const rimraf = require('rimraf')
 const chalk = require('chalk')
 const recursiveCopy = require('recursive-copy')
@@ -124,8 +125,17 @@ Bluebird.try(async () => {
     abort('The contract does not have a name')
   }
 
+  // Deploy to a preview site if running on a branch
+  // other than master.
+  const branch = await gitBranch(process.cwd())
+  log(`Current branch is ${branch}`)
+  const siteName = branch === 'master'
+    ? contractData.data.name
+    : `${contractData.data.name}-preview-${branch}`
+
+  log(`Preparing site ${siteName}`)
   const siteOptions = OPTION_DEPLOY
-    ? await netlify.setupSite(TOKEN_NETLIFY, contractData.data.name)
+    ? await netlify.setupSite(TOKEN_NETLIFY, siteName)
     : {}
 
   const siteTheme = await theme(contractData.data.images.banner)
