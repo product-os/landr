@@ -152,13 +152,14 @@ Bluebird.try(async () => {
     // is globally installed.
     // Fixing react-static doesn't seem easy, so this
     // is more of a workaround.
-    cwd: path.resolve(__dirname, '..'),
+    cwd: projectRoot,
 
     // We need to merge `process.env` as otherwise we
     // completely override the environment, including
     // important variables like `PATH`.
     env: Object.assign({}, process.env, {
       LANDR_CONTRACT_PATH: contract,
+      LANDR_SKELETON_DIRECTORY: path.resolve(projectRoot, 'skeleton'),
       LANDR_OUTPUT_DIRECTORY: localDist,
       LANDR_DEPLOY_URL: siteOptions.url,
       LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
