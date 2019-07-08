@@ -42,6 +42,8 @@ export const variants = (metadata, context, route) => {
   if (context.article) {
     combinations.push({
       title: context.article.content.title,
+      date: context.article.content.published_at,
+      author: context.article.content.author && context.article.content.author.handle,
       current: route.path,
       toc: context.toc,
       versions: context.versions || [],
@@ -74,6 +76,7 @@ export const render = (props) => {
         <ul>{toc}</ul>
         {versions.length > 0 && versions}
         <Link href={props.link}>Edit on GitHub</Link>
+        {props.date && props.author && (<p>Published on {props.date} by @{props.author}</p>)}
         <JsonML data={props.jsonml} />
       </Container>
     </Box>
