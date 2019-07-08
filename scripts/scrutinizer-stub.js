@@ -196,6 +196,16 @@ console.log(JSON.stringify({
       public: true,
       fork: false,
       stars: 41,
+      owner: {
+        handle: 'balena-io',
+        type: 'org',
+        name: 'balena',
+        // eslint-disable-next-line max-len
+        description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
+        url: 'https://www.balena.io',
+        email: 'hello@balena.io',
+        avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
+      },
       usedBy: [
         {
           owner: 'balena-io',
