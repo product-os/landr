@@ -168,6 +168,16 @@ console.log(JSON.stringify({
     highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
     installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
 
+    blog: [
+      Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
+        // We can obtain these from the git history
+        published_at: '2019-07-08T19:19:00.016Z',
+        author: {
+          handle: 'jviotti'
+        }
+      })
+    ],
+
     docs: {
       latest: '1.0.0',
       tags: {

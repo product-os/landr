@@ -83,3 +83,9 @@ The canonical domain of the project.
 A set of documentation files where sub-directories represent categories. The
 ordering is determined alphabetically using the file names and the page title
 is determined from the first title from the contents of the files.
+
+`blog/YYYY-MM-DD-*.md`
+----------------------
+
+A set of blog posts. The published date is obtained from the file name, and the
+author information is obtained through git.
