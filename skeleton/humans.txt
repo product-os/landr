@@ -1,0 +1,10 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+Landr Team -- https://github.com/balena-io/landr
+
+# TECHNOLOGY COLOPHON
+
+React, React Static, Rendition, Landr
