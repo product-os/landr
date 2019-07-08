@@ -21,11 +21,13 @@ const shell = require('shelljs')
 const Bluebird = require('bluebird')
 const gitBranch = require('git-branch')
 const rimraf = require('rimraf')
+const tmp = require('tmp')
 const chalk = require('chalk')
 const recursiveCopy = require('recursive-copy')
 
 const theme = require('./theme')
 const netlify = require('./netlify')
+const skel = require('./skel')
 const packageJSON = require('../package.json')
 
 const ENV_VAR_NETLIFY_TOKEN = 'NETLIFY_AUTH_TOKEN'
@@ -138,7 +140,14 @@ Bluebird.try(async () => {
     ? await netlify.setupSite(TOKEN_NETLIFY, siteName)
     : {}
 
+  log('Parsing banner image')
   const siteTheme = await theme(contractData.data.images.banner)
+
+  const skeletonDirectory = tmp.dirSync().name
+  log(`Creating site skeleton at ${skeletonDirectory}`)
+  await skel.create(contractData,
+    path.resolve(projectRoot, 'skeleton'),
+    skeletonDirectory)
 
   // TODO: Don't output react-static log information,
   // as it has details that are non Landr related, such
@@ -159,7 +168,7 @@ Bluebird.try(async () => {
     // important variables like `PATH`.
     env: Object.assign({}, process.env, {
       LANDR_CONTRACT_PATH: contract,
-      LANDR_SKELETON_DIRECTORY: path.resolve(projectRoot, 'skeleton'),
+      LANDR_SKELETON_DIRECTORY: skeletonDirectory,
       LANDR_OUTPUT_DIRECTORY: localDist,
       LANDR_DEPLOY_URL: siteOptions.url,
       LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,

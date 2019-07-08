@@ -56,7 +56,6 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-standard": "^4.0.0",
-    "file-type": "^12.0.0",
     "jsdom": "^15.1.1",
     "nyc": "^14.1.1"
   },
@@ -66,8 +65,11 @@
     "bluebird": "^3.5.5",
     "chalk": "^2.4.2",
     "circular-std": "^1.0.0",
+    "file-type": "^12.0.1",
     "generatorics": "^1.1.0",
     "git-branch": "^2.0.1",
+    "handlebars": "^4.1.2",
+    "handlebars-helpers": "^0.10.0",
     "lodash": "^4.17.11",
     "markdown": "^0.5.0",
     "mixpanel-browser": "^2.29.0",
@@ -86,6 +88,7 @@
     "rimraf": "^2.6.3",
     "shelljs": "^0.8.3",
     "styled-components": "^4.3.2",
+    "tmp": "^0.1.0",
     "typed-errors": "^1.1.0",
     "typeface-nunito": "0.0.72"
   }

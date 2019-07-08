@@ -3,9 +3,9 @@
 
 # TEAM
 
-{{#each metadata.data.contributors}}
-https://github.com/{{this.username}}
-{{/each}}
+https://github.com/jviotti
+https://github.com/lucianbuzzo
+https://github.com/dimitrisnl
 
 # TECHNOLOGY COLOPHON
 

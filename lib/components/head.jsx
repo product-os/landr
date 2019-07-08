@@ -28,6 +28,7 @@ export const variants = (metadata, context, route, routes, options) => {
     combinations.push({
       siteUrl: options.siteUrl,
       pageUrl: `${options.siteUrl}/${route.path.join('/')}`,
+      description: metadata.data.description,
       title: route.path.length === 0
         ? metadata.data.name
         : route.title
@@ -46,7 +47,7 @@ export const render = (props) => {
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
       <title>{props.title} - Home</title>
       <link rel="canonical" href={props.pageUrl} />
-      <meta property="og:url" content={props.pageUrl} />
+      <meta name="description" content={props.description} />
       <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
@@ -66,8 +67,10 @@ export const render = (props) => {
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#000000" />
-
+      <meta property="og:site_name" content={props.title} />
+      <meta property="og:url" content={props.pageUrl} />
       <meta property="og:locale" content="en_US" />
+      <meta property="og:description" content={props.description} />
     </Head>
   )
 }
