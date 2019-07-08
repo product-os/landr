@@ -93,10 +93,6 @@ const getCommandString = (mode) => {
     return `${reactStaticBin} build --config=${reactStaticConfig}`
   }
 
-  if (mode === 'test') {
-    return `${reactStaticBin} start --config=${reactStaticConfig}`
-  }
-
   return null
 }
 
