@@ -14,38 +14,97 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box,
-  Img,
-  Container,
-  Flex
-} from 'rendition'
+import React from 'react';
+import _ from 'lodash';
+import { Box, Img, Container, Flex, Link, Heading } from 'rendition';
+import { flexWrap } from 'styled-system';
 
-export const name = 'Footer'
+export const name = 'Footer';
 
-export const variants = (metadata) => {
-  const combinations = []
+export const variants = (metadata, context, _route, routes) => {
+  const combinations = [];
+
+  const toplevelRoutes = routes
+    .filter(definition => {
+      return definition.path.length === 1;
+    })
+    .map(definition => {
+      return {
+        name: _.capitalize(definition.path[0]),
+        url: `/${definition.path[0]}`,
+      };
+    });
+
+  if (metadata.data.links.repository) {
+    toplevelRoutes.push({
+      name: 'GitHub',
+      url: metadata.data.links.repository,
+    });
+  }
 
   if (metadata.data.images.banner) {
     combinations.push({
-      logo: metadata.data.images.banner
-    })
+      logo: metadata.data.images.banner,
+      routes: toplevelRoutes,
+      toc: context.toc,
+    });
   }
 
-  return combinations
-}
+  return combinations;
+};
 
-export const render = (props) => {
+export const render = props => {
+  const toc = props.toc.map((page, index) => {
+    const url = `/${page.path.join('/')}`;
+    return (
+      <Box key={index} mb={1}>
+        <Link href={url}>{page.content.title}</Link>
+      </Box>
+    );
+  });
+
+  const links = props.routes.map((route, index) => {
+    return (
+      <Box key={index} mb={1}>
+        <Link href={route.url} aria-labelledby={route.name}>
+          {route.name}
+        </Link>
+      </Box>
+    );
+  });
+
   return (
-    <Box p={3} bg={'#eee'} color="#fff">
+    <Box px={3} py={5} mt={5} bg={'#eee'}>
       <Container>
-        <Flex justifyContent="center" alignItems="center">
-          <Img style={{
-            height: '50px'
-          }} src={props.logo} />
+        <Flex
+          mx={-16}
+          justifyContent={['flex-start', 'flex-start', 'space-between']}
+          flexWrap="wrap"
+        >
+          <Box px={16} width={[1, 1, 1 / 2]} mb={3}>
+            <Img
+              style={{
+                height: '50px',
+              }}
+              src={props.logo}
+            />
+          </Box>
+          <Box px={16} pt={14}>
+            <Heading.h4 mb={2} fontSize={2}>
+              Navigation
+            </Heading.h4>
+            {links}
+          </Box>
+          {!_.isEmpty(toc) && (
+            <Box px={16} pt={14}>
+              <Heading.h4 mb={2} fontSize={2}>
+                Docs
+              </Heading.h4>
+              {toc}
+            </Box>
+          )}
         </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
