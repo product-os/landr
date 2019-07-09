@@ -54,7 +54,7 @@ open source project is not only possible, but comes with zero overhead.
 Examples
 --------
 
-The Landr website is of course based on Land! You may also enjoy the following
+The Landr website is of course based on Landr! You may also enjoy the following
 sites:
 
 - https://www.balena.io/etcher/ - Flash OS images to SD cards & USB drives,
