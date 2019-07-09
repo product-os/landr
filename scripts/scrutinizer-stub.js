@@ -15,6 +15,7 @@
  */
 
 const fs = require('fs')
+const yaml = require('js-yaml')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 const path = require('path')
@@ -155,6 +156,8 @@ console.log(JSON.stringify({
       .match(/@[\S]+/g)).map((name) => {
       return name.slice(1)
     }),
+
+    changelog: yaml.safeLoad(fs.readFileSync('.versionbot/CHANGELOG.yml', 'utf8')),
 
     faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
 
