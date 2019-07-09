@@ -14,31 +14,33 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import _ from 'lodash';
-import { Box, Img, Container, Flex, Link, Heading, Txt } from 'rendition';
+import React from 'react'
+import _ from 'lodash'
+import {
+  Box, Img, Container, Flex, Link, Heading, Txt
+} from 'rendition'
 
-export const name = 'Footer';
+export const name = 'Footer'
 
 export const variants = (metadata, context, _route, routes) => {
-  const combinations = [];
+  const combinations = []
 
   const toplevelRoutes = routes
-    .filter(definition => {
-      return definition.path.length === 1;
+    .filter((definition) => {
+      return definition.path.length === 1
     })
-    .map(definition => {
+    .map((definition) => {
       return {
         name: _.capitalize(definition.path[0]),
-        url: `/${definition.path[0]}`,
-      };
-    });
+        url: `/${definition.path[0]}`
+      }
+    })
 
   if (metadata.data.links.repository) {
     toplevelRoutes.push({
       name: 'GitHub',
-      url: metadata.data.links.repository,
-    });
+      url: metadata.data.links.repository
+    })
   }
 
   if (metadata.data.github.owner && metadata.data.images.banner) {
@@ -46,30 +48,30 @@ export const variants = (metadata, context, _route, routes) => {
       owner: metadata.data.github.owner,
       logo: metadata.data.images.banner,
       routes: toplevelRoutes,
-      toc: context.toc,
-    });
+      toc: context.toc
+    })
   }
 
   if (metadata.data.images.banner) {
     combinations.push({
       logo: metadata.data.images.banner,
       routes: toplevelRoutes,
-      toc: context.toc,
-    });
+      toc: context.toc
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-export const render = props => {
+export const render = (props) => {
   const toc = props.toc.map((page, index) => {
-    const url = `/${page.path.join('/')}`;
+    const url = `/${page.path.join('/')}`
     return (
       <Box key={index} mb={1}>
         <Link href={url}>{page.title}</Link>
       </Box>
-    );
-  });
+    )
+  })
 
   const links = props.routes.map((route, index) => {
     return (
@@ -78,19 +80,19 @@ export const render = props => {
           {route.name}
         </Link>
       </Box>
-    );
-  });
+    )
+  })
 
   const brand = (
     <Img
       style={{
-        height: '50px',
+        height: '50px'
       }}
       src={props.logo}
     />
-  );
+  )
 
-  const owner = !_.isEmpty(props.owner) ? (
+  const owner = _.isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
       <Txt fontSize={2}>Brought to you by</Txt>{' '}
       <Link href={props.owner.url} tooltip={props.owner.name}>
@@ -98,21 +100,23 @@ export const render = props => {
           src={props.owner.avatar}
           alt={props.owner.name}
           ml={2}
-          style={{ height: 26 }}
+          style={{
+            height: 26
+          }}
         />
       </Link>
     </Flex>
-  ) : null;
+  )
 
   return (
     <Box px={3} py={5} mt={5} bg={'#eee'}>
       <Container>
         <Flex
           mx={-16}
-          justifyContent={['flex-start', 'flex-start', 'space-between']}
+          justifyContent={[ 'flex-start', 'flex-start', 'space-between' ]}
           flexWrap="wrap"
         >
-          <Box px={16} width={[1, 1, 1 / 2]} mb={3}>
+          <Box px={16} width={[ 1, 1, 1 / 2 ]} mb={3}>
             {brand}
             {owner}
           </Box>
@@ -133,5 +137,5 @@ export const render = props => {
         </Flex>
       </Container>
     </Box>
-  );
-};
+  )
+}
