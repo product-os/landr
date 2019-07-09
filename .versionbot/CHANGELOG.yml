@@ -1,0 +1,1027 @@
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 400ff0526ea9d098b64395e32332c631632e2ed5
+    subject: Support writing blog posts in /blog
+  date: "2019-07-08T20:24:48Z"
+  version: 5.1.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: ed771b6f345dbd0ab88a1c25e149a3692e554799
+    subject: Add owner info to meta.json
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: major
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: dcc2a8fbff8ccb4c6f2c9fc50064560a419efc74
+    subject: Retire non-working test command
+  date: "2019-07-08T18:57:05Z"
+  version: 5.0.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 93d039b66004e2bc0218c8bb97d69ce03df293c0
+    subject: Compile skeleton metadata files using handlebars
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: e6d0499fa0e7d8bd3971a23a6113ff6cf6387558
+    subject: Add site description to Head element
+  date: "2019-07-08T17:23:38Z"
+  version: 4.9.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 57156be21a4ae9e322b1d7549e82cee718cc9839
+    subject: Pass skeleton directory as an input env var
+  date: "2019-07-08T13:26:19Z"
+  version: 4.8.2
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 7812566c3f2fe70af7aeefa0bcb5b473f6da54b6
+    subject: Add various project related metadata
+  date: "2019-07-08T10:11:27Z"
+  version: 4.8.1
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 5ce2e68916f79f8d96b3917f7275631b1656f2e4
+    subject: Add skeleton logos
+  date: "2019-07-05T22:35:36Z"
+  version: 4.8.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: a2f2b0b00d5750679939547a23dff62269e8c335
+    subject: Test that components render without errors for all defined variants
+  date: "2019-07-05T19:11:58Z"
+  version: 4.7.1
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: afa5e6f9afc5e681a5ef570401823238153097a7
+    subject: Implement support for branch deploys
+  date: "2019-07-05T17:03:06Z"
+  version: 4.7.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 2141c4b0e35a6e2ab71bb8030681a4bd7c107c3f
+    subject: Emit current site as part of analytics
+  date: "2019-07-05T16:47:09Z"
+  version: 4.6.2
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 33885a8d726089bfca9ccb33ebb772d2eaf08bf5
+    subject: Avoid react-static custom paths and copy dist at the end
+  date: "2019-07-05T16:21:28Z"
+  version: 4.6.1
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: f354f237cce5f83569a233e6eaf6e490809ec7da
+    subject: 'analytics: Add proper Mixpanel support'
+  date: "2019-07-05T13:08:39Z"
+  version: 4.6.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 56379dd097c14846c5c54189b05abd5a9479e2a6
+    subject: Update CNAME
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 3f4a1c6ef9e830a312f0c44e50e0108d3c3fd14b
+    subject: Take an optional mixpanel token and use it in variants options
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 77347628ea7938a2747620ac7a0ba8956591f5a1
+    subject: Pass analytics secrets to the renderer instead of the variants
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 2c6ce85dc5c8faf0b6ab08418d0555c0772994f5
+    subject: 'renderer: Instantiate analytics client and pass it to components'
+  date: "2019-07-05T11:37:27Z"
+  version: 4.5.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: f33065188d1c8362a6bfae1ced23b1847e78a027
+    subject: 'engine: Pass theme in variants options object'
+  date: "2019-07-04T09:54:01Z"
+  version: 4.4.6
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: f2db315c05fd95d0237502d2f3940d0c303b3587
+    subject: Test running Landr in global mode
+  date: "2019-07-03T14:04:55Z"
+  version: 4.4.5
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 6742ab5e53bf4f7bc42a4bbd36dc37387726c9d2
+    subject: Use absolute paths in all react static setup
+  date: "2019-07-03T12:06:29Z"
+  version: 4.4.4
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 171ff2a5870fe67b4c6260618ad214f9c6f0b3bc
+    subject: 'cli: Log Landr version'
+  date: "2019-07-03T11:56:27Z"
+  version: 4.4.3
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 102d2527da1e1390cfe2d201bfce7ddd36b2d773
+    subject: 'components: Test that all files are correctly exported'
+  date: "2019-07-03T11:25:01Z"
+  version: 4.4.2
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 907a8e50c715837470f1c7d9e4d2c6790cb20cb5
+    subject: Use CommonJS modules in project root
+  date: "2019-07-03T10:58:54Z"
+  version: 4.4.1
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 9d0123452072f0f69b22448e28e383a045351db0
+    subject: Don't use JSX in root logic
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 4945009257d39ea6f00cf2d610710ad11a774260
+    subject: 'routes: Versioned docs'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 399941118d3ac2cf8fa085e7320fc32c5d01df79
+    subject: 'components: Implement a basic doc viewer'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 793a9441e0ea8fefb7f076fa9e59ff9af34ad279
+    subject: 'jumbotron: Add get started button'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: e661e002ca2c262f4260037220bc0e1f4aa48396
+    subject: 'doc-viewer: Add very simple TOC'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 35993fa7190259141bf361dec6ed0aa123b0634b
+    subject: 'navigation: Add more routes'
+  date: "2019-07-03T09:47:48Z"
+  version: 4.4.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: abd31090647398dbdebe25a296255bb46c84eeb8
+    subject: 'rules: Don''t show users/faq/contributors on docs pages'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 78368ba55391e59ac16bdc9678a9185f11afe9ca
+    subject: 'terminal: Take commands as props'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: de955a35bf27762485f550119d7a7e7a26f33366
+    subject: 'jumbotron: Add real installation steps'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 93e44f1ed9fdd7c68fe7f2d8c3a0ea41868f3306
+    subject: 'meta.json: Add feature highlights'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 76ef8794f1cd8aa6619a392c7aed39a955a43e57
+    subject: 'components: Add highlights component'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 95c824ccc4989033029a1e9d3d48ae0028593ed7
+    subject: 'rules: Add rule scopes to some rules'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 0588e67f8c633055ef8511ade77e67f8ef73bb0a
+    subject: 'engine: Optimize combination cartesian product using rule scopes'
+  date: "2019-07-01T14:34:38Z"
+  version: 4.3.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 69914c4362c4431a852f75ba68001066c668d818
+    subject: Revisit routes
+  date: "2019-07-01T12:55:01Z"
+  version: 4.2.3
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 81f645d8488ba8d391515856414637156f79282a
+    subject: Recreate meta.json
+  date: "2019-07-01T12:17:18Z"
+  version: 4.2.2
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 41cf702815488ba19eaa0d3917a4eefe05110931
+    subject: 'theme: Test palette generation on a collection of images'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: fa664325940d7dce7c95099d573fca07bac06798
+    subject: 'engine: Use ES6 generators for .getCombinations()'
+  date: "2019-06-28T20:37:09Z"
+  version: 4.2.1
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+    hash: c566ff92e96343547972ca8cefb2dd48e1b227de
+    subject: Include Nunito & Circular fonts
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 8ac2122864a154377be8beda1feb319c314e2a1d
+    subject: Update Contributors component
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 6f407afb6d5fef7e7ec844662f37df4c7f7b47a0
+    subject: Introduce FAQ component
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 7d9ab2203868b615cf0b62a72844f0cf33f63b92
+    subject: Improve Contributors component
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 2c4c1ce8e316e60b4315c4adad23d3a0d7b51814
+    subject: Add terminal component
+  - author: Dimitrios Lytras
+    body: ""
+    hash: b62be1429faa48dd5bb210eb452ff1f31b5f2570
+    subject: Integrate terminal with Jumbotron
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 74b54ddcda7347b701b3f57ac8c16cc862489096
+    subject: Use .jsx as the extension for all new files
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 358048c00c72e00d9caddbbb6fbea007aa8e52f3
+    subject: Add used-by component
+  - author: Dimitrios Lytras
+    body: ""
+    hash: d910546033ecc02dcdfcb58791126c2f0bc271db
+    subject: Remove unused inputs
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 69172ac3ea520b71ff59040b82dc9a6329ea4b19
+    subject: Remove /theme leftover directory
+  - author: Dimitrios Lytras
+    body: ""
+    hash: ff3767099f55004677b54d5a28dd5e3537f7c1e9
+    subject: Fix lint errors
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 97929baca3580dce566f3028da933d9e8d05a45a
+    subject: Include github stars info
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 254a41950d977e3c19292a2025fdde85bfd097de
+    subject: Open contributors links in a new tab
+  - author: Dimitrios Lytras
+    body: ""
+    hash: c346b64624edc3ccf26bc037470352a54413d184
+    subject: Fix FAQ collapse behaviour
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 438bb90fd445b05592e6f2b5839dde6260470b0a
+    subject: Sort contributors by username
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 26a8052577b8840a90884b229fdbea77f539e727
+    subject: Move react-typist css import in App.jsx
+  date: "2019-06-28T19:09:17Z"
+  version: 4.2.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 0cb0b50c0ff9c2b06205ca1d39c591feb0682941
+    subject: Generate color palette from banner image
+  date: "2019-06-28T18:28:07Z"
+  version: 4.1.0
+- commits:
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 2bdd0cecf35015a6b498cd59b20e08dace9c2ad3
+    subject: Add repo.yml
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 996451cac10db5416edda0352a99f4d6f140dc5b
+    subject: Update repo.yml
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: d755c2055bacb1723f600029d3ef5dad938a1807
+    subject: 'package.json: Add build and start npm commands'
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 0c732eb559d842ba9011c0f3abb7d58077f80ae1
+    subject: Re-add CHANGELOG
+  - author: Juan Cruz Viotti
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Juan Cruz Viotti <juan@balena.io>
+    hash: 082cc2fcc9d795df81920d242b58acf246a2b3ea
+    subject: Support Node.js 8
+  date: "2019-06-28T08:54:24Z"
+  version: 4.0.0
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+    hash: a96034c2a1522b01f74b7a096944f9bd004a558a
+    subject: 'meta-tags: Add title & description'
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 9a2e6631ad4b633d5c1f259dc9977cfeae2cd7d0
+    subject: Fix react warning about leftover destructured props
+  date: "2019-06-25T08:43:28Z"
+  version: 3.0.4
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+    hash: 7a4450ba226b202d708ef30f40c26a3d7b249f8c
+    subject: 'config: Add prettier'
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 000e4ae6697731481fcb0cf67af46e9be82de4b4
+    subject: Exclude SSG temp files
+  date: "2019-06-25T07:43:29Z"
+  version: 3.0.3
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+    hash: 48c56333978f81af78a539a4c1537f60a425f093
+    subject: Fix build command
+  date: "2019-06-24T17:51:09Z"
+  version: 3.0.2
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+    hash: 02f17b1f4b6692912f67610d12c7254b582913e0
+    subject: 'nit: Update repo URL in package.json'
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: patch
+      connects-to: '#120'
+      signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+    hash: 60dacebf465f8280040c96ddd67d4a67b8095263
+    subject: 'fix: Render single-line codeblocks inline'
+  date: "2019-06-24T17:15:04Z"
+  version: 3.0.1
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: major
+    hash: c2857d8cb86e19f8b3c83c4b07dc20fb19c5fda3
+    subject: V3
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 5f42ff1b654b77a24cde9fc51df12f627cdfde8f
+    subject: Suggest using Landr globally in Readme
+  - author: Dimitrios Lytras
+    body: ""
+    hash: ca2202c5285478acec498852c8810da8acb678fe
+    subject: Upgrade rendition
+  - author: Dimitrios Lytras
+    body: ""
+    hash: be7b8b821926ce2d969f6314ba0b731349ed3a82
+    subject: Tree-shake lodash
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 7f8e12d88b8753a804435f5423361f47a3cde042
+    subject: Use Capitano & introduce a preview mode
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 4ae1497c12278aa317ef0cc5a5257ca2848eec15
+    subject: Update readme
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 67efb4b6938bd7fe52c087463f17599de3e7230a
+    subject: Rewrite some parts
+  - author: Dimitrios Lytras
+    body: ""
+    hash: b78efefb98290ddd4db4942423391a3b3c829b60
+    subject: Update Readme
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 46dbcbf2fa40475d9d9f7b784d6691b32164d7f6
+    subject: Handle repositories with no releases
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 0cc68c772bf6b564746107c0ebcfdfa778cc2f3a
+    subject: Remove help dialog when an error occurs
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      co-authored-by: Lucian Buzzo <LucianBuzzo@users.noreply.github.com>
+    hash: 2ff03229bfb06ff6a5f96a89feb94be700e5ce16
+    subject: Update bin/deploy.js
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 077d28d3680240573cb85920ec2de8f8ca8db799
+    subject: Tidy up Readme parser
+  - author: Dimitrios Lytras
+    body: ""
+    hash: bcfd3d137e38c5b88c0f6ce33fe429cd1a9a764e
+    subject: Merge branch 'v3' of https://github.com/resin-io/landr into v3
+  - author: Dimitrios Lytras
+    body: ""
+    hash: 96d805fb4bebb296d4a00c0f7addcfeed3bb8aed
+    subject: Add some tests
+  - author: Dimitrios Lytras
+    body: ""
+    hash: dc4999765b6a7fb24029c2eedbc6f5079c1c902c
+    subject: Update dependencies
+  date: "2019-06-24T15:10:22Z"
+  version: 3.0.0
+- commits:
+  - author: Lucian Buzzo
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: 830f4be618154c1015824d5b8627a3596ccb363b
+    subject: Allow users to augment webpack config via landr.conf.js
+  date: "2018-10-19T15:10:11Z"
+  version: 2.3.1
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: minor
+      connects-to: '#106'
+      signed-off-by: Dimitrios Lytras <dimitrios@resin.io>
+    hash: a8ad7d772ad14d9188ac0842f77c6d133bc4273f
+    subject: 'markdown: Consume frontmatter and expose its properties'
+  date: "2018-10-02T13:06:10Z"
+  version: 2.3.0
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Dimitrios Lytras <dimitrios@resin.io>
+    hash: 31745ec6e46f1aa83c15ef9f3a2dd350d779f229
+    subject: 'fixup: Restore package version'
+  date: "2018-10-02T11:53:52Z"
+  version: 2.2.1
+- commits:
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: minor
+      connects-to: '#102'
+      signed-off-by: Dimitrios Lytras <dimitrios@resin.io>
+    hash: 9f81f07e86a33874bc37fbda4408aba406c3332c
+    subject: 'docs: Include links in headings'
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: minor
+      connects-to: '#103'
+      signed-off-by: Dimitrios Lytras <dimitrios@resin.io>
+    hash: 18828ee460f9e4756907f5be5f1970683c918c68
+    subject: 'docs: Expose the section ids for linking'
+  - author: Dimitrios Lytras
+    body: ""
+    footers:
+      change-type: minor
+      connects-to: '#99'
+      signed-off-by: Dimitrios Lytras <dimitrios@resin.io>
+    hash: 187858d3193a941cdbb9183aaa0f4c4b2ed0f39b
+    subject: 'assets: Include PDF'
+  - author: Lucian Buzzo
+    body: ""
+    footers:
+      change-type: minor
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: 3c978cbed052c9074664a856fd74ae4333ef2ef1
+    subject: 'theme: Allow users to provide a custom theme'
+  - author: Lucian Buzzo
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: c557da6d195d6a44bfbe4bf5ee3886c9c3775b12
+    subject: 'package.json: Fix typo in author email address'
+  - author: Lucian Buzzo
+    body: ""
+    footers:
+      change-type: patch
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: 4c105b271193321f7dc2b284cdee288264b21181
+    subject: 'package.json: Update author field and add repository field'
+  - author: Lucian Buzzo
+    body: 'Connects to #90'
+    footers:
+      change-type: patch
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: 3334cf43bd82bbebb78de1a6b6791398c24164fc
+    subject: 'dependencies: Update dependencies to mitigate security vulnerabilities'
+  - author: Lucian Buzzo
+    body: 'Fixes #89'
+    footers:
+      change-type: patch
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: 713a9f31bee625085f6813dcb0e9888093794a9e
+    subject: 'babel: Update to babel-preset-env'
+  - author: Lucian Buzzo
+    body: |-
+      Fixes #86
+      - Test command now runs linter
+      - Default theme is now set correctly
+    footers:
+      change-type: patch
+      signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+    hash: 0d64cb9ccfc4f74929ecb1e108c2d52a917c8460
+    subject: 'Config: Fix missing default theme and assets directory'
+  - author: craig-mulligan
+    body: ""
+    hash: 50888aad81e5fbf6aed61c90f9013de12eaf8a4a
+    subject: fix prettier
+  - author: craig-mulligan
+    body: update docs
+    hash: 9502c5db8c09c61a50d0cebd51caf0138c71ef02
+    subject: Version 2 beta
+  - author: craig-mulligan
+    body: 'connects to #68'
+    footers:
+      change-type: minor
+    hash: df723336d10fe48ec4008de456167fa983a62cb5
+    subject: Convert redux modules to data plugins
+  - author: craig-mulligan
+    body: ""
+    hash: 7a6e0aaf60b279bd26e3c877020b36c83720aa5a
+    subject: add collector tests
+  - author: craig-mulligan
+    body: ""
+    hash: c6d5dd6ee1af6ef65d268c1158ca78f21d5be52d
+    subject: add apiRunner
+  - author: craig-mulligan
+    body: 'Connects to #66'
+    footers:
+      change-type: patch
+    hash: 94e83e11cb509a5af5abc5a5cab1272aa404f8c6
+    subject: Clean up config module
+  - author: craig-mulligan
+    body: ""
+    hash: 72241e932beaa5b59eece533b8b82a7ce344c48d
+    subject: init schema
+  - author: craig-mulligan
+    body: ""
+    hash: 926b61b9b72cd80c259a2c114e4406383f75d3d3
+    subject: add changelog schema
+  - author: craig-mulligan
+    body: ""
+    hash: 17bea0f9d3e28387c7b0e8870249c8b8de3ad491
+    subject: demo
+  - author: craig-mulligan
+    body: ""
+    hash: ea425a9fc82fa636eb1c731607e47d80432551f3
+    subject: build
+  - author: craig-mulligan
+    body: ""
+    hash: 56ffdbed8ff2d946224d021ca79c0bccb7a8a127
+    subject: uglify prod build
+  - author: craig-mulligan
+    body: ""
+    hash: ba7f6ab9dca09eb09270baf44b067fadb25ebaad
+    subject: fix style exports
+  - author: craig-mulligan
+    body: ""
+    hash: 127c703eb8d043dad495ac69100c712f521f8842
+    subject: pull in themes
+  - author: craig-mulligan
+    body: ""
+    hash: 2d365201c99eac5f3a2c8161181da8054a5fd25a
+    subject: move things around
+  - author: craig-mulligan
+    body: ""
+    hash: 3f205ca7c0935084418530c8631da53a28335f1c
+    subject: add intro theme
+  - author: craig-mulligan
+    body: Clean up docs styles
+    hash: f09740c81fb8d4bd7741d1e7b45b377686eb1e98
+    subject: Pass readme/changelog nodes to remark transformer
+  - author: craig-mulligan
+    body: ""
+    hash: 554275df26a11fa7668b59d6af213520a5beb9e0
+    subject: changelog with remark
+  - author: craig-mulligan
+    body: ""
+    hash: 7b39beaddb3b9f03a42e77a09f2b23f7a35c3184
+    subject: simplify changelog + readme parsing
+  - author: craig-mulligan
+    body: ""
+    hash: 3d5d945ef7ef1eb67054954058463aede83790f2
+    subject: Change build dir
+  - author: craig-mulligan
+    body: ""
+    hash: 8dd919b2463d6a4d0d45cffa1c9f6f40a8289eb2
+    subject: fix promise chain
+  - author: craig-mulligan
+    body: ""
+    hash: f15d66b3aafa781c7da09f0ad7ae09af61efe007
+    subject: Merge branch 'master' of github.com:resin-io/landr
+  - author: craig-mulligan
+    body: ""
+    hash: ad361913dd2deed83d62a3ed24f0b103dfe7c886
+    subject: homepage
+  - author: craig-mulligan
+    body: ""
+    hash: dd185d32ed520c40e50e44dfbc659ec6624a4b73
+    subject: rm bootstrap
+  - author: craig-mulligan
+    body: ""
+    hash: 3ec7a3f9a7da4e6d7b48d45b702c22a7fa500cd8
+    subject: mv template -> pages
+  - author: craig-mulligan
+    body: ""
+    hash: 8dd919b2463d6a4d0d45cffa1c9f6f40a8289eb2
+    subject: fix promise chain
+  - author: craig-mulligan
+    body: ""
+    hash: ec8b388824fc5db3821a216a4666e8c893948b9a
+    subject: creating docs
+  - author: craig-mulligan
+    body: ""
+    hash: 81e3601be998ef515050c88da424650bcbec7ff8
+    subject: Basic docs
+  - author: craig-mulligan
+    body: ""
+    hash: e125e3f758117ab0670947fe510e46d681f80a48
+    subject: make eject interactive
+  - author: craig-mulligan
+    body: ""
+    hash: 2834f25fcbd50b9038d9f89507549ec5b10ad9cb
+    subject: create layouts + layout queries
+  - author: craig-mulligan
+    body: ""
+    hash: 05dc1469b69ce2a09917876523b8db0df3ea976b
+    subject: Merge branch 'master' of github.com:resin-io/landr
+  - author: craig-mulligan
+    body: ""
+    hash: 32bd5037120c34a292b72e17d61d990eff405066
+    subject: ejectable layouts
+  - author: craig-mulligan
+    body: ""
+    hash: aaec5d23f539fc8e515710d1cd422783244616f0
+    subject: merge master
+  - author: craig-mulligan
+    body: ""
+    hash: 4c87a3362c1ce2337ab27dc17b7346d65bfcb026
+    subject: Merge branch 'master' of github.com:resin-io/landr
+  - author: craig-mulligan
+    body: ""
+    hash: ccb4916ed745ec1eca9622958c4d77f3993cecf6
+    subject: add react helmet for head tags
+  - author: craig-mulligan
+    body: ""
+    hash: e125e3f758117ab0670947fe510e46d681f80a48
+    subject: make eject interactive
+  - author: craig-mulligan
+    body: ""
+    hash: 2834f25fcbd50b9038d9f89507549ec5b10ad9cb
+    subject: create layouts + layout queries
+  - author: craig-mulligan
+    body: ""
+    hash: 05dc1469b69ce2a09917876523b8db0df3ea976b
+    subject: Merge branch 'master' of github.com:resin-io/landr
+  - author: craig-mulligan
+    body: ""
+    hash: 32bd5037120c34a292b72e17d61d990eff405066
+    subject: ejectable layouts
+  - author: craig-mulligan
+    body: ""
+    hash: aaec5d23f539fc8e515710d1cd422783244616f0
+    subject: merge master
+  - author: craig-mulligan
+    body: ""
+    hash: e125e3f758117ab0670947fe510e46d681f80a48
+    subject: make eject interactive
+  - author: craig-mulligan
+    body: ""
+    hash: 2834f25fcbd50b9038d9f89507549ec5b10ad9cb
+    subject: create layouts + layout queries
+  - author: craig-mulligan
+    body: ""
+    hash: 05dc1469b69ce2a09917876523b8db0df3ea976b
+    subject: Merge branch 'master' of github.com:resin-io/landr
+  - author: craig-mulligan
+    body: ""
+    hash: e125e3f758117ab0670947fe510e46d681f80a48
+    subject: make eject interactive
+  - author: craig-mulligan
+    body: 'connects to #24'
+    footers:
+      change-type: patch
+    hash: 847ccb39f302a8c1a243e5efa885f94480bebdb7
+    subject: Allow untracked local branches
+  - author: craig-mulligan
+    body: ""
+    hash: 3d6b8331c22b585b51623f840f9ef4a6c5183aa4
+    subject: refactor cli
+  - author: craig-mulligan
+    body: ""
+    hash: 015348dcffe708d300d7caab8d2aa4b64b29d5b0
+    subject: building from /tmp
+  - author: craig-mulligan
+    body: |-
+      - changelog-parse@0.0.0-beta1.1
+      - gatsby-plugin-landr@0.0.0-beta2.1
+      - gatsby-source-github@0.0.0-beta1.1
+      - gatsby-transformer-changelog@0.0.0-beta1.1
+      - gatsby-transformer-readme@0.0.0-beta1.1
+      - landr@1.0.2-beta2.1
+      - md-parser-utils@0.0.0-beta1.1
+      - readme-parser@0.0.0-beta1.1
+    hash: d1fdc12a6877d51eaf678661af7fa5184c22df0b
+    subject: Publish
+  - author: craig-mulligan
+    body: ""
+    hash: c1088f2cd03386fa24f16cd4b20e2089e741fccc
+    subject: fix eject cmd
+  - author: craig-mulligan
+    body: ""
+    hash: 7c03ee5db0d5c9e5ebc18d557d7342df97d6158c
+    subject: add docs for gatsby-source-github
+  - author: craig-mulligan
+    body: ""
+    hash: 236c50da638f3c8c1d0f1e350b6d47f2145744fc
+    subject: rm old pkgs
+  - author: Craig Mulligan
+    body: ""
+    hash: 39eb8e80f2bc8269f01adcc3fa6122e74e7f4774
+    subject: Merge branch 'master' into build-from-tmp
+  - author: craig-mulligan
+    body: ""
+    hash: 8bd26780f2a44f6c4f0ed8a2001c724bdd2ae606
+    subject: refactor cli
+  - author: craig-mulligan
+    body: ""
+    hash: efd8ddc3321637915cba9060b3477ab6f30f7e18
+    subject: refactor cli
+  - author: craig-mulligan
+    body: ""
+    hash: c99aea37972d068e821269686f4affe896141337
+    subject: fix node modules
+  - author: craig-mulligan
+    body: ""
+    hash: 71057ecae8beda70d5868d92ea2e77333fe2a91f
+    subject: trying fragment queries
+  - author: craig-mulligan
+    body: ""
+    hash: 29615a89512a6ac3779eb2f05e4e2c012eb0624b
+    subject: rename plugins + add contributors component
+  - author: craig-mulligan
+    body: ""
+    hash: c2e09d90c46ac07e04ba1113792d4e1f54d7d3f2
+    subject: Merge branch 'master' of github.com:resin-io/landr
+  - author: craig-mulligan
+    body: ""
+    hash: bc633cb7129ad83a4d97df2cd6025dd21e20119d
+    subject: rename changelog-parser to changelog-parse
+  - author: craig-mulligan
+    body: ""
+    hash: fc3815485ad14467a49932313f85146417df81e4
+    subject: rename changelog-parse
+  - author: Haris Khan
+    body: ""
+    hash: 8c5ccabca600a822fb00b96721d1005f61ca67e5
+    subject: add commits to the list of data sources pulled in
+  - author: craig-mulligan
+    body: ""
+    hash: 3081eff50167f684a70ef0b68667be683b8b56d0
+    subject: update readme
+  - author: craig-mulligan
+    body: ""
+    hash: dde66fe915ba2fda7ed3db60c00f5c97d74b71be
+    subject: mvp
+  - author: craig-mulligan
+    body: ""
+    hash: 9ece8d7cb4278fc28d4020c2d83ffed057d6c8f9
+    subject: license
+  - author: craig-mulligan
+    body: ""
+    hash: 97b2e8869747c5362a1a831c3972303110dfc901
+    subject: add deploy cmd
+  - author: craig-mulligan
+    body: ""
+    hash: f526a78c56b723336f0b42f7621ec71bd96f7fe3
+    subject: test
+  - author: craig-mulligan
+    body: ""
+    hash: 8e106495049e7b17d3b707a476128932e9a722b1
+    subject: add github repo source plugin
+  - author: craig-mulligan
+    body: ""
+    hash: 7a61ab45b3d740eee3fe5063ce17b230b7dcac0b
+    subject: add debounce to get around gh-rate limits
+  - author: craig-mulligan
+    body: ""
+    hash: 71057ecae8beda70d5868d92ea2e77333fe2a91f
+    subject: trying fragment queries
+  - author: craig-mulligan
+    body: ""
+    hash: dad124fb4bd883f5fa9182f5f4d6c6c915a814ac
+    subject: convert to mono-repo with lerna
+  - author: craig-mulligan
+    body: ""
+    hash: 7bbd29cfd15803689b41dae3cc054ee774b1ac34
+    subject: add link prefix
+  - author: craig-mulligan
+    body: ""
+    hash: 08204ede713ed49aafc5490089deff3003fd6af1
+    subject: use gatsby
+  - author: craig-mulligan
+    body: ""
+    hash: 1cdbeb8b61e39ab67daf742acf83a78f391a0ec4
+    subject: section component
+  - author: craig-mulligan
+    body: ""
+    hash: 19d075f4b250b47a6b0dc37864602caa3ff3983c
+    subject: update readme
+  - author: craig-mulligan
+    body: ""
+    hash: bbd2255fc6b7b2735cf8eb07ac1cd276d1a491eb
+    subject: add deploy script
+  - author: gaudi
+    body: ""
+    hash: a6aa4cceaa2c94fc8f9c9d7c1bc18a87aa92915d
+    subject: add basic tests
+  - author: gaudi
+    body: ""
+    hash: 7bc3e6ebb29793ad36a53d8a43ef999af10fb815
+    subject: refactor cli
+  - author: gaudi
+    body: ""
+    hash: 2515c8290abf557d39adfa7f94eef3b870ff84c4
+    subject: add bourbon"
+  - author: gaudi
+    body: ""
+    hash: 702fade7753f331bc20ac2d5c0aa8976258c8bed
+    subject: fix double compile in dev-mode, minify in prod
+  - author: gaudi
+    body: ""
+    hash: 3e8cd939d07af73b59c55c96a0c45d0f5a856fdc
+    subject: dont need external css optimizer
+  - author: gaudi
+    body: ""
+    hash: 8cc2c1f05235e038d9fc1843b7b749fa4e10ae6e
+    subject: add deloying log
+  date: "2018-10-02T10:03:03Z"
+  version: 0.1.0
