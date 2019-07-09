@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix Readme typo
+      hash: 165af2a245f0be1a1330cab7dc02f06a04924cbe
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Fixes: 'https://github.com/balena-io/landr/issues/187'
+        fixes: 'https://github.com/balena-io/landr/issues/187'
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.2.1
+  date: 2019-07-09T15:03:55.258Z
+- commits:
     - subject: Add machine-readable CHANGELOG.yml
       hash: 19587a03578e03c84389d4106bfead9297621404
       body: ''
