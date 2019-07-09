@@ -19,10 +19,10 @@ import {
   markdown
 } from 'markdown'
 import {
-  Box,
-  Link,
-  Container
+  Box, Flex, Link, Container, DropDownButton
 } from 'rendition'
+import Toc from './presentational/toc'
+import Sidebar from './presentational/sidebar'
 
 export const name = 'DocViewer'
 
@@ -30,10 +30,15 @@ const JsonML = ({
   data
 }) => {
   const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(data)))
-  return (<div dangerouslySetInnerHTML={{
-    __html: html
-  }}/>)
+    markdown.toHTMLTree([ 'markdown' ].concat(data))
+  )
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: html
+      }}
+    />
+  )
 }
 
 export const variants = (metadata, context, route) => {
@@ -43,12 +48,17 @@ export const variants = (metadata, context, route) => {
     combinations.push({
       title: context.article.content.title,
       date: context.article.content.published_at,
-      author: context.article.content.author && context.article.content.author.handle,
+      author:
+        context.article.content.author && context.article.content.author.handle,
       current: route.path,
       toc: context.toc,
       versions: context.versions || [],
-      link: `${metadata.data.links.repository}/edit/master/${context.article.content.filename}`,
-      jsonml: context.article.content.data
+      link: `${metadata.data.links.repository}/edit/master/${
+        context.article.content.filename
+      }`,
+      jsonml: context.article.content.data,
+      latest: context.latest,
+      version: context.version
     })
   }
 
@@ -56,28 +66,45 @@ export const variants = (metadata, context, route) => {
 }
 
 export const render = (props) => {
-  const toc = props.toc.map((page, index) => {
-    const url = `/${page.path.join('/')}`
-    return (<li key={index}>
-      <Link href={url}>{page.title}</Link>
-    </li>)
-  })
-
   const versions = props.versions.map((version, index) => {
     const url = `/${props.current.join('/')}/${version}`
-    return (<li key={index}>
-      <Link href={url}>{version}</Link>
-    </li>)
+    return (
+      <Box key={index}>
+        <Link href={url}>{version}</Link>
+      </Box>
+    )
   })
 
   return (
-    <Box p={3}>
+    <Box px={3} py={4}>
       <Container>
-        <ul>{toc}</ul>
-        {versions.length > 0 && versions}
-        <Link href={props.link}>Edit on GitHub</Link>
-        {props.date && props.author && (<p>Published on {props.date} by @{props.author}</p>)}
-        <JsonML data={props.jsonml} />
+        <Flex flexWrap={[ 'wrap', 'nowrap' ]}>
+          <Box>
+            <Link href={props.link}>Edit on GitHub</Link>
+            {props.date && props.author && (
+              <p>
+                Published on {props.date} by @{props.author}
+              </p>
+            )}
+            <JsonML data={props.jsonml} />
+          </Box>
+          <Sidebar>
+            {versions.length > 0 && (
+              <Box mb={3}>
+                <DropDownButton
+                  joined
+                  label={`Version: ${props.version}`}
+                  primary
+                >
+                  {versions}
+                </DropDownButton>
+              </Box>
+            )}
+            <Box mt={3}>
+              <Toc toc={props.toc} />
+            </Box>
+          </Sidebar>
+        </Flex>
       </Container>
     </Box>
   )
