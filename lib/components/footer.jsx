@@ -16,8 +16,7 @@
 
 import React from 'react';
 import _ from 'lodash';
-import { Box, Img, Container, Flex, Link, Heading } from 'rendition';
-import { flexWrap } from 'styled-system';
+import { Box, Img, Container, Flex, Link, Heading, Txt } from 'rendition';
 
 export const name = 'Footer';
 
@@ -39,6 +38,15 @@ export const variants = (metadata, context, _route, routes) => {
     toplevelRoutes.push({
       name: 'GitHub',
       url: metadata.data.links.repository,
+    });
+  }
+
+  if (metadata.data.github.owner && metadata.data.images.banner) {
+    combinations.push({
+      owner: metadata.data.github.owner,
+      logo: metadata.data.images.banner,
+      routes: toplevelRoutes,
+      toc: context.toc,
     });
   }
 
@@ -73,6 +81,29 @@ export const render = props => {
     );
   });
 
+  const brand = (
+    <Img
+      style={{
+        height: '50px',
+      }}
+      src={props.logo}
+    />
+  );
+
+  const owner = !_.isEmpty(props.owner) ? (
+    <Flex alignItems="center" mt={3}>
+      <Txt fontSize={2}>Brought to you by</Txt>{' '}
+      <Link href={props.owner.url} tooltip={props.owner.name}>
+        <Img
+          src={props.owner.avatar}
+          alt={props.owner.name}
+          ml={2}
+          style={{ height: 26 }}
+        />
+      </Link>
+    </Flex>
+  ) : null;
+
   return (
     <Box px={3} py={5} mt={5} bg={'#eee'}>
       <Container>
@@ -82,12 +113,8 @@ export const render = props => {
           flexWrap="wrap"
         >
           <Box px={16} width={[1, 1, 1 / 2]} mb={3}>
-            <Img
-              style={{
-                height: '50px',
-              }}
-              src={props.logo}
-            />
+            {brand}
+            {owner}
           </Box>
           <Box px={16} pt={14}>
             <Heading.h4 mb={2} fontSize={2}>
