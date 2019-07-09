@@ -59,7 +59,7 @@ export const render = (props) => {
   const toc = props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
     return (<li key={index}>
-      <Link href={url}>{page.content.title}</Link>
+      <Link href={url}>{page.title}</Link>
     </li>)
   })
 

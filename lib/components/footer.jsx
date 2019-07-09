@@ -58,7 +58,7 @@ export const render = props => {
     const url = `/${page.path.join('/')}`;
     return (
       <Box key={index} mb={1}>
-        <Link href={url}>{page.content.title}</Link>
+        <Link href={url}>{page.title}</Link>
       </Box>
     );
   });
