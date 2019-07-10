@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'contributors: Include CTA that links to the contributing guide'
+      hash: fe796a9e0ff9b2d7dc413917513f71501e725ad9
+      body: ''
+      footer:
+        Connects-to: '#174'
+        connects-to: '#174'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.3.0
+  date: 2019-07-10T12:25:19.018Z
+- commits:
     - subject: Fix Readme typo
       hash: 165af2a245f0be1a1330cab7dc02f06a04924cbe
       body: ''
