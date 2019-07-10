@@ -26,6 +26,26 @@ export const name = 'Contributors'
 export const variants = (metadata) => {
   const combinations = []
 
+  if (
+    metadata.data.contributors &&
+    metadata.data.links.repository &&
+    metadata.data.contributing.guide
+  ) {
+    combinations.push({
+      contributors: metadata.data.contributors,
+      redirect: `${metadata.data.links.repository}/blob/master/${
+        metadata.data.contributing.guide.filename
+      }`
+    })
+  }
+
+  if (metadata.data.contributors && metadata.data.links.repository) {
+    combinations.push({
+      contributors: metadata.data.contributors,
+      redirect: metadata.data.links.repository
+    })
+  }
+
   if (metadata.data.contributors) {
     combinations.push({
       contributors: metadata.data.contributors
@@ -50,27 +70,26 @@ const PlaceholderPhoto = styled(Flex) `
 `
 
 export const render = (props) => {
-  const list = sortBy(props.contributors, 'username')
-    .map((contributor) => {
-      return (
-        <Box key={contributor.username} px={2}>
-          <Link
-            href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
-            tooltip={contributor.username}
-            blank
-          >
-            <Img
-              src={contributor.avatar}
-              style={{
-                height: '65px',
-                borderRadius: 8,
-                boxShadow: '0px 2px 3px #5f5f5f;'
-              }}
-            />
-          </Link>
-        </Box>
-      )
-    })
+  const list = sortBy(props.contributors, 'username').map((contributor) => {
+    return (
+      <Box key={contributor.username} px={2}>
+        <Link
+          href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
+          tooltip={contributor.username}
+          blank
+        >
+          <Img
+            src={contributor.avatar}
+            style={{
+              height: '65px',
+              borderRadius: 8,
+              boxShadow: '0px 2px 3px #5f5f5f;'
+            }}
+          />
+        </Link>
+      </Box>
+    )
+  })
 
   const CTA = (
     <>
@@ -99,7 +118,13 @@ export const render = (props) => {
         <Flex mx={-2} flexWrap="wrap" justifyContent="center">
           {list}
           <Box px={2}>
-            <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
+            {props.redirect ? (
+              <Link href={props.redirect} blank>
+                <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
+              </Link>
+            ) : (
+              <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
+            )}
           </Box>
         </Flex>
         <Box mt={3}>{CTA}</Box>
