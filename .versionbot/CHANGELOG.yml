@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add support for a Mixpanel proxy
+      hash: a956d0162abd5f401c91b682facf48e5e1682077
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.7.0
+  date: 2019-07-11T10:29:15.630Z
+- commits:
     - subject: Introduce ToC sidebar
       hash: 57340f7e4e05d7e53b1d173bd2075b753043a306
       body: ''
