@@ -1,4 +1,38 @@
 - commits:
+    - subject: Display owner information in Footer
+      hash: b22c4ca5d2868e956e7717bb5162cf9e116a0ad2
+      body: ''
+      footer:
+        Connects-to: '#181'
+        connects-to: '#181'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+    - subject: Remove content from TOC object to avoid memory hog
+      hash: 862b1853ef31f0a2830a8b1f7f24f36402ecaa4b
+      body: ''
+      footer:
+        Connects-to: '#188'
+        connects-to: '#188'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+    - subject: Expose docs in in homepage context
+      hash: 95c83462214a5f9ed80b82a1e22a7fb96a6a133b
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.4.0
+  date: 2019-07-11T06:55:41.239Z
+- commits:
     - subject: 'contributors: Include CTA that links to the contributing guide'
       hash: fe796a9e0ff9b2d7dc413917513f71501e725ad9
       body: ''
