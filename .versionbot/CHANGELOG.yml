@@ -1,4 +1,18 @@
 - commits:
+    - subject: Introduce ToC sidebar
+      hash: 57340f7e4e05d7e53b1d173bd2075b753043a306
+      body: ''
+      footer:
+        Connects-to: '#182'
+        connects-to: '#182'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.6.0
+  date: 2019-07-11T09:35:16.693Z
+- commits:
     - subject: 'navigation: Include project version'
       hash: 9355f813ce0f0949ac667edd81aabaa6bda779e8
       body: ''
