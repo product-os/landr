@@ -25,6 +25,7 @@ This command supports the following environment variables:
 | Name | Description | Optional? |
 |-----------|-------------|-----------|
 | `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |
+| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |
 
 ### Examples:
 
@@ -61,6 +62,7 @@ This command supports the following environment variables:
 |-----------|-------------|-----------|
 | `NETLIFY_AUTH_TOKEN` | You Netlify token | N |
 | `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |
+| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |
 
 ### Examples:
 

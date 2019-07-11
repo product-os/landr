@@ -168,6 +168,7 @@ Bluebird.try(async () => {
       LANDR_OUTPUT_DIRECTORY: localDist,
       LANDR_DEPLOY_URL: siteOptions.url,
       LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
+      LANDR_MIXPANEL_PROXY: process.env.LANDR_MIXPANEL_PROXY,
       LANDR_THEME: JSON.stringify(siteTheme)
     })
   })
