@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'navigation: Include project version'
+      hash: 9355f813ce0f0949ac667edd81aabaa6bda779e8
+      body: ''
+      footer:
+        Connects-to: '#183'
+        connects-to: '#183'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.5.0
+  date: 2019-07-11T07:24:56.101Z
+- commits:
     - subject: Display owner information in Footer
       hash: b22c4ca5d2868e956e7717bb5162cf9e116a0ad2
       body: ''
