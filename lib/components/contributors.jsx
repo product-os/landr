@@ -17,7 +17,14 @@
 import React from 'react'
 import sortBy from 'lodash/sortBy'
 import {
-  Box, Img, Container, Flex, Link, Heading, Txt
+  Alert,
+  Box,
+  Img,
+  Container,
+  Flex,
+  Link,
+  Heading,
+  Txt
 } from 'rendition'
 import styled from 'styled-components'
 
@@ -29,23 +36,46 @@ export const variants = (metadata) => {
   if (
     metadata.data.contributors &&
     metadata.data.links.repository &&
-    metadata.data.contributing.guide
+    metadata.data.contributing.guide &&
+    metadata.data.maintainers
   ) {
     combinations.push({
       contributors: metadata.data.contributors,
+      maintainers: metadata.data.maintainers,
       redirect: `${metadata.data.links.repository}/blob/master/${
         metadata.data.contributing.guide.filename
       }`
     })
   }
 
-  if (metadata.data.contributors && metadata.data.links.repository) {
+  if (
+    metadata.data.contributors &&
+    metadata.data.links.repository &&
+    metadata.data.contributing.guide &&
+    metadata.data.maintainers
+  ) {
     combinations.push({
       contributors: metadata.data.contributors,
+      maintainers: metadata.data.maintainers,
+      redirect: `${metadata.data.links.repository}/blob/master/${
+        metadata.data.contributing.guide.filename
+      }`
+    })
+  }
+
+  if (
+    metadata.data.contributors &&
+    metadata.data.links.repository &&
+    metadata.data.maintainers
+  ) {
+    combinations.push({
+      contributors: metadata.data.contributors,
+      maintainers: metadata.data.maintainers,
       redirect: metadata.data.links.repository
     })
   }
 
+  // If there isn't any repo link, it's safe to say we don't have codeowners
   if (metadata.data.contributors) {
     combinations.push({
       contributors: metadata.data.contributors
@@ -92,7 +122,7 @@ export const render = (props) => {
   })
 
   const CTA = (
-    <>
+    <Box mt={3}>
       <Txt fontSize={16}>
         Help Landr thrive, by reporting bugs, contributing code or improving the
         docs.
@@ -106,8 +136,27 @@ export const render = (props) => {
           good first issues!
         </Link>
       </Txt>
-    </>
+    </Box>
   )
+
+  const maintainers = props.maintainers ? (
+    <Alert mt={3} info style={{
+      display: 'inline-flex'
+    }}>
+      If you need any help, please ping{' '}
+      {props.maintainers.map((maintainer, index) => {
+        return (
+        <>
+        {index === props.maintainers.length - 1 && index > 0 && 'or '}
+        <Link href={`${GITHUB_PROFILE_PATH}/${maintainer}`} blank>
+          @{maintainer}
+        </Link>
+        {index < props.maintainers.length - 1 && ', '}
+        </>
+        )
+      })}
+    </Alert>
+  ) : null
 
   return (
     <Box p={3} my={3}>
@@ -127,7 +176,8 @@ export const render = (props) => {
             )}
           </Box>
         </Flex>
-        <Box mt={3}>{CTA}</Box>
+        {CTA}
+        {maintainers}
       </Container>
     </Box>
   )
