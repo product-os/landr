@@ -109,7 +109,16 @@ export const render = (props) => {
   )
 
   return (
-    <Box px={3} py={5} mt={5} bg={'#eee'}>
+    <Box
+      px={3}
+      py={5}
+      mt={5}
+      bg="#eee"
+      style={{
+        position: 'relative',
+        zIndex: 3
+      }}
+    >
       <Container>
         <Flex
           mx={-16}
