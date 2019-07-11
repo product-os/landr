@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update org logo in scrutinizer stub
+      hash: 03df03a1173a92080b7da1df5e3099d56934454d
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.8.1
+  date: 2019-07-11T12:42:57.973Z
+- commits:
     - subject: 'contributors: Add notice about maintainers'
       hash: 8ef5a890ac5e52f97ac516d552460bca3fb91c46
       body: ''
