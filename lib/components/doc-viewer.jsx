@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import _ from 'lodash'
 import {
   markdown
 } from 'markdown'
@@ -67,7 +68,14 @@ export const variants = (metadata, context, route) => {
 
 export const render = (props) => {
   const versions = props.versions.map((version, index) => {
-    const url = `/${props.current.join('/')}/${version}`
+    const basePath = [ ...props.current ]
+
+    // If the current path includes a version at the end, trim it
+    if (props.versions.includes(_.last(basePath))) {
+      basePath.pop()
+    }
+    const url = `/${basePath.join('/')}/${version}`
+
     return (
       <Box key={index}>
         <Link href={url}>{version}</Link>
