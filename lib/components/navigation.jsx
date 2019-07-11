@@ -27,7 +27,7 @@ import {
 
 export const name = 'Navigation'
 
-export const variants = (metadata, context, route, routes) => {
+export const variants = (metadata, _context, _route, routes) => {
   const combinations = []
 
   const toplevelRoutes = routes.filter((definition) => {
@@ -44,6 +44,13 @@ export const variants = (metadata, context, route, routes) => {
       name: 'GitHub',
       url: metadata.data.links.repository
     })
+
+    if (metadata.data.version) {
+      toplevelRoutes.push({
+        name: `v${metadata.data.version}`,
+        url: metadata.data.links.repository
+      })
+    }
   }
 
   if (metadata.data.images.banner && metadata.data.links.repository) {
