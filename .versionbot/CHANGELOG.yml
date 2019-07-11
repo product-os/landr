@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'contributors: Add notice about maintainers'
+      hash: 8ef5a890ac5e52f97ac516d552460bca3fb91c46
+      body: ''
+      footer:
+        Connects-to: '#179'
+        connects-to: '#179'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.8.0
+  date: 2019-07-11T11:27:07.841Z
+- commits:
     - subject: Add support for a Mixpanel proxy
       hash: a956d0162abd5f401c91b682facf48e5e1682077
       body: ''
