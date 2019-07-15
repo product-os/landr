@@ -21,6 +21,8 @@ const _ = require('lodash')
 const path = require('path')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
+const headings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+
 const getHighlights = (readme) => {
   const tree = _.tail(md2jsonml(readme))
   return tree[3].slice(1).map((highlight) => {
@@ -35,25 +37,24 @@ const getHighlights = (readme) => {
 const getInstallationSteps = (readme) => {
   const tree = _.tail(md2jsonml(readme))
   const startIndex = _.findIndex(tree, (node) => {
-    return _.first(node) === 'header' && _.last(node) === 'Installation'
+    return _.includes(headings, _.first(node))  && _.last(node) === 'Installation'
   })
 
   const header = tree[startIndex]
   const rest = tree.slice(startIndex + 1)
   const endIndex = _.findIndex(rest, (node) => {
-    return _.first(node) === 'header' && node[1].level === header[1].level
+    return _.includes(headings, _.first(node)) && node[1] === header[1]
   })
 
   const content = rest.slice(0, endIndex)
   // eslint-disable-next-line lodash/matches-prop-shorthand
   const listIndex = _.findIndex(content, (node) => {
-    return node[0] === 'numberlist'
+    return node[0] === 'ol'
   })
 
   if (listIndex === -1) {
     return null
   }
-
   return {
     headers: [],
     steps: _.tail(content[listIndex]).map((node) => {
@@ -68,7 +69,7 @@ const parseFAQ = (text) => {
   const result = []
 
   tree.forEach((node, index) => {
-    if (node[0] === 'header') {
+    if (_.includes(headings, node[0])) {
       result.push({
         title: _.last(node),
         content: tree[index + 1]
@@ -109,7 +110,7 @@ const parseMarkdown = (file) => {
 
     // eslint-disable-next-line lodash/matches-shorthand
     title: _.last(_.find(tree, (node) => {
-      return node[0] === 'header' && node[1].level === 1
+      return node[0] === 'h1'
     })),
 
     data: tree
@@ -247,7 +248,7 @@ const metadata = JSON.stringify({
 }, null, 2)
 
 
-fs.writeFile('../meta.json', metadata, err => {
+fs.writeFile('./meta.json', metadata, err => {
   if (err) {
     return console.log(err);
   }
