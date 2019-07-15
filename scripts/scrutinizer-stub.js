@@ -83,10 +83,9 @@ const parseFAQ = (text) => {
 const normalize = (file, jsonml) => {
   return jsonml.map((node) => {
     const content = _.last(node)
-
     if (node[0] === 'img') {
       Reflect.deleteProperty(node[1], 'alt')
-      const imagePath = path.resolve(path.dirname(file), node[1].href)
+      const imagePath = path.resolve(path.dirname(file), node[1].src)
       const base64 = Buffer.from(fs.readFileSync(imagePath)).toString('base64')
       node[1].href = `data:image/png;base64,${base64}`
     }
@@ -191,19 +190,19 @@ const metadata = JSON.stringify({
           parseMarkdown('docs/01-getting-started.md'),
           parseMarkdown('docs/02-cli.md'),
           parseMarkdown('docs/03-conventions.md'),
-          // parseMarkdown('docs/04-running-landr-in-ci.md')
+          parseMarkdown('docs/04-running-landr-in-ci.md')
         ],
         '0.1.1': [
           parseMarkdown('docs/01-getting-started.md'),
           parseMarkdown('docs/02-cli.md'),
           parseMarkdown('docs/03-conventions.md'),
-          // parseMarkdown('docs/04-running-landr-in-ci.md')
+          parseMarkdown('docs/04-running-landr-in-ci.md')
         ],
         '0.1.0': [
           parseMarkdown('docs/01-getting-started.md'),
           parseMarkdown('docs/02-cli.md'),
           parseMarkdown('docs/03-conventions.md'),
-          // parseMarkdown('docs/04-running-landr-in-ci.md')
+          parseMarkdown('docs/04-running-landr-in-ci.md')
         ]
       }
     },
