@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'contributing: Update the good-first-issues link'
+      hash: 35388151bc8d926df8c55bc2b822d9b3acb7b783
+      body: |
+        Includes some QoL life fixes in the component
+      footer:
+        Connects-to: '#178'
+        connects-to: '#178'
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.9.1
+  date: 2019-07-12T07:16:36.160Z
+- commits:
     - subject: Fix incorrect paths when navigating  versioned docs
       hash: b47bb44b1921fd48ee636d3637ddb12ce2ed0c5c
       body: ''
