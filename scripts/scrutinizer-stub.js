@@ -16,23 +16,24 @@
 
 const fs = require('fs')
 const yaml = require('js-yaml')
-const markdown = require('markdown').markdown
+const md2jsonml = require('md2jsonml')
 const _ = require('lodash')
 const path = require('path')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
 const getHighlights = (readme) => {
-  const tree = _.tail(markdown.parse(readme))
+  const tree = _.tail(md2jsonml(readme))
   return tree[3].slice(1).map((highlight) => {
+    const highlightPair = highlight.slice(1);
     return {
-      title: highlight.slice(1)[0][1],
-      description: highlight.slice(1)[1].replace(/^:\s+/, '')
+      title: _.get(highlightPair, [0, 1], ""),
+      description: _.get(highlightPair, [1], "").replace(/^:\s+/, '')
     }
   })
 }
 
 const getInstallationSteps = (readme) => {
-  const tree = _.tail(markdown.parse(readme))
+  const tree = _.tail(md2jsonml(readme))
   const startIndex = _.findIndex(tree, (node) => {
     return _.first(node) === 'header' && _.last(node) === 'Installation'
   })
@@ -63,7 +64,7 @@ const getInstallationSteps = (readme) => {
 }
 
 const parseFAQ = (text) => {
-  const tree = _.tail(markdown.parse(text))
+  const tree = _.tail(md2jsonml(text))
   const result = []
 
   tree.forEach((node, index) => {
@@ -100,7 +101,7 @@ const normalize = (file, jsonml) => {
 const parseMarkdown = (file) => {
   const tree =
     normalize(path.join(PROJECT_DIRECTORY, file),
-      _.tail(markdown.parse(fs.readFileSync(
+      _.tail(md2jsonml(fs.readFileSync(
         path.join(PROJECT_DIRECTORY, file), 'utf8'))))
   return {
     filename: file,
@@ -114,6 +115,7 @@ const parseMarkdown = (file) => {
     data: tree
   }
 }
+
 
 console.log(JSON.stringify({
   slug: 'repository-balena-io-landr',
@@ -188,19 +190,19 @@ console.log(JSON.stringify({
           parseMarkdown('docs/01-getting-started.md'),
           parseMarkdown('docs/02-cli.md'),
           parseMarkdown('docs/03-conventions.md'),
-          parseMarkdown('docs/04-running-landr-in-ci.md')
+          // parseMarkdown('docs/04-running-landr-in-ci.md')
         ],
         '0.1.1': [
           parseMarkdown('docs/01-getting-started.md'),
           parseMarkdown('docs/02-cli.md'),
           parseMarkdown('docs/03-conventions.md'),
-          parseMarkdown('docs/04-running-landr-in-ci.md')
+          // parseMarkdown('docs/04-running-landr-in-ci.md')
         ],
         '0.1.0': [
           parseMarkdown('docs/01-getting-started.md'),
           parseMarkdown('docs/02-cli.md'),
           parseMarkdown('docs/03-conventions.md'),
-          parseMarkdown('docs/04-running-landr-in-ci.md')
+          // parseMarkdown('docs/04-running-landr-in-ci.md')
         ]
       }
     },
