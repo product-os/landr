@@ -42,22 +42,8 @@ export const variants = (metadata) => {
     combinations.push({
       contributors: metadata.data.contributors,
       maintainers: metadata.data.maintainers,
-      redirect: `${metadata.data.links.repository}/blob/master/${
-        metadata.data.contributing.guide.filename
-      }`
-    })
-  }
-
-  if (
-    metadata.data.contributors &&
-    metadata.data.links.repository &&
-    metadata.data.contributing.guide &&
-    metadata.data.maintainers
-  ) {
-    combinations.push({
-      contributors: metadata.data.contributors,
-      maintainers: metadata.data.maintainers,
-      redirect: `${metadata.data.links.repository}/blob/master/${
+      repository: metadata.data.links.repository,
+      contributing: `${metadata.data.links.repository}/blob/master/${
         metadata.data.contributing.guide.filename
       }`
     })
@@ -71,11 +57,22 @@ export const variants = (metadata) => {
     combinations.push({
       contributors: metadata.data.contributors,
       maintainers: metadata.data.maintainers,
-      redirect: metadata.data.links.repository
+      repository: metadata.data.links.repository,
+      contributing: metadata.data.links.repository
     })
   }
 
-  // If there isn't any repo link, it's safe to say we don't have codeowners
+  if (
+    metadata.data.contributors &&
+    metadata.data.links.repository
+  ) {
+    combinations.push({
+      contributors: metadata.data.contributors,
+      repository: metadata.data.links.repository,
+      contributing: metadata.data.links.repository
+    })
+  }
+
   if (metadata.data.contributors) {
     combinations.push({
       contributors: metadata.data.contributors
@@ -121,7 +118,7 @@ export const render = (props) => {
     )
   })
 
-  const CTA = (
+  const CTA = props.repository ? (
     <Box mt={3}>
       <Txt fontSize={16}>
         Help Landr thrive, by reporting bugs, contributing code or improving the
@@ -131,13 +128,13 @@ export const render = (props) => {
         Jump in and get your hands dirty with some selected{' '}
         <Link
           blank
-          href="https://github.com/balena-io/landr/labels/good%20first%20issue"
+          href={`${props.repository}/contribute`}
         >
           good first issues!
         </Link>
       </Txt>
     </Box>
-  )
+  ) : null
 
   const maintainers = props.maintainers ? (
     <Alert mt={3} info style={{
@@ -167,8 +164,8 @@ export const render = (props) => {
         <Flex mx={-2} flexWrap="wrap" justifyContent="center">
           {list}
           <Box px={2}>
-            {props.redirect ? (
-              <Link href={props.redirect} blank>
+            {props.contributing ? (
+              <Link href={props.contributing} blank>
                 <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
               </Link>
             ) : (
