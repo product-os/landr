@@ -117,7 +117,7 @@ const parseMarkdown = (file) => {
 }
 
 
-console.log(JSON.stringify({
+const metadata = JSON.stringify({
   slug: 'repository-balena-io-landr',
   type: 'repository',
   version: '1.0.0',
@@ -244,4 +244,13 @@ console.log(JSON.stringify({
       }
     ]
   }
-}, null, 2))
+}, null, 2)
+
+
+fs.writeFile('../meta.json', metadata, err => {
+  if (err) {
+    return console.log(err);
+  }
+
+  console.log('Updated `meta.json`');
+});
