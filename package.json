@@ -58,7 +58,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "js-yaml": "^3.13.1",
     "jsdom": "^15.1.1",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "puppeteer": "^1.18.1"
   },
   "dependencies": {
     "@babel/register": "^7.4.0",
