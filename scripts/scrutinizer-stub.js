@@ -15,7 +15,10 @@
  */
 
 const fs = require('fs')
+const tmp = require('tmp')
+const Bluebird = require('bluebird')
 const yaml = require('js-yaml')
+const puppeteer = require('puppeteer')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 const path = require('path')
@@ -38,6 +41,24 @@ const getMotivation = (readme) => {
   })
 
   return tree[startIndex + 1]
+}
+
+const getScreenshot = async (website) => {
+  const browser = await puppeteer.launch()
+  const page = await browser.newPage()
+  await page.setViewport({
+    width: 1024,
+    height: 768,
+    deviceScaleFactor: 2
+  })
+  await page.goto(website)
+  const location = `${tmp.fileSync().name}.png`
+  await page.screenshot({
+    path: location
+  })
+  await browser.close()
+  const base64 = Buffer.from(fs.readFileSync(location)).toString('base64')
+  return `data:image/png;base64,${base64}`
 }
 
 const getInstallationSteps = (readme) => {
@@ -124,132 +145,160 @@ const parseMarkdown = (file) => {
   }
 }
 
-console.log(JSON.stringify({
-  slug: 'repository-balena-io-landr',
-  type: 'repository',
-  version: '1.0.0',
-  markers: [],
-  tags: [],
-  links: {},
-  active: true,
-  data: {
-    license: require(path.join(PROJECT_DIRECTORY, 'package.json')).license,
-    name: require(path.join(PROJECT_DIRECTORY, 'package.json')).name,
-    tagline: 'Repository + Landr = Website',
-    images: {
-      // Image at the top README
-      banner: `data:image/png;base64,${Buffer.from(fs.readFileSync('./banner.png')).toString('base64')}`
-    },
-    description: require(path.join(PROJECT_DIRECTORY, 'package.json')).description,
-    version: require(path.join(PROJECT_DIRECTORY, 'package.json')).version,
-
-    // Using Detectorist
-    type: 'npm',
-
-    vcs: {
-      type: 'git',
-      branch: 'master'
-    },
-    links: {
-      issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json')).bugs.url,
-      homepage: 'https://www.balena.io/landr',
-      repository: require(path.join(PROJECT_DIRECTORY, 'package.json')).repository.url
-        .replace(/^git\+/, '')
-        .replace(/\.git$/, '')
-    },
-    dns: {
-      cname: fs.readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
-        .replace(/\n/g, '')
-    },
-    maintainers: _.uniq(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'CODEOWNERS'), 'utf8')
-      .match(/@[\S]+/g)).map((name) => {
-      return name.slice(1)
-    }),
-
-    changelog: yaml.safeLoad(fs.readFileSync('.versionbot/CHANGELOG.yml', 'utf8')),
-
-    faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
-
-    contributing: {
-      architecture: parseMarkdown('ARCHITECTURE.md'),
-      guide: parseMarkdown('CONTRIBUTING.md'),
-      codeOfConduct: parseMarkdown('CODE_OF_CONDUCT.md'),
-      security: parseMarkdown('SECURITY.md')
-    },
-
-    motivation: getMotivation(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
-    highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
-    installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
-
-    blog: [
-      Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
-        // We can obtain these from the git history
-        published_at: '2019-07-08T19:19:00.016Z',
-        author: {
-          handle: 'jviotti'
-        }
-      })
-    ],
-
-    docs: {
-      latest: '1.0.0',
-      tags: {
-        '1.0.0': [
-          parseMarkdown('docs/01-getting-started.md'),
-          parseMarkdown('docs/02-cli.md'),
-          parseMarkdown('docs/03-conventions.md'),
-          parseMarkdown('docs/04-running-landr-in-ci.md')
-        ],
-        '0.1.1': [
-          parseMarkdown('docs/01-getting-started.md'),
-          parseMarkdown('docs/02-cli.md'),
-          parseMarkdown('docs/03-conventions.md'),
-          parseMarkdown('docs/04-running-landr-in-ci.md')
-        ],
-        '0.1.0': [
-          parseMarkdown('docs/01-getting-started.md'),
-          parseMarkdown('docs/02-cli.md'),
-          parseMarkdown('docs/03-conventions.md'),
-          parseMarkdown('docs/04-running-landr-in-ci.md')
-        ]
-      }
-    },
-
-    github: {
-      public: true,
-      fork: false,
-      stars: 41,
-      owner: {
-        handle: 'balena-io',
-        type: 'org',
-        name: 'balena',
-        // eslint-disable-next-line max-len
-        description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
-        url: 'https://www.balena.io',
-        email: 'hello@balena.io',
-        avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
+Bluebird.resolve().then(async () => {
+  console.log(JSON.stringify({
+    slug: 'repository-balena-io-landr',
+    type: 'repository',
+    version: '1.0.0',
+    markers: [],
+    tags: [],
+    links: {},
+    active: true,
+    data: {
+      license: require(path.join(PROJECT_DIRECTORY, 'package.json')).license,
+      name: require(path.join(PROJECT_DIRECTORY, 'package.json')).name,
+      tagline: 'Repository + Landr = Website',
+      images: {
+        // Image at the top README
+        banner: `data:image/png;base64,${Buffer.from(fs.readFileSync('./banner.png')).toString('base64')}`
       },
-      usedBy: [
+      description: require(path.join(PROJECT_DIRECTORY, 'package.json')).description,
+      version: require(path.join(PROJECT_DIRECTORY, 'package.json')).version,
+
+      // Using Detectorist
+      type: 'npm',
+
+      vcs: {
+        type: 'git',
+        branch: 'master'
+      },
+      links: {
+        issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json')).bugs.url,
+        homepage: 'https://www.balena.io/landr',
+        repository: require(path.join(PROJECT_DIRECTORY, 'package.json')).repository.url
+          .replace(/^git\+/, '')
+          .replace(/\.git$/, '')
+      },
+      dns: {
+        cname: fs.readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
+          .replace(/\n/g, '')
+      },
+      maintainers: _.uniq(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'CODEOWNERS'), 'utf8')
+        .match(/@[\S]+/g)).map((name) => {
+        return name.slice(1)
+      }),
+
+      changelog: yaml.safeLoad(fs.readFileSync('.versionbot/CHANGELOG.yml', 'utf8')),
+
+      faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
+
+      contributing: {
+        architecture: parseMarkdown('ARCHITECTURE.md'),
+        guide: parseMarkdown('CONTRIBUTING.md'),
+        codeOfConduct: parseMarkdown('CODE_OF_CONDUCT.md'),
+        security: parseMarkdown('SECURITY.md')
+      },
+
+      motivation: getMotivation(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
+      highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
+      installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
+
+      blog: [
+        Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
+          // We can obtain these from the git history
+          published_at: '2019-07-08T19:19:00.016Z',
+          author: {
+            handle: 'jviotti'
+          }
+        })
+      ],
+
+      docs: {
+        latest: '1.0.0',
+        tags: {
+          '1.0.0': [
+            parseMarkdown('docs/01-getting-started.md'),
+            parseMarkdown('docs/02-cli.md'),
+            parseMarkdown('docs/03-conventions.md'),
+            parseMarkdown('docs/04-running-landr-in-ci.md')
+          ],
+          '0.1.1': [
+            parseMarkdown('docs/01-getting-started.md'),
+            parseMarkdown('docs/02-cli.md'),
+            parseMarkdown('docs/03-conventions.md'),
+            parseMarkdown('docs/04-running-landr-in-ci.md')
+          ],
+          '0.1.0': [
+            parseMarkdown('docs/01-getting-started.md'),
+            parseMarkdown('docs/02-cli.md'),
+            parseMarkdown('docs/03-conventions.md'),
+            parseMarkdown('docs/04-running-landr-in-ci.md')
+          ]
+        }
+      },
+
+      github: {
+        public: true,
+        fork: false,
+        stars: 41,
+        owner: {
+          handle: 'balena-io',
+          type: 'org',
+          name: 'balena',
+          // eslint-disable-next-line max-len
+          description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
+          url: 'https://www.balena.io',
+          email: 'hello@balena.io',
+          avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
+        },
+        usedBy: [
+          {
+            owner: 'balena-io',
+            repo: 'etcher',
+            website: 'https://www.balena.io/etcher/',
+            description: 'Flash OS images to SD cards & USB drives, safely and easily',
+            screenshot: await getScreenshot('https://www.balena.io/etcher/')
+          },
+          {
+            owner: 'balena-os',
+            repo: 'meta-balena',
+            website: 'https://www.balena.io/os/',
+            description: 'A host OS tailored for containers, designed for reliability, proven in production',
+            screenshot: await getScreenshot('https://www.balena.io/os/')
+          },
+          {
+            owner: 'balena-io',
+            repo: 'open-balena',
+            website: 'https://www.balena.io/open/',
+            description: 'Open source software to manage connected IoT devices',
+            screenshot: await getScreenshot('https://www.balena.io/open/')
+          },
+          {
+            owner: 'balena-os',
+            repo: 'balena-engine',
+            website: 'https://www.balena.io/engine/',
+            description: 'A container engine built for IoT',
+            screenshot: await getScreenshot('https://www.balena.io/engine/')
+          }
+        ]
+      },
+      contributors: [
         {
-          owner: 'balena-io',
-          repo: 'etcher',
-          description: 'Flash OS images to SD cards & USB drives, safely and easily'
+          username: 'jviotti',
+          avatar: 'https://avatars2.githubusercontent.com/u/2192773'
+        },
+        {
+          username: 'lucianbuzzo',
+          avatar: 'https://avatars2.githubusercontent.com/u/15064535'
+        },
+        {
+          username: 'dimitrisnl',
+          avatar: 'https://avatars2.githubusercontent.com/u/4951004'
         }
       ]
-    },
-    contributors: [
-      {
-        username: 'jviotti',
-        avatar: 'https://avatars2.githubusercontent.com/u/2192773'
-      },
-      {
-        username: 'lucianbuzzo',
-        avatar: 'https://avatars2.githubusercontent.com/u/15064535'
-      },
-      {
-        username: 'dimitrisnl',
-        avatar: 'https://avatars2.githubusercontent.com/u/4951004'
-      }
-    ]
-  }
-}, null, 2))
+    }
+  }, null, 2))
+}).catch((error) => {
+  console.error(error)
+  process.exit(1)
+})
