@@ -1,4 +1,16 @@
 - commits:
+    - subject: Parse motivation paragraph
+      hash: 9ded4cf0db84199c681acf86923cba2bf65ae505
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.9.2
+  date: 2019-07-16T13:08:13.808Z
+- commits:
     - subject: 'contributing: Update the good-first-issues link'
       hash: 35388151bc8d926df8c55bc2b822d9b3acb7b783
       body: |
