@@ -1,4 +1,18 @@
 - commits:
+    - subject: Replace markdown-js with md2jsonml in scrutinizer-stub
+      hash: e9f641b8cd2fac03cbe50f6c1ddf3a18ce409788
+      body: ''
+      footer:
+        Connects-to: '#201'
+        connects-to: '#201'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.10.0
+  date: 2019-07-16T13:11:42.189Z
+- commits:
     - subject: 'contributing: Update the good-first-issues link'
       hash: 35388151bc8d926df8c55bc2b822d9b3acb7b783
       body: |
