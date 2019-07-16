@@ -15,9 +15,8 @@
  */
 
 import React from 'react'
-import {
-  markdown
-} from 'markdown'
+import Stringify from 'jsonml-stringify/stringify'
+import loose from 'jsonml-stringify/plugins/loose'
 import {
   Box,
   Link,
@@ -26,11 +25,12 @@ import {
 
 export const name = 'BlogList'
 
+const jsonml2html = Stringify([loose])
+
 const JsonML = ({
   data
 }) => {
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(data)))
+  const html = jsonml2html(data)
   return (<div dangerouslySetInnerHTML={{
     __html: html
   }}/>)

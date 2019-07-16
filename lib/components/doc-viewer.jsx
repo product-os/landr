@@ -16,9 +16,9 @@
 
 import React from 'react'
 import _ from 'lodash'
-import {
-  markdown
-} from 'markdown'
+import Stringify from 'jsonml-stringify/stringify'
+import fragment from 'jsonml-stringify/plugins/fragment'
+import loose from 'jsonml-stringify/plugins/loose'
 import {
   Box, Flex, Link, Container, DropDownButton
 } from 'rendition'
@@ -27,12 +27,12 @@ import Sidebar from './presentational/sidebar'
 
 export const name = 'DocViewer'
 
+const jsonml2html = Stringify([loose])
+
 const JsonML = ({
   data
 }) => {
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(data))
-  )
+  const html = jsonml2html([ 'article' ].concat(data))
   return (
     <div
       dangerouslySetInnerHTML={{
@@ -67,7 +67,7 @@ export const variants = (metadata, context, route) => {
 }
 
 export const render = (props) => {
-  const versions = props.versions.map((version, index) => {
+  const versions = _.get(props, 'versions', []).map((version, index) => {
     const basePath = [ ...props.current ]
 
     // If the current path includes a version at the end, trim it

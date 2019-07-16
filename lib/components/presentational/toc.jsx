@@ -11,7 +11,7 @@ const Toc = (props) => {
     const sections = page.sections
       ? page.sections
         .filter((section) => {
-          return section[1].level === 2
+          return section[1] === 'h2'
         })
         .map((entry) => {
           return {
