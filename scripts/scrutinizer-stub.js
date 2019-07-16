@@ -31,6 +31,15 @@ const getHighlights = (readme) => {
   })
 }
 
+const getMotivation = (readme) => {
+  const tree = _.tail(markdown.parse(readme))
+  const startIndex = _.findIndex(tree, (node) => {
+    return _.first(node) === 'header' && _.last(node) === 'Motivation'
+  })
+
+  return tree[startIndex + 1]
+}
+
 const getInstallationSteps = (readme) => {
   const tree = _.tail(markdown.parse(readme))
   const startIndex = _.findIndex(tree, (node) => {
@@ -168,6 +177,7 @@ console.log(JSON.stringify({
       security: parseMarkdown('SECURITY.md')
     },
 
+    motivation: getMotivation(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
     highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
     installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
 
