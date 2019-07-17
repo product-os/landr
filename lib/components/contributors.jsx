@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import sortBy from 'lodash/sortBy'
-import {
-  Alert,
-  Box,
-  Img,
-  Container,
-  Flex,
-  Link,
-  Heading,
-  Txt
-} from 'rendition'
-import styled from 'styled-components'
+import React from 'react';
+import sortBy from 'lodash/sortBy';
+import { Box, Img, Container, Flex, Link, Heading, Txt } from 'rendition';
+import styled from 'styled-components';
 
-export const name = 'Contributors'
+import heartIcon from '../assets/heart.svg';
+import contributeIcon from '../assets/contribute.svg';
 
-export const variants = (metadata) => {
-  const combinations = []
+export const name = 'Contributors';
+
+export const variants = metadata => {
+  const combinations = [];
 
   if (
     metadata.data.contributors &&
@@ -45,29 +39,28 @@ export const variants = (metadata) => {
       repository: metadata.data.links.repository,
       contributing: `${metadata.data.links.repository}/blob/master/${
         metadata.data.contributing.guide.filename
-      }`
-    })
+      }`,
+    });
   }
 
   return combinations
 }
 
-const GITHUB_PROFILE_PATH = 'https://github.com'
+const GITHUB_PROFILE_PATH = 'https://github.com';
 
-const PlaceholderPhoto = styled(Flex) `
+const PlaceholderPhoto = styled(Flex)`
   font-size: 12px;
   padding: 8px;
-  height: 65px;
-  width: 65px;
-  border-radius: 8px;
-  border: 1px dashed #c1c7dd;
+  height: 170px;
+  width: 170px;
+  border-radius: 20px;
+  border: 1px dashed rgba(250, 134, 0, 0.5);
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 3px #5f5f5f;
-`
+`;
 
-export const render = (props) => {
-  const list = sortBy(props.contributors, 'username').map((contributor) => {
+export const render = props => {
+  const list = sortBy(props.contributors, 'username').map(contributor => {
     return (
       <Box key={contributor.username} px={2}>
         <Link
@@ -78,60 +71,39 @@ export const render = (props) => {
           <Img
             src={contributor.avatar}
             style={{
-              height: '65px',
+              height: '170px',
               borderRadius: 8,
-              boxShadow: '0px 2px 3px #5f5f5f;'
             }}
           />
         </Link>
       </Box>
-    )
-  })
+    );
+  });
 
   const CTA = props.repository ? (
-    <Box mt={3}>
-      <Txt fontSize={16}>
+    <Box>
+      <Txt fontSize={14}>
         Help Landr thrive, by reporting bugs, contributing code or improving the
         docs.
       </Txt>
-      <Txt fontSize={16}>
+      <Txt fontSize={14}>
         Jump in and get your hands dirty with some selected{' '}
-        <Link
-          blank
-          href={`${props.repository}/contribute`}
-        >
+        <Link blank href={`${props.repository}/contribute`}>
           good first issues!
         </Link>
       </Txt>
     </Box>
-  ) : null
-
-  const maintainers = props.maintainers ? (
-    <Alert mt={3} info style={{
-      display: 'inline-flex'
-    }}>
-      If you need any help, please ping{' '}
-      {props.maintainers.map((maintainer, index) => {
-        return (
-        <>
-        {index === props.maintainers.length - 1 && index > 0 && 'or '}
-        <Link href={`${GITHUB_PROFILE_PATH}/${maintainer}`} blank>
-          @{maintainer}
-        </Link>
-        {index < props.maintainers.length - 1 && ', '}
-        </>
-        )
-      })}
-    </Alert>
-  ) : null
+  ) : null;
 
   return (
-    <Box p={3} my={3}>
+    <Box my={130}>
       <Container textAlign="center">
-        <Box mb={4}>
-          <Heading.h2 mb={1}>Made possible by</Heading.h2>
-        </Box>
-        <Flex mx={-2} flexWrap="wrap" justifyContent="center">
+        <Heading.h2 fontSize={34} mb={30} align="center">
+          <Flex alignItems="center" justifyContent='center'>
+            Made with <Img src={heartIcon} width={32} mx={2} /> by
+          </Flex>
+        </Heading.h2>
+        <Flex mx={-2} flexWrap="wrap" justifyContent="center" mb={24}>
           {list}
           <Box px={2}>
             {props.contributing ? (
@@ -139,15 +111,15 @@ export const render = (props) => {
                 <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
               </Link>
             ) : (
-              <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
+              <PlaceholderPhoto>
+                <Img src={contributeIcon} mb={18} alt="new contributor" />
+                <Txt>Reserved for you</Txt>
+              </PlaceholderPhoto>
             )}
           </Box>
         </Flex>
         {CTA}
-        {maintainers}
       </Container>
     </Box>
-  )
-}
-
-// TODO: If there are more that X contributors -> link to a new page
+  );
+};

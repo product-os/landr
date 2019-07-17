@@ -14,42 +14,35 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import _ from 'lodash'
-import {
-  Box,
-  Img,
-  Link,
-  Container,
-  Txt,
-  Flex
-} from 'rendition'
+import React from 'react';
+import _ from 'lodash';
+import styled from 'styled-components';
+import { Box, Img, Link, Container, Txt, Flex } from 'rendition';
 
-export const name = 'Navigation'
+import GithubBanner from './presentational/github-banner';
+
+export const name = 'Navigation';
 
 export const variants = (metadata, _context, _route, routes) => {
-  const combinations = []
+  const combinations = [];
 
-  const toplevelRoutes = routes.filter((definition) => {
-    return definition.path.length === 1
-  }).map((definition) => {
-    return {
-      name: _.capitalize(definition.path[0]),
-      url: `/${definition.path[0]}`
-    }
-  })
+  const toplevelRoutes = routes
+    .filter(definition => {
+      return definition.path.length === 1;
+    })
+    .map(definition => {
+      return {
+        name: _.capitalize(definition.path[0]),
+        url: `/${definition.path[0]}`,
+      };
+    });
 
   if (metadata.data.links.repository) {
-    toplevelRoutes.push({
-      name: 'GitHub',
-      url: metadata.data.links.repository
-    })
-
     if (metadata.data.version) {
       toplevelRoutes.push({
         name: `v${metadata.data.version}`,
-        url: metadata.data.links.repository
-      })
+        url: metadata.data.links.repository,
+      });
     }
   }
 
@@ -57,38 +50,79 @@ export const variants = (metadata, _context, _route, routes) => {
     combinations.push({
       logo: metadata.data.images.banner,
       routes: toplevelRoutes,
-      githubUrl: metadata.data.links.repository
-    })
+      githubUrl: metadata.data.links.repository,
+    });
   }
 
   return combinations
 }
 
-export const render = (props) => {
-  const Brand = props.logo
-    ? (<Img style={{
-      height: '50px'
-    }} src={props.logo} />)
-    : (<Txt>{props.name}</Txt>)
+const Wrapper = styled(Box)`
+  background-color: ${({ theme }) => {
+    return theme.colors.primary.light;
+  }};
+  color: ${({ theme }) => {
+    return theme.colors.text.main;
+  }};
+`;
+
+const GithubRedirect = styled(Link)`
+  position: absolute;
+  right: 0;
+  top: -30px;
+`;
+
+export const render = props => {
+  const Brand = props.logo ? (
+    <Img
+      style={{
+        height: '50px',
+      }}
+      src={props.logo}
+    />
+  ) : (
+    <Txt>{props.name}</Txt>
+  );
 
   const links = props.routes.map((route, index) => {
-    return (<Link key={index} style={{
-      marginLeft: 15
-    }} color="#fff" href={route.url} aria-labelledby={route.name}>
-      {route.name}
-    </Link>)
-  })
+    return (
+      <Link
+        fontSize={14}
+        color="#2a506f"
+        key={index}
+        px={2}
+        href={route.url}
+        aria-labelledby={route.name}
+        style={{
+          fontFamily: 'CircularStd',
+        }}
+      >
+        {route.name}
+      </Link>
+    );
+  });
 
   return (
-    <Box p={3} bg={'#6997c3'} color="#fff">
+    <Wrapper px={16} py={30}>
       <Container>
-        <Flex justifyContent="space-between" alignItems="center">
-          <Link color='white' href={'/'}>{Brand}</Link>
-          <Flex fontSize={'1.1em'}>
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          style={{ position: 'relative' }}
+        >
+          <Link color="white" href={'/'}>
+            {Brand}
+          </Link>
+          <Flex fontSize={2} mx={-2}>
             {links}
           </Flex>
+          {props.githubUrl && (
+            <GithubRedirect href={props.githubUrl} blank>
+              <GithubBanner fill='#fa8600' />
+            </GithubRedirect>
+          )}
         </Flex>
       </Container>
-    </Box>
-  )
-}
+    </Wrapper>
+  );
+};

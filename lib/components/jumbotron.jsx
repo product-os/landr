@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import styled from 'styled-components'
 import _ from 'lodash'
 import {
   Box, Button, Container, Txt, Flex, Heading
@@ -24,13 +25,15 @@ import Terminal from './presentational/terminal'
 
 export const name = 'Jumbotron'
 
-export const variants = (metadata, context, route, routes) => {
+export const variants = (metadata, _context, _route, routes) => {
   const combinations = []
 
   const entrypoint = metadata.data.docs.tags[metadata.data.docs.latest][0]
   const entryUrl = _.find(routes, (definition) => {
-    return definition.context.article &&
+    return (
+      definition.context.article &&
       definition.context.article.content.filename === entrypoint.filename
+    )
   })
 
   const steps = metadata.data.installation.steps.reduce((accumulator, step) => {
@@ -59,6 +62,17 @@ export const variants = (metadata, context, route, routes) => {
     })
   }
 
+  if (metadata.data.tagline && metadata.data.description) {
+    combinations.push({
+      title: metadata.data.tagline,
+      description: metadata.data.description,
+      packageName: metadata.data.name,
+      steps,
+      type: metadata.data.type,
+      repositoryUrl: metadata.data.links.repository
+    })
+  }
+
   if (metadata.data.tagline) {
     combinations.push({
       title: metadata.data.tagline,
@@ -72,42 +86,38 @@ export const variants = (metadata, context, route, routes) => {
   return combinations
 }
 
+const Wrapper = styled(Box) `
+  background-color: ${({
+    theme
+  }) => { return theme.colors.primary.light }};
+`
+
+const Header = styled(Heading.h1) `
+  color: ${({
+    theme
+  }) => { return theme.colors.primary.main }};
+`
+
 export const render = (props) => {
-  const [ user, repo ] = props.repositoryUrl
-    .split('/')
-    .slice(
-      props.repositoryUrl.split('/').length - 2,
-      props.repositoryUrl.split('/').length
-    )
-
   const commands = props.steps || []
-
   return (
-    <Box bg={'#6997c3'} color="#fff" mb={5} py={6}>
+    <Wrapper py={5}>
       <Container>
-        <Flex flexDirection="column" alignItems="center">
-          <Heading.h1>{props.title}</Heading.h1>
-          {props.description && <Txt fontSize={3}>{props.description}</Txt>}
+        <Flex flexDirection="column" alignItems="center" mb={40}>
+          <Header fontSize={62}>{props.title}</Header>
+          {props.description && (
+            <Heading.h2 fontSize={24}>{props.description}</Heading.h2>
+          )}
         </Flex>
         {commands.length > 0 && <Terminal commands={commands} />}
-        {props.repositoryUrl && (
-          <Txt align="center" mt={2}>
-            <iframe
-              src={`https://ghbtns.com/github-btn.html?user=${user}&repo=${repo}&type=star&count=true&size=large`}
-              frameBorder="0"
-              scrolling="0"
-              width="160px"
-              height="30px"
-            />
-          </Txt>
-        )}
-
         {props.action && (
-          <Txt align="center" mt={2}>
-            <Button m={2} href={props.action} primary>Get started!</Button>
+          <Txt align="center" mt={40}>
+            <Button m={2} href={props.action} primary>
+              Get started
+            </Button>
           </Txt>
         )}
       </Container>
-    </Box>
+    </Wrapper>
   )
 }
