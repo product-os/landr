@@ -21,8 +21,8 @@ import {
 } from 'rendition'
 import styled from 'styled-components'
 
-import heartIcon from '../assets/heart.svg'
-import contributeIcon from '../assets/contribute.svg'
+import heartIcon from './assets/heart.svg'
+import contributeIcon from './assets/contribute.svg'
 
 export const name = 'Contributors'
 
