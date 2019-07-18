@@ -14,31 +14,33 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Flex, Box, Divider, Container, Heading } from 'rendition';
-import Accordian from './presentational/accordian';
+import React from 'react'
+import {
+  Box, Divider, Container, Heading
+} from 'rendition'
+import Accordian from './presentational/accordian'
 
-export const name = 'Faq';
+export const name = 'Faq'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (metadata.data.faq) {
     combinations.push({
-      faq: metadata.data.faq,
-    });
+      faq: metadata.data.faq
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-export const render = props => {
-  const items = props.faq.map(faq => {
+export const render = (props) => {
+  const items = props.faq.map((faq) => {
     return {
       title: faq.title,
-      content: faq.content[1],
-    };
-  });
+      content: faq.content[1]
+    }
+  })
 
   return (
     <Box my={130}>
@@ -50,5 +52,5 @@ export const render = props => {
         </Box>
       </Container>
     </Box>
-  );
-};
+  )
+}

@@ -14,44 +14,50 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import styled from 'styled-components';
-import { Box, Container, Heading, Txt, Flex } from 'rendition';
+import React from 'react'
+import styled from 'styled-components'
+import {
+  Box, Container, Heading, Txt, Flex
+} from 'rendition'
 
-export const name = 'Highlights';
+export const name = 'Highlights'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (metadata.data.highlights && metadata.data.highlights.length > 0) {
     combinations.push({
-      highlights: metadata.data.highlights,
-    });
+      highlights: metadata.data.highlights
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-const Wrapper = styled(Box)`
-  background-color: ${({ theme }) => {
-    return theme.colors.primary.light;
+const Wrapper = styled(Box) `
+  background-color: ${({
+    theme
+  }) => {
+    return theme.colors.primary.light
   }};
-`;
+`
 
-const Header = styled(Heading.h3)`
-  color: ${({ theme }) => {
-    return theme.colors.primary.main;
+const Header = styled(Heading.h3) `
+  color: ${({
+    theme
+  }) => {
+    return theme.colors.primary.main
   }};
-`;
+`
 
-export const render = props => {
+export const render = (props) => {
   const boxes = props.highlights.map((highlight, index) => {
     return (
       <Txt
         key={index}
         px={3}
         mb={2}
-        width={[1, 1, 1 / 3, 1 / 3]}
+        width={[ 1, 1, 1 / 3, 1 / 3 ]}
         align="center"
       >
         <Header fontSize={22} mb={3}>
@@ -59,8 +65,8 @@ export const render = props => {
         </Header>
         <Txt fontSize={14}>{highlight.description}</Txt>
       </Txt>
-    );
-  });
+    )
+  })
 
   return (
     <Wrapper pt={45} pb={100}>
@@ -70,5 +76,5 @@ export const render = props => {
         </Flex>
       </Container>
     </Wrapper>
-  );
-};
+  )
+}

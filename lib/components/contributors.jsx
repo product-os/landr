@@ -14,18 +14,20 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import sortBy from 'lodash/sortBy';
-import { Box, Img, Container, Flex, Link, Heading, Txt } from 'rendition';
-import styled from 'styled-components';
+import React from 'react'
+import sortBy from 'lodash/sortBy'
+import {
+  Box, Img, Container, Flex, Link, Heading, Txt
+} from 'rendition'
+import styled from 'styled-components'
 
-import heartIcon from '../assets/heart.svg';
-import contributeIcon from '../assets/contribute.svg';
+import heartIcon from '../assets/heart.svg'
+import contributeIcon from '../assets/contribute.svg'
 
-export const name = 'Contributors';
+export const name = 'Contributors'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (
     metadata.data.contributors &&
@@ -39,16 +41,16 @@ export const variants = metadata => {
       repository: metadata.data.links.repository,
       contributing: `${metadata.data.links.repository}/blob/master/${
         metadata.data.contributing.guide.filename
-      }`,
-    });
+      }`
+    })
   }
 
   return combinations
 }
 
-const GITHUB_PROFILE_PATH = 'https://github.com';
+const GITHUB_PROFILE_PATH = 'https://github.com'
 
-const PlaceholderPhoto = styled(Flex)`
+const PlaceholderPhoto = styled(Flex) `
   font-size: 12px;
   padding: 8px;
   height: 170px;
@@ -57,10 +59,10 @@ const PlaceholderPhoto = styled(Flex)`
   border: 1px dashed rgba(250, 134, 0, 0.5);
   justify-content: center;
   align-items: center;
-`;
+`
 
-export const render = props => {
-  const list = sortBy(props.contributors, 'username').map(contributor => {
+export const render = (props) => {
+  const list = sortBy(props.contributors, 'username').map((contributor) => {
     return (
       <Box key={contributor.username} px={2}>
         <Link
@@ -72,13 +74,13 @@ export const render = props => {
             src={contributor.avatar}
             style={{
               height: '170px',
-              borderRadius: 8,
+              borderRadius: 8
             }}
           />
         </Link>
       </Box>
-    );
-  });
+    )
+  })
 
   const CTA = props.repository ? (
     <Box>
@@ -93,7 +95,7 @@ export const render = props => {
         </Link>
       </Txt>
     </Box>
-  ) : null;
+  ) : null
 
   return (
     <Box my={130}>
@@ -121,5 +123,5 @@ export const render = props => {
         {CTA}
       </Container>
     </Box>
-  );
-};
+  )
+}

@@ -14,35 +14,37 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import _ from 'lodash';
-import styled from 'styled-components';
-import { Box, Img, Link, Container, Txt, Flex } from 'rendition';
+import React from 'react'
+import _ from 'lodash'
+import styled from 'styled-components'
+import {
+  Box, Img, Link, Container, Txt, Flex
+} from 'rendition'
 
-import GithubBanner from './presentational/github-banner';
+import GithubBanner from './presentational/github-banner'
 
-export const name = 'Navigation';
+export const name = 'Navigation'
 
 export const variants = (metadata, _context, _route, routes) => {
-  const combinations = [];
+  const combinations = []
 
   const toplevelRoutes = routes
-    .filter(definition => {
-      return definition.path.length === 1;
+    .filter((definition) => {
+      return definition.path.length === 1
     })
-    .map(definition => {
+    .map((definition) => {
       return {
         name: _.capitalize(definition.path[0]),
-        url: `/${definition.path[0]}`,
-      };
-    });
+        url: `/${definition.path[0]}`
+      }
+    })
 
   if (metadata.data.links.repository) {
     if (metadata.data.version) {
       toplevelRoutes.push({
         name: `v${metadata.data.version}`,
-        url: metadata.data.links.repository,
-      });
+        url: metadata.data.links.repository
+      })
     }
   }
 
@@ -50,39 +52,43 @@ export const variants = (metadata, _context, _route, routes) => {
     combinations.push({
       logo: metadata.data.images.banner,
       routes: toplevelRoutes,
-      githubUrl: metadata.data.links.repository,
-    });
+      githubUrl: metadata.data.links.repository
+    })
   }
 
   return combinations
 }
 
-const Wrapper = styled(Box)`
-  background-color: ${({ theme }) => {
-    return theme.colors.primary.light;
+const Wrapper = styled(Box) `
+  background-color: ${({
+    theme
+  }) => {
+    return theme.colors.primary.light
   }};
-  color: ${({ theme }) => {
-    return theme.colors.text.main;
+  color: ${({
+    theme
+  }) => {
+    return theme.colors.text.main
   }};
-`;
+`
 
-const GithubRedirect = styled(Link)`
+const GithubRedirect = styled(Link) `
   position: absolute;
   right: 0;
   top: -30px;
-`;
+`
 
-export const render = props => {
+export const render = (props) => {
   const Brand = props.logo ? (
     <Img
       style={{
-        height: '50px',
+        height: '50px'
       }}
       src={props.logo}
     />
   ) : (
     <Txt>{props.name}</Txt>
-  );
+  )
 
   const links = props.routes.map((route, index) => {
     return (
@@ -94,13 +100,13 @@ export const render = props => {
         href={route.url}
         aria-labelledby={route.name}
         style={{
-          fontFamily: 'CircularStd',
+          fontFamily: 'CircularStd'
         }}
       >
         {route.name}
       </Link>
-    );
-  });
+    )
+  })
 
   return (
     <Wrapper px={16} py={30}>
@@ -108,7 +114,9 @@ export const render = props => {
         <Flex
           justifyContent="space-between"
           alignItems="center"
-          style={{ position: 'relative' }}
+          style={{
+            position: 'relative'
+          }}
         >
           <Link color="white" href={'/'}>
             {Brand}
@@ -124,5 +132,5 @@ export const render = props => {
         </Flex>
       </Container>
     </Wrapper>
-  );
-};
+  )
+}

@@ -14,27 +14,29 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import { Box, Button, Container, Flex, Link, Heading, Txt } from 'rendition';
-import styled from 'styled-components';
+import React from 'react'
+import {
+  Box, Button, Container, Flex, Link, Heading, Txt
+} from 'rendition'
+import styled from 'styled-components'
 
-export const name = 'Users';
+export const name = 'Users'
 
-export const variants = metadata => {
-  const combinations = [];
+export const variants = (metadata) => {
+  const combinations = []
 
   if (metadata.data.github.usedBy) {
     combinations.push({
-      users: metadata.data.github.usedBy,
-    });
+      users: metadata.data.github.usedBy
+    })
   }
 
-  return combinations;
-};
+  return combinations
+}
 
-const GITHUB_PROFILE_PATH = 'https://github.com';
+const GITHUB_PROFILE_PATH = 'https://github.com'
 
-const ProjectCard = styled(Flex)`
+const ProjectCard = styled(Flex) `
   height: 100%;
   flex-direction: column;
   flex: 1;
@@ -43,19 +45,21 @@ const ProjectCard = styled(Flex)`
   box-shadow: -10px 9px 21px 0 rgba(152, 173, 227, 0.08);
   border: solid 1px #e8ebf2;
   background-color: #ffffff;
-`;
+`
 
-const Screenshot = styled(Box)`
-  background-image: url(${props => props.bg});
+const Screenshot = styled(Box) `
+  background-image: url(${(props) => { return props.bg }});
   background-size: cover;
   height: 200px;
   width: 100%;
-`;
+`
 
-export const render = props => {
-  const list = props.users.map(({ repo, owner, description, screenshot }) => {
+export const render = (props) => {
+  const list = props.users.map(({
+    repo, owner, description, screenshot
+  }) => {
     return (
-      <Box key={repo} px={3} width={[1, 1 / 2, 1 / 2, 1 / 4]}>
+      <Box key={repo} px={3} width={[ 1, 1 / 2, 1 / 2, 1 / 4 ]}>
         <ProjectCard>
           <Screenshot bg={screenshot} />
           <Flex
@@ -74,7 +78,9 @@ export const render = props => {
               mt="auto"
               blank
               href={`${GITHUB_PROFILE_PATH}/${owner}/${repo}`}
-              style={{ textAlign: 'center' }}
+              style={{
+                textAlign: 'center'
+              }}
             >
               <Button primary fontSize={14}>
                 Visit
@@ -83,17 +89,17 @@ export const render = props => {
           </Flex>
         </ProjectCard>
       </Box>
-    );
-  });
+    )
+  })
 
   return (
     <Box my={130}>
       <Container>
         <Heading.h2 mb={4} align="center">
-          Checkout who's using this project
+          Check out who's using this project
         </Heading.h2>
         <Flex mx={-3}>{list}</Flex>
       </Container>
     </Box>
-  );
-};
+  )
+}
