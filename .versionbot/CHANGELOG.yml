@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add ids in the markdown headers
+      hash: 3663a6ea7837d300eea4bef382bc5776044db692
+      body: ''
+      footer:
+        Connects-to: '#211'
+        connects-to: '#211'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.10.0
+  date: 2019-07-23T16:20:37.019Z
+- commits:
     - subject: Add examples screenshots
       hash: 6e64c3b237254beed1f9bd6cfe0770abe4bd9edf
       body: ''
