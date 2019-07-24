@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const fs = require('fs')
 
 require('@babel/register')({
   presets: [
@@ -27,3 +28,10 @@ require('@babel/register')({
     '@babel/preset-react'
   ]
 })
+
+// eslint-disable-next-line
+require.extensions['.svg'] = (_module, filename) => {
+  return fs.readFileSync(filename, {
+    encoding: 'utf8'
+  })
+}
