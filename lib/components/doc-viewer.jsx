@@ -30,8 +30,22 @@ export const name = 'DocViewer'
 const JsonML = ({
   data
 }) => {
+  const formattedData = data.map((item) => {
+    if (item[0] === 'header') {
+      return item.map((element) => {
+        if (_.isPlainObject(element)) {
+          return _.assign(element, {
+            id: _.kebabCase(_.last(item))
+          })
+        }
+        return element
+      })
+    }
+    return item
+  })
+
   const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(data))
+    markdown.toHTMLTree([ 'markdown' ].concat(formattedData))
   )
   return (
     <div
