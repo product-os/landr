@@ -71,7 +71,7 @@ export const render = (props) => {
   return (
     <Wrapper pt={45} pb={100}>
       <Container>
-        <Flex wrap justifyContent="space-around" my={-3}>
+        <Flex flexWrap='wrap' justifyContent="space-around" my={-3}>
           {boxes}
         </Flex>
       </Container>
