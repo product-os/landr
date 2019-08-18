@@ -49,36 +49,6 @@ export const variants = (metadata) => {
     })
   }
 
-  if (
-    metadata.data.contributors &&
-    metadata.data.links.repository &&
-    metadata.data.maintainers
-  ) {
-    combinations.push({
-      contributors: metadata.data.contributors,
-      maintainers: metadata.data.maintainers,
-      repository: metadata.data.links.repository,
-      contributing: metadata.data.links.repository
-    })
-  }
-
-  if (
-    metadata.data.contributors &&
-    metadata.data.links.repository
-  ) {
-    combinations.push({
-      contributors: metadata.data.contributors,
-      repository: metadata.data.links.repository,
-      contributing: metadata.data.links.repository
-    })
-  }
-
-  if (metadata.data.contributors) {
-    combinations.push({
-      contributors: metadata.data.contributors
-    })
-  }
-
   return combinations
 }
 
