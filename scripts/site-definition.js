@@ -14,9 +14,21 @@
  * limitations under the License.
  */
 
+const fs = require('fs')
+const _ = require('lodash')
+const path = require('path')
 const generator = require('../lib/generator')
 const CONTRACT = require('../meta.json')
 const THEME = require('../default-theme.json')
 
-const result = generator(CONTRACT, THEME)
+const CNAME = _.trim(fs.readFileSync(path.resolve(__dirname, '..', 'CNAME'), {
+  encoding: 'utf8'
+}), ' \n')
+
+console.time('generator')
+const result = generator(CONTRACT, THEME, {
+  siteUrl: `https://${CNAME}`
+})
+
 console.log(JSON.stringify(result, null, 2))
+console.timeEnd('generator')
