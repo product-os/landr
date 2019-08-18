@@ -1,4 +1,25 @@
 - commits:
+    - subject: 'components: Remove unused Contributors/Navigation variants'
+      hash: dfd9494f9b450159a4f0a861a6d0199203db701c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+    - subject: 'engine: Remove UI single null variants early on'
+      hash: 58f2fb85bd2941b21dfd80fa9655483db75b5654
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.10.3
+  date: 2019-08-18T19:25:04.163Z
+- commits:
     - subject: 'rules: Stop combinations without Head/Footer/Navigation early on'
       hash: 8fac2ef00cbbb7d25214c8dbc9a4744ef0048c06
       body: ''
