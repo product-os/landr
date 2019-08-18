@@ -61,21 +61,6 @@ export const variants = (metadata, _context, _route, routes) => {
     })
   }
 
-  if (metadata.data.images.banner) {
-    combinations.push({
-      routes: toplevelRoutes,
-      logo: metadata.data.images.banner
-    })
-  }
-
-  if (metadata.data.name && metadata.data.links.repository) {
-    combinations.push({
-      name: metadata.data.name,
-      routes: toplevelRoutes,
-      githubUrl: metadata.data.links.repository
-    })
-  }
-
   return combinations
 }
 
