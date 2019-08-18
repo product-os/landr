@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'rules: Stop combinations without Head/Footer/Navigation early on'
+      hash: 8fac2ef00cbbb7d25214c8dbc9a4744ef0048c06
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.10.2
+  date: 2019-08-18T18:51:10.925Z
+- commits:
     - subject: Make site-definition script work again
       hash: 8bd7f797888e678ba1ef57a228a69d889ea7bd49
       body: ''
