@@ -1,4 +1,16 @@
 - commits:
+    - subject: Make site-definition script work again
+      hash: 8bd7f797888e678ba1ef57a228a69d889ea7bd49
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+  version: 5.10.1
+  date: 2019-08-18T17:05:33.585Z
+- commits:
     - subject: Add ids in the markdown headers
       hash: 3663a6ea7837d300eea4bef382bc5776044db692
       body: ''
