@@ -435,3 +435,5 @@ rules:
     - off
   react/jsx-no-bind:
     - error
+  react/no-unescaped-entities:
+    - off

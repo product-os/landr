@@ -24,12 +24,14 @@
 }
 
 body {
+  color: #2a506f;
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  color: #2a506f;
+  font-weight: normal;
 }
 
 /* prevent markdown images from overflowing */

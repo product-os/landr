@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import styled from 'styled-components'
 import {
   Box, Container, Heading, Txt, Flex
 } from 'rendition'
@@ -33,24 +34,47 @@ export const variants = (metadata) => {
   return combinations
 }
 
+const Wrapper = styled(Box) `
+  background-color: ${({
+    theme
+  }) => {
+    return theme.colors.primary.light
+  }};
+`
+
+const Header = styled(Heading.h3) `
+  color: ${({
+    theme
+  }) => {
+    return theme.colors.primary.main
+  }};
+`
+
 export const render = (props) => {
   const boxes = props.highlights.map((highlight, index) => {
-    return (<Box key={index} style={{
-      marginLeft: 10,
-      marginRight: 10
-    }}>
-      <Heading.h3>{highlight.title}</Heading.h3>
-      <Txt>{highlight.description}</Txt>
-    </Box>)
+    return (
+      <Txt
+        key={index}
+        px={3}
+        mb={2}
+        width={[ 1, 1, 1 / 3, 1 / 3 ]}
+        align="center"
+      >
+        <Header fontSize={22} mb={3}>
+          {highlight.title}
+        </Header>
+        <Txt fontSize={14}>{highlight.description}</Txt>
+      </Txt>
+    )
   })
 
   return (
-    <Box p={3} my={3}>
+    <Wrapper pt={45} pb={100}>
       <Container>
-        <Box>
-          <Flex justifyContent='space-around' alignItems='baseline'>{boxes}</Flex>
-        </Box>
+        <Flex flexWrap='wrap' justifyContent="space-around" my={-3}>
+          {boxes}
+        </Flex>
       </Container>
-    </Box>
+    </Wrapper>
   )
 }

@@ -14,7 +14,7 @@ const Collapse = styled(Txt) `
   overflow: hidden;
   max-height: ${(props) => { return (props.isOpen ? '100vh' : '0') }};
   transition: max-height 0.4s ease-in-out;
-  max-width: 1000px;
+  max-width: 800px;
   padding-left: 16px;
   cursor: initial;
 `
@@ -23,6 +23,7 @@ const Content = styled(Box) `
   margin-top: 10px;
   margin-bottom: 20px;
   max-width: 800px;
+  font-size: 14px;
   ul {
     margin-top: 8px;
     padding-left: 40px;
@@ -70,7 +71,7 @@ const Accordian = ({
                 >
                   {item.title}
                 </Heading.h5>
-                <Txt pr={3} fontSize={24} align="end" color="#c1c7dd">
+                <Txt pr={3} fontSize={24} align="end" color="#fa8600">
                   {openIndex === index ? '−' : '+'}
                 </Txt>
               </Flex>

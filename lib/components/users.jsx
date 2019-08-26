@@ -16,15 +16,9 @@
 
 import React from 'react'
 import {
-  Box,
-  Badge,
-  Container,
-  Flex,
-  Link,
-  Heading,
-  Txt,
-  Divider
+  Box, Button, Container, Flex, Link, Heading, Txt
 } from 'rendition'
+import styled from 'styled-components'
 
 export const name = 'Users'
 
@@ -42,42 +36,69 @@ export const variants = (metadata) => {
 
 const GITHUB_PROFILE_PATH = 'https://github.com'
 
+const ProjectCard = styled(Flex) `
+  height: 100%;
+  flex-direction: column;
+  flex: 1;
+
+  border-radius: 10px;
+  box-shadow: -10px 9px 21px 0 rgba(152, 173, 227, 0.08);
+  border: solid 1px #e8ebf2;
+  background-color: #ffffff;
+`
+
+const Screenshot = styled(Box) `
+  background-image: url(${(props) => { return props.bg }});
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+`
+
 export const render = (props) => {
   const list = props.users.map(({
-    repo, owner, description
+    repo, owner, description, screenshot
   }) => {
     return (
-      <>
-        <Flex py={3} alignItems="center">
-          <Flex alignItems="center">
-            <Badge px={3}>{repo}</Badge>
-            <Txt px={3} align="left">
+      <Box key={repo} px={3} width={[ 1, 1 / 2, 1 / 2, 1 / 4 ]}>
+        <ProjectCard>
+          <Screenshot bg={screenshot} />
+          <Flex
+            padding={30}
+            justifyContent="center"
+            flex={1}
+            flexDirection="column"
+          >
+            <Heading.h5 mb={16} fontSize={18} textAlign="center">
+              {repo}
+            </Heading.h5>
+            <Txt mb={20} fontSize={14} textAlign="center">
               {description}
             </Txt>
+            <Link
+              mt="auto"
+              blank
+              href={`${GITHUB_PROFILE_PATH}/${owner}/${repo}`}
+              style={{
+                textAlign: 'center'
+              }}
+            >
+              <Button primary fontSize={14}>
+                Visit
+              </Button>
+            </Link>
           </Flex>
-          <Link
-            ml="auto"
-            px={3}
-            fontSize={20}
-            blank
-            href={`${GITHUB_PROFILE_PATH}/${owner}/${repo}`}
-          >
-            ↗
-          </Link>
-        </Flex>
-        <Divider m={0} height={1} color={'#c1c7dd'} />
-      </>
+        </ProjectCard>
+      </Box>
     )
   })
 
   return (
-    <Box p={3} my={3}>
-      <Container textAlign="center">
-        <Box mb={4}>
-          <Heading.h2 mb={1}>Used by</Heading.h2>
-        </Box>
-        <Divider m={0} height={1} color={'#c1c7dd'} />
-        {list}
+    <Box my={130}>
+      <Container>
+        <Heading.h2 mb={4} align="center">
+          Check out who's using this project
+        </Heading.h2>
+        <Flex mx={-3}>{list}</Flex>
       </Container>
     </Box>
   )

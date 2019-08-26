@@ -16,6 +16,7 @@
 
 import React from 'react'
 import _ from 'lodash'
+import styled from 'styled-components'
 import {
   Box, Img, Container, Flex, Link, Heading, Txt
 } from 'rendition'
@@ -63,12 +64,20 @@ export const variants = (metadata, context, _route, routes) => {
   return combinations
 }
 
+const Wrapper = styled(Box) `
+  background-color: ${({
+    theme
+  }) => { return theme.colors.primary.light }};
+`
+
 export const render = (props) => {
   const toc = props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
     return (
       <Box key={index} mb={1}>
-        <Link href={url}>{page.title}</Link>
+        <Link color="#527699" fontSize={13} href={url}>
+          {page.title}
+        </Link>
       </Box>
     )
   })
@@ -76,7 +85,7 @@ export const render = (props) => {
   const links = props.routes.map((route, index) => {
     return (
       <Box key={index} mb={1}>
-        <Link href={route.url} aria-labelledby={route.name}>
+        <Link color="#527699" fontSize={13} href={route.url} aria-labelledby={route.name}>
           {route.name}
         </Link>
       </Box>
@@ -94,8 +103,8 @@ export const render = (props) => {
 
   const owner = _.isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
-      <Txt fontSize={2}>Brought to you by</Txt>{' '}
-      <Link href={props.owner.url} tooltip={props.owner.name}>
+      <Txt fontSize={12}>Brought to you by</Txt>{' '}
+      <Link color="#2a506f" href={props.owner.url} tooltip={props.owner.name}>
         <Img
           src={props.owner.avatar}
           alt={props.owner.name}
@@ -109,42 +118,44 @@ export const render = (props) => {
   )
 
   return (
-    <Box
+    <Wrapper
       px={3}
       py={5}
       mt={5}
-      bg="#eee"
       style={{
         position: 'relative',
         zIndex: 3
       }}
     >
       <Container>
-        <Flex
-          mx={-16}
-          justifyContent={[ 'flex-start', 'flex-start', 'space-between' ]}
-          flexWrap="wrap"
-        >
-          <Box px={16} width={[ 1, 1, 1 / 2 ]} mb={3}>
-            {brand}
-            {owner}
-          </Box>
-          <Box px={16} pt={14}>
-            <Heading.h4 mb={2} fontSize={2}>
-              Navigation
-            </Heading.h4>
-            {links}
-          </Box>
-          {!_.isEmpty(toc) && (
-            <Box px={16} pt={14}>
-              <Heading.h4 mb={2} fontSize={2}>
-                Docs
-              </Heading.h4>
-              {toc}
+        <Flex justifyContent="center">
+          <Flex
+            width={[ 1, 1, 1, 5 / 6 ]}
+            mx={-16}
+            justifyContent={[ 'flex-start', 'flex-start', 'space-between' ]}
+            flexWrap="wrap"
+          >
+            <Box px={16} width={[ 1, 1, 1 / 2 ]} mb={3}>
+              {brand}
+              {owner}
             </Box>
-          )}
+            <Box px={16} pt={14}>
+              <Heading.h4 mb={2} fontSize={14}>
+                Navigation
+              </Heading.h4>
+              {links}
+            </Box>
+            {!_.isEmpty(toc) && (
+              <Box px={16} pt={14}>
+                <Heading.h4 mb={2} fontSize={14}>
+                  Docs
+                </Heading.h4>
+                {toc}
+              </Box>
+            )}
+          </Flex>
         </Flex>
       </Container>
-    </Box>
+    </Wrapper>
   )
 }

@@ -16,18 +16,18 @@
 
 import React from 'react'
 import {
-  Box, Divider, Container, Heading
+  Box, Container, Heading, Txt
 } from 'rendition'
-import Accordian from './presentational/accordian'
 
-export const name = 'Faq'
+export const name = 'Motivation'
 
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.faq) {
+  if (metadata.data.motivation) {
     combinations.push({
-      faq: metadata.data.faq
+      motivation: metadata.data.motivation,
+      name: metadata.data.name
     })
   }
 
@@ -35,21 +35,17 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
-  const items = props.faq.map((faq) => {
-    return {
-      title: faq.title,
-      content: faq.content[1]
-    }
-  })
-
   return (
     <Box my={130}>
       <Container>
-        <Box>
-          <Heading.h2 mb={4}>Frequently asked questions</Heading.h2>
-          <Divider m={0} height={1} color={'#c1c7dd'} />
-          <Accordian items={items} />
-        </Box>
+        <Heading.h2 mb={24}>Why {props.name}</Heading.h2>
+        <Txt
+          width={[ 1, 1, 1 / 2, 1 / 2 ]}
+          fontSize={14}
+          dangerouslySetInnerHTML={{
+            __html: props.motivation[1]
+          }}
+        />
       </Container>
     </Box>
   )
