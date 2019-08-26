@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update layout
+      hash: 53e360804530f65c77a0bbb6cb5d195e0079734d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+        signed-off-by: Dimitrios Lytras <dimitrios@balena.io>
+      author: Dimitrios Lytras
+  version: 5.11.0
+  date: 2019-08-19T15:33:23.734Z
+- commits:
     - subject: 'components: Remove unused Contributors/Navigation variants'
       hash: dfd9494f9b450159a4f0a861a6d0199203db701c
       body: ''
