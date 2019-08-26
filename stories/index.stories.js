@@ -6,13 +6,24 @@ import { storiesOf } from '@storybook/react';
 import { render as Navigation } from '../lib/components/navigation';
 import { render as Jumbotron } from '../lib/components/jumbotron';
 import { render as Users } from '../lib/components/users';
+import { render as Motivation } from '../lib/components/motivation';
 import { render as Contributors } from '../lib/components/contributors';
 import { render as Faq } from '../lib/components/faq';
 import { render as Footer } from '../lib/components/footer';
-// import { render as BlogList } from '../lib/components/blog-list'
-// import { render as DocViewer } from '../lib/components/doc-viewer'
 
-import {theme, props } from './config';
+import { theme, props } from './config';
+
+storiesOf('Website', module).add('Variant 1', () => (
+  <Provider theme={theme}>
+    <Navigation {...props.Navigation} />
+    <Jumbotron {...props.Jumbotron} />
+    <Users {...props.Users} />
+    <Motivation {...props.Motivation} />
+    <Contributors {...props.Contributing} />
+    <Faq {...props.Faq} />
+    <Footer {...props.Footer} />
+  </Provider>
+));
 
 storiesOf('Navigation', module).add('Variant 1', () => (
   <Provider theme={theme}>
@@ -29,6 +40,12 @@ storiesOf('Jumbotron', module).add('Variant 1', () => (
 storiesOf('Users', module).add('Variant 1', () => (
   <Provider theme={theme}>
     <Users {...props.Users} />
+  </Provider>
+));
+
+storiesOf('Motivation', module).add('Variant 1', () => (
+  <Provider theme={theme}>
+    <Motivation {...props.Motivation} />
   </Provider>
 ));
 

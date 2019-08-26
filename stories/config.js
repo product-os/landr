@@ -388,6 +388,13 @@ export const props = {
         ]
       }
     ]
+  },
+  Motivation: {
+    name: 'Landr',
+    motivation: [
+      "para",
+      "Creating a website for a project is hard and time-consuming. Yet, a great\nwebsite is one of the best ways to promote a project. Landr aims to capture our\nexperience presenting a wide variety of open source projects on the web, so\nthat having a website that can compete with your favourite massively popular\nopen source project is not only possible, but comes with zero overhead."
+    ]
   }
 };
 

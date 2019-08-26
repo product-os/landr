@@ -7,6 +7,7 @@ import 'typeface-nunito'
 addParameters({
   options: {
     theme: themes.light,
+    showPanel: false,
   },
 });
 
