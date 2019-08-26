@@ -66,3 +66,6 @@ dist
 artifacts
 www
 .tgz
+
+# Storybook
+storybook-static/
