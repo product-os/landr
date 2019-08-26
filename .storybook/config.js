@@ -3,6 +3,8 @@ import { themes } from '@storybook/theming';
 
 import 'circular-std'
 import 'typeface-nunito'
+import 'react-typist/dist/Typist.css'
+import '../lib/components/global.css'
 
 addParameters({
   options: {
