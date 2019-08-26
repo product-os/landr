@@ -58,6 +58,22 @@ export const props = {
     "type": "npm",
     "repositoryUrl": "https://github.com/balena-io/landr"
   },
+  Highlights: {
+    "highlights": [
+      {
+        "title": "Functional Websites",
+        "description": "Landr renders your project and its documentation in\na gorgeous and UX friendly way to your end users, in the best possible way\nwhile you focus on shipping features"
+      },
+      {
+        "title": "Follows OSS Conventions",
+        "description": "Landr understands most common repository\nconventions, and makes use of them fully. Build a great repository and get a\ngreat website for it. Its a win-win"
+      },
+      {
+        "title": "Fully Automatic",
+        "description": "Landr requires no configuration at all. It is smart\nenough to figure out what it needs on its own. Point it to a repository, hold\ntight, and let Landr do its magic"
+      }
+    ],
+  },
   Users: {
     "users": [
       {

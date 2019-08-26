@@ -1,5 +1,6 @@
-import { addParameters, configure } from '@storybook/react';
-import { create, themes } from '@storybook/theming';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y'
+import { create } from '@storybook/theming';
 
 import 'circular-std'
 import 'typeface-nunito'
@@ -19,6 +20,8 @@ addParameters({
     showPanel: false,
   },
 });
+
+addDecorator(withA11y)
 
 const req = require.context('../stories', true, /\.stories\.js$/);
 function loadStories() {
