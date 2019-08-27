@@ -15,7 +15,9 @@
  */
 
 import React from 'react'
-import { format, parseISO } from 'date-fns'
+import {
+  format, parseISO
+} from 'date-fns'
 import _ from 'lodash'
 import {
   markdown
