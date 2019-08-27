@@ -10,9 +10,9 @@ import THEME from '../default-theme.json';
 import CONTRACT from '../meta.json';
 
 const ROUTES = routes(CONTRACT);
-
-// Remove the Head component as it's just holds metadata
 const components = _.omit(allComponents, 'Head');
+
+// TODO: filter out the invalid combinations
 
 for (const route of ROUTES) {
   for (const [name, definition] of Object.entries(components)) {
@@ -21,7 +21,9 @@ for (const route of ROUTES) {
       route.context,
       route,
       ROUTES,
-      { theme: THEME },
+      {
+        theme: THEME,
+      },
     );
 
     variants.forEach((variant, index) => {

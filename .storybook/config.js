@@ -1,18 +1,19 @@
 import { addDecorator, addParameters, configure } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y'
+import { withA11y } from '@storybook/addon-a11y';
 import { create } from '@storybook/theming';
 
-import 'circular-std'
-import 'typeface-nunito'
-import 'react-typist/dist/Typist.css'
-import '../lib/components/global.css'
-import logo from './logo.png'
+import 'circular-std';
+import 'typeface-nunito';
+import 'react-typist/dist/Typist.css';
+import '../lib/components/global.css';
+
+import CONTRACT from '../meta.json';
 
 const theme = create({
-  brandTitle: 'Landr',
-  brandUrl: 'https://github.com/balena-io/landr',
-  brandImage: logo,
-})
+  brandTitle: CONTRACT.data.name,
+  brandUrl: CONTRACT.data.links.homepage,
+  brandImage: CONTRACT.data.images.banner,
+});
 
 addParameters({
   options: {
@@ -21,7 +22,7 @@ addParameters({
   },
 });
 
-addDecorator(withA11y)
+addDecorator(withA11y);
 
 const req = require.context('../stories', true, /\.stories\.js$/);
 function loadStories() {
