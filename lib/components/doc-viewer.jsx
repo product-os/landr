@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import { format, parseISO } from 'date-fns'
 import _ from 'lodash'
 import {
   markdown
@@ -105,7 +106,8 @@ export const render = (props) => {
             <Link href={props.link}>Edit on GitHub</Link>
             {props.date && props.author && (
               <p>
-                Published on {props.date} by @{props.author}
+                Published on {format(parseISO(props.date), 'EEEE, MMMM do yyyy')}{' '}
+                by @{props.author}
               </p>
             )}
             <JsonML data={props.jsonml} />
