@@ -69,3 +69,6 @@ www
 
 # Storybook
 storybook-static/
+
+# misc
+.DS_Store
