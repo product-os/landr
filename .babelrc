@@ -1,4 +1,5 @@
 {
+  "sourceType": "unambiguous",
   "presets": [
     "react-static/babel-preset.js"
   ]

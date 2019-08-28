@@ -13,7 +13,9 @@
     "test-mixpanel": "LANDR_MIXPANEL_TOKEN=04ad3098829fcd7c5700d75cea220530 ./bin/cli.js build",
     "test-npm": "rm -f land-*.tgz && npm pack && npm install --global ./landr-$npm_package_version.tgz && landr build && rm landr-*.tgz",
     "test": "npm run lint && npm run unit && npm run build && npm run test-npm && npm run test-mixpanel",
-    "start": "npm run build"
+    "start": "npm run build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -43,7 +45,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-a11y": "^5.1.11",
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/addons": "^5.1.11",
+    "@storybook/react": "^5.1.11",
     "ava": "^2.1.0",
+    "babel-loader": "^8.0.6",
     "csslint": "^1.0.5",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",

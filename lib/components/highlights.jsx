@@ -53,25 +53,24 @@ const Header = styled(Heading.h3) `
 export const render = (props) => {
   const boxes = props.highlights.map((highlight, index) => {
     return (
-      <Txt
+      <Box
         key={index}
         px={3}
         mb={2}
         width={[ 1, 1, 1 / 3, 1 / 3 ]}
-        align="center"
       >
-        <Header fontSize={22} mb={3}>
+        <Header fontSize={22} mb={3} align='center'>
           {highlight.title}
         </Header>
-        <Txt fontSize={14}>{highlight.description}</Txt>
-      </Txt>
+        <Txt align='center' fontSize={14}>{highlight.description}</Txt>
+      </Box>
     )
   })
 
   return (
     <Wrapper pt={45} pb={100}>
       <Container>
-        <Flex flexWrap='wrap' justifyContent="space-around" my={-3}>
+        <Flex flexWrap='wrap' justifyContent="space-around" mx={-3}>
           {boxes}
         </Flex>
       </Container>
