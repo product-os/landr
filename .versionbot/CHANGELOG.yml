@@ -1,4 +1,14 @@
 - commits:
+    - subject: Use newest rendition breakpoint handling
+      hash: cf46aa129aee28517c4c0d62e85b3230fb4cc77c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.14.0
+  date: 2019-08-28T13:24:54.991Z
+- commits:
     - subject: Fix missing theme in renderer
       hash: d800af58fbd2572e0e385aa91b2cdb75f8a33675
       body: ''
