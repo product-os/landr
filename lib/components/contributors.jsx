@@ -57,6 +57,7 @@ const PlaceholderPhoto = styled(Flex) `
   width: 170px;
   border-radius: 20px;
   border: 1px dashed rgba(250, 134, 0, 0.5);
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
@@ -110,7 +111,10 @@ export const render = (props) => {
           <Box px={2}>
             {props.contributing ? (
               <Link href={props.contributing} blank>
-                <PlaceholderPhoto>Reserved for you</PlaceholderPhoto>
+                <PlaceholderPhoto>
+                  <Img src={contributeIcon} mb={18} alt="new contributor" />
+                  <Txt>Reserved for you</Txt>
+                </PlaceholderPhoto>
               </Link>
             ) : (
               <PlaceholderPhoto>
