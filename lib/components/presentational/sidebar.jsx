@@ -11,7 +11,7 @@ const DesktopView = styled.aside `
 
   @media all and (min-width: ${(props) => {
     return props.theme.breakpoints[1]
-  }}) {
+  }}px) {
     display: block;
     border-left: 1px solid #dde1f0;
 
@@ -21,7 +21,7 @@ const DesktopView = styled.aside `
 
   @media all and (min-width: ${(props) => {
     return props.theme.breakpoints[2]
-  }}) {
+  }}px) {
     flex: 0 0 200px;
     margin-left: 80px;
   }
@@ -32,7 +32,7 @@ const MobileView = styled.aside `
 
   @media all and (min-width: ${(props) => {
     return props.theme.breakpoints[1]
-  }}) {
+  }}px) {
     display: none;
   }
 `
@@ -82,7 +82,7 @@ const Sidebar = ({
     <>
       <DesktopView>
         <FixedWrapper>
-          <Box px={[ 1, 1, 3, 4 ]} py={[ 1, 1, 4 ]}>
+          <Box px={[ 1, 1, 3, 4 ]} pb={[ 1, 1, 4 ]} pt={[ 1, 1, 6 ]}>
             {children}
           </Box>
         </FixedWrapper>
