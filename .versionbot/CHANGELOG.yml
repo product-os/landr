@@ -1,4 +1,14 @@
 - commits:
+    - subject: Fix missing theme in renderer
+      hash: d800af58fbd2572e0e385aa91b2cdb75f8a33675
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.13.1
+  date: 2019-08-28T12:48:08.360Z
+- commits:
     - subject: Add Storybook
       hash: 7958434e7ef5647792f7a83381f07594648c8b6c
       body: ''
