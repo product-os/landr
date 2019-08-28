@@ -1,4 +1,14 @@
 - commits:
+    - subject: Add Storybook
+      hash: 7958434e7ef5647792f7a83381f07594648c8b6c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.13.0
+  date: 2019-08-28T11:39:58.253Z
+- commits:
     - subject: 'contributors: Fix contributing ixon'
       hash: 796dcd428b25fbf9ce1c2a9b82d18901676a458f
       body: ''
