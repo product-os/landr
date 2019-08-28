@@ -49,7 +49,7 @@ const ProjectCard = styled(Flex) `
 
 const Screenshot = styled(Box) `
   background-image: url(${(props) => { return props.bg }});
-  background-position: center;
+  background-position: top center;
   background-size: cover;
   height: 200px;
   width: 100%;
