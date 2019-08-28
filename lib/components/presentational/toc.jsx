@@ -4,6 +4,10 @@ import {
   Box, Heading, Link
 } from 'rendition'
 
+const normalizeTitle = (str) => {
+  return str.split('`').join('')
+}
+
 const Toc = (props) => {
   return props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
@@ -15,7 +19,7 @@ const Toc = (props) => {
         })
         .map((entry) => {
           return {
-            title: entry[2],
+            title: normalizeTitle(entry[2]),
             path: `#${_.kebabCase(entry[2])}`
           }
         })
