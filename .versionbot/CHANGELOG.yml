@@ -1,4 +1,14 @@
 - commits:
+    - subject: Properly format code elements that appear in sidebar titles
+      hash: 4db1bf398d1ff416353b74b64d5ddb9c636bbf5b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.14.1
+  date: 2019-08-28T13:35:48.122Z
+- commits:
     - subject: Use newest rendition breakpoint handling
       hash: cf46aa129aee28517c4c0d62e85b3230fb4cc77c
       body: ''
