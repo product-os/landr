@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'docs: Replace fixed sidebar with sticky behaviour'
+      hash: 533d8c472ea32c183b217999f9897288f87b143a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.14.2
+  date: 2019-09-03T11:06:07.030Z
+- commits:
     - subject: Properly format code elements that appear in sidebar titles
       hash: 4db1bf398d1ff416353b74b64d5ddb9c636bbf5b
       body: ''
