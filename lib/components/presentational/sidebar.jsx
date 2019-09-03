@@ -22,7 +22,7 @@ const DesktopView = styled.aside `
   @media all and (min-width: ${(props) => {
     return props.theme.breakpoints[2]
   }}px) {
-    flex: 0 0 200px;
+    flex: 0 0 300px;
     margin-left: 80px;
   }
 `
@@ -37,16 +37,14 @@ const MobileView = styled.aside `
   }
 `
 
-const FixedWrapper = styled.div `
+const StickyWrapper = styled.div `
   z-index: 2;
-  position: fixed;
-  top: 82px;
+  position: sticky;
+  top: 0;
   bottom: 0;
 
   overflow-y: auto;
   width: 300px;
-  margin-right: -999px;
-  padding-right: 999px;
   padding-bottom: 80px;
 `
 
@@ -81,11 +79,11 @@ const Sidebar = ({
   return (
     <>
       <DesktopView>
-        <FixedWrapper>
-          <Box px={[ 1, 1, 3, 4 ]} pb={[ 1, 1, 4 ]} pt={[ 1, 1, 6 ]}>
+        <StickyWrapper>
+          <Box px={[ 1, 1, 3, 4 ]} pb={[ 1, 1, 4 ]} pt={[ 1, 1, 3 ]}>
             {children}
           </Box>
-        </FixedWrapper>
+        </StickyWrapper>
       </DesktopView>
 
       <MobileView>
