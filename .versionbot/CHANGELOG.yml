@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'nit: Remove unnecessary footer rule'
+      hash: 10be4a3ddaf216d7f0196da4b348ead2fafe318d
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.14.3
+  date: 2019-09-06T14:19:26.051Z
+- commits:
     - subject: 'docs: Replace fixed sidebar with sticky behaviour'
       hash: 533d8c472ea32c183b217999f9897288f87b143a
       body: ''
