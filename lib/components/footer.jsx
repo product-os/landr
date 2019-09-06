@@ -53,14 +53,6 @@ export const variants = (metadata, context, _route, routes) => {
     })
   }
 
-  if (metadata.data.images.banner) {
-    combinations.push({
-      logo: metadata.data.images.banner,
-      routes: toplevelRoutes,
-      toc: context.toc
-    })
-  }
-
   return combinations
 }
 
