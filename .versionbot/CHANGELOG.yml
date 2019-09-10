@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'config: Enable scrutinizer integration'
+      hash: 5e9896d6514f9ec7b387bb1545f2b3ea5b6041cc
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.14.4
+  date: 2019-09-10T10:03:08.065Z
+- commits:
     - subject: 'nit: Remove unnecessary footer rule'
       hash: 10be4a3ddaf216d7f0196da4b348ead2fafe318d
       body: ''
