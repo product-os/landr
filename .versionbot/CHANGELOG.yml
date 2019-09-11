@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'fix: Pin react-static version'
+      hash: e05adba73890881724c29a4e0868046c395e78e1
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.14.5
+  date: 2019-09-10T15:20:36.786Z
+- commits:
     - subject: 'config: Enable scrutinizer integration'
       hash: 5e9896d6514f9ec7b387bb1545f2b3ea5b6041cc
       body: ''
