@@ -4,6 +4,22 @@
     {
       "commits": [
         {
+          "subject": "Typo in architecture",
+          "hash": "7e6cdb73bcef387446c245bb01c85bd60fba2565",
+          "body": "Mainly triggering a redeploy, so that scrutinizer.json will be updated\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.6",
+      "date": "2019-09-12T15:13:13.898Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "fix: Pin react-static version",
           "hash": "e05adba73890881724c29a4e0868046c395e78e1",
           "body": "",
@@ -2071,8 +2087,71 @@
     }
   ],
   "contributing": "Contributing to Landr\n=====================\n\nWe're happy you're interested in Landr!\n\nAs a first step, make sure to take a look at the [architecture\ndocument](https://github.com/balena-io/landr/blob/master/ARCHITECTURE.md),\nwhich describes how Landr works.\n\nWhat can I contribute on?\n-------------------------\n\nThe main areas we would love to get your help with are:\n\n- Extending Landr to understand more open source conventions\n\nHave you seen open source projects adopting a new convention that would allow\nus to understand the project better and produce better websites? Let us know,\nor even better: make Landr understand them!\n\n- Making Landr sites look good no matter what information is available\n\nEach project is unique, and the parts that Landr can infer out of the box\nchange depending on the project. We want to consider all these combinations and\ncreate adaptative websites no matter what subset of information we have.\n\nThe best way to test this is by attempting to run Landr on any of your\nprojects, and checking if the results are not satisfactory.\n\nCommit Conventions\n------------------\n\nLandr uses the\n[OpenEmbedded](https://www.openembedded.org/wiki/Commit_Patch_Message_Guidelines)\ncommit conventions. We also require a `Change-type` footer tag that is either\n`patch`, `minor`, or `major`, depending on the change your patch makes in terms\nof [Semantic Versioning](https://semver.org).\n\nBalena CI\n---------\n\nLandr makes use of Balena's internal CI system which noy only runs the tests,\nbut automatically generates a CHANGELOG based on your commits and their\ncorresponding `Change-type`s.\n\nTests\n-----\n\nYou may run the test suite with the `npm test` command. We enable code coverage\nsupport, and you can see the report after running the tests by opening\n`coverage/index.html` in your browser.\n\nEditorConfig\n------------\n\nThis project makes use of [EditorConfig](https://editorconfig.org). Make sure\nyour editor supports it so that it doesn't deviate from indentation, line\nendings, and other text related conventions.\n",
+  "contributors": [
+    {
+      "username": "jviotti",
+      "avatar": "https://avatars0.githubusercontent.com/u/2192773?v=4"
+    },
+    {
+      "username": "dimitrisnl",
+      "avatar": "https://avatars2.githubusercontent.com/u/4951004?v=4"
+    },
+    {
+      "username": "balena-ci",
+      "avatar": "https://avatars0.githubusercontent.com/u/34882892?v=4"
+    },
+    {
+      "username": "LucianBuzzo",
+      "avatar": "https://avatars0.githubusercontent.com/u/15064535?v=4"
+    },
+    {
+      "username": "hobochild",
+      "avatar": "https://avatars2.githubusercontent.com/u/9499917?v=4"
+    },
+    {
+      "username": "tyrantkhan",
+      "avatar": "https://avatars1.githubusercontent.com/u/107844?v=4"
+    }
+  ],
+  "security": "# Reporting Security Issues\n\nThe Balena.io team and community take security bugs in all our products and\nopen source projects seriously. We appreciate your efforts to responsibly\ndisclose your findings, and will make every effort to acknowledge your\ncontributions.\n\nTo report a security issue, email\n[security@balena.io](mailto:security@balena.io). The Balena.io team will keep\nyou informed of the progress towards a fix, and may ask for additional\ninformation or guidance.\n\nReport security bugs in third-party modules to the person or team maintaining\nthe module. You can also report a vulnerability through the [Node Security\nProject](https://nodesecurity.io/report).\n",
+  "faq": [
+    {
+      "title": "How can I theme/configure my Landr website?",
+      "content": [
+        "para",
+        "The Landr team believes in a zero configuration approach. We think Landr should\nbe able to determine what you have and how to present it in the best possible\nway. We know this is a very ambitious goal, and if you think something is off,\n",
+        [
+          "link",
+          {
+            "href": "https://github.com/balena-io/landr/issues/new"
+          },
+          "reach out to us"
+        ],
+        "! Whatever you\nhave in mind, we can try to teach Landr about it, which benefits the community\nmore than adding a configuration flag."
+      ]
+    },
+    {
+      "title": "Can I extend my Landr website with a page I fully control?",
+      "content": [
+        "para",
+        "Sure! Landr generates static HTML, CSS, and JS. You can add more files to the\nbundle as you wish before pushing them to Netlify."
+      ]
+    },
+    {
+      "title": "Why is Landr using Netlify instead of GitHub Pages?",
+      "content": [
+        "para",
+        "Netlify can do everything that GitHub Pages can do, and it also provides some\nextra features and flexibility that we find really valuable for Landr, such as\nbeing able to deploy more than one branch of a site at the same time, A/B\ntesting, form submissions management, and more. On top all of that, Netlify is\nfree to use!"
+      ]
+    }
+  ],
   "codeOfConduct": "Contributor Covenant Code of Conduct\n====================================\n\nOur Pledge\n----------\n\nIn the interest of fostering an open and welcoming environment, we as\ncontributors and maintainers pledge to making participation in our project and\nour community a harassment-free experience for everyone, regardless of age,\nbody size, disability, ethnicity, sex characteristics, gender identity and\nexpression, level of experience, education, socio-economic status, nationality,\npersonal appearance, race, religion, or sexual identity and orientation.\n\nOur Standards\n-------------\n\nExamples of behavior that contributes to creating a positive environment\ninclude:\n\n- Using welcoming and inclusive language\n- Being respectful of differing viewpoints and experiences\n- Gracefully accepting constructive criticism\n- Focusing on what is best for the community\n- Showing empathy towards other community members\n\nExamples of unacceptable behavior by participants include:\n\n- The use of sexualized language or imagery and unwelcome sexual attention or\n  advances\n- Trolling, insulting/derogatory comments, and personal or political attacks\n- Public or private harassment\n- Publishing others' private information, such as a physical or electronic\n  address, without explicit permission\n- Other conduct which could reasonably be considered inappropriate in a\n  professional setting\n\nOur Responsibilities\n--------------------\n\nProject maintainers are responsible for clarifying the standards of acceptable\nbehavior and are expected to take appropriate and fair corrective action in\nresponse to any instances of unacceptable behavior.\n\nProject maintainers have the right and responsibility to remove, edit, or\nreject comments, commits, code, wiki edits, issues, and other contributions\nthat are not aligned to this Code of Conduct, or to ban temporarily or\npermanently any contributor for other behaviors that they deem inappropriate,\nthreatening, offensive, or harmful.\n\nScope\n-----\n\nThis Code of Conduct applies within all project spaces, and it also applies\nwhen an individual is representing the project or its community in public\nspaces.  Examples of representing a project or community include using an\nofficial project e-mail address, posting via an official social media account,\nor acting as an appointed representative at an online or offline event.\nRepresentation of a project may be further defined and clarified by project\nmaintainers.\n\nEnforcement\n-----------\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be\nreported by contacting the project team at [INSERT EMAIL ADDRESS]. All\ncomplaints will be reviewed and investigated and will result in a response that\nis deemed necessary and appropriate to the circumstances. The project team is\nobligated to maintain confidentiality with regard to the reporter of an\nincident.  Further details of specific enforcement policies may be posted\nseparately.\n\nProject maintainers who do not follow or enforce the Code of Conduct in good\nfaith may face temporary or permanent repercussions as determined by other\nmembers of the project's leadership.\n\nAttribution\n-----------\n\nThis Code of Conduct is adapted from the [Contributor Covenant][homepage],\nversion 1.4, available at\nhttps://www.contributor-covenant.org/version/1/4/code-of-conduct.html\n\n[homepage]: https://www.contributor-covenant.org\n\nFor answers to common questions about this code of conduct, see\nhttps://www.contributor-covenant.org/faq\n",
-  "architecture": "How does Landr work?\n====================\n\nThe main goal of Landr is to generate useful and decent websites to describe a\nsoftware project with the least possible amount of configuration. Landr is\nsupposed to be opitionated by design and rely on common open source conventions\nrather than on user input.\n\nmeta.json\n---------\n\nLandr reads all the information it needs to know about a repository from a file\ncalled `meta.json`, which is supposed to be the **only input for Landr**. This\nis a pretty big JSON file generated by a tool such as\n[scrutinizer](https://github.com/balena-io-modules/scrutinizer), which scans\nthe content of the repo, the GitHub API, the package managers where the\nrepository is published (i.e. npmjs.org), and much more. Check Landr's\n[`meta.json`](https://github.com/balena-io/landr/blob/master/meta.json) as an\nexample.\n\nRight now Landr works on the assumption that the `meta.json` file is there by\nthe time Landr runs. Within Balena, we do this by setting up Balena CI to run\n`scrutinizer` on every PR merge and making the `balena-ci` user commit the file\nto `master`. This is a step that makes it hard for people outside Balena to use\nLandr, and we hope to sort this out in the short term.\n\nThe amount of information we can obtain from a repository differs on the\nproject and on how standard the conventions that the project is adopting are,\nso most of the things that `meta.json` might contain is optional.\n\nRoutes\n------\n\nThe routes that Landr will statically generate are defined in\n[`lib/routes.js`](https://github.com/balena-io/landr/blob/master/lib/routes.js).\nThis file contains a function that takes `meta.json` and returns an array of\nroutes that Landr will render. Each route contains the following properties:\n\n- `title`: The page title, most often used inside `<title></title>`\n- `path`: The page path, as an array of fragments. For example `[ 'foo', 'bar'\n  ]` corresponds to `/foo/bar`\n- `context`: A free-form object that represents the page's focus information.\n  For example, a page that renders the project's code of conduct will have the\n  code of conduct plus any related information as its `context`\n\nThe order in which routes are returned doesn't make a difference.\n\nComponents\n----------\n\nThe Landr project ships with a collection of React component that represent the\nlibrary of UI section that Landr will use when rendering a website. These\ncomponents live in\n[`lib/components/`](https://github.com/balena-io/landr/tree/master/lib/components).\nEach component has the following properties:\n\n- `name`: The unique name of the component\n- `render`: A function that takes a `props` object and returns a React\n  component\n- `variants`: The different ways this component can be rendered given a\n  `meta.json`. We will explain this in more detail later\n\nVariants\n--------\n\nEach component has a `variants` function that takes information such as\n`meta.json` and a route `context` and returns an array defining all the ways\nthat the component is happy to render itself given the information it has,\nsorted by order of preference.\n\nFor example, a jumbotron may have a title, a subtitle, and a primary action\nbutton. Our jumbotron component may define that its happy to render itself in\nthe following ways:\n\n- Using the GitHub description as a title, the README first paragraph as a\n  subtitle, and a link to GitHub Releases as the primary action button\n- Using the GitHub description as a title, and the README first paragraph as a\n  subtitle, without a primary action button\n- Using the repository name as the title, and the README first paragraph as a\n  subtitle, without a primary action button\n- And more\n\nIf a \"choice\" is returned before another choice, then the component expresses\nthat it *prefers* to be rendered in the first way, but is happy to take any\nchoice. We internally call these preferences the *rank*.\n\nRules\n-----\n\nThe Landr engine will go through each of the routes defined for a website, and\nit will generate all possible combinations of components and the choices they\nare willing to consider when rendering themselves. A lot of these options will\nbe invalid, such as saying that we want a footer before the navigation bar, so\nLandr also has a set of declarative rules to filter out invalid component\ncombinations. These rules live in\n[`lib/rules.js`](https://github.com/balena-io/landr/blob/master/lib/rules.js)\nand express things such as:\n\n- If there is a jumbotron, then it must be positioned right after a navigation\n  bar\n- There should not be a jumbotron in pages other than the main page\n- The footer should be the last thing in a page\n\nAnd many more.\n\nLandr will check every combination it generated against these rules, keep the\nvalid ones, and choose the one where the components are rendered with the\nhighest possible ranks.\n\nRendering\n---------\n\nOnce we figure out what to display and how, we generate React components and\npass them to [React Static](https://github.com/nozzle/react-static) to get you\nsome lovely static files!\n",
+  "architecture": "How does Landr work?\n====================\n\nThe main goal of Landr is to generate useful and decent websites to describe a\nsoftware project with the least possible amount of configuration. Landr is\nsupposed to be opinionated by design and rely on common open source conventions\nrather than on user input.\n\nmeta.json\n---------\n\nLandr reads all the information it needs to know about a repository from a file\ncalled `meta.json`, which is supposed to be the **only input for Landr**. This\nis a pretty big JSON file generated by a tool such as\n[scrutinizer](https://github.com/balena-io-modules/scrutinizer), which scans\nthe content of the repo, the GitHub API, the package managers where the\nrepository is published (i.e. npmjs.org), and much more. Check Landr's\n[`meta.json`](https://github.com/balena-io/landr/blob/master/meta.json) as an\nexample.\n\nRight now Landr works on the assumption that the `meta.json` file is there by\nthe time Landr runs. Within Balena, we do this by setting up Balena CI to run\n`scrutinizer` on every PR merge and making the `balena-ci` user commit the file\nto `master`. This is a step that makes it hard for people outside Balena to use\nLandr, and we hope to sort this out in the short term.\n\nThe amount of information we can obtain from a repository differs on the\nproject and on how standard the conventions that the project is adopting are,\nso most of the things that `meta.json` might contain is optional.\n\nRoutes\n------\n\nThe routes that Landr will statically generate are defined in\n[`lib/routes.js`](https://github.com/balena-io/landr/blob/master/lib/routes.js).\nThis file contains a function that takes `meta.json` and returns an array of\nroutes that Landr will render. Each route contains the following properties:\n\n- `title`: The page title, most often used inside `<title></title>`\n- `path`: The page path, as an array of fragments. For example `[ 'foo', 'bar'\n  ]` corresponds to `/foo/bar`\n- `context`: A free-form object that represents the page's focus information.\n  For example, a page that renders the project's code of conduct will have the\n  code of conduct plus any related information as its `context`\n\nThe order in which routes are returned doesn't make a difference.\n\nComponents\n----------\n\nThe Landr project ships with a collection of React component that represent the\nlibrary of UI section that Landr will use when rendering a website. These\ncomponents live in\n[`lib/components/`](https://github.com/balena-io/landr/tree/master/lib/components).\nEach component has the following properties:\n\n- `name`: The unique name of the component\n- `render`: A function that takes a `props` object and returns a React\n  component\n- `variants`: The different ways this component can be rendered given a\n  `meta.json`. We will explain this in more detail later\n\nVariants\n--------\n\nEach component has a `variants` function that takes information such as\n`meta.json` and a route `context` and returns an array defining all the ways\nthat the component is happy to render itself given the information it has,\nsorted by order of preference.\n\nFor example, a jumbotron may have a title, a subtitle, and a primary action\nbutton. Our jumbotron component may define that its happy to render itself in\nthe following ways:\n\n- Using the GitHub description as a title, the README first paragraph as a\n  subtitle, and a link to GitHub Releases as the primary action button\n- Using the GitHub description as a title, and the README first paragraph as a\n  subtitle, without a primary action button\n- Using the repository name as the title, and the README first paragraph as a\n  subtitle, without a primary action button\n- And more\n\nIf a \"choice\" is returned before another choice, then the component expresses\nthat it *prefers* to be rendered in the first way, but is happy to take any\nchoice. We internally call these preferences the *rank*.\n\nRules\n-----\n\nThe Landr engine will go through each of the routes defined for a website, and\nit will generate all possible combinations of components and the choices they\nare willing to consider when rendering themselves. A lot of these options will\nbe invalid, such as saying that we want a footer before the navigation bar, so\nLandr also has a set of declarative rules to filter out invalid component\ncombinations. These rules live in\n[`lib/rules.js`](https://github.com/balena-io/landr/blob/master/lib/rules.js)\nand express things such as:\n\n- If there is a jumbotron, then it must be positioned right after a navigation\n  bar\n- There should not be a jumbotron in pages other than the main page\n- The footer should be the last thing in a page\n\nAnd many more.\n\nLandr will check every combination it generated against these rules, keep the\nvalid ones, and choose the one where the components are rendered with the\nhighest possible ranks.\n\nRendering\n---------\n\nOnce we figure out what to display and how, we generate React components and\npass them to [React Static](https://github.com/nozzle/react-static) to get you\nsome lovely static files!\n",
+  "maintainers": [
+    "@dimitrisnl",
+    "@jviotti",
+    "@lucianbuzzo"
+  ],
   "readme": "<img src=\"./banner.png\" height=\"200\" />\n\n[![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)\n[![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md)\n\nGenerate great websites for your projects with zero configuration.\n\n- **Functional Websites**: Landr renders your project and its documentation in\n  a gorgeous and UX friendly way to your end users, in the best possible way\n  while you focus on shipping features\n- **Follows OSS Conventions**: Landr understands most common repository\n  conventions, and makes use of them fully. Build a great repository and get a\n  great website for it. Its a win-win\n- **Fully Automatic**: Landr requires no configuration at all. It is smart\n  enough to figure out what it needs on its own. Point it to a repository, hold\n  tight, and let Landr do its magic\n\n**Landr is alpha software** and its under heavy development, so various things\nmight be broken in the best case!\n\nInstallation\n------------\n\n1. Install the Landr CLI:\n\n    ```\n    npm install --global landr\n    ```\n\n2. Go to a Balena CI powered repo:\n\n    ```\n    cd path/to/repository\n    ```\n\n3. Generate your website:\n\n    ```\n    landr\n    ```\n\n[Head over to our docs!](https://github.com/balena-io/landr/tree/master/docs)\n\nMotivation\n----------\n\nCreating a website for a project is hard and time-consuming. Yet, a great\nwebsite is one of the best ways to promote a project. Landr aims to capture our\nexperience presenting a wide variety of open source projects on the web, so\nthat having a website that can compete with your favourite massively popular\nopen source project is not only possible, but comes with zero overhead.\n\nExamples\n--------\n\nThe Landr website is of course based on Landr! You may also enjoy the following\nsites:\n\n- https://www.balena.io/etcher/ - Flash OS images to SD cards & USB drives,\n  safely and easily\n- https://www.balena.io/fin/ - A board for fleet owners\n- https://www.balena.io/os/ - A host OS tailored for containers, designed for\n  reliability, proven in production\n- https://www.balena.io/open/ - Open source software to manage connected IoT\n  devices\n- https://www.balena.io/engine/ - A container engine built for IoT\n\nDo you know of any Landr website we missed? [Let us\nknow!](https://github.com/balena-io/landr/issues/new?labels=examples&title=Add%20this%20Landr%20website%20to%20the%20examples)\n\nGetting Help\n------------\n\nIf you're having any problem, please [raise an\nissue](https://github.com/balena-io/landr/issues/new) on GitHub and the Landr\nteam will be happy to help.\n\nContributing\n------------\n\nDo you want to help make Landr better? Take a look at our [Contributing\nGuide](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md). Hope to\nsee you around!\n\nLicense\n-------\n\nLandr is free software, and may be redistributed under the terms specified in\nthe [license](https://github.com/balena-io/landr/blob/master/LICENSE).\n",
   "installationSteps": {
     "headers": [],
@@ -2139,6 +2218,9 @@
   "fork": false,
   "description": "Repository + Landr = Website",
   "stars": 25,
+  "homepage": "https://www.versionbot.com",
+  "repository_url": "https://github.com/balena-io/landr.git",
+  "active": true,
   "owner": {
     "avatar": "https://avatars1.githubusercontent.com/u/6157842?v=4",
     "handle": "balena-io",
@@ -2179,10 +2261,11 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-11T06:57:39Z",
+  "lastCommitDate": "2019-09-12T15:26:55Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
-  "latestPreRelease": null
+  "latestPreRelease": null,
+  "version": "5.14.6"
 }
