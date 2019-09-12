@@ -17,30 +17,17 @@
 const fs = require('fs')
 const tmp = require('tmp')
 const Bluebird = require('bluebird')
-const yaml = require('js-yaml')
 const puppeteer = require('puppeteer')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 const path = require('path')
+const fetch = require('node-fetch')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
-const getHighlights = (readme) => {
-  const tree = _.tail(markdown.parse(readme))
-  return tree[3].slice(1).map((highlight) => {
-    return {
-      title: highlight.slice(1)[0][1],
-      description: highlight.slice(1)[1].replace(/^:\s+/, '')
-    }
-  })
-}
-
-const getMotivation = (readme) => {
-  const tree = _.tail(markdown.parse(readme))
-  const startIndex = _.findIndex(tree, (node) => {
-    return _.first(node) === 'header' && _.last(node) === 'Motivation'
-  })
-
-  return tree[startIndex + 1]
+const getScrutinizerData = ({owner, repo}) => {
+  return fetch(`https://raw.githubusercontent.com/${owner}/${repo}/gh-pages/scrutinizer.json`)
+    .then(res => res.json())
+    .catch(err => console.log(err))
 }
 
 const getScreenshot = async (website) => {
@@ -61,36 +48,6 @@ const getScreenshot = async (website) => {
   return `data:image/png;base64,${base64}`
 }
 
-const getInstallationSteps = (readme) => {
-  const tree = _.tail(markdown.parse(readme))
-  const startIndex = _.findIndex(tree, (node) => {
-    return _.first(node) === 'header' && _.last(node) === 'Installation'
-  })
-
-  const header = tree[startIndex]
-  const rest = tree.slice(startIndex + 1)
-  const endIndex = _.findIndex(rest, (node) => {
-    return _.first(node) === 'header' && node[1].level === header[1].level
-  })
-
-  const content = rest.slice(0, endIndex)
-  // eslint-disable-next-line lodash/matches-prop-shorthand
-  const listIndex = _.findIndex(content, (node) => {
-    return node[0] === 'numberlist'
-  })
-
-  if (listIndex === -1) {
-    return null
-  }
-
-  return {
-    headers: [],
-    steps: _.tail(content[listIndex]).map((node) => {
-      return _.tail(node)
-    }),
-    footer: content.slice(listIndex + 1)
-  }
-}
 
 const parseFAQ = (text) => {
   const tree = _.tail(markdown.parse(text))
@@ -146,18 +103,44 @@ const parseMarkdown = (file) => {
 }
 
 Bluebird.resolve().then(async () => {
-  console.log(JSON.stringify({
-    slug: 'repository-balena-io-landr',
+
+  const scrutinizerData = await getScrutinizerData({
+    owner: 'balena-io',
+    repo: 'landr'
+  })
+
+  // Unused keys -> readme, lastCommitDate, dependencies
+  const {
+    name,
+    public,
+    fork,
+    license,
+    description,
+    version,
+    latestRelease,
+    latestPreRelease,
+    contributing,
+    architecture,
+    changelog,
+    codeOfConduct,
+    installationSteps,
+    motivation,
+    stars,
+    owner
+  } = scrutinizerData
+
+  const data = {
+    slug: name,
     type: 'repository',
-    version: '1.0.0',
+    version: version,
     markers: [],
     tags: [],
     links: {},
     active: true,
     data: {
-      license: require(path.join(PROJECT_DIRECTORY, 'package.json')).license,
-      name: require(path.join(PROJECT_DIRECTORY, 'package.json')).name,
-      tagline: 'Repository + Landr = Website',
+      license: license,
+      name: name,
+      tagline: description,
       images: {
         // Image at the top README
         banner: `data:image/png;base64,${Buffer.from(fs.readFileSync('./banner.png')).toString('base64')}`
@@ -188,20 +171,20 @@ Bluebird.resolve().then(async () => {
         return name.slice(1)
       }),
 
-      changelog: yaml.safeLoad(fs.readFileSync('.versionbot/CHANGELOG.yml', 'utf8')),
+      changelog: changelog,
 
       faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
 
       contributing: {
-        architecture: parseMarkdown('ARCHITECTURE.md'),
-        guide: parseMarkdown('CONTRIBUTING.md'),
-        codeOfConduct: parseMarkdown('CODE_OF_CONDUCT.md'),
+        architecture: architecture ? parseMarkdown(architecture) : null,
+        guide: contributing ? parseMarkdown(contributing) : null,
+        codeOfConduct: codeOfConduct ? parseMarkdown(codeOfConduct) : null,
         security: parseMarkdown('SECURITY.md')
       },
 
-      motivation: getMotivation(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
-      highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
-      installation: getInstallationSteps(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
+      motivation: motivation,
+      highlights: highlights,
+      installation: installationSteps,
 
       blog: [
         Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
@@ -238,16 +221,16 @@ Bluebird.resolve().then(async () => {
       },
 
       github: {
-        public: true,
-        fork: false,
-        stars: 41,
+        public: public,
+        fork: fork,
+        stars: stars,
         owner: {
-          handle: 'balena-io',
-          type: 'org',
-          name: 'balena',
+          handle: owner.handle,
+          type: owner.type,
+          name: owner.handle,
           // eslint-disable-next-line max-len
           description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
-          url: 'https://www.balena.io',
+          url: owner.url,
           email: 'hello@balena.io',
           avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
         },
@@ -295,9 +278,20 @@ Bluebird.resolve().then(async () => {
           username: 'dimitrisnl',
           avatar: 'https://avatars2.githubusercontent.com/u/4951004'
         }
-      ]
+      ],
+      releases: {
+        latestRelease,
+        latestPreRelease
+      }
     }
-  }, null, 2))
+  }
+
+  return fs.writeFile("meta.json", JSON.stringify(data), (err) => {
+    if(err) {
+        return console.log(err);
+    }
+});
+
 }).catch((error) => {
   console.error(error)
   process.exit(1)
