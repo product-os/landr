@@ -24,10 +24,14 @@ const path = require('path')
 const fetch = require('node-fetch')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
-const getScrutinizerData = ({owner, repo}) => {
-  return fetch(`https://raw.githubusercontent.com/${owner}/${repo}/gh-pages/scrutinizer.json`)
-    .then(res => res.json())
-    .catch(err => console.log(err))
+const getScrutinizerData = ({
+  owner, repo
+}) => {
+  return fetch(
+    `https://raw.githubusercontent.com/${owner}/${repo}/gh-pages/scrutinizer.json`
+  )
+    .then((res) => { return res.json() })
+    .catch((err) => { return console.log(err) })
 }
 
 const getScreenshot = async (website) => {
@@ -46,23 +50,6 @@ const getScreenshot = async (website) => {
   await browser.close()
   const base64 = Buffer.from(fs.readFileSync(location)).toString('base64')
   return `data:image/png;base64,${base64}`
-}
-
-
-const parseFAQ = (text) => {
-  const tree = _.tail(markdown.parse(text))
-  const result = []
-
-  tree.forEach((node, index) => {
-    if (node[0] === 'header') {
-      result.push({
-        title: _.last(node),
-        content: tree[index + 1]
-      })
-    }
-  })
-
-  return result
 }
 
 const normalize = (file, jsonml) => {
@@ -84,11 +71,42 @@ const normalize = (file, jsonml) => {
   })
 }
 
+const getHighlights = (readme) => {
+  const tree = _.tail(markdown.parse(readme))
+  return tree[3].slice(1).map((highlight) => {
+    return {
+      title: highlight.slice(1)[0][1],
+      description: highlight.slice(1)[1].replace(/^:\s+/, '')
+    }
+  })
+}
+
+const parseRawMarkdown = (file, title) => {
+  const rawData = _.tail(markdown.parse(file))
+
+  return {
+    filename: file,
+    mime: 'text/markdown',
+
+    // eslint-disable-next-line lodash/matches-shorthand
+    title: _.last(_.find(rawData, (node) => {
+      return node[0] === 'header' && node[1].level === 1
+    })
+    ),
+
+    data: rawData
+  }
+}
+
 const parseMarkdown = (file) => {
-  const tree =
-    normalize(path.join(PROJECT_DIRECTORY, file),
-      _.tail(markdown.parse(fs.readFileSync(
-        path.join(PROJECT_DIRECTORY, file), 'utf8'))))
+  const tree = normalize(
+    path.join(PROJECT_DIRECTORY, file),
+    _.tail(
+      markdown.parse(
+        fs.readFileSync(path.join(PROJECT_DIRECTORY, file), 'utf8')
+      )
+    )
+  )
   return {
     filename: file,
     mime: 'text/markdown',
@@ -96,203 +114,203 @@ const parseMarkdown = (file) => {
     // eslint-disable-next-line lodash/matches-shorthand
     title: _.last(_.find(tree, (node) => {
       return node[0] === 'header' && node[1].level === 1
-    })),
+    })
+    ),
 
     data: tree
   }
 }
 
-Bluebird.resolve().then(async () => {
+Bluebird.resolve()
+  .then(async () => {
+    const scrutinizerData = await getScrutinizerData({
+      owner: 'balena-io',
+      repo: 'landr'
+    })
 
-  const scrutinizerData = await getScrutinizerData({
-    owner: 'balena-io',
-    repo: 'landr'
-  })
+    // Unused keys -> readme, lastCommitDate, dependencies
+    const {
+      active,
+      architecture,
+      changelog,
+      codeOfConduct,
+      contributing,
+      contributors,
+      description,
+      faq,
+      fork,
+      homepage,
+      installationSteps,
+      latestPreRelease,
+      latestRelease,
+      license,
+      maintainers,
+      motivation,
+      name,
+      owner,
+      public: isPublic,
+      // eslint-disable-next-line camelcase
+      repository_url,
+      security,
+      stars,
+      version
+    } = scrutinizerData
 
-  // Unused keys -> readme, lastCommitDate, dependencies
-  const {
-    name,
-    public,
-    fork,
-    license,
-    description,
-    version,
-    latestRelease,
-    latestPreRelease,
-    contributing,
-    architecture,
-    changelog,
-    codeOfConduct,
-    installationSteps,
-    motivation,
-    stars,
-    owner
-  } = scrutinizerData
+    const data = {
+      slug: name,
+      type: 'repository',
+      version,
+      markers: [],
+      tags: [],
+      links: {},
+      active,
+      data: {
+        license,
+        name,
+        tagline: description,
+        images: {
+          // Image at the top README
+          banner: `data:image/png;base64,${Buffer.from(
+            fs.readFileSync('./banner.png')
+          ).toString('base64')}`
+        },
+        description: require(path.join(PROJECT_DIRECTORY, 'package.json'))
+          .description,
+        version: require(path.join(PROJECT_DIRECTORY, 'package.json')).version,
 
-  const data = {
-    slug: name,
-    type: 'repository',
-    version: version,
-    markers: [],
-    tags: [],
-    links: {},
-    active: true,
-    data: {
-      license: license,
-      name: name,
-      tagline: description,
-      images: {
-        // Image at the top README
-        banner: `data:image/png;base64,${Buffer.from(fs.readFileSync('./banner.png')).toString('base64')}`
-      },
-      description: require(path.join(PROJECT_DIRECTORY, 'package.json')).description,
-      version: require(path.join(PROJECT_DIRECTORY, 'package.json')).version,
+        // Using Detectorist
+        type: 'npm',
 
-      // Using Detectorist
-      type: 'npm',
+        vcs: {
+          type: 'git',
+          branch: 'master'
+        },
+        links: {
+          issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json'))
+            .bugs.url,
+          homepage,
+          repository: repository_url
+        },
+        dns: {
+          cname: fs
+            .readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
+            .replace(/\n/g, '')
+        },
+        maintainers,
 
-      vcs: {
-        type: 'git',
-        branch: 'master'
-      },
-      links: {
-        issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json')).bugs.url,
-        homepage: 'https://www.balena.io/landr',
-        repository: require(path.join(PROJECT_DIRECTORY, 'package.json')).repository.url
-          .replace(/^git\+/, '')
-          .replace(/\.git$/, '')
-      },
-      dns: {
-        cname: fs.readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
-          .replace(/\n/g, '')
-      },
-      maintainers: _.uniq(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'CODEOWNERS'), 'utf8')
-        .match(/@[\S]+/g)).map((name) => {
-        return name.slice(1)
-      }),
+        changelog,
 
-      changelog: changelog,
+        faq,
 
-      faq: parseFAQ(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'FAQ.md'), 'utf8')),
+        contributing: {
+          architecture: architecture ? parseRawMarkdown(architecture) : null,
+          guide: contributing ? parseRawMarkdown(contributing) : null,
+          codeOfConduct: codeOfConduct ? parseRawMarkdown(codeOfConduct) : null,
+          security: security ? parseRawMarkdown(security) : null
+        },
 
-      contributing: {
-        architecture: architecture ? parseMarkdown(architecture) : null,
-        guide: contributing ? parseMarkdown(contributing) : null,
-        codeOfConduct: codeOfConduct ? parseMarkdown(codeOfConduct) : null,
-        security: parseMarkdown('SECURITY.md')
-      },
+        motivation,
+        highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
+        installation: installationSteps,
 
-      motivation: motivation,
-      highlights: highlights,
-      installation: installationSteps,
+        blog: [
+          Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
+            // We can obtain these from the git history
+            published_at: '2019-07-08T19:19:00.016Z',
+            author: {
+              handle: 'jviotti'
+            }
+          })
+        ],
 
-      blog: [
-        Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
-          // We can obtain these from the git history
-          published_at: '2019-07-08T19:19:00.016Z',
-          author: {
-            handle: 'jviotti'
+        docs: {
+          latest: '1.0.0',
+          tags: {
+            '1.0.0': [
+              parseMarkdown('docs/01-getting-started.md'),
+              parseMarkdown('docs/02-cli.md'),
+              parseMarkdown('docs/03-conventions.md'),
+              parseMarkdown('docs/04-running-landr-in-ci.md')
+            ],
+            '0.1.1': [
+              parseMarkdown('docs/01-getting-started.md'),
+              parseMarkdown('docs/02-cli.md'),
+              parseMarkdown('docs/03-conventions.md'),
+              parseMarkdown('docs/04-running-landr-in-ci.md')
+            ],
+            '0.1.0': [
+              parseMarkdown('docs/01-getting-started.md'),
+              parseMarkdown('docs/02-cli.md'),
+              parseMarkdown('docs/03-conventions.md'),
+              parseMarkdown('docs/04-running-landr-in-ci.md')
+            ]
           }
-        })
-      ],
+        },
 
-      docs: {
-        latest: '1.0.0',
-        tags: {
-          '1.0.0': [
-            parseMarkdown('docs/01-getting-started.md'),
-            parseMarkdown('docs/02-cli.md'),
-            parseMarkdown('docs/03-conventions.md'),
-            parseMarkdown('docs/04-running-landr-in-ci.md')
-          ],
-          '0.1.1': [
-            parseMarkdown('docs/01-getting-started.md'),
-            parseMarkdown('docs/02-cli.md'),
-            parseMarkdown('docs/03-conventions.md'),
-            parseMarkdown('docs/04-running-landr-in-ci.md')
-          ],
-          '0.1.0': [
-            parseMarkdown('docs/01-getting-started.md'),
-            parseMarkdown('docs/02-cli.md'),
-            parseMarkdown('docs/03-conventions.md'),
-            parseMarkdown('docs/04-running-landr-in-ci.md')
+        github: {
+          public: isPublic,
+          fork,
+          stars,
+          owner: {
+            handle: owner.handle,
+            type: owner.type,
+            name: owner.handle,
+            // eslint-disable-next-line max-len
+            description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
+            url: owner.url,
+            email: 'hello@balena.io',
+            avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
+          },
+          usedBy: [
+            {
+              owner: 'balena-io',
+              repo: 'etcher',
+              website: 'https://www.balena.io/etcher/',
+              description:
+                'Flash OS images to SD cards & USB drives, safely and easily',
+              screenshot: await getScreenshot('https://www.balena.io/etcher/')
+            },
+            {
+              owner: 'balena-os',
+              repo: 'meta-balena',
+              website: 'https://www.balena.io/os/',
+              description:
+                'A host OS tailored for containers, designed for reliability, proven in production',
+              screenshot: await getScreenshot('https://www.balena.io/os/')
+            },
+            {
+              owner: 'balena-io',
+              repo: 'open-balena',
+              website: 'https://www.balena.io/open/',
+              description:
+                'Open source software to manage connected IoT devices',
+              screenshot: await getScreenshot('https://www.balena.io/open/')
+            },
+            {
+              owner: 'balena-os',
+              repo: 'balena-engine',
+              website: 'https://www.balena.io/engine/',
+              description: 'A container engine built for IoT',
+              screenshot: await getScreenshot('https://www.balena.io/engine/')
+            }
           ]
+        },
+        contributors,
+        releases: {
+          latestRelease,
+          latestPreRelease
         }
-      },
-
-      github: {
-        public: public,
-        fork: fork,
-        stars: stars,
-        owner: {
-          handle: owner.handle,
-          type: owner.type,
-          name: owner.handle,
-          // eslint-disable-next-line max-len
-          description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
-          url: owner.url,
-          email: 'hello@balena.io',
-          avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
-        },
-        usedBy: [
-          {
-            owner: 'balena-io',
-            repo: 'etcher',
-            website: 'https://www.balena.io/etcher/',
-            description: 'Flash OS images to SD cards & USB drives, safely and easily',
-            screenshot: await getScreenshot('https://www.balena.io/etcher/')
-          },
-          {
-            owner: 'balena-os',
-            repo: 'meta-balena',
-            website: 'https://www.balena.io/os/',
-            description: 'A host OS tailored for containers, designed for reliability, proven in production',
-            screenshot: await getScreenshot('https://www.balena.io/os/')
-          },
-          {
-            owner: 'balena-io',
-            repo: 'open-balena',
-            website: 'https://www.balena.io/open/',
-            description: 'Open source software to manage connected IoT devices',
-            screenshot: await getScreenshot('https://www.balena.io/open/')
-          },
-          {
-            owner: 'balena-os',
-            repo: 'balena-engine',
-            website: 'https://www.balena.io/engine/',
-            description: 'A container engine built for IoT',
-            screenshot: await getScreenshot('https://www.balena.io/engine/')
-          }
-        ]
-      },
-      contributors: [
-        {
-          username: 'jviotti',
-          avatar: 'https://avatars2.githubusercontent.com/u/2192773'
-        },
-        {
-          username: 'lucianbuzzo',
-          avatar: 'https://avatars2.githubusercontent.com/u/15064535'
-        },
-        {
-          username: 'dimitrisnl',
-          avatar: 'https://avatars2.githubusercontent.com/u/4951004'
-        }
-      ],
-      releases: {
-        latestRelease,
-        latestPreRelease
       }
     }
-  }
 
-  return fs.writeFile("meta.json", JSON.stringify(data), (err) => {
-    if(err) {
-        return console.log(err);
-    }
-});
-
-}).catch((error) => {
-  console.error(error)
-  process.exit(1)
-})
+    // eslint-disable-next-line
+    return fs.writeFile('meta.json', JSON.stringify(data), (err) => {
+      if (err) {
+        return console.log(err)
+      }
+    })
+  })
+  .catch((error) => {
+    console.error(error)
+    process.exit(1)
+  })
