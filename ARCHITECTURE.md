@@ -3,7 +3,7 @@ How does Landr work?
 
 The main goal of Landr is to generate useful and decent websites to describe a
 software project with the least possible amount of configuration. Landr is
-supposed to be opitionated by design and rely on common open source conventions
+supposed to be opinionated by design and rely on common open source conventions
 rather than on user input.
 
 meta.json
