@@ -4,6 +4,22 @@
     {
       "commits": [
         {
+          "subject": "Port scrutinizer data",
+          "hash": "0930ba250dfe9c4e305aa14e124d027a9d25c876",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.15.0",
+      "date": "2019-09-13T11:52:48.104Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Typo in architecture",
           "hash": "7e6cdb73bcef387446c245bb01c85bd60fba2565",
           "body": "Mainly triggering a redeploy, so that scrutinizer.json will be updated\n",
@@ -2219,7 +2235,7 @@
   "description": "Repository + Landr = Website",
   "stars": 25,
   "homepage": "https://www.versionbot.com",
-  "repository_url": "https://github.com/balena-io/landr.git",
+  "repositoryUrl": "https://github.com/balena-io/landr.git",
   "active": true,
   "owner": {
     "avatar": "https://avatars1.githubusercontent.com/u/6157842?v=4",
@@ -2243,6 +2259,7 @@
     "markdown",
     "mixpanel-browser",
     "netlify",
+    "node-fetch",
     "node-vibrant",
     "react",
     "react-dom",
@@ -2261,11 +2278,11 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-12T15:26:55Z",
+  "lastCommitDate": "2019-09-13T12:02:43Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
-  "version": "5.14.6"
+  "version": "5.15.0"
 }

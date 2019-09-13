@@ -1,4 +1,14 @@
 - commits:
+    - subject: Port scrutinizer data
+      hash: 0930ba250dfe9c4e305aa14e124d027a9d25c876
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.15.0
+  date: 2019-09-13T12:02:17.795Z
+- commits:
     - subject: Typo in architecture
       hash: 7e6cdb73bcef387446c245bb01c85bd60fba2565
       body: |
@@ -8,7 +18,7 @@
         change-type: patch
       author: Dimitrios Lytras
   version: 5.14.6
-  date: 2019-09-12T15:26:28.074Z
+  date: 2019-09-12T15:13:13.898Z
 - commits:
     - subject: 'fix: Pin react-static version'
       hash: e05adba73890881724c29a4e0868046c395e78e1
