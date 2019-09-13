@@ -150,7 +150,7 @@ Bluebird.resolve()
       owner,
       public: isPublic,
       // eslint-disable-next-line camelcase
-      repository_url,
+      repositoryUrl,
       security,
       stars,
       version
@@ -189,7 +189,7 @@ Bluebird.resolve()
           issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json'))
             .bugs.url,
           homepage,
-          repository: repository_url
+          repository: repositoryUrl
         },
         dns: {
           cname: fs
