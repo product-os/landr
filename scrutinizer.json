@@ -4,6 +4,22 @@
     {
       "commits": [
         {
+          "subject": "Use the patched scrutinizer API",
+          "hash": "5d23195a1d2865d9c845026c6f29a57c006399c7",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.15.1",
+      "date": "2019-09-13T12:24:48.120Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Port scrutinizer data",
           "hash": "0930ba250dfe9c4e305aa14e124d027a9d25c876",
           "body": "",
@@ -2278,11 +2294,11 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-13T12:02:43Z",
+  "lastCommitDate": "2019-09-13T12:32:43Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
-  "version": "5.15.0"
+  "version": "5.15.1"
 }

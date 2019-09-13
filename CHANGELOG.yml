@@ -1,4 +1,14 @@
 - commits:
+    - subject: Use the patched scrutinizer API
+      hash: 5d23195a1d2865d9c845026c6f29a57c006399c7
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.15.1
+  date: 2019-09-13T12:32:03.955Z
+- commits:
     - subject: Port scrutinizer data
       hash: 0930ba250dfe9c4e305aa14e124d027a9d25c876
       body: ''
@@ -7,7 +17,7 @@
         change-type: minor
       author: Dimitrios Lytras
   version: 5.15.0
-  date: 2019-09-13T12:02:17.795Z
+  date: 2019-09-13T11:52:48.104Z
 - commits:
     - subject: Typo in architecture
       hash: 7e6cdb73bcef387446c245bb01c85bd60fba2565
