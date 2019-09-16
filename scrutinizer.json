@@ -4,6 +4,22 @@
     {
       "commits": [
         {
+          "subject": "Tidy-up scrutinizer-stub",
+          "hash": "10b2703cd1746e306447e016cfeac2602a6ac005",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.0",
+      "date": "2019-09-16T10:42:59.545Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Use the patched scrutinizer API",
           "hash": "5d23195a1d2865d9c845026c6f29a57c006399c7",
           "body": "",
@@ -2269,6 +2285,7 @@
     "file-type",
     "generatorics",
     "git-branch",
+    "gitinfo",
     "handlebars",
     "handlebars-helpers",
     "lodash",
@@ -2294,11 +2311,11 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-13T12:32:43Z",
+  "lastCommitDate": "2019-09-16T10:58:14Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
-  "version": "5.15.1"
+  "version": "5.16.0"
 }
