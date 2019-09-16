@@ -48,6 +48,8 @@ export const variants = (metadata) => {
   return combinations
 }
 
+const EXCLUDED_CONTRIBUTORS = [ 'balena-ci' ]
+
 const GITHUB_PROFILE_PATH = 'https://github.com'
 
 const PlaceholderPhoto = styled(Flex) `
@@ -63,25 +65,27 @@ const PlaceholderPhoto = styled(Flex) `
 `
 
 export const render = (props) => {
-  const list = sortBy(props.contributors, 'username').map((contributor) => {
-    return (
-      <Box key={contributor.username} px={2}>
-        <Link
-          href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
-          tooltip={contributor.username}
-          blank
-        >
-          <Img
-            src={contributor.avatar}
-            style={{
-              height: '170px',
-              borderRadius: 8
-            }}
-          />
-        </Link>
-      </Box>
-    )
-  })
+  const list = sortBy(props.contributors, 'username')
+    .filter((contributor) => { return !EXCLUDED_CONTRIBUTORS.includes(contributor.username) })
+    .map((contributor) => {
+      return (
+        <Box key={contributor.username} px={2}>
+          <Link
+            href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
+            tooltip={contributor.username}
+            blank
+          >
+            <Img
+              src={contributor.avatar}
+              style={{
+                height: '170px',
+                borderRadius: 8
+              }}
+            />
+          </Link>
+        </Box>
+      )
+    })
 
   const CTA = props.repository ? (
     <Box>
