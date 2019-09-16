@@ -22,11 +22,18 @@ const markdown = require('markdown').markdown
 const _ = require('lodash')
 const path = require('path')
 const fetch = require('node-fetch')
+const createGitinfo = require('gitinfo')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
-const getScrutinizerData = ({
-  owner, repo
-}) => {
+const getScrutinizerData = () => {
+  const gitinfo = createGitinfo({
+    defaultBranchName: 'master',
+    gitPath: path.resolve(PROJECT_DIRECTORY, '.git')
+  })
+
+  const owner = gitinfo.getUsername()
+  const repo = gitinfo.getName()
+
   return fetch(
     `https://raw.githubusercontent.com/${owner}/${repo}/gh-pages/scrutinizer.json`
   )
@@ -123,10 +130,7 @@ const parseMarkdown = (file) => {
 
 Bluebird.resolve()
   .then(async () => {
-    const scrutinizerData = await getScrutinizerData({
-      owner: 'balena-io',
-      repo: 'landr'
-    })
+    const scrutinizerData = await getScrutinizerData()
 
     // Unused keys -> readme, lastCommitDate, dependencies
     const {
@@ -148,8 +152,9 @@ Bluebird.resolve()
       motivation,
       name,
       owner,
+
+      // Public is a reserved keyword
       public: isPublic,
-      // eslint-disable-next-line camelcase
       repositoryUrl,
       security,
       stars,
@@ -174,27 +179,17 @@ Bluebird.resolve()
             fs.readFileSync('./banner.png')
           ).toString('base64')}`
         },
-        description: require(path.join(PROJECT_DIRECTORY, 'package.json'))
-          .description,
-        version: require(path.join(PROJECT_DIRECTORY, 'package.json')).version,
+        description,
+        version,
 
         // Using Detectorist
         type: 'npm',
 
-        vcs: {
-          type: 'git',
-          branch: 'master'
-        },
         links: {
           issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json'))
             .bugs.url,
           homepage,
           repository: repositoryUrl
-        },
-        dns: {
-          cname: fs
-            .readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
-            .replace(/\n/g, '')
         },
         maintainers,
 
