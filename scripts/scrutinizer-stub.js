@@ -24,6 +24,9 @@ const path = require('path')
 const fetch = require('node-fetch')
 const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
+// TODO: Commented-out metadata are information we don't currently display
+// in the website so, we don't need to include their hardcoded values.
+
 const getScrutinizerData = ({
   owner, repo
 }) => {
@@ -148,8 +151,8 @@ Bluebird.resolve()
       motivation,
       name,
       owner,
+      // Public is a reserved keyword
       public: isPublic,
-      // eslint-disable-next-line camelcase
       repositoryUrl,
       security,
       stars,
@@ -174,28 +177,27 @@ Bluebird.resolve()
             fs.readFileSync('./banner.png')
           ).toString('base64')}`
         },
-        description: require(path.join(PROJECT_DIRECTORY, 'package.json'))
-          .description,
-        version: require(path.join(PROJECT_DIRECTORY, 'package.json')).version,
+        description,
+        version,
 
         // Using Detectorist
         type: 'npm',
 
-        vcs: {
-          type: 'git',
-          branch: 'master'
-        },
+        // vcs: {
+        //   type: 'git',
+        //   branch: 'master'
+        // },
         links: {
           issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json'))
             .bugs.url,
           homepage,
           repository: repositoryUrl
         },
-        dns: {
-          cname: fs
-            .readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
-            .replace(/\n/g, '')
-        },
+        // dns: {
+        //   cname: fs
+        //     .readFileSync(path.join(PROJECT_DIRECTORY, 'CNAME'), 'utf8')
+        //     .replace(/\n/g, '')
+        // },
         maintainers,
 
         changelog,
