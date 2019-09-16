@@ -4,6 +4,22 @@
     {
       "commits": [
         {
+          "subject": "Exclude balena-ci from contributors",
+          "hash": "a01ea646a0c46c3d4557794743b91c62d84af2f4",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.1",
+      "date": "2019-09-16T15:16:20.346Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Tidy-up scrutinizer-stub",
           "hash": "10b2703cd1746e306447e016cfeac2602a6ac005",
           "body": "",
@@ -2311,11 +2327,11 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-16T10:58:14Z",
+  "lastCommitDate": "2019-09-16T15:26:55Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
-  "version": "5.16.0"
+  "version": "5.16.1"
 }
