@@ -1,4 +1,14 @@
 - commits:
+    - subject: Guard against missing docs & blog data sources
+      hash: 27f89db99890c24ad42b5545b6a668d2492b49ec
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.16.2
+  date: 2019-09-18T09:39:27.516Z
+- commits:
     - subject: Exclude balena-ci from contributors
       hash: a01ea646a0c46c3d4557794743b91c62d84af2f4
       body: ''
