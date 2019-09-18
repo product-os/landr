@@ -28,8 +28,10 @@ export const name = 'Jumbotron'
 export const variants = (metadata, _context, _route, routes) => {
   const combinations = []
 
-  const entrypoint = metadata.data.docs.tags[metadata.data.docs.latest][0]
-  const entryUrl = _.find(routes, (definition) => {
+  const latestDocsVersion = metadata.data.docs.latest
+  const entrypoint = _.get(metadata, [ 'data', 'docs', 'tags', latestDocsVersion, '0' ])
+
+  const entryUrl = entrypoint && _.find(routes, (definition) => {
     return (
       definition.context.article &&
       definition.context.article.content.filename === entrypoint.filename
