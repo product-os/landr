@@ -1,4 +1,14 @@
 - commits:
+    - subject: Trigger build
+      hash: ece81d10aa29038794316987e05a94975ae73b7e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.16.3
+  date: 2019-09-19T14:38:27.880Z
+- commits:
     - subject: Guard against missing docs & blog data sources
       hash: 27f89db99890c24ad42b5545b6a668d2492b49ec
       body: ''
