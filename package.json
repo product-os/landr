@@ -25,7 +25,8 @@
     "website",
     "generation",
     "docs",
-    "project"
+    "project",
+    "ssg"
   ],
   "author": "Balena.io <hello@balena.io>",
   "license": "Apache-2.0",
