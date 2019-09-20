@@ -10,6 +10,22 @@
     {
       "commits": [
         {
+          "subject": "Grabs the docs & blog from scrutinizer",
+          "hash": "53142f7b440db2c1aeb659eabf477abd9e63dbf2",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.17.0",
+      "date": "2019-09-20T10:22:37.617Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Trigger new build",
           "hash": "4bc8e7570efb0282555eb8889b72a5d38da011eb",
           "body": "",
@@ -2395,7 +2411,7 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-20T09:50:34Z",
+  "lastCommitDate": "2019-09-20T10:33:13Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
@@ -2486,5 +2502,5 @@
       }
     ]
   },
-  "version": "5.16.4"
+  "version": "5.17.0"
 }
