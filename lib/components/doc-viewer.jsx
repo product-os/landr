@@ -71,7 +71,7 @@ export const variants = (metadata, context, route) => {
       current: route.path,
       toc: context.toc,
       versions: context.versions || [],
-      link: `${metadata.data.links.repository}/edit/master/${
+      link: `${metadata.data.links.repository.replace('.git', '')}/edit/master/${
         context.article.content.filename
       }`,
       jsonml: context.article.content.data,
