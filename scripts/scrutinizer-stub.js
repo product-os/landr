@@ -59,25 +59,6 @@ const getScreenshot = async (website) => {
   return `data:image/png;base64,${base64}`
 }
 
-const normalize = (file, jsonml) => {
-  return jsonml.map((node) => {
-    const content = _.last(node)
-
-    if (node[0] === 'img') {
-      Reflect.deleteProperty(node[1], 'alt')
-      const imagePath = path.resolve(path.dirname(file), node[1].href)
-      const base64 = Buffer.from(fs.readFileSync(imagePath)).toString('base64')
-      node[1].href = `data:image/png;base64,${base64}`
-    }
-
-    if (Array.isArray(content)) {
-      node[node.length - 1] = _.first(normalize(file, [ content ]))
-    }
-
-    return node
-  })
-}
-
 const getHighlights = (readme) => {
   const tree = _.tail(markdown.parse(readme))
   return tree[3].slice(1).map((highlight) => {
@@ -88,11 +69,13 @@ const getHighlights = (readme) => {
   })
 }
 
-const parseRawMarkdown = (file, title) => {
-  const rawData = _.tail(markdown.parse(file))
+const parseMarkdown = ({
+  filename, contents
+}) => {
+  const rawData = _.tail(markdown.parse(contents))
 
   return {
-    filename: file,
+    filename,
     mime: 'text/markdown',
 
     // eslint-disable-next-line lodash/matches-shorthand
@@ -105,29 +88,6 @@ const parseRawMarkdown = (file, title) => {
   }
 }
 
-const parseMarkdown = (file) => {
-  const tree = normalize(
-    path.join(PROJECT_DIRECTORY, file),
-    _.tail(
-      markdown.parse(
-        fs.readFileSync(path.join(PROJECT_DIRECTORY, file), 'utf8')
-      )
-    )
-  )
-  return {
-    filename: file,
-    mime: 'text/markdown',
-
-    // eslint-disable-next-line lodash/matches-shorthand
-    title: _.last(_.find(tree, (node) => {
-      return node[0] === 'header' && node[1].level === 1
-    })
-    ),
-
-    data: tree
-  }
-}
-
 Bluebird.resolve()
   .then(async () => {
     const scrutinizerData = await getScrutinizerData()
@@ -136,11 +96,13 @@ Bluebird.resolve()
     const {
       active,
       architecture,
+      blog,
       changelog,
       codeOfConduct,
       contributing,
       contributors,
       description,
+      docs,
       faq,
       fork,
       homepage,
@@ -198,47 +160,46 @@ Bluebird.resolve()
         faq,
 
         contributing: {
-          architecture: architecture ? parseRawMarkdown(architecture) : null,
-          guide: contributing ? parseRawMarkdown(contributing) : null,
-          codeOfConduct: codeOfConduct ? parseRawMarkdown(codeOfConduct) : null,
-          security: security ? parseRawMarkdown(security) : null
+          architecture: architecture ? parseMarkdown({
+            filename: 'ARCHITECTURE.md',
+            contents: architecture
+          }) : null,
+          guide: contributing ? parseMarkdown({
+            filename: 'CONTRIBUTING.md',
+            contents: contributing
+          }) : null,
+          codeOfConduct: codeOfConduct ? parseMarkdown({
+            filename: 'CODE_OF_CONDUCT.md',
+            contents: codeOfConduct
+          }) : null,
+          security: security ? parseMarkdown({
+            filename: 'SECURITY.md',
+            contents: security
+          }) : null
         },
 
         motivation,
         highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
         installation: installationSteps,
 
-        blog: [
-          Object.assign(parseMarkdown('blog/2019-07-08-hello-from-landr.md'), {
-            // We can obtain these from the git history
-            published_at: '2019-07-08T19:19:00.016Z',
-            author: {
-              handle: 'jviotti'
-            }
+        blog: _.map(blog, ({
+          filename, contents
+        }) => {
+          return parseMarkdown({
+            filename, contents
           })
-        ],
+        }),
 
         docs: {
-          latest: '1.0.0',
+          latest: version,
           tags: {
-            '1.0.0': [
-              parseMarkdown('docs/01-getting-started.md'),
-              parseMarkdown('docs/02-cli.md'),
-              parseMarkdown('docs/03-conventions.md'),
-              parseMarkdown('docs/04-running-landr-in-ci.md')
-            ],
-            '0.1.1': [
-              parseMarkdown('docs/01-getting-started.md'),
-              parseMarkdown('docs/02-cli.md'),
-              parseMarkdown('docs/03-conventions.md'),
-              parseMarkdown('docs/04-running-landr-in-ci.md')
-            ],
-            '0.1.0': [
-              parseMarkdown('docs/01-getting-started.md'),
-              parseMarkdown('docs/02-cli.md'),
-              parseMarkdown('docs/03-conventions.md'),
-              parseMarkdown('docs/04-running-landr-in-ci.md')
-            ]
+            [version]: _.map(docs, ({
+              filename, contents
+            }) => {
+              return parseMarkdown({
+                filename, contents
+              })
+            })
           }
         },
 
