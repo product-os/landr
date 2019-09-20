@@ -1,9 +1,28 @@
 {
   "license": "Apache-2.0",
   "blog": [
-    "Hello from Landr\n================\n\nHey there! We're excited to kickstart this project's blog! We want to grow\nLandr into the best way to get a website with little overhead, so that creators\nout there can focus on what they do best, and leverage Landr to present their\nwork in a beautiful way.\n\nThe plan is for this blog to contain mostly micro-posts describing how things\nare going, brainstorm some crazy ideas out loud, and tell everyone about the\nadditions we're making to the framework in a way that is more conversational\nthan a bunch of commits in a pull-request.\n\nTo stick to the plan, I would like to report that the core engine of Landr has\nbeen fully implemented, and that we built prototypes for things around a\nwebsite that are as important as the website itself such as analytics, SEO\nfriendly headers, favicons, robots.txt, you name it!\n\nThe next steps will be to start using the engine to create a professional\nlooking website, and the first project to get it will be, of course, Landr! The\nfirst website will probably be the hardest, but I'm sure things will ease out\nas we go!\n\nIf you are reading this blog post, you might have already figured out that we\nare prototyping a blog engine on top of Landr, and you would be spot on! We've\nseen projects successfully rely on microblogs as a better way to tell the story\nof a project, and we hope that Landr and other projects using Landr will take\nthis advantage as well!\n\nStay tuned!\n"
+    {
+      "filename": "blog/2019-07-08-hello-from-landr.md",
+      "contents": "Hello from Landr\n================\n\nHey there! We're excited to kickstart this project's blog! We want to grow\nLandr into the best way to get a website with little overhead, so that creators\nout there can focus on what they do best, and leverage Landr to present their\nwork in a beautiful way.\n\nThe plan is for this blog to contain mostly micro-posts describing how things\nare going, brainstorm some crazy ideas out loud, and tell everyone about the\nadditions we're making to the framework in a way that is more conversational\nthan a bunch of commits in a pull-request.\n\nTo stick to the plan, I would like to report that the core engine of Landr has\nbeen fully implemented, and that we built prototypes for things around a\nwebsite that are as important as the website itself such as analytics, SEO\nfriendly headers, favicons, robots.txt, you name it!\n\nThe next steps will be to start using the engine to create a professional\nlooking website, and the first project to get it will be, of course, Landr! The\nfirst website will probably be the hardest, but I'm sure things will ease out\nas we go!\n\nIf you are reading this blog post, you might have already figured out that we\nare prototyping a blog engine on top of Landr, and you would be spot on! We've\nseen projects successfully rely on microblogs as a better way to tell the story\nof a project, and we hope that Landr and other projects using Landr will take\nthis advantage as well!\n\nStay tuned!\n"
+    }
   ],
   "changelog": [
+    {
+      "commits": [
+        {
+          "subject": "Trigger new build",
+          "hash": "4bc8e7570efb0282555eb8889b72a5d38da011eb",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.4",
+      "date": "2019-09-20T09:40:08.316Z"
+    },
     {
       "commits": [
         {
@@ -2188,16 +2207,12 @@
   "contributing": "Contributing to Landr\n=====================\n\nWe're happy you're interested in Landr!\n\nAs a first step, make sure to take a look at the [architecture\ndocument](https://github.com/balena-io/landr/blob/master/ARCHITECTURE.md),\nwhich describes how Landr works.\n\nWhat can I contribute on?\n-------------------------\n\nThe main areas we would love to get your help with are:\n\n- Extending Landr to understand more open source conventions\n\nHave you seen open source projects adopting a new convention that would allow\nus to understand the project better and produce better websites? Let us know,\nor even better: make Landr understand them!\n\n- Making Landr sites look good no matter what information is available\n\nEach project is unique, and the parts that Landr can infer out of the box\nchange depending on the project. We want to consider all these combinations and\ncreate adaptative websites no matter what subset of information we have.\n\nThe best way to test this is by attempting to run Landr on any of your\nprojects, and checking if the results are not satisfactory.\n\nCommit Conventions\n------------------\n\nLandr uses the\n[OpenEmbedded](https://www.openembedded.org/wiki/Commit_Patch_Message_Guidelines)\ncommit conventions. We also require a `Change-type` footer tag that is either\n`patch`, `minor`, or `major`, depending on the change your patch makes in terms\nof [Semantic Versioning](https://semver.org).\n\nBalena CI\n---------\n\nLandr makes use of Balena's internal CI system which noy only runs the tests,\nbut automatically generates a CHANGELOG based on your commits and their\ncorresponding `Change-type`s.\n\nTests\n-----\n\nYou may run the test suite with the `npm test` command. We enable code coverage\nsupport, and you can see the report after running the tests by opening\n`coverage/index.html` in your browser.\n\nEditorConfig\n------------\n\nThis project makes use of [EditorConfig](https://editorconfig.org). Make sure\nyour editor supports it so that it doesn't deviate from indentation, line\nendings, and other text related conventions.\n",
   "contributors": [
     {
-      "username": "jviotti",
-      "avatar": "https://avatars0.githubusercontent.com/u/2192773?v=4"
-    },
-    {
       "username": "dimitrisnl",
       "avatar": "https://avatars2.githubusercontent.com/u/4951004?v=4"
     },
     {
-      "username": "balena-ci",
-      "avatar": "https://avatars0.githubusercontent.com/u/34882892?v=4"
+      "username": "jviotti",
+      "avatar": "https://avatars0.githubusercontent.com/u/2192773?v=4"
     },
     {
       "username": "LucianBuzzo",
@@ -2213,10 +2228,22 @@
     }
   ],
   "docs": [
-    "Getting Started\n===============\n\nWelcome to Landr! Setting up Landr in your project is extremely easy. First,\nmake sure you install the `landr` CLI from npmjs.org if you haven't already by\nrunning:\n\n```sh\nnpm install --global landr\n```\n\nLets also install the excellent [`serve`](https://www.npmjs.com/package/serve)\nstatic HTTP server as a way to preview our site:\n\n```sh\nnpm install --global serve\n```\n\nNow that everything is in place, head over to your project's repository and\nrun:\n\n```sh\nlandr build\n```\n\nGive it a bunch of seconds, and you should get various HTML, CSS, and\nJavaScript files in the `dist` directory. You can preview your site by running:\n\n```sh\nserve dist\n```\n\nAnd pointing your browser to `localhost:5000`.\n\nAt this point, you have working, but not perfect, website. Landr generates\nwebsites based on the content of the repository and relies on various OSS\nconventions for doing its job. Making sure your repository is well structured\nand follows the community conventions will do wonders for you website, and for\nyour repository overall!\n\nOnce you are happy with your site, run the following command to deploy to Netlify:\n\n```\nNETLIFY_AUTH_TOKEN=<token> landr deploy\n```\n\nPassing your Netlify authentication token as an environment variable.\n",
-    "CLI\n===\n\nThe Landr CLI is able to generate websites and deploy them to Netlify and it\nfeatures the following small set of commands:\n\n`landr [meta.json]`\n-------------------\n\nThis is an alias for `landr deploy [meta.json]`. Please refer to that command's\nhelp section.\n\n`landr build [meta.json]`\n-------------------------\n\nBuild the site in the current working directory and store the generated files\nin `dist`. Any existing `dist` directory will be removed.\n\n| Arguments | Description | Optional? | Default |\n|-----------|-------------|-----------|---------|\n| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |\n\nThis command supports the following environment variables:\n\n| Name | Description | Optional? |\n|-----------|-------------|-----------|\n| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |\n| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |\n\n### Examples:\n\n```sh\n$ cd path/to/repo\n$ landr build\n\n  / /  __ _ _ __   __| |_ __\n / /  / _` | '_ \\ / _` | '__|\n/ /__| (_| | | | | (_| | |\n\\____/\\__,_|_| |_|\\__,_|_|\n\nGenerate great websites for your projects with zero configuration\n\n[landr] Trying to load repository contract from /Users/jviotti/Projects/resin/landr/meta.json\n[landr] Running from /Users/jviotti/Projects/resin/landr/meta.json into /Users/jviotti/Projects/resin/landr/dist\n...\n[landr] Site generated successfully\n```\n\n`landr deploy [meta.json]`\n--------------------------\n\nRun `landr build [meta.json]` on the current working directory and deploy the\nresulting files to Netlify. The content of `dist` are removed after deployment.\n\n| Arguments | Description | Optional? | Default |\n|-----------|-------------|-----------|---------|\n| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |\n\nThis command supports the following environment variables:\n\n| Name | Description | Optional? |\n|-----------|-------------|-----------|\n| `NETLIFY_AUTH_TOKEN` | You Netlify token | N |\n| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |\n| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |\n\n### Examples:\n\n```sh\n$ cd path/to/repo\n$ landr deploy\n\n  / /  __ _ _ __   __| |_ __\n / /  / _` | '_ \\ / _` | '__|\n/ /__| (_| | | | | (_| | |\n\\____/\\__,_|_| |_|\\__,_|_|\n\nGenerate great websites for your projects with zero configuration\n\n[landr] Trying to load repository contract from /Users/jviotti/Projects/resin/landr/meta.json\n[landr] Running from /Users/jviotti/Projects/resin/landr/meta.json into /Users/jviotti/Projects/resin/landr/dist\n...\n[landr] Site generated successfully\n[landr] Deploying site to https://landr.netlify.com\n[landr] Deployed with Landr v4.2.1\n[landr] Visit https://landr.netlify.com\n[landr] Head over to https://app.netlify.com/sites/landr/settings/domain/setup to setup a different domain\n```\n",
-    "Conventions\n===========\n\nLandr prides itself with being a zero configuration tool, and relying on your\nrepository and related conventions to perform its job.\n\nThis document presents a list of conventions we recommend in order to make the\nbest out of Landr. Apart from this list, The [Landr GitHub\nRepository](https://github.com/balena-io/landr) aims to be an example of what\nyou can do with Landr, so check out how we do things there if unsure!\n\n`README.md`\n-----------\n\n### Image Banner\n\nLandr will parse the `README` file and if it finds an image at the top, it will\nuse it as the project banner/logo.\n\n### Description\n\nThe first paragraph in the `README` before any section is considered to be the\nrepository description.\n\n### Features\n\nA list of paragraphs after the repository description, where each entry starts\nwith a set of words, a colon, and a paragraph is considered to be the project\nfeatures highlights.\n\n### Motivation\n\nA `README` section called `Motivation` is considered to be a longer description\nof why the project exists.\n\n`ARCHITECTURE.md`\n-----------------\n\nAn in-depth description of how the project works under the hood, targetted at\npotential contributors.\n\n`CODE_OF_CONDUCT.md`\n--------------------\n\nThe project's code of conduct for contributors.\n\n`SECURITY.md`\n-------------\n\nInstructions on how to report a security vulnerability to the project.\n\n`FAQ.md`\n--------\n\nA set of frequently asked questions and their corresponding answers. Each\nsection of the document is considered to be a different FAQ entry.\n\n`CODEOWNERS`\n------------\n\nLandr will parse `CODEOWNERS` to determine who are the maintainers of the\nrepository.\n\n`CONTRIBUTING.md`\n-----------------\n\nA getting started guide for starting to contribute to the project,\ncomplementary to the `ARCHITECTURE.md` document.\n\n`LICENSE`\n---------\n\nThe license of the project.\n\n`CNAME`\n-------\n\nThe canonical domain of the project.\n\n`docs/**/*.md`\n--------------\n\nA set of documentation files where sub-directories represent categories. The\nordering is determined alphabetically using the file names and the page title\nis determined from the first title from the contents of the files.\n\n`blog/YYYY-MM-DD-*.md`\n----------------------\n\nA set of blog posts. The published date is obtained from the file name, and the\nauthor information is obtained through git.\n",
-    "Running in CI\n=============\n\nThe Landr project makes use of [Netlify](https://www.netlify.com) to deploy the\ngenerated website. For this reason, you will need to generate a Netlify\n*Personal Access Token* and set it as an environment variable called\n`NETLIFY_AUTH_TOKEN`.\n\nGenerating a Netlify Access Token\n---------------------------------\n\nLogin to your Netlify account and head over to the [`Application` tab in the\n`User Settings` page](https://app.netlify.com/user/applications). Once there,\nclick on the `New Access Token` button:\n\n![](./assets/netlify-new-access-token.png)\n\nOnce there, put a descriptive name for your personal access token, such as\n\"Landr\", and click `Generate token`:\n\n![](./assets/netlify-create-token.png)\n\nCopy the token, and set it as the value for the `NETLIFY_AUTH_TOKEN` using the\nEnvironment Variables section of your preferred CI service:\n\n![](./assets/netlify-copy-access-token.png)\n\nClick `Done!` and you are all set! Landr will automatically use the token you\nset when it comes to deploying your static assets!\n"
+    {
+      "filename": "docs/01-getting-started.md",
+      "contents": "Getting Started\n===============\n\nWelcome to Landr! Setting up Landr in your project is extremely easy. First,\nmake sure you install the `landr` CLI from npmjs.org if you haven't already by\nrunning:\n\n```sh\nnpm install --global landr\n```\n\nLets also install the excellent [`serve`](https://www.npmjs.com/package/serve)\nstatic HTTP server as a way to preview our site:\n\n```sh\nnpm install --global serve\n```\n\nNow that everything is in place, head over to your project's repository and\nrun:\n\n```sh\nlandr build\n```\n\nGive it a bunch of seconds, and you should get various HTML, CSS, and\nJavaScript files in the `dist` directory. You can preview your site by running:\n\n```sh\nserve dist\n```\n\nAnd pointing your browser to `localhost:5000`.\n\nAt this point, you have working, but not perfect, website. Landr generates\nwebsites based on the content of the repository and relies on various OSS\nconventions for doing its job. Making sure your repository is well structured\nand follows the community conventions will do wonders for you website, and for\nyour repository overall!\n\nOnce you are happy with your site, run the following command to deploy to Netlify:\n\n```\nNETLIFY_AUTH_TOKEN=<token> landr deploy\n```\n\nPassing your Netlify authentication token as an environment variable.\n"
+    },
+    {
+      "filename": "docs/02-cli.md",
+      "contents": "CLI\n===\n\nThe Landr CLI is able to generate websites and deploy them to Netlify and it\nfeatures the following small set of commands:\n\n`landr [meta.json]`\n-------------------\n\nThis is an alias for `landr deploy [meta.json]`. Please refer to that command's\nhelp section.\n\n`landr build [meta.json]`\n-------------------------\n\nBuild the site in the current working directory and store the generated files\nin `dist`. Any existing `dist` directory will be removed.\n\n| Arguments | Description | Optional? | Default |\n|-----------|-------------|-----------|---------|\n| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |\n\nThis command supports the following environment variables:\n\n| Name | Description | Optional? |\n|-----------|-------------|-----------|\n| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |\n| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |\n\n### Examples:\n\n```sh\n$ cd path/to/repo\n$ landr build\n\n  / /  __ _ _ __   __| |_ __\n / /  / _` | '_ \\ / _` | '__|\n/ /__| (_| | | | | (_| | |\n\\____/\\__,_|_| |_|\\__,_|_|\n\nGenerate great websites for your projects with zero configuration\n\n[landr] Trying to load repository contract from /Users/jviotti/Projects/resin/landr/meta.json\n[landr] Running from /Users/jviotti/Projects/resin/landr/meta.json into /Users/jviotti/Projects/resin/landr/dist\n...\n[landr] Site generated successfully\n```\n\n`landr deploy [meta.json]`\n--------------------------\n\nRun `landr build [meta.json]` on the current working directory and deploy the\nresulting files to Netlify. The content of `dist` are removed after deployment.\n\n| Arguments | Description | Optional? | Default |\n|-----------|-------------|-----------|---------|\n| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |\n\nThis command supports the following environment variables:\n\n| Name | Description | Optional? |\n|-----------|-------------|-----------|\n| `NETLIFY_AUTH_TOKEN` | You Netlify token | N |\n| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |\n| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |\n\n### Examples:\n\n```sh\n$ cd path/to/repo\n$ landr deploy\n\n  / /  __ _ _ __   __| |_ __\n / /  / _` | '_ \\ / _` | '__|\n/ /__| (_| | | | | (_| | |\n\\____/\\__,_|_| |_|\\__,_|_|\n\nGenerate great websites for your projects with zero configuration\n\n[landr] Trying to load repository contract from /Users/jviotti/Projects/resin/landr/meta.json\n[landr] Running from /Users/jviotti/Projects/resin/landr/meta.json into /Users/jviotti/Projects/resin/landr/dist\n...\n[landr] Site generated successfully\n[landr] Deploying site to https://landr.netlify.com\n[landr] Deployed with Landr v4.2.1\n[landr] Visit https://landr.netlify.com\n[landr] Head over to https://app.netlify.com/sites/landr/settings/domain/setup to setup a different domain\n```\n"
+    },
+    {
+      "filename": "docs/03-conventions.md",
+      "contents": "Conventions\n===========\n\nLandr prides itself with being a zero configuration tool, and relying on your\nrepository and related conventions to perform its job.\n\nThis document presents a list of conventions we recommend in order to make the\nbest out of Landr. Apart from this list, The [Landr GitHub\nRepository](https://github.com/balena-io/landr) aims to be an example of what\nyou can do with Landr, so check out how we do things there if unsure!\n\n`README.md`\n-----------\n\n### Image Banner\n\nLandr will parse the `README` file and if it finds an image at the top, it will\nuse it as the project banner/logo.\n\n### Description\n\nThe first paragraph in the `README` before any section is considered to be the\nrepository description.\n\n### Features\n\nA list of paragraphs after the repository description, where each entry starts\nwith a set of words, a colon, and a paragraph is considered to be the project\nfeatures highlights.\n\n### Motivation\n\nA `README` section called `Motivation` is considered to be a longer description\nof why the project exists.\n\n`ARCHITECTURE.md`\n-----------------\n\nAn in-depth description of how the project works under the hood, targetted at\npotential contributors.\n\n`CODE_OF_CONDUCT.md`\n--------------------\n\nThe project's code of conduct for contributors.\n\n`SECURITY.md`\n-------------\n\nInstructions on how to report a security vulnerability to the project.\n\n`FAQ.md`\n--------\n\nA set of frequently asked questions and their corresponding answers. Each\nsection of the document is considered to be a different FAQ entry.\n\n`CODEOWNERS`\n------------\n\nLandr will parse `CODEOWNERS` to determine who are the maintainers of the\nrepository.\n\n`CONTRIBUTING.md`\n-----------------\n\nA getting started guide for starting to contribute to the project,\ncomplementary to the `ARCHITECTURE.md` document.\n\n`LICENSE`\n---------\n\nThe license of the project.\n\n`CNAME`\n-------\n\nThe canonical domain of the project.\n\n`docs/**/*.md`\n--------------\n\nA set of documentation files where sub-directories represent categories. The\nordering is determined alphabetically using the file names and the page title\nis determined from the first title from the contents of the files.\n\n`blog/YYYY-MM-DD-*.md`\n----------------------\n\nA set of blog posts. The published date is obtained from the file name, and the\nauthor information is obtained through git.\n"
+    },
+    {
+      "filename": "docs/04-running-landr-in-ci.md",
+      "contents": "Running in CI\n=============\n\nThe Landr project makes use of [Netlify](https://www.netlify.com) to deploy the\ngenerated website. For this reason, you will need to generate a Netlify\n*Personal Access Token* and set it as an environment variable called\n`NETLIFY_AUTH_TOKEN`.\n\nGenerating a Netlify Access Token\n---------------------------------\n\nLogin to your Netlify account and head over to the [`Application` tab in the\n`User Settings` page](https://app.netlify.com/user/applications). Once there,\nclick on the `New Access Token` button:\n\n![](./assets/netlify-new-access-token.png)\n\nOnce there, put a descriptive name for your personal access token, such as\n\"Landr\", and click `Generate token`:\n\n![](./assets/netlify-create-token.png)\n\nCopy the token, and set it as the value for the `NETLIFY_AUTH_TOKEN` using the\nEnvironment Variables section of your preferred CI service:\n\n![](./assets/netlify-copy-access-token.png)\n\nClick `Done!` and you are all set! Landr will automatically use the token you\nset when it comes to deploying your static assets!\n"
+    }
   ],
   "security": "# Reporting Security Issues\n\nThe Balena.io team and community take security bugs in all our products and\nopen source projects seriously. We appreciate your efforts to responsibly\ndisclose your findings, and will make every effort to acknowledge your\ncontributions.\n\nTo report a security issue, email\n[security@balena.io](mailto:security@balena.io). The Balena.io team will keep\nyou informed of the progress towards a fix, and may ask for additional\ninformation or guidance.\n\nReport security bugs in third-party modules to the person or team maintaining\nthe module. You can also report a vulnerability through the [Node Security\nProject](https://nodesecurity.io/report).\n",
   "faq": [
@@ -2246,7 +2273,7 @@
       "title": "Why is Landr using Netlify instead of GitHub Pages?",
       "content": [
         "para",
-        "Netlify can do everything that GitHub Pages can do, and it also provides some\nextra features and flexibility that we find really valuable for Landr, such as\nbeing able to deploy more than one branch of a site at the same time, A/B\ntesting, form submissions management, and more. On top all of that, Netlify is\nfree to use!"
+        "Netlify can do everything that GitHub Pages can do, and it also provides some\nextra features and flexibility that we find really valuable for Landr, such as\nbeing able to deploy more than one branch of a site at the same time, A/B\ntesting, form submissions management, and more. On top all of that, Netlify is free to use!"
       ]
     }
   ],
@@ -2368,11 +2395,96 @@
     "typed-errors",
     "typeface-nunito"
   ],
-  "lastCommitDate": "2019-09-19T14:55:04Z",
+  "lastCommitDate": "2019-09-20T09:50:34Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
-  "version": "5.16.3"
+  "openIssues": {
+    "numberOfIssues": 21,
+    "latestIssues": [
+      {
+        "title": "Add search functionality",
+        "url": "https://github.com/balena-io/landr/issues/212"
+      },
+      {
+        "title": "Add more entry points",
+        "url": "https://github.com/balena-io/landr/issues/209"
+      },
+      {
+        "title": "Expose theme props in the components",
+        "url": "https://github.com/balena-io/landr/issues/208"
+      },
+      {
+        "title": "Add the codeowners alert in the contributing page",
+        "url": "https://github.com/balena-io/landr/issues/207"
+      },
+      {
+        "title": "Do some cosmetic touchups",
+        "url": "https://github.com/balena-io/landr/issues/203"
+      },
+      {
+        "title": "Drop markdown-js",
+        "url": "https://github.com/balena-io/landr/pull/202"
+      },
+      {
+        "title": "[Discussion] Replace Markdown parser",
+        "url": "https://github.com/balena-io/landr/issues/201"
+      },
+      {
+        "title": "Add anchors in markdown headers",
+        "url": "https://github.com/balena-io/landr/issues/191"
+      },
+      {
+        "title": "Auto-generate favicons",
+        "url": "https://github.com/balena-io/landr/issues/185"
+      },
+      {
+        "title": "Add link to the issue tracker ",
+        "url": "https://github.com/balena-io/landr/issues/177"
+      },
+      {
+        "title": "Improve link to GitHub repository in Navigation",
+        "url": "https://github.com/balena-io/landr/issues/175"
+      },
+      {
+        "title": "Move contributors component to the bottom",
+        "url": "https://github.com/balena-io/landr/issues/173"
+      },
+      {
+        "title": "Improve Markdown renderer in DocViewer",
+        "url": "https://github.com/balena-io/landr/issues/171"
+      },
+      {
+        "title": "Write a puppeteer script that crawls over the generated website and makes sure no link goes to 404",
+        "url": "https://github.com/balena-io/landr/issues/165"
+      },
+      {
+        "title": "WIP Pass final dist directly to react-static",
+        "url": "https://github.com/balena-io/landr/pull/161"
+      },
+      {
+        "title": "Create React Static tmp dir using node-tmp",
+        "url": "https://github.com/balena-io/landr/pull/159"
+      },
+      {
+        "title": "test: Example puppeteer script to check for uncaught errors",
+        "url": "https://github.com/balena-io/landr/pull/154"
+      },
+      {
+        "title": "Theme's color palette should come from the project's logo",
+        "url": "https://github.com/balena-io/landr/issues/138"
+      },
+      {
+        "title": "Easy plug & play analytics",
+        "url": "https://github.com/balena-io/landr/issues/129"
+      },
+      {
+        "title": "Tests should also include a Lighthouse audit",
+        "url": "https://github.com/balena-io/landr/issues/119"
+      }
+    ]
+  },
+  "version": "5.16.4"
 }
