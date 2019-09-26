@@ -16,30 +16,31 @@
 
 const fs = require('fs')
 const tmp = require('tmp')
+const scrutinizer = require('scrutinizer')
 const Bluebird = require('bluebird')
 const puppeteer = require('puppeteer')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 const path = require('path')
-const fetch = require('node-fetch')
 const createGitinfo = require('gitinfo')
-const PROJECT_DIRECTORY = path.resolve(__dirname, '..')
 
 const getScrutinizerData = () => {
   const gitinfo = createGitinfo({
     defaultBranchName: 'master',
-    gitPath: path.resolve(PROJECT_DIRECTORY, '.git')
+    gitPath: process.cwd()
   })
 
   const owner = gitinfo.getUsername()
   const repo = gitinfo.getName()
 
-  return fetch(
-    `https://raw.githubusercontent.com/${owner}/${repo}/gh-pages/scrutinizer.json`
-  )
-    .then((res) => { return res.json() })
-    .catch((err) => { return console.log(err) })
-}
+  return scrutinizer.remote(`git@github.com:${owner}/${repo}.git`, {
+    reference: 'master',
+    progress: (state) => {
+      console.log(state.percentage)
+    }
+  }).then((results) => {
+    return results
+  })}
 
 const getScreenshot = async (website) => {
   const browser = await puppeteer.launch()
@@ -135,12 +136,7 @@ Bluebird.resolve()
         license,
         name,
         tagline: description,
-        images: {
-          // Image at the top README
-          banner: `data:image/png;base64,${Buffer.from(
-            fs.readFileSync('./banner.png')
-          ).toString('base64')}`
-        },
+        images: {},
         description,
         version,
 
@@ -148,8 +144,7 @@ Bluebird.resolve()
         type: 'npm',
 
         links: {
-          issueTracker: require(path.join(PROJECT_DIRECTORY, 'package.json'))
-            .bugs.url,
+          issueTracker: null,
           homepage,
           repository: repositoryUrl
         },
@@ -179,7 +174,7 @@ Bluebird.resolve()
         },
 
         motivation,
-        highlights: getHighlights(fs.readFileSync(path.join(PROJECT_DIRECTORY, 'README.md'), 'utf8')),
+        highlights: [],
         installation: installationSteps,
 
         blog: _.map(blog, ({
@@ -215,7 +210,7 @@ Bluebird.resolve()
             description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
             url: owner.url,
             email: 'hello@balena.io',
-            avatar: `data:image/png;base64,${Buffer.from(fs.readFileSync('./owner.png')).toString('base64')}`
+            avatar: null
           },
           usedBy: [
             {

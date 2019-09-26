@@ -69,7 +69,7 @@
     "js-yaml": "^3.13.1",
     "jsdom": "^15.1.1",
     "nyc": "^14.1.1",
-    "puppeteer": "^1.18.1"
+    "puppeteer": "^1.20.0"
   },
   "dependencies": {
     "@babel/register": "^7.4.0",
@@ -81,7 +81,7 @@
     "file-type": "^12.0.1",
     "generatorics": "^1.1.0",
     "git-branch": "^2.0.1",
-    "gitinfo": "^2.2.0",
+    "gitinfo": "2.2.0",
     "handlebars": "^4.1.2",
     "handlebars-helpers": "^0.10.0",
     "lodash": "^4.17.11",
@@ -101,6 +101,7 @@
     "rendition": "^11.10.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
+    "scrutinizer": "^1.21.1",
     "shelljs": "^0.8.3",
     "styled-components": "^4.3.2",
     "tmp": "^0.1.0",
