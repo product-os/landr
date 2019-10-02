@@ -46,8 +46,18 @@ export const variants = (metadata, context, _route, routes) => {
 
   if (metadata.data.github.owner && metadata.data.images.banner) {
     combinations.push({
+      name: metadata.data.name,
       owner: metadata.data.github.owner,
       logo: metadata.data.images.banner,
+      routes: toplevelRoutes,
+      toc: context.toc
+    })
+  }
+
+  if (metadata.data.github.owner) {
+    combinations.push({
+      name: metadata.data.name,
+      owner: metadata.data.github.owner,
       routes: toplevelRoutes,
       toc: context.toc
     })
@@ -85,12 +95,12 @@ export const render = (props) => {
   })
 
   const brand = (
-    <Img
+    props.logo ? <Img
       style={{
         height: '50px'
       }}
       src={props.logo}
-    />
+    /> : <Heading.h1 color="#527699" fontSize={26}>{props.name}</Heading.h1>
   )
 
   const owner = _.isEmpty(props.owner) ? null : (

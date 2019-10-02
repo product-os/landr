@@ -18,7 +18,7 @@ import React from 'react'
 import _ from 'lodash'
 import styled from 'styled-components'
 import {
-  Box, Img, Link, Container, Txt, Flex
+  Box, Img, Link, Container, Heading, Flex
 } from 'rendition'
 
 import GithubBanner from './presentational/github-banner'
@@ -50,7 +50,16 @@ export const variants = (metadata, _context, _route, routes) => {
 
   if (metadata.data.images.banner && metadata.data.links.repository) {
     combinations.push({
+      name: metadata.data.name,
       logo: metadata.data.images.banner,
+      routes: toplevelRoutes,
+      githubUrl: metadata.data.links.repository
+    })
+  }
+
+  if (metadata.data.links.repository) {
+    combinations.push({
+      name: metadata.data.name,
       routes: toplevelRoutes,
       githubUrl: metadata.data.links.repository
     })
@@ -87,7 +96,7 @@ export const render = (props) => {
       src={props.logo}
     />
   ) : (
-    <Txt>{props.name}</Txt>
+    <Heading.h1 color="#527699" fontSize={26}>{props.name}</Heading.h1>
   )
 
   const links = props.routes.map((route, index) => {
