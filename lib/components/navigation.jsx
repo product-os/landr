@@ -18,7 +18,7 @@ import React from 'react'
 import _ from 'lodash'
 import styled from 'styled-components'
 import {
-  Box, Img, Link, Container, Heading, Flex
+  Box, Img, Link, Container, Heading, Flex, useTheme
 } from 'rendition'
 
 import GithubBanner from './presentational/github-banner'
@@ -88,6 +88,8 @@ const GithubRedirect = styled(Link) `
 `
 
 export const render = (props) => {
+  const theme = useTheme();
+
   const Brand = props.logo ? (
     <Img
       style={{
@@ -103,7 +105,7 @@ export const render = (props) => {
     return (
       <Link
         fontSize={14}
-        color="#2a506f"
+        color={theme.colors.text.main}
         key={index}
         px={2}
         href={route.url}
@@ -135,7 +137,7 @@ export const render = (props) => {
           </Flex>
           {props.githubUrl && (
             <GithubRedirect href={props.githubUrl} blank>
-              <GithubBanner fill='#fa8600' />
+              <GithubBanner fill={theme.colors.primary.main} />
             </GithubRedirect>
           )}
         </Flex>

@@ -18,7 +18,7 @@ import React from 'react'
 import styled from 'styled-components'
 import _ from 'lodash'
 import {
-  Box, Button, Container, Txt, Flex, Heading
+  Box, Button, Container, Txt, Flex, Heading, useTheme
 } from 'rendition'
 
 import Terminal from './presentational/terminal'
@@ -88,25 +88,14 @@ export const variants = (metadata, _context, _route, routes) => {
   return combinations
 }
 
-const Wrapper = styled(Box) `
-  background-color: ${({
-    theme
-  }) => { return theme.colors.primary.light }};
-`
-
-const Header = styled(Heading.h1) `
-  color: ${({
-    theme
-  }) => { return theme.colors.primary.main }};
-`
-
 export const render = (props) => {
+  const theme = useTheme()
   const commands = props.steps || []
   return (
-    <Wrapper py={5}>
+    <Box py={5} bg={theme.colors.primary.light}>
       <Container>
         <Flex flexDirection="column" alignItems="center" mb={40}>
-          <Header fontSize={62}>{props.title}</Header>
+          <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{props.title}</Heading.h1>
           {props.description && (
             <Heading.h2 fontSize={24}>{props.description}</Heading.h2>
           )}
@@ -120,6 +109,6 @@ export const render = (props) => {
           </Txt>
         )}
       </Container>
-    </Wrapper>
+    </Box>
   )
 }

@@ -98,7 +98,7 @@
     "react-static-plugin-styled-components": "^7.0.10",
     "react-typist": "^2.0.5",
     "recursive-copy": "^2.0.10",
-    "rendition": "^11.10.0",
+    "rendition": "^11.21.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
     "scrutinizer": "^1.22.0",

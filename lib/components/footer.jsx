@@ -16,9 +16,8 @@
 
 import React from 'react'
 import _ from 'lodash'
-import styled from 'styled-components'
 import {
-  Box, Img, Container, Flex, Link, Heading, Txt
+  Box, Img, Container, Flex, Link, Heading, Txt, useTheme
 } from 'rendition'
 
 export const name = 'Footer'
@@ -66,13 +65,8 @@ export const variants = (metadata, context, _route, routes) => {
   return combinations
 }
 
-const Wrapper = styled(Box) `
-  background-color: ${({
-    theme
-  }) => { return theme.colors.primary.light }};
-`
-
 export const render = (props) => {
+  const theme = useTheme()
   const toc = props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
     return (
@@ -106,7 +100,7 @@ export const render = (props) => {
   const owner = _.isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
       <Txt fontSize={12}>Brought to you by</Txt>{' '}
-      <Link color="#2a506f" href={props.owner.url} tooltip={props.owner.name}>
+      <Link color={theme.colors.text.main} href={props.owner.url} tooltip={props.owner.name}>
         <Img
           src={props.owner.avatar}
           alt={props.owner.name}
@@ -120,7 +114,7 @@ export const render = (props) => {
   )
 
   return (
-    <Wrapper
+    <Box
       px={3}
       py={5}
       mt={5}
@@ -128,6 +122,7 @@ export const render = (props) => {
         position: 'relative',
         zIndex: 3
       }}
+      bg={theme.colors.primary.light}
     >
       <Container>
         <Flex justifyContent="center">
@@ -158,6 +153,6 @@ export const render = (props) => {
           </Flex>
         </Flex>
       </Container>
-    </Wrapper>
+    </Box>
   )
 }
