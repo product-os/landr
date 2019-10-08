@@ -21,7 +21,6 @@ const Bluebird = require('bluebird')
 const puppeteer = require('puppeteer')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
-const path = require('path')
 const createGitinfo = require('gitinfo')
 
 const getScrutinizerData = () => {
@@ -210,7 +209,7 @@ Bluebird.resolve()
             description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
             url: owner.url,
             email: 'hello@balena.io',
-            avatar: null
+            avatar: owner.avatar
           },
           usedBy: [
             {
