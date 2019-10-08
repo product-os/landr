@@ -88,7 +88,7 @@ const GithubRedirect = styled(Link) `
 `
 
 export const render = (props) => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const Brand = props.logo ? (
     <Img

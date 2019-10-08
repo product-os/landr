@@ -60,7 +60,7 @@ export const render = (props) => {
     repo, owner, description, screenshot
   }) => {
     return (
-      <Box key={repo} px={3} width={[ 1, 1 / 2, 1 / 2, 1 / 4 ]}>
+      <Box key={repo} px={2} width={[ 1, 1 / 2, 1 / 2, 1 / 4 ]} mb={2}>
         <ProjectCard>
           <Screenshot bg={screenshot} />
           <Flex
@@ -99,7 +99,7 @@ export const render = (props) => {
         <Heading.h2 mb={4} align="center">
           Check out who's using this project
         </Heading.h2>
-        <Flex mx={-3}>{list}</Flex>
+        <Flex mx={-2} flexWrap='wrap'>{list}</Flex>
       </Container>
     </Box>
   )

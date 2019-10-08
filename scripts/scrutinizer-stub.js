@@ -39,7 +39,8 @@ const getScrutinizerData = () => {
     }
   }).then((results) => {
     return results
-  })}
+  })
+}
 
 const getScreenshot = async (website) => {
   const browser = await puppeteer.launch()
@@ -59,15 +60,15 @@ const getScreenshot = async (website) => {
   return `data:image/png;base64,${base64}`
 }
 
-const getHighlights = (readme) => {
-  const tree = _.tail(markdown.parse(readme))
-  return tree[3].slice(1).map((highlight) => {
-    return {
-      title: highlight.slice(1)[0][1],
-      description: highlight.slice(1)[1].replace(/^:\s+/, '')
-    }
-  })
-}
+// Const getHighlights = (readme) => {
+//   const tree = _.tail(markdown.parse(readme))
+//   return tree[3].slice(1).map((highlight) => {
+//     return {
+//       title: highlight.slice(1)[0][1],
+//       description: highlight.slice(1)[1].replace(/^:\s+/, '')
+//     }
+//   })
+// }
 
 const parseMarkdown = ({
   filename, contents
@@ -137,7 +138,7 @@ Bluebird.resolve()
         name,
         tagline: description,
         images: {
-          banner: _.get(logo, 'base64')
+          banner: _.get(logo, [ 'base64' ])
         },
         description,
         version,

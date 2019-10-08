@@ -15,7 +15,6 @@
  */
 
 import React from 'react'
-import styled from 'styled-components'
 import _ from 'lodash'
 import {
   Box, Button, Container, Txt, Flex, Heading, useTheme
@@ -97,7 +96,7 @@ export const render = (props) => {
         <Flex flexDirection="column" alignItems="center" mb={40}>
           <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{props.title}</Heading.h1>
           {props.description && (
-            <Heading.h2 fontSize={24}>{props.description}</Heading.h2>
+            <Heading.h2 fontSize={24} align='center'>{props.description}</Heading.h2>
           )}
         </Flex>
         {commands.length > 0 && <Terminal commands={commands} />}

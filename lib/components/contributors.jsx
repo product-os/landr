@@ -55,10 +55,10 @@ const GITHUB_PROFILE_PATH = 'https://github.com'
 const PlaceholderPhoto = styled(Flex) `
   font-size: 12px;
   padding: 8px;
-  height: 170px;
-  width: 170px;
+  height: 120px;
+  width: 120px;
   border-radius: 20px;
-  border: 1px dashed ${props => props.theme.colors.primary.main};
+  border: 1px dashed ${(props) => { return props.theme.colors.primary.main }};
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -79,7 +79,7 @@ export const render = (props) => {
             <Img
               src={contributor.avatar}
               style={{
-                height: '170px',
+                height: '120px',
                 borderRadius: 8
               }}
             />
@@ -103,12 +103,12 @@ export const render = (props) => {
     </Box>
   ) : null
 
-  const ContributePlaceholder =               <PlaceholderPhoto>
-  <Box  mb={18}>
-    <ContributeIcon fill={theme.colors.primary.main} />
-  </Box>
-  <Txt>Reserved for you</Txt>
-</PlaceholderPhoto>
+  const ContributePlaceholder = <PlaceholderPhoto>
+    <Box mb={18}>
+      <ContributeIcon fill={theme.colors.primary.main} />
+    </Box>
+    <Txt>Reserved for you</Txt>
+  </PlaceholderPhoto>
 
   return (
     <Box my={130}>
@@ -126,7 +126,9 @@ export const render = (props) => {
                 {ContributePlaceholder}
               </Link>
             ) : (
-              {ContributePlaceholder}
+              {
+                ContributePlaceholder
+              }
             )}
           </Box>
         </Flex>
