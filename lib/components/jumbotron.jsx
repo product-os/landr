@@ -38,7 +38,7 @@ export const variants = (metadata, _context, _route, routes) => {
     )
   })
 
-  const steps = metadata.data.installation.steps.reduce((accumulator, step) => {
+  const steps = metadata.data.installation && metadata.data.installation.steps.reduce((accumulator, step) => {
     accumulator.push({
       command: _.last(step[0]).replace(/\n/g, ''),
       comment: true
