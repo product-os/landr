@@ -95,7 +95,7 @@ export const render = (props) => {
       </Txt>
       <Txt fontSize={14}>
         Jump in and get your hands dirty with some selected{' '}
-        <Link blank href={`${props.repository}/contribute`}>
+        <Link blank href={`${props.repository.replace('.git', '')}/contribute`}>
           good first issues!
         </Link>
       </Txt>

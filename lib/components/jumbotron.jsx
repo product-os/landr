@@ -52,9 +52,9 @@ export const variants = (metadata, _context, _route, routes) => {
     return accumulator
   }, [])
 
-  if (metadata.data.tagline && metadata.data.description && entryUrl) {
+  if (metadata.data.name && metadata.data.description && entryUrl) {
     combinations.push({
-      title: metadata.data.tagline,
+      title: metadata.data.name,
       description: metadata.data.description,
       packageName: metadata.data.name,
       action: `/${entryUrl.path.join('/')}`,
@@ -64,9 +64,9 @@ export const variants = (metadata, _context, _route, routes) => {
     })
   }
 
-  if (metadata.data.tagline && metadata.data.description) {
+  if (metadata.data.name && metadata.data.description) {
     combinations.push({
-      title: metadata.data.tagline,
+      title: metadata.data.name,
       description: metadata.data.description,
       packageName: metadata.data.name,
       steps,
@@ -75,9 +75,9 @@ export const variants = (metadata, _context, _route, routes) => {
     })
   }
 
-  if (metadata.data.tagline) {
+  if (metadata.data.name) {
     combinations.push({
-      title: metadata.data.tagline,
+      title: metadata.data.name,
       packageName: metadata.data.name,
       steps,
       type: metadata.data.type,
