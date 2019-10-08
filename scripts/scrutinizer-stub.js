@@ -110,6 +110,7 @@ Bluebird.resolve()
       latestPreRelease,
       latestRelease,
       license,
+      logo,
       maintainers,
       motivation,
       name,
@@ -135,7 +136,9 @@ Bluebird.resolve()
         license,
         name,
         tagline: description,
-        images: {},
+        images: {
+          banner: _.get(logo, 'base64')
+        },
         description,
         version,
 
