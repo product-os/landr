@@ -139,7 +139,6 @@ Bluebird.try(async () => {
 
   log('Parsing banner image')
   const siteTheme = await theme(_.get(contractData, [ 'data', 'images', 'banner' ]))
-
   const skeletonDirectory = tmp.dirSync().name
   log(`Creating site skeleton at ${skeletonDirectory}`)
   await skel.create(contractData,
