@@ -1,4 +1,14 @@
 - commits:
+    - subject: Update banner logo
+      hash: e9244ac8a3f07935ca2cb3c67d1ac27dac17b23e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.18.2
+  date: 2019-10-09T10:27:15.625Z
+- commits:
     - subject: 'FAQ: Update theme inconsistencies'
       hash: 1c155f653540d466d4d339653a9ee6027dac3061
       body: ''
@@ -7,7 +17,7 @@
         change-type: patch
       author: Dimitrios Lytras
   version: 5.18.1
-  date: 2019-10-09T10:14:47.825Z
+  date: 2019-10-09T09:56:17.761Z
 - commits:
     - subject: Update scrutinizer stub
       hash: 17978b26fb0fe68b223ac412520020d0c0712f9c
