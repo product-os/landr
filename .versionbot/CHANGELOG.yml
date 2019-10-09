@@ -1,4 +1,14 @@
 - commits:
+    - subject: Update scrutinizer stub
+      hash: 17978b26fb0fe68b223ac412520020d0c0712f9c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.18.0
+  date: 2019-10-08T13:43:07.184Z
+- commits:
     - subject: Grabs the docs & blog from scrutinizer
       hash: 53142f7b440db2c1aeb659eabf477abd9e63dbf2
       body: ''
