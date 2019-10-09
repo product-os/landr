@@ -3,17 +3,17 @@
     "dark": {
       "title": "#fff",
       "text": "#fff",
-      "color": "#9a5904"
+      "color": "#e07800"
     },
     "light": {
       "title": "#fff",
       "text": "#000",
-      "color": "#fbc91f"
+      "color": "#ffeecb"
     },
     "normal": {
       "title": "#fff",
       "text": "#000",
-      "color": "#eb8b04"
+      "color": "#fa8600"
     }
   },
   "muted": {

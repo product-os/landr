@@ -17,6 +17,7 @@
  */
 
 const path = require('path')
+const _ = require('lodash')
 const shell = require('shelljs')
 const Bluebird = require('bluebird')
 const gitBranch = require('git-branch')
@@ -137,8 +138,7 @@ Bluebird.try(async () => {
     : {}
 
   log('Parsing banner image')
-  const siteTheme = await theme(contractData.data.images.banner)
-
+  const siteTheme = await theme(_.get(contractData, [ 'data', 'images', 'banner' ]))
   const skeletonDirectory = tmp.dirSync().name
   log(`Creating site skeleton at ${skeletonDirectory}`)
   await skel.create(contractData,

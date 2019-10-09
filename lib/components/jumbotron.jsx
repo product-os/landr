@@ -15,10 +15,9 @@
  */
 
 import React from 'react'
-import styled from 'styled-components'
 import _ from 'lodash'
 import {
-  Box, Button, Container, Txt, Flex, Heading
+  Box, Button, Container, Txt, Flex, Heading, useTheme
 } from 'rendition'
 
 import Terminal from './presentational/terminal'
@@ -38,7 +37,7 @@ export const variants = (metadata, _context, _route, routes) => {
     )
   })
 
-  const steps = metadata.data.installation.steps.reduce((accumulator, step) => {
+  const steps = metadata.data.installation && metadata.data.installation.steps.reduce((accumulator, step) => {
     accumulator.push({
       command: _.last(step[0]).replace(/\n/g, ''),
       comment: true
@@ -52,9 +51,9 @@ export const variants = (metadata, _context, _route, routes) => {
     return accumulator
   }, [])
 
-  if (metadata.data.tagline && metadata.data.description && entryUrl) {
+  if (metadata.data.name && metadata.data.description && entryUrl) {
     combinations.push({
-      title: metadata.data.tagline,
+      title: metadata.data.name,
       description: metadata.data.description,
       packageName: metadata.data.name,
       action: `/${entryUrl.path.join('/')}`,
@@ -64,9 +63,9 @@ export const variants = (metadata, _context, _route, routes) => {
     })
   }
 
-  if (metadata.data.tagline && metadata.data.description) {
+  if (metadata.data.name && metadata.data.description) {
     combinations.push({
-      title: metadata.data.tagline,
+      title: metadata.data.name,
       description: metadata.data.description,
       packageName: metadata.data.name,
       steps,
@@ -75,9 +74,9 @@ export const variants = (metadata, _context, _route, routes) => {
     })
   }
 
-  if (metadata.data.tagline) {
+  if (metadata.data.name) {
     combinations.push({
-      title: metadata.data.tagline,
+      title: metadata.data.name,
       packageName: metadata.data.name,
       steps,
       type: metadata.data.type,
@@ -88,27 +87,16 @@ export const variants = (metadata, _context, _route, routes) => {
   return combinations
 }
 
-const Wrapper = styled(Box) `
-  background-color: ${({
-    theme
-  }) => { return theme.colors.primary.light }};
-`
-
-const Header = styled(Heading.h1) `
-  color: ${({
-    theme
-  }) => { return theme.colors.primary.main }};
-`
-
 export const render = (props) => {
+  const theme = useTheme()
   const commands = props.steps || []
   return (
-    <Wrapper py={5}>
+    <Box py={5} bg={theme.colors.primary.light}>
       <Container>
         <Flex flexDirection="column" alignItems="center" mb={40}>
-          <Header fontSize={62}>{props.title}</Header>
+          <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{props.title}</Heading.h1>
           {props.description && (
-            <Heading.h2 fontSize={24}>{props.description}</Heading.h2>
+            <Heading.h2 fontSize={24} align='center'>{props.description}</Heading.h2>
           )}
         </Flex>
         {commands.length > 0 && <Terminal commands={commands} />}
@@ -120,6 +108,6 @@ export const render = (props) => {
           </Txt>
         )}
       </Container>
-    </Wrapper>
+    </Box>
   )
 }

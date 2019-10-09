@@ -17,12 +17,12 @@
 import React from 'react'
 import sortBy from 'lodash/sortBy'
 import {
-  Box, Img, Container, Flex, Link, Heading, Txt
+  Box, Img, Container, Flex, Link, Heading, Txt, useTheme
 } from 'rendition'
 import styled from 'styled-components'
 
+import ContributeIcon from './presentational/contribute-icon'
 import heartIcon from './assets/heart.svg'
-import contributeIcon from './assets/contribute.svg'
 
 export const name = 'Contributors'
 
@@ -55,16 +55,17 @@ const GITHUB_PROFILE_PATH = 'https://github.com'
 const PlaceholderPhoto = styled(Flex) `
   font-size: 12px;
   padding: 8px;
-  height: 170px;
-  width: 170px;
+  height: 120px;
+  width: 120px;
   border-radius: 20px;
-  border: 1px dashed rgba(250, 134, 0, 0.5);
+  border: 1px dashed ${(props) => { return props.theme.colors.primary.main }};
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
 
 export const render = (props) => {
+  const theme = useTheme()
   const list = sortBy(props.contributors, 'username')
     .filter((contributor) => { return !EXCLUDED_CONTRIBUTORS.includes(contributor.username) })
     .map((contributor) => {
@@ -78,7 +79,7 @@ export const render = (props) => {
             <Img
               src={contributor.avatar}
               style={{
-                height: '170px',
+                height: '120px',
                 borderRadius: 8
               }}
             />
@@ -95,12 +96,19 @@ export const render = (props) => {
       </Txt>
       <Txt fontSize={14}>
         Jump in and get your hands dirty with some selected{' '}
-        <Link blank href={`${props.repository}/contribute`}>
+        <Link blank href={`${props.repository.replace('.git', '')}/contribute`}>
           good first issues!
         </Link>
       </Txt>
     </Box>
   ) : null
+
+  const ContributePlaceholder = <PlaceholderPhoto>
+    <Box mb={18}>
+      <ContributeIcon fill={theme.colors.primary.main} />
+    </Box>
+    <Txt>Reserved for you</Txt>
+  </PlaceholderPhoto>
 
   return (
     <Box my={130}>
@@ -115,16 +123,12 @@ export const render = (props) => {
           <Box px={2}>
             {props.contributing ? (
               <Link href={props.contributing} blank>
-                <PlaceholderPhoto>
-                  <Img src={contributeIcon} mb={18} alt="new contributor" />
-                  <Txt>Reserved for you</Txt>
-                </PlaceholderPhoto>
+                {ContributePlaceholder}
               </Link>
             ) : (
-              <PlaceholderPhoto>
-                <Img src={contributeIcon} mb={18} alt="new contributor" />
-                <Txt>Reserved for you</Txt>
-              </PlaceholderPhoto>
+              {
+                ContributePlaceholder
+              }
             )}
           </Box>
         </Flex>
