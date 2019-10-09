@@ -47,7 +47,7 @@ export const render = (props) => {
       <Container>
         <Box>
           <Heading.h2 mb={4}>Frequently asked questions</Heading.h2>
-          <Divider m={0} height={1} color={'#c1c7dd'} />
+          <Divider m={0} />
           <Accordian items={items} />
         </Box>
       </Container>
