@@ -4,7 +4,7 @@ import React, {
 } from 'react'
 import styled from 'styled-components'
 import {
-  Box, Divider, Flex, Txt, Heading
+  Box, Divider, Flex, Txt, Heading, useTheme
 } from 'rendition'
 
 // TODO: This component doesn't live yet in Rendition.
@@ -34,6 +34,7 @@ const Content = styled(Box) `
 const Accordian = ({
   items
 }) => {
+  const theme = useTheme()
   const [ openIndex, setOpenIndex ] = useState(null)
 
   const toggle = (key) => {
@@ -71,7 +72,7 @@ const Accordian = ({
                 >
                   {item.title}
                 </Heading.h5>
-                <Txt pr={3} fontSize={24} align="end" color="#fa8600">
+                <Txt pr={3} fontSize={24} align="end" color={theme.colors.primary.main}>
                   {openIndex === index ? '−' : '+'}
                 </Txt>
               </Flex>
@@ -79,7 +80,7 @@ const Accordian = ({
             <Collapse isOpen={openIndex === index}>
               <Content>{item.content}</Content>
             </Collapse>
-            <Divider m={0} height={1} color="#c1c7dd" />
+            <Divider m={0} />
           </Box>
         )
       })}
