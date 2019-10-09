@@ -1,4 +1,14 @@
 - commits:
+    - subject: Generate palette based on the logo
+      hash: f7c33290d1daaa9a8f81117b6bd4bdb0533666d2
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.19.0
+  date: 2019-10-09T10:35:49.648Z
+- commits:
     - subject: Update banner logo
       hash: e9244ac8a3f07935ca2cb3c67d1ac27dac17b23e
       body: ''
