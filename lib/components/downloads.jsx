@@ -35,12 +35,12 @@ export const variants = (metadata) => {
 
   if (
     !_.isEmpty(
-      _.get(metadata, ['data', 'releases', 'latestRelease', 'asssets']),
+      _.get(metadata, [ 'data', 'releases', 'latestRelease', 'asssets' ])
     )
   ) {
     combinations.push({
       assets: metadata.data.releases.latestRelease.asssets,
-      tag: metadata.data.releases.latestRelease.tagName,
+      tag: metadata.data.releases.latestRelease.tagName
     })
   }
 
