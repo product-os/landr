@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add changelog page
+      hash: 96fd3dc19ffcfad18f4808c8b21732dec1135066
+      body: ''
+      footer:
+        Connects-to: '#243'
+        connects-to: '#243'
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.21.0
+  date: 2019-10-15T14:54:49.179Z
+- commits:
     - subject: Introduce Downloads component
       hash: 0767054734f81bc77c2ab5fb7c1a1f67c8de7c12
       body: ''
