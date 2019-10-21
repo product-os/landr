@@ -1,4 +1,14 @@
 - commits:
+    - subject: Run scrutinizer stub against the current working branch
+      hash: c50bd43e517dcf05c15f95c4820b5e19f1957cd1
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.22.1
+  date: 2019-10-21T15:03:39.651Z
+- commits:
     - subject: Bump scrutinizer version
       hash: 04dfd45e59013c79d316c801e9690514ecbb7d3d
       body: ''
