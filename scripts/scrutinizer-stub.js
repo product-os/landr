@@ -104,6 +104,7 @@ Bluebird.resolve()
       highlights,
       homepage,
       installationSteps,
+      introduction,
       latestPreRelease,
       latestRelease,
       license,
@@ -174,6 +175,7 @@ Bluebird.resolve()
         },
 
         motivation,
+        introduction,
         hardwareRequired,
         softwareRequired,
         highlights,
