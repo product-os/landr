@@ -1,4 +1,14 @@
 - commits:
+    - subject: Expose Introduction component
+      hash: d4fae9c1413ff94dbbecd8e345ed112fbccd7cd5
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.24.0
+  date: 2019-10-21T17:05:17.617Z
+- commits:
     - subject: Expose Highlights component
       hash: 7d324f01f92290d946102a1caaa1f42827b4a7da
       body: ''
