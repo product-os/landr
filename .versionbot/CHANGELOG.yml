@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'readme: Introduce a Highlights convention'
+      hash: 2265f11aa5f02aa8108d6218502ca332495e61d2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.22.2
+  date: 2019-10-21T15:59:25.551Z
+- commits:
     - subject: Run scrutinizer stub against the current working branch
       hash: c50bd43e517dcf05c15f95c4820b5e19f1957cd1
       body: ''
