@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
+// const puppeteer = require('puppeteer')
+// const tmp = require('tmp')
+
 const fs = require('fs')
-const tmp = require('tmp')
 const scrutinizer = require('scrutinizer')
 const Bluebird = require('bluebird')
-const puppeteer = require('puppeteer')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 const createGitinfo = require('gitinfo')
@@ -42,25 +43,27 @@ const getScrutinizerData = () => {
   })
 }
 
-const getScreenshot = async (website) => {
-  const browser = await puppeteer.launch()
-  const page = await browser.newPage()
-  await page.setViewport({
-    width: 1024,
-    height: 768,
-    deviceScaleFactor: 2
-  })
-  await page.goto(website)
-  const location = `${tmp.fileSync().name}.png`
-  await page.screenshot({
-    path: location
-  })
-  await browser.close()
-  const base64 = Buffer.from(fs.readFileSync(location)).toString('base64')
-  return `data:image/png;base64,${base64}`
-}
+// eslint-disable-next-line capitalized-comments
+// const getScreenshot = async (website) => {
+//   const browser = await puppeteer.launch()
+//   const page = await browser.newPage()
+//   await page.setViewport({
+//     width: 1024,
+//     height: 768,
+//     deviceScaleFactor: 2
+//   })
+//   await page.goto(website)
+//   const location = `${tmp.fileSync().name}.png`
+//   await page.screenshot({
+//     path: location
+//   })
+//   await browser.close()
+//   const base64 = Buffer.from(fs.readFileSync(location)).toString('base64')
+//   return `data:image/png;base64,${base64}`
+// }
 
-// Const getHighlights = (readme) => {
+// eslint-disable-next-line capitalized-comments
+// onst getHighlights = (readme) => {
 //   const tree = _.tail(markdown.parse(readme))
 //   return tree[3].slice(1).map((highlight) => {
 //     return {
@@ -106,6 +109,7 @@ Bluebird.resolve()
       docs,
       faq,
       fork,
+      hardwareRequired,
       homepage,
       installationSteps,
       latestPreRelease,
@@ -121,6 +125,7 @@ Bluebird.resolve()
       public: isPublic,
       repositoryUrl,
       security,
+      softwareRequired,
       stars,
       version
     } = scrutinizerData
@@ -177,6 +182,8 @@ Bluebird.resolve()
         },
 
         motivation,
+        hardwareRequired,
+        softwareRequired,
         highlights: [],
         installation: installationSteps,
 
@@ -215,39 +222,7 @@ Bluebird.resolve()
             email: 'hello@balena.io',
             avatar: owner.avatar
           },
-          usedBy: [
-            {
-              owner: 'balena-io',
-              repo: 'etcher',
-              website: 'https://www.balena.io/etcher/',
-              description:
-                'Flash OS images to SD cards & USB drives, safely and easily',
-              screenshot: await getScreenshot('https://www.balena.io/etcher/')
-            },
-            {
-              owner: 'balena-os',
-              repo: 'meta-balena',
-              website: 'https://www.balena.io/os/',
-              description:
-                'A host OS tailored for containers, designed for reliability, proven in production',
-              screenshot: await getScreenshot('https://www.balena.io/os/')
-            },
-            {
-              owner: 'balena-io',
-              repo: 'open-balena',
-              website: 'https://www.balena.io/open/',
-              description:
-                'Open source software to manage connected IoT devices',
-              screenshot: await getScreenshot('https://www.balena.io/open/')
-            },
-            {
-              owner: 'balena-os',
-              repo: 'balena-engine',
-              website: 'https://www.balena.io/engine/',
-              description: 'A container engine built for IoT',
-              screenshot: await getScreenshot('https://www.balena.io/engine/')
-            }
-          ]
+          usedBy: []
         },
         contributors,
         releases: {

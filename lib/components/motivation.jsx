@@ -18,6 +18,9 @@ import React from 'react'
 import {
   Box, Container, Heading, Txt
 } from 'rendition'
+import {
+  markdown
+} from 'markdown'
 
 export const name = 'Motivation'
 
@@ -35,6 +38,10 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
+  const html = markdown.renderJsonML(
+    markdown.toHTMLTree([ 'markdown' ].concat(props.motivation))
+  )
+
   return (
     <Box my={130}>
       <Container>
@@ -43,7 +50,7 @@ export const render = (props) => {
           width={[ 1, 1, 1 / 2, 1 / 2 ]}
           fontSize={14}
           dangerouslySetInnerHTML={{
-            __html: props.motivation[1]
+            __html: html
           }}
         />
       </Container>
