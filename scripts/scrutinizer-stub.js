@@ -23,8 +23,9 @@ const Bluebird = require('bluebird')
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 const createGitinfo = require('gitinfo')
+const gitBranch = require('git-branch')
 
-const getScrutinizerData = () => {
+const getScrutinizerData = async () => {
   const gitinfo = createGitinfo({
     defaultBranchName: 'master',
     gitPath: process.cwd()
@@ -32,15 +33,16 @@ const getScrutinizerData = () => {
 
   const owner = gitinfo.getUsername()
   const repo = gitinfo.getName()
+  const branch = await gitBranch(process.cwd())
 
-  return scrutinizer.remote(`git@github.com:${owner}/${repo}.git`, {
-    reference: 'master',
+  const results = await scrutinizer.remote(`git@github.com:${owner}/${repo}.git`, {
+    reference: branch,
     progress: (state) => {
       console.log(state.percentage)
     }
-  }).then((results) => {
-    return results
   })
+
+  return results
 }
 
 // eslint-disable-next-line capitalized-comments
