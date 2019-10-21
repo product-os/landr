@@ -6,6 +6,12 @@
 
 Generate great websites for your projects with zero configuration.
 
+**Landr is alpha software** and its under heavy development, so various things
+might be broken in the best case!
+
+Highlights
+----------
+
 - **Functional Websites**: Landr renders your project and its documentation in
   a gorgeous and UX friendly way to your end users, in the best possible way
   while you focus on shipping features
@@ -15,9 +21,6 @@ Generate great websites for your projects with zero configuration.
 - **Fully Automatic**: Landr requires no configuration at all. It is smart
   enough to figure out what it needs on its own. Point it to a repository, hold
   tight, and let Landr do its magic
-
-**Landr is alpha software** and its under heavy development, so various things
-might be broken in the best case!
 
 Installation
 ------------
