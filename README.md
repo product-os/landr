@@ -60,14 +60,14 @@ Examples
 The Landr website is of course based on Landr! You may also enjoy the following
 sites:
 
-- https://www.balena.io/etcher/ - Flash OS images to SD cards & USB drives,
+- [Etcher](https://www.balena.io/etcher/) - Flash OS images to SD cards & USB drives,
   safely and easily
-- https://www.balena.io/fin/ - A board for fleet owners
-- https://www.balena.io/os/ - A host OS tailored for containers, designed for
+- [BalenaFin](https://www.balena.io/fin/) - A board for fleet owners
+- [BalenaOS](https://www.balena.io/os/) - A host OS tailored for containers, designed for
   reliability, proven in production
-- https://www.balena.io/open/ - Open source software to manage connected IoT
+- [OpenBalena](https://www.balena.io/open/) - Open source software to manage connected IoT
   devices
-- https://www.balena.io/engine/ - A container engine built for IoT
+- [BalenaEngine](https://www.balena.io/engine/) - A container engine built for IoT
 
 Do you know of any Landr website we missed? [Let us
 know!](https://github.com/balena-io/landr/issues/new?labels=examples&title=Add%20this%20Landr%20website%20to%20the%20examples)
