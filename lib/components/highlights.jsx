@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import _ from 'lodash'
 import styled from 'styled-components'
 import {
   Box, Container, Heading, Txt, Flex
@@ -25,7 +26,7 @@ export const name = 'Highlights'
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.highlights && metadata.data.highlights.length > 0) {
+  if (_.size(metadata.data.highlights) > 0) {
     combinations.push({
       highlights: metadata.data.highlights
     })
@@ -42,14 +43,6 @@ const Wrapper = styled(Box) `
   }};
 `
 
-const Header = styled(Heading.h3) `
-  color: ${({
-    theme
-  }) => {
-    return theme.colors.primary.main
-  }};
-`
-
 export const render = (props) => {
   const boxes = props.highlights.map((highlight, index) => {
     return (
@@ -59,9 +52,9 @@ export const render = (props) => {
         mb={2}
         width={[ 1, 1, 1 / 3, 1 / 3 ]}
       >
-        <Header fontSize={22} mb={3} align='center'>
+        <Heading.h3 fontSize={22} mb={3} align='center'>
           {highlight.title}
-        </Header>
+        </Heading.h3>
         <Txt align='center' fontSize={14}>{highlight.description}</Txt>
       </Box>
     )
