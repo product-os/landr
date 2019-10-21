@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'readme: Format Examples section'
+      hash: 6867b71b37d1c85defcf85589acf3841a4fe29e8
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.24.1
+  date: 2019-10-21T17:52:55.560Z
+- commits:
     - subject: Expose Introduction component
       hash: d4fae9c1413ff94dbbecd8e345ed112fbccd7cd5
       body: ''
