@@ -36,8 +36,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* prevent markdown images from overflowing */
 img {
-  border-radius: 10px;
   height: auto;
-  max-width: 600px;
-  width: 100%;
+  max-width: 100%;
 }
