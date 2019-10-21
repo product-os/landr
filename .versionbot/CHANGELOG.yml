@@ -1,4 +1,14 @@
 - commits:
+    - subject: Bump scrutinizer version
+      hash: 04dfd45e59013c79d316c801e9690514ecbb7d3d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.22.0
+  date: 2019-10-21T14:43:59.529Z
+- commits:
     - subject: Add changelog page
       hash: 96fd3dc19ffcfad18f4808c8b21732dec1135066
       body: ''
