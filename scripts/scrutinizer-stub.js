@@ -64,17 +64,6 @@ const getScrutinizerData = async () => {
 //   return `data:image/png;base64,${base64}`
 // }
 
-// eslint-disable-next-line capitalized-comments
-// onst getHighlights = (readme) => {
-//   const tree = _.tail(markdown.parse(readme))
-//   return tree[3].slice(1).map((highlight) => {
-//     return {
-//       title: highlight.slice(1)[0][1],
-//       description: highlight.slice(1)[1].replace(/^:\s+/, '')
-//     }
-//   })
-// }
-
 const parseMarkdown = ({
   filename, contents
 }) => {
@@ -112,6 +101,7 @@ Bluebird.resolve()
       faq,
       fork,
       hardwareRequired,
+      highlights,
       homepage,
       installationSteps,
       latestPreRelease,
@@ -186,7 +176,7 @@ Bluebird.resolve()
         motivation,
         hardwareRequired,
         softwareRequired,
-        highlights: [],
+        highlights,
         installation: installationSteps,
 
         blog: _.map(blog, ({
