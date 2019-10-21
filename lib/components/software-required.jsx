@@ -16,21 +16,20 @@
 
 import React from 'react'
 import {
-  Box, Container, Heading, Txt
+  Box, Container, Heading
 } from 'rendition'
 import {
   markdown
 } from 'markdown'
 
-export const name = 'Motivation'
+export const name = 'SoftwareRequired'
 
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.motivation) {
+  if (metadata.data.softwareRequired) {
     combinations.push({
-      motivation: metadata.data.motivation,
-      name: metadata.data.name
+      softwareRequired: metadata.data.softwareRequired
     })
   }
 
@@ -39,20 +38,21 @@ export const variants = (metadata) => {
 
 export const render = (props) => {
   const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(props.motivation))
+    markdown.toHTMLTree([ 'markdown' ].concat(props.softwareRequired))
   )
 
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container>
-        <Heading.h2 mb={24}>Why {props.name}</Heading.h2>
-        <Txt
-          width={[ 1, 1, 1 / 2, 1 / 2 ]}
-          fontSize={14}
+        <Heading.h2 mb={24}>Software Required</Heading.h2>
+        <Box
+          style={{
+            maxWidth: 800
+          }}
           dangerouslySetInnerHTML={{
             __html: html
-          }}
-        />
+          }}>
+        </Box>
       </Container>
     </Box>
   )

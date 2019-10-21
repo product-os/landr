@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import _ from 'lodash'
 import {
   Box, Button, Container, Flex, Link, Heading, Txt
 } from 'rendition'
@@ -25,7 +26,7 @@ export const name = 'Users'
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.github.usedBy) {
+  if (_.size(metadata.data.github.usedBy) > 0) {
     combinations.push({
       users: metadata.data.github.usedBy
     })
