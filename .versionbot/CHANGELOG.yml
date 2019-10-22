@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'config: Change how we export React components due to Hooks API change'
+      hash: 1f5ca82c2d30f08ccdd72b70ee20007adee1cd20
+      body: >
+        We were breaking the rules of hooks
+        (https://reactjs.org/docs/hooks-rules.html) by adding hooks in normal
+        Javascript functions. Now the 'render' function that generates the React
+        component will reference a parent React component, that holds the
+        internal state (hooks).
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.26.0
+  date: 2019-10-22T11:05:40.545Z
+- commits:
     - subject: 'projects: Expose used-by section'
       hash: fc70a13866588fe7eb9245c92fdc84e058a503aa
       body: ''
