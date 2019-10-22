@@ -64,7 +64,7 @@ const PlaceholderPhoto = styled(Flex) `
   align-items: center;
 `
 
-export const render = (props) => {
+const Contributors = (props) => {
   const theme = useTheme()
   const list = sortBy(props.contributors, 'username')
     .filter((contributor) => { return !EXCLUDED_CONTRIBUTORS.includes(contributor.username) })
@@ -136,4 +136,8 @@ export const render = (props) => {
       </Container>
     </Box>
   )
+}
+
+export const render = (props) => {
+  return <Contributors {...props} />
 }

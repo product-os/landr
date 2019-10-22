@@ -83,7 +83,7 @@ const Table = styled.table `
   }
 `
 
-export const render = (props) => {
+const Downloads = (props) => {
   const theme = useTheme()
   return (
     <Box my={130}>
@@ -133,4 +133,8 @@ export const render = (props) => {
       </Container>
     </Box>
   )
+}
+
+export const render = (props) => {
+  return <Downloads {...props} />
 }
