@@ -65,7 +65,7 @@ export const variants = (metadata, context, _route, routes) => {
   return combinations
 }
 
-export const render = (props) => {
+const Footer = (props) => {
   const theme = useTheme()
   const toc = props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
@@ -155,4 +155,8 @@ export const render = (props) => {
       </Container>
     </Box>
   )
+}
+
+export const render = (props) => {
+  return <Footer {...props} />
 }

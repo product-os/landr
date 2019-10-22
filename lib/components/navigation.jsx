@@ -87,7 +87,7 @@ const GithubRedirect = styled(Link) `
   top: -30px;
 `
 
-export const render = (props) => {
+const Navigation = (props) => {
   const theme = useTheme()
 
   const Brand = props.logo ? (
@@ -144,4 +144,8 @@ export const render = (props) => {
       </Container>
     </Wrapper>
   )
+}
+
+export const render = (props) => {
+  return <Navigation {...props} />
 }

@@ -87,7 +87,7 @@ export const variants = (metadata, _context, _route, routes) => {
   return combinations
 }
 
-export const render = (props) => {
+const Jumbotron = (props) => {
   const theme = useTheme()
   const commands = props.steps || []
   return (
@@ -112,4 +112,8 @@ export const render = (props) => {
       </Container>
     </Box>
   )
+}
+
+export const render = (props) => {
+  return <Jumbotron {...props} />
 }
