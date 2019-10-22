@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'projects: Expose used-by section'
+      hash: fc70a13866588fe7eb9245c92fdc84e058a503aa
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.25.0
+  date: 2019-10-22T09:39:09.793Z
+- commits:
     - subject: 'readme: Format Examples section'
       hash: 6867b71b37d1c85defcf85589acf3841a4fe29e8
       body: ''
