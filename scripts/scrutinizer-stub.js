@@ -98,6 +98,7 @@ Bluebird.resolve()
       contributors,
       description,
       docs,
+      examples,
       faq,
       fork,
       hardwareRequired,
@@ -216,7 +217,7 @@ Bluebird.resolve()
             email: 'hello@balena.io',
             avatar: owner.avatar
           },
-          usedBy: []
+          usedBy: examples
         },
         contributors,
         releases: {
