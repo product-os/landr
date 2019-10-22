@@ -35,8 +35,6 @@ export const variants = (metadata) => {
   return combinations
 }
 
-const GITHUB_PROFILE_PATH = 'https://github.com'
-
 const ProjectCard = styled(Flex) `
   height: 100%;
   flex-direction: column;
@@ -58,10 +56,10 @@ const Screenshot = styled(Box) `
 
 export const render = (props) => {
   const list = props.users.map(({
-    repo, owner, description, screenshot
+    name: projectName, website, description, screenshot
   }) => {
     return (
-      <Box key={repo} px={2} width={[ 1, 1 / 2, 1 / 2, 1 / 4 ]} mb={2}>
+      <Box key={projectName} px={2} width={[ 1, 1 / 2, 1 / 2, 1 / 3 ]} mb={3}>
         <ProjectCard>
           <Screenshot bg={screenshot} />
           <Flex
@@ -71,7 +69,7 @@ export const render = (props) => {
             flexDirection="column"
           >
             <Heading.h5 mb={16} fontSize={18} textAlign="center">
-              {repo}
+              {projectName}
             </Heading.h5>
             <Txt mb={20} fontSize={14} textAlign="center">
               {description}
@@ -79,7 +77,7 @@ export const render = (props) => {
             <Link
               mt="auto"
               blank
-              href={`${GITHUB_PROFILE_PATH}/${owner}/${repo}`}
+              href={website}
               style={{
                 textAlign: 'center'
               }}
@@ -96,11 +94,15 @@ export const render = (props) => {
 
   return (
     <Box my={130}>
-      <Container>
+      <Container style={{
+        maxWidth: 1000
+      }}>
         <Heading.h2 mb={4} align="center">
           Check out who's using this project
         </Heading.h2>
-        <Flex mx={-2} flexWrap='wrap'>{list}</Flex>
+        <Flex mx={-2} flexWrap='wrap' justifyContent='center'>
+          {list}
+        </Flex>
       </Container>
     </Box>
   )
