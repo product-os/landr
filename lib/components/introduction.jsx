@@ -16,7 +16,7 @@
 
 import React from 'react'
 import {
-  Box, Container
+  Box, Container, Heading
 } from 'rendition'
 import {
   markdown
@@ -44,6 +44,7 @@ export const render = (props) => {
   return (
     <Box my={100}>
       <Container>
+        <Heading.h2 mb={24}>Introduction</Heading.h2>
         <Box
           style={{
             maxWidth: 800
