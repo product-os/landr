@@ -1,4 +1,14 @@
 - commits:
+    - subject: Add contributors page
+      hash: 4baa53b4b3f3bb82ff41418963087963dce31b4c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.27.0
+  date: 2019-10-23T13:04:59.285Z
+- commits:
     - subject: 'config: Change how we export React components due to Hooks API change'
       hash: 1f5ca82c2d30f08ccdd72b70ee20007adee1cd20
       body: >
