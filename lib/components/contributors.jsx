@@ -15,9 +15,17 @@
  */
 
 import React from 'react'
+import size from 'lodash/size'
 import sortBy from 'lodash/sortBy'
 import {
-  Box, Img, Container, Flex, Link, Heading, Txt, useTheme
+  Box,
+  Img,
+  Container,
+  Flex,
+  Link,
+  Heading,
+  Txt,
+  useTheme
 } from 'rendition'
 import styled from 'styled-components'
 
@@ -26,8 +34,20 @@ import heartIcon from './assets/heart.svg'
 
 export const name = 'Contributors'
 
-export const variants = (metadata) => {
+export const variants = (metadata, _context, route) => {
   const combinations = []
+
+  if (
+    size(metadata.data.contributors) > 10 &&
+    route.path.length === 0 &&
+    metadata.data.links.repository &&
+    metadata.data.contributing.guide &&
+    metadata.data.maintainers
+  ) {
+    combinations.push({
+      minimalView: true
+    })
+  }
 
   if (
     metadata.data.contributors &&
@@ -39,18 +59,22 @@ export const variants = (metadata) => {
       contributors: metadata.data.contributors,
       maintainers: metadata.data.maintainers,
       repository: metadata.data.links.repository,
-      contributing: `${metadata.data.links.repository}/blob/master/${
-        metadata.data.contributing.guide.filename
-      }`
+      contributing: `${metadata.data.links.repository}/blob/master/${metadata.data.contributing.guide.filename}`
     })
   }
 
   return combinations
 }
 
-const EXCLUDED_CONTRIBUTORS = [ 'balena-ci' ]
-
 const GITHUB_PROFILE_PATH = 'https://github.com'
+
+const ContributorsPageRedirect = () => {
+  return (
+    <Link ml={2} href="/contributors">
+    many awesome people!
+    </Link>
+  )
+}
 
 const PlaceholderPhoto = styled(Flex) `
   font-size: 12px;
@@ -58,7 +82,10 @@ const PlaceholderPhoto = styled(Flex) `
   height: 120px;
   width: 120px;
   border-radius: 20px;
-  border: 1px dashed ${(props) => { return props.theme.colors.primary.main }};
+  border: 1px dashed
+    ${(props) => {
+    return props.theme.colors.primary.main
+  }};
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -67,7 +94,6 @@ const PlaceholderPhoto = styled(Flex) `
 const Contributors = (props) => {
   const theme = useTheme()
   const list = sortBy(props.contributors, 'username')
-    .filter((contributor) => { return !EXCLUDED_CONTRIBUTORS.includes(contributor.username) })
     .map((contributor) => {
       return (
         <Box key={contributor.username} px={2}>
@@ -103,36 +129,43 @@ const Contributors = (props) => {
     </Box>
   ) : null
 
-  const ContributePlaceholder = <PlaceholderPhoto>
-    <Box mb={18}>
-      <ContributeIcon fill={theme.colors.primary.main} />
-    </Box>
-    <Txt>Reserved for you</Txt>
-  </PlaceholderPhoto>
+  const ContributePlaceholder = (
+    <PlaceholderPhoto>
+      <Box mb={18}>
+        <ContributeIcon fill={theme.colors.primary.main} />
+      </Box>
+      <Txt>Reserved for you</Txt>
+    </PlaceholderPhoto>
+  )
 
   return (
     <Box my={130}>
       <Container textAlign="center">
         <Heading.h2 fontSize={34} mb={30} align="center">
-          <Flex alignItems="center" justifyContent='center'>
-            Made with <Img src={heartIcon} width={32} mx={2} /> by
+          <Flex alignItems="center" justifyContent="center">
+            Made with <Img src={heartIcon} width={32} mx={2} /> by{' '}
+            {props.minimalView && <ContributorsPageRedirect />}
           </Flex>
         </Heading.h2>
-        <Flex mx={-2} flexWrap="wrap" justifyContent="center" mb={24}>
-          {list}
-          <Box px={2}>
-            {props.contributing ? (
-              <Link href={props.contributing} blank>
-                {ContributePlaceholder}
-              </Link>
-            ) : (
-              {
-                ContributePlaceholder
-              }
-            )}
-          </Box>
-        </Flex>
-        {CTA}
+        {!props.minimalView && (
+          <>
+            <Flex mx={-2} flexWrap="wrap" justifyContent="center" mb={24}>
+              {list}
+              <Box px={2}>
+                {props.contributing ? (
+                  <Link href={props.contributing} blank>
+                    {ContributePlaceholder}
+                  </Link>
+                ) : (
+                  {
+                    ContributePlaceholder
+                  }
+                )}
+              </Box>
+            </Flex>
+            {CTA}
+          </>
+        )}
       </Container>
     </Box>
   )
