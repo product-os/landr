@@ -38,7 +38,7 @@ export const variants = (metadata, _context, route) => {
   const combinations = []
 
   if (
-    size(metadata.data.contributors) > 10 &&
+    size(metadata.data.contributors) > 36 &&
     route.path.length === 0 &&
     metadata.data.links.repository &&
     metadata.data.contributing.guide &&
