@@ -1,4 +1,14 @@
 - commits:
+    - subject: Bump scrutinizer
+      hash: ebfc9b95cee91e46b698ab86a06299fdc0b4d695
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.2
+  date: 2019-10-23T16:03:09.430Z
+- commits:
     - subject: 'fix: Update rules for Contributors section'
       hash: a54b1c0f78c95c8841d90a543bc5dfa59ead7c92
       body: ''
