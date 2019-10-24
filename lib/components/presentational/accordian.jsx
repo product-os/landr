@@ -4,6 +4,9 @@ import React, {
 } from 'react'
 import styled from 'styled-components'
 import {
+  markdown
+} from 'markdown'
+import {
   Box, Divider, Flex, Txt, Heading, useTheme
 } from 'rendition'
 
@@ -44,6 +47,10 @@ const Accordian = ({
   return (
     <Box>
       {items.map((item, index) => {
+        const html = markdown.renderJsonML(
+          markdown.toHTMLTree([ 'markdown' ].concat(item.content))
+        )
+
         const toggleRow = useCallback(
           () => {
             toggle(index)
@@ -78,7 +85,9 @@ const Accordian = ({
               </Flex>
             </Flex>
             <Collapse isOpen={openIndex === index}>
-              <Content>{item.content}</Content>
+              <Content dangerouslySetInnerHTML={{
+                __html: html
+              }} />
             </Collapse>
             <Divider m={0} />
           </Box>
