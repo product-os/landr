@@ -1,4 +1,19 @@
 - commits:
+    - subject: Generate HTML from Markdown as opposed to JsonML
+      hash: 0d3abbf8554f57dec792bf3b08481ba2d6f63ef0
+      body: >
+        We still keep JsonML, but we use it to extract information about the
+        markdown structure.
+
+
+        Fixes super annoying bugs, like Table & Code parsing.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.28.0
+  date: 2019-10-24T18:48:59.504Z
+- commits:
     - subject: 'faq: Display whole answer content'
       hash: c909fdc8411103663493fcde49201ddcd720e3fb
       body: ''
