@@ -45,25 +45,6 @@ const getScrutinizerData = async () => {
   return results
 }
 
-// eslint-disable-next-line capitalized-comments
-// const getScreenshot = async (website) => {
-//   const browser = await puppeteer.launch()
-//   const page = await browser.newPage()
-//   await page.setViewport({
-//     width: 1024,
-//     height: 768,
-//     deviceScaleFactor: 2
-//   })
-//   await page.goto(website)
-//   const location = `${tmp.fileSync().name}.png`
-//   await page.screenshot({
-//     path: location
-//   })
-//   await browser.close()
-//   const base64 = Buffer.from(fs.readFileSync(location)).toString('base64')
-//   return `data:image/png;base64,${base64}`
-// }
-
 const parseMarkdown = ({
   filename, contents
 }) => {
