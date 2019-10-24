@@ -38,7 +38,7 @@ export const render = (props) => {
   const items = props.faq.map((faq) => {
     return {
       title: faq.title,
-      content: faq.content[1]
+      content: faq.content
     }
   })
 
