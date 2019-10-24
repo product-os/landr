@@ -19,45 +19,15 @@ import {
   format, parseISO
 } from 'date-fns'
 import _ from 'lodash'
-import {
-  markdown
-} from 'markdown'
+import ReactMarkdown from 'react-markdown'
 import {
   Box, Flex, Link, Container, DropDownButton
 } from 'rendition'
 import Toc from './presentational/toc'
 import Sidebar from './presentational/sidebar'
+import renderers from './presentational/renderers'
 
 export const name = 'DocViewer'
-
-const JsonML = ({
-  data
-}) => {
-  const formattedData = data.map((item) => {
-    if (item[0] === 'header') {
-      return item.map((element) => {
-        if (_.isPlainObject(element)) {
-          return _.assign(element, {
-            id: _.kebabCase(_.last(item))
-          })
-        }
-        return element
-      })
-    }
-    return item
-  })
-
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(formattedData))
-  )
-  return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: html
-      }}
-    />
-  )
-}
 
 export const variants = (metadata, context, route) => {
   const combinations = []
@@ -74,7 +44,7 @@ export const variants = (metadata, context, route) => {
       link: `${metadata.data.links.repository.replace('.git', '')}/edit/master/${
         context.article.content.filename
       }`,
-      jsonml: context.article.content.data,
+      content: context.article.content.data,
       latest: context.latest,
       version: context.version
     })
@@ -104,7 +74,10 @@ export const render = (props) => {
     <Box px={3} py={4}>
       <Container>
         <Flex flexWrap={[ 'wrap', 'nowrap' ]}>
-          <Box>
+          <Box style={{
+            maxWidth: 900,
+            width: '100%'
+          }}>
             <Link href={props.link}>Edit on GitHub</Link>
             {props.date && props.author && (
               <p>
@@ -112,7 +85,11 @@ export const render = (props) => {
                 by @{props.author}
               </p>
             )}
-            <JsonML data={props.jsonml} />
+            <ReactMarkdown
+              source={props.content.markdown}
+              escapeHtml={false}
+              renderers={renderers}
+            />
           </Box>
           <Sidebar>
             {versions.length > 0 && (
