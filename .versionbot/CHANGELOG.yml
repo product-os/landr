@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'faq: Display whole answer content'
+      hash: c909fdc8411103663493fcde49201ddcd720e3fb
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.5
+  date: 2019-10-24T14:30:32.295Z
+- commits:
     - subject: Show contributors regardless of having a Contributing doc
       hash: e41a05eed139c397799974ae6fbca290d52cfc48
       body: ''
