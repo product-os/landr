@@ -5,7 +5,14 @@ import {
 } from 'rendition'
 
 const normalizeTitle = (str) => {
-  return str.split('`').join('')
+  let title = str
+
+  // The header contains some extra formatting like inline code
+  if (_.isArray(title)) {
+    title = _.last(title)
+  }
+
+  return title.split('`').join('')
 }
 
 const Toc = (props) => {
@@ -18,9 +25,10 @@ const Toc = (props) => {
           return section[1].level === 2
         })
         .map((entry) => {
+          const title = normalizeTitle(entry[2])
           return {
-            title: normalizeTitle(entry[2]),
-            path: `#${_.kebabCase(entry[2])}`
+            title,
+            path: `#${_.kebabCase(title)}`
           }
         })
       : []
