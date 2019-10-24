@@ -49,7 +49,7 @@ export const render = (props) => {
       <Box
         key={index}
         px={3}
-        mb={2}
+        mb={3}
         width={[ 1, 1, 1 / 3, 1 / 3 ]}
       >
         <Heading.h3 fontSize={22} mb={3} align='center'>

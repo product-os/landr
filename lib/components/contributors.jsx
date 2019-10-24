@@ -40,9 +40,7 @@ export const variants = (metadata, _context, route) => {
   if (
     size(metadata.data.contributors) > 36 &&
     route.path.length === 0 &&
-    metadata.data.links.repository &&
-    metadata.data.contributing.guide &&
-    metadata.data.maintainers
+    metadata.data.links.repository
   ) {
     combinations.push({
       minimalView: true
@@ -51,15 +49,14 @@ export const variants = (metadata, _context, route) => {
 
   if (
     metadata.data.contributors &&
-    metadata.data.links.repository &&
-    metadata.data.contributing.guide &&
-    metadata.data.maintainers
+    metadata.data.links.repository
   ) {
     combinations.push({
       contributors: metadata.data.contributors,
-      maintainers: metadata.data.maintainers,
       repository: metadata.data.links.repository,
-      contributing: `${metadata.data.links.repository}/blob/master/${metadata.data.contributing.guide.filename}`
+      contributing: metadata.data.contributing.guide
+        ? `${metadata.data.links.repository}/blob/master/${metadata.data.contributing.guide.filename}`
+        : null
     })
   }
 
@@ -156,11 +153,8 @@ const Contributors = (props) => {
                   <Link href={props.contributing} blank>
                     {ContributePlaceholder}
                   </Link>
-                ) : (
-                  {
-                    ContributePlaceholder
-                  }
-                )}
+                ) : ContributePlaceholder
+                }
               </Box>
             </Flex>
             {CTA}
