@@ -60,7 +60,10 @@ const parseMarkdown = ({
     })
     ),
 
-    data: rawData
+    data: {
+      markdown: contents,
+      jsonml: rawData
+    }
   }
 }
 
