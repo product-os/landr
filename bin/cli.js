@@ -129,11 +129,11 @@ Bluebird.try(async () => {
   const branch = await gitBranch(process.cwd())
   log(`Current branch is ${branch}`)
   const siteName = branch === 'master'
-    ? contractData.data.name
+    ? `landr-${contractData.data.name}`
     : `${contractData.data.name}-preview-${branch}`
 
   log(`Preparing site ${siteName}`)
-  const siteOptions = OPTION_DEPLOY
+    const siteOptions = OPTION_DEPLOY
     ? await netlify.setupSite(TOKEN_NETLIFY, siteName)
     : {}
 
@@ -184,7 +184,7 @@ Bluebird.try(async () => {
   log('Site generated successfully')
 
   if (OPTION_COMMAND === 'deploy' && !OPTION_DEPLOY) {
-    warning(`Omitting deployment. Please set ${ENV_VAR_NETLIFY_TOKEN}`)
+    warning(`Omitting deployment. Please set ${n}`)
   }
 
   if (OPTION_DEPLOY) {
