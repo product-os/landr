@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'tests: Update meta.json'
+      hash: 337b417b4fa2d57861160cf349f945475e21f3ba
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.1
+  date: 2019-10-25T12:07:39.655Z
+- commits:
     - subject: Bump scrutinizer
       hash: 26e1ca17ab7e5b50a1e1d544adffd66790fd88f3
       body: ''
