@@ -103,7 +103,7 @@
     "rendition": "^11.21.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
-    "scrutinizer": "^1.26.3",
+    "scrutinizer": "^1.27.1",
     "shelljs": "^0.8.3",
     "styled-components": "^4.3.2",
     "tmp": "^0.1.0",
