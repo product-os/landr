@@ -133,7 +133,7 @@ Bluebird.try(async () => {
     : `${contractData.data.name}-preview-${branch}`
 
   log(`Preparing site ${siteName}`)
-    const siteOptions = OPTION_DEPLOY
+  const siteOptions = OPTION_DEPLOY
     ? await netlify.setupSite(TOKEN_NETLIFY, siteName)
     : {}
 
@@ -184,7 +184,7 @@ Bluebird.try(async () => {
   log('Site generated successfully')
 
   if (OPTION_COMMAND === 'deploy' && !OPTION_DEPLOY) {
-    warning(`Omitting deployment. Please set ${n}`)
+    warning(`Omitting deployment. Please set ${ENV_VAR_NETLIFY_TOKEN}`)
   }
 
   if (OPTION_DEPLOY) {
