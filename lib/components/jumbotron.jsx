@@ -16,6 +16,7 @@
 
 import React from 'react'
 import _ from 'lodash'
+import styled from 'styled-components'
 import {
   Box, Button, Container, Txt, Flex, Heading, useTheme
 } from 'rendition'
@@ -59,7 +60,8 @@ export const variants = (metadata, _context, _route, routes) => {
       action: `/${entryUrl.path.join('/')}`,
       steps,
       type: metadata.data.type,
-      repositoryUrl: metadata.data.links.repository
+      repositoryUrl: metadata.data.links.repository,
+      screenshot: metadata.data.screenshot
     })
   }
 
@@ -70,7 +72,8 @@ export const variants = (metadata, _context, _route, routes) => {
       packageName: metadata.data.name,
       steps,
       type: metadata.data.type,
-      repositoryUrl: metadata.data.links.repository
+      repositoryUrl: metadata.data.links.repository,
+      screenshot: metadata.data.screenshot
     })
   }
 
@@ -87,6 +90,18 @@ export const variants = (metadata, _context, _route, routes) => {
   return combinations
 }
 
+const Img = styled.img `
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0px 7px 12px 4px #00000052;
+`
+
+const Screenshot = ({
+  src
+}) => { return <Txt align='center'><Img src={src} alt='screenshot' /></Txt> }
+
 const Jumbotron = (props) => {
   const theme = useTheme()
   const commands = props.steps || []
@@ -102,6 +117,7 @@ const Jumbotron = (props) => {
           )}
         </Flex>
         {commands.length > 0 && <Terminal commands={commands} />}
+        {props.screenshot && <Screenshot src={props.screenshot}/>}
         {props.action && (
           <Txt align="center" mt={40}>
             <Button m={2} href={props.action} primary>
