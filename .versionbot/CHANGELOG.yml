@@ -1,4 +1,14 @@
 - commits:
+    - subject: Bump scrutinizer
+      hash: 26e1ca17ab7e5b50a1e1d544adffd66790fd88f3
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.29.0
+  date: 2019-10-25T10:41:39.897Z
+- commits:
     - subject: Generate HTML from Markdown as opposed to JsonML
       hash: 0d3abbf8554f57dec792bf3b08481ba2d6f63ef0
       body: >
