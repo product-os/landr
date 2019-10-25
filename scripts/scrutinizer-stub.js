@@ -102,6 +102,7 @@ Bluebird.resolve()
       // Public is a reserved keyword
       public: isPublic,
       repositoryUrl,
+      screenshot,
       security,
       softwareRequired,
       stars,
@@ -158,12 +159,12 @@ Bluebird.resolve()
             contents: security
           }) : null
         },
-
         motivation,
         introduction,
         hardwareRequired,
         softwareRequired,
         highlights,
+        screenshot: screenshot ? `data:image/png;base64,${screenshot}` : null,
         installation: installationSteps,
 
         blog: _.map(blog, ({

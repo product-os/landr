@@ -129,7 +129,7 @@ Bluebird.try(async () => {
   const branch = await gitBranch(process.cwd())
   log(`Current branch is ${branch}`)
   const siteName = branch === 'master'
-    ? contractData.data.name
+    ? `landr-${contractData.data.name}`
     : `${contractData.data.name}-preview-${branch}`
 
   log(`Preparing site ${siteName}`)
