@@ -1,4 +1,14 @@
 - commits:
+    - subject: Drop scrutinizer input normalization
+      hash: 562b138aade92eb528694ae255bebf5439552d9f
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.2
+  date: 2019-10-30T16:28:56.011Z
+- commits:
     - subject: 'tests: Update meta.json'
       hash: 337b417b4fa2d57861160cf349f945475e21f3ba
       body: ''
