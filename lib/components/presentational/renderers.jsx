@@ -1,5 +1,5 @@
 import React from 'react'
-import _ from 'lodash'
+import kebabCase from 'lodash/kebabCase'
 import {
   Heading, Link, Txt
 } from 'rendition'
@@ -48,7 +48,7 @@ const renderers = {
   }) => {
     return React.createElement(headingLevelsToComponent[level], {
       fontSize: headingsFontSizesByLevel[level],
-      id: _.kebabCase(rest.children[0].props.value),
+      id: kebabCase(rest.children[0].props.value),
       ...rest,
       ...{
         mt: 24, mb: 16

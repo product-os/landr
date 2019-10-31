@@ -15,7 +15,8 @@
  */
 
 import React from 'react'
-import _ from 'lodash'
+import capitalize from 'lodash/capitalize'
+import isEmpty from 'lodash/isEmpty'
 import {
   Box, Img, Container, Flex, Link, Heading, Txt, useTheme
 } from 'rendition'
@@ -31,7 +32,7 @@ export const variants = (metadata, context, _route, routes) => {
     })
     .map((definition) => {
       return {
-        name: _.capitalize(definition.path[0]),
+        name: capitalize(definition.path[0]),
         url: `/${definition.path[0]}`
       }
     })
@@ -97,7 +98,7 @@ const Footer = (props) => {
     /> : <Heading.h1 color="#527699" fontSize={26}>{props.name}</Heading.h1>
   )
 
-  const owner = _.isEmpty(props.owner) ? null : (
+  const owner = isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
       <Txt fontSize={12}>Brought to you by</Txt>{' '}
       <Link color={theme.colors.text.main} href={props.owner.url} tooltip={props.owner.name}>
@@ -142,7 +143,7 @@ const Footer = (props) => {
               </Heading.h4>
               {links}
             </Box>
-            {!_.isEmpty(toc) && (
+            {!isEmpty(toc) && (
               <Box px={16} pt={14}>
                 <Heading.h4 mb={2} fontSize={14}>
                   Docs

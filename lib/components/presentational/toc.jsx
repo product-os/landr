@@ -1,5 +1,7 @@
 import React from 'react'
-import _ from 'lodash'
+import isArray from 'lodash/isArray'
+import last from 'lodash/last'
+import kebabCase from 'lodash/kebabCase'
 import {
   Box, Heading, Link
 } from 'rendition'
@@ -8,8 +10,8 @@ const normalizeTitle = (str) => {
   let title = str
 
   // The header contains some extra formatting like inline code
-  if (_.isArray(title)) {
-    title = _.last(title)
+  if (isArray(title)) {
+    title = last(title)
   }
 
   return title.split('`').join('')
@@ -28,7 +30,7 @@ const Toc = (props) => {
           const title = normalizeTitle(entry[2])
           return {
             title,
-            path: `#${_.kebabCase(title)}`
+            path: `#${kebabCase(title)}`
           }
         })
       : []

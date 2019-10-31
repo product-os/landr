@@ -16,7 +16,8 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import _ from 'lodash'
+import get from 'lodash/get'
+import isEmpty from 'lodash/isEmpty'
 import {
   Box,
   Container,
@@ -34,8 +35,8 @@ export const variants = (metadata) => {
   const combinations = []
 
   if (
-    !_.isEmpty(
-      _.get(metadata, [ 'data', 'releases', 'latestRelease', 'asssets' ])
+    !isEmpty(
+      get(metadata, [ 'data', 'releases', 'latestRelease', 'asssets' ])
     )
   ) {
     combinations.push({

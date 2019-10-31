@@ -18,7 +18,7 @@ import React from 'react'
 import {
   format, parseISO
 } from 'date-fns'
-import _ from 'lodash'
+import last from 'lodash/last'
 import ReactMarkdown from 'react-markdown'
 import {
   Box, Flex, Link, Container, DropDownButton
@@ -58,7 +58,7 @@ export const render = (props) => {
     const basePath = [ ...props.current ]
 
     // If the current path includes a version at the end, trim it
-    if (props.versions.includes(_.last(basePath))) {
+    if (props.versions.includes(last(basePath))) {
       basePath.pop()
     }
     const url = `/${basePath.join('/')}/${version}`
