@@ -1,4 +1,14 @@
 - commits:
+    - subject: Bump rendition
+      hash: 864f63c35a2f256d98424bb65e676f72db785137
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.30.0
+  date: 2019-10-31T14:55:59.256Z
+- commits:
     - subject: 'tests: Update meta.json'
       hash: 337b417b4fa2d57861160cf349f945475e21f3ba
       body: ''
