@@ -21,7 +21,11 @@ const fs = require('fs')
 const scrutinizer = require('scrutinizer')
 const Bluebird = require('bluebird')
 const markdown = require('markdown').markdown
-const _ = require('lodash')
+const last = require('lodash/last')
+const find = require('lodash/find')
+const get = require('lodash/get')
+const map = require('lodash/map')
+const tail = require('lodash/tail')
 const createGitinfo = require('gitinfo')
 const gitBranch = require('git-branch')
 
@@ -48,14 +52,14 @@ const getScrutinizerData = async () => {
 const parseMarkdown = ({
   filename, contents
 }) => {
-  const rawData = _.tail(markdown.parse(contents))
+  const rawData = tail(markdown.parse(contents))
 
   return {
     filename,
     mime: 'text/markdown',
 
     // eslint-disable-next-line lodash/matches-shorthand
-    title: _.last(_.find(rawData, (node) => {
+    title: last(find(rawData, (node) => {
       return node[0] === 'header' && node[1].level === 1
     })
     ),
@@ -122,7 +126,7 @@ Bluebird.resolve()
         name,
         tagline: description,
         images: {
-          banner: _.get(logo, [ 'base64' ])
+          banner: get(logo, [ 'base64' ])
         },
         description,
         version,
@@ -167,7 +171,7 @@ Bluebird.resolve()
         screenshot: screenshot ? `data:image/png;base64,${screenshot}` : null,
         installation: installationSteps,
 
-        blog: _.map(blog, ({
+        blog: map(blog, ({
           filename, contents
         }) => {
           return parseMarkdown({
@@ -178,7 +182,7 @@ Bluebird.resolve()
         docs: {
           latest: version,
           tags: {
-            [version]: _.map(docs, ({
+            [version]: map(docs, ({
               filename, contents
             }) => {
               return parseMarkdown({

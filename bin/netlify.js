@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const _ = require('lodash')
+const find = require('lodash/find')
 const Netlify = require('netlify')
 const packageJSON = require('../package.json')
 
@@ -22,7 +22,7 @@ exports.setupSite = async (token, slug) => {
   const client = new Netlify(token)
   const sites = await client.listSites()
 
-  const site = _.find(sites, {
+  const site = find(sites, {
     name: slug
   })
 

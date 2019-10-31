@@ -15,7 +15,7 @@
  */
 
 const ava = require('ava')
-const _ = require('lodash')
+const isFunction = require('lodash/isFunction')
 const analytics = require('../lib/analytics')
 
 for (const options of [
@@ -30,7 +30,7 @@ for (const options of [
   for (const fn of [ 'track' ]) {
     ava(`given settings ${JSON.stringify(options)} it should expose .${fn}()`, (test) => {
       const instance = analytics('mysite', options)
-      test.true(_.isFunction(instance[fn]))
+      test.true(isFunction(instance[fn]))
     })
   }
 }

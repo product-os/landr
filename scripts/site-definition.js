@@ -15,13 +15,13 @@
  */
 
 const fs = require('fs')
-const _ = require('lodash')
+const trim = require('lodash/trim')
 const path = require('path')
 const generator = require('../lib/generator')
 const CONTRACT = require('../meta.json')
 const THEME = require('../default-theme.json')
 
-const CNAME = _.trim(fs.readFileSync(path.resolve(__dirname, '..', 'CNAME'), {
+const CNAME = trim(fs.readFileSync(path.resolve(__dirname, '..', 'CNAME'), {
   encoding: 'utf8'
 }), ' \n')
 

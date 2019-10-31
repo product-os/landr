@@ -1,5 +1,6 @@
 import React from 'react';
-import _ from 'lodash';
+import omit from 'lodash/omit';
+import upperFirst from 'lodash/upperFirst';
 import { Provider } from 'rendition';
 import { storiesOf } from '@storybook/react';
 
@@ -10,7 +11,7 @@ import THEME from '../default-theme.json';
 import CONTRACT from '../meta.json';
 
 const ROUTES = routes(CONTRACT);
-const components = _.omit(allComponents, 'Head');
+const components = omit(allComponents, 'Head');
 
 // TODO: filter out the invalid combinations
 
@@ -37,7 +38,7 @@ for (const route of ROUTES) {
 
       storyTitle += `/${name}`;
 
-      storyTitle = _.upperFirst(storyTitle);
+      storyTitle = upperFirst(storyTitle);
       storiesOf(storyTitle, module).add(`Variant ${index + 1}`, () => (
         <Provider theme={renditionTheme}>{element}</Provider>
       ));

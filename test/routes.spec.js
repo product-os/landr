@@ -15,34 +15,42 @@
  */
 
 const ava = require('ava')
-const _ = require('lodash')
+const isArray = require('lodash/isArray')
+const isString = require('lodash/isString')
+const every = require('lodash/every')
+const sortBy = require('lodash/sortBy')
+const keys = require('lodash/keys')
+const groupBy = require('lodash/groupBy')
+const map = require('lodash/map')
+const values = require('lodash/values')
+const isPlainObject = require('lodash/isPlainObject')
 const routes = require('../lib/routes')
 const CONTRACT = require('../meta.json')
 
 ava('should generate valid routes for the current repo', (test) => {
   const result = routes(CONTRACT)
-  test.true(_.isArray(result))
+  test.true(isArray(result))
   test.true(result.length > 0)
 
   for (const route of result) {
-    test.deepEqual(_.sortBy(_.keys(route)),
-      _.sortBy([ 'title', 'path', 'context' ]))
-    test.true(_.isString(route.title))
+    test.deepEqual(sortBy(keys(route)),
+      sortBy([ 'title', 'path', 'context' ]))
+    test.true(isString(route.title))
     test.not(route.title.trim(), '')
-    test.true(_.isArray(route.path))
-    test.true(_.every(route.path, _.isString))
-    test.true(_.isPlainObject(route.context))
+    test.true(isArray(route.path))
+    test.true(every(route.path, isString))
+    test.true(isPlainObject(route.context))
   }
 })
 
 ava('should generate not generate duplicate routes for the current repo', (test) => {
   const result = routes(CONTRACT)
-  const groups = _.groupBy(_.map(result, (route) => {
+  const groups = groupBy(map(result, (route) => {
     route.path = route.path.join('/')
     return route
   }), 'path')
 
-  for (const route of _.values(groups)) {
+  for (const route of values(groups)) {
     test.is(route.length, 1)
   }
 })

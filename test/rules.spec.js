@@ -15,16 +15,19 @@
  */
 
 const ava = require('ava')
-const _ = require('lodash')
+const isArray = require('lodash/isArray')
+const every = require('lodash/every')
+const isEmpty = require('lodash/isEmpty')
+const isFunction = require('lodash/isFunction')
 const rules = require('../lib/rules')
 
 ava('should be a list of functions', (test) => {
-  test.true(_.isArray(rules))
-  test.true(_.every(rules, (rule) => {
-    return _.isFunction(rule) || _.isFunction(rule.fn)
+  test.true(isArray(rules))
+  test.true(every(rules, (rule) => {
+    return isFunction(rule) || isFunction(rule.fn)
   }))
 })
 
 ava('should not be empty', (test) => {
-  test.false(_.isEmpty(rules))
+  test.false(isEmpty(rules))
 })

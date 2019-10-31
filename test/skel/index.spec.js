@@ -15,7 +15,7 @@
  */
 
 const ava = require('ava')
-const _ = require('lodash')
+const sortBy = require('lodash/sortBy')
 const fs = require('fs')
 const path = require('path')
 const tmp = require('tmp')
@@ -28,8 +28,8 @@ ava('should build a skeleton directory', async (test) => {
   const expected = path.resolve(__dirname, 'expected')
 
   test.deepEqual(
-    _.sortBy(fs.readdirSync(expected)),
-    _.sortBy(fs.readdirSync(destination)))
+    sortBy(fs.readdirSync(expected)),
+    sortBy(fs.readdirSync(destination)))
 
   for (const files of fs.readdirSync(destination)) {
     const buffer = fs.readFileSync(path.resolve(destination, files))
