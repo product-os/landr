@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const _ = require('lodash')
+const last = require('lodash/last')
 const Vibrant = require('node-vibrant')
 const DEFAULT_THEME = require('../default-theme.json')
 
@@ -24,7 +24,7 @@ module.exports = async (imageBase64) => {
   }
 
   const vibrant = Vibrant.from(Buffer.from(
-    _.last(imageBase64.split(',')), 'base64'))
+    last(imageBase64.split(',')), 'base64'))
   const palette = await vibrant.getPalette()
 
   return {

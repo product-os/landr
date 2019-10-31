@@ -20,7 +20,11 @@ const {
 } = require('rendition')
 const ava = require('ava')
 const path = require('path')
-const _ = require('lodash')
+const toPairs = require('lodash/toPairs')
+const isFunction = require('lodash/isFunction')
+const sortBy = require('lodash/sortBy')
+const keys = require('lodash/keys')
+const startCase = require('lodash/startCase')
 const fs = require('fs')
 const enzyme = require('enzyme')
 const JSDOM = require('jsdom').JSDOM
@@ -36,22 +40,22 @@ enzyme.configure({
   adapter: new Adapter()
 })
 
-for (const component of _.toPairs(components)) {
+for (const component of toPairs(components)) {
   ava(`${component[0]} should have a ${component[0]} name property`, (test) => {
     test.is(component[0], component[1].name)
   })
 
   ava(`${component[0]} should have variants function`, (test) => {
-    test.true(_.isFunction(component[1].variants))
+    test.true(isFunction(component[1].variants))
   })
 
   ava(`${component[0]} should have render function`, (test) => {
-    test.true(_.isFunction(component[1].render))
+    test.true(isFunction(component[1].render))
   })
 
   ava(`${component[0]} should not export anything else`, (test) => {
     const expected = [ 'name', 'variants', 'render' ]
-    test.deepEqual(_.sortBy(_.keys(component[1])), _.sortBy(expected))
+    test.deepEqual(sortBy(keys(component[1])), sortBy(expected))
   })
 }
 
@@ -61,7 +65,7 @@ for (const file of fs.readdirSync(COMPONENTS_PATH)) {
     continue
   }
 
-  const name = _.startCase(path.basename(file, extension))
+  const name = startCase(path.basename(file, extension))
     .replace(/\s/g, '')
 
   ava(`${file} should be exported as ${name}`, (test) => {

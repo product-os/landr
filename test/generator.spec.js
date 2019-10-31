@@ -15,7 +15,11 @@
  */
 
 const ava = require('ava')
-const _ = require('lodash')
+const isArray = require('lodash/isArray')
+const isEmpty = require('lodash/isEmpty')
+const values = require('lodash/values')
+const uniq = require('lodash/uniq')
+const map = require('lodash/map')
 const generator = require('../lib/generator')
 const CONTRACT = require('../meta.json')
 const THEME = require('../default-theme.json')
@@ -26,30 +30,30 @@ const OPTIONS = {
 
 ava('should generate at least one route for the current repo', (test) => {
   const result = generator(CONTRACT, THEME, OPTIONS)
-  test.false(_.isEmpty(result))
+  test.false(isEmpty(result))
 })
 
 ava('should generate non blank pages for the current repo', (test) => {
   const result = generator(CONTRACT, THEME, OPTIONS)
-  for (const combination of _.values(result)) {
-    test.true(_.isArray(combination))
+  for (const combination of values(result)) {
+    test.true(isArray(combination))
     test.true(combination.length > 0)
   }
 })
 
 ava('should generate unique combinations for the current repo routes', (test) => {
   const result = generator(CONTRACT, THEME, OPTIONS)
-  for (const combination of _.values(result)) {
-    const components = _.map(combination, 'component')
-    test.is(components.length, _.uniq(components).length)
+  for (const combination of values(result)) {
+    const components = map(combination, 'component')
+    test.is(components.length, uniq(components).length)
   }
 })
 
 ava('should generate combinations with non blank options for the current repo', (test) => {
   const result = generator(CONTRACT, THEME, OPTIONS)
-  for (const combination of _.values(result)) {
+  for (const combination of values(result)) {
     for (const element of combination) {
-      test.false(_.isEmpty(element.options))
+      test.false(isEmpty(element.options))
     }
   }
 })
