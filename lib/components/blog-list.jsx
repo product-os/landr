@@ -30,7 +30,7 @@ const JsonML = ({
   data
 }) => {
   const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(data)))
+    markdown.toHTMLTree([ 'markdown' ].concat(data.jsonml)))
   return (<div dangerouslySetInnerHTML={{
     __html: html
   }}/>)
@@ -49,6 +49,7 @@ export const variants = (metadata, context, route) => {
 }
 
 export const render = (props) => {
+  console.log(props)
   const articles = props.articles.map((article, index) => {
     const url = `/${article.path.join('/')}`
     return (
