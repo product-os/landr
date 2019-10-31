@@ -15,7 +15,9 @@
  */
 
 import React from 'react'
-import _ from 'lodash'
+import find from 'lodash/find'
+import last from 'lodash/last'
+import get from 'lodash/get'
 import styled from 'styled-components'
 import {
   Box, Button, Container, Txt, Flex, Heading, useTheme
@@ -29,9 +31,9 @@ export const variants = (metadata, _context, _route, routes) => {
   const combinations = []
 
   const latestDocsVersion = metadata.data.docs.latest
-  const entrypoint = _.get(metadata, [ 'data', 'docs', 'tags', latestDocsVersion, '0' ])
+  const entrypoint = get(metadata, [ 'data', 'docs', 'tags', latestDocsVersion, '0' ])
 
-  const entryUrl = entrypoint && _.find(routes, (definition) => {
+  const entryUrl = entrypoint && find(routes, (definition) => {
     return (
       definition.context.article &&
       definition.context.article.content.filename === entrypoint.filename
@@ -40,12 +42,12 @@ export const variants = (metadata, _context, _route, routes) => {
 
   const steps = metadata.data.installation && metadata.data.installation.steps.reduce((accumulator, step) => {
     accumulator.push({
-      command: _.last(step[0]).replace(/\n/g, ''),
+      command: last(step[0]).replace(/\n/g, ''),
       comment: true
     })
 
     accumulator.push({
-      command: _.last(_.last(_.last(step))).replace(/\n/g, ''),
+      command: last(last(last(step))).replace(/\n/g, ''),
       comment: false
     })
 

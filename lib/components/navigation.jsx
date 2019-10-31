@@ -15,7 +15,7 @@
  */
 
 import React from 'react'
-import _ from 'lodash'
+import capitalize from 'lodash/capitalize'
 import styled from 'styled-components'
 import {
   Box, Img, Link, Container, Heading, Flex, useTheme
@@ -34,7 +34,7 @@ export const variants = (metadata, _context, _route, routes) => {
     })
     .map((definition) => {
       return {
-        name: _.capitalize(definition.path[0]),
+        name: capitalize(definition.path[0]),
         url: `/${definition.path[0]}`
       }
     })

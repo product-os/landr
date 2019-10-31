@@ -15,7 +15,7 @@
  */
 
 import React from 'react'
-import _ from 'lodash'
+import size from 'lodash/size'
 import styled from 'styled-components'
 import {
   Box, Container, Heading, Txt, Flex
@@ -26,7 +26,7 @@ export const name = 'Highlights'
 export const variants = (metadata) => {
   const combinations = []
 
-  if (_.size(metadata.data.highlights) > 0) {
+  if (size(metadata.data.highlights) > 0) {
     combinations.push({
       highlights: metadata.data.highlights
     })
