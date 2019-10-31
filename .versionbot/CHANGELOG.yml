@@ -1,4 +1,23 @@
 - commits:
+    - subject: Fix blog list regression
+      hash: 1b7e660daaf3bbc5958503c50bb389f0cbd7acb2
+      body: ''
+      footer:
+        Connects-to: '#268'
+        connects-to: '#268'
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+    - subject: Fix jumbotron CTA regression
+      hash: 04c2b9a9545fd6ecf87d6d90f16d71dab9a7a1cf
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.2
+  date: 2019-10-31T15:48:29.350Z
+- commits:
     - subject: 'tests: Update meta.json'
       hash: 337b417b4fa2d57861160cf349f945475e21f3ba
       body: ''
