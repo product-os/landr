@@ -47,13 +47,6 @@ export const variants = (metadata) => {
   return combinations
 }
 
-const DownloadCard = styled(Card) `
-  border-radius: 10px;
-  box-shadow: -10px 9px 21px 0 rgba(152, 173, 227, 0.08);
-  border: solid 1px #e8ebf2;
-  background-color: #ffffff;
-`
-
 const Table = styled.table `
   width: 100%;
   thead,
@@ -93,7 +86,7 @@ const Downloads = (props) => {
             <Heading.h2 mb={4} center>
               Downloads
             </Heading.h2>
-            <DownloadCard>
+            <Card>
               <Table>
                 <thead>
                   <tr>
@@ -127,7 +120,7 @@ const Downloads = (props) => {
                   })}
                 </tbody>
               </Table>
-            </DownloadCard>
+            </Card>
           </Box>
         </Flex>
       </Container>

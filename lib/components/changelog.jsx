@@ -20,6 +20,7 @@ import {
 } from 'date-fns'
 import {
   Box,
+  Card,
   Divider,
   Tag,
   Container,
@@ -28,16 +29,8 @@ import {
   Heading,
   Txt
 } from 'rendition'
-import styled from 'styled-components'
 
 export const name = 'Changelog'
-
-const Card = styled(Box) `
-  border-radius: 10px;
-  box-shadow: -10px 9px 21px 0 rgba(152, 173, 227, 0.08);
-  border: solid 1px #e8ebf2;
-  background-color: #ffffff;
-`
 
 export const variants = (metadata) => {
   const combinations = []
@@ -62,7 +55,7 @@ export const render = ({
         <Heading.h2 mb={4} align="center">
           Changelog
         </Heading.h2>
-        <Card p={4}>
+        <Card>
           {changelog.map((entry) => {
             return (
               <Box key={entry.version} mb={4}>
