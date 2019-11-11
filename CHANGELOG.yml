@@ -1,4 +1,215 @@
 - commits:
+    - subject: Update dependencies
+      hash: 7124c7dfed5844c18f53294c10b0805e48e2dc07
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.3
+  date: 2019-11-11T13:26:45.734Z
+- commits:
+    - subject: Fix blog list regression
+      hash: 1b7e660daaf3bbc5958503c50bb389f0cbd7acb2
+      body: ''
+      footer:
+        Connects-to: '#268'
+        connects-to: '#268'
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+    - subject: Fix jumbotron CTA regression
+      hash: 04c2b9a9545fd6ecf87d6d90f16d71dab9a7a1cf
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.2
+  date: 2019-10-31T15:48:29.350Z
+- commits:
+    - subject: 'tests: Update meta.json'
+      hash: 337b417b4fa2d57861160cf349f945475e21f3ba
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.1
+  date: 2019-10-25T12:07:39.655Z
+- commits:
+    - subject: Bump scrutinizer
+      hash: 26e1ca17ab7e5b50a1e1d544adffd66790fd88f3
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.29.0
+  date: 2019-10-25T10:41:39.897Z
+- commits:
+    - subject: Generate HTML from Markdown as opposed to JsonML
+      hash: 0d3abbf8554f57dec792bf3b08481ba2d6f63ef0
+      body: >
+        We still keep JsonML, but we use it to extract information about the
+        markdown structure.
+
+
+        Fixes super annoying bugs, like Table & Code parsing.
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.28.0
+  date: 2019-10-24T18:48:59.504Z
+- commits:
+    - subject: 'faq: Display whole answer content'
+      hash: c909fdc8411103663493fcde49201ddcd720e3fb
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.5
+  date: 2019-10-24T14:30:32.295Z
+- commits:
+    - subject: Show contributors regardless of having a Contributing doc
+      hash: e41a05eed139c397799974ae6fbca290d52cfc48
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.4
+  date: 2019-10-24T13:14:19.534Z
+- commits:
+    - subject: Fix markdown title normalization condition
+      hash: f5c86445488f75cda999917fd791edb280178afd
+      body: ''
+      footer:
+        Connects-to: '#257'
+        connects-to: '#257'
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.3
+  date: 2019-10-24T10:45:09.662Z
+- commits:
+    - subject: Bump scrutinizer
+      hash: ebfc9b95cee91e46b698ab86a06299fdc0b4d695
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.2
+  date: 2019-10-23T16:03:09.430Z
+- commits:
+    - subject: 'fix: Update rules for Contributors section'
+      hash: a54b1c0f78c95c8841d90a543bc5dfa59ead7c92
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.27.1
+  date: 2019-10-23T14:59:10.702Z
+- commits:
+    - subject: Add contributors page
+      hash: 4baa53b4b3f3bb82ff41418963087963dce31b4c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.27.0
+  date: 2019-10-23T13:04:59.285Z
+- commits:
+    - subject: 'config: Change how we export React components due to Hooks API change'
+      hash: 1f5ca82c2d30f08ccdd72b70ee20007adee1cd20
+      body: >
+        We were breaking the rules of hooks
+        (https://reactjs.org/docs/hooks-rules.html) by adding hooks in normal
+        Javascript functions. Now the 'render' function that generates the React
+        component will reference a parent React component, that holds the
+        internal state (hooks).
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.26.0
+  date: 2019-10-22T11:05:40.545Z
+- commits:
+    - subject: 'projects: Expose used-by section'
+      hash: fc70a13866588fe7eb9245c92fdc84e058a503aa
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.25.0
+  date: 2019-10-22T09:39:09.793Z
+- commits:
+    - subject: 'readme: Format Examples section'
+      hash: 6867b71b37d1c85defcf85589acf3841a4fe29e8
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.24.1
+  date: 2019-10-21T17:52:55.560Z
+- commits:
+    - subject: Expose Introduction component
+      hash: d4fae9c1413ff94dbbecd8e345ed112fbccd7cd5
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.24.0
+  date: 2019-10-21T17:05:17.617Z
+- commits:
+    - subject: Expose Highlights component
+      hash: 7d324f01f92290d946102a1caaa1f42827b4a7da
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.23.0
+  date: 2019-10-21T16:46:08.879Z
+- commits:
+    - subject: 'readme: Introduce a Highlights convention'
+      hash: 2265f11aa5f02aa8108d6218502ca332495e61d2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.22.2
+  date: 2019-10-21T15:59:25.551Z
+- commits:
+    - subject: Run scrutinizer stub against the current working branch
+      hash: c50bd43e517dcf05c15f95c4820b5e19f1957cd1
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.22.1
+  date: 2019-10-21T15:03:39.651Z
+- commits:
+    - subject: Bump scrutinizer version
+      hash: 04dfd45e59013c79d316c801e9690514ecbb7d3d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.22.0
+  date: 2019-10-21T14:43:59.529Z
+- commits:
     - subject: Add changelog page
       hash: 96fd3dc19ffcfad18f4808c8b21732dec1135066
       body: ''
@@ -9,7 +220,7 @@
         change-type: minor
       author: Dimitrios Lytras
   version: 5.21.0
-  date: 2019-10-15T15:02:39.567Z
+  date: 2019-10-15T14:54:49.179Z
 - commits:
     - subject: Introduce Downloads component
       hash: 0767054734f81bc77c2ab5fb7c1a1f67c8de7c12
