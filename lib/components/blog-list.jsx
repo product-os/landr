@@ -49,7 +49,6 @@ export const variants = (metadata, context, route) => {
 }
 
 export const render = (props) => {
-  console.log(props)
   const articles = props.articles.map((article, index) => {
     const url = `/${article.path.join('/')}`
     return (

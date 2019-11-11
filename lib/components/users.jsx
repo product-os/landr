@@ -17,7 +17,7 @@
 import React from 'react'
 import _ from 'lodash'
 import {
-  Box, Button, Container, Flex, Link, Heading, Txt
+  Box, Button, Container, Flex, Link, Heading, Txt, Card
 } from 'rendition'
 import styled from 'styled-components'
 
@@ -35,15 +35,8 @@ export const variants = (metadata) => {
   return combinations
 }
 
-const ProjectCard = styled(Flex) `
-  height: 100%;
-  flex-direction: column;
-  flex: 1;
-
-  border-radius: 10px;
-  box-shadow: -10px 9px 21px 0 rgba(152, 173, 227, 0.08);
-  border: solid 1px #e8ebf2;
-  background-color: #ffffff;
+const ProjectCard = styled(Card) `
+  padding: 0;
 `
 
 const Screenshot = styled(Box) `
@@ -67,6 +60,9 @@ export const render = (props) => {
             justifyContent="center"
             flex={1}
             flexDirection="column"
+            style={{
+              height: '100%'
+            }}
           >
             <Heading.h5 mb={16} fontSize={18} textAlign="center">
               {projectName}
