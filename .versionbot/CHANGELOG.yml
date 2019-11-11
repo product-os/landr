@@ -1,4 +1,14 @@
 - commits:
+    - subject: Update dependencies
+      hash: 7124c7dfed5844c18f53294c10b0805e48e2dc07
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.3
+  date: 2019-11-11T13:04:27.969Z
+- commits:
     - subject: Fix blog list regression
       hash: 1b7e660daaf3bbc5958503c50bb389f0cbd7acb2
       body: ''
