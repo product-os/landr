@@ -1,4 +1,14 @@
 - commits:
+    - subject: Update scrutinizer stub
+      hash: 6de7fd8deff95a0d80a5f9e52e8f1c27dd9f67ab
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.29.4
+  date: 2019-11-14T17:04:56.341Z
+- commits:
     - subject: Update dependencies
       hash: 7124c7dfed5844c18f53294c10b0805e48e2dc07
       body: ''
@@ -7,7 +17,7 @@
         change-type: patch
       author: Dimitrios Lytras
   version: 5.29.3
-  date: 2019-11-11T13:26:45.734Z
+  date: 2019-11-11T13:04:27.969Z
 - commits:
     - subject: Fix blog list regression
       hash: 1b7e660daaf3bbc5958503c50bb389f0cbd7acb2
