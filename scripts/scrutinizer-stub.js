@@ -164,7 +164,7 @@ Bluebird.resolve()
         hardwareRequired,
         softwareRequired,
         highlights,
-        screenshot: screenshot ? `data:image/png;base64,${screenshot}` : null,
+        screenshot,
         installation: installationSteps,
 
         blog: _.map(blog, ({
