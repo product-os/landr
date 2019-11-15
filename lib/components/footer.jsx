@@ -122,7 +122,7 @@ const Footer = (props) => {
         position: 'relative',
         zIndex: 3
       }}
-      bg={theme.colors.primary.light}
+      bg='#f8f9fd'
     >
       <Container>
         <Flex justifyContent="center">

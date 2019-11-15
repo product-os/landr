@@ -20,6 +20,9 @@ import styled from 'styled-components'
 import {
   Box, Container, Heading, Txt, Flex
 } from 'rendition'
+import {
+  markdown
+} from 'markdown'
 
 export const name = 'Highlights'
 
@@ -43,19 +46,24 @@ const Wrapper = styled(Box) `
   }};
 `
 
+const getHtml = (str) => {
+  return markdown.renderJsonML(markdown.toHTMLTree([ 'markdown' ].concat(str)))
+}
+
 export const render = (props) => {
   const boxes = props.highlights.map((highlight, index) => {
     return (
-      <Box
-        key={index}
-        px={3}
-        mb={3}
-        width={[ 1, 1, 1 / 3, 1 / 3 ]}
-      >
-        <Heading.h3 fontSize={22} mb={3} align='center'>
+      <Box key={index} px={3} mb={3} width={[ 1, 1, 1 / 3, 1 / 3 ]}>
+        <Heading.h3 fontSize={22} mb={3} align="center">
           {highlight.title}
         </Heading.h3>
-        <Txt align='center' fontSize={14}>{highlight.description}</Txt>
+        <Txt
+          align="center"
+          fontSize={14}
+          dangerouslySetInnerHTML={{
+            __html: getHtml(highlight.description)
+          }}
+        ></Txt>
       </Box>
     )
   })
@@ -63,7 +71,7 @@ export const render = (props) => {
   return (
     <Wrapper pt={45} pb={100}>
       <Container>
-        <Flex flexWrap='wrap' justifyContent="space-around" mx={-3}>
+        <Flex flexWrap="wrap" justifyContent="space-around" mx={-3}>
           {boxes}
         </Flex>
       </Container>
