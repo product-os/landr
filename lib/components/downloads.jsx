@@ -98,6 +98,8 @@ const Downloads = (props) => {
                       >
                         ASSET
                       </Heading.h6>
+                    </th>
+                    <th>
                       <Heading.h6
                         fontSize={12}
                         color={theme.colors.primary.main}
@@ -105,10 +107,12 @@ const Downloads = (props) => {
                         OS
                       </Heading.h6>
                     </th>
-                    <th>&nbsp;</th>
-                    <Heading.h6 fontSize={12} color={theme.colors.primary.main}>
+                    <th>
+                      <Heading.h6 fontSize={12} color={theme.colors.primary.main}>
                       ARCH
-                    </Heading.h6>
+                      </Heading.h6>
+                    </th>
+                    <th>&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -118,7 +122,7 @@ const Downloads = (props) => {
                         <td>
                           {_.capitalize(props.name)} for {asset.os}{' '}
                           {asset.installerType ? (
-                            <span>({asset.installerType})</span>
+                            <span>{asset.installerType}</span>
                           ) : null}
                         </td>
                         <td>{asset.os}</td>
