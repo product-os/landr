@@ -40,7 +40,8 @@ export const variants = (metadata) => {
   ) {
     combinations.push({
       assets: metadata.data.releases.latestRelease.asssets,
-      tag: metadata.data.releases.latestRelease.tagName
+      tag: metadata.data.releases.latestRelease.tagName,
+      name: metadata.data.name
     })
   }
 
@@ -97,15 +98,31 @@ const Downloads = (props) => {
                       >
                         ASSET
                       </Heading.h6>
+                      <Heading.h6
+                        fontSize={12}
+                        color={theme.colors.primary.main}
+                      >
+                        OS
+                      </Heading.h6>
                     </th>
                     <th>&nbsp;</th>
+                    <Heading.h6 fontSize={12} color={theme.colors.primary.main}>
+                      ARCH
+                    </Heading.h6>
                   </tr>
                 </thead>
                 <tbody>
                   {props.assets.map((asset, index) => {
                     return (
                       <tr key={index}>
-                        <td>{asset.name}</td>
+                        <td>
+                          {_.capitalize(props.name)} for {asset.os}{' '}
+                          {asset.installerType ? (
+                            <span>({asset.installerType})</span>
+                          ) : null}
+                        </td>
+                        <td>{asset.os}</td>
+                        <td>{asset.arch}</td>
                         <td>
                           <Flex justifyContent="flex-end">
                             <Link ext mx={3} blank href={asset.downloadUrl}>
