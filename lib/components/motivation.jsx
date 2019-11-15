@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import capitalize from 'lodash/capitalize'
 import {
   Box, Container, Heading, Txt
 } from 'rendition'
@@ -45,7 +46,7 @@ export const render = (props) => {
   return (
     <Box my={130}>
       <Container>
-        <Heading.h2 mb={24}>Why {props.name}</Heading.h2>
+        <Heading.h2 mb={24}>Why {capitalize(props.name)}?</Heading.h2>
         <Txt
           width={[ 1, 1, 1 / 2, 1 / 2 ]}
           fontSize={14}
