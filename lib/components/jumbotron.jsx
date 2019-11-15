@@ -15,6 +15,7 @@
  */
 
 import React from 'react'
+import capitalize from 'lodash/capitalize'
 import find from 'lodash/find'
 import last from 'lodash/last'
 import get from 'lodash/get'
@@ -111,7 +112,7 @@ const Jumbotron = (props) => {
     <Box py={5} bg={theme.colors.primary.light}>
       <Container>
         <Flex flexDirection="column" alignItems="center" mb={40}>
-          <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{props.title}</Heading.h1>
+          <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{(capitalize(props.title))}</Heading.h1>
           {props.description && (
             <Heading.h2 fontSize={24} align='center' style={{
               maxWidth: 800
