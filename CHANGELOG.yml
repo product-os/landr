@@ -1,4 +1,14 @@
 - commits:
+    - subject: Expose OS & Arch in downloads
+      hash: b6e357de1a2c75a7ff04f738beb32c969b12ed03
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.30.0
+  date: 2019-11-15T15:25:26.320Z
+- commits:
     - subject: Update scrutinizer stub
       hash: 6de7fd8deff95a0d80a5f9e52e8f1c27dd9f67ab
       body: ''
@@ -7,7 +17,7 @@
         change-type: patch
       author: Dimitrios Lytras
   version: 5.29.4
-  date: 2019-11-14T17:04:56.341Z
+  date: 2019-11-14T14:05:39.663Z
 - commits:
     - subject: Update dependencies
       hash: 7124c7dfed5844c18f53294c10b0805e48e2dc07
