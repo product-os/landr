@@ -1,12 +1,12 @@
 {
   "vibrant": {
-    "dark": { "title": "#fff", "text": "#fff", "color": "#1c5474" },
-    "light": { "title": "#fff", "text": "#000", "color": "#b28ceb" },
-    "normal": { "title": "#fff", "text": "#000", "color": "#04d3fc" }
+    "dark": { "title": "#fff", "text": "#fff", "color": "#e07800" },
+    "light": { "title": "#fff", "text": "#000", "color": "#ffeecb" },
+    "normal": { "title": "#fff", "text": "#000", "color": "#fa8600" }
   },
   "muted": {
-    "dark": { "title": "#fff", "text": "#fff", "color": "#1d597b" },
-    "light": { "title": "#fff", "text": "#fff", "color": "#411682" },
-    "normal": { "title": "#fff", "text": "#fff", "color": "#017e97" }
+    "dark": { "title": "#fff", "text": "#fff", "color": "#955603" },
+    "light": { "title": "#fff", "text": "#fff", "color": "#967402" },
+    "normal": { "title": "#fff", "text": "#fff", "color": "#965802" }
   }
 }
