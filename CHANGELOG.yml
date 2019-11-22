@@ -1,4 +1,14 @@
 - commits:
+    - subject: 'fix: Revert default theme'
+      hash: e72997b8573be99603bbafc06dbd090394cbc36e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Dimitrios Lytras
+  version: 5.30.1
+  date: 2019-11-22T12:49:44.617Z
+- commits:
     - subject: Expose OS & Arch in downloads
       hash: b6e357de1a2c75a7ff04f738beb32c969b12ed03
       body: ''
@@ -7,7 +17,7 @@
         change-type: minor
       author: Dimitrios Lytras
   version: 5.30.0
-  date: 2019-11-15T15:25:26.320Z
+  date: 2019-11-15T14:20:09.067Z
 - commits:
     - subject: Update scrutinizer stub
       hash: 6de7fd8deff95a0d80a5f9e52e8f1c27dd9f67ab
