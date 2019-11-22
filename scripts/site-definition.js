@@ -29,6 +29,11 @@ console.time('generator')
 const result = generator(CONTRACT, THEME, {
   siteUrl: `https://${CNAME}`
 })
-
-console.log(JSON.stringify(result, null, 2))
 console.timeEnd('generator')
+
+/* eslint-disable-next-line */
+fs.writeFile('./site-definition.json', JSON.stringify(result, null, 2), (err) => {
+  if (err) {
+    return console.log(err)
+  }
+})

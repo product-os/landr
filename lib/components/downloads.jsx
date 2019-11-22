@@ -16,6 +16,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import capitalize from 'lodash/capitalize'
 import get from 'lodash/get'
 import isEmpty from 'lodash/isEmpty'
 import {
@@ -121,7 +122,7 @@ const Downloads = (props) => {
                     return (
                       <tr key={index}>
                         <td>
-                          {_.capitalize(props.name)} for {asset.os}{' '}
+                          {capitalize(props.name)} for {asset.os}{' '}
                           {asset.installerType ? (
                             <span>{asset.installerType}</span>
                           ) : null}
