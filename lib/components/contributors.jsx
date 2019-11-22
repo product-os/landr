@@ -30,7 +30,7 @@ import {
 import styled from 'styled-components'
 
 import ContributeIcon from './presentational/contribute-icon'
-import heartIcon from './assets/heart.svg'
+import HeartIcon from './presentational/heart-icon'
 
 export const name = 'Contributors'
 
@@ -140,7 +140,7 @@ const Contributors = (props) => {
       <Container textAlign="center">
         <Heading.h2 fontSize={34} mb={30} align="center">
           <Flex alignItems="center" justifyContent="center">
-            Made with <Img src={heartIcon} width={32} mx={2} /> by{' '}
+            Made with <Txt mx={2} ><HeartIcon /></Txt> by{' '}
             {props.minimalView && <ContributorsPageRedirect />}
           </Flex>
         </Heading.h2>
