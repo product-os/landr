@@ -51,7 +51,7 @@ export const variants = (metadata, _context, _route, routes) => {
   if (metadata.data.images.banner && metadata.data.links.repository) {
     combinations.push({
       name: metadata.data.name,
-      logo: metadata.data.images.banner,
+      logo: 'placeholder',
       routes: toplevelRoutes,
       githubUrl: metadata.data.links.repository
     })

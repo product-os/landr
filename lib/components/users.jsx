@@ -28,7 +28,7 @@ export const variants = (metadata) => {
 
   if (size(metadata.data.github.usedBy) > 0) {
     combinations.push({
-      users: metadata.data.github.usedBy
+      users: []
     })
   }
 
