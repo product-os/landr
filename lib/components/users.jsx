@@ -28,7 +28,9 @@ export const variants = (metadata) => {
 
   if (_.size(metadata.data.github.usedBy) > 0) {
     combinations.push({
-      users: metadata.data.github.usedBy
+      users: _.map(metadata.data.github.usedBy, (user) => {
+        return _.omit(user, [ 'screenshot' ])
+      })
     })
   }
 

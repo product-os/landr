@@ -64,7 +64,7 @@ export const variants = (metadata, _context, _route, routes) => {
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
-      screenshot: metadata.data.screenshot
+      screenshot: 'XXX'
     })
   }
 

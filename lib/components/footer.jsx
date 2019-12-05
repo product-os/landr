@@ -47,7 +47,7 @@ export const variants = (metadata, context, _route, routes) => {
     combinations.push({
       name: metadata.data.name,
       owner: metadata.data.github.owner,
-      logo: metadata.data.images.banner,
+      logo: 'XXX',
       routes: toplevelRoutes,
       toc: context.toc
     })
