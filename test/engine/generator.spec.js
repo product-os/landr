@@ -15,8 +15,15 @@
  */
 
 const ava = require('ava')
+const _ = require('lodash')
 const generator = require('../../lib/engine/generator')
 const TEST_THEME = require('../../default-theme.json')
+
+const sortCallback = (combination) => {
+  return _.flatten(combination.map((element) => {
+    return [ element.component, element.rank ]
+  })).join('|')
+}
 
 ava('.getCombinations() should generate combinations for a given input', (test) => {
   const components = [
@@ -111,7 +118,7 @@ ava('.getCombinations() should generate combinations for a given input', (test) 
     result.push(combination)
   }
 
-  test.deepEqual(result, [
+  test.deepEqual(_.sortBy(result, sortCallback), _.sortBy([
     [
       {
         component: 'Foo',
@@ -248,7 +255,7 @@ ava('.getCombinations() should generate combinations for a given input', (test) 
       }
     ],
     []
-  ])
+  ], sortCallback))
 })
 
 ava('.filterCombinations() should remove redundand combinations given no rules', (test) => {
