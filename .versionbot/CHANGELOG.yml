@@ -1,4 +1,16 @@
 - commits:
+    - subject: Convert last SVG to React component
+      hash: b9eef39fd3d85c2767f22cbfbace06592b5d3f9d
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Dimitrios Lytras
+  version: 5.30.2
+  date: 2019-12-05T21:11:53.795Z
+- commits:
     - subject: 'fix: Revert default theme'
       hash: e72997b8573be99603bbafc06dbd090394cbc36e
       body: ''
