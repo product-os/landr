@@ -1,4 +1,25 @@
 - commits:
+    - subject: 'engine: Improve combination generation algorithm speed'
+      hash: 12f22f30ccdbe89cc61cca57d9cfbd7fa8d8488c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Juan Cruz Viotti
+    - subject: Convert last SVG to React component
+      hash: 694a281e221f376fa2d3e0a81101ec969c1486b9
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Juan Cruz Viotti <juan@balena.io>
+        signed-off-by: Juan Cruz Viotti <juan@balena.io>
+      author: Dimitrios Lytras
+  version: 5.30.2
+  date: 2019-12-06T10:03:39.427Z
+- commits:
     - subject: 'fix: Revert default theme'
       hash: e72997b8573be99603bbafc06dbd090394cbc36e
       body: ''
@@ -7,7 +28,7 @@
         change-type: patch
       author: Dimitrios Lytras
   version: 5.30.1
-  date: 2019-11-22T12:49:44.617Z
+  date: 2019-11-22T10:35:18.694Z
 - commits:
     - subject: Expose OS & Arch in downloads
       hash: b6e357de1a2c75a7ff04f738beb32c969b12ed03
