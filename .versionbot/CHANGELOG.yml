@@ -1,4 +1,16 @@
 - commits:
+    - subject: Use SC for the CSS injection
+      hash: 78c915184cd831729a45b364ec036bad380a0f5c
+      body: ''
+      footer:
+        Connects-to: '#265'
+        connects-to: '#265'
+        Change-type: minor
+        change-type: minor
+      author: Dimitrios Lytras
+  version: 5.31.0
+  date: 2020-01-08T15:30:34.969Z
+- commits:
     - subject: 'engine: Improve combination generation algorithm speed'
       hash: 12f22f30ccdbe89cc61cca57d9cfbd7fa8d8488c
       body: ''
