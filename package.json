@@ -7,7 +7,7 @@
     "landr": "./bin/cli.js"
   },
   "scripts": {
-    "lint": "eslint --ext .js,.jsx bin lib test scripts && csslint lib/**/*.css",
+    "lint": "eslint --ext .js,.jsx bin lib test scripts",
     "unit": "nyc --exclude scripts --exclude test --reporter=html --extension .js --extension .jsx --compact=false ava",
     "build": "./bin/cli.js build",
     "test-mixpanel": "LANDR_MIXPANEL_TOKEN=04ad3098829fcd7c5700d75cea220530 ./bin/cli.js build",

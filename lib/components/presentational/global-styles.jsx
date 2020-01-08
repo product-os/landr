@@ -19,6 +19,11 @@
  * these very generic and small.
  */
 
+const {
+  createGlobalStyle
+} = require('styled-components')
+
+const GlobalStyles = createGlobalStyle `
 * {
   scroll-behavior: smooth;
 }
@@ -39,3 +44,6 @@ img {
   height: auto;
   max-width: 100%;
 }
+`
+
+module.exports = GlobalStyles
