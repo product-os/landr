@@ -1,4 +1,26 @@
 - commits:
+    - subject: Bump handlebars from 4.1.2 to 4.3.0
+      hash: 9b4986c274c240ee8b2e22176e571df7ff462133
+      body: >
+        Bumps [handlebars](https://github.com/wycats/handlebars.js) from 4.1.2
+        to 4.3.0.
+
+        - [Release notes](https://github.com/wycats/handlebars.js/releases)
+
+        -
+        [Changelog](https://github.com/wycats/handlebars.js/blob/master/release-notes.md)
+
+        -
+        [Commits](https://github.com/wycats/handlebars.js/compare/v4.1.2...v4.3.0)
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: 'dependabot[bot]'
+  version: 5.30.3
+  date: 2020-03-16T11:47:54.394Z
+- commits:
     - subject: 'engine: Improve combination generation algorithm speed'
       hash: 12f22f30ccdbe89cc61cca57d9cfbd7fa8d8488c
       body: ''
@@ -18,7 +40,7 @@
         signed-off-by: Juan Cruz Viotti <juan@balena.io>
       author: Dimitrios Lytras
   version: 5.30.2
-  date: 2019-12-06T10:03:39.427Z
+  date: 2019-12-05T21:40:00.526Z
 - commits:
     - subject: 'fix: Revert default theme'
       hash: e72997b8573be99603bbafc06dbd090394cbc36e
