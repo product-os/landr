@@ -23,7 +23,7 @@ const {
 } = require('serialize-error')
 
 const metaGenerator = require('./lib/generate-landr-meta')
-const runner = require('../bin/runner')
+const runner = require('../lib/build-runner')
 const scrutinizer = require('./lib/scrutinizer')
 
 // TODO: Infer this login information automatically

@@ -2,17 +2,18 @@
   "name": "landr",
   "version": "5.31.7",
   "description": "Generate great websites for your projects with zero configuration",
-  "main": "bin/cli.js",
+  "main": "src/cli/index.js",
   "bin": {
-    "landr": "./bin/cli.js"
+    "landr": "./bin/run"
   },
   "scripts": {
     "bot:dev": "nodemon",
     "bot:start": "probot run ./bot/index.js",
-    "lint": "eslint --ext .js,.jsx bin lib bot test scripts && csslint lib/**/*.css",
+    "cli:docs": "oclif-dev readme",
+    "lint": "eslint --ext .js,.jsx lib bot test scripts && csslint lib/**/*.css",
     "unit": "nyc --exclude scripts --exclude test --reporter=html --extension .js --extension .jsx --compact=false ava",
-    "build": "./bin/cli.js build",
-    "test-mixpanel": "LANDR_MIXPANEL_TOKEN=04ad3098829fcd7c5700d75cea220530 ./bin/cli.js build",
+    "build": "./bin/run build",
+    "test-mixpanel": "LANDR_MIXPANEL_TOKEN=04ad3098829fcd7c5700d75cea220530 ./bin/run build",
     "test-npm": "rm -f land-*.tgz && npm pack && npm install --global ./landr-$npm_package_version.tgz && landr build && rm landr-*.tgz",
     "test": "npm run lint && npm run unit && npm run build && npm run test-npm && npm run test-mixpanel",
     "start": "npm run build",
@@ -35,6 +36,11 @@
   "bugs": {
     "url": "https://github.com/balena-io/landr/issues"
   },
+  "files": [
+    "/bin",
+    "/oclif.manifest.json",
+    "/src"
+  ],
   "homepage": "https://github.com/balena-io/landr",
   "ava": {
     "verbose": true,
@@ -49,6 +55,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@oclif/dev-cli": "^1.22.2",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
@@ -77,6 +84,9 @@
   },
   "dependencies": {
     "@babel/register": "^7.4.0",
+    "@oclif/command": "^1.5.19",
+    "@oclif/errors": "^1.2.2",
+    "@oclif/plugin-help": "^2.2.3",
     "@reach/router": "^1.2.1",
     "bluebird": "^3.7.2",
     "chalk": "^2.4.2",
@@ -133,5 +143,15 @@
       ".tmp/",
       ".landr-store/"
     ]
+  },
+  "oclif": {
+    "commands": "./lib/cli/commands",
+    "bin": "landr",
+    "plugins": [
+      "@oclif/plugin-help"
+    ],
+    "hooks": {
+      "init": "./lib/cli/hooks/init.js"
+    }
   }
 }

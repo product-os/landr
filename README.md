@@ -54,23 +54,89 @@ experience presenting a wide variety of open source projects on the web, so
 that having a website that can compete with your favourite massively popular
 open source project is not only possible, but comes with zero overhead.
 
-Examples
---------
+# Usage
+<!-- usage -->
+```sh-session
+$ npm install -g landr
+$ landr COMMAND
+running command...
+$ landr (-v|--version|version)
+landr/5.31.6 linux-x64 node-v12.15.0
+$ landr --help [COMMAND]
+USAGE
+  $ landr COMMAND
+...
+```
+<!-- usagestop -->
 
-The Landr website is of course based on Landr! You may also enjoy the following
-sites:
+# Commands
+<!-- commands -->
+* [`landr build`](#landr-build)
+* [`landr help [COMMAND]`](#landr-help-command)
+* [`landr meta`](#landr-meta)
 
-- [Etcher](https://www.balena.io/etcher/) - Flash OS images to SD cards & USB drives,
-  safely and easily
-- [BalenaFin](https://www.balena.io/fin/) - A board for fleet owners
-- [BalenaOS](https://www.balena.io/os/) - A host OS tailored for containers, designed for
-  reliability, proven in production
-- [OpenBalena](https://www.balena.io/open/) - Open source software to manage connected IoT
-  devices
-- [BalenaEngine](https://www.balena.io/engine/) - A container engine built for IoT
+## `landr build`
 
-Do you know of any Landr website we missed? [Let us
-know!](https://github.com/balena-io/landr/issues/new?labels=examples&title=Add%20this%20Landr%20website%20to%20the%20examples)
+Build a static site using landr
+
+```
+USAGE
+  $ landr build
+
+OPTIONS
+  -d, --deploy         Deploy the site to netlify after generating it
+  -m, --meta=meta      The location of the meta file used to generate your landr site
+  -o, --output=output  The output directory where we should generate your landr site
+  -v, --verbose        Run in verbose mode
+
+DESCRIPTION
+  Build a static site using landr into a local directory.
+  By default this command will look for a meta.json file in the current directory
+  to use as data for generating the site. The location of the data file can be
+  specified using the -m flag.
+  By default the site will be written to a folder named landr-dist in the current
+  directory. Ther location that the site will be written to can be specified using
+  the -o flag.
+  You can also optionally deploy your site to netlfiy using the -d flag. Deploying
+  to netlify relies on providing the NETLIFY_AUTH_TOKEN env var.
+```
+
+_See code: [lib/cli/commands/build.js](https://github.com/balena-io/landr/blob/v5.31.6/lib/cli/commands/build.js)_
+
+## `landr help [COMMAND]`
+
+display help for landr
+
+```
+USAGE
+  $ landr help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
+```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `landr meta`
+
+Generate a meta file
+
+```
+USAGE
+  $ landr meta
+
+OPTIONS
+  -o, --output=output  The output path where the metadata should be written
+
+DESCRIPTION
+  Generate a meta file that contains all the information landr needs to generate a site.
+```
+
+_See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v5.31.6/lib/cli/commands/meta.js)_
+<!-- commandsstop -->
 
 Getting Help
 ------------
