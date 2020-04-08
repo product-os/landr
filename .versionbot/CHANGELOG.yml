@@ -1,4 +1,17 @@
 - commits:
+    - subject: Improve netlify url namespacing to avoid collisions
+      hash: d4edca574d004d0e8c24fb91f32e4f7204752a83
+      body: |
+        Fixes product-os/landr#293
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.30.5
+  date: 2020-04-08T08:34:13.819Z
+- commits:
     - subject: Bump acorn from 6.1.1 to 6.4.1
       hash: 5fa87de59d653017a146197b9ddadf96631e2f1c
       body: |
