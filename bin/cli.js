@@ -128,9 +128,11 @@ Bluebird.try(async () => {
   // other than master.
   const branch = await gitBranch(process.cwd())
   log(`Current branch is ${branch}`)
+  const name = contractData.data.name
+  const owner = contractData.data.github.owner.handle
   const siteName = branch === 'master'
-    ? `landr-${contractData.data.name}`
-    : `${contractData.data.name}-preview-${branch}`
+    ? `landr-${owner}--${name}`
+    : `landr-${owner}--${name}-preview-${branch}`
 
   log(`Preparing site ${siteName}`)
   const siteOptions = OPTION_DEPLOY
