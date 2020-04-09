@@ -15,9 +15,6 @@
  */
 
 import React from 'react'
-import {
-  Head
-} from 'react-static'
 
 export const name = 'Head'
 
@@ -40,7 +37,12 @@ export const variants = (metadata, context, route, routes, options) => {
 
 export const render = (props) => {
   return (
-    <Head>
+    <div />
+  )
+
+  /*
+  Return (
+    <head>
       <meta charSet="UTF-8" />
       <meta name="referrer" content="no-referrer" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,6 +73,7 @@ export const render = (props) => {
       <meta property="og:url" content={props.pageUrl} />
       <meta property="og:locale" content="en_US" />
       <meta property="og:description" content={props.description} />
-    </Head>
+    </head>
   )
+  */
 }

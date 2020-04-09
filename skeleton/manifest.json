@@ -1,6 +1,6 @@
 {
-  "name": "{{ metadata.data.name }}",
-  "short_name": "{{ metadata.data.name }}",
+  "name": "landr",
+  "short_name": "landr",
   "theme_color": "#000000",
   "background_color": "#FFFFFF",
   "display": "fullscreen",

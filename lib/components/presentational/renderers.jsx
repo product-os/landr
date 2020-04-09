@@ -3,9 +3,12 @@ import _ from 'lodash'
 import {
   Heading, Link, Txt
 } from 'rendition'
-import {
+
+/*
+Import {
   Prism as SyntaxHighlighter
 } from 'react-syntax-highlighter'
+*/
 
 const headingLevelsToComponent = {
   1: Heading.h1,
@@ -28,7 +31,21 @@ const headingsFontSizesByLevel = {
 const CodeBlock = ({
   language, value, ...rest
 }) => {
+  console.log({
+    language,
+    rest
+  })
   return (
+    <pre
+      language={language}
+      {...rest}
+    >
+      {value}
+    </pre>
+  )
+
+  /*
+  Return (
     <SyntaxHighlighter
       language={language}
       {...rest}
@@ -36,6 +53,7 @@ const CodeBlock = ({
       {value}
     </SyntaxHighlighter>
   )
+  */
 }
 
 // https://github.com/rexxars/react-markdown#node-types
