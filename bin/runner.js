@@ -19,8 +19,7 @@ const _ = require('lodash')
 const shell = require('shelljs')
 const rimraf = require('rimraf')
 const tmp = require('tmp')
-const chalk = require('chalk')
-const recursiveCopy = require('recursive-copy')
+const uuid = require('uuid')
 
 const theme = require('./theme')
 const netlify = require('./netlify')
@@ -41,13 +40,10 @@ exports.run = async ({
   deploy,
   netlifyToken,
   branch,
-  quiet
+  quiet,
+  logger
 }) => {
-  const log = (message) => {
-    if (!quiet) {
-      console.log(chalk.blue('[landr]'), message)
-    }
-  }
+  const log = logger
 
   const contract = require(contractPath)
 
@@ -55,11 +51,8 @@ exports.run = async ({
 
   log(`Running from ${contractPath} into ${outputDir}`)
 
-  const localDist = path.join(projectRoot, 'dist')
-
   // Wipe out output directory so that we start fresh everytime.
   rimraf.sync(outputDir)
-  rimraf.sync(localDist)
 
   if (!contract.data.name) {
     throw new Error('The contract does not have a name')
@@ -86,12 +79,19 @@ exports.run = async ({
     path.resolve(projectRoot, 'skeleton'),
     skeletonDirectory)
 
+  // TODO: Don't use the same .tmp directory for every build
+  const TMP_DIRECTORY = path.resolve(projectRoot, '.tmp', uuid.v4())
+
+  log('Building site')
+
   // TODO: Don't output react-static log information,
   // as it has details that are non Landr related, such
   // as instructions to deploy to Netlify directly.
   const {
     code
   } = shell.exec(command, {
+    silent: quiet,
+
     // The react-static project assumes in many places
     // that the root directory is the current working
     // directory, which may not be the case when Landr
@@ -104,13 +104,17 @@ exports.run = async ({
     // completely override the environment, including
     // important variables like `PATH`.
     env: Object.assign({}, process.env, {
+      // TODO: Pass the contract directly instead of passing the path to the
+      // data
       LANDR_CONTRACT_PATH: contractPath,
       LANDR_SKELETON_DIRECTORY: skeletonDirectory,
-      LANDR_OUTPUT_DIRECTORY: localDist,
+
+      LANDR_OUTPUT_DIRECTORY: outputDir,
       LANDR_DEPLOY_URL: siteOptions.url,
       LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
       LANDR_MIXPANEL_PROXY: process.env.LANDR_MIXPANEL_PROXY,
-      LANDR_THEME: JSON.stringify(siteTheme)
+      LANDR_THEME: JSON.stringify(siteTheme),
+      LANDR_TMP_DIRECTORY: TMP_DIRECTORY
     })
   })
 
@@ -118,13 +122,11 @@ exports.run = async ({
     throw new Error(`Command failed with code ${code}: ${command}`)
   }
 
-  // TODO: Don't use the same dist for generating code, as it won't work with
-  // multiple simultaneous builds
-  if (localDist !== outputDir) {
-    await recursiveCopy(localDist, outputDir)
-  }
-
   log('Site generated successfully')
+
+  // TODO: Get react-static to clean up after itself
+  // Clean up tmp directory, as apparently react-static won't do it itself
+  rimraf.sync(TMP_DIRECTORY)
 
   if (deploy) {
     log(`Deploying site to ${siteOptions.url}`)

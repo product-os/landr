@@ -80,6 +80,7 @@ Bluebird.try(async () => {
     abort(`Unknown command: ${OPTION_COMMAND}`)
   }
 
+  // TODO: Add option to generate contract, instead of loading it from FS
   const contractPath = await loadContract(contractPaths)
   if (!contractPath) {
     abort('Could not load contract file')
@@ -97,7 +98,8 @@ Bluebird.try(async () => {
     branch,
     outputDir: OPTIONS_OUTPUT_DIRECTORY,
     deploy: Boolean(OPTION_DEPLOY),
-    netlifyToken: TOKEN_NETLIFY
+    netlifyToken: TOKEN_NETLIFY,
+    logger: log
   })
 
   if (OPTION_DEPLOY && TOKEN_NETLIFY) {

@@ -72,3 +72,7 @@ storybook-static/
 
 # misc
 .DS_Store
+
+# probot
+.landr-store
+*.pem

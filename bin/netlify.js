@@ -19,11 +19,14 @@ const Netlify = require('netlify')
 const packageJSON = require('../package.json')
 
 exports.setupSite = async (token, slug) => {
+  // Slugs should be normalized to lower case, as netlify will do this
+  // internally, so we need to match the correct slug value ahead of time.
+  const normalizedSlug = slug.toLowerCase()
   const client = new Netlify(token)
   const sites = await client.listSites()
 
   const site = _.find(sites, {
-    name: slug
+    name: normalizedSlug
   })
 
   if (site) {
@@ -36,7 +39,7 @@ exports.setupSite = async (token, slug) => {
 
   const result = await client.createSite({
     body: {
-      name: slug
+      name: normalizedSlug
     }
   })
 
