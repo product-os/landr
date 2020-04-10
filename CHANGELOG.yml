@@ -1,4 +1,25 @@
 - commits:
+    - subject: Add code to run landr as a probot app
+      hash: 8c0c44f40114b655ec5974d863fc82ab73f041b6
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Refactor code to split CLI interpreter from build runner
+      hash: 4b71b9aa9d99b050b3606596112245e781eee727
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.0
+  date: 2020-04-10T15:10:03.470Z
+- commits:
     - subject: Improve netlify url namespacing to avoid collisions
       hash: d4edca574d004d0e8c24fb91f32e4f7204752a83
       body: |
@@ -10,7 +31,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 5.30.5
-  date: 2020-04-08T11:14:33.307Z
+  date: 2020-04-08T08:34:13.819Z
 - commits:
     - subject: Bump acorn from 6.1.1 to 6.4.1
       hash: 5fa87de59d653017a146197b9ddadf96631e2f1c
