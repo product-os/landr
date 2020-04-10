@@ -17,18 +17,11 @@
  */
 
 const path = require('path')
-const _ = require('lodash')
-const shell = require('shelljs')
 const Bluebird = require('bluebird')
-const gitBranch = require('git-branch')
-const rimraf = require('rimraf')
-const tmp = require('tmp')
 const chalk = require('chalk')
-const recursiveCopy = require('recursive-copy')
+const gitBranch = require('git-branch')
 
-const theme = require('./theme')
-const netlify = require('./netlify')
-const skel = require('./skel')
+const runner = require('./runner')
 const packageJSON = require('../package.json')
 
 const ENV_VAR_NETLIFY_TOKEN = 'NETLIFY_AUTH_TOKEN'
@@ -37,7 +30,6 @@ const OPTION_COMMAND = process.argv[2] || 'deploy'
 const OPTION_DEPLOY = OPTION_COMMAND === 'deploy' && TOKEN_NETLIFY
 const OPTION_CONTRACT_PATH = process.argv[3]
 const OPTIONS_OUTPUT_DIRECTORY = path.resolve(process.cwd(), 'dist')
-const projectRoot = path.resolve(__dirname, '..')
 
 // Get a list of paths were the contract file might live
 // in. The choice is just one if the user passes it as
@@ -62,10 +54,6 @@ const log = (message) => {
   console.log(chalk.blue('[landr]'), message)
 }
 
-const warning = (message) => {
-  console.log(chalk.yellow('[warn]'), message)
-}
-
 const abort = (message) => {
   console.error(chalk.red('[error]'), message)
   process.exit(1)
@@ -85,118 +73,37 @@ const loadContract = async (paths) => {
   return null
 }
 
-const getCommandString = (mode) => {
-  const reactStaticBin = require.resolve('react-static/bin/react-static')
-  const reactStaticConfig = path.resolve(
-    projectRoot, 'lib', 'static.config.js')
-
-  if (mode === 'deploy' || mode === 'build') {
-    return `${reactStaticBin} build --config=${reactStaticConfig}`
-  }
-
-  return null
-}
-
 Bluebird.try(async () => {
   printHeader()
 
-  const contract = await loadContract(contractPaths)
-  if (!contract) {
-    abort('Could not load contract file')
-  }
-
-  const contractData = require(contract)
-
-  const command = getCommandString(OPTION_COMMAND)
-  if (!command) {
+  if (OPTION_COMMAND !== 'deploy' && OPTION_COMMAND !== 'build') {
     abort(`Unknown command: ${OPTION_COMMAND}`)
   }
 
-  log(`Running from ${contract} into ${OPTIONS_OUTPUT_DIRECTORY}`)
-
-  const localDist = path.join(projectRoot, 'dist')
-
-  // Wipe out output directory so that we start fresh everytime.
-  rimraf.sync(OPTIONS_OUTPUT_DIRECTORY)
-  rimraf.sync(localDist)
-
-  if (!contractData.data.name) {
-    abort('The contract does not have a name')
+  const contractPath = await loadContract(contractPaths)
+  if (!contractPath) {
+    abort('Could not load contract file')
   }
-
-  // Deploy to a preview site if running on a branch
-  // other than master.
-  const branch = await gitBranch(process.cwd())
-  log(`Current branch is ${branch}`)
-  const name = contractData.data.name
-  const owner = contractData.data.github.owner.handle
-  const siteName = branch === 'master'
-    ? `landr-${owner}--${name}`
-    : `landr-${owner}--${name}-preview-${branch}`
-
-  log(`Preparing site ${siteName}`)
-  const siteOptions = OPTION_DEPLOY
-    ? await netlify.setupSite(TOKEN_NETLIFY, siteName)
-    : {}
-
-  log('Parsing banner image')
-  const siteTheme = await theme(_.get(contractData, [ 'data', 'images', 'banner' ]))
-  const skeletonDirectory = tmp.dirSync().name
-  log(`Creating site skeleton at ${skeletonDirectory}`)
-  await skel.create(contractData,
-    path.resolve(projectRoot, 'skeleton'),
-    skeletonDirectory)
-
-  // TODO: Don't output react-static log information,
-  // as it has details that are non Landr related, such
-  // as instructions to deploy to Netlify directly.
-  const {
-    code
-  } = shell.exec(command, {
-    // The react-static project assumes in many places
-    // that the root directory is the current working
-    // directory, which may not be the case when Landr
-    // is globally installed.
-    // Fixing react-static doesn't seem easy, so this
-    // is more of a workaround.
-    cwd: projectRoot,
-
-    // We need to merge `process.env` as otherwise we
-    // completely override the environment, including
-    // important variables like `PATH`.
-    env: Object.assign({}, process.env, {
-      LANDR_CONTRACT_PATH: contract,
-      LANDR_SKELETON_DIRECTORY: skeletonDirectory,
-      LANDR_OUTPUT_DIRECTORY: localDist,
-      LANDR_DEPLOY_URL: siteOptions.url,
-      LANDR_MIXPANEL_TOKEN: process.env.LANDR_MIXPANEL_TOKEN,
-      LANDR_MIXPANEL_PROXY: process.env.LANDR_MIXPANEL_PROXY,
-      LANDR_THEME: JSON.stringify(siteTheme)
-    })
-  })
-
-  if (code !== 0) {
-    abort(`Command failed with code ${code}: ${command}`)
-  }
-
-  if (localDist !== OPTIONS_OUTPUT_DIRECTORY) {
-    await recursiveCopy(localDist, OPTIONS_OUTPUT_DIRECTORY)
-  }
-
-  log('Site generated successfully')
 
   if (OPTION_COMMAND === 'deploy' && !OPTION_DEPLOY) {
-    warning(`Omitting deployment. Please set ${ENV_VAR_NETLIFY_TOKEN}`)
+    abort(`Omitting deployment. Please set ${ENV_VAR_NETLIFY_TOKEN}`)
   }
 
-  if (OPTION_DEPLOY) {
-    log(`Deploying site to ${siteOptions.url}`)
+  const branch = await gitBranch(process.cwd())
+  log(`Current branch is ${branch}`)
 
-    const result = await netlify.deploy(
-      TOKEN_NETLIFY, siteOptions.id, OPTIONS_OUTPUT_DIRECTORY)
-    log(result.message)
-    log(`Visit ${result.url}`)
-    const domainSetupUrl = `${siteOptions.adminUrl}/settings/domain/setup`
+  const results = await runner.run({
+    contractPath,
+    branch,
+    outputDir: OPTIONS_OUTPUT_DIRECTORY,
+    deploy: Boolean(OPTION_DEPLOY),
+    netlifyToken: TOKEN_NETLIFY
+  })
+
+  if (OPTION_DEPLOY && TOKEN_NETLIFY) {
+    const domainSetupUrl = `${results.adminUrl}/settings/domain/setup`
+
+    log(`Visit ${results.url}`)
     log(`Head over to ${domainSetupUrl} to setup a different domain`)
   }
 }).catch((error) => {
