@@ -1,4 +1,18 @@
 - commits:
+    - subject: >-
+        Refactor landr build to use parcel and expose a node API instead of a
+        CLI
+      hash: 794ee938b550c17dc949933728b6ea4c39a363af
+      body: ''
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.0.0
+  date: 2020-04-10T12:32:28.249Z
+- commits:
     - subject: Improve netlify url namespacing to avoid collisions
       hash: d4edca574d004d0e8c24fb91f32e4f7204752a83
       body: |
