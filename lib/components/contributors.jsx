@@ -52,6 +52,7 @@ export const variants = (metadata, _context, route) => {
     metadata.data.links.repository
   ) {
     combinations.push({
+      name: metadata.data.name,
       contributors: metadata.data.contributors,
       repository: metadata.data.links.repository,
       contributing: metadata.data.contributing.guide
@@ -111,10 +112,11 @@ const Contributors = (props) => {
       )
     })
 
+  console.log(props)
   const CTA = props.repository ? (
     <Box>
       <Txt fontSize={14}>
-        Help Landr thrive, by reporting bugs, contributing code or improving the
+        Help {props.name} thrive, by reporting bugs, contributing code or improving the
         docs.
       </Txt>
       <Txt fontSize={14}>
