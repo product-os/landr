@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fix issue where landrbot would post multiple comments on the same PR
+      hash: 13bc40ab1209c52df39697199437e0c369df73ef
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.1
+  date: 2020-04-11T11:01:12.198Z
+- commits:
     - subject: Add code to run landr as a probot app
       hash: 8c0c44f40114b655ec5974d863fc82ab73f041b6
       body: ''
@@ -18,7 +30,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 5.31.0
-  date: 2020-04-10T15:10:03.470Z
+  date: 2020-04-10T14:25:21.971Z
 - commits:
     - subject: Improve netlify url namespacing to avoid collisions
       hash: d4edca574d004d0e8c24fb91f32e4f7204752a83
