@@ -1,4 +1,14 @@
 - commits:
+    - subject: Use other adress for images
+      hash: b2a1761b3dbe12c6e5e12d4b1d0929891ed60934
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Alex
+  version: 5.31.2
+  date: 2020-04-11T15:55:21.238Z
+- commits:
     - subject: Fix issue where landrbot would post multiple comments on the same PR
       hash: 13bc40ab1209c52df39697199437e0c369df73ef
       body: ''
