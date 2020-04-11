@@ -55,7 +55,7 @@ export const variants = (metadata, _context, route) => {
       contributors: metadata.data.contributors,
       repository: metadata.data.links.repository,
       contributing: metadata.data.contributing.guide
-        ? `${metadata.data.links.repository}/blob/master/${metadata.data.contributing.guide.filename}`
+        ? `${metadata.data.links.repository.replace('.git', '')}/blob/master/${metadata.data.contributing.guide.filename}`
         : null
     })
   }
@@ -150,7 +150,7 @@ const Contributors = (props) => {
               {list}
               <Box px={2}>
                 {props.contributing ? (
-                  <Link href={`${props.contributing.replace('.git', '')}`} blank>
+                  <Link href={props.contributing} blank>
                     {ContributePlaceholder}
                   </Link>
                 ) : ContributePlaceholder
