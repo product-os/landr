@@ -26,8 +26,9 @@ const metaGenerator = require('./lib/generate-landr-meta')
 const runner = require('../bin/runner')
 const scrutinizer = require('./lib/scrutinizer')
 
+// TODO: Infer this login information automatically
 // This is the identifier GitHub uses for the bot
-const LANDR_BOT_LOGIN = 'landr-app[bot]'
+const LANDR_BOT_LOGIN = 'landrbot[bot]'
 
 const build = async (app, context, branch, logger) => {
   const repository = context.payload.repository.full_name

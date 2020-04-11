@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fix issue where landrbot would post multiple comments on the same PR
+      hash: 13bc40ab1209c52df39697199437e0c369df73ef
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.1
+  date: 2020-04-11T10:54:44.517Z
+- commits:
     - subject: Add code to run landr as a probot app
       hash: 8c0c44f40114b655ec5974d863fc82ab73f041b6
       body: ''
