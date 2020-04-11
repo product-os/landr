@@ -150,7 +150,7 @@ const Contributors = (props) => {
               {list}
               <Box px={2}>
                 {props.contributing ? (
-                  <Link href={props.contributing} blank>
+                  <Link href={`${props.contributing.replace('.git', '')}`} blank>
                     {ContributePlaceholder}
                   </Link>
                 ) : ContributePlaceholder
