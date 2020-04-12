@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 balena.io
+ * Copyright 2020 balena.io
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ const Contributors = (props) => {
           <Link
             href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
             tooltip={{
-              text: 'contributor.username' 
+              text: 'contributor.username',
               innerStyle: {
                 fontFamily: 'CircularStd'
               }
