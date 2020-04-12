@@ -96,9 +96,11 @@ const Contributors = (props) => {
         <Box key={contributor.username} px={2}>
           <Link
             href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
-            tooltip={contributor.username}
-            style={{
-              fontFamily: 'CircularStd'
+            tooltip={{
+              text: 'contributor.username' 
+              innerStyle: {
+                fontFamily: 'CircularStd'
+              }
             }}
             blank
           >
