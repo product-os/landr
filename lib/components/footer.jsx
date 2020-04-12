@@ -100,7 +100,7 @@ const Footer = (props) => {
   const owner = _.isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
       <Txt fontSize={12}>Brought to you by</Txt>{' '}
-      <Link color={theme.colors.text.main} href={props.owner.url} tooltip={props.owner.name}>
+      <Link color={theme.colors.text.main} href={props.owner.url} tooltip={{ text: 'props.owner.name', innerStyle: { fontFamily: 'CircularStd' }}}>
         <Img
           src={props.owner.avatar}
           alt={props.owner.name}
