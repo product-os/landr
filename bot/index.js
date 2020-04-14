@@ -106,13 +106,14 @@ const build = async (app, context, branch, logger) => {
 
 // This is the main entrypoint to your Probot app
 module.exports = (app) => {
-  const makeLogFn = (repository) => {
+  const makeLogFn = (repository, ref) => {
+    const prefix = `[${repository}#${ref}]`
     const logFn = (message) => {
-      return app.log(`[${repository}]: ${message}`)
+      return app.log(`${prefix}: ${message}`)
     }
 
     logFn.error = (message) => {
-      return app.log.error(`[${repository}]: ${message}`)
+      return app.log.error(`${prefix}: ${message}`)
     }
 
     return logFn
@@ -126,7 +127,7 @@ module.exports = (app) => {
     const [ owner, repo ] = repository.split('/')
     const pullNumber = context.payload.number
 
-    const log = makeLogFn(repository)
+    const log = makeLogFn(repository, pullNumber)
 
     if (context.payload.repository.private) {
       log('Repository is private, skipping landr build')
@@ -161,7 +162,7 @@ module.exports = (app) => {
   })
 
   app.on('push', async (context) => {
-    const log = makeLogFn(context.payload.repository.full_name)
+    const log = makeLogFn(context.payload.repository.full_name, 'master')
 
     if (context.payload.ref === 'refs/heads/master') {
       if (context.payload.repository.private) {
