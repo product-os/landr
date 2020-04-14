@@ -30,6 +30,39 @@ const scrutinizer = require('./lib/scrutinizer')
 // This is the identifier GitHub uses for the bot
 const LANDR_BOT_LOGIN = 'landrbot[bot]'
 
+const upsertPRComment = async (app, context, owner, repo, pullNumber, message) => {
+  // Don't post a comment on the PR if landr-bot has already posted one.
+
+  // In the GitHub API, comments directly on the pull request are considered
+  // to be issue comments, whereas comments on the code are pull request
+  // comments. Here we want to retrieve all comments directly on the PR, so we
+  // need to use the issues API.
+  const comments = await context.github.issues.listComments({
+    owner,
+    repo,
+    issue_number: pullNumber
+  })
+
+  const existingComment = _.find(comments.data, [ 'user.login', LANDR_BOT_LOGIN ])
+
+  if (existingComment) {
+    app.log('updating existing comment on PR')
+
+    await context.github.issues.updateComment({
+      owner,
+      repo,
+      comment_id: existingComment.id,
+      body: message
+    })
+  } else {
+    const issueComment = context.issue({
+      issue_number: pullNumber,
+      body: message
+    })
+    await context.github.issues.createComment(issueComment)
+  }
+}
+
 const build = async (app, context, branch, logger) => {
   const repository = context.payload.repository.full_name
   const [ owner, repo ] = repository.split('/')
@@ -73,13 +106,14 @@ const build = async (app, context, branch, logger) => {
 
 // This is the main entrypoint to your Probot app
 module.exports = (app) => {
-  const makeLogFn = (repository) => {
+  const makeLogFn = (repository, ref) => {
+    const prefix = `[${repository}#${ref}]`
     const logFn = (message) => {
-      return app.log(`[${repository}]: ${message}`)
+      return app.log(`${prefix}: ${message}`)
     }
 
     logFn.error = (message) => {
-      return app.log.error(`[${repository}]: ${message}`)
+      return app.log.error(`${prefix}: ${message}`)
     }
 
     return logFn
@@ -93,7 +127,7 @@ module.exports = (app) => {
     const [ owner, repo ] = repository.split('/')
     const pullNumber = context.payload.number
 
-    const log = makeLogFn(repository)
+    const log = makeLogFn(repository, pullNumber)
 
     if (context.payload.repository.private) {
       log('Repository is private, skipping landr build')
@@ -106,61 +140,29 @@ module.exports = (app) => {
 
     try {
       const siteUrl = await build(app, context, branch, log)
-
-      // Don't post a comment on the PR if landr-bot has already posted one.
-
-      // In the GitHub API, comments directly on the pull request are considered
-      // to be issue comments, whereas comments on the code are pull request
-      // comments. Here we want to retrieve all comments directly on the PR, so we
-      // need to use the issues API.
-      const comments = await context.github.issues.listComments({
-        owner,
-        repo,
-        issue_number: pullNumber
-      })
-
-      const existingComment = _.find(comments.data, [ 'user.login', LANDR_BOT_LOGIN ])
-
       const message = `Your landr site preview has been successfully deployed to ${siteUrl}
 
         *Deployed with Landr v5.30.4*`
 
-      if (existingComment) {
-        app.log(`updating existing comment on PR: ${url}`)
+      log(`posting site preview link in comment to PR: ${url}`)
 
-        await context.github.issues.updateComment({
-          owner,
-          repo,
-          comment_id: existingComment.id,
-          body: message
-        })
-      } else {
-        log(`posting site preview link in comment to PR: ${url}`)
-
-        const issueComment = context.issue({
-          issue_number: pullNumber,
-          body: message
-        })
-        await context.github.issues.createComment(issueComment)
-      }
+      await upsertPRComment(app, context, owner, repo, pullNumber, message)
     } catch (error) {
-      log.error('An error occurred', serializeError(error))
+      log.error('An error occurred', error)
       log(`Posting error message to PR: ${url}`)
 
       // On error, post the error as a GitHub comment
-      const issueComment = context.issue({
-        issue_number: pullNumber,
-        body: `An error occurred whilst building your landr site preview:
+      const message = `An error occurred whilst building your landr site preview:
 \`\`\`
         ${JSON.stringify(serializeError(error), null, 2)}
 \`\`\``
-      })
-      await context.github.issues.createComment(issueComment)
+
+      await upsertPRComment(app, context, owner, repo, pullNumber, message)
     }
   })
 
   app.on('push', async (context) => {
-    const log = makeLogFn(context.payload.repository.full_name)
+    const log = makeLogFn(context.payload.repository.full_name, 'master')
 
     if (context.payload.ref === 'refs/heads/master') {
       if (context.payload.repository.private) {
