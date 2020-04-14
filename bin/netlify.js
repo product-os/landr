@@ -21,7 +21,10 @@ const packageJSON = require('../package.json')
 exports.setupSite = async (token, slug) => {
   // Slugs should be normalized to lower case, as netlify will do this
   // internally, so we need to match the correct slug value ahead of time.
-  const normalizedSlug = slug.toLowerCase()
+  // Additionally, non-hyphen punctuation should be replaced, and multiple
+  // hyphens should be converted to a single hyphen.
+  const normalizedSlug = slug.replace(/[.,\/#!$%\^&\*;:{}=\_-`~()]+/g, '-')
+    .toLowerCase()
   const client = new Netlify(token)
   const sites = await client.listSites()
 
