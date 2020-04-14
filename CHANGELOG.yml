@@ -1,4 +1,16 @@
 - commits:
+    - subject: Use repos name in contributing block instead of "Landr"
+      hash: 3db178441b6df40be349e034f8d75e46ad351ea4
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.3
+  date: 2020-04-14T11:40:41.259Z
+- commits:
     - subject: Display github reference in log output
       hash: 41122d468572afdf2072602ebc3cda11bd1d193c
       body: ''
@@ -27,7 +39,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 5.31.2
-  date: 2020-04-14T10:42:43.177Z
+  date: 2020-04-14T10:23:14.244Z
 - commits:
     - subject: Fix issue where landrbot would post multiple comments on the same PR
       hash: 13bc40ab1209c52df39697199437e0c369df73ef
