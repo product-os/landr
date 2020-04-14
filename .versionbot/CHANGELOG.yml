@@ -1,4 +1,34 @@
 - commits:
+    - subject: Display github reference in log output
+      hash: 41122d468572afdf2072602ebc3cda11bd1d193c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Install dependencies so that puppeteer can run in a docker container
+      hash: ff2fc554069cf3c461eed721573aede3ec04859e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Update existing comment when reporting errors
+      hash: 97d9420d6e63463212f3cebe5a7f6de1c001bf0e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.2
+  date: 2020-04-14T10:23:14.244Z
+- commits:
     - subject: Fix issue where landrbot would post multiple comments on the same PR
       hash: 13bc40ab1209c52df39697199437e0c369df73ef
       body: ''
