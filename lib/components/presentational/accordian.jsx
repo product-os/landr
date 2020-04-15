@@ -38,10 +38,13 @@ const Accordian = ({
   items
 }) => {
   const theme = useTheme()
-  const [ openIndex, setOpenIndex ] = useState(null)
+  const [ openIndexes, setOpenIndexes ] = useState({})
 
   const toggle = (key) => {
-    setOpenIndex(openIndex === key ? null : key)
+    setOpenIndexes({
+      ...openIndexes,
+      [key]: !openIndexes[key]
+    })
   }
 
   return (
@@ -55,8 +58,10 @@ const Accordian = ({
           () => {
             toggle(index)
           },
-          [ index, openIndex ]
+          [ index, openIndexes ]
         )
+
+        const isOpen = Boolean(openIndexes[index])
 
         return (
           <Box key={index} style={{
@@ -80,11 +85,11 @@ const Accordian = ({
                   {item.title}
                 </Heading.h5>
                 <Txt pr={3} fontSize={24} align="end" color={theme.colors.primary.main}>
-                  {openIndex === index ? '−' : '+'}
+                  {isOpen ? '−' : '+'}
                 </Txt>
               </Flex>
             </Flex>
-            <Collapse isOpen={openIndex === index}>
+            <Collapse isOpen={isOpen}>
               <Content dangerouslySetInnerHTML={{
                 __html: html
               }} />
