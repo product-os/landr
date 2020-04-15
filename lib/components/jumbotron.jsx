@@ -15,7 +15,6 @@
  */
 
 import React from 'react'
-import capitalize from 'lodash/capitalize'
 import find from 'lodash/find'
 import last from 'lodash/last'
 import get from 'lodash/get'
@@ -65,7 +64,7 @@ export const variants = (metadata, _context, _route, routes) => {
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
       screenshot: metadata.data.screenshot,
-      logoText: get(metadata, [ 'data', 'logo', 'textContent' ])
+      bannerText: get(metadata, [ 'data', 'images', 'bannerText' ])
     })
   }
 
@@ -78,7 +77,7 @@ export const variants = (metadata, _context, _route, routes) => {
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
       screenshot: metadata.data.screenshot,
-      logoText: get(metadata, [ 'data', 'logo', 'textContent' ])
+      bannerText: get(metadata, [ 'data', 'images', 'bannerText' ])
     })
   }
 
@@ -89,7 +88,7 @@ export const variants = (metadata, _context, _route, routes) => {
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
-      logoText: get(metadata, [ 'data', 'logo', 'textContent' ])
+      bannerText: get(metadata, [ 'data', 'images', 'bannerText' ])
     })
   }
 
@@ -111,14 +110,13 @@ const Screenshot = ({
 const Jumbotron = (props) => {
   const theme = useTheme()
   const commands = props.steps || []
-  console.log({
-    props
-  })
   return (
     <Box py={5} bg={theme.colors.primary.light}>
       <Container>
         <Flex flexDirection="column" alignItems="center" mb={40}>
-          <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{(capitalize(props.title))}</Heading.h1>
+          {!props.bannerText && (
+            <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{props.title}</Heading.h1>
+          )}
           {props.description && (
             <Heading.h2 fontSize={24} align='center' style={{
               maxWidth: 800

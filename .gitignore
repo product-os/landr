@@ -76,3 +76,6 @@ storybook-static/
 # probot
 .landr-store
 *.pem
+
+# scrutinizer
+eng.traineddata
