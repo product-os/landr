@@ -115,12 +115,12 @@ const build = async ({
 module.exports = (app) => {
   const makeLogFn = (repository, ref) => {
     const prefix = `[${repository}#${ref}]`
-    const logFn = (message) => {
-      return app.log(`${prefix}: ${message}`)
+    const logFn = (message, ...rest) => {
+      return Reflect.apply(app.log, null, [ `${prefix}: ${message}`, ...rest ])
     }
 
-    logFn.error = (message) => {
-      return app.log.error(`${prefix}: ${message}`)
+    logFn.error = (message, ...rest) => {
+      return Reflect.apply(app.log.error, null, [ `${prefix}: ${message}`, ...rest ])
     }
 
     return logFn
@@ -164,10 +164,12 @@ module.exports = (app) => {
       log.error('An error occurred', error)
       log(`Posting error message to PR: ${url}`)
 
+      const reportableError = JSON.stringify(serializeError(error), null, 2)
+
       // On error, post the error as a GitHub comment
       const message = `An error occurred whilst building your landr site preview:
 \`\`\`
-        ${JSON.stringify(serializeError(error), null, 2)}
+        ${reportableError}
 \`\`\``
 
       await upsertPRComment(app, context, owner, repo, pullNumber, message)
