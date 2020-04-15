@@ -1,4 +1,34 @@
 - commits:
+    - subject: Allow multiple FAQ panels to be open at the same time
+      hash: e2cfc7869968d96fde66ccd8f74466f800c0f033
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Don't display the name of the repo as a tile if banner contains text
+      hash: 436e7d4d540146f745fd8228ab4e7aa351b754ee
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Fix bug where landrbot doesn't work with PRs from forks
+      hash: 1bc53667d75a9defc1c744b18baa81bd98ed107f
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.6
+  date: 2020-04-15T11:54:58.528Z
+- commits:
     - subject: Improve error logging
       hash: 4853049f51b3d951553e5111df5136cf07451c08
       body: ''
