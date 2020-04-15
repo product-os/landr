@@ -1,4 +1,25 @@
 - commits:
+    - subject: Construct Netlify subdomain using PR number instead of branch
+      hash: 13f4c5af7efe7f0af46a1ed2850b35d8f5307833
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Remove punctuation from netlify site slug
+      hash: 0d800b5df8efa42628695f10b829e56b30bb216b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.4
+  date: 2020-04-15T07:55:46.607Z
+- commits:
     - subject: Use repos name in contributing block instead of "Landr"
       hash: 3db178441b6df40be349e034f8d75e46ad351ea4
       body: ''
@@ -9,7 +30,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 5.31.3
-  date: 2020-04-14T11:40:41.259Z
+  date: 2020-04-14T11:26:54.171Z
 - commits:
     - subject: Display github reference in log output
       hash: 41122d468572afdf2072602ebc3cda11bd1d193c
