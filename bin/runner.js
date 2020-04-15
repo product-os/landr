@@ -41,7 +41,8 @@ exports.run = async ({
   netlifyToken,
   branch,
   quiet,
-  logger
+  logger,
+  pullNumber
 }) => {
   const log = logger
 
@@ -62,9 +63,12 @@ exports.run = async ({
   // other than master.
   const name = contract.data.name
   const owner = contract.data.github.owner.handle
+
+  // Prefer the pull number over the branch name if it is available to avoid hitting
+  // Netlify's subdomain length limit
   const siteName = branch === 'master'
     ? `landr-${owner}-repo-${name}`
-    : `landr-${owner}-repo-${name}-preview-${branch}`
+    : `landr-${owner}-repo-${name}-preview-${pullNumber || branch}`
 
   log(`Preparing site ${siteName}`)
   const siteOptions = deploy

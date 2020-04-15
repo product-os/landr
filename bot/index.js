@@ -63,7 +63,13 @@ const upsertPRComment = async (app, context, owner, repo, pullNumber, message) =
   }
 }
 
-const build = async (app, context, branch, logger) => {
+const build = async ({
+  app,
+  context,
+  branch,
+  logger,
+  pullNumber
+}) => {
   const repository = context.payload.repository.full_name
   const [ owner, repo ] = repository.split('/')
 
@@ -95,6 +101,7 @@ const build = async (app, context, branch, logger) => {
     deploy: true,
     netlifyToken: process.env.NETLIFY_AUTH_TOKEN,
     quiet: true,
+    pullNumber,
     logger
   })
 
@@ -139,7 +146,13 @@ module.exports = (app) => {
     const branch = _.get(context, [ 'payload', 'pull_request', 'head', 'ref' ])
 
     try {
-      const siteUrl = await build(app, context, branch, log)
+      const siteUrl = await build({
+        app,
+        context,
+        branch,
+        log,
+        pullNumber
+      })
       const message = `Your landr site preview has been successfully deployed to ${siteUrl}
 
         *Deployed with Landr v5.30.4*`
@@ -171,7 +184,12 @@ module.exports = (app) => {
       }
 
       log(`Triggering build for master branch: ${context.payload.repository.html_url}`)
-      const siteUrl = await build(app, context, 'master', log)
+      const siteUrl = await build({
+        app,
+        context,
+        branch: 'master',
+        log
+      })
       log(`Built master branch at ${siteUrl}`)
     }
   })
