@@ -1,4 +1,16 @@
 - commits:
+    - subject: Improve error logging
+      hash: 4853049f51b3d951553e5111df5136cf07451c08
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.5
+  date: 2020-04-15T08:48:28.490Z
+- commits:
     - subject: Construct Netlify subdomain using PR number instead of branch
       hash: 13f4c5af7efe7f0af46a1ed2850b35d8f5307833
       body: ''
