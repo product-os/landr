@@ -64,7 +64,8 @@ export const variants = (metadata, _context, _route, routes) => {
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
-      screenshot: metadata.data.screenshot
+      screenshot: metadata.data.screenshot,
+      logoText: get(metadata, [ 'data', 'logo', 'textContent' ])
     })
   }
 
@@ -76,7 +77,8 @@ export const variants = (metadata, _context, _route, routes) => {
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
-      screenshot: metadata.data.screenshot
+      screenshot: metadata.data.screenshot,
+      logoText: get(metadata, [ 'data', 'logo', 'textContent' ])
     })
   }
 
@@ -86,7 +88,8 @@ export const variants = (metadata, _context, _route, routes) => {
       packageName: metadata.data.name,
       steps,
       type: metadata.data.type,
-      repositoryUrl: metadata.data.links.repository
+      repositoryUrl: metadata.data.links.repository,
+      logoText: get(metadata, [ 'data', 'logo', 'textContent' ])
     })
   }
 
@@ -108,6 +111,9 @@ const Screenshot = ({
 const Jumbotron = (props) => {
   const theme = useTheme()
   const commands = props.steps || []
+  console.log({
+    props
+  })
   return (
     <Box py={5} bg={theme.colors.primary.light}>
       <Container>
