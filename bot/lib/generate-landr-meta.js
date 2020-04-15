@@ -91,7 +91,8 @@ exports.run = (scrutinizerData) => {
       name,
       tagline: description,
       images: {
-        banner: _.get(logo, [ 'base64' ])
+        banner: _.get(logo, [ 'base64' ]),
+        bannerText: _.get(logo, [ 'textContent' ])
       },
       description,
       version,

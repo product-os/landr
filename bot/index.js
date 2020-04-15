@@ -30,7 +30,9 @@ const scrutinizer = require('./lib/scrutinizer')
 // This is the identifier GitHub uses for the bot
 const LANDR_BOT_LOGIN = 'landrbot[bot]'
 
-const upsertPRComment = async (app, context, owner, repo, pullNumber, message) => {
+const upsertPRComment = async ({
+  context, owner, repo, pullNumber, message, log
+}) => {
   // Don't post a comment on the PR if landr-bot has already posted one.
 
   // In the GitHub API, comments directly on the pull request are considered
@@ -46,7 +48,7 @@ const upsertPRComment = async (app, context, owner, repo, pullNumber, message) =
   const existingComment = _.find(comments.data, [ 'user.login', LANDR_BOT_LOGIN ])
 
   if (existingComment) {
-    app.log('updating existing comment on PR')
+    log('updating existing comment on PR')
 
     await context.github.issues.updateComment({
       owner,
@@ -67,10 +69,15 @@ const build = async ({
   app,
   context,
   branch,
-  logger,
+  log,
   pullNumber
 }) => {
-  const repository = context.payload.repository.full_name
+  // If the payload is from a pull request, extract the repo name from the head
+  // reference, as this will contain the correct repo name if the PR is a fork.
+  // Otherwise the payload is from a push to the master branch.
+  const repository = context.payload.pull_request
+    ? context.payload.pull_request.head.repo.full_name
+    : context.payload.repository.full_name
   const [ owner, repo ] = repository.split('/')
 
   const scrutinizerData = await scrutinizer.remote(context, repository, {
@@ -102,7 +109,7 @@ const build = async ({
     netlifyToken: process.env.NETLIFY_AUTH_TOKEN,
     quiet: true,
     pullNumber,
-    logger
+    logger: log
   })
 
   // After deployment, cleanup the build files
@@ -159,7 +166,9 @@ module.exports = (app) => {
 
       log(`posting site preview link in comment to PR: ${url}`)
 
-      await upsertPRComment(app, context, owner, repo, pullNumber, message)
+      await upsertPRComment({
+        context, owner, repo, pullNumber, message, log
+      })
     } catch (error) {
       log.error('An error occurred', error)
       log(`Posting error message to PR: ${url}`)
@@ -172,7 +181,9 @@ module.exports = (app) => {
         ${reportableError}
 \`\`\``
 
-      await upsertPRComment(app, context, owner, repo, pullNumber, message)
+      await upsertPRComment({
+        context, owner, repo, pullNumber, message, log
+      })
     }
   })
 
