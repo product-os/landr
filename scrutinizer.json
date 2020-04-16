@@ -1,0 +1,3399 @@
+{
+  "license": "Apache-2.0",
+  "blog": [
+    {
+      "filename": "blog/2019-07-08-hello-from-landr.md",
+      "contents": "Hello from Landr\n================\n\nHey there! We're excited to kickstart this project's blog! We want to grow\nLandr into the best way to get a website with little overhead, so that creators\nout there can focus on what they do best, and leverage Landr to present their\nwork in a beautiful way.\n\nThe plan is for this blog to contain mostly micro-posts describing how things\nare going, brainstorm some crazy ideas out loud, and tell everyone about the\nadditions we're making to the framework in a way that is more conversational\nthan a bunch of commits in a pull-request.\n\nTo stick to the plan, I would like to report that the core engine of Landr has\nbeen fully implemented, and that we built prototypes for things around a\nwebsite that are as important as the website itself such as analytics, SEO\nfriendly headers, favicons, robots.txt, you name it!\n\nThe next steps will be to start using the engine to create a professional\nlooking website, and the first project to get it will be, of course, Landr! The\nfirst website will probably be the hardest, but I'm sure things will ease out\nas we go!\n\nIf you are reading this blog post, you might have already figured out that we\nare prototyping a blog engine on top of Landr, and you would be spot on! We've\nseen projects successfully rely on microblogs as a better way to tell the story\nof a project, and we hope that Landr and other projects using Landr will take\nthis advantage as well!\n\nStay tuned!\n"
+    }
+  ],
+  "changelog": [
+    {
+      "commits": [
+        {
+          "subject": "Transition to using oclif for CLI interface",
+          "hash": "8188cb7cf6e82c340f6a0f744b8796c716b8b56b",
+          "body": "",
+          "footer": {
+            "Change-type": "major",
+            "change-type": "major",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "6.0.0",
+      "date": "2020-04-16T11:41:25.933Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Configure dependabot to send \"patch\" prefixed commits",
+          "hash": "a248f3f48fb1165e959be00766f54f9f38f5ffc5",
+          "body": "This allows versionbot to interpret the PRs as patch type commits.\n\nFixes product-os/landr#291\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.7",
+      "date": "2020-04-15T15:50:10.384Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Allow multiple FAQ panels to be open at the same time",
+          "hash": "e2cfc7869968d96fde66ccd8f74466f800c0f033",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Don't display the name of the repo as a tile if banner contains text",
+          "hash": "436e7d4d540146f745fd8228ab4e7aa351b754ee",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Fix bug where landrbot doesn't work with PRs from forks",
+          "hash": "1bc53667d75a9defc1c744b18baa81bd98ed107f",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.6",
+      "date": "2020-04-15T11:54:58.528Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Improve error logging",
+          "hash": "4853049f51b3d951553e5111df5136cf07451c08",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.5",
+      "date": "2020-04-15T08:48:28.490Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Construct Netlify subdomain using PR number instead of branch",
+          "hash": "13f4c5af7efe7f0af46a1ed2850b35d8f5307833",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Remove punctuation from netlify site slug",
+          "hash": "0d800b5df8efa42628695f10b829e56b30bb216b",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.4",
+      "date": "2020-04-14T17:28:59.078Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Use repos name in contributing block instead of \"Landr\"",
+          "hash": "3db178441b6df40be349e034f8d75e46ad351ea4",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.3",
+      "date": "2020-04-14T11:26:54.171Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Display github reference in log output",
+          "hash": "41122d468572afdf2072602ebc3cda11bd1d193c",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Install dependencies so that puppeteer can run in a docker container",
+          "hash": "ff2fc554069cf3c461eed721573aede3ec04859e",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Update existing comment when reporting errors",
+          "hash": "97d9420d6e63463212f3cebe5a7f6de1c001bf0e",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.2",
+      "date": "2020-04-14T10:23:14.244Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Fix issue where landrbot would post multiple comments on the same PR",
+          "hash": "13bc40ab1209c52df39697199437e0c369df73ef",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.1",
+      "date": "2020-04-11T10:54:44.517Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add code to run landr as a probot app",
+          "hash": "8c0c44f40114b655ec5974d863fc82ab73f041b6",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Refactor code to split CLI interpreter from build runner",
+          "hash": "4b71b9aa9d99b050b3606596112245e781eee727",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.31.0",
+      "date": "2020-04-10T14:25:21.971Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Improve netlify url namespacing to avoid collisions",
+          "hash": "d4edca574d004d0e8c24fb91f32e4f7204752a83",
+          "body": "Fixes product-os/landr#293\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "5.30.5",
+      "date": "2020-04-08T08:34:13.819Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Bump acorn from 6.1.1 to 6.4.1",
+          "hash": "5fa87de59d653017a146197b9ddadf96631e2f1c",
+          "body": "Bumps [acorn](https://github.com/acornjs/acorn) from 6.1.1 to 6.4.1.\n- [Release notes](https://github.com/acornjs/acorn/releases)\n- [Commits](https://github.com/acornjs/acorn/compare/6.1.1...6.4.1)\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "dependabot[bot] <support@github.com>",
+            "signed-off-by": "dependabot[bot] <support@github.com>"
+          },
+          "author": "dependabot[bot]"
+        }
+      ],
+      "version": "5.30.4",
+      "date": "2020-04-06T10:36:23.270Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Bump handlebars from 4.1.2 to 4.3.0",
+          "hash": "9b4986c274c240ee8b2e22176e571df7ff462133",
+          "body": "Bumps [handlebars](https://github.com/wycats/handlebars.js) from 4.1.2 to 4.3.0.\n- [Release notes](https://github.com/wycats/handlebars.js/releases)\n- [Changelog](https://github.com/wycats/handlebars.js/blob/master/release-notes.md)\n- [Commits](https://github.com/wycats/handlebars.js/compare/v4.1.2...v4.3.0)\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "dependabot[bot]"
+        }
+      ],
+      "version": "5.30.3",
+      "date": "2020-03-16T11:20:03.875Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "engine: Improve combination generation algorithm speed",
+          "hash": "12f22f30ccdbe89cc61cca57d9cfbd7fa8d8488c",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        },
+        {
+          "subject": "Convert last SVG to React component",
+          "hash": "694a281e221f376fa2d3e0a81101ec969c1486b9",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.30.2",
+      "date": "2019-12-05T21:40:00.526Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "fix: Revert default theme",
+          "hash": "e72997b8573be99603bbafc06dbd090394cbc36e",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.30.1",
+      "date": "2019-11-22T10:35:18.694Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Expose OS & Arch in downloads",
+          "hash": "b6e357de1a2c75a7ff04f738beb32c969b12ed03",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.30.0",
+      "date": "2019-11-15T14:20:09.067Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Update scrutinizer stub",
+          "hash": "6de7fd8deff95a0d80a5f9e52e8f1c27dd9f67ab",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.29.4",
+      "date": "2019-11-14T14:05:39.663Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Update dependencies",
+          "hash": "7124c7dfed5844c18f53294c10b0805e48e2dc07",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.29.3",
+      "date": "2019-11-11T13:04:27.969Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Fix blog list regression",
+          "hash": "1b7e660daaf3bbc5958503c50bb389f0cbd7acb2",
+          "body": "",
+          "footer": {
+            "Connects-to": "#268",
+            "connects-to": "#268",
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        },
+        {
+          "subject": "Fix jumbotron CTA regression",
+          "hash": "04c2b9a9545fd6ecf87d6d90f16d71dab9a7a1cf",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.29.2",
+      "date": "2019-10-31T15:48:29.350Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "tests: Update meta.json",
+          "hash": "337b417b4fa2d57861160cf349f945475e21f3ba",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.29.1",
+      "date": "2019-10-25T12:07:39.655Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Bump scrutinizer",
+          "hash": "26e1ca17ab7e5b50a1e1d544adffd66790fd88f3",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.29.0",
+      "date": "2019-10-25T10:41:39.897Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Generate HTML from Markdown as opposed to JsonML",
+          "hash": "0d3abbf8554f57dec792bf3b08481ba2d6f63ef0",
+          "body": "We still keep JsonML, but we use it to extract information about the markdown structure.\n\nFixes super annoying bugs, like Table & Code parsing.\n",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.28.0",
+      "date": "2019-10-24T18:48:59.504Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "faq: Display whole answer content",
+          "hash": "c909fdc8411103663493fcde49201ddcd720e3fb",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.27.5",
+      "date": "2019-10-24T14:30:32.295Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Show contributors regardless of having a Contributing doc",
+          "hash": "e41a05eed139c397799974ae6fbca290d52cfc48",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.27.4",
+      "date": "2019-10-24T13:14:19.534Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Fix markdown title normalization condition",
+          "hash": "f5c86445488f75cda999917fd791edb280178afd",
+          "body": "",
+          "footer": {
+            "Connects-to": "#257",
+            "connects-to": "#257",
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.27.3",
+      "date": "2019-10-24T10:45:09.662Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Bump scrutinizer",
+          "hash": "ebfc9b95cee91e46b698ab86a06299fdc0b4d695",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.27.2",
+      "date": "2019-10-23T16:03:09.430Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "fix: Update rules for Contributors section",
+          "hash": "a54b1c0f78c95c8841d90a543bc5dfa59ead7c92",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.27.1",
+      "date": "2019-10-23T14:59:10.702Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add contributors page",
+          "hash": "4baa53b4b3f3bb82ff41418963087963dce31b4c",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.27.0",
+      "date": "2019-10-23T13:04:59.285Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "config: Change how we export React components due to Hooks API change",
+          "hash": "1f5ca82c2d30f08ccdd72b70ee20007adee1cd20",
+          "body": "We were breaking the rules of hooks (https://reactjs.org/docs/hooks-rules.html) by adding hooks in normal Javascript functions. Now the 'render' function that generates the React component will reference a parent React component, that holds the internal state (hooks).\n",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.26.0",
+      "date": "2019-10-22T11:05:40.545Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "projects: Expose used-by section",
+          "hash": "fc70a13866588fe7eb9245c92fdc84e058a503aa",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.25.0",
+      "date": "2019-10-22T09:39:09.793Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "readme: Format Examples section",
+          "hash": "6867b71b37d1c85defcf85589acf3841a4fe29e8",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.24.1",
+      "date": "2019-10-21T17:52:55.560Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Expose Introduction component",
+          "hash": "d4fae9c1413ff94dbbecd8e345ed112fbccd7cd5",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.24.0",
+      "date": "2019-10-21T17:05:17.617Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Expose Highlights component",
+          "hash": "7d324f01f92290d946102a1caaa1f42827b4a7da",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.23.0",
+      "date": "2019-10-21T16:46:08.879Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "readme: Introduce a Highlights convention",
+          "hash": "2265f11aa5f02aa8108d6218502ca332495e61d2",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.22.2",
+      "date": "2019-10-21T15:59:25.551Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Run scrutinizer stub against the current working branch",
+          "hash": "c50bd43e517dcf05c15f95c4820b5e19f1957cd1",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.22.1",
+      "date": "2019-10-21T15:03:39.651Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Bump scrutinizer version",
+          "hash": "04dfd45e59013c79d316c801e9690514ecbb7d3d",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.22.0",
+      "date": "2019-10-21T14:43:59.529Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add changelog page",
+          "hash": "96fd3dc19ffcfad18f4808c8b21732dec1135066",
+          "body": "",
+          "footer": {
+            "Connects-to": "#243",
+            "connects-to": "#243",
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.21.0",
+      "date": "2019-10-15T14:54:49.179Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Introduce Downloads component",
+          "hash": "0767054734f81bc77c2ab5fb7c1a1f67c8de7c12",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.20.0",
+      "date": "2019-10-15T11:21:09.064Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Generate palette based on the logo",
+          "hash": "f7c33290d1daaa9a8f81117b6bd4bdb0533666d2",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.19.0",
+      "date": "2019-10-09T10:35:49.648Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Update banner logo",
+          "hash": "e9244ac8a3f07935ca2cb3c67d1ac27dac17b23e",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.18.2",
+      "date": "2019-10-09T10:22:07.197Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "FAQ: Update theme inconsistencies",
+          "hash": "1c155f653540d466d4d339653a9ee6027dac3061",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.18.1",
+      "date": "2019-10-09T09:56:17.761Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Update scrutinizer stub",
+          "hash": "17978b26fb0fe68b223ac412520020d0c0712f9c",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.18.0",
+      "date": "2019-10-08T13:43:07.184Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Grabs the docs & blog from scrutinizer",
+          "hash": "53142f7b440db2c1aeb659eabf477abd9e63dbf2",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.17.0",
+      "date": "2019-09-20T10:22:37.617Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Trigger new build",
+          "hash": "4bc8e7570efb0282555eb8889b72a5d38da011eb",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.4",
+      "date": "2019-09-20T09:40:08.316Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Trigger build",
+          "hash": "ece81d10aa29038794316987e05a94975ae73b7e",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.3",
+      "date": "2019-09-19T14:38:27.880Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Guard against missing docs & blog data sources",
+          "hash": "27f89db99890c24ad42b5545b6a668d2492b49ec",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.2",
+      "date": "2019-09-18T09:39:27.516Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Exclude balena-ci from contributors",
+          "hash": "a01ea646a0c46c3d4557794743b91c62d84af2f4",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.1",
+      "date": "2019-09-16T15:16:20.346Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Tidy-up scrutinizer-stub",
+          "hash": "10b2703cd1746e306447e016cfeac2602a6ac005",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.16.0",
+      "date": "2019-09-16T10:42:59.545Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Use the patched scrutinizer API",
+          "hash": "5d23195a1d2865d9c845026c6f29a57c006399c7",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.15.1",
+      "date": "2019-09-13T12:24:48.120Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Port scrutinizer data",
+          "hash": "0930ba250dfe9c4e305aa14e124d027a9d25c876",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.15.0",
+      "date": "2019-09-13T11:52:48.104Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Typo in architecture",
+          "hash": "7e6cdb73bcef387446c245bb01c85bd60fba2565",
+          "body": "Mainly triggering a redeploy, so that scrutinizer.json will be updated\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.6",
+      "date": "2019-09-12T15:13:13.898Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "fix: Pin react-static version",
+          "hash": "e05adba73890881724c29a4e0868046c395e78e1",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.5",
+      "date": "2019-09-10T15:20:36.786Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "config: Enable scrutinizer integration",
+          "hash": "5e9896d6514f9ec7b387bb1545f2b3ea5b6041cc",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.4",
+      "date": "2019-09-10T10:03:08.065Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "nit: Remove unnecessary footer rule",
+          "hash": "10be4a3ddaf216d7f0196da4b348ead2fafe318d",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.3",
+      "date": "2019-09-06T14:19:26.051Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "docs: Replace fixed sidebar with sticky behaviour",
+          "hash": "533d8c472ea32c183b217999f9897288f87b143a",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.2",
+      "date": "2019-09-03T11:06:07.030Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Properly format code elements that appear in sidebar titles",
+          "hash": "4db1bf398d1ff416353b74b64d5ddb9c636bbf5b",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.1",
+      "date": "2019-08-28T13:35:48.122Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Use newest rendition breakpoint handling",
+          "hash": "cf46aa129aee28517c4c0d62e85b3230fb4cc77c",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.14.0",
+      "date": "2019-08-28T13:24:54.991Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Fix missing theme in renderer",
+          "hash": "d800af58fbd2572e0e385aa91b2cdb75f8a33675",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.13.1",
+      "date": "2019-08-28T12:48:08.360Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add Storybook",
+          "hash": "7958434e7ef5647792f7a83381f07594648c8b6c",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.13.0",
+      "date": "2019-08-28T11:39:58.253Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "contributors: Fix contributing ixon",
+          "hash": "796dcd428b25fbf9ce1c2a9b82d18901676a458f",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.12.0",
+      "date": "2019-08-28T10:23:53.188Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Update layout",
+          "hash": "53e360804530f65c77a0bbb6cb5d195e0079734d",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.11.0",
+      "date": "2019-08-19T15:33:23.734Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "components: Remove unused Contributors/Navigation variants",
+          "hash": "dfd9494f9b450159a4f0a861a6d0199203db701c",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        },
+        {
+          "subject": "engine: Remove UI single null variants early on",
+          "hash": "58f2fb85bd2941b21dfd80fa9655483db75b5654",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.10.3",
+      "date": "2019-08-18T19:25:04.163Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "rules: Stop combinations without Head/Footer/Navigation early on",
+          "hash": "8fac2ef00cbbb7d25214c8dbc9a4744ef0048c06",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.10.2",
+      "date": "2019-08-18T18:51:10.925Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Make site-definition script work again",
+          "hash": "8bd7f797888e678ba1ef57a228a69d889ea7bd49",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.10.1",
+      "date": "2019-08-18T17:05:33.585Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add ids in the markdown headers",
+          "hash": "3663a6ea7837d300eea4bef382bc5776044db692",
+          "body": "",
+          "footer": {
+            "Connects-to": "#211",
+            "connects-to": "#211",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.10.0",
+      "date": "2019-07-23T16:20:37.019Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add examples screenshots",
+          "hash": "6e64c3b237254beed1f9bd6cfe0770abe4bd9edf",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.9.3",
+      "date": "2019-07-16T14:05:45.731Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Parse motivation paragraph",
+          "hash": "9ded4cf0db84199c681acf86923cba2bf65ae505",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.9.2",
+      "date": "2019-07-16T13:08:13.808Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "contributing: Update the good-first-issues link",
+          "hash": "35388151bc8d926df8c55bc2b822d9b3acb7b783",
+          "body": "Includes some QoL life fixes in the component\n",
+          "footer": {
+            "Connects-to": "#178",
+            "connects-to": "#178",
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.9.1",
+      "date": "2019-07-12T07:16:36.160Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Fix incorrect paths when navigating  versioned docs",
+          "hash": "b47bb44b1921fd48ee636d3637ddb12ce2ed0c5c",
+          "body": "",
+          "footer": {
+            "Connects-to": "#196",
+            "connects-to": "#196",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.9.0",
+      "date": "2019-07-11T14:08:10.180Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Update org logo in scrutinizer stub",
+          "hash": "03df03a1173a92080b7da1df5e3099d56934454d",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.8.1",
+      "date": "2019-07-11T12:42:57.973Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "contributors: Add notice about maintainers",
+          "hash": "8ef5a890ac5e52f97ac516d552460bca3fb91c46",
+          "body": "",
+          "footer": {
+            "Connects-to": "#179",
+            "connects-to": "#179",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.8.0",
+      "date": "2019-07-11T11:27:07.841Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add support for a Mixpanel proxy",
+          "hash": "a956d0162abd5f401c91b682facf48e5e1682077",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.7.0",
+      "date": "2019-07-11T10:29:15.630Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Introduce ToC sidebar",
+          "hash": "57340f7e4e05d7e53b1d173bd2075b753043a306",
+          "body": "",
+          "footer": {
+            "Connects-to": "#182",
+            "connects-to": "#182",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.6.0",
+      "date": "2019-07-11T09:35:16.693Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "navigation: Include project version",
+          "hash": "9355f813ce0f0949ac667edd81aabaa6bda779e8",
+          "body": "",
+          "footer": {
+            "Connects-to": "#183",
+            "connects-to": "#183",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.5.0",
+      "date": "2019-07-11T07:24:56.101Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Display owner information in Footer",
+          "hash": "b22c4ca5d2868e956e7717bb5162cf9e116a0ad2",
+          "body": "",
+          "footer": {
+            "Connects-to": "#181",
+            "connects-to": "#181",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        },
+        {
+          "subject": "Remove content from TOC object to avoid memory hog",
+          "hash": "862b1853ef31f0a2830a8b1f7f24f36402ecaa4b",
+          "body": "",
+          "footer": {
+            "Connects-to": "#188",
+            "connects-to": "#188",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        },
+        {
+          "subject": "Expose docs in in homepage context",
+          "hash": "95c83462214a5f9ed80b82a1e22a7fb96a6a133b",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.4.0",
+      "date": "2019-07-11T06:55:41.239Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "contributors: Include CTA that links to the contributing guide",
+          "hash": "fe796a9e0ff9b2d7dc413917513f71501e725ad9",
+          "body": "",
+          "footer": {
+            "Connects-to": "#174",
+            "connects-to": "#174",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "author": "Dimitrios Lytras"
+        }
+      ],
+      "version": "5.3.0",
+      "date": "2019-07-10T12:25:19.018Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Fix Readme typo",
+          "hash": "165af2a245f0be1a1330cab7dc02f06a04924cbe",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Fixes": "https://github.com/balena-io/landr/issues/187",
+            "fixes": "https://github.com/balena-io/landr/issues/187",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.2.1",
+      "date": "2019-07-09T15:03:55.258Z"
+    },
+    {
+      "commits": [
+        {
+          "subject": "Add machine-readable CHANGELOG.yml",
+          "hash": "19587a03578e03c84389d4106bfead9297621404",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor",
+            "See": "https://github.com/balena-io/versionist/pull/148",
+            "see": "https://github.com/balena-io/versionist/pull/148",
+            "Signed-off-by": "Juan Cruz Viotti <juan@balena.io>",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "author": "Juan Cruz Viotti"
+        }
+      ],
+      "version": "5.2.0",
+      "date": "2019-07-09T09:35:11.742Z"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "400ff0526ea9d098b64395e32332c631632e2ed5",
+          "subject": "Support writing blog posts in /blog"
+        }
+      ],
+      "date": "2019-07-08T20:24:48Z",
+      "version": "5.1.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "ed771b6f345dbd0ab88a1c25e149a3692e554799",
+          "subject": "Add owner info to meta.json"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "major",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "dcc2a8fbff8ccb4c6f2c9fc50064560a419efc74",
+          "subject": "Retire non-working test command"
+        }
+      ],
+      "date": "2019-07-08T18:57:05Z",
+      "version": "5.0.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "93d039b66004e2bc0218c8bb97d69ce03df293c0",
+          "subject": "Compile skeleton metadata files using handlebars"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "e6d0499fa0e7d8bd3971a23a6113ff6cf6387558",
+          "subject": "Add site description to Head element"
+        }
+      ],
+      "date": "2019-07-08T17:23:38Z",
+      "version": "4.9.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "57156be21a4ae9e322b1d7549e82cee718cc9839",
+          "subject": "Pass skeleton directory as an input env var"
+        }
+      ],
+      "date": "2019-07-08T13:26:19Z",
+      "version": "4.8.2"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "7812566c3f2fe70af7aeefa0bcb5b473f6da54b6",
+          "subject": "Add various project related metadata"
+        }
+      ],
+      "date": "2019-07-08T10:11:27Z",
+      "version": "4.8.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "5ce2e68916f79f8d96b3917f7275631b1656f2e4",
+          "subject": "Add skeleton logos"
+        }
+      ],
+      "date": "2019-07-05T22:35:36Z",
+      "version": "4.8.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "a2f2b0b00d5750679939547a23dff62269e8c335",
+          "subject": "Test that components render without errors for all defined variants"
+        }
+      ],
+      "date": "2019-07-05T19:11:58Z",
+      "version": "4.7.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "afa5e6f9afc5e681a5ef570401823238153097a7",
+          "subject": "Implement support for branch deploys"
+        }
+      ],
+      "date": "2019-07-05T17:03:06Z",
+      "version": "4.7.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "2141c4b0e35a6e2ab71bb8030681a4bd7c107c3f",
+          "subject": "Emit current site as part of analytics"
+        }
+      ],
+      "date": "2019-07-05T16:47:09Z",
+      "version": "4.6.2"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "33885a8d726089bfca9ccb33ebb772d2eaf08bf5",
+          "subject": "Avoid react-static custom paths and copy dist at the end"
+        }
+      ],
+      "date": "2019-07-05T16:21:28Z",
+      "version": "4.6.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "f354f237cce5f83569a233e6eaf6e490809ec7da",
+          "subject": "analytics: Add proper Mixpanel support"
+        }
+      ],
+      "date": "2019-07-05T13:08:39Z",
+      "version": "4.6.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "56379dd097c14846c5c54189b05abd5a9479e2a6",
+          "subject": "Update CNAME"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "3f4a1c6ef9e830a312f0c44e50e0108d3c3fd14b",
+          "subject": "Take an optional mixpanel token and use it in variants options"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "77347628ea7938a2747620ac7a0ba8956591f5a1",
+          "subject": "Pass analytics secrets to the renderer instead of the variants"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "2c6ce85dc5c8faf0b6ab08418d0555c0772994f5",
+          "subject": "renderer: Instantiate analytics client and pass it to components"
+        }
+      ],
+      "date": "2019-07-05T11:37:27Z",
+      "version": "4.5.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "f33065188d1c8362a6bfae1ced23b1847e78a027",
+          "subject": "engine: Pass theme in variants options object"
+        }
+      ],
+      "date": "2019-07-04T09:54:01Z",
+      "version": "4.4.6"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "f2db315c05fd95d0237502d2f3940d0c303b3587",
+          "subject": "Test running Landr in global mode"
+        }
+      ],
+      "date": "2019-07-03T14:04:55Z",
+      "version": "4.4.5"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "6742ab5e53bf4f7bc42a4bbd36dc37387726c9d2",
+          "subject": "Use absolute paths in all react static setup"
+        }
+      ],
+      "date": "2019-07-03T12:06:29Z",
+      "version": "4.4.4"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "171ff2a5870fe67b4c6260618ad214f9c6f0b3bc",
+          "subject": "cli: Log Landr version"
+        }
+      ],
+      "date": "2019-07-03T11:56:27Z",
+      "version": "4.4.3"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "102d2527da1e1390cfe2d201bfce7ddd36b2d773",
+          "subject": "components: Test that all files are correctly exported"
+        }
+      ],
+      "date": "2019-07-03T11:25:01Z",
+      "version": "4.4.2"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "907a8e50c715837470f1c7d9e4d2c6790cb20cb5",
+          "subject": "Use CommonJS modules in project root"
+        }
+      ],
+      "date": "2019-07-03T10:58:54Z",
+      "version": "4.4.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "9d0123452072f0f69b22448e28e383a045351db0",
+          "subject": "Don't use JSX in root logic"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "4945009257d39ea6f00cf2d610710ad11a774260",
+          "subject": "routes: Versioned docs"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "399941118d3ac2cf8fa085e7320fc32c5d01df79",
+          "subject": "components: Implement a basic doc viewer"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "793a9441e0ea8fefb7f076fa9e59ff9af34ad279",
+          "subject": "jumbotron: Add get started button"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "e661e002ca2c262f4260037220bc0e1f4aa48396",
+          "subject": "doc-viewer: Add very simple TOC"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "35993fa7190259141bf361dec6ed0aa123b0634b",
+          "subject": "navigation: Add more routes"
+        }
+      ],
+      "date": "2019-07-03T09:47:48Z",
+      "version": "4.4.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "abd31090647398dbdebe25a296255bb46c84eeb8",
+          "subject": "rules: Don't show users/faq/contributors on docs pages"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "78368ba55391e59ac16bdc9678a9185f11afe9ca",
+          "subject": "terminal: Take commands as props"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "de955a35bf27762485f550119d7a7e7a26f33366",
+          "subject": "jumbotron: Add real installation steps"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "93e44f1ed9fdd7c68fe7f2d8c3a0ea41868f3306",
+          "subject": "meta.json: Add feature highlights"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "76ef8794f1cd8aa6619a392c7aed39a955a43e57",
+          "subject": "components: Add highlights component"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "95c824ccc4989033029a1e9d3d48ae0028593ed7",
+          "subject": "rules: Add rule scopes to some rules"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "0588e67f8c633055ef8511ade77e67f8ef73bb0a",
+          "subject": "engine: Optimize combination cartesian product using rule scopes"
+        }
+      ],
+      "date": "2019-07-01T14:34:38Z",
+      "version": "4.3.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "69914c4362c4431a852f75ba68001066c668d818",
+          "subject": "Revisit routes"
+        }
+      ],
+      "date": "2019-07-01T12:55:01Z",
+      "version": "4.2.3"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "81f645d8488ba8d391515856414637156f79282a",
+          "subject": "Recreate meta.json"
+        }
+      ],
+      "date": "2019-07-01T12:17:18Z",
+      "version": "4.2.2"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "41cf702815488ba19eaa0d3917a4eefe05110931",
+          "subject": "theme: Test palette generation on a collection of images"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "fa664325940d7dce7c95099d573fca07bac06798",
+          "subject": "engine: Use ES6 generators for .getCombinations()"
+        }
+      ],
+      "date": "2019-06-28T20:37:09Z",
+      "version": "4.2.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "hash": "c566ff92e96343547972ca8cefb2dd48e1b227de",
+          "subject": "Include Nunito & Circular fonts"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "8ac2122864a154377be8beda1feb319c314e2a1d",
+          "subject": "Update Contributors component"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "6f407afb6d5fef7e7ec844662f37df4c7f7b47a0",
+          "subject": "Introduce FAQ component"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "7d9ab2203868b615cf0b62a72844f0cf33f63b92",
+          "subject": "Improve Contributors component"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "2c4c1ce8e316e60b4315c4adad23d3a0d7b51814",
+          "subject": "Add terminal component"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "b62be1429faa48dd5bb210eb452ff1f31b5f2570",
+          "subject": "Integrate terminal with Jumbotron"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "74b54ddcda7347b701b3f57ac8c16cc862489096",
+          "subject": "Use .jsx as the extension for all new files"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "358048c00c72e00d9caddbbb6fbea007aa8e52f3",
+          "subject": "Add used-by component"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "d910546033ecc02dcdfcb58791126c2f0bc271db",
+          "subject": "Remove unused inputs"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "69172ac3ea520b71ff59040b82dc9a6329ea4b19",
+          "subject": "Remove /theme leftover directory"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "ff3767099f55004677b54d5a28dd5e3537f7c1e9",
+          "subject": "Fix lint errors"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "97929baca3580dce566f3028da933d9e8d05a45a",
+          "subject": "Include github stars info"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "254a41950d977e3c19292a2025fdde85bfd097de",
+          "subject": "Open contributors links in a new tab"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "c346b64624edc3ccf26bc037470352a54413d184",
+          "subject": "Fix FAQ collapse behaviour"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "438bb90fd445b05592e6f2b5839dde6260470b0a",
+          "subject": "Sort contributors by username"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "26a8052577b8840a90884b229fdbea77f539e727",
+          "subject": "Move react-typist css import in App.jsx"
+        }
+      ],
+      "date": "2019-06-28T19:09:17Z",
+      "version": "4.2.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "0cb0b50c0ff9c2b06205ca1d39c591feb0682941",
+          "subject": "Generate color palette from banner image"
+        }
+      ],
+      "date": "2019-06-28T18:28:07Z",
+      "version": "4.1.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "2bdd0cecf35015a6b498cd59b20e08dace9c2ad3",
+          "subject": "Add repo.yml"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "996451cac10db5416edda0352a99f4d6f140dc5b",
+          "subject": "Update repo.yml"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "d755c2055bacb1723f600029d3ef5dad938a1807",
+          "subject": "package.json: Add build and start npm commands"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "0c732eb559d842ba9011c0f3abb7d58077f80ae1",
+          "subject": "Re-add CHANGELOG"
+        },
+        {
+          "author": "Juan Cruz Viotti",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Juan Cruz Viotti <juan@balena.io>"
+          },
+          "hash": "082cc2fcc9d795df81920d242b58acf246a2b3ea",
+          "subject": "Support Node.js 8"
+        }
+      ],
+      "date": "2019-06-28T08:54:24Z",
+      "version": "4.0.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "hash": "a96034c2a1522b01f74b7a096944f9bd004a558a",
+          "subject": "meta-tags: Add title & description"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "9a2e6631ad4b633d5c1f259dc9977cfeae2cd7d0",
+          "subject": "Fix react warning about leftover destructured props"
+        }
+      ],
+      "date": "2019-06-25T08:43:28Z",
+      "version": "3.0.4"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "hash": "7a4450ba226b202d708ef30f40c26a3d7b249f8c",
+          "subject": "config: Add prettier"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "000e4ae6697731481fcb0cf67af46e9be82de4b4",
+          "subject": "Exclude SSG temp files"
+        }
+      ],
+      "date": "2019-06-25T07:43:29Z",
+      "version": "3.0.3"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "hash": "48c56333978f81af78a539a4c1537f60a425f093",
+          "subject": "Fix build command"
+        }
+      ],
+      "date": "2019-06-24T17:51:09Z",
+      "version": "3.0.2"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "hash": "02f17b1f4b6692912f67610d12c7254b582913e0",
+          "subject": "nit: Update repo URL in package.json"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "connects-to": "#120",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@balena.io>"
+          },
+          "hash": "60dacebf465f8280040c96ddd67d4a67b8095263",
+          "subject": "fix: Render single-line codeblocks inline"
+        }
+      ],
+      "date": "2019-06-24T17:15:04Z",
+      "version": "3.0.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "major"
+          },
+          "hash": "c2857d8cb86e19f8b3c83c4b07dc20fb19c5fda3",
+          "subject": "V3"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "5f42ff1b654b77a24cde9fc51df12f627cdfde8f",
+          "subject": "Suggest using Landr globally in Readme"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "ca2202c5285478acec498852c8810da8acb678fe",
+          "subject": "Upgrade rendition"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "be7b8b821926ce2d969f6314ba0b731349ed3a82",
+          "subject": "Tree-shake lodash"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "7f8e12d88b8753a804435f5423361f47a3cde042",
+          "subject": "Use Capitano & introduce a preview mode"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "4ae1497c12278aa317ef0cc5a5257ca2848eec15",
+          "subject": "Update readme"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "67efb4b6938bd7fe52c087463f17599de3e7230a",
+          "subject": "Rewrite some parts"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "b78efefb98290ddd4db4942423391a3b3c829b60",
+          "subject": "Update Readme"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "46dbcbf2fa40475d9d9f7b784d6691b32164d7f6",
+          "subject": "Handle repositories with no releases"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "0cc68c772bf6b564746107c0ebcfdfa778cc2f3a",
+          "subject": "Remove help dialog when an error occurs"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "co-authored-by": "Lucian Buzzo <LucianBuzzo@users.noreply.github.com>"
+          },
+          "hash": "2ff03229bfb06ff6a5f96a89feb94be700e5ce16",
+          "subject": "Update bin/deploy.js"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "077d28d3680240573cb85920ec2de8f8ca8db799",
+          "subject": "Tidy up Readme parser"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "bcfd3d137e38c5b88c0f6ce33fe429cd1a9a764e",
+          "subject": "Merge branch 'v3' of https://github.com/resin-io/landr into v3"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "96d805fb4bebb296d4a00c0f7addcfeed3bb8aed",
+          "subject": "Add some tests"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "hash": "dc4999765b6a7fb24029c2eedbc6f5079c1c902c",
+          "subject": "Update dependencies"
+        }
+      ],
+      "date": "2019-06-24T15:10:22Z",
+      "version": "3.0.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Lucian Buzzo",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "830f4be618154c1015824d5b8627a3596ccb363b",
+          "subject": "Allow users to augment webpack config via landr.conf.js"
+        }
+      ],
+      "date": "2018-10-19T15:10:11Z",
+      "version": "2.3.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "connects-to": "#106",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@resin.io>"
+          },
+          "hash": "a8ad7d772ad14d9188ac0842f77c6d133bc4273f",
+          "subject": "markdown: Consume frontmatter and expose its properties"
+        }
+      ],
+      "date": "2018-10-02T13:06:10Z",
+      "version": "2.3.0"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@resin.io>"
+          },
+          "hash": "31745ec6e46f1aa83c15ef9f3a2dd350d779f229",
+          "subject": "fixup: Restore package version"
+        }
+      ],
+      "date": "2018-10-02T11:53:52Z",
+      "version": "2.2.1"
+    },
+    {
+      "commits": [
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "connects-to": "#102",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@resin.io>"
+          },
+          "hash": "9f81f07e86a33874bc37fbda4408aba406c3332c",
+          "subject": "docs: Include links in headings"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "connects-to": "#103",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@resin.io>"
+          },
+          "hash": "18828ee460f9e4756907f5be5f1970683c918c68",
+          "subject": "docs: Expose the section ids for linking"
+        },
+        {
+          "author": "Dimitrios Lytras",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "connects-to": "#99",
+            "signed-off-by": "Dimitrios Lytras <dimitrios@resin.io>"
+          },
+          "hash": "187858d3193a941cdbb9183aaa0f4c4b2ed0f39b",
+          "subject": "assets: Include PDF"
+        },
+        {
+          "author": "Lucian Buzzo",
+          "body": "",
+          "footers": {
+            "change-type": "minor",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "3c978cbed052c9074664a856fd74ae4333ef2ef1",
+          "subject": "theme: Allow users to provide a custom theme"
+        },
+        {
+          "author": "Lucian Buzzo",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "c557da6d195d6a44bfbe4bf5ee3886c9c3775b12",
+          "subject": "package.json: Fix typo in author email address"
+        },
+        {
+          "author": "Lucian Buzzo",
+          "body": "",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "4c105b271193321f7dc2b284cdee288264b21181",
+          "subject": "package.json: Update author field and add repository field"
+        },
+        {
+          "author": "Lucian Buzzo",
+          "body": "Connects to #90",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "3334cf43bd82bbebb78de1a6b6791398c24164fc",
+          "subject": "dependencies: Update dependencies to mitigate security vulnerabilities"
+        },
+        {
+          "author": "Lucian Buzzo",
+          "body": "Fixes #89",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "713a9f31bee625085f6813dcb0e9888093794a9e",
+          "subject": "babel: Update to babel-preset-env"
+        },
+        {
+          "author": "Lucian Buzzo",
+          "body": "Fixes #86\n- Test command now runs linter\n- Default theme is now set correctly",
+          "footers": {
+            "change-type": "patch",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "hash": "0d64cb9ccfc4f74929ecb1e108c2d52a917c8460",
+          "subject": "Config: Fix missing default theme and assets directory"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "50888aad81e5fbf6aed61c90f9013de12eaf8a4a",
+          "subject": "fix prettier"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "update docs",
+          "hash": "9502c5db8c09c61a50d0cebd51caf0138c71ef02",
+          "subject": "Version 2 beta"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "connects to #68",
+          "footers": {
+            "change-type": "minor"
+          },
+          "hash": "df723336d10fe48ec4008de456167fa983a62cb5",
+          "subject": "Convert redux modules to data plugins"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "7a6e0aaf60b279bd26e3c877020b36c83720aa5a",
+          "subject": "add collector tests"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "c6d5dd6ee1af6ef65d268c1158ca78f21d5be52d",
+          "subject": "add apiRunner"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "Connects to #66",
+          "footers": {
+            "change-type": "patch"
+          },
+          "hash": "94e83e11cb509a5af5abc5a5cab1272aa404f8c6",
+          "subject": "Clean up config module"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "72241e932beaa5b59eece533b8b82a7ce344c48d",
+          "subject": "init schema"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "926b61b9b72cd80c259a2c114e4406383f75d3d3",
+          "subject": "add changelog schema"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "17bea0f9d3e28387c7b0e8870249c8b8de3ad491",
+          "subject": "demo"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "ea425a9fc82fa636eb1c731607e47d80432551f3",
+          "subject": "build"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "56ffdbed8ff2d946224d021ca79c0bccb7a8a127",
+          "subject": "uglify prod build"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "ba7f6ab9dca09eb09270baf44b067fadb25ebaad",
+          "subject": "fix style exports"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "127c703eb8d043dad495ac69100c712f521f8842",
+          "subject": "pull in themes"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "2d365201c99eac5f3a2c8161181da8054a5fd25a",
+          "subject": "move things around"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "3f205ca7c0935084418530c8631da53a28335f1c",
+          "subject": "add intro theme"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "Clean up docs styles",
+          "hash": "f09740c81fb8d4bd7741d1e7b45b377686eb1e98",
+          "subject": "Pass readme/changelog nodes to remark transformer"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "554275df26a11fa7668b59d6af213520a5beb9e0",
+          "subject": "changelog with remark"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "7b39beaddb3b9f03a42e77a09f2b23f7a35c3184",
+          "subject": "simplify changelog + readme parsing"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "3d5d945ef7ef1eb67054954058463aede83790f2",
+          "subject": "Change build dir"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "8dd919b2463d6a4d0d45cffa1c9f6f40a8289eb2",
+          "subject": "fix promise chain"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "f15d66b3aafa781c7da09f0ad7ae09af61efe007",
+          "subject": "Merge branch 'master' of github.com:resin-io/landr"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "ad361913dd2deed83d62a3ed24f0b103dfe7c886",
+          "subject": "homepage"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "dd185d32ed520c40e50e44dfbc659ec6624a4b73",
+          "subject": "rm bootstrap"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "3ec7a3f9a7da4e6d7b48d45b702c22a7fa500cd8",
+          "subject": "mv template -> pages"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "8dd919b2463d6a4d0d45cffa1c9f6f40a8289eb2",
+          "subject": "fix promise chain"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "ec8b388824fc5db3821a216a4666e8c893948b9a",
+          "subject": "creating docs"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "81e3601be998ef515050c88da424650bcbec7ff8",
+          "subject": "Basic docs"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "e125e3f758117ab0670947fe510e46d681f80a48",
+          "subject": "make eject interactive"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "2834f25fcbd50b9038d9f89507549ec5b10ad9cb",
+          "subject": "create layouts + layout queries"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "05dc1469b69ce2a09917876523b8db0df3ea976b",
+          "subject": "Merge branch 'master' of github.com:resin-io/landr"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "32bd5037120c34a292b72e17d61d990eff405066",
+          "subject": "ejectable layouts"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "aaec5d23f539fc8e515710d1cd422783244616f0",
+          "subject": "merge master"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "4c87a3362c1ce2337ab27dc17b7346d65bfcb026",
+          "subject": "Merge branch 'master' of github.com:resin-io/landr"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "ccb4916ed745ec1eca9622958c4d77f3993cecf6",
+          "subject": "add react helmet for head tags"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "e125e3f758117ab0670947fe510e46d681f80a48",
+          "subject": "make eject interactive"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "2834f25fcbd50b9038d9f89507549ec5b10ad9cb",
+          "subject": "create layouts + layout queries"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "05dc1469b69ce2a09917876523b8db0df3ea976b",
+          "subject": "Merge branch 'master' of github.com:resin-io/landr"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "32bd5037120c34a292b72e17d61d990eff405066",
+          "subject": "ejectable layouts"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "aaec5d23f539fc8e515710d1cd422783244616f0",
+          "subject": "merge master"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "e125e3f758117ab0670947fe510e46d681f80a48",
+          "subject": "make eject interactive"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "2834f25fcbd50b9038d9f89507549ec5b10ad9cb",
+          "subject": "create layouts + layout queries"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "05dc1469b69ce2a09917876523b8db0df3ea976b",
+          "subject": "Merge branch 'master' of github.com:resin-io/landr"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "e125e3f758117ab0670947fe510e46d681f80a48",
+          "subject": "make eject interactive"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "connects to #24",
+          "footers": {
+            "change-type": "patch"
+          },
+          "hash": "847ccb39f302a8c1a243e5efa885f94480bebdb7",
+          "subject": "Allow untracked local branches"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "3d6b8331c22b585b51623f840f9ef4a6c5183aa4",
+          "subject": "refactor cli"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "015348dcffe708d300d7caab8d2aa4b64b29d5b0",
+          "subject": "building from /tmp"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "- changelog-parse@0.0.0-beta1.1\n- gatsby-plugin-landr@0.0.0-beta2.1\n- gatsby-source-github@0.0.0-beta1.1\n- gatsby-transformer-changelog@0.0.0-beta1.1\n- gatsby-transformer-readme@0.0.0-beta1.1\n- landr@1.0.2-beta2.1\n- md-parser-utils@0.0.0-beta1.1\n- readme-parser@0.0.0-beta1.1",
+          "hash": "d1fdc12a6877d51eaf678661af7fa5184c22df0b",
+          "subject": "Publish"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "c1088f2cd03386fa24f16cd4b20e2089e741fccc",
+          "subject": "fix eject cmd"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "7c03ee5db0d5c9e5ebc18d557d7342df97d6158c",
+          "subject": "add docs for gatsby-source-github"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "236c50da638f3c8c1d0f1e350b6d47f2145744fc",
+          "subject": "rm old pkgs"
+        },
+        {
+          "author": "Craig Mulligan",
+          "body": "",
+          "hash": "39eb8e80f2bc8269f01adcc3fa6122e74e7f4774",
+          "subject": "Merge branch 'master' into build-from-tmp"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "8bd26780f2a44f6c4f0ed8a2001c724bdd2ae606",
+          "subject": "refactor cli"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "efd8ddc3321637915cba9060b3477ab6f30f7e18",
+          "subject": "refactor cli"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "c99aea37972d068e821269686f4affe896141337",
+          "subject": "fix node modules"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "71057ecae8beda70d5868d92ea2e77333fe2a91f",
+          "subject": "trying fragment queries"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "29615a89512a6ac3779eb2f05e4e2c012eb0624b",
+          "subject": "rename plugins + add contributors component"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "c2e09d90c46ac07e04ba1113792d4e1f54d7d3f2",
+          "subject": "Merge branch 'master' of github.com:resin-io/landr"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "bc633cb7129ad83a4d97df2cd6025dd21e20119d",
+          "subject": "rename changelog-parser to changelog-parse"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "fc3815485ad14467a49932313f85146417df81e4",
+          "subject": "rename changelog-parse"
+        },
+        {
+          "author": "Haris Khan",
+          "body": "",
+          "hash": "8c5ccabca600a822fb00b96721d1005f61ca67e5",
+          "subject": "add commits to the list of data sources pulled in"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "3081eff50167f684a70ef0b68667be683b8b56d0",
+          "subject": "update readme"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "dde66fe915ba2fda7ed3db60c00f5c97d74b71be",
+          "subject": "mvp"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "9ece8d7cb4278fc28d4020c2d83ffed057d6c8f9",
+          "subject": "license"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "97b2e8869747c5362a1a831c3972303110dfc901",
+          "subject": "add deploy cmd"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "f526a78c56b723336f0b42f7621ec71bd96f7fe3",
+          "subject": "test"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "8e106495049e7b17d3b707a476128932e9a722b1",
+          "subject": "add github repo source plugin"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "7a61ab45b3d740eee3fe5063ce17b230b7dcac0b",
+          "subject": "add debounce to get around gh-rate limits"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "71057ecae8beda70d5868d92ea2e77333fe2a91f",
+          "subject": "trying fragment queries"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "dad124fb4bd883f5fa9182f5f4d6c6c915a814ac",
+          "subject": "convert to mono-repo with lerna"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "7bbd29cfd15803689b41dae3cc054ee774b1ac34",
+          "subject": "add link prefix"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "08204ede713ed49aafc5490089deff3003fd6af1",
+          "subject": "use gatsby"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "1cdbeb8b61e39ab67daf742acf83a78f391a0ec4",
+          "subject": "section component"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "19d075f4b250b47a6b0dc37864602caa3ff3983c",
+          "subject": "update readme"
+        },
+        {
+          "author": "craig-mulligan",
+          "body": "",
+          "hash": "bbd2255fc6b7b2735cf8eb07ac1cd276d1a491eb",
+          "subject": "add deploy script"
+        },
+        {
+          "author": "gaudi",
+          "body": "",
+          "hash": "a6aa4cceaa2c94fc8f9c9d7c1bc18a87aa92915d",
+          "subject": "add basic tests"
+        },
+        {
+          "author": "gaudi",
+          "body": "",
+          "hash": "7bc3e6ebb29793ad36a53d8a43ef999af10fb815",
+          "subject": "refactor cli"
+        },
+        {
+          "author": "gaudi",
+          "body": "",
+          "hash": "2515c8290abf557d39adfa7f94eef3b870ff84c4",
+          "subject": "add bourbon\""
+        },
+        {
+          "author": "gaudi",
+          "body": "",
+          "hash": "702fade7753f331bc20ac2d5c0aa8976258c8bed",
+          "subject": "fix double compile in dev-mode, minify in prod"
+        },
+        {
+          "author": "gaudi",
+          "body": "",
+          "hash": "3e8cd939d07af73b59c55c96a0c45d0f5a856fdc",
+          "subject": "dont need external css optimizer"
+        },
+        {
+          "author": "gaudi",
+          "body": "",
+          "hash": "8cc2c1f05235e038d9fc1843b7b749fa4e10ae6e",
+          "subject": "add deloying log"
+        }
+      ],
+      "date": "2018-10-02T10:03:03Z",
+      "version": "0.1.0"
+    }
+  ],
+  "contributing": "Contributing to Landr\n=====================\n\nWe're happy you're interested in Landr!\n\nAs a first step, make sure to take a look at the [architecture\ndocument](https://github.com/balena-io/landr/blob/master/ARCHITECTURE.md),\nwhich describes how Landr works.\n\nWhat can I contribute on?\n-------------------------\n\nThe main areas we would love to get your help with are:\n\n- Extending Landr to understand more open source conventions\n\nHave you seen open source projects adopting a new convention that would allow\nus to understand the project better and produce better websites? Let us know,\nor even better: make Landr understand them!\n\n- Making Landr sites look good no matter what information is available\n\nEach project is unique, and the parts that Landr can infer out of the box\nchange depending on the project. We want to consider all these combinations and\ncreate adaptative websites no matter what subset of information we have.\n\nThe best way to test this is by attempting to run Landr on any of your\nprojects, and checking if the results are not satisfactory.\n\nCommit Conventions\n------------------\n\nLandr uses the\n[OpenEmbedded](https://www.openembedded.org/wiki/Commit_Patch_Message_Guidelines)\ncommit conventions. We also require a `Change-type` footer tag that is either\n`patch`, `minor`, or `major`, depending on the change your patch makes in terms\nof [Semantic Versioning](https://semver.org).\n\nBalena CI\n---------\n\nLandr makes use of Balena's internal CI system which noy only runs the tests,\nbut automatically generates a CHANGELOG based on your commits and their\ncorresponding `Change-type`s.\n\nTests\n-----\n\nYou may run the test suite with the `npm test` command. We enable code coverage\nsupport, and you can see the report after running the tests by opening\n`coverage/index.html` in your browser.\n\nEditorConfig\n------------\n\nThis project makes use of [EditorConfig](https://editorconfig.org). Make sure\nyour editor supports it so that it doesn't deviate from indentation, line\nendings, and other text related conventions.\n",
+  "contributors": [
+    {
+      "username": "dimitrisnl",
+      "avatar": "https://avatars2.githubusercontent.com/u/4951004?v=4"
+    },
+    {
+      "username": "jviotti",
+      "avatar": "https://avatars0.githubusercontent.com/u/2192773?v=4"
+    },
+    {
+      "username": "LucianBuzzo",
+      "avatar": "https://avatars0.githubusercontent.com/u/15064535?v=4"
+    },
+    {
+      "username": "hobochild",
+      "avatar": "https://avatars2.githubusercontent.com/u/9499917?v=4"
+    },
+    {
+      "username": "dependabot[bot]",
+      "avatar": "https://avatars0.githubusercontent.com/in/29110?v=4"
+    },
+    {
+      "username": "tyrantkhan",
+      "avatar": "https://avatars1.githubusercontent.com/u/107844?v=4"
+    }
+  ],
+  "docs": [
+    {
+      "filename": "docs/01-getting-started.md",
+      "contents": "Getting Started\n===============\n\nWelcome to Landr! Setting up Landr in your project is extremely easy. First,\nmake sure you install the `landr` CLI from npmjs.org if you haven't already by\nrunning:\n\n```sh\nnpm install --global landr\n```\n\nLets also install the excellent [`serve`](https://www.npmjs.com/package/serve)\nstatic HTTP server as a way to preview our site:\n\n```sh\nnpm install --global serve\n```\n\nNow that everything is in place, head over to your project's repository and\nrun:\n\n```sh\nlandr build\n```\n\nGive it a bunch of seconds, and you should get various HTML, CSS, and\nJavaScript files in the `dist` directory. You can preview your site by running:\n\n```sh\nserve dist\n```\n\nAnd pointing your browser to `localhost:5000`.\n\nAt this point, you have working, but not perfect, website. Landr generates\nwebsites based on the content of the repository and relies on various OSS\nconventions for doing its job. Making sure your repository is well structured\nand follows the community conventions will do wonders for you website, and for\nyour repository overall!\n\nOnce you are happy with your site, run the following command to deploy to Netlify:\n\n```\nNETLIFY_AUTH_TOKEN=<token> landr deploy\n```\n\nPassing your Netlify authentication token as an environment variable.\n"
+    },
+    {
+      "filename": "docs/02-cli.md",
+      "contents": "CLI\n===\n\nThe Landr CLI is able to generate websites and deploy them to Netlify and it\nfeatures the following small set of commands:\n\n`landr [meta.json]`\n-------------------\n\nThis is an alias for `landr deploy [meta.json]`. Please refer to that command's\nhelp section.\n\n`landr build [meta.json]`\n-------------------------\n\nBuild the site in the current working directory and store the generated files\nin `dist`. Any existing `dist` directory will be removed.\n\n| Arguments | Description | Optional? | Default |\n|-----------|-------------|-----------|---------|\n| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |\n\nThis command supports the following environment variables:\n\n| Name | Description | Optional? |\n|-----------|-------------|-----------|\n| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |\n| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |\n\n### Examples:\n\n```sh\n$ cd path/to/repo\n$ landr build\n\n  / /  __ _ _ __   __| |_ __\n / /  / _` | '_ \\ / _` | '__|\n/ /__| (_| | | | | (_| | |\n\\____/\\__,_|_| |_|\\__,_|_|\n\nGenerate great websites for your projects with zero configuration\n\n[landr] Trying to load repository contract from /Users/jviotti/Projects/resin/landr/meta.json\n[landr] Running from /Users/jviotti/Projects/resin/landr/meta.json into /Users/jviotti/Projects/resin/landr/dist\n...\n[landr] Site generated successfully\n```\n\n`landr deploy [meta.json]`\n--------------------------\n\nRun `landr build [meta.json]` on the current working directory and deploy the\nresulting files to Netlify. The content of `dist` are removed after deployment.\n\n| Arguments | Description | Optional? | Default |\n|-----------|-------------|-----------|---------|\n| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |\n\nThis command supports the following environment variables:\n\n| Name | Description | Optional? |\n|-----------|-------------|-----------|\n| `NETLIFY_AUTH_TOKEN` | You Netlify token | N |\n| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |\n| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |\n\n### Examples:\n\n```sh\n$ cd path/to/repo\n$ landr deploy\n\n  / /  __ _ _ __   __| |_ __\n / /  / _` | '_ \\ / _` | '__|\n/ /__| (_| | | | | (_| | |\n\\____/\\__,_|_| |_|\\__,_|_|\n\nGenerate great websites for your projects with zero configuration\n\n[landr] Trying to load repository contract from /Users/jviotti/Projects/resin/landr/meta.json\n[landr] Running from /Users/jviotti/Projects/resin/landr/meta.json into /Users/jviotti/Projects/resin/landr/dist\n...\n[landr] Site generated successfully\n[landr] Deploying site to https://landr.netlify.com\n[landr] Deployed with Landr v4.2.1\n[landr] Visit https://landr.netlify.com\n[landr] Head over to https://app.netlify.com/sites/landr/settings/domain/setup to setup a different domain\n```\n"
+    },
+    {
+      "filename": "docs/03-conventions.md",
+      "contents": "Conventions\n===========\n\nLandr prides itself with being a zero configuration tool, and relying on your\nrepository and related conventions to perform its job.\n\nThis document presents a list of conventions we recommend in order to make the\nbest out of Landr. Apart from this list, The [Landr GitHub\nRepository](https://github.com/balena-io/landr) aims to be an example of what\nyou can do with Landr, so check out how we do things there if unsure!\n\n`README.md`\n-----------\n\n### Image Banner\n\nLandr will parse the `README` file and if it finds an image at the top, it will\nuse it as the project banner/logo.\n\n### Description\n\nThe first paragraph in the `README` before any section is considered to be the\nrepository description.\n\n### Features\n\nA list of paragraphs after the repository description, where each entry starts\nwith a set of words, a colon, and a paragraph is considered to be the project\nfeatures highlights.\n\n### Motivation\n\nA `README` section called `Motivation` is considered to be a longer description\nof why the project exists.\n\n`ARCHITECTURE.md`\n-----------------\n\nAn in-depth description of how the project works under the hood, targetted at\npotential contributors.\n\n`CODE_OF_CONDUCT.md`\n--------------------\n\nThe project's code of conduct for contributors.\n\n`SECURITY.md`\n-------------\n\nInstructions on how to report a security vulnerability to the project.\n\n`FAQ.md`\n--------\n\nA set of frequently asked questions and their corresponding answers. Each\nsection of the document is considered to be a different FAQ entry.\n\n`CODEOWNERS`\n------------\n\nLandr will parse `CODEOWNERS` to determine who are the maintainers of the\nrepository.\n\n`CONTRIBUTING.md`\n-----------------\n\nA getting started guide for starting to contribute to the project,\ncomplementary to the `ARCHITECTURE.md` document.\n\n`LICENSE`\n---------\n\nThe license of the project.\n\n`CNAME`\n-------\n\nThe canonical domain of the project.\n\n`docs/**/*.md`\n--------------\n\nA set of documentation files where sub-directories represent categories. The\nordering is determined alphabetically using the file names and the page title\nis determined from the first title from the contents of the files.\n\n`blog/YYYY-MM-DD-*.md`\n----------------------\n\nA set of blog posts. The published date is obtained from the file name, and the\nauthor information is obtained through git.\n"
+    },
+    {
+      "filename": "docs/04-running-landr-in-ci.md",
+      "contents": "Running in CI\n=============\n\nThe Landr project makes use of [Netlify](https://www.netlify.com) to deploy the\ngenerated website. For this reason, you will need to generate a Netlify\n*Personal Access Token* and set it as an environment variable called\n`NETLIFY_AUTH_TOKEN`.\n\nGenerating a Netlify Access Token\n---------------------------------\n\nLogin to your Netlify account and head over to the [`Application` tab in the\n`User Settings` page](https://app.netlify.com/user/applications). Once there,\nclick on the `New Access Token` button:\n\n![](./assets/netlify-new-access-token.png)\n\nOnce there, put a descriptive name for your personal access token, such as\n\"Landr\", and click `Generate token`:\n\n![](./assets/netlify-create-token.png)\n\nCopy the token, and set it as the value for the `NETLIFY_AUTH_TOKEN` using the\nEnvironment Variables section of your preferred CI service:\n\n![](./assets/netlify-copy-access-token.png)\n\nClick `Done!` and you are all set! Landr will automatically use the token you\nset when it comes to deploying your static assets!\n"
+    }
+  ],
+  "security": "# Reporting Security Issues\n\nThe Balena.io team and community take security bugs in all our products and\nopen source projects seriously. We appreciate your efforts to responsibly\ndisclose your findings, and will make every effort to acknowledge your\ncontributions.\n\nTo report a security issue, email\n[security@balena.io](mailto:security@balena.io). The Balena.io team will keep\nyou informed of the progress towards a fix, and may ask for additional\ninformation or guidance.\n\nReport security bugs in third-party modules to the person or team maintaining\nthe module. You can also report a vulnerability through the [Node Security\nProject](https://nodesecurity.io/report).\n",
+  "faq": [
+    {
+      "title": "How can I theme/configure my Landr website?",
+      "content": [
+        [
+          "para",
+          "The Landr team believes in a zero configuration approach. We think Landr should\nbe able to determine what you have and how to present it in the best possible\nway. We know this is a very ambitious goal, and if you think something is off,\n",
+          [
+            "link",
+            {
+              "href": "https://github.com/balena-io/landr/issues/new"
+            },
+            "reach out to us"
+          ],
+          "! Whatever you\nhave in mind, we can try to teach Landr about it, which benefits the community\nmore than adding a configuration flag."
+        ]
+      ]
+    },
+    {
+      "title": "Can I extend my Landr website with a page I fully control?",
+      "content": [
+        [
+          "para",
+          "Sure! Landr generates static HTML, CSS, and JS. You can add more files to the\nbundle as you wish before pushing them to Netlify."
+        ]
+      ]
+    },
+    {
+      "title": "Why is Landr using Netlify instead of GitHub Pages?",
+      "content": [
+        [
+          "para",
+          "Netlify can do everything that GitHub Pages can do, and it also provides some\nextra features and flexibility that we find really valuable for Landr, such as\nbeing able to deploy more than one branch of a site at the same time, A/B\ntesting, form submissions management, and more. On top all of that, Netlify is free to use!"
+        ]
+      ]
+    }
+  ],
+  "codeOfConduct": "Contributor Covenant Code of Conduct\n====================================\n\nOur Pledge\n----------\n\nIn the interest of fostering an open and welcoming environment, we as\ncontributors and maintainers pledge to making participation in our project and\nour community a harassment-free experience for everyone, regardless of age,\nbody size, disability, ethnicity, sex characteristics, gender identity and\nexpression, level of experience, education, socio-economic status, nationality,\npersonal appearance, race, religion, or sexual identity and orientation.\n\nOur Standards\n-------------\n\nExamples of behavior that contributes to creating a positive environment\ninclude:\n\n- Using welcoming and inclusive language\n- Being respectful of differing viewpoints and experiences\n- Gracefully accepting constructive criticism\n- Focusing on what is best for the community\n- Showing empathy towards other community members\n\nExamples of unacceptable behavior by participants include:\n\n- The use of sexualized language or imagery and unwelcome sexual attention or\n  advances\n- Trolling, insulting/derogatory comments, and personal or political attacks\n- Public or private harassment\n- Publishing others' private information, such as a physical or electronic\n  address, without explicit permission\n- Other conduct which could reasonably be considered inappropriate in a\n  professional setting\n\nOur Responsibilities\n--------------------\n\nProject maintainers are responsible for clarifying the standards of acceptable\nbehavior and are expected to take appropriate and fair corrective action in\nresponse to any instances of unacceptable behavior.\n\nProject maintainers have the right and responsibility to remove, edit, or\nreject comments, commits, code, wiki edits, issues, and other contributions\nthat are not aligned to this Code of Conduct, or to ban temporarily or\npermanently any contributor for other behaviors that they deem inappropriate,\nthreatening, offensive, or harmful.\n\nScope\n-----\n\nThis Code of Conduct applies within all project spaces, and it also applies\nwhen an individual is representing the project or its community in public\nspaces.  Examples of representing a project or community include using an\nofficial project e-mail address, posting via an official social media account,\nor acting as an appointed representative at an online or offline event.\nRepresentation of a project may be further defined and clarified by project\nmaintainers.\n\nEnforcement\n-----------\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be\nreported by contacting the project team at [INSERT EMAIL ADDRESS]. All\ncomplaints will be reviewed and investigated and will result in a response that\nis deemed necessary and appropriate to the circumstances. The project team is\nobligated to maintain confidentiality with regard to the reporter of an\nincident.  Further details of specific enforcement policies may be posted\nseparately.\n\nProject maintainers who do not follow or enforce the Code of Conduct in good\nfaith may face temporary or permanent repercussions as determined by other\nmembers of the project's leadership.\n\nAttribution\n-----------\n\nThis Code of Conduct is adapted from the [Contributor Covenant][homepage],\nversion 1.4, available at\nhttps://www.contributor-covenant.org/version/1/4/code-of-conduct.html\n\n[homepage]: https://www.contributor-covenant.org\n\nFor answers to common questions about this code of conduct, see\nhttps://www.contributor-covenant.org/faq\n",
+  "architecture": "How does Landr work?\n====================\n\nThe main goal of Landr is to generate useful and decent websites to describe a\nsoftware project with the least possible amount of configuration. Landr is\nsupposed to be opinionated by design and rely on common open source conventions\nrather than on user input.\n\nmeta.json\n---------\n\nLandr reads all the information it needs to know about a repository from a file\ncalled `meta.json`, which is supposed to be the **only input for Landr**. This\nis a pretty big JSON file generated by a tool such as\n[scrutinizer](https://github.com/balena-io-modules/scrutinizer), which scans\nthe content of the repo, the GitHub API, the package managers where the\nrepository is published (i.e. npmjs.org), and much more. Check Landr's\n[`meta.json`](https://github.com/balena-io/landr/blob/master/meta.json) as an\nexample.\n\nRight now Landr works on the assumption that the `meta.json` file is there by\nthe time Landr runs. Within Balena, we do this by setting up Balena CI to run\n`scrutinizer` on every PR merge and making the `balena-ci` user commit the file\nto `master`. This is a step that makes it hard for people outside Balena to use\nLandr, and we hope to sort this out in the short term.\n\nThe amount of information we can obtain from a repository differs on the\nproject and on how standard the conventions that the project is adopting are,\nso most of the things that `meta.json` might contain is optional.\n\nRoutes\n------\n\nThe routes that Landr will statically generate are defined in\n[`lib/routes.js`](https://github.com/balena-io/landr/blob/master/lib/routes.js).\nThis file contains a function that takes `meta.json` and returns an array of\nroutes that Landr will render. Each route contains the following properties:\n\n- `title`: The page title, most often used inside `<title></title>`\n- `path`: The page path, as an array of fragments. For example `[ 'foo', 'bar'\n  ]` corresponds to `/foo/bar`\n- `context`: A free-form object that represents the page's focus information.\n  For example, a page that renders the project's code of conduct will have the\n  code of conduct plus any related information as its `context`\n\nThe order in which routes are returned doesn't make a difference.\n\nComponents\n----------\n\nThe Landr project ships with a collection of React component that represent the\nlibrary of UI section that Landr will use when rendering a website. These\ncomponents live in\n[`lib/components/`](https://github.com/balena-io/landr/tree/master/lib/components).\nEach component has the following properties:\n\n- `name`: The unique name of the component\n- `render`: A function that takes a `props` object and returns a React\n  component\n- `variants`: The different ways this component can be rendered given a\n  `meta.json`. We will explain this in more detail later\n\nVariants\n--------\n\nEach component has a `variants` function that takes information such as\n`meta.json` and a route `context` and returns an array defining all the ways\nthat the component is happy to render itself given the information it has,\nsorted by order of preference.\n\nFor example, a jumbotron may have a title, a subtitle, and a primary action\nbutton. Our jumbotron component may define that its happy to render itself in\nthe following ways:\n\n- Using the GitHub description as a title, the README first paragraph as a\n  subtitle, and a link to GitHub Releases as the primary action button\n- Using the GitHub description as a title, and the README first paragraph as a\n  subtitle, without a primary action button\n- Using the repository name as the title, and the README first paragraph as a\n  subtitle, without a primary action button\n- And more\n\nIf a \"choice\" is returned before another choice, then the component expresses\nthat it *prefers* to be rendered in the first way, but is happy to take any\nchoice. We internally call these preferences the *rank*.\n\nRules\n-----\n\nThe Landr engine will go through each of the routes defined for a website, and\nit will generate all possible combinations of components and the choices they\nare willing to consider when rendering themselves. A lot of these options will\nbe invalid, such as saying that we want a footer before the navigation bar, so\nLandr also has a set of declarative rules to filter out invalid component\ncombinations. These rules live in\n[`lib/rules.js`](https://github.com/balena-io/landr/blob/master/lib/rules.js)\nand express things such as:\n\n- If there is a jumbotron, then it must be positioned right after a navigation\n  bar\n- There should not be a jumbotron in pages other than the main page\n- The footer should be the last thing in a page\n\nAnd many more.\n\nLandr will check every combination it generated against these rules, keep the\nvalid ones, and choose the one where the components are rendered with the\nhighest possible ranks.\n\nRendering\n---------\n\nOnce we figure out what to display and how, we generate React components and\npass them to [React Static](https://github.com/nozzle/react-static) to get you\nsome lovely static files!\n",
+  "maintainers": [
+    "@dimitrisnl",
+    "@jviotti",
+    "@lucianbuzzo"
+  ],
+  "readme": "![Landr](https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2)\n\n[![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)\n[![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md)\n\nGenerate great websites for your projects with zero configuration.\n\n**Landr is alpha software** and its under heavy development, so various things\nmight be broken in the best case!\n\nHighlights\n----------\n\n- **Functional Websites**: Landr renders your project and its documentation in\n  a gorgeous and UX friendly way to your end users, in the best possible way\n  while you focus on shipping features\n- **Follows OSS Conventions**: Landr understands most common repository\n  conventions, and makes use of them fully. Build a great repository and get a\n  great website for it. Its a win-win\n- **Fully Automatic**: Landr requires no configuration at all. It is smart\n  enough to figure out what it needs on its own. Point it to a repository, hold\n  tight, and let Landr do its magic\n\nInstallation\n------------\n\n1. Install the Landr CLI:\n\n    ```\n    npm install --global landr\n    ```\n\n2. Go to a Balena CI powered repo:\n\n    ```\n    cd path/to/repository\n    ```\n\n3. Generate your website:\n\n    ```\n    landr\n    ```\n\n[Head over to our docs!](https://github.com/balena-io/landr/tree/master/docs)\n\nMotivation\n----------\n\nCreating a website for a project is hard and time-consuming. Yet, a great\nwebsite is one of the best ways to promote a project. Landr aims to capture our\nexperience presenting a wide variety of open source projects on the web, so\nthat having a website that can compete with your favourite massively popular\nopen source project is not only possible, but comes with zero overhead.\n\n# Usage\n<!-- usage -->\n```sh-session\n$ npm install -g landr\n$ landr COMMAND\nrunning command...\n$ landr (-v|--version|version)\nlandr/5.31.6 linux-x64 node-v12.15.0\n$ landr --help [COMMAND]\nUSAGE\n  $ landr COMMAND\n...\n```\n<!-- usagestop -->\n\n# Commands\n<!-- commands -->\n* [`landr build`](#landr-build)\n* [`landr help [COMMAND]`](#landr-help-command)\n* [`landr meta`](#landr-meta)\n\n## `landr build`\n\nBuild a static site using landr\n\n```\nUSAGE\n  $ landr build\n\nOPTIONS\n  -d, --deploy         Deploy the site to netlify after generating it\n  -m, --meta=meta      The location of the meta file used to generate your landr site\n  -o, --output=output  The output directory where we should generate your landr site\n  -v, --verbose        Run in verbose mode\n\nDESCRIPTION\n  Build a static site using landr into a local directory.\n  By default this command will look for a meta.json file in the current directory\n  to use as data for generating the site. The location of the data file can be\n  specified using the -m flag.\n  By default the site will be written to a folder named landr-dist in the current\n  directory. Ther location that the site will be written to can be specified using\n  the -o flag.\n  You can also optionally deploy your site to netlfiy using the -d flag. Deploying\n  to netlify relies on providing the NETLIFY_AUTH_TOKEN env var.\n```\n\n_See code: [lib/cli/commands/build.js](https://github.com/balena-io/landr/blob/v5.31.6/lib/cli/commands/build.js)_\n\n## `landr help [COMMAND]`\n\ndisplay help for landr\n\n```\nUSAGE\n  $ landr help [COMMAND]\n\nARGUMENTS\n  COMMAND  command to show help for\n\nOPTIONS\n  --all  see all commands in CLI\n```\n\n_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_\n\n## `landr meta`\n\nGenerate a meta file\n\n```\nUSAGE\n  $ landr meta\n\nOPTIONS\n  -o, --output=output  The output path where the metadata should be written\n\nDESCRIPTION\n  Generate a meta file that contains all the information landr needs to generate a site.\n```\n\n_See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v5.31.6/lib/cli/commands/meta.js)_\n<!-- commandsstop -->\n\nGetting Help\n------------\n\nIf you're having any problem, please [raise an\nissue](https://github.com/balena-io/landr/issues/new) on GitHub and the Landr\nteam will be happy to help.\n\nContributing\n------------\n\nDo you want to help make Landr better? Take a look at our [Contributing\nGuide](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md). Hope to\nsee you around!\n\nLicense\n-------\n\nLandr is free software, and may be redistributed under the terms specified in\nthe [license](https://github.com/balena-io/landr/blob/master/LICENSE).\n",
+  "highlights": [
+    {
+      "title": "Functional Websites",
+      "description": "Landr renders your project and its documentation in\na gorgeous and UX friendly way to your end users, in the best possible way\nwhile you focus on shipping features"
+    },
+    {
+      "title": "Follows OSS Conventions",
+      "description": "Landr understands most common repository\nconventions, and makes use of them fully. Build a great repository and get a\ngreat website for it. Its a win-win"
+    },
+    {
+      "title": "Fully Automatic",
+      "description": "Landr requires no configuration at all. It is smart\nenough to figure out what it needs on its own. Point it to a repository, hold\ntight, and let Landr do its magic"
+    }
+  ],
+  "installationSteps": {
+    "headers": [],
+    "steps": [
+      [
+        [
+          "para",
+          "Install the Landr CLI:"
+        ],
+        [
+          "para",
+          [
+            "inlinecode",
+            "\nnpm install --global landr\n"
+          ]
+        ]
+      ],
+      [
+        [
+          "para",
+          "Go to a Balena CI powered repo:"
+        ],
+        [
+          "para",
+          [
+            "inlinecode",
+            "\ncd path/to/repository\n"
+          ]
+        ]
+      ],
+      [
+        [
+          "para",
+          "Generate your website:"
+        ],
+        [
+          "para",
+          [
+            "inlinecode",
+            "\nlandr\n"
+          ]
+        ]
+      ]
+    ],
+    "footer": [
+      [
+        "para",
+        [
+          "link",
+          {
+            "href": "https://github.com/balena-io/landr/tree/master/docs"
+          },
+          "Head over to our docs!"
+        ]
+      ]
+    ]
+  },
+  "examples": null,
+  "motivation": [
+    [
+      "para",
+      "Creating a website for a project is hard and time-consuming. Yet, a great\nwebsite is one of the best ways to promote a project. Landr aims to capture our\nexperience presenting a wide variety of open source projects on the web, so\nthat having a website that can compete with your favourite massively popular\nopen source project is not only possible, but comes with zero overhead."
+    ],
+    [
+      "header",
+      {
+        "level": 1
+      },
+      "Usage"
+    ],
+    [
+      "para",
+      "<!-- usage -->\n",
+      [
+        "inlinecode",
+        "sh-session\n$ npm install -g landr\n$ landr COMMAND\nrunning command...\n$ landr (-v|--version|version)\nlandr/5.31.6 linux-x64 node-v12.15.0\n$ landr --help [COMMAND]\nUSAGE\n  $ landr COMMAND\n...\n"
+      ],
+      "\n<!-- usagestop -->"
+    ],
+    [
+      "header",
+      {
+        "level": 1
+      },
+      "Commands"
+    ],
+    [
+      "para",
+      "<!-- commands -->\n",
+      [
+        "em",
+        " ",
+        [
+          "link",
+          {
+            "href": "#landr-build"
+          },
+          [
+            "inlinecode",
+            "landr build"
+          ]
+        ],
+        "\n"
+      ],
+      " ",
+      [
+        "link",
+        {
+          "href": "#landr-help-command"
+        },
+        [
+          "inlinecode",
+          "landr help [COMMAND]"
+        ]
+      ],
+      "\n* ",
+      [
+        "link",
+        {
+          "href": "#landr-meta"
+        },
+        [
+          "inlinecode",
+          "landr meta"
+        ]
+      ]
+    ]
+  ],
+  "hardwareRequired": null,
+  "softwareRequired": null,
+  "introduction": null,
+  "name": "landr",
+  "public": true,
+  "fork": false,
+  "description": "Repository + Landr = Website",
+  "stars": 31,
+  "homepage": "https://www.versionbot.com",
+  "repositoryUrl": "https://github.com/product-os/landr.git",
+  "active": true,
+  "owner": {
+    "avatar": "https://avatars1.githubusercontent.com/u/56742327?v=4",
+    "handle": "product-os",
+    "url": "https://github.com/product-os",
+    "type": "Organization"
+  },
+  "dependencies": [
+    "@babel/register",
+    "@oclif/command",
+    "@oclif/errors",
+    "@oclif/plugin-help",
+    "@reach/router",
+    "bluebird",
+    "chalk",
+    "circular-std",
+    "date-fns",
+    "file-type",
+    "generatorics",
+    "git-branch",
+    "gitinfo",
+    "handlebars",
+    "handlebars-helpers",
+    "lodash",
+    "markdown",
+    "mixpanel-browser",
+    "mkdirp",
+    "netlify",
+    "node-fetch",
+    "node-vibrant",
+    "probot",
+    "react",
+    "react-dom",
+    "react-markdown",
+    "react-static",
+    "react-static-plugin-reach-router",
+    "react-static-plugin-sitemap",
+    "react-static-plugin-styled-components",
+    "react-syntax-highlighter",
+    "react-typist",
+    "recursive-copy",
+    "rendition",
+    "replace-string",
+    "rfdc",
+    "rimraf",
+    "scrutinizer",
+    "serialize-error",
+    "shelljs",
+    "smee-client",
+    "styled-components",
+    "tmp",
+    "typed-errors",
+    "typeface-nunito",
+    "uuid"
+  ],
+  "lastCommitDate": "2020-04-16T12:14:14Z",
+  "latestRelease": {
+    "tagName": "v3.0.1",
+    "asssets": []
+  },
+  "latestPreRelease": null,
+  "openIssues": {
+    "numberOfIssues": 28,
+    "latestIssues": [
+      {
+        "title": "Ensure that branch names are formatted correctly for netlify",
+        "url": "https://github.com/product-os/landr/issues/311"
+      },
+      {
+        "title": "Add tests for probot",
+        "url": "https://github.com/product-os/landr/issues/310"
+      },
+      {
+        "title": "test",
+        "url": "https://github.com/product-os/landr/pull/309"
+      },
+      {
+        "title": "Feature request: Add option for own favicon",
+        "url": "https://github.com/product-os/landr/issues/308"
+      },
+      {
+        "title": "Use other adress for images",
+        "url": "https://github.com/product-os/landr/pull/307"
+      },
+      {
+        "title": "Set font for usernames",
+        "url": "https://github.com/product-os/landr/pull/305"
+      },
+      {
+        "title": "Don't show bots in the contributor list",
+        "url": "https://github.com/product-os/landr/issues/304"
+      },
+      {
+        "title": "A ~ in the Path of react-static is replaced with a -",
+        "url": "https://github.com/product-os/landr/issues/303"
+      },
+      {
+        "title": "Automatically deploy landrbot on merge to master",
+        "url": "https://github.com/product-os/landr/issues/301"
+      },
+      {
+        "title": "Fix repository URL in reserved for you",
+        "url": "https://github.com/product-os/landr/pull/299"
+      },
+      {
+        "title": "Site isn't rendering faq.md completely",
+        "url": "https://github.com/product-os/landr/issues/289"
+      },
+      {
+        "title": "Understand website schemas (http://schema.org)",
+        "url": "https://github.com/product-os/landr/issues/287"
+      },
+      {
+        "title": "Include external links in menu",
+        "url": "https://github.com/product-os/landr/issues/280"
+      },
+      {
+        "title": "Replace name in Jumbotron with a tagline",
+        "url": "https://github.com/product-os/landr/issues/279"
+      },
+      {
+        "title": "Fix floating footer",
+        "url": "https://github.com/product-os/landr/issues/273"
+      },
+      {
+        "title": "Trim down the bundle size",
+        "url": "https://github.com/product-os/landr/issues/269"
+      },
+      {
+        "title": "Try React Headroom for the header",
+        "url": "https://github.com/product-os/landr/issues/266"
+      },
+      {
+        "title": "Use createGlobalStyles as opposed to global.css",
+        "url": "https://github.com/product-os/landr/issues/265"
+      },
+      {
+        "title": "If Highlights title is a single emoji, increase the font-size",
+        "url": "https://github.com/product-os/landr/issues/258"
+      },
+      {
+        "title": "Add search functionality",
+        "url": "https://github.com/product-os/landr/issues/212"
+      }
+    ]
+  },
+  "version": "6.0.0",
+  "screenshot": null,
+  "logo": {
+    "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",
+    "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAa0AAADICAYAAABbGL5qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4woJChAu8D8O7wAAIABJREFUeNrtnXmcI1W5978nSXcn3bMwMxkYejYY9siOgMoiIOKGGK79Km4X3NdLkGtQL77ggtclisYNvSqgF7zoO2BQVBQFvAKyiDIDBoZlhumZ6dnS0zO9Za96/ziV7nQmSyWddCfp5/v5ZJJJVypVpyr1q985z3kehVAzsRB4gxOvO4CDgWXAqcApwJFAL7AEE9W1YiEdy+YPmRlzh3I4NmCwzswajwBbzbHUzu6+3XFpVUEQhNIoaYJpC9dBwKeB1wEHAgeUWtbh7qDnhF7MjAEm+mEAmMMY7DKzxv2ZePrr8/t2PwMwuvZA5vXtkkYWBEEQ0ardWVmu6mTgs8Br7X7ezML801Za/8l/mBOvTRPMjPkwhnm1cqq/ei7cJu5LEARBRKtm4XoZ8APgWMBR1YdN8By1FOcCd4FoTRUvM+fATDaC+QXPhdtuBoj/ajmei7bJQRAEQURLqChWK4HrgH+dzno6ly2gc+XCnCiVFq2p7z2Byfs9F237G0D8zuV43iTiJQjC3MMhTVBSpPJffwd4arqCBWCMp/S9gqLkQ035vwLFiSgejt+5/L74ncuXed60jXhkuRwkQRBEtESsJl66YiHOj4XYAXwUWFCP9RupDKZhWspU6HXVxP+LWGAninOA7fHI8g/lticeWUH8jl45cIIgzAmke7BAsKxAi5OBG4ET6t/iip6TlqOcjikBGDa7CfMfWzC51nPxtpvkyAmCIE5r7jkrgGWxEN8AHm+IYAFkTYxkZvJ2odTzfrcV+91frARujN/R+0j89t5jc2/G14rrEgRBnFZbOyvr9eeBjwBLGvqlJnQuX0DnqkWQNafrtnLvpTD5AyaXePoGxuJre/H0DcjZLQiCOK02c1eOWIhXxkJsB/5vwwUrZ7aGkyiHmgy0yN0+qP0dl1KVbjMUQCeKC4HR+Nrey4GFcmoLgiCi1UbuKhbiUOAh4F506qUZ87bZ4aRlk4qI1YQOqakCVkrgCt+HMPBUfG3vu3Orky5DQRDahTnXPRgL4QWuRKdemh0M6D65F0eXq3jXn2Etl3vPyvo08b5hTqxn8tmcnPs1yYPABz19A//MiZd0GwqCIE6ryZ1V3uv/AJ6eVcGybhWM0WRBd2CxbsLJ9/L/W/xZ7e/Y4AzgH/G1vb+Lr+1d5OkbENclCIKIVguI1cmxEE8BXwS8zeBvs6OpyhGEpSYgF3YdFnuepAOdH3Ewvrb3/cD8nOsSARMEodVoy+7BvHGr5cAtwNnNJtDOhW48xxyo/1PYRTil24+J7kBzv9RPJaMJC7sJ8+kH/sPTN3CrnP6CIIjTmkWhynNXi2MhgsBW4Jxm3E8znbXi2YvcQ5RwT6qk82JqN6MqezuyCrglvrb3L/G1vb7cm+K6BEEQpzU74vVBdPh6UyfnU04H3af0WpkxyrilieAKc8J5mWUDMqz3y7utHAngd8Alnr6BlARqCIIgTqvB7irv9UmxEOuA7ze7YGmnZejJxZVuH8qOY5VxZsrWLYkbuBhIxtf2fgCYJz8JQRBEtBokWNa41cJYiLuBh4HjW2kfsvsS4CgxH6tMV+CUCcdFhUvV4qF/gJ7f9ZbcG9JlKAhCs9Gy3YOxEPOAy4Bvt+QOmOBa2oP7mKWQsfr18gMt8uddlahwXD4gAztBGaX4A/BRT9/A8znxkm5DQRBEtKp0VjDhri5Fh6+3dFEp5XIy74xVVlBGBdEpV+EYpkYe5kSqcMyrOhLAXcC/evoG4iJcgiA0A03fPZgvVsARsRB/Am5udcECMJJZzFR2sjsw/zai8vyr4u+XmrBcPW6gD9gbX9v7VqA757qk21AQBHFaJQTLclZd6PlWFwGdbdP6BnhOOAjnAre9eVc1dRMWzP2qneeAgKdv4HfysxEEQZxWEXcFzIuFeBe6q6qvrQTLumUwRlL7z7cq55YKAi2UnS+pz+3JEcBv42t7I/G1vYfl3hTXJQiCOC0tXG8AvmFdLNsWl7dbB2NMuKHyARjTclu1BWUUYwT4hadv4H054ZLxLkEQ5oxoFRRjPAL4JvD6uXAAnPO78JxwkD4Udrv4iqV3yr2fW37K/5lOJGE5ksDbgN94+gZS8nMSBKHtRStv3MoJ/BR4E9AzVw6Ao8uJ56W9KIejfOmR+lQ4boRwATwDvM/TN/BgrrtQnJcgCA25Zs6mWFl0xUL0AaPA2+eSYIGOIJwQqbLZ3lXZnIOqUrShqtvYVjGOBh6Ir+29AViWEywZ7xIEoeWdVsF8q1cD36XNx63KqxZ0n7QMx8KuqU7IKOjio8h7+e83fsKxXYaB73v6Bj6ZEy5xXYIgtJzTKphvtSIW4r/RmReOmNNHQEFmKK7TOZVyRmULRU6+nlooUlV2b41hAXBVfG3vlvja3lcATnFdgiC0lNMqCLT4DnApkpxVY4JzQRfdp/ZiZozy2d4p4sImnJfltqY4sVlzW3l7xwPA//H0DeyUgy0IQlOLVl6QRSfwKuAXIlZFMGD++Ydq0apWdMoFZeRC6AuFb3rpnWrlagzzB563bB+UAy4IQq00tHvQEqwTgUeB34pglSY7mqo623vxIpB53YSF5UnsF4psBF/EodbH1/Z+NPeGdBkKgtA0TssqdX8t8H5p5gqY4PYtxXVQd+n5WHVP78RMdhMWsg54r6dv4PGceEmwhiAIM+q0Cgoyfh14SgTL/q1DdiRpr6hjKReW76AoDIFXMxmIYYcTgIfja3v/El/bu9rTNyCuSxCEmRGtPLFyxEKcEwuxBbgSOECa1z7GeLq0YBUTnZKeuYqM8fYrHDcCF3Am8GJ8be/VwKLcH0TABEFoiGjlBVocix63ug9YIc1aPWYyo7sBS5YpqbLCsbLcls3Eu7PMdcCG+NreT4DOpiHCJQhC2fvzap2VJVZLLVf1KWnKaR4Il4PuV6xAOR37j0GVS+9UNMEuVaR3YjbHtorxFPAOT9/AeoCRmxcx/7IhOUEEQahNtPLE62rgCsArzVgHDOg+cwUOt2uqGEGFgAxqC8ooFL761NyqF2lMfje6acdbll5lJFN3H07na5+Xc0QQhJqc1gnA7cBh0nz1FS33sV5cB8/PE6cSYlQi2zvFsr23ptvSmCZGOnNpfMvuW72fJDt220H0XCJzlAVhLmNrTCvXJRgLcT3wiAhWY24fsoNxlJPy87Dy3y83XlVsbMvGOFhTVVhTCkdnx0961hz81+GfLjmg55KdMtYlCCJalcUK6I6FuBX4ONAlzdYY0crsSaCKZWMvlu0dqqtwrGxsQJO2i3KoUzt7up5N3N57gsznEgQRrXKCpWIheoCH0GVDhAZiJLIYqWyBKypWkkRVcF5lnlvEbTmduijm8N4kg4MJ9u1NLTVMHjV+vfI9ALtvkqFUQZij9/dlnZYH3R14nDTVTKgWdJ+6DOcit65GXE1Rx2LvlatwnPf+DFQ4rorxsQybXxwmtisx0b2ZK8bsXerGNMwzT/lc8sE7PwRv+r6cNoIw50XLclludIbuU6SZZggTuo5cROchC8HID6AoETxRLgS+hBjZDsqY4UhCh0ORSmV57pkh9u5NYhjFuzRNPZUt2eXivDO/zkNy0gjC3KJo96BVRuR6EayZv4UwhlNFbidKTAK2PQmZyhWOC59nqNKaUpBOG2zpH+HhB3ewZ08yJ0wllwe6Mgb/88w1LATYdJ2cOoIwV3CVcFpXAx+W5pl5jETGskNKd4tNWAwFyiyiWuYUpzbx1n7P1ucL3zPN4svmv9+ok8/lYPOLI2zfNkoymcVRhVBmDVYNjnMPcNqhn5HzRhDm0L39foK1GngSmC/NMwvW1+2i+xXLUU6luwih+OTi3Ps1jnmZdjNtUGfhUnr9w8MpntswRDxenVgV0unkbWddz21y5gjCHLlG5olVjn8XwZptp8XkHKv8W4vCOlh2IwBLJdMtlTi3QXkJHQ7F+FiG9U/EeGp9rGp3VYxUlmsAHvh3OXcEYc45LasG1lZpltnDzELPyw7Gudg94az2q0Rs2HFa2K9wXLjshMOqT3onpRTJZIatW0bZtmUMp7O+bdbp5Iqzrif8x8vh/G/JOSQIc0m07gXOlWaZTasFXYcfQOdRiyFjTLxnVhvuXkqMzDzhM/O7HwsS7xZ7v0Y2Pb+PXbvHyaRNG5OcazqJzZWLOeKIa3lBTiBBmCOiFQtxHPAYkvFilq0WOBd20nPWSsy0MXUcqpQDsjvvaoYqHCsF2azJvn0pnntmiHTaaIhY5TPfza2HLeVdpolpRb8KgtCGOPLGsr4qgtUctxHZvalJfSg67lSmwnHhskWzX6ipq6imgGQFnE7F0FCSdX/fTfTJQTKZxgsWQMbgHeMpekSwBKHNRcuqi3UE8FppjubBGE6WrlqsyoiZbbEpEdQBNQtXIpEl+tQgT60bJB7PzIhY5Yjr6W3XWL0GgiC0q2hZz1dLUzSZ29qX3M8ZlY0kLCs2NiscqxJihiopWsqaTPbsM0M88fguYrsT044IrAXThMFRPg4Tk+MFQWhDXFZ+wTOlKRpjAIBBYBRIA06gG1gEOptDadFK0bGcqeNIufnBxSYQ5y9UdMJwwfOECplTX+X/fcr6p65XKchkTGK7x3n+2b2T2mhty5Thr2Jzou2ZN/s6r2DPOK6R6zlv/pXcK6eeILSpaAHLgAOlKerKdnRX1Z/LiNbRwLXAy4s6h7FUgSAVyX5BsSwXpYSqYNlKVq9M1IXTqdgxME7/5mHi8eyE0wFwu6DLBR1O6HCBywEOBU416Ygyhn6kMpDM6q69rJVr0DENFTNM2DHMOSCiJQjtLFq9yGTierELuN4b5Csl/p4BhmMhhr1BNgO/j4U4D/gOcMyUC3Aiq6/wDrWffuQ0SKtAifRM1aR3Mk2bwqUYG03x4nN7GRtJ09UJyxZAd6d+uDuYImBmBaeV33uZzMBIAvbFIZ6GdFaLUDUapoDxNCfuux618MqmqsEsCEIdRetl0gx14YvAt7xBdlVaMDfmEguBN8i9sRCnABcCP7OOCWYig2maqCmZKYp05xUTJpiaP7BirsEy/soEHAozlWFv/xBGIklvN7jmg9PB5FwvtFuyRRFRczlgcTcs7tHrSWdh7zjsHLbEy6Z6pbMcGU/jALJySgpC++EATpBmqBkTeBBY5Q3yGTuCVUy8gLg3yP/zBukAbgbGzZQBaaN4UEUpm5F7rhQCX/i3UhWOlcI0DdKxYcZf2EFXJonbBZ0uywCa9U1LmJsS5lC6i3HZQjh+BRxoCaSd78oarNo3jpIIQkFoX9E6XJqhJraiA1he6Q2yZToXSWvaQe71u4GXmCaRzGBcX8FLiJAqNxerUIEqhrYXfI9Dkd49QvyFnaR2D+s4jJm+I7C+cPkiOPog7cSMCm7OMPF0uOiUCEJBaE9cwMG1flihB9LNBl/NlIJOZ9O02RDwbW+Qa2GK2EyL/C5D4MWln+Lisf/tuArT/MqEmJSNBizo3CuMLLQz5mW9NsZTJLfuwUhm9g+rnw07a4LLCYcsgXldsG3vZPKPQjJZ8HSwHHhOft6C0J6itaDWD4+m4IXdM3NNW+OFntnP1/F14CveILtzAlPvO/r89XX0zrvBTGe/MnFXUGRsaiIEvtytReHnC0XNclbGaIpk/xDZeLFClLOPYcKSHh308dyu4sKV0VGIC+WnLQjtiQPoqP0WmImB+IY/ZjcWbD1wsjfIJ0ALVj3cVTmST6+h8/DnRoCxsl1/dsqJFM18MbmsmcmS3LyH8ad3TgpWk2KioxQPO7B4eHzWhES62eRWEIR6Oq2a6emCo5dNu3KFLWXtdM1K+8SAtwP3eoNkG+GsStF1zMbcy0dBnTslrL2ga3Aiar3oZONCi5X/toPki4NkBscxM0ZedbXmp8cSrmd37D90t2NYftiCIKJVglkSk0azF/iJN8gVUL9xq5pQPAqcWzwDhpq0upXC2icUTtuRzN4EiRdi2po0wbhVLY6ruwMOPgB27Jv6t6GxVpJfQRBmVLTakJ8A13iD9OcEa5Yj0f4xJaMF7C9SyixI71REuADlVGRicZIvDmHE05O618IcNB/2jEIqb1bWWErOa0EQ0Wp/1gPv8wZ5LP/NWQ+dVvRjkkbRUTSIolh34H5/UxjxFKlNe0nvHkc52+egKeDQpfDM9sluwrQhY1qCIKJVAoei4SUoTLN0iHMdGAUuAf7oDZJsAmdVyACKJNAxZWxqvwwYk9mcJpyZw4SMSeLp3WSH4phZs60EK9cMHhcs6tEZNACSaZzy0xYEEa39yBrw7O6piRsacVHqcMBhS620QfVjHLjVG+QDMMvjVmXoOmrj5uSGNYPAvCk2q0QG9gkdM8xkevtoV/K5QR0p04LjVtWcI0vyREsQhPalZhlQwGgSRpKQzuiM3Y14pDPW9yTqut8/B47OF6wmz6DwvnL1sIoUafyhEc8clXxm8KP2srq3PvPdOn+hIAjtjYqFGKbGLO8OpcOL0w1OTdrhhIMW1GWu1gvA5d4gv21WZ1VIcsMauo7aSHLDmm9iEkC7qFKT2dZj8v6uk158dOTOxWr+m/aYsRCLgNuAc4DOtj2RlU6uO7AXtu7lnMt+yp/nwg/Y5w8QjYTlSibUev50A4dSeuaSAkajkXB/s2zztLoHDVNHb80E0xQsA3gXcIc3SKIVxCqHJViguBJYh8mNk4OIE40yALwLU/2566RNWQBLsPAGGQJeEwtxInATcGI7/vhME5bO06IlCIJtTkQn/U6X+LsT+D3w+rYQrSmXzeblt8BFucnBrYglXEbXURtvAm5KPr3mncBLgTiKe7uO3XQPQHL9oVM+ly/M3iBPACfFQlwOfAldjLKtcCid4qnVK2n5/AG7pVVOjEbC6+S6K0ynk8J67mikTjSVaDU5H/EGuQFaYtyqsnA9s4auozfSdczGW4Bb9lvm+E1l12G1wbdiIe4GHkZXUG4ftwV0d0FnR8OTtDQLUjNMmHNMe+haqSoeM7tv3/QGuaFVxq5sCdfRG6f1+VwJFG+QZ4FXAfF2O6HdutaXVC0WhDZl2iHv/UP2xMgEFnn0fJoZSH57tzfIx9tFrOpJnnD9IxbiY8CP22n/Ol2NnzcoCEILOi0F7IvD0BjsjVd+7BuH7fuKZ+auMynQoexCReG6EXiknfatwwldzjnTPSgIIlp2MYF5bl2Ur6ez8qO7C7zzGprZIscfYHqVhOeKcFl8Gsi0TdeBAzpdIlqC0K5Mq3uw06lLk1QjdDPQNfgZ6RKsSrzui4WIAcvaYX+cMsFYEMRplcMw7T9mQLAGvUEkBLh6bm6bE1qJcAmCiFbrcJcc0ppY204707tQQsEFQUSrNXhSDmlNPN5OO9PTJQdUEES0WoPdckiro9UnXRejU6rECYKIVosgM3SqpB2DVtwiWoIgoiUIgiAIIlqCIAiCIKIlCIIgiGgJgiDMIXz+gOxDEyFD1oIg1P0Cmaum7PMH5gErgFOAc4HjgZXAAnTg1DCwE3gWeAz4X2BLNBLeVriuaV6wKwZpRSNhM/8CH42E8fkDLmC1zx84Hjjf2v5l6AQ/MeB54AHgIWBzNBIeqdd229y3g4GDgdOAk6y29aAL38aA56zt2+DzB7ZFI+FU/v41aJts5VDP//6Cc0YBXmA+kJvAkgH2RCPhQREtQRDqLlg+f6ALXWz0YqAX6CzxEQ9wkCUGfdZ7e3z+wLPAddFI+Dd1uMjOA+4Bekr8XVli+dH87/H5A28DPgkcXuKzRwAvR1dFzwL9Pn/gxmgkfF0jBKHgwn4B8Flr25ba+Pgo8KLPH7g+Ggnf1ODT4CrgUsrnNH0L8EzBOeMAPmP9bXGBaGWBu4GLRbQEQajnBbXL5w+8FbgRXaq9FhYDLwPu8vkDDwDviUbCz03DvTgAn+XuStGfty8rgZ8BZ1bxHU7gUOALPn/gQ8Bro5HwU3V0irkLuw/4IfCKGoT7WOBGnz8QAN4cjYRfaNDp0AscU85lAZ68tvH4/IEPA18v85kOYGHuYAqCINTDXbnRXVE/mYZgFXImsM7nD3zM+o5G78vLgPVVClYhy4HHff7A2+vhuKKRcK59vwusq0GwCjkBeNLnD5zNLFZ4sPZpGfBUBcHa7w5EEARhuoK1EtgDvLQBX+MBvu3zB4INFC7T5w8sAn4NHFCH9XUAt1giWNM25z7j8wfm+fyB+4CPUL84BDe6u+3IWTp1TEuw1gNrqrXNgiAI0xGuDuBBS1wayVd9/kBfg4QrDtyLDgCoB8p6/CrnKmpxIhaPAOfUeX+Vdby+NEunzTDwW+yNx4loCYJQH6wL6/3oqLWZ4GafP9DZgECHPuDEBmzvUp8/8NNaXJbPH3D4/IE/osfjGsXyWThtsuggkpNq+bCIliAI03FZ/0Z1YyzPA98DrrYe16PHwezSA9zaYs30Zp8/cJhdd5gXoPBx4FVteNo4gXfW+mGJHhQEoRaxAj1u8zGbH/kz8MFoJLyhxPo6gK8BH6J0eHyON/r8gRXA1gbPhdoFbEB3z/Vb23UIcDp6HGaJzfV0o6MJv2vXvfr8gaOt9rCLAbwIPIGeM9ZvicMhwFnAcTPohisxrcTmIlqCIFSNdWE9A3sD+f8XPeeq6KRb6700EPD5A/cCkQrr6wReFo2EG1m89FrgB9FIeGcJkT0QeD9wnc31vR/4bqUQ+Lybge9Xsa1bgbcC66OR8GiRv3/Z5w8sBM4AfkHp+WrNjgfAEU/LD1AQhKpdFujuvUr8IhoJX5cvdsUEME+87gQq2ScFnNfAXbwyGgl/Hp2po6QLi0bCX7TEzQ4n+PwBZyVnaP39COCVNtd7WzQSXhmNhB8qIVg59kUj4Vzgw1NNemrtBO5ET9Y+DHBEI2EVjYQVcCDwXgDHaEKKUAmCUJ3Lsji/wqIZ4DN2J9jmLfNZIFlh8VMbtHvfiEbC36i0zbm/WeJmd0zuDTZvBq63ub6fRiPhtxV8tpwzJhoJx9FjkE832Wn1aeDYaCTsj0bCt0Qj4Y25tFrW9u+ORsJRnz+AYzghP0JBEKp2Wz3ocaqNwN4Si/09Ggk/V8O4U9xabzmOaMBujQHfqCGLxWU2l3u5DWHxAq+xsa7HopHwpdWkuMoT2pFKAjrDvCcaCX8ZnSux4j64khnIGOCUOEKhShTgmIHzxjTBMKW9m0iwiEbCY8A5lngtQSeRPQ+4ED12AnBDrYccSFVYZmEDdu2+aCS8pdq2AAaAKJVD0+2M/33QxjIJdMDKdI7fJp8/cAXwzVk+nT4UjYRvquZGwZXOQioLHhEtoRrBUrBnDLYONViwgAVuONSrxUuYffIvLtFIeMznD4xFI+F+4FHgy9aF8SzrQl7NhTT33yXMTqaGb9XYFnGfP/C8DdFaWqENFPBqG1/7dDQS/rtdh1XC0YHOr3gtsGiWTqUXgP+u1tk6TGBoTF+EBKEalzU4ql16toEPw4A94+K0WkXE8rqr/hKNhAeLjbUUey8vGOOtlvh5ZmE/7pnGxzfaWKZStHaujEslvlKnYzaILgkzW/wgGgmPVyu8LgXsHoXli+THJ9jHMGHNUoiNzozTclivhdYQsNzdc4GgedDlJub7/IEFwFHoOlunACfTmC4/26d0EcdXDXvqsA25Mi2V2vjndTpWhpVF//RZavOaGtqVuwDFRsA7Ty4Mgn0cCg6a3/jvMUWwWoZ8sbKE6WJ0+PZL0N1Q861Hs80VMgpd40y3G3r+2bwKi26aprgW8sgstfc/cwUpq3ZauYvP7jFY3CPdhEL1giKIUOVdeA7y+QPnA59C128SbDpUa8JyJZ6vs7i+MEu7/HCt+zHRx5pMQyIDng45gQRBqO6Ca4nXd4C3M3sD+63OYhvL7K7zd+6dpX2tWSxd+XfMO/bBYUtl0Fuwz4w4c1McXTM7LJ8/cDDwe3R+O6F27FgGo032teYxwAnRUsDeOAwnYV6nnD1CZRJp2LaPhivKAo8eO5ObqeZzWD5/YDXwOPaTx9ohhk4y2z3HmtSO66l3sMpsBb+kav3glBBMh4KBITjiIEntJJTHoaB/CMaTNPxk2ReHJT36O4XmcVnoLOK/qFKwssBI3mMHuoT834HHo5Hw09b6H6MxVZCbmV02llmd73LrwOGt1kj7zRuIp/WFqKdLfphCaUwTVi6CncMN/h5gvhucSroIm0mwLJf1MeA0mx/7B7rUxhPAaE60opFwpsj6O5ljtf6sm4BxdL7GcvO5jq/zV5/eam1VtHFe3AMvOVh+nEJ5MfF0wBrvDHyXjGk1FZZgdWEvBdAQ8OHc3CKbDkFhb3yn3do0ge4aXVZB4I6LRsJP1kEoFXBmq7VV0buZdEan52nB3hi5tlVJLDS9zxtm4x9yUJsSO5VnDeCcaCT882oSu1rXpYVzsE3H0XkMKxGsk7Pz0pjEwzMvWkrB0LjuKmwxFiJUhTcobSDUdME7w8ait0Uj4fVViFWODmD5HHSwSeAZG4te6PMHFlcqR1Lu+FnH41+wF2bf/KKVu4PeNNhyg99HyyWlJrcl7SZUg9OmqNxY4/rPs75jLnKbjWUWAe/IS3xbrTji8wfmU1115OYXLdATjjfvaan9ea11ERaqo6baOuksjKfsPyRkvW1Q2EvDNFDj+ufsLzgaCf8ae+Hg3/L5A0dUI1w+fyD3cACRVm2jsqKVKz8xkmyZ8a01sRDLpcuraj5Y9YmjdMDOhp3wrI3Hhp36XJI0YXVlRkq4Frko2k0H+dIavus9tGAYdp3b+QqbH3nA5w+ssitceQmMf2S52ZbEZWehjbvBdzB0tIZh/3fgSrmeVcZypC8BVtXy+U6nfti5ozHNljl/Won/8vkDwzT2nvLn0Uj4Z0VEy04ltU9TRb0knz9wCHUou9HCLiu/ztXn0YES5TgQeMbnD1wAPERBpvrCdvf5AyuBH2KvMnJrixbAC7vhyINaYozrkliIa4ERcVzlBcsbhFiIDwBVz8ozTFi1SNe8soXu7prUAAATmUlEQVQCl0MKOdaZc2fgO9YXubgaPn/ATh2mY3z+wEeikfD3iglX/ns+f+ANwE9pwcCAegsXsM/nD/wY+KSNj3iA/wWe8PkD3wZuiUbC6bx14fMHTgSussSq5dvXtmgl0tA/CId4m36fDgau8QYRySqDJVjHApfXug6lwCXuqd0pdZvxW6tXoxLf9fkDBwA/8fkDg0Auh4oHWGjd/V+FjmQTJsXrUz5/4BKsDBiVbwk5CR34cqPPHxhFZxrpsPn5SjTVRG/bG6OUzk24abAljvknYiE+mnMUwv4uKxaiF7hPWkOo8aJ6L7DV5uJfBP5pubb16LRNucfDIljs50AtzkNnD6mWeehxwdV12qSmqn1WlYIqpfPA7RhuiWP/zViI10oX4VSxyhkt4DdU7jMXhHJUIzYL0RNZj7Ueh1U4/2zdHtc6V6nJbwhyzxuBjzX46/ptLNNU/SlV2z6FFq3+oaY/9i7grlhoMtXMXHZdeWNY5wBPAifKNVeYjhuIRsKPAT9pwOr3AddUc4FvY0f7E+CNDVp9BnizTefWuqKVE649oy3huJxAIBbi6ViI03Kua46KV28sxI/QXYLL5LIr1MkNXAb8rY6r3oXu2qroAHz+wJJ2b2fr5uAu4EK77tMmWSAQjYTtHLumygNZ8wCbUrpoZIuMcR0N/DUW4i+xEKssx9H2zirv9TeBKPBeudwK9bygWpwJ3FqHVa4Djo1GwjHshdQfMxduDizh+g16esotdVhtEjg7Ggl/z/p/pfl+HT5/wN0sbeKazoeVgn3jsAlYvbjpw+Ed1o9rcyzEVegJdkO5i3u7jH3lugEBVyzEmcD/iLNqWWY7+6ey7sgrua0k8E6fP3Av8DlgRZXfsxf4UTQSzv8VbqzQBh3oMh0P2PyOTJl1qTq0tYGOtMyU+LuzzN/sutqdwLt8/kAYCKPHBhdUsaoR4B7gklxYvMXTVlsaZa6d3difzJ6t0BYdTKMCs2vaZ7UVnLFhJxyxVE8gbYGpOF8FPh4LcZ03yPfayV1ZLvIEdPjryXLdb0kM6666GX5KMbuOKxoJ3+jzB25H12gKAudX+Ojz6PImv4pGwlsKMsFvty7KRhmhidnch1HgFZTvWZpuW/8A+GWZ9Sh0Fvdpu9toJPw3nz9wJjo68HT0uNR5lC7GeT96DtyfopFwf956cn9/EzC/zLZngWoGg75imYJybVFrii/UnwIMWxtcFw5bCvNaq4DkeuBSb5AnCpxKqzkrYiEORs95uYK5zWneII+J9s08RbIwnITunl+cJyAbgUeikXCq2GeE2traem8JOqFuCtgVjYQT5ZZvReouWqBLo69eUkW2hObohvkT8BZvkJFWEy5LsD4PfITqSp+LaAkzdkGtZRmhfu3dLjREtEwTuju1cLk7Wi51zxXATd4gTRsbmdcN6ADOBn6OzkMmiGgJQlvjMM36p+hQSheQfHaXjjBsscze3wSisRCX5YtEEwrWEcBfLYcogiUIwhwRrQbmlTIM2L4PntsFyUzLlDcBXeDupliIe2Mhjmqy+V3eWIgvA88Cp9FkecEEQRAaKlo0OEJJKRhL6ujC/iEtXC0kXucC62MhfhkLMW825ncVzLe6BtiAvezPgiAIIlq1YpowOArrt+nEu4bZMuLVCfiBvbEQ78JKHmklnZ0JsVKxEKfGQjyDngOzWE7byvdK0gSC0L6iNWMBB0ppsdo0qKvZDo2Ds3U6t5zouQ7rYiHe6A02LsIwb9xqNfBn4BHgKDldbTMmTSAIbSpaCnbPxm1wMqPF658DMJpqKed1GPCrWIi7YyGOLOKMahaq/CzssRCfAV4EzhLnUDXbpQkEoT1Rf7ycO5XiotnekE4XeOfBgVbwfYuEyY8BEW+Qd+Y7pGmK18fR2QQOltOzZjqAjJSlEYQ2dFqmLs4266QysG0I1m2FncP6/zS/xegB3hELkYmFeCtVlq0vCLI4LRZiA3C9CNa02Abtk0tSEIQC0erqcj7aNLZPaYc1sFdHGz67EwbHdB9mk8/1cgK3AU/FQlxQTJSKYY1bLYuFuB94ECa7G4WaeYFpJOMUBKG5UcM/O/DE5zbs/cfQUKophcEwtWgtmQdLunU3ossK3mjiHsR7gM9bF9BBb5BUnpA50LnBlgPvA/5NTsO6cgPwEXFagtCmopW8Y/mqbMZY/8TjOxeOx42mdTQmuquwwwluFyzugUXdk+6sSQVsN7pwW35Kf5clWstosjLWbcKl3iA/lWYQhPbEZRjmDuVQ24894cCF65/YTSKRbUrhym1SOqsf+xKwKQYLurV49XRqB+Z06GWbRMSWWg9h5viDNIEgtLHTAoiv7f0KcFUmY/D8hr3EYgkcLZQcyDTB4dCi1eHUpVEWuPWzUlrAWixpr1AbD3mDnCHNIAjtL1rzsSYZOxyKHdvH2bZlhGQySzY7ebVvlcS3ue5CE+3A5nXpR5dLOzGHshxZniVrCk0zS/zfATgVyqH0xjus14CZMTATWZnJpTnDG+QhaQZBaGPRiq/txdM3QHxtbxi4PCdOhmGSTGQZG8swPJwimciQShqkUllLzCZFrNRz04iY9Y+yxMqptDPrdIKnU4+RuTugqyMvyMOc+lmzLhthrSunqNZAnaPLgXI7UV0uHF16wxweF45uF8rjQnXkNrpAuAAza5DZOkr8iUGUa06fy09jVbqVIAxBaH+nBbAKiGLl1st3V8pSoUlRUmSzJqlklmQqSyqhhSyVypJIZklZDs00TAzTxDBMTEMLoWGYJbvqZkPs8oM4ct2MXS4taJ0u3d3Y4dRi5nJq0zPRDgUNqRzgdCkcToXKOSOnA+VUODxagBzdHfrZ48LRrYVqckUKc4o82lRLpyKxLkZ64765fC4HvUG+Jj9pQWhvJu7NPX0D/fG1vWuBS/e7qJvF+606Oh10dDpQ8zvyruIKlP6MYZqYhpoQLsM09ftZk1QqSyplkEpmSSUN0pbopVIGmWSWdLpAyNSUa/uU19MRPZVblwmm1V2YSEHCzHNb5qRD6nCDu8eFe55+dPW48Mx30TXPRYfbgcMSLUeHtnMq1x85sR/mZKSI0t17k38rUEO7+5M16Vg5j/SLw3qOwNwjCXxDfs6CMEecVo7HXoI69nO944B7Wmub8qyKvq9yNUqUmnittK1DObRAZDIGmVSWTMYgnTbIpk0y6SyZjEk2a5JNG2SzWhCzaYOsod1dNmNOis0UAZ5McKjytsvhVDg7FE6XA1eXU4ux20GH20mH20mnx0lnj5OubifKoTC1Kk/08GFOFaKp+1pEiFSp9qpRtAAzZTD2x34tgnOP13uD/K4eabQEQWgRpzX+82V0v3WHOZ7J9imX865Gf7GZ1ydnTrlI5wmLgk63k06ckyJXeHHPvXYUEQLTnLKsWSAqymG9cBSzapPbkds+LYZmcXExZ3ksb+6WgvyNCJYgzFGntfeGbkafH1dLTl/2exyOVzfSadl1GsruelUV21Ct07G5nCr6HWXWWUenZYxnGL9vC2Z2TnUPJgCfN8gm+SkLwtxgyv35AR8eZ8XXMePbd7/BNMytzbCBZt0XZEokX4O3aubaaTyNOfd6Bs/1Btk009WkBUFoEtECneR10eWZNEb2bGawQOTMq1wTbEcdt9UYTc+1GdRXe4M8LN2CgjDHRcsbhJGbF9F9ya5NwOtqulA3w7XTbNCyVW+H2fjvV4rsnsRcOm+v8Qb5z9z5KgjCHBYtgAXv3os16fgh4CJqLfVgNpP1aSGXVsNRnEOiFfYG+YJ0CQqCiNYUrCwZePoGfg28oy5iMBuiMBe6C9Mm2eHMXDhf3+cNcoU4LEEQ0aokXLcBb6NexfVEvOq3rUqR2TXW7ufpIPBmb5Afi8MShLmNraDqvPyErwV+Z2uNtYS92wklr3adFKxX1bCdNpdV1YTIVxOaX/a2Q5F4fBfpzSPtOlfrLuCD3iAD8nMVBMHWZS7Pcd0NvAxoTJI7s2ELt7Xjyu6Ot6NgbQXe5Q3yRhEsQRCqEq0C4XoEON66qMymatXnq0wb32/ae3NWej3jmXZM3fRh9KThW2IhPQ1DEAShKtHKFy6gHzgSeHj2HVeTuaMZxhjPYLZHktw0cA/g9Qb5PjACOuBCgi4EQahJtHLCZT3HgbOBz1V2MPV0Q20mXlP2sfoVm2OZdsjs/jfgpd4gF3iDDMqEYUEQ6iZa+cIFpD19A58FPgSMztgFfi65u3IoRXYo3srn3zbgQ94gp3qDrM91A4pgCYJQ8rI33RXkRRYejo4sPLze5TlUyc9OL8Ft2Qi+apbN2y7VqO8vesuhGLtvK8a+ZCuee58EfuQNskd+hoIgzJhoFRGxm1H8K1bJqooXbRGt2sPeHYrhO16wSqy0BFngXuAt3iB75ecnCEK11O1yZwVo4OkbuAw91jVu64O1jFvNxFhXs46n5d1uGIOJek33ngmeAk4FXuMNslciAgVBmFXRyo1zxW/vxfPmgQdw4LXuqmsTi0Z/ppFCNyOipUjvGGsFl7ULuNIb5DhvkH/kWknGrQRBqPF+vf5YwkX8jl4FvAGlIoCz1u65hhSCLPtstztTTb8QZDXbmX/gnA5G/9iPMZxq0FGsC/8B3JDvrESsBEFoCqc1xXW9eSK60PT8y8BdwAHA/bXalYYUgmyQm5ops2UmM5jxTDMKlgE8BKzxBvkS6LErmW8lCELTitaEeP3LAPFfLsdz8bZRujgPeDWlQuNLXf2n01042yHyE9tR/w1p0knFzwFneIOckasoLEIlCELLiBaA5+Jt+kUK0+Pf9kecLAJ+CaTqLhJtgb0dNcabalLxLnQl4SNz1YRz7koQBKGezGjnUjyyHI9fi1j8zuWnoPgFsKb2sHe72eOrWLbE91dcruIYXB2+P++opZ4ZIrlhqBnOoS+hCzPulJ+TIAhtJVpFhexXy69FEQAWNUy06iUaNidNV5yrNV3RcijiDw6Q2T2r2TAeAt7uDbJZfkaCIMwUsxYwHf/VcuK/Wo7nom2fA3zAD6tawXTmd80209wO5VBkBhOztfX9wBnA2d4gm2W+lSAIc0K0PBdtw3PRttx/d3jeuO0DwLnAs7MhBM0iSHa8cXYkhZmc8R0eAr7gDbLaG+QhdHYLGbcSBGFuiNYUAXvjNuJ3Lcdz4bb7MdVxwMXYijKs0WY1W3RhVaKlyG6f8UnFXwOO8ga5BnR9KxErQRDmrGgBeC7cltuilOcNWyPMYwFwIzDccANjzvgHp+W00jvGZ+rIrQNO8AYJArslKlAQhNmmKXMpxH+zAs8bdGHk+G9XrEZxLfBuVUumi5qWnV4Gi6LbaWeddgIxTBj9/YuYqYYmHYwBlwD3e4O6G1AQBEGcVinXZQkWgOf1Wzd7Xrf1PQqOBx6n2hSxzRKoYWeCsY1FjPE0ZBu2oXuAr3mDLPUG+ROIYAmCIKJVvfP63Qrcr9v6JHA6cBa1Bms0g3hNd9Malwnjv5jsCpRxK0EQmhLVqhue+P2K96C4GtSa+s/VmkZNLUp0D+b/QVFzIcjUpmGS62P1PHJPAJd5g6yTn4MgCOK06i9WJH6/Avdrtt4InAj0AWMNcVHNFl3oULqGVn0Eaw9wAXC6N8g6mW8lCIKIVgNwv2Yr7tfkxrzUiPuCLbe7X71lHvA5YGDWBGYmbLGCzJ5pZ8EYBb7rDbLEG+QerByQ0hUoCIKIVqMF7IItJO5ZqV+/estngeOA92MnWKOVJiNbyxjJLMbItGIjbkbPt/oYyLiVIAgiWjMvXK/ekv/fPe7zt/zI/aotTvSE2B21iYY5/WUbYLOyu2qen7UBOMcb5N3AgMy3EgShVVHttkOJP63E/SotZIl7V3qBi1HcADjrMlfK5hysiklzy35/kYARlyLx6E7SW0arEa4E8A7gLm+wylIwgiAI4rRmwHm9aorzirnP2/JD97lbXMB/AlubfgfM0u9nY3G7R2wY+LE3iMcb5A4QwRIEQUSr+QXsvC0k7rPGvM7dcjVwAjrTw3BF0ZjVMa/9v9wcz2Dam1R8O3CSN8j7QMatBEFoL9Rc2tnE/atwn9OvX/951eUo/g04vG5zterRPZh7Llg2uzfB+IPby1Urfgb4mJXJQhAEQZxWyzuvc/pJ/HmVfv3K/m+h53mdBzxZhemhLsvaXVcucnA0U0qw4ui5aid7g/xJ5lsJgiCi1U7C9cr+/P+Ouc/uv899Vv/xKM4H/oYOXmisIFXthxXZPYliYnUrsNAb5Hbr/9IVKAhCW6OkCSDxl1W4z+on8cAqBRyD4kpQ762cNR57qZymmz3eqRi/dwvZkYl4ijuBj3uDbAIZtxIEQURLhOyh1YuAbwMXoFg626I1cscL4GQTcKU3SETmWgmCIKIlaMF6cDXuMzbnxMuL4gLgqyiWF3dexRPxqnqIloLsngSjfxh4t6OHX3iDjMsREgRhruKQJtifnGBZAhJzv3zzz9wv37wCeCs6K3py4u+1JL61TxKTuz0vX+4+8LPcDCJYgiCI0xKqcWGPrnZgsgb4IIpPTDiock4LaiiPwi0o9aWuYzZGAZLPrKHr6I1yAARBENESqhSuR1bjPn0ziUdXA3wWpd4GHIKicxqiNYJiO/Ab4Nqul2wakZYWBEEQ0aqX48J9mjXu9dgh3cBqFK8EXoXieBS9CuaVnGAMgyieRPEgcA+KzZgMdB23KQWQjB5Kl2+TNLQgCEIe/x9AKEhpF9GQcgAAAABJRU5ErkJggg=="
+  }
+}
