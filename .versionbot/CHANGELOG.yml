@@ -1,4 +1,160 @@
 - commits:
+    - subject: Set the body font to Nunito
+      hash: 833e352f6c733e202e07f7e67f5026a505a13683
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.0.2
+  date: 2020-04-16T12:41:10.349Z
+- commits:
+    - subject: Fix bug where verbose mode flag is reversed
+      hash: 0a978906484087ac86da61b81b7168a94c889939
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.0.1
+  date: 2020-04-16T12:31:28.800Z
+- commits:
+    - subject: Transition to using oclif for CLI interface
+      hash: 8188cb7cf6e82c340f6a0f744b8796c716b8b56b
+      body: ''
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.0.0
+  date: 2020-04-16T11:41:25.933Z
+- commits:
+    - subject: Configure dependabot to send "patch" prefixed commits
+      hash: a248f3f48fb1165e959be00766f54f9f38f5ffc5
+      body: |
+        This allows versionbot to interpret the PRs as patch type commits.
+
+        Fixes product-os/landr#291
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.7
+  date: 2020-04-15T15:50:10.384Z
+- commits:
+    - subject: Allow multiple FAQ panels to be open at the same time
+      hash: e2cfc7869968d96fde66ccd8f74466f800c0f033
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Don't display the name of the repo as a tile if banner contains text
+      hash: 436e7d4d540146f745fd8228ab4e7aa351b754ee
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Fix bug where landrbot doesn't work with PRs from forks
+      hash: 1bc53667d75a9defc1c744b18baa81bd98ed107f
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.6
+  date: 2020-04-15T11:54:58.528Z
+- commits:
+    - subject: Improve error logging
+      hash: 4853049f51b3d951553e5111df5136cf07451c08
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.5
+  date: 2020-04-15T08:48:28.490Z
+- commits:
+    - subject: Construct Netlify subdomain using PR number instead of branch
+      hash: 13f4c5af7efe7f0af46a1ed2850b35d8f5307833
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Remove punctuation from netlify site slug
+      hash: 0d800b5df8efa42628695f10b829e56b30bb216b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.4
+  date: 2020-04-14T17:28:59.078Z
+- commits:
+    - subject: Use repos name in contributing block instead of "Landr"
+      hash: 3db178441b6df40be349e034f8d75e46ad351ea4
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.3
+  date: 2020-04-14T11:26:54.171Z
+- commits:
+    - subject: Display github reference in log output
+      hash: 41122d468572afdf2072602ebc3cda11bd1d193c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Install dependencies so that puppeteer can run in a docker container
+      hash: ff2fc554069cf3c461eed721573aede3ec04859e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Update existing comment when reporting errors
+      hash: 97d9420d6e63463212f3cebe5a7f6de1c001bf0e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.2
+  date: 2020-04-14T10:23:14.244Z
+- commits:
     - subject: Fix issue where landrbot would post multiple comments on the same PR
       hash: 13bc40ab1209c52df39697199437e0c369df73ef
       body: ''
