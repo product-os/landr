@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fix bug where verbose mode flag is reversed
+      hash: 0a978906484087ac86da61b81b7168a94c889939
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.0.1
+  date: 2020-04-16T12:37:09.804Z
+- commits:
     - subject: Transition to using oclif for CLI interface
       hash: 8188cb7cf6e82c340f6a0f744b8796c716b8b56b
       body: ''
@@ -9,7 +21,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 6.0.0
-  date: 2020-04-16T12:13:49.209Z
+  date: 2020-04-16T11:41:25.933Z
 - commits:
     - subject: Configure dependabot to send "patch" prefixed commits
       hash: a248f3f48fb1165e959be00766f54f9f38f5ffc5

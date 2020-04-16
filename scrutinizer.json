@@ -10,6 +10,24 @@
     {
       "commits": [
         {
+          "subject": "Fix bug where verbose mode flag is reversed",
+          "hash": "0a978906484087ac86da61b81b7168a94c889939",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "6.0.1",
+      "date": "2020-04-16T12:31:28.800Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Transition to using oclif for CLI interface",
           "hash": "8188cb7cf6e82c340f6a0f744b8796c716b8b56b",
           "body": "",
@@ -3299,7 +3317,7 @@
     "typeface-nunito",
     "uuid"
   ],
-  "lastCommitDate": "2020-04-16T12:14:14Z",
+  "lastCommitDate": "2020-04-16T12:37:37Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
@@ -3308,6 +3326,10 @@
   "openIssues": {
     "numberOfIssues": 28,
     "latestIssues": [
+      {
+        "title": "Set the body font to Nunito",
+        "url": "https://github.com/product-os/landr/pull/317"
+      },
       {
         "title": "Ensure that branch names are formatted correctly for netlify",
         "url": "https://github.com/product-os/landr/issues/311"
@@ -3327,10 +3349,6 @@
       {
         "title": "Use other adress for images",
         "url": "https://github.com/product-os/landr/pull/307"
-      },
-      {
-        "title": "Set font for usernames",
-        "url": "https://github.com/product-os/landr/pull/305"
       },
       {
         "title": "Don't show bots in the contributor list",
@@ -3390,7 +3408,7 @@
       }
     ]
   },
-  "version": "6.0.0",
+  "version": "6.0.1",
   "screenshot": null,
   "logo": {
     "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",
