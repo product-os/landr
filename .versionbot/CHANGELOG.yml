@@ -1,4 +1,16 @@
 - commits:
+    - subject: Set the body font to Nunito
+      hash: 833e352f6c733e202e07f7e67f5026a505a13683
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.0.2
+  date: 2020-04-16T12:41:10.349Z
+- commits:
     - subject: Fix bug where verbose mode flag is reversed
       hash: 0a978906484087ac86da61b81b7168a94c889939
       body: ''
