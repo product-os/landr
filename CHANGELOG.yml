@@ -1,4 +1,19 @@
 - commits:
+    - subject: Configure dependabot to send "patch" prefixed commits
+      hash: a248f3f48fb1165e959be00766f54f9f38f5ffc5
+      body: |
+        This allows versionbot to interpret the PRs as patch type commits.
+
+        Fixes product-os/landr#291
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 5.31.7
+  date: 2020-04-16T11:36:17.536Z
+- commits:
     - subject: Allow multiple FAQ panels to be open at the same time
       hash: e2cfc7869968d96fde66ccd8f74466f800c0f033
       body: ''
@@ -27,7 +42,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 5.31.6
-  date: 2020-04-15T13:37:10.236Z
+  date: 2020-04-15T11:54:58.528Z
 - commits:
     - subject: Improve error logging
       hash: 4853049f51b3d951553e5111df5136cf07451c08
