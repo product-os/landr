@@ -1,4 +1,15 @@
 - commits:
+    - subject: Do all properties in alphabetical order
+      hash: 1eb99c21a09680241de996229762f608fe2d2079
+      body: |
+        Fixes csslint error
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Alex
+  version: 6.0.3
+  date: 2020-04-17T10:39:50.876Z
+- commits:
     - subject: Set the body font to Nunito
       hash: 833e352f6c733e202e07f7e67f5026a505a13683
       body: ''
