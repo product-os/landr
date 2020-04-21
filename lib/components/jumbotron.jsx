@@ -56,6 +56,7 @@ export const variants = (metadata, _context, _route, routes) => {
 
   if (metadata.data.name && metadata.data.description && entryUrl) {
     combinations.push({
+      isCli: metadata.data.cli,
       title: metadata.data.name,
       description: metadata.data.description,
       packageName: metadata.data.name,
@@ -70,6 +71,7 @@ export const variants = (metadata, _context, _route, routes) => {
 
   if (metadata.data.name && metadata.data.description) {
     combinations.push({
+      isCli: metadata.data.cli,
       title: metadata.data.name,
       description: metadata.data.description,
       packageName: metadata.data.name,
@@ -83,6 +85,7 @@ export const variants = (metadata, _context, _route, routes) => {
 
   if (metadata.data.name) {
     combinations.push({
+      isCli: metadata.data.cli,
       title: metadata.data.name,
       packageName: metadata.data.name,
       steps,
@@ -123,7 +126,7 @@ const Jumbotron = (props) => {
             }}>{props.description}</Heading.h2>
           )}
         </Flex>
-        {commands.length > 0 && <Terminal commands={commands} />}
+        {(props.isCli && commands.length) > 0 && <Terminal commands={commands} />}
         {props.screenshot && <Screenshot src={props.screenshot}/>}
         {props.action && (
           <Txt align="center" mt={40}>
