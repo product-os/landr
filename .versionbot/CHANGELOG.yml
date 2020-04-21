@@ -1,4 +1,18 @@
 - commits:
+    - subject: Only show the "terminal" if the project is a CLI tool
+      hash: f892cf730e85fbbdf5a8eb7d206d689b0bfcf890
+      body: ''
+      footer:
+        Connects-to: '321'
+        connects-to: '321'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.1.0
+  date: 2020-04-21T14:05:39.558Z
+- commits:
     - subject: Fix repository URL in reserved for you
       hash: 6a9b02f5f07bc84e6d067e39f04e36647495085e
       body: ''
