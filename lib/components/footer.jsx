@@ -39,7 +39,7 @@ export const variants = (metadata, context, _route, routes) => {
   if (metadata.data.links.repository) {
     toplevelRoutes.push({
       name: 'GitHub',
-      url: metadata.data.links.repository
+      url: metadata.data.links.repository.replace('.git', '')
     })
   }
 

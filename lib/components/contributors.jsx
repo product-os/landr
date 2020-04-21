@@ -56,7 +56,7 @@ export const variants = (metadata, _context, route) => {
       contributors: metadata.data.contributors,
       repository: metadata.data.links.repository,
       contributing: metadata.data.contributing.guide
-        ? `${metadata.data.links.repository}/blob/master/${metadata.data.contributing.guide.filename}`
+        ? `${metadata.data.links.repository.replace('.git', '')}/blob/master/${metadata.data.contributing.guide.filename}`
         : null
     })
   }
