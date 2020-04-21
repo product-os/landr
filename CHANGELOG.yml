@@ -1,4 +1,27 @@
 - commits:
+    - subject: Ensure correct files are packaged for npm
+      hash: 2a068a21af19952d5b23895ab30b171b894c2a44
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Only show the "terminal" if the project is a CLI tool
+      hash: f892cf730e85fbbdf5a8eb7d206d689b0bfcf890
+      body: ''
+      footer:
+        Connects-to: '321'
+        connects-to: '321'
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.1.0
+  date: 2020-04-21T14:45:09.468Z
+- commits:
     - subject: Fix repository URL in reserved for you
       hash: 6a9b02f5f07bc84e6d067e39f04e36647495085e
       body: ''
@@ -7,7 +30,7 @@
         change-type: patch
       author: Alex
   version: 6.0.3
-  date: 2020-04-21T13:49:10.030Z
+  date: 2020-04-21T13:43:27.962Z
 - commits:
     - subject: Set the body font to Nunito
       hash: 833e352f6c733e202e07f7e67f5026a505a13683

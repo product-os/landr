@@ -10,6 +10,38 @@
     {
       "commits": [
         {
+          "subject": "Ensure correct files are packaged for npm",
+          "hash": "2a068a21af19952d5b23895ab30b171b894c2a44",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Only show the \"terminal\" if the project is a CLI tool",
+          "hash": "f892cf730e85fbbdf5a8eb7d206d689b0bfcf890",
+          "body": "",
+          "footer": {
+            "Connects-to": "321",
+            "connects-to": "321",
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "6.1.0",
+      "date": "2020-04-21T14:38:47.143Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Fix repository URL in reserved for you",
           "hash": "6a9b02f5f07bc84e6d067e39f04e36647495085e",
           "body": "",
@@ -3069,6 +3101,10 @@
       "avatar": "https://avatars0.githubusercontent.com/u/15064535?v=4"
     },
     {
+      "username": "AlexProgrammerDE",
+      "avatar": "https://avatars3.githubusercontent.com/u/40795980?v=4"
+    },
+    {
       "username": "hobochild",
       "avatar": "https://avatars2.githubusercontent.com/u/9499917?v=4"
     },
@@ -3079,6 +3115,10 @@
     {
       "username": "tyrantkhan",
       "avatar": "https://avatars1.githubusercontent.com/u/107844?v=4"
+    },
+    {
+      "username": "bulldozer-balena[bot]",
+      "avatar": "https://avatars0.githubusercontent.com/in/58047?v=4"
     }
   ],
   "docs": [
@@ -3351,7 +3391,7 @@
     "typeface-nunito",
     "uuid"
   ],
-  "lastCommitDate": "2020-04-21T13:49:36Z",
+  "lastCommitDate": "2020-04-21T14:45:36Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
@@ -3442,7 +3482,7 @@
       }
     ]
   },
-  "version": "6.0.3",
+  "version": "6.1.0",
   "screenshot": null,
   "logo": {
     "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",
