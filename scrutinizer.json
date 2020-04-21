@@ -10,6 +10,22 @@
     {
       "commits": [
         {
+          "subject": "Fix repository URL in reserved for you",
+          "hash": "6a9b02f5f07bc84e6d067e39f04e36647495085e",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch"
+          },
+          "author": "Alex"
+        }
+      ],
+      "version": "6.0.3",
+      "date": "2020-04-21T13:43:27.962Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Set the body font to Nunito",
           "hash": "833e352f6c733e202e07f7e67f5026a505a13683",
           "body": "",
@@ -3335,26 +3351,62 @@
     "typeface-nunito",
     "uuid"
   ],
-  "lastCommitDate": "2020-04-16T12:49:15Z",
+  "lastCommitDate": "2020-04-21T13:49:36Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
   "openIssues": {
-    "numberOfIssues": 27,
+    "numberOfIssues": 33,
     "latestIssues": [
       {
-        "title": "Ensure that branch names are formatted correctly for netlify",
-        "url": "https://github.com/product-os/landr/issues/311"
+        "title": "Add a balena push action",
+        "url": "https://github.com/product-os/landr/pull/329"
+      },
+      {
+        "title": "Anchor links in documentation trigger a full page reload instead of scrolling to location",
+        "url": "https://github.com/product-os/landr/issues/328"
+      },
+      {
+        "title": "Tables are hard to read",
+        "url": "https://github.com/product-os/landr/issues/327"
+      },
+      {
+        "title": "Inline code blocks are hard to read",
+        "url": "https://github.com/product-os/landr/issues/326"
+      },
+      {
+        "title": "Contributors section should only show the top 10 contributors",
+        "url": "https://github.com/product-os/landr/issues/325"
+      },
+      {
+        "title": "Entire sections of README can dissappear",
+        "url": "https://github.com/product-os/landr/issues/324"
+      },
+      {
+        "title": "Main text sections look odd when they take up 50% width",
+        "url": "https://github.com/product-os/landr/issues/323"
+      },
+      {
+        "title": "Site doesn't work well on mobile devices",
+        "url": "https://github.com/product-os/landr/issues/322"
+      },
+      {
+        "title": "Terminal animation is shown when not appropriate",
+        "url": "https://github.com/product-os/landr/issues/321"
+      },
+      {
+        "title": "Fix issues with npm test",
+        "url": "https://github.com/product-os/landr/pull/320"
+      },
+      {
+        "title": "Clean up landr docs",
+        "url": "https://github.com/product-os/landr/issues/318"
       },
       {
         "title": "Add tests for probot",
         "url": "https://github.com/product-os/landr/issues/310"
-      },
-      {
-        "title": "test",
-        "url": "https://github.com/product-os/landr/pull/309"
       },
       {
         "title": "Feature request: Add option for own favicon",
@@ -3377,10 +3429,6 @@
         "url": "https://github.com/product-os/landr/issues/301"
       },
       {
-        "title": "Fix repository URL in reserved for you",
-        "url": "https://github.com/product-os/landr/pull/299"
-      },
-      {
         "title": "Site isn't rendering faq.md completely",
         "url": "https://github.com/product-os/landr/issues/289"
       },
@@ -3389,44 +3437,12 @@
         "url": "https://github.com/product-os/landr/issues/287"
       },
       {
-        "title": "Include external links in menu",
-        "url": "https://github.com/product-os/landr/issues/280"
-      },
-      {
-        "title": "Replace name in Jumbotron with a tagline",
-        "url": "https://github.com/product-os/landr/issues/279"
-      },
-      {
         "title": "Fix floating footer",
         "url": "https://github.com/product-os/landr/issues/273"
-      },
-      {
-        "title": "Trim down the bundle size",
-        "url": "https://github.com/product-os/landr/issues/269"
-      },
-      {
-        "title": "Try React Headroom for the header",
-        "url": "https://github.com/product-os/landr/issues/266"
-      },
-      {
-        "title": "Use createGlobalStyles as opposed to global.css",
-        "url": "https://github.com/product-os/landr/issues/265"
-      },
-      {
-        "title": "If Highlights title is a single emoji, increase the font-size",
-        "url": "https://github.com/product-os/landr/issues/258"
-      },
-      {
-        "title": "Add search functionality",
-        "url": "https://github.com/product-os/landr/issues/212"
-      },
-      {
-        "title": "Add more entry points",
-        "url": "https://github.com/product-os/landr/issues/209"
       }
     ]
   },
-  "version": "6.0.2",
+  "version": "6.0.3",
   "screenshot": null,
   "logo": {
     "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",

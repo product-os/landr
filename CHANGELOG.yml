@@ -1,4 +1,14 @@
 - commits:
+    - subject: Fix repository URL in reserved for you
+      hash: 6a9b02f5f07bc84e6d067e39f04e36647495085e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Alex
+  version: 6.0.3
+  date: 2020-04-21T13:49:10.030Z
+- commits:
     - subject: Set the body font to Nunito
       hash: 833e352f6c733e202e07f7e67f5026a505a13683
       body: ''
@@ -9,7 +19,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 6.0.2
-  date: 2020-04-16T12:48:16.068Z
+  date: 2020-04-16T12:41:10.349Z
 - commits:
     - subject: Fix bug where verbose mode flag is reversed
       hash: 0a978906484087ac86da61b81b7168a94c889939
