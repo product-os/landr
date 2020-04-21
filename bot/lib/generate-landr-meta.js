@@ -137,6 +137,9 @@ exports.run = (scrutinizerData) => {
       screenshot,
       installation: installationSteps,
 
+      // TODO autodetect if the project is a CLI tool in scrutinizer
+      isCli: false,
+
       blog: _.map(blog, ({
         filename, contents
       }) => {
