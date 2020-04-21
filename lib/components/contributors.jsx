@@ -138,7 +138,7 @@ const Contributors = (props) => {
   )
 
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container textAlign="center">
         <Heading.h2 fontSize={34} mb={30} align="center">
           <Flex alignItems="center" justifyContent="center">

@@ -89,7 +89,7 @@ export const render = (props) => {
   })
 
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container style={{
         maxWidth: 1000
       }}>
