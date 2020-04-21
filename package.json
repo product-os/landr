@@ -39,7 +39,7 @@
   "files": [
     "/bin",
     "/oclif.manifest.json",
-    "/src"
+    "/lib"
   ],
   "homepage": "https://github.com/balena-io/landr",
   "ava": {
