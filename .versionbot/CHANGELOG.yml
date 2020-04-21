@@ -1,4 +1,14 @@
 - commits:
+    - subject: Fix repository URL in reserved for you
+      hash: 6a9b02f5f07bc84e6d067e39f04e36647495085e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Alex
+  version: 6.0.3
+  date: 2020-04-21T13:43:27.962Z
+- commits:
     - subject: Set the body font to Nunito
       hash: 833e352f6c733e202e07f7e67f5026a505a13683
       body: ''

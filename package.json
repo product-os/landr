@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Generate great websites for your projects with zero configuration",
   "main": "src/cli/index.js",
   "bin": {
