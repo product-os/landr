@@ -49,7 +49,6 @@ export const render = (props) => {
         <Heading.h2 mb={24}>Why {capitalize(props.name)}?</Heading.h2>
         <Txt
           width={[ 1, 1, 1 / 2, 1 / 2 ]}
-          fontSize={14}
           dangerouslySetInnerHTML={{
             __html: html
           }}

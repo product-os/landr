@@ -115,11 +115,11 @@ const Contributors = (props) => {
   console.log(props)
   const CTA = props.repository ? (
     <Box>
-      <Txt fontSize={14}>
+      <Txt>
         Help {props.name} thrive, by reporting bugs, contributing code or improving the
         docs.
       </Txt>
-      <Txt fontSize={14}>
+      <Txt>
         Jump in and get your hands dirty with some selected{' '}
         <Link blank href={`${props.repository.replace('.git', '')}/contribute`}>
           good first issues!
