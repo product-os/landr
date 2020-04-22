@@ -59,7 +59,6 @@ export const render = (props) => {
         </Heading.h3>
         <Txt
           align="center"
-          fontSize={14}
           dangerouslySetInnerHTML={{
             __html: getHtml(highlight.description)
           }}

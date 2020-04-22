@@ -67,7 +67,7 @@ export const render = (props) => {
             <Heading.h5 mb={16} fontSize={18} textAlign="center">
               {projectName}
             </Heading.h5>
-            <Txt mb={20} fontSize={14} textAlign="center">
+            <Txt mb={20} textAlign="center">
               {description}
             </Txt>
             <Link
@@ -78,7 +78,7 @@ export const render = (props) => {
                 textAlign: 'center'
               }}
             >
-              <Button primary fontSize={14}>
+              <Button primary>
                 Visit
               </Button>
             </Link>
@@ -89,7 +89,7 @@ export const render = (props) => {
   })
 
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container style={{
         maxWidth: 1000
       }}>

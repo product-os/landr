@@ -26,7 +26,6 @@ const Content = styled(Box) `
   margin-top: 10px;
   margin-bottom: 20px;
   max-width: 800px;
-  font-size: 14px;
   ul {
     margin-top: 8px;
     padding-left: 40px;

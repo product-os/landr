@@ -115,11 +115,11 @@ const Contributors = (props) => {
   console.log(props)
   const CTA = props.repository ? (
     <Box>
-      <Txt fontSize={14}>
+      <Txt>
         Help {props.name} thrive, by reporting bugs, contributing code or improving the
         docs.
       </Txt>
-      <Txt fontSize={14}>
+      <Txt>
         Jump in and get your hands dirty with some selected{' '}
         <Link blank href={`${props.repository.replace('.git', '')}/contribute`}>
           good first issues!
@@ -138,7 +138,7 @@ const Contributors = (props) => {
   )
 
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container textAlign="center">
         <Heading.h2 fontSize={34} mb={30} align="center">
           <Flex alignItems="center" justifyContent="center">

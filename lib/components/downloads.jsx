@@ -80,7 +80,7 @@ const Table = styled.table `
 const Downloads = (props) => {
   const theme = useTheme()
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container>
         <Flex justifyContent="center">
           <Box width={(1, 1, 1, 10 / 12)}>

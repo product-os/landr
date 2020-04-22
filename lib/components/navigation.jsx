@@ -104,7 +104,6 @@ const Navigation = (props) => {
   const links = props.routes.map((route, index) => {
     return (
       <Link
-        fontSize={14}
         color={theme.colors.text.main}
         key={index}
         px={2}

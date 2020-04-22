@@ -43,7 +43,7 @@ export const render = (props) => {
   })
 
   return (
-    <Box my={130}>
+    <Box my={100}>
       <Container>
         <Box>
           <Heading.h2 mb={4}>Frequently asked questions</Heading.h2>
