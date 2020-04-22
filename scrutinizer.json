@@ -10,6 +10,60 @@
     {
       "commits": [
         {
+          "subject": "Improve styling of tables",
+          "hash": "d779113170c9ca10f40a30642349a2b651498e28",
+          "body": "Fixes #327\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Improve styling of inline code blocks",
+          "hash": "8cd13cb985328c3e4618c5d5bb473c1bb561b28c",
+          "body": "Fixes 326\n\nCode blocks use a web safe monospace font to help improve load speed\n",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Increase body copy font size to 16px",
+          "hash": "002b69392b06a371a1e73c6d4322559246e742a9",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        },
+        {
+          "subject": "Reduce vertical margin on page sections",
+          "hash": "0be0fb6f98359a58cbc8f224dda0cb02191687e2",
+          "body": "",
+          "footer": {
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>",
+            "signed-off-by": "Lucian Buzzo <lucian.buzzo@gmail.com>"
+          },
+          "author": "Lucian Buzzo"
+        }
+      ],
+      "version": "6.1.1",
+      "date": "2020-04-22T14:29:35.300Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Ensure correct files are packaged for npm",
           "hash": "2a068a21af19952d5b23895ab30b171b894c2a44",
           "body": "",
@@ -3391,14 +3445,14 @@
     "typeface-nunito",
     "uuid"
   ],
-  "lastCommitDate": "2020-04-21T14:45:36Z",
+  "lastCommitDate": "2020-04-22T14:47:24Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
   "openIssues": {
-    "numberOfIssues": 33,
+    "numberOfIssues": 32,
     "latestIssues": [
       {
         "title": "Add a balena push action",
@@ -3407,10 +3461,6 @@
       {
         "title": "Anchor links in documentation trigger a full page reload instead of scrolling to location",
         "url": "https://github.com/product-os/landr/issues/328"
-      },
-      {
-        "title": "Tables are hard to read",
-        "url": "https://github.com/product-os/landr/issues/327"
       },
       {
         "title": "Inline code blocks are hard to read",
@@ -3479,10 +3529,14 @@
       {
         "title": "Fix floating footer",
         "url": "https://github.com/product-os/landr/issues/273"
+      },
+      {
+        "title": "Trim down the bundle size",
+        "url": "https://github.com/product-os/landr/issues/269"
       }
     ]
   },
-  "version": "6.1.0",
+  "version": "6.1.1",
   "screenshot": null,
   "logo": {
     "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",
