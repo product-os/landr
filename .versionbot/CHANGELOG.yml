@@ -1,4 +1,47 @@
 - commits:
+    - subject: Improve styling of tables
+      hash: d779113170c9ca10f40a30642349a2b651498e28
+      body: |
+        Fixes #327
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Improve styling of inline code blocks
+      hash: 8cd13cb985328c3e4618c5d5bb473c1bb561b28c
+      body: |
+        Fixes 326
+
+        Code blocks use a web safe monospace font to help improve load speed
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Increase body copy font size to 16px
+      hash: 002b69392b06a371a1e73c6d4322559246e742a9
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+    - subject: Reduce vertical margin on page sections
+      hash: 0be0fb6f98359a58cbc8f224dda0cb02191687e2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.1.1
+  date: 2020-04-22T14:29:35.300Z
+- commits:
     - subject: Ensure correct files are packaged for npm
       hash: 2a068a21af19952d5b23895ab30b171b894c2a44
       body: ''
