@@ -10,6 +10,26 @@
     {
       "commits": [
         {
+          "subject": "Adding missing files to published package - /bot folder - default-theme.json",
+          "hash": "30ff3a93a1c4b3656212741fbb622d728571931f",
+          "body": "",
+          "footer": {
+            "Connects-to": "#333",
+            "connects-to": "#333",
+            "Change-type": "patch",
+            "change-type": "patch",
+            "Signed-off-by": "Tomás Migone <tomas@balena.io>",
+            "signed-off-by": "Tomás Migone <tomas@balena.io>"
+          },
+          "author": "Tomás Migone"
+        }
+      ],
+      "version": "6.1.2",
+      "date": "2020-04-30T18:49:28.896Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Improve styling of tables",
           "hash": "d779113170c9ca10f40a30642349a2b651498e28",
           "body": "Fixes #327\n",
@@ -3167,12 +3187,16 @@
       "avatar": "https://avatars0.githubusercontent.com/in/29110?v=4"
     },
     {
+      "username": "bulldozer-balena[bot]",
+      "avatar": "https://avatars0.githubusercontent.com/in/58047?v=4"
+    },
+    {
       "username": "tyrantkhan",
       "avatar": "https://avatars1.githubusercontent.com/u/107844?v=4"
     },
     {
-      "username": "bulldozer-balena[bot]",
-      "avatar": "https://avatars0.githubusercontent.com/in/58047?v=4"
+      "username": "tmigone",
+      "avatar": "https://avatars1.githubusercontent.com/u/3076185?v=4"
     }
   ],
   "docs": [
@@ -3387,7 +3411,7 @@
   "public": true,
   "fork": false,
   "description": "Repository + Landr = Website",
-  "stars": 31,
+  "stars": 30,
   "homepage": "https://www.versionbot.com",
   "repositoryUrl": "https://github.com/product-os/landr.git",
   "active": true,
@@ -3445,15 +3469,19 @@
     "typeface-nunito",
     "uuid"
   ],
-  "lastCommitDate": "2020-04-22T14:47:24Z",
+  "lastCommitDate": "2020-05-01T11:32:55Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
   "openIssues": {
-    "numberOfIssues": 32,
+    "numberOfIssues": 33,
     "latestIssues": [
+      {
+        "title": "Can't run landr after installing globally in macOS",
+        "url": "https://github.com/product-os/landr/issues/333"
+      },
       {
         "title": "Add a balena push action",
         "url": "https://github.com/product-os/landr/pull/329"
@@ -3529,14 +3557,10 @@
       {
         "title": "Fix floating footer",
         "url": "https://github.com/product-os/landr/issues/273"
-      },
-      {
-        "title": "Trim down the bundle size",
-        "url": "https://github.com/product-os/landr/issues/269"
       }
     ]
   },
-  "version": "6.1.1",
+  "version": "6.1.2",
   "screenshot": null,
   "logo": {
     "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",

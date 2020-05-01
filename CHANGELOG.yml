@@ -1,4 +1,20 @@
 - commits:
+    - subject: >-
+        Adding missing files to published package - /bot folder -
+        default-theme.json
+      hash: 30ff3a93a1c4b3656212741fbb622d728571931f
+      body: ''
+      footer:
+        Connects-to: '#333'
+        connects-to: '#333'
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Tomás Migone <tomas@balena.io>
+        signed-off-by: Tomás Migone <tomas@balena.io>
+      author: Tomás Migone
+  version: 6.1.2
+  date: 2020-05-01T11:31:46.273Z
+- commits:
     - subject: Improve styling of tables
       hash: d779113170c9ca10f40a30642349a2b651498e28
       body: |
@@ -40,7 +56,7 @@
         signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
       author: Lucian Buzzo
   version: 6.1.1
-  date: 2020-04-22T14:46:49.092Z
+  date: 2020-04-22T14:29:35.300Z
 - commits:
     - subject: Ensure correct files are packaged for npm
       hash: 2a068a21af19952d5b23895ab30b171b894c2a44
