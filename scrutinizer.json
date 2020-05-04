@@ -10,6 +10,24 @@
     {
       "commits": [
         {
+          "subject": "Remove Bots from contributors list",
+          "hash": "f53d3d511a964ade7f6bccd712833f35a9a978d6",
+          "body": "",
+          "footer": {
+            "Change-type": "minor",
+            "change-type": "minor",
+            "Signed-off-by": "Amit Solanki<amit@balena.io>",
+            "signed-off-by": "Amit Solanki<amit@balena.io>"
+          },
+          "author": "Amit Solanki"
+        }
+      ],
+      "version": "6.2.0",
+      "date": "2020-05-04T07:11:29.029Z"
+    },
+    {
+      "commits": [
+        {
           "subject": "Adding missing files to published package - /bot folder - default-theme.json",
           "hash": "30ff3a93a1c4b3656212741fbb622d728571931f",
           "body": "",
@@ -3469,18 +3487,26 @@
     "typeface-nunito",
     "uuid"
   ],
-  "lastCommitDate": "2020-05-01T11:32:55Z",
+  "lastCommitDate": "2020-05-04T08:44:35Z",
   "latestRelease": {
     "tagName": "v3.0.1",
     "asssets": []
   },
   "latestPreRelease": null,
   "openIssues": {
-    "numberOfIssues": 33,
+    "numberOfIssues": 34,
     "latestIssues": [
       {
-        "title": "Can't run landr after installing globally in macOS",
-        "url": "https://github.com/product-os/landr/issues/333"
+        "title": "Display only top 10 contributors",
+        "url": "https://github.com/product-os/landr/pull/338"
+      },
+      {
+        "title": "docs: reduce font-size in the sidebar ",
+        "url": "https://github.com/product-os/landr/issues/336"
+      },
+      {
+        "title": "Improve contrast on accented text ",
+        "url": "https://github.com/product-os/landr/issues/335"
       },
       {
         "title": "Add a balena push action",
@@ -3489,10 +3515,6 @@
       {
         "title": "Anchor links in documentation trigger a full page reload instead of scrolling to location",
         "url": "https://github.com/product-os/landr/issues/328"
-      },
-      {
-        "title": "Inline code blocks are hard to read",
-        "url": "https://github.com/product-os/landr/issues/326"
       },
       {
         "title": "Contributors section should only show the top 10 contributors",
@@ -3553,14 +3575,10 @@
       {
         "title": "Understand website schemas (http://schema.org)",
         "url": "https://github.com/product-os/landr/issues/287"
-      },
-      {
-        "title": "Fix floating footer",
-        "url": "https://github.com/product-os/landr/issues/273"
       }
     ]
   },
-  "version": "6.1.2",
+  "version": "6.2.0",
   "screenshot": null,
   "logo": {
     "url": "https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2",
