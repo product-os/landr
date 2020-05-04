@@ -144,7 +144,8 @@ exports.run = (scrutinizerData) => {
         filename, contents
       }) => {
         return parseMarkdown({
-          filename, contents
+          filename,
+          contents
         })
       }),
 
@@ -177,7 +178,9 @@ exports.run = (scrutinizerData) => {
         },
         usedBy: examples
       },
-      contributors,
+      contributors: contributors.filter((contributor) => {
+        return !contributor.username.endsWith('[bot]')
+      }),
       releases: {
         latestRelease,
         latestPreRelease
