@@ -1,4 +1,16 @@
 - commits:
+    - subject: Remove Bots from contributors list
+      hash: f53d3d511a964ade7f6bccd712833f35a9a978d6
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki<amit@balena.io>
+        signed-off-by: Amit Solanki<amit@balena.io>
+      author: Amit Solanki
+  version: 6.2.0
+  date: 2020-05-04T07:11:29.029Z
+- commits:
     - subject: >-
         Adding missing files to published package - /bot folder -
         default-theme.json
