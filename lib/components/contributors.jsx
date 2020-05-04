@@ -16,7 +16,6 @@
 
 import React from 'react'
 import size from 'lodash/size'
-import sortBy from 'lodash/sortBy'
 import {
   Box,
   Img,
@@ -91,7 +90,13 @@ const PlaceholderPhoto = styled(Flex) `
 
 const Contributors = (props) => {
   const theme = useTheme()
-  const list = sortBy(props.contributors, 'username')
+  let {
+    contributors
+  } = props
+  if (!props.minimalView) {
+    contributors = contributors.slice(0, 10)
+  }
+  const list = contributors
     .map((contributor) => {
       return (
         <Box key={contributor.username} px={2}>
@@ -112,7 +117,6 @@ const Contributors = (props) => {
       )
     })
 
-  console.log(props)
   const CTA = props.repository ? (
     <Box>
       <Txt>
