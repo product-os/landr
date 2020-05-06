@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add a balena push action
+      hash: 93b12205094cd8bfdc3bb8d9b5fe179b51d73273
+      body: |
+        Automatically deploys the bot to a balena device
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+  version: 6.2.1
+  date: 2020-05-06T14:39:59.657Z
+- commits:
     - subject: Remove Bots from contributors list
       hash: f53d3d511a964ade7f6bccd712833f35a9a978d6
       body: ''
