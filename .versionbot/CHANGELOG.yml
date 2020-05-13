@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add dockerfile and contract
+      hash: c37333cba052c20c283b9105411792c6a5a9b798
+      body: |
+        These are minimal prerequisites for deploy from the product repo.
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Roman Mazur <mazur.roman@gmail.com>
+        signed-off-by: Roman Mazur <mazur.roman@gmail.com>
+      author: Roman Mazur
+  version: 6.2.1
+  date: 2020-05-13T08:26:09.071Z
+- commits:
     - subject: Remove Bots from contributors list
       hash: f53d3d511a964ade7f6bccd712833f35a9a978d6
       body: ''
