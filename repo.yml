@@ -1,2 +1,2 @@
-type: node
-publishMetadata: true
+type: docker
+
