@@ -74,11 +74,11 @@ const ContributorsPageRedirect = () => {
 }
 
 const PlaceholderPhoto = styled(Flex) `
-  font-size: 12px;
-  padding: 8px;
-  height: 120px;
-  width: 120px;
-  border-radius: 20px;
+  font-size: 11px;
+  padding: 6px;
+  height: 80px;
+  width: 80px;
+  border-radius: 12px;
   border: 1px dashed
     ${(props) => {
     return props.theme.colors.primary.main
@@ -108,8 +108,8 @@ const Contributors = (props) => {
             <Img
               src={contributor.avatar}
               style={{
-                height: '120px',
-                borderRadius: 8
+                height: '80px',
+                borderRadius: 6
               }}
             />
           </Link>
@@ -134,8 +134,8 @@ const Contributors = (props) => {
 
   const ContributePlaceholder = (
     <PlaceholderPhoto>
-      <Box mb={18}>
-        <ContributeIcon fill={theme.colors.primary.main} />
+      <Box my={1}>
+        <ContributeIcon size={28} fill={theme.colors.primary.main} />
       </Box>
       <Txt>Reserved for you</Txt>
     </PlaceholderPhoto>

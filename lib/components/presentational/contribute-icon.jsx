@@ -4,8 +4,8 @@ const ContributeIcon = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="50"
-      height="50"
+      width={props.size || '50'}
+      height={props.size || '50'}
       viewBox="0 0 50 50"
     >
       <g fill={props.fill || '#FA8600'} fillRule="nonzero" opacity=".5">
