@@ -155,5 +155,8 @@
     "hooks": {
       "init": "./lib/cli/hooks/init.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
