@@ -1,4 +1,16 @@
 - commits:
+    - subject: Use React Router Links instead of absolute links
+      hash: f5f9478fd08b101dfbaeee6914280c9c4ea0cb35
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+  version: 6.6.0
+  date: 2020-05-19T18:38:16.681Z
+- commits:
     - subject: Center motivation section
       hash: ee072762ccda552af1be32533f8991699b2093c1
       body: ''
