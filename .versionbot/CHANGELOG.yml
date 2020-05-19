@@ -1,4 +1,16 @@
 - commits:
+    - subject: Display only top 10 contributors
+      hash: 2576bf8c25b358c8094016daf6bddc5e158adc59
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+  version: 6.4.0
+  date: 2020-05-19T10:54:14.317Z
+- commits:
     - subject: Align Sidebar to left on docs
       hash: ac58bb097bf5bcc7e40bd262c36d39a41403b1e3
       body: ''
