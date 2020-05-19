@@ -17,7 +17,7 @@
 import React from 'react'
 import capitalize from 'lodash/capitalize'
 import {
-  Box, Container, Heading, Txt
+  Container, Heading, Txt
 } from 'rendition'
 import {
   markdown
@@ -44,16 +44,13 @@ export const render = (props) => {
   )
 
   return (
-    <Box my={100}>
-      <Container>
-        <Heading.h2 mb={24}>Why {capitalize(props.name)}?</Heading.h2>
-        <Txt
-          width={[ 1, 1, 1 / 2, 1 / 2 ]}
-          dangerouslySetInnerHTML={{
-            __html: html
-          }}
-        />
-      </Container>
-    </Box>
+    <Container my={100}>
+      <Heading.h2 mb={24}>Why {capitalize(props.name)}?</Heading.h2>
+      <Txt
+        dangerouslySetInnerHTML={{
+          __html: html
+        }}
+      />
+    </Container>
   )
 }
