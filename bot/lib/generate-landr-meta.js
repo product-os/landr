@@ -178,9 +178,12 @@ exports.run = (scrutinizerData) => {
         },
         usedBy: examples
       },
-      contributors: contributors.filter((contributor) => {
-        return !contributor.username.endsWith('[bot]')
-      }),
+      contributors: contributors
+        .filter((contributor) => {
+          return !contributor.username.endsWith('[bot]')
+        }).sort((contributorA, contributorB) => {
+          return contributorB.contributions - contributorA.contributions
+        }),
       releases: {
         latestRelease,
         latestPreRelease
