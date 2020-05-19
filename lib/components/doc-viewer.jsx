@@ -41,9 +41,10 @@ export const variants = (metadata, context, route) => {
       current: route.path,
       toc: context.toc,
       versions: context.versions || [],
-      link: `${metadata.data.links.repository.replace('.git', '')}/edit/master/${
-        context.article.content.filename
-      }`,
+      link: `${metadata.data.links.repository.replace(
+        '.git',
+        ''
+      )}/edit/master/${context.article.content.filename}`,
       content: context.article.content.data,
       latest: context.latest,
       version: context.version
@@ -74,23 +75,6 @@ export const render = (props) => {
     <Box px={3} py={4}>
       <Container>
         <Flex flexWrap={[ 'wrap', 'nowrap' ]}>
-          <Box style={{
-            maxWidth: 900,
-            width: '100%'
-          }}>
-            <Link href={props.link}>Edit on GitHub</Link>
-            {props.date && props.author && (
-              <p>
-                Published on {format(parseISO(props.date), 'EEEE, MMMM do yyyy')}{' '}
-                by @{props.author}
-              </p>
-            )}
-            <ReactMarkdown
-              source={props.content.markdown}
-              escapeHtml={false}
-              renderers={renderers}
-            />
-          </Box>
           <Sidebar>
             {versions.length > 0 && (
               <Box mb={3}>
@@ -107,6 +91,26 @@ export const render = (props) => {
               <Toc toc={props.toc} />
             </Box>
           </Sidebar>
+          <Box
+            style={{
+              maxWidth: 900,
+              width: '100%'
+            }}
+          >
+            <Link href={props.link}>Edit on GitHub</Link>
+            {props.date && props.author && (
+              <p>
+                Published on{' '}
+                {format(parseISO(props.date), 'EEEE, MMMM do yyyy')} by @
+                {props.author}
+              </p>
+            )}
+            <ReactMarkdown
+              source={props.content.markdown}
+              escapeHtml={false}
+              renderers={renderers}
+            />
+          </Box>
         </Flex>
       </Container>
     </Box>

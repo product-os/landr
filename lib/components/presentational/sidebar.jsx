@@ -13,17 +13,17 @@ const DesktopView = styled.aside `
     return props.theme.breakpoints[1]
   }}px) {
     display: block;
-    border-left: 1px solid #dde1f0;
+    border-right: 1px solid #dde1f0;
 
     flex: 0 0 250px;
-    margin-left: 40px;
+    margin-right: 40px;
   }
 
   @media all and (min-width: ${(props) => {
     return props.theme.breakpoints[2]
   }}px) {
     flex: 0 0 300px;
-    margin-left: 80px;
+    margin-right: 80px;
   }
 `
 
