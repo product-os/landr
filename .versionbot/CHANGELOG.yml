@@ -1,4 +1,25 @@
 - commits:
+    - subject: Center motivation section
+      hash: ee072762ccda552af1be32533f8991699b2093c1
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+    - subject: Reduce Contributors image size
+      hash: a6f1cd43fe822e935826bb8afaca93e63cfbcb3c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+  version: 6.5.0
+  date: 2020-05-19T12:56:48.883Z
+- commits:
     - subject: Display only top 10 contributors
       hash: 2576bf8c25b358c8094016daf6bddc5e158adc59
       body: ''
