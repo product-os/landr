@@ -3,6 +3,12 @@ import _ from 'lodash'
 import {
   Box, Heading, Link
 } from 'rendition'
+import {
+  Link as RouterLink
+} from 'react-router-dom'
+import {
+  HashLink
+} from 'react-router-hash-link'
 
 const normalizeTitle = (str) => {
   let title = str
@@ -36,7 +42,9 @@ const Toc = (props) => {
     return (
       <Box key={index} mb={3}>
         <Heading.h4 fontSize={2}>
-          <Link href={url}>{page.title}</Link>
+          <Link is={RouterLink} to={url}>
+            {page.title}
+          </Link>
         </Heading.h4>
 
         {sections.map((section) => {
@@ -45,8 +53,9 @@ const Toc = (props) => {
               <Link
                 fontSize={1}
                 pl={2}
-                href={`${url}${section.path}`}
                 color="#555"
+                is={HashLink}
+                to={`${url}${section.path}`}
               >
                 {section.title}
               </Link>
