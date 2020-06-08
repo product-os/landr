@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update Banner Link in readme
+      hash: 6f1bc1c3fdf84cb57a35247246a4364bdf55d3c5
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+  version: 6.8.0
+  date: 2020-06-08T13:23:08.192Z
+- commits:
     - subject: Use Source sans pro
       hash: 6543bbfbb6b2c9ae92a4909d99bb182d9406ef01
       body: |
