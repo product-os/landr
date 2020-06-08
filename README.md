@@ -1,4 +1,6 @@
-![Landr](https://raw.githubusercontent.com/balena-io/landr/master/banner.png?v=2)
+<p align="center">
+	<img src="./banner.png" height="160" />
+</p>
 
 [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)
 [![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)
