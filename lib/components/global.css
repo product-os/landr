@@ -25,12 +25,17 @@
 
 body {
   color: #2a506f;
-  font-family: Nunito, Arial, sans-serif;
+  font-family: "Source Sas Pro", Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #2a506f;
   font-weight: normal;
 }
@@ -60,28 +65,28 @@ table {
   width: 100%;
 }
 
-table>tbody>tr>td,
-table>tbody>tr>th,
-table>tfoot>tr>td,
-table>tfoot>tr>th,
-table>thead>tr>td,
-table>thead>tr>th {
+table > tbody > tr > td,
+table > tbody > tr > th,
+table > tfoot > tr > td,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > thead > tr > th {
   border-top: 1px solid #ddd;
   padding: 8px;
   text-align: left;
   vertical-align: top;
 }
 
-table>thead:first-child>tr:first-child>td,
-table>thead:first-child>tr:first-child>th {
+table > thead:first-child > tr:first-child > td,
+table > thead:first-child > tr:first-child > th {
   border-top: 0;
 }
 
-table>thead>tr>th {
+table > thead > tr > th {
   border-bottom: 2px solid #ddd;
   vertical-align: bottom;
 }
 
-table>tbody>tr:nth-of-type(odd) {
+table > tbody > tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }

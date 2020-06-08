@@ -110,7 +110,7 @@ const Navigation = (props) => {
         href={route.url}
         aria-labelledby={route.name}
         style={{
-          fontFamily: 'CircularStd'
+          fontFamily: 'Source Sans Pro'
         }}
       >
         {route.name}
