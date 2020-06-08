@@ -1,13 +1,11 @@
-import { addDecorator, addParameters, configure } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
-import { create } from '@storybook/theming';
+import { addDecorator, addParameters, configure } from "@storybook/react";
+import { withA11y } from "@storybook/addon-a11y";
+import { create } from "@storybook/theming";
 
-import 'circular-std';
-import 'typeface-nunito';
-import 'react-typist/dist/Typist.css';
-import '../lib/components/global.css';
+import "react-typist/dist/Typist.css";
+import "../lib/components/global.css";
 
-import CONTRACT from '../meta.json';
+import CONTRACT from "../meta.json";
 
 const theme = create({
   brandTitle: CONTRACT.data.name,
@@ -24,9 +22,9 @@ addParameters({
 
 addDecorator(withA11y);
 
-const req = require.context('../stories', true, /\.stories\.js$/);
+const req = require.context("../stories", true, /\.stories\.js$/);
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach((filename) => req(filename));
 }
 
 configure(loadStories, module);
