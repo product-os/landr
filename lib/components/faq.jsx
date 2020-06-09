@@ -16,9 +16,11 @@
 
 import React from 'react'
 import {
-  Box, Divider, Container, Heading
+  Box, Divider, Container, Heading, Accordion
 } from 'rendition'
-import Accordian from './presentational/accordian'
+import {
+  markdown
+} from 'markdown'
 
 export const name = 'Faq'
 
@@ -37,8 +39,16 @@ export const variants = (metadata) => {
 export const render = (props) => {
   const items = props.faq.map((faq) => {
     return {
-      title: faq.title,
-      content: faq.content
+      label: faq.title,
+      panel: (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: markdown.renderJsonML(
+              markdown.toHTMLTree([ 'markdown' ].concat(faq.content))
+            )
+          }}
+        />
+      )
     }
   })
 
@@ -48,7 +58,7 @@ export const render = (props) => {
         <Box>
           <Heading.h2 mb={4}>Frequently asked questions</Heading.h2>
           <Divider m={0} />
-          <Accordian items={items} />
+          <Accordion items={items} />
         </Box>
       </Container>
     </Box>
