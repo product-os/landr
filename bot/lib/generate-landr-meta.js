@@ -58,6 +58,7 @@ exports.run = (scrutinizerData) => {
     highlights,
     homepage,
     installationSteps,
+    readmeLeftover,
     introduction,
     latestPreRelease,
     latestRelease,
@@ -134,6 +135,7 @@ exports.run = (scrutinizerData) => {
       hardwareRequired,
       softwareRequired,
       highlights,
+      readmeLeftover,
       screenshot,
       installation: installationSteps,
 

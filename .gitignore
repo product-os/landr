@@ -83,3 +83,6 @@ meta.json
 
 # scrutinizer
 eng.traineddata
+
+# Local Netlify folder
+.netlify
