@@ -1,4 +1,16 @@
 - commits:
+    - subject: Fill homepage with leftover readme sections
+      hash: f8f07f68592dd911c4891bfaf61cb1c32c0806f5
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+  version: 6.10.0
+  date: 2020-06-09T08:14:08.028Z
+- commits:
     - subject: Use rendition Accordion
       hash: ccc38f342acefadd052b8cf47dfd11ebb065e1b4
       body: ''
