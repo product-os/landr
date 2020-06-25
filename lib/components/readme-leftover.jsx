@@ -16,12 +16,11 @@
 
 import React from 'react'
 import {
-  Container, Txt
+  Container
 } from 'rendition'
 import {
-  markdown
-} from 'markdown'
-
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 export const name = 'ReadmeLeftover'
 
 export const variants = (metadata) => {
@@ -38,17 +37,9 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(props.readmeLeftover))
-  )
-
   return (
     <Container my={100}>
-      <Txt
-        dangerouslySetInnerHTML={{
-          __html: html
-        }}
-      />
+      <Markdown>{props.readmeLeftover}</Markdown>
     </Container>
   )
 }

@@ -20,9 +20,10 @@ import styled from 'styled-components'
 import {
   Box, Container, Heading, Txt, Flex
 } from 'rendition'
+
 import {
-  markdown
-} from 'markdown'
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 
 export const name = 'Highlights'
 
@@ -46,23 +47,30 @@ const Wrapper = styled(Box) `
   }};
 `
 
-const getHtml = (str) => {
-  return markdown.renderJsonML(markdown.toHTMLTree([ 'markdown' ].concat(str)))
-}
-
 export const render = (props) => {
   const boxes = props.highlights.map((highlight, index) => {
     return (
       <Box key={index} px={3} mb={3} width={[ 1, 1, 1 / 3, 1 / 3 ]}>
         <Heading.h3 fontSize={22} mb={3} align="center">
-          {highlight.title}
+          <Markdown
+            componentOverrides={{
+              p: Txt, // eslint-disable-line id-length
+              strong: 'div'
+            }}
+          >
+            {highlight.title}
+          </Markdown>
         </Heading.h3>
-        <Txt
-          align="center"
-          dangerouslySetInnerHTML={{
-            __html: getHtml(highlight.description)
-          }}
-        ></Txt>
+        <Txt align="center">
+          <Markdown
+            componentOverrides={{
+              p: Txt, // eslint-disable-line id-length
+              strong: 'div'
+            }}
+          >
+            {highlight.description}
+          </Markdown>
+        </Txt>
       </Box>
     )
   })

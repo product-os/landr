@@ -19,13 +19,14 @@ import {
   format, parseISO
 } from 'date-fns'
 import _ from 'lodash'
-import ReactMarkdown from 'react-markdown'
 import {
   Box, Flex, Link, Container, DropDownButton
 } from 'rendition'
 import Toc from './presentational/toc'
 import Sidebar from './presentational/sidebar'
-import renderers from './presentational/renderers'
+import {
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 
 export const name = 'DocViewer'
 
@@ -105,11 +106,7 @@ export const render = (props) => {
                 {props.author}
               </p>
             )}
-            <ReactMarkdown
-              source={props.content.markdown}
-              escapeHtml={false}
-              renderers={renderers}
-            />
+            <Markdown>{props.content.markdown}</Markdown>
           </Box>
         </Flex>
       </Container>
