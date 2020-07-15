@@ -53,7 +53,7 @@ const Toc = (props) => {
               <Link
                 fontSize={1}
                 pl={2}
-                color="#555"
+                color="text.main"
                 is={HashLink}
                 to={`${url}${section.path}`}
               >

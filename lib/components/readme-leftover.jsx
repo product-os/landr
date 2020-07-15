@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+import {
+  trim
+} from 'lodash'
 import React from 'react'
 import {
   Container
@@ -26,10 +29,9 @@ export const name = 'ReadmeLeftover'
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.readmeLeftover) {
+  if (trim(metadata.data.readmeLeftover)) {
     combinations.push({
-      readmeLeftover: metadata.data.readmeLeftover,
-      name: metadata.data.name
+      readmeLeftover: metadata.data.readmeLeftover
     })
   }
 
@@ -38,7 +40,7 @@ export const variants = (metadata) => {
 
 export const render = (props) => {
   return (
-    <Container my={100}>
+    <Container my={45} maxWidth={998}>
       <Markdown>{props.readmeLeftover}</Markdown>
     </Container>
   )

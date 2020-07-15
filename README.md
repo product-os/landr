@@ -63,7 +63,7 @@ $ npm install -g landr
 $ landr COMMAND
 running command...
 $ landr (-v|--version|version)
-landr/5.31.6 linux-x64 node-v12.15.0
+landr/6.16.0 darwin-x64 node-v12.18.3
 $ landr --help [COMMAND]
 USAGE
   $ landr COMMAND
@@ -103,7 +103,7 @@ DESCRIPTION
   to netlify relies on providing the NETLIFY_AUTH_TOKEN env var.
 ```
 
-_See code: [lib/cli/commands/build.js](https://github.com/balena-io/landr/blob/v5.31.6/lib/cli/commands/build.js)_
+_See code: [lib/cli/commands/build.js](https://github.com/balena-io/landr/blob/v6.16.0/lib/cli/commands/build.js)_
 
 ## `landr help [COMMAND]`
 
@@ -137,7 +137,7 @@ DESCRIPTION
   Generate a meta file that contains all the information landr needs to generate a site.
 ```
 
-_See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v5.31.6/lib/cli/commands/meta.js)_
+_See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v6.16.0/lib/cli/commands/meta.js)_
 <!-- commandsstop -->
 
 Getting Help

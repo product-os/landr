@@ -18,9 +18,17 @@ import React from 'react'
 import _ from 'lodash'
 import styled from 'styled-components'
 import {
-  Box, Img, Link, Container, Heading, Flex, useTheme
+  Box,
+  Img,
+  Link as RLink,
+  Container,
+  Heading,
+  Flex,
+  useTheme
 } from 'rendition'
-
+import {
+  Link
+} from 'react-router-dom'
 import GithubBanner from './presentational/github-banner'
 
 export const name = 'Navigation'
@@ -69,11 +77,6 @@ export const variants = (metadata, _context, _route, routes) => {
 }
 
 const Wrapper = styled(Box) `
-  background-color: ${({
-    theme
-  }) => {
-    return theme.colors.primary.light
-  }};
   color: ${({
     theme
   }) => {
@@ -98,23 +101,26 @@ const Navigation = (props) => {
       src={props.logo}
     />
   ) : (
-    <Heading.h1 color="#527699" fontSize={26}>{props.name}</Heading.h1>
+    <Heading.h1 color="#527699" fontSize={26}>
+      {props.name}
+    </Heading.h1>
   )
 
   const links = props.routes.map((route, index) => {
     return (
-      <Link
+      <RLink
         color={theme.colors.text.main}
         key={index}
-        px={2}
-        href={route.url}
-        aria-labelledby={route.name}
+        is={Link}
+        px={3}
         style={{
-          fontFamily: 'Source Sans Pro'
+          fontSize: '14px', fontWeight: 600
         }}
+        to={route.url}
+        aria-labelledby={route.name}
       >
         {route.name}
-      </Link>
+      </RLink>
     )
   })
 
@@ -128,9 +134,9 @@ const Navigation = (props) => {
             position: 'relative'
           }}
         >
-          <Link color="white" href={'/'}>
+          <RLink color="white" is={Link} to={'/'}>
             {Brand}
-          </Link>
+          </RLink>
           <Flex fontSize={2} mx={-2}>
             {links}
           </Flex>

@@ -20,39 +20,59 @@ import last from 'lodash/last'
 import get from 'lodash/get'
 import styled from 'styled-components'
 import {
-  Box, Button, Container, Txt, Flex, Heading, useTheme, Link
+  Box,
+  Button,
+  Container,
+  Txt,
+  Flex,
+  Heading,
+  useTheme,
+  Link,
+  Img as RImg
 } from 'rendition'
 
 import Terminal from './presentational/terminal'
-
+import {
+  DeployWithBalena
+} from './presentational/deploy-with-balena'
 export const name = 'Jumbotron'
 
 export const variants = (metadata, _context, _route, routes) => {
   const combinations = []
 
   const latestDocsVersion = metadata.data.docs.latest
-  const entrypoint = get(metadata, [ 'data', 'docs', 'tags', latestDocsVersion, '0' ])
+  const entrypoint = get(metadata, [
+    'data',
+    'docs',
+    'tags',
+    latestDocsVersion,
+    '0'
+  ])
 
-  const entryUrl = entrypoint && find(routes, (definition) => {
-    return (
-      definition.context.article &&
-      definition.context.article.content.filename === entrypoint.filename
-    )
-  })
-
-  const steps = metadata.data.installation && metadata.data.installation.steps.reduce((accumulator, step) => {
-    accumulator.push({
-      command: last(step[0]).replace(/\n/g, ''),
-      comment: true
+  const entryUrl =
+    entrypoint &&
+    find(routes, (definition) => {
+      return (
+        definition.context.article &&
+        definition.context.article.content.filename === entrypoint.filename
+      )
     })
 
-    accumulator.push({
-      command: last(last(last(step))).replace(/\n/g, ''),
-      comment: false
-    })
+  const steps =
+    metadata.data.installation &&
+    metadata.data.installation.steps.reduce((accumulator, step) => {
+      accumulator.push({
+        command: last(step[0]).replace(/\n/g, ''),
+        comment: true
+      })
 
-    return accumulator
-  }, [])
+      accumulator.push({
+        command: last(last(last(step))).replace(/\n/g, ''),
+        comment: false
+      })
+
+      return accumulator
+    }, [])
 
   if (metadata.data.name && metadata.data.description && entryUrl) {
     combinations.push({
@@ -61,6 +81,8 @@ export const variants = (metadata, _context, _route, routes) => {
       description: metadata.data.description,
       packageName: metadata.data.name,
       action: `/${entryUrl.path.join('/')}`,
+      logoBrandMark: metadata.data.logoBrandMark,
+      deployWithBalenaUrl: metadata.data.deployWithBalenaUrl,
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
@@ -108,37 +130,87 @@ const Img = styled.img `
 
 const Screenshot = ({
   src
-}) => { return <Txt align='center'><Img src={src} alt='screenshot' /></Txt> }
+}) => {
+  return (
+    <Txt align="center">
+      <Img src={src} alt="screenshot" />
+    </Txt>
+  )
+}
 
 const Jumbotron = (props) => {
   const theme = useTheme()
   const commands = props.steps || []
   return (
-    <Box py={5} bg={theme.colors.primary.light}>
-      <Container>
+    <Box pt={5} pb={6}>
+      <Container maxWidth={998}>
         <Flex flexDirection="column" alignItems="center" mb={40}>
+          {props.logoBrandMark && (
+            <RImg width="64px" mb={3} src={`${props.logoBrandMark}`} />
+          )}
           {!props.bannerText && (
-            <Heading.h1 color={theme.colors.primary.main} fontSize={62}>{props.title}</Heading.h1>
+            <Heading.h1 color={theme.colors.primary.main} fontSize="38px">
+              {props.title}
+            </Heading.h1>
           )}
-          {props.description && (
-            <Heading.h2 fontSize={24} align='center' style={{
-              maxWidth: 800
-            }}>{props.description}</Heading.h2>
-          )}
+          {props.description &&
+            (props.bannerText ? (
+              <Heading.h1
+                fontSize={5}
+                align="center"
+                style={{
+                  lineHeight: 1.34,
+                  maxWidth: 800
+                }}
+              >
+                {props.description}
+              </Heading.h1>
+            ) : (
+              <Heading.h2
+                fontSize={24}
+                align="center"
+                style={{
+                  maxWidth: 800
+                }}
+              >
+                {props.description}
+              </Heading.h2>
+            ))}
         </Flex>
-        {(props.isCli && commands.length) > 0 && <Terminal commands={commands} />}
-        {props.screenshot && <Screenshot src={props.screenshot}/>}
-        {props.action && (
-          <Txt align="center" mt={40}>
-            <Link
-              m={2}
-              blank
-              href={props.action}
-            >
-              <Button primary>
-              Get started
-              </Button>
-            </Link>
+        {(props.isCli && commands.length) > 0 && (
+          <Terminal commands={commands} />
+        )}
+        {props.screenshot && <Screenshot src={props.screenshot} />}
+        {(props.action || props.deployWithBalenaUrl) && (
+          <Txt
+            style={{
+              display: 'flex',
+              alignItems: 'flex-end',
+              justifyContent: 'center'
+            }}
+            align="center"
+            mt={40}
+          >
+            {props.deployWithBalenaUrl && (
+              <DeployWithBalena
+                mt={2}
+                m={2}
+                deployUrl={props.deployWithBalenaUrl}
+              />
+            )}
+            {props.action && (
+              <Link m={2} blank href={props.action}>
+                <Button primary>
+                  <Txt.span
+                    style={{
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    Getting started Guide
+                  </Txt.span>
+                </Button>
+              </Link>
+            )}
           </Txt>
         )}
       </Container>

@@ -42,7 +42,9 @@ const BUILTIN_PLUGINS = [
   require('scrutinizer/lib/plugins/open-issues'),
   require('scrutinizer/lib/plugins/version'),
   require('scrutinizer/lib/plugins/screenshot'),
-  require('scrutinizer/lib/plugins/logo')
+  require('scrutinizer/lib/plugins/logo'),
+  require('scrutinizer/lib/plugins/logo-brandmark'),
+  require('scrutinizer/lib/plugins/deployButtons')
 ]
 
 const examineGitRepository = (context, options) => {
