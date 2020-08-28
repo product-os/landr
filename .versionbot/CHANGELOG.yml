@@ -1,4 +1,18 @@
 - commits:
+    - subject: Change markdown parser to remark+rehype
+      hash: d26f5295d58465d5a055d29ddb2b35ca93e95d04
+      body: |
+        This allows us to customise the rendering of components w.r.t rendition
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.11.0
+  date: 2020-08-24T15:04:36.220Z
+- commits:
     - subject: Fill homepage with leftover readme sections
       hash: f8f07f68592dd911c4891bfaf61cb1c32c0806f5
       body: ''
