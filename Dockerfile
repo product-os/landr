@@ -39,6 +39,7 @@ libappindicator1 \
 libnss3 \
 lsb-release \
 xdg-utils \
+build-essential \
 wget
 
 # Defines our working directory in container

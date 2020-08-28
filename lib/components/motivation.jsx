@@ -16,13 +16,13 @@
 
 import React from 'react'
 import capitalize from 'lodash/capitalize'
+
 import {
-  Container, Heading, Txt
+  Container, Heading
 } from 'rendition'
 import {
-  markdown
-} from 'markdown'
-
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 export const name = 'Motivation'
 
 export const variants = (metadata) => {
@@ -39,18 +39,10 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(props.motivation))
-  )
-
   return (
     <Container my={100}>
       <Heading.h2 mb={24}>Why {capitalize(props.name)}?</Heading.h2>
-      <Txt
-        dangerouslySetInnerHTML={{
-          __html: html
-        }}
-      />
+      <Markdown>{props.motivation}</Markdown>
     </Container>
   )
 }
