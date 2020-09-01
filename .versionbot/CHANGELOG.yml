@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'Fix: Include Skeleton folder in final build'
+      hash: abc8f10a6424e8a55d6e4153269386aa2ef0141b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.11.1
+  date: 2020-09-01T12:19:30.707Z
+- commits:
     - subject: Change markdown parser to remark+rehype
       hash: d26f5295d58465d5a055d29ddb2b35ca93e95d04
       body: |
