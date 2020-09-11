@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update Scrutinizer version
+      hash: 37bc8e559f35b2481408a2827042c2007faf45cb
+      body: ''
+      footer:
+        Change-type: Patch
+        change-type: Patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.11.3
+  date: 2020-09-11T18:59:05.163Z
+- commits:
     - subject: Display Correct landr version in issue comments
       hash: 3a1d1cf70945beb0aafd7d6755d353a38c918a4b
       body: ''
