@@ -57,11 +57,12 @@ const upsertPRComment = async ({
       body: message
     })
   } else {
-    const issueComment = context.issue({
+    await context.github.issues.createComment({
+      owner,
+      repo,
       issue_number: pullNumber,
       body: message
-    })
-    await context.github.issues.createComment(issueComment)
+    });
   }
 }
 
@@ -162,7 +163,7 @@ module.exports = (app) => {
       })
       const message = `Your landr site preview has been successfully deployed to ${siteUrl}
 
-        *Deployed with Landr v5.30.4*`
+*Deployed with Landr ${process.env.npm_package_version}*`;
 
       log(`posting site preview link in comment to PR: ${url}`)
 
@@ -178,7 +179,7 @@ module.exports = (app) => {
       // On error, post the error as a GitHub comment
       const message = `An error occurred whilst building your landr site preview:
 \`\`\`
-        ${reportableError}
+${reportableError}
 \`\`\``
 
       await upsertPRComment({
