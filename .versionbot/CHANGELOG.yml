@@ -1,4 +1,17 @@
 - commits:
+    - subject: Use default font sizes and spacing from rendition
+      hash: ef4b9cb365a9c54c0c7e54bf032e721d36220588
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.11.4
+  date: 2020-09-11T19:13:51.177Z
+- commits:
     - subject: Update Scrutinizer version
       hash: 37bc8e559f35b2481408a2827042c2007faf45cb
       body: ''
