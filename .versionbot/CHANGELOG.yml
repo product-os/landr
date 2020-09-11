@@ -1,4 +1,17 @@
 - commits:
+    - subject: Display Correct landr version in issue comments
+      hash: 3a1d1cf70945beb0aafd7d6755d353a38c918a4b
+      body: ''
+      footer:
+        Change-type: Patch
+        change-type: Patch
+        Signed-ff-by: Amit Solanki <amit@balena.io>
+        signed-ff-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.11.2
+  date: 2020-09-11T10:38:50.254Z
+- commits:
     - subject: 'Fix: Include Skeleton folder in final build'
       hash: abc8f10a6424e8a55d6e4153269386aa2ef0141b
       body: ''
