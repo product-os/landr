@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add Env var to disable quiet builds with probot
+      hash: eb44b4902ee217b6b5b36dfe7d9b5d25c7ffe9f7
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.12.0
+  date: 2020-09-17T07:16:50.749Z
+- commits:
     - subject: Update scrutinizer to 2.1.2
       hash: 94a4fc3e8ad51f77c1b358a4f09c6b4f7ce1484f
       body: ''
