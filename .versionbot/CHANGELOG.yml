@@ -1,4 +1,17 @@
 - commits:
+    - subject: Allow configuring max threads for site generation
+      hash: e05318c73375560d540893b080e9f211ed8d5584
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.12.1
+  date: 2020-09-17T16:35:30.149Z
+- commits:
     - subject: Add Env var to disable quiet builds with probot
       hash: eb44b4902ee217b6b5b36dfe7d9b5d25c7ffe9f7
       body: ''
