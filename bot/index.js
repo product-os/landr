@@ -62,7 +62,7 @@ const upsertPRComment = async ({
       repo,
       issue_number: pullNumber,
       body: message
-    });
+    })
   }
 }
 
@@ -108,7 +108,8 @@ const build = async ({
     branch,
     deploy: true,
     netlifyToken: process.env.NETLIFY_AUTH_TOKEN,
-    quiet: true,
+    // eslint-disable-next-line no-eq-null
+    quiet: process.env.QUIET_BUILDS == null ? true : process.env.QUIET_BUILDS === 'true',
     pullNumber,
     logger: log
   })
@@ -163,7 +164,7 @@ module.exports = (app) => {
       })
       const message = `Your landr site preview has been successfully deployed to ${siteUrl}
 
-*Deployed with Landr ${process.env.npm_package_version}*`;
+*Deployed with Landr ${process.env.npm_package_version}*`
 
       log(`posting site preview link in comment to PR: ${url}`)
 
