@@ -120,7 +120,7 @@
     "react-static-plugin-styled-components": "^7.3.0",
     "react-typist": "^2.0.5",
     "recursive-copy": "^2.0.10",
-    "rendition": "^18.1.0",
+    "rendition": "^18.9.2",
     "replace-string": "^3.0.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
