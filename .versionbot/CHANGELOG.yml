@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update rendition to 18.9.2
+      hash: f8cdb3ae11b0d67cab56c0cf004cf91cd2fee8af
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.12.2
+  date: 2020-09-24T07:37:20.870Z
+- commits:
     - subject: Allow configuring max threads for site generation
       hash: e05318c73375560d540893b080e9f211ed8d5584
       body: ''
