@@ -39,6 +39,7 @@ libappindicator1 \
 libnss3 \
 lsb-release \
 xdg-utils \
+libkrb5-dev \
 build-essential \
 wget
 
