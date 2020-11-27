@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update rendition to 18.16.0
+      hash: 9e09fa7f2fbcf662bc29567856aa2df0d95fdf6d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.13.0
+  date: 2020-11-27T08:36:20.725Z
+- commits:
     - subject: Update rendition to 18.9.2
       hash: f8cdb3ae11b0d67cab56c0cf004cf91cd2fee8af
       body: ''
