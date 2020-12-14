@@ -39,7 +39,7 @@ of [Semantic Versioning](https://semver.org).
 Balena CI
 ---------
 
-Landr makes use of Balena's internal CI system which noy only runs the tests,
+Landr makes use of Balena's internal CI system which not only runs the tests,
 but automatically generates a CHANGELOG based on your commits and their
 corresponding `Change-type`s.
 
