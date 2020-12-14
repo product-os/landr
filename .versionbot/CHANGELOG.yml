@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'docs: minor typo fix'
+      hash: ab3fe7073740e2d6a5879297d2ef97a2734be5b3
+      body: |
+        Correct a minor typo
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Aaron Shaw <aaron@balena.io>
+        signed-off-by: Aaron Shaw <aaron@balena.io>
+      author: Aaron Shaw
+      nested: []
+  version: 6.13.1
+  date: 2020-12-14T14:22:55.959Z
+- commits:
     - subject: Update rendition to 18.16.0
       hash: 9e09fa7f2fbcf662bc29567856aa2df0d95fdf6d
       body: ''
