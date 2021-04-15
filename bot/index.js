@@ -145,10 +145,10 @@ module.exports = (app) => {
 
     const log = makeLogFn(repository, pullNumber)
 
-    if (context.payload.repository.private) {
-      log('Repository is private, skipping landr build')
-      return
-    }
+    // If (context.payload.repository.private) {
+    //   log('Repository is private, skipping landr build')
+    //   return
+    // }
 
     log(`Triggering build for PR: ${url}`)
 
