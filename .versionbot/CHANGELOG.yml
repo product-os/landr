@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update netlify version to 2.4.8
+      hash: e6329c3d315247b232bbc8700ba7bf65dd43fc96
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.14.0
+  date: 2021-04-15T13:47:27.700Z
+- commits:
     - subject: 'docs: minor typo fix'
       hash: ab3fe7073740e2d6a5879297d2ef97a2734be5b3
       body: |
