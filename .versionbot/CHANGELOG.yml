@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fetch all the sites from netlify
+      hash: 0613bda98136a11ebb2094d7a3dc16ab89842eb0
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.16.0
+  date: 2021-04-16T12:17:49.375Z
+- commits:
     - subject: Enable private repo builds for landrbot
       hash: b6faa85e25bd9bbb17b4a71976a6278d70318fff
       body: ''
