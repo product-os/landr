@@ -1,4 +1,17 @@
 - commits:
+    - subject: Enable private repo builds for landrbot
+      hash: b6faa85e25bd9bbb17b4a71976a6278d70318fff
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.15.0
+  date: 2021-04-16T03:34:02.597Z
+- commits:
     - subject: Update netlify version to 2.4.8
       hash: e6329c3d315247b232bbc8700ba7bf65dd43fc96
       body: ''
