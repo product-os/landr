@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add Amit Solanki as codeowner
+      hash: 2a0aa74b62fe4ff8191691f4c398b5f41df89b84
+      body: ''
+      footer:
+        Change-type: Patch
+        change-type: Patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.16.1
+  date: 2021-04-16T14:42:17.663Z
+- commits:
     - subject: Fetch all the sites from netlify
       hash: 0613bda98136a11ebb2094d7a3dc16ab89842eb0
       body: ''
