@@ -59,7 +59,9 @@ exports.run = (scrutinizerData) => {
     homepage,
     installationSteps,
     readmeLeftover,
+    leftoverSections,
     introduction,
+    logoBrandMark,
     latestPreRelease,
     latestRelease,
     license,
@@ -68,6 +70,9 @@ exports.run = (scrutinizerData) => {
     motivation,
     name,
     owner,
+    tagline,
+    setup,
+    deployWithBalenaUrl,
 
     // Public is a reserved keyword
     public: isPublic,
@@ -90,7 +95,7 @@ exports.run = (scrutinizerData) => {
     data: {
       license,
       name,
-      tagline: description,
+      tagline,
       images: {
         banner: _.get(logo, [ 'base64' ]),
         bannerText: _.get(logo, [ 'textContent' ])
@@ -136,8 +141,12 @@ exports.run = (scrutinizerData) => {
       softwareRequired,
       highlights,
       readmeLeftover,
+      leftoverSections,
+      setup,
+      deployWithBalenaUrl,
       screenshot,
       installation: installationSteps,
+      logoBrandMark,
 
       // TODO autodetect if the project is a CLI tool in scrutinizer
       isCli: false,

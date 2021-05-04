@@ -94,10 +94,15 @@ Bluebird.resolve()
       latestRelease,
       license,
       logo,
+      leftoverSections,
       maintainers,
       motivation,
       name,
       owner,
+      tagline,
+      setup,
+      deployWithBalenaUrl,
+      logoBrandMark,
 
       // Public is a reserved keyword
       public: isPublic,
@@ -120,7 +125,7 @@ Bluebird.resolve()
       data: {
         license,
         name,
-        tagline: description,
+        tagline,
         images: {
           banner: _.get(logo, [ 'base64' ])
         },
@@ -165,6 +170,10 @@ Bluebird.resolve()
         softwareRequired,
         highlights,
         screenshot,
+        leftoverSections,
+        setup,
+        deployWithBalenaUrl,
+        logoBrandMark,
         installation: installationSteps,
 
         blog: _.map(blog, ({

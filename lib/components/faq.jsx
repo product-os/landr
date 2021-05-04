@@ -54,7 +54,7 @@ export const render = (props) => {
 
   return (
     <Box my={100}>
-      <Container>
+      <Container maxWidth={998}>
         <Box>
           <Heading.h2 mb={4}>Frequently asked questions</Heading.h2>
           <Divider m={0} />

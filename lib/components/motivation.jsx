@@ -15,14 +15,14 @@
  */
 
 import React from 'react'
-import capitalize from 'lodash/capitalize'
 
 import {
-  Container, Heading
+  Box, Container, Heading, Txt
 } from 'rendition'
 import {
   Markdown
 } from 'rendition/dist/extra/Markdown'
+
 export const name = 'Motivation'
 
 export const variants = (metadata) => {
@@ -31,7 +31,8 @@ export const variants = (metadata) => {
   if (metadata.data.motivation) {
     combinations.push({
       motivation: metadata.data.motivation,
-      name: metadata.data.name
+      name: metadata.data.name,
+      tagline: metadata.data.tagline
     })
   }
 
@@ -40,9 +41,69 @@ export const variants = (metadata) => {
 
 export const render = (props) => {
   return (
-    <Container my={100}>
-      <Heading.h2 mb={24}>Why {capitalize(props.name)}?</Heading.h2>
-      <Markdown>{props.motivation}</Markdown>
+    <Container my={100} maxWidth={998}>
+      <Heading.h2
+        mb={18}
+        fontSize="38px"
+        style={{
+          fontWeight: 400,
+          lineHeight: 1.18
+        }}
+      >
+        {props.name}
+      </Heading.h2>
+      {props.tagline && (
+        <Markdown
+          componentOverrides={{
+            // eslint-disable-next-line id-length
+            p: (componentProps) => {
+              return (
+                <Txt.p
+                  mt={1}
+                  mb={3}
+                  color="text.main"
+                  {...componentProps}
+                  fontSize="16px"
+                  style={{
+                    lineHeight: 1.5
+                  }}
+                />
+              )
+            },
+            strong: 'div'
+          }}
+          mb={32}
+        >
+          {props.tagline}
+        </Markdown>
+      )}
+      <Markdown
+        componentOverrides={{
+          // eslint-disable-next-line id-length
+          p: (componentProps) => {
+            if (
+              componentProps.children &&
+              componentProps.children.some((child) => {
+                return child.type === 'img'
+              })
+            ) {
+              return <Box my={3} {...componentProps} />
+            }
+            return (
+              <Txt.p
+                {...componentProps}
+                my={4}
+                fontSize="16px"
+                style={{
+                  lineHeight: 1.63
+                }}
+              ></Txt.p>
+            )
+          }
+        }}
+      >
+        {props.motivation}
+      </Markdown>
     </Container>
   )
 }
