@@ -1,4 +1,17 @@
 - commits:
+    - subject: Lock rendition version to 18.6.0
+      hash: 5481cf8fff78c72aa82cc16f72a04c3fc89315be
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.17.1
+  date: 2021-05-08T14:58:51.105Z
+- commits:
     - subject: Update Homepage design
       hash: bdde4959115b325a2cae47284fa7cccba25b694f
       body: ''
