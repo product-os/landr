@@ -46,8 +46,8 @@ wget
 # Defines our working directory in container
 WORKDIR /usr/src/app
 
-# Copies the package.json and package-lock.json first for better cache on later pushes
-COPY package*.json ./
+# Copy package.json and npm-shrinkwrap.json first for better cache on later pushes
+COPY package.json npm-shrinkwrap.json ./
 
 # Install NPM dependecies.
 RUN JOBS=MAX npm ci --unsafe-perm && npm cache verify && rm -rf /tmp/*
