@@ -1,4 +1,15 @@
 - commits:
+    - subject: Replace package-lock.json with npm-shrinkwrap.json for global installs
+      hash: 2e0f5ad4d52e993251ab63d7137c204306577c91
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Paulo Castro
+      nested: []
+  version: 6.17.2
+  date: 2021-05-08T17:14:40.942Z
+- commits:
     - subject: Lock rendition version to 18.6.0
       hash: 5481cf8fff78c72aa82cc16f72a04c3fc89315be
       body: ''
