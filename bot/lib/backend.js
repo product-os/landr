@@ -108,9 +108,12 @@ module.exports = class GitHubBackend {
         logGitHubRateLimitingInformation(results.headers)
 
         if (_.isArray(results.data)) {
-          const files = _.map(_.filter(results.data, {
-            type: 'file'
-          }), 'path')
+          const files = _.map(
+            _.filter(results.data, {
+              type: 'file'
+            }),
+            'path'
+          )
           return files
         }
 
@@ -157,10 +160,11 @@ module.exports = class GitHubBackend {
             results.data.encoding
           )
 
-          if (results.data.encoding === 'base64' &&
-          (results.data.name.includes('.png') ||
-            results.data.name.includes('.gif')
-          )) {
+          if (
+            results.data.encoding === 'base64' &&
+            (results.data.name.includes('.png') ||
+              results.data.name.includes('.gif'))
+          ) {
             return buffer.toString('base64')
           }
 
@@ -217,6 +221,29 @@ module.exports = class GitHubBackend {
           }
         }
       })
+  }
+
+  /**
+   * @summary Get the repository URL
+   * @function
+   * @public
+   *
+   * @returns {Promise}
+   *
+   * @example
+   * const backend = new GitHubBackend(...)
+   * backend.getRepositoryUrl().then((url) => {
+   *   console.log(url)
+   * })
+   */
+  getRepositoryUrl () {
+    return this.getMetadata().then((results) => {
+      if (!results) {
+        return null
+      }
+
+      return results.repositoryUrl
+    })
   }
 
   /**
@@ -283,19 +310,25 @@ module.exports = class GitHubBackend {
         logGitHubRateLimitingInformation(results.headers)
         const contributors = _.get(results, [ 'data' ], [])
 
-        return _.map(contributors, ({
-          // eslint-disable-next-line camelcase
-          login, avatar_url
-        }) => {
-          return {
-            username: login,
-            avatar: avatar_url
+        return _.map(
+          contributors,
+          ({
+            // eslint-disable-next-line camelcase
+            login,
+            avatar_url
+          }) => {
+            return {
+              username: login,
+              avatar: avatar_url
+            }
           }
-        })
+        )
       })
       .catch((error) => {
         if (error.status === 404) {
-          debug('Cannot get the contributors list (have you passed $GITHUB_TOKEN ?)')
+          debug(
+            'Cannot get the contributors list (have you passed $GITHUB_TOKEN ?)'
+          )
           return null
         }
 
@@ -422,23 +455,25 @@ module.exports = class GitHubBackend {
    * })
    */
   getOpenIssues () {
-    return this.github.repos.get({
-      owner: this.owner,
-      repo: this.repo
-    }).then((results) => {
-      logGitHubRateLimitingInformation(results.headers)
-      const numberOfIssues = results.data.open_issues_count
+    return this.github.repos
+      .get({
+        owner: this.owner,
+        repo: this.repo
+      })
+      .then((results) => {
+        logGitHubRateLimitingInformation(results.headers)
+        const numberOfIssues = results.data.open_issues_count
 
-      const openIssuesObj = {
-        numberOfIssues,
-        latestIssues: []
-      }
+        const openIssuesObj = {
+          numberOfIssues,
+          latestIssues: []
+        }
 
-      if (numberOfIssues === 0) {
-        return openIssuesObj
-      }
+        if (numberOfIssues === 0) {
+          return openIssuesObj
+        }
 
-      /*
+        /*
         We can calculate the pages of issues, and make
         a series of calls, in order to get the full listing
         - https://octokit.github.io/rest.js/#api-Issues-listForRepo
@@ -446,25 +481,27 @@ module.exports = class GitHubBackend {
         so let's settle for the first 20
       */
 
-      return this.github.issues.listForRepo({
-        owner: this.owner,
-        repo: this.repo,
-        state: 'open',
-        per_page: 20,
-        page: 1
-      }).then((issueResults) => {
-        logGitHubRateLimitingInformation(issueResults.headers)
+        return this.github.issues
+          .listForRepo({
+            owner: this.owner,
+            repo: this.repo,
+            state: 'open',
+            per_page: 20,
+            page: 1
+          })
+          .then((issueResults) => {
+            logGitHubRateLimitingInformation(issueResults.headers)
 
-        const latestIssues = _.map(issueResults.data, (issue) => {
-          return {
-            title: issue.title,
-            url: issue.html_url
-          }
-        })
+            const latestIssues = _.map(issueResults.data, (issue) => {
+              return {
+                title: issue.title,
+                url: issue.html_url
+              }
+            })
 
-        openIssuesObj.latestIssues = latestIssues
-        return openIssuesObj
+            openIssuesObj.latestIssues = latestIssues
+            return openIssuesObj
+          })
       })
-    })
   }
 }
