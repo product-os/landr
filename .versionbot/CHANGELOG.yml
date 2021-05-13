@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fetch repo urls from github backend
+      hash: 6d36ac19752f9c5152ec5e41d308af7a432d3a59
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.18.0
+  date: 2021-05-13T21:05:59.431Z
+- commits:
     - subject: Replace package-lock.json with npm-shrinkwrap.json for global installs
       hash: 2e0f5ad4d52e993251ab63d7137c204306577c91
       body: ''
