@@ -1,13 +1,11 @@
-How does Landr work?
-====================
+# How does Landr work?
 
 The main goal of Landr is to generate useful and decent websites to describe a
 software project with the least possible amount of configuration. Landr is
 supposed to be opinionated by design and rely on common open source conventions
 rather than on user input.
 
-meta.json
----------
+## meta.json
 
 Landr reads all the information it needs to know about a repository from a file
 called `meta.json`, which is supposed to be the **only input for Landr**. This
@@ -28,8 +26,7 @@ The amount of information we can obtain from a repository differs on the
 project and on how standard the conventions that the project is adopting are,
 so most of the things that `meta.json` might contain is optional.
 
-Routes
-------
+## Routes
 
 The routes that Landr will statically generate are defined in
 [`lib/routes.js`](https://github.com/balena-io/landr/blob/master/lib/routes.js).
@@ -37,16 +34,14 @@ This file contains a function that takes `meta.json` and returns an array of
 routes that Landr will render. Each route contains the following properties:
 
 - `title`: The page title, most often used inside `<title></title>`
-- `path`: The page path, as an array of fragments. For example `[ 'foo', 'bar'
-  ]` corresponds to `/foo/bar`
+- `path`: The page path, as an array of fragments. For example `[ 'foo', 'bar' ]` corresponds to `/foo/bar`
 - `context`: A free-form object that represents the page's focus information.
   For example, a page that renders the project's code of conduct will have the
   code of conduct plus any related information as its `context`
 
 The order in which routes are returned doesn't make a difference.
 
-Components
-----------
+## Components
 
 The Landr project ships with a collection of React component that represent the
 library of UI section that Landr will use when rendering a website. These
@@ -60,8 +55,7 @@ Each component has the following properties:
 - `variants`: The different ways this component can be rendered given a
   `meta.json`. We will explain this in more detail later
 
-Variants
---------
+## Variants
 
 Each component has a `variants` function that takes information such as
 `meta.json` and a route `context` and returns an array defining all the ways
@@ -81,11 +75,10 @@ the following ways:
 - And more
 
 If a "choice" is returned before another choice, then the component expresses
-that it *prefers* to be rendered in the first way, but is happy to take any
-choice. We internally call these preferences the *rank*.
+that it _prefers_ to be rendered in the first way, but is happy to take any
+choice. We internally call these preferences the _rank_.
 
-Rules
------
+## Rules
 
 The Landr engine will go through each of the routes defined for a website, and
 it will generate all possible combinations of components and the choices they
@@ -107,8 +100,7 @@ Landr will check every combination it generated against these rules, keep the
 valid ones, and choose the one where the components are rendered with the
 highest possible ranks.
 
-Rendering
----------
+## Rendering
 
 Once we figure out what to display and how, we generate React components and
 pass them to [React Static](https://github.com/nozzle/react-static) to get you
