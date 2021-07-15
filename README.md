@@ -9,19 +9,18 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md) -->
 
 **Landr is alpha software** and its under heavy development, so various things
-might be broken in the best case!
+might be broken in the best case! We warmly welcome [new, detailed issues](https://github.com/product-os/landr/issues) and [contributions](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md) to help us improve Landr.
 
 ## Highlights
 
-- **Functional Websites**: Landr renders your project and its documentation in
-  a gorgeous and UX friendly way to your end users, in the best possible way
-  while you focus on shipping features
+- **Fast, functional Websites**: Landr renders your project and its documentation in
+  a gorgeous and UX-friendly way to your end users, so you can focus on shipping features.
 - **Follows OSS Conventions**: Landr understands most common repository
-  conventions, and makes use of them fully. Build a great repository and get a
-  great website for it. Its a win-win
-- **Fully Automatic**: Landr requires no configuration at all. It is smart
+  conventions, and fully makes use of them. Build a great repository and get a
+  great website for it: its a win-win!
+- **Fully Automatic**: Landr requires zero configuration. It's smart
   enough to figure out what it needs on its own. Point it to a repository, hold
-  tight, and let Landr do its magic
+  tight, and let Landr do its magic.
 
 ## Installation
 
@@ -47,11 +46,9 @@ landr
 
 ## Motivation
 
-Creating a website for a project is hard and time-consuming. Yet, a great
-website is one of the best ways to promote a project. Landr aims to capture our
-experience presenting a wide variety of open source projects on the web, so
-that having a website that can compete with your favourite massively popular
-open source project is not only possible, but comes with zero overhead.
+Creating a website for a project can be hard and time-consuming. Landr aims to simplify how developers can quickly create usable, beautiful websites to share their projects with the world. It does so with open source standards in mind and with zero overhead.
+
+Build a great, well-structured project and let Landr build you a great site.
 
 ### Usage
 
