@@ -1,4 +1,17 @@
 - commits:
+    - subject: Build private master repos with probot
+      hash: 119df174db0742f84c9ccf5a816235025a027d4d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.20.0
+  date: 2021-09-21T12:18:12.790Z
+- commits:
     - subject: Delete CODEOWNERS
       hash: 9ef68e8b0b83e0e5b7765b5faa8f38a1dc2538c9
       body: ''
