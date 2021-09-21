@@ -313,8 +313,8 @@ module.exports = class GitHubBackend {
         return _.map(
           contributors,
           ({
-            // eslint-disable-next-line camelcase
             login,
+            // eslint-disable-next-line camelcase
             avatar_url
           }) => {
             return {
