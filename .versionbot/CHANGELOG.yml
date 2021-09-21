@@ -1,4 +1,17 @@
 - commits:
+    - subject: Landrify landr
+      hash: 02b15b76bf16f6df8bea651ca7700a96a45dfcc6
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.21.0
+  date: 2021-09-21T12:38:20.897Z
+- commits:
     - subject: Build private master repos with probot
       hash: 119df174db0742f84c9ccf5a816235025a027d4d
       body: ''
