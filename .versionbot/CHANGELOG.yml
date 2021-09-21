@@ -1,4 +1,17 @@
 - commits:
+    - subject: Delete CODEOWNERS
+      hash: 9ef68e8b0b83e0e5b7765b5faa8f38a1dc2538c9
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+        signed-off-by: Lucian Buzzo <lucian.buzzo@gmail.com>
+      author: Lucian Buzzo
+      nested: []
+  version: 6.19.1
+  date: 2021-09-21T12:02:15.070Z
+- commits:
     - subject: Use toc generated from scrutinizer and link headings
       hash: 9577adde05c7459ccc0e419352df33f7ce04f9e0
       body: ''
