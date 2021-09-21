@@ -193,11 +193,6 @@ ${reportableError}
     const log = makeLogFn(context.payload.repository.full_name, 'master')
 
     if (context.payload.ref === 'refs/heads/master') {
-      if (context.payload.repository.private) {
-        log('Repository is private, skipping landr build')
-        return
-      }
-
       log(`Triggering build for master branch: ${context.payload.repository.html_url}`)
       const siteUrl = await build({
         app,
