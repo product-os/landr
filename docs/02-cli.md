@@ -1,35 +1,32 @@
-CLI
-===
+# CLI
 
 The Landr CLI is able to generate websites and deploy them to Netlify and it
 features the following small set of commands:
 
-`landr [meta.json]`
--------------------
+## `landr [meta.json]`
 
 This is an alias for `landr deploy [meta.json]`. Please refer to that command's
 help section.
 
-`landr build [meta.json]`
--------------------------
+## `landr build [meta.json]`
 
 Build the site in the current working directory and store the generated files
 in `dist`. Any existing `dist` directory will be removed.
 
-| Arguments | Description | Optional? | Default |
-|-----------|-------------|-----------|---------|
-| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |
+| Arguments     | Description         | Optional? | Default          |
+| ------------- | ------------------- | --------- | ---------------- |
+| `[meta.json]` | Path to `meta.json` | Y         | `$PWD/meta.json` |
 
 This command supports the following environment variables:
 
-| Name | Description | Optional? |
-|-----------|-------------|-----------|
-| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |
-| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |
+| Name                   | Description             | Optional? |
+| ---------------------- | ----------------------- | --------- |
+| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token     | Y         |
+| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N         |
 
 ### Examples:
 
-```sh
+```bash
 $ cd path/to/repo
 $ landr build
 
@@ -46,27 +43,26 @@ Generate great websites for your projects with zero configuration
 [landr] Site generated successfully
 ```
 
-`landr deploy [meta.json]`
---------------------------
+## `landr deploy [meta.json]`
 
 Run `landr build [meta.json]` on the current working directory and deploy the
 resulting files to Netlify. The content of `dist` are removed after deployment.
 
-| Arguments | Description | Optional? | Default |
-|-----------|-------------|-----------|---------|
-| `[meta.json]` | Path to `meta.json` | Y | `$PWD/meta.json` |
+| Arguments     | Description         | Optional? | Default          |
+| ------------- | ------------------- | --------- | ---------------- |
+| `[meta.json]` | Path to `meta.json` | Y         | `$PWD/meta.json` |
 
 This command supports the following environment variables:
 
-| Name | Description | Optional? |
-|-----------|-------------|-----------|
-| `NETLIFY_AUTH_TOKEN` | You Netlify token | N |
-| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token | Y |
-| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N |
+| Name                   | Description             | Optional? |
+| ---------------------- | ----------------------- | --------- |
+| `NETLIFY_AUTH_TOKEN`   | You Netlify token       | N         |
+| `LANDR_MIXPANEL_TOKEN` | Your Mixpanel token     | Y         |
+| `LANDR_MIXPANEL_PROXY` | Your Mixpanel proxy URL | N         |
 
 ### Examples:
 
-```sh
+```bash
 $ cd path/to/repo
 $ landr deploy
 

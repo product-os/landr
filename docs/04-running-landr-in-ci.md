@@ -1,13 +1,11 @@
-Running in CI
-=============
+# Running in CI
 
 The Landr project makes use of [Netlify](https://www.netlify.com) to deploy the
 generated website. For this reason, you will need to generate a Netlify
-*Personal Access Token* and set it as an environment variable called
+_Personal Access Token_ and set it as an environment variable called
 `NETLIFY_AUTH_TOKEN`.
 
-Generating a Netlify Access Token
----------------------------------
+## Generating a Netlify Access Token
 
 Login to your Netlify account and head over to the [`Application` tab in the
 `User Settings` page](https://app.netlify.com/user/applications). Once there,

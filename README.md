@@ -1,64 +1,59 @@
 <p align="center">
-	<img src="./banner.png" height="160" />
+	<img src="./landr.svg" height="160" />
 </p>
 
-[![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md)
+**Generate great websites for your projects with zero configuration.**
 
-Generate great websites for your projects with zero configuration.
+<!-- [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md) -->
 
 **Landr is alpha software** and its under heavy development, so various things
-might be broken in the best case!
+might be broken in the best case! We warmly welcome [new, detailed issues](https://github.com/product-os/landr/issues) and [contributions](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md) to help us improve Landr.
 
-Highlights
-----------
+## Highlights
 
-- **Functional Websites**: Landr renders your project and its documentation in
-  a gorgeous and UX friendly way to your end users, in the best possible way
-  while you focus on shipping features
+- **Fast, functional Websites**: Landr renders your project and its documentation in
+  a gorgeous and UX-friendly way to your end users, so you can focus on shipping features.
 - **Follows OSS Conventions**: Landr understands most common repository
-  conventions, and makes use of them fully. Build a great repository and get a
-  great website for it. Its a win-win
-- **Fully Automatic**: Landr requires no configuration at all. It is smart
+  conventions, and fully makes use of them. Build a great repository and get a
+  great website for it: its a win-win!
+- **Fully Automatic**: Landr requires zero configuration. It's smart
   enough to figure out what it needs on its own. Point it to a repository, hold
-  tight, and let Landr do its magic
+  tight, and let Landr do its magic.
 
-Installation
-------------
+## Installation
 
 1. Install the Landr CLI:
 
-    ```
-    npm install --global landr
-    ```
+```bash
+npm install --global landr
+```
 
 2. Go to a Balena CI powered repo:
 
-    ```
-    cd path/to/repository
-    ```
+```bash
+cd path/to/repository
+```
 
 3. Generate your website:
 
-    ```
-    landr
-    ```
+```bash
+landr
+```
 
 [Head over to our docs!](https://github.com/balena-io/landr/tree/master/docs)
 
-Motivation
-----------
+## Motivation
 
-Creating a website for a project is hard and time-consuming. Yet, a great
-website is one of the best ways to promote a project. Landr aims to capture our
-experience presenting a wide variety of open source projects on the web, so
-that having a website that can compete with your favourite massively popular
-open source project is not only possible, but comes with zero overhead.
+Creating a website for a project can be hard and time-consuming. Landr aims to simplify how developers can quickly create usable, beautiful websites to share their projects with the world. It does so with open source standards in mind and with zero overhead.
 
-# Usage
-<!-- usage -->
-```sh-session
+Build a great, well-structured project and let Landr build you a great site.
+
+### Usage
+
+
+```bash
 $ npm install -g landr
 $ landr COMMAND
 running command...
@@ -67,21 +62,21 @@ landr/6.16.0 darwin-x64 node-v12.18.3
 $ landr --help [COMMAND]
 USAGE
   $ landr COMMAND
-...
 ```
-<!-- usagestop -->
 
-# Commands
-<!-- commands -->
-* [`landr build`](#landr-build)
-* [`landr help [COMMAND]`](#landr-help-command)
-* [`landr meta`](#landr-meta)
 
-## `landr build`
+#### Commands
+
+
+- [`landr build`](#landr-build)
+- [`landr help [COMMAND]`](#landr-help-command)
+- [`landr meta`](#landr-meta)
+
+##### `landr build`
 
 Build a static site using landr
 
-```
+```bash
 USAGE
   $ landr build
 
@@ -105,11 +100,11 @@ DESCRIPTION
 
 _See code: [lib/cli/commands/build.js](https://github.com/balena-io/landr/blob/v6.16.0/lib/cli/commands/build.js)_
 
-## `landr help [COMMAND]`
+##### `landr help [COMMAND]`
 
 display help for landr
 
-```
+```bash
 USAGE
   $ landr help [COMMAND]
 
@@ -122,11 +117,11 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
 
-## `landr meta`
+##### `landr meta`
 
 Generate a meta file
 
-```
+```bash
 USAGE
   $ landr meta
 
@@ -138,24 +133,21 @@ DESCRIPTION
 ```
 
 _See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v6.16.0/lib/cli/commands/meta.js)_
-<!-- commandsstop -->
 
-Getting Help
-------------
+
+## Getting Help
 
 If you're having any problem, please [raise an
 issue](https://github.com/balena-io/landr/issues/new) on GitHub and the Landr
 team will be happy to help.
 
-Contributing
-------------
+## Contributing
 
 Do you want to help make Landr better? Take a look at our [Contributing
 Guide](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md). Hope to
 see you around!
 
-License
--------
+## License
 
 Landr is free software, and may be redistributed under the terms specified in
 the [license](https://github.com/balena-io/landr/blob/master/LICENSE).
