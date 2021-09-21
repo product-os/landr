@@ -1,4 +1,17 @@
 - commits:
+    - subject: Use toc generated from scrutinizer and link headings
+      hash: 9577adde05c7459ccc0e419352df33f7ce04f9e0
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.19.0
+  date: 2021-09-21T11:46:01.036Z
+- commits:
     - subject: Fetch repo urls from github backend
       hash: 6d36ac19752f9c5152ec5e41d308af7a432d3a59
       body: ''
