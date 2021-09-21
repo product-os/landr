@@ -18,18 +18,21 @@ const markdown = require('markdown').markdown
 const _ = require('lodash')
 
 const parseMarkdown = ({
-  filename, contents
+  filename, contents, tableOfContent
 }) => {
   const rawData = _.tail(markdown.parse(contents))
 
   return {
     filename,
+    tableOfContent,
     mime: 'text/markdown',
 
     // eslint-disable-next-line lodash/matches-shorthand
-    title: _.last(_.find(rawData, (node) => {
-      return node[0] === 'header' && node[1].level === 1
-    })
+    title: _.last(
+      // eslint-disable-next-line lodash/matches-shorthand
+      _.find(rawData, (node) => {
+        return node[0] === 'header' && node[1].level === 1
+      })
     ),
 
     data: {
@@ -118,22 +121,30 @@ exports.run = (scrutinizerData) => {
       faq,
 
       contributing: {
-        architecture: architecture ? parseMarkdown({
-          filename: 'ARCHITECTURE.md',
-          contents: architecture
-        }) : null,
-        guide: contributing ? parseMarkdown({
-          filename: 'CONTRIBUTING.md',
-          contents: contributing
-        }) : null,
-        codeOfConduct: codeOfConduct ? parseMarkdown({
-          filename: 'CODE_OF_CONDUCT.md',
-          contents: codeOfConduct
-        }) : null,
-        security: security ? parseMarkdown({
-          filename: 'SECURITY.md',
-          contents: security
-        }) : null
+        architecture: architecture
+          ? parseMarkdown({
+            filename: 'ARCHITECTURE.md',
+            contents: architecture
+          })
+          : null,
+        guide: contributing
+          ? parseMarkdown({
+            filename: 'CONTRIBUTING.md',
+            contents: contributing
+          })
+          : null,
+        codeOfConduct: codeOfConduct
+          ? parseMarkdown({
+            filename: 'CODE_OF_CONDUCT.md',
+            contents: codeOfConduct
+          })
+          : null,
+        security: security
+          ? parseMarkdown({
+            filename: 'SECURITY.md',
+            contents: security
+          })
+          : null
       },
       motivation,
       introduction,
@@ -152,11 +163,12 @@ exports.run = (scrutinizerData) => {
       isCli: false,
 
       blog: _.map(blog, ({
-        filename, contents
+        filename, contents, tableOfContent
       }) => {
         return parseMarkdown({
           filename,
-          contents
+          contents,
+          tableOfContent
         })
       }),
 
@@ -164,10 +176,12 @@ exports.run = (scrutinizerData) => {
         latest: version,
         tags: {
           [version]: _.map(docs, ({
-            filename, contents
+            filename, contents, tableOfContent
           }) => {
             return parseMarkdown({
-              filename, contents
+              filename,
+              contents,
+              tableOfContent
             })
           })
         }
@@ -182,7 +196,8 @@ exports.run = (scrutinizerData) => {
           type: owner.type,
           name: owner.handle,
           // eslint-disable-next-line max-len
-          description: 'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
+          description:
+            'Balena brings the benefits of Linux containers to the IoT. Develop iteratively, deploy safely, and manage at scale.',
           url: owner.url,
           email: 'hello@balena.io',
           avatar: owner.avatar
@@ -192,7 +207,8 @@ exports.run = (scrutinizerData) => {
       contributors: contributors
         .filter((contributor) => {
           return !contributor.username.endsWith('[bot]')
-        }).sort((contributorA, contributorB) => {
+        })
+        .sort((contributorA, contributorB) => {
           return contributorB.contributions - contributorA.contributions
         }),
       releases: {

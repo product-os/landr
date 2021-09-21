@@ -1,5 +1,4 @@
 import React from 'react'
-import _ from 'lodash'
 import {
   Box, Heading, Link
 } from 'rendition'
@@ -10,33 +9,14 @@ import {
   HashLink
 } from 'react-router-hash-link'
 
-const normalizeTitle = (str) => {
-  let title = str
-
-  // The header contains some extra formatting like inline code
-  if (_.isArray(title)) {
-    title = _.last(title)
-  }
-
-  return title.split('`').join('')
-}
-
 const Toc = (props) => {
   return props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
 
-    const sections = page.sections
-      ? page.sections
-        .filter((section) => {
-          return section[1].level === 2
-        })
-        .map((entry) => {
-          const title = normalizeTitle(entry[2])
-          return {
-            title,
-            path: `#${_.kebabCase(title)}`
-          }
-        })
+    const headings = page.tableOfContent
+      ? page.tableOfContent.filter((heading) => {
+        return heading.depth !== 2
+      })
       : []
 
     return (
@@ -47,17 +27,17 @@ const Toc = (props) => {
           </Link>
         </Heading.h4>
 
-        {sections.map((section) => {
+        {headings.map((heading) => {
           return (
-            <Box key={section.path}>
+            <Box key={heading.id}>
               <Link
                 fontSize={1}
                 pl={2}
                 color="text.main"
                 is={HashLink}
-                to={`${url}${section.path}`}
+                to={`${url}#${heading.id}`}
               >
-                {section.title}
+                {heading.title}
               </Link>
             </Box>
           )

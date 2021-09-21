@@ -1,7 +1,7 @@
 FROM balena/open-balena-base:no-systemd-master
 
 # Install dependencies required to run puppeteer
-RUN install_packages \
+RUN install_packages -f \
 gconf-service \
 libasound2 \
 libatk1.0-0 \
@@ -35,7 +35,7 @@ libxss1 \
 libxtst6 \
 ca-certificates \
 fonts-liberation \
-libappindicator1 \
+libgbm1 \
 libnss3 \
 lsb-release \
 xdg-utils \

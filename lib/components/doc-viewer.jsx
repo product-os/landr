@@ -106,7 +106,7 @@ export const render = (props) => {
                 {props.author}
               </p>
             )}
-            <Markdown>{props.content.markdown}</Markdown>
+            <Markdown sanitizerOptions={null}>{props.content.markdown}</Markdown>
           </Box>
         </Flex>
       </Container>
