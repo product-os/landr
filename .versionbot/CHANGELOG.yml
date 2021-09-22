@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix probot scrutinizer imports
+      hash: 017bb73707d152c9c6cfe58bd5b6f69344be0d6d
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.22.0
+  date: 2021-09-22T03:22:21.215Z
+- commits:
     - subject: Landrify landr
       hash: 02b15b76bf16f6df8bea651ca7700a96a45dfcc6
       body: ''
