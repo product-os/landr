@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix scrutinizer plugin import
+      hash: ba5a39f9c0745f2423d72d6a9640bf6f7fb9deaa
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.22.1
+  date: 2021-09-22T13:27:34.341Z
+- commits:
     - subject: Fix probot scrutinizer imports
       hash: 017bb73707d152c9c6cfe58bd5b6f69344be0d6d
       body: ''
