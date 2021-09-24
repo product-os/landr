@@ -136,6 +136,7 @@
     "smee-client": "^1.1.0",
     "styled-components": "^5.2.1",
     "tmp": "^0.1.0",
+    "null-loader": "^4.0.1",
     "typed-errors": "^1.1.0",
     "uuid": "^7.0.3"
   },
