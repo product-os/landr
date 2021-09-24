@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update FAQ
+      hash: 942b444790e89ae919608315b2b4f36d2e107d3b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.22.3
+  date: 2021-09-24T14:51:32.538Z
+- commits:
     - subject: Fix xterm self reference
       hash: d9bc43d1e90bd618b8a7519d929efc7c32704ed8
       body: ''
