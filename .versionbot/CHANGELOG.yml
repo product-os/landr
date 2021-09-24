@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix xterm self reference
+      hash: d9bc43d1e90bd618b8a7519d929efc7c32704ed8
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.22.2
+  date: 2021-09-24T13:55:21.096Z
+- commits:
     - subject: Fix scrutinizer plugin import
       hash: ba5a39f9c0745f2423d72d6a9640bf6f7fb9deaa
       body: ''
