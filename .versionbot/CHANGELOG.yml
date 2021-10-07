@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update scrutinizer package
+      hash: 60e2bd3a9c085d1a8e61a0c60de90ef42078c1ba
+      body: ''
+      footer:
+        Change-type: Patch
+        change-type: Patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.24.1
+  date: 2021-10-07T12:47:58.649Z
+- commits:
     - subject: Check if org logo exists before calling base64
       hash: f7bd6e855d74a4312eb63c9ffaf0c3f6cb77528c
       body: ''
