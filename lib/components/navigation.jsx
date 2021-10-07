@@ -56,10 +56,18 @@ export const variants = (metadata, _context, _route, routes) => {
     }
   }
 
-  if ((metadata.data.images.banner || metadata.data.github.owner.logo.base64) && metadata.data.links.repository) {
+  if (
+    (metadata.data.images.banner ||
+      (metadata.data.github.owner.logo &&
+        metadata.data.github.owner.logo.base64)) &&
+    metadata.data.links.repository
+  ) {
     combinations.push({
       name: metadata.data.name,
-      logo: metadata.data.images.banner || metadata.data.github.owner.logo.base64,
+      logo:
+        metadata.data.images.banner ||
+        (metadata.data.github.owner.logo &&
+          metadata.data.github.owner.logo.base64),
       routes: toplevelRoutes,
       githubUrl: metadata.data.links.repository
     })
@@ -114,7 +122,8 @@ const Navigation = (props) => {
         is={Link}
         px={3}
         style={{
-          fontSize: '14px', fontWeight: 600
+          fontSize: '14px',
+          fontWeight: 600
         }}
         to={route.url}
         aria-labelledby={route.name}

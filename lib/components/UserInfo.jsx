@@ -211,19 +211,27 @@ export const render = (props, _analytics, config) => {
           )}
         </Box>
       </Box>
-      <Box marginTop="-172px" style={{
-        zIndex: 1
-      }}>
+      <Box
+        marginTop="-172px"
+        style={{
+          zIndex: 1
+        }}
+      >
         <Container>
           <Flex justifyContent="space-between">
             <Flex width={380} flexDirection="column">
               <AvatarBox>
-                <Img
-                  src={props.userDetails.data.profile_photo.base64}
-                  style={{
-                    width: 380
-                  }}
-                />
+                {props.userDetails.data.profile_photo && (
+                  <Img
+                    src={
+                      props.userDetails.data.profile_photo &&
+                      props.userDetails.data.profile_photo.base64
+                    }
+                    style={{
+                      width: 380
+                    }}
+                  />
+                )}
               </AvatarBox>
               <Flex flexDirection="column">
                 <Heading.h3
