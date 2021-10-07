@@ -1,4 +1,17 @@
 - commits:
+    - subject: Darken Color of hardproblem in user profile
+      hash: 2a9e4faa15c7d8e322230f9dbae06bb3363b56c8
+      body: ''
+      footer:
+        Change-type: Patch
+        change-type: Patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.24.3
+  date: 2021-10-07T15:05:49.448Z
+- commits:
     - subject: Fix basepath selection
       hash: 8b8b72fb844de0e7b8a9bbb9b5cda21058f3d87f
       body: ''
