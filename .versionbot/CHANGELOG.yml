@@ -1,4 +1,17 @@
 - commits:
+    - subject: Check if org logo exists before calling base64
+      hash: f7bd6e855d74a4312eb63c9ffaf0c3f6cb77528c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.24.0
+  date: 2021-10-07T12:26:58.876Z
+- commits:
     - subject: Read org file
       hash: 8c6509f5065844f473708603ec7b7e18248bfd81
       body: ''
