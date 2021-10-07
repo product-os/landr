@@ -100,6 +100,7 @@
     "@react-google-maps/api": "^1.13.0",
     "bluebird": "^3.7.2",
     "chalk": "^2.4.2",
+    "color": "^4.0.1",
     "date-fns": "^2.0.1",
     "file-type": "^12.0.1",
     "generatorics": "^1.1.0",
