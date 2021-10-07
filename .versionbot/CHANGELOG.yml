@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add support for human pages
+      hash: ab101cb256713f6ea2c87675c3e07e330502cd04
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.23.0
+  date: 2021-10-07T09:43:48.754Z
+- commits:
     - subject: Update FAQ
       hash: 942b444790e89ae919608315b2b4f36d2e107d3b
       body: ''
