@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix basepath selection
+      hash: 8b8b72fb844de0e7b8a9bbb9b5cda21058f3d87f
+      body: ''
+      footer:
+        Change-type: Patch
+        change-type: Patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.24.2
+  date: 2021-10-07T14:12:12.818Z
+- commits:
     - subject: Update scrutinizer package
       hash: 60e2bd3a9c085d1a8e61a0c60de90ef42078c1ba
       body: ''
