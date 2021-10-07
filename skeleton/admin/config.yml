@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: {{metadata.data.github.owner.handle}}/{{metadata.slug}}
+  branch: master
+  commit_messages:
+    create: >
+      Create \{{collection}} "\{{slug}}"
+
+
+      Change-type: patch
+    update: >
+      Update \{{collection}} "\{{slug}}"
+
+      Change-type: patch
+    delete: >
+      Delete \{{collection}} "\{{slug}}"
+
+
+      Change-type: patch
+    uploadMedia: >
+      [skip ci] Upload "\{{path}}"
+
+
+      Change-type: patch
+    deleteMedia: >
+      [skip ci] Delete "\{{path}}"
+
+
+      Change-type: patch
+
+publish_mode: editorial_workflow
+local_backend: true
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: "post"
+    label: "Blog post"
+    folder: "blog"
+    create: true
+    slug: "\{{year}}-\{{month}}-\{{day}}-\{{slug}}"
+    sortable_fields: ["published_at", "title"]
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          hint: "Date of creation",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }

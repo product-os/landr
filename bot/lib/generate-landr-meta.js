@@ -84,7 +84,10 @@ exports.run = (scrutinizerData) => {
     security,
     softwareRequired,
     stars,
-    version
+    balena,
+    version,
+    orgLogoFull,
+    orgLogoBrandmark
   } = scrutinizerData
 
   const data = {
@@ -158,9 +161,11 @@ exports.run = (scrutinizerData) => {
       screenshot,
       installation: installationSteps,
       logoBrandMark,
+      balena,
 
       // TODO autodetect if the project is a CLI tool in scrutinizer
       isCli: false,
+      isHumanRepo: balena && balena.yml && balena.yml.type === 'human',
 
       blog: _.map(blog, ({
         filename, contents, tableOfContent
@@ -192,6 +197,8 @@ exports.run = (scrutinizerData) => {
         fork,
         stars,
         owner: {
+          logo: orgLogoFull,
+          logoBrandmark: orgLogoBrandmark,
           handle: owner.handle,
           type: owner.type,
           name: owner.handle,

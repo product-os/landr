@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Landr blog cms </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="/admin/cms.css" />
+    <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+      var DocumentPreview = createClass({
+        render: function () {
+          var entry = this.props.entry;
+          var image = entry.getIn(["data", "image"]);
+          var imageContainer = image
+            ? h("section", {
+                className: "mdc-card__media",
+                style: { backgroundImage: `url(${image})`, height: "20rem" },
+              })
+            : h("div");
+          return h(
+            "div",
+            {},
+            h(
+              "div",
+              { className: "mdc-card" },
+              imageContainer,
+              h(
+                "div",
+                { className: "mdc-card__primary" },
+                h(
+                  "h1",
+                  { className: " mdc-card__title mdc-card__title--large" },
+                  h(
+                    "span",
+                    { className: " mdc-card__title mdc-card__title--large" },
+                    entry.getIn(["data", "title"])
+                  )
+                )
+              ),
+              h(
+                "div",
+                { className: "mdc-card__supporting-text" },
+                h("div", { className: "text" }, this.props.widgetFor("body"))
+              )
+            )
+          );
+        },
+      });
+
+      CMS.registerPreviewTemplate("docs", DocumentPreview);
+      CMS.registerPreviewStyle("/admin/site.css");
+      CMS.registerEditorComponent({
+        id: "youtube",
+        label: "Youtube",
+        fields: [{ name: "id", label: "Youtube Video ID" }],
+        pattern: /^{{<\s?youtube (\S+)\s?>}}/,
+        fromBlock: function (match) {
+          return {
+            id: match[1],
+          };
+        },
+        toBlock: function (obj) {
+          return "{{< youtube " + obj.id + " >}}";
+        },
+        toPreview: function (obj) {
+          return (
+            '<img src="http://img.youtube.com/vi/' +
+            obj.id +
+            '/maxresdefault.jpg" alt="Youtube Video"/>'
+          );
+        },
+      });
+    </script>
+  </body>
+</html>

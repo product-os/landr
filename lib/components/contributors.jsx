@@ -36,6 +36,10 @@ export const name = 'Contributors'
 export const variants = (metadata, _context, route) => {
   const combinations = []
 
+  if (metadata.data.isHumanRepo) {
+    return []
+  }
+
   if (
     size(metadata.data.contributors) > 36 &&
     route.path.length === 0 &&
@@ -46,16 +50,15 @@ export const variants = (metadata, _context, route) => {
     })
   }
 
-  if (
-    metadata.data.contributors &&
-    metadata.data.links.repository
-  ) {
+  if (metadata.data.contributors && metadata.data.links.repository) {
     combinations.push({
       name: metadata.data.name,
       contributors: metadata.data.contributors,
       repository: metadata.data.links.repository,
       contributing: metadata.data.contributing.guide
-        ? `${metadata.data.links.repository.replace('.git', '')}/blob/master/${metadata.data.contributing.guide.filename}`
+        ? `${metadata.data.links.repository.replace('.git', '')}/blob/master/${
+          metadata.data.contributing.guide.filename
+        }`
         : null
     })
   }
@@ -68,7 +71,7 @@ const GITHUB_PROFILE_PATH = 'https://github.com'
 const ContributorsPageRedirect = () => {
   return (
     <Link ml={2} href="/contributors">
-    many awesome people!
+      many awesome people!
     </Link>
   )
 }
@@ -96,32 +99,31 @@ const Contributors = (props) => {
   if (!props.minimalView) {
     contributors = contributors.slice(0, 10)
   }
-  const list = contributors
-    .map((contributor) => {
-      return (
-        <Box key={contributor.username} px={2}>
-          <Link
-            href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
-            tooltip={contributor.username}
-            blank
-          >
-            <Img
-              src={contributor.avatar}
-              style={{
-                height: '80px',
-                borderRadius: 6
-              }}
-            />
-          </Link>
-        </Box>
-      )
-    })
+  const list = contributors.map((contributor) => {
+    return (
+      <Box key={contributor.username} px={2}>
+        <Link
+          href={`${GITHUB_PROFILE_PATH}/${contributor.username}`}
+          tooltip={contributor.username}
+          blank
+        >
+          <Img
+            src={contributor.avatar}
+            style={{
+              height: '80px',
+              borderRadius: 6
+            }}
+          />
+        </Link>
+      </Box>
+    )
+  })
 
   const CTA = props.repository ? (
     <Box>
       <Txt>
-        Help {props.name} thrive, by reporting bugs, contributing code or improving the
-        docs.
+        Help {props.name} thrive, by reporting bugs, contributing code or
+        improving the docs.
       </Txt>
       <Txt>
         Jump in and get your hands dirty with some selected{' '}
@@ -146,8 +148,11 @@ const Contributors = (props) => {
       <Container textAlign="center">
         <Heading.h2 fontSize={34} mb={30} align="center">
           <Flex alignItems="center" justifyContent="center">
-            Made with <Txt mx={2} ><HeartIcon /></Txt> by{' '}
-            {props.minimalView && <ContributorsPageRedirect />}
+            Made with{' '}
+            <Txt mx={2}>
+              <HeartIcon />
+            </Txt>{' '}
+            by {props.minimalView && <ContributorsPageRedirect />}
           </Flex>
         </Heading.h2>
         {!props.minimalView && (
@@ -159,8 +164,9 @@ const Contributors = (props) => {
                   <Link href={props.contributing} blank>
                     {ContributePlaceholder}
                   </Link>
-                ) : ContributePlaceholder
-                }
+                ) : (
+                  ContributePlaceholder
+                )}
               </Box>
             </Flex>
             {CTA}

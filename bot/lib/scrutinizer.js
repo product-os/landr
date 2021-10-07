@@ -44,7 +44,9 @@ const BUILTIN_PLUGINS = [
   require('scrutinizer/build/lib/plugins/screenshot').default,
   require('scrutinizer/build/lib/plugins/logo').default,
   require('scrutinizer/build/lib/plugins/logo-brandmark').default,
-  require('scrutinizer/build/lib/plugins/deployButtons').default
+  require('scrutinizer/build/lib/plugins/deployButtons').default,
+  require('scrutinizer/build/lib/plugins/org-logos').default,
+  require('scrutinizer/build/lib/plugins/balena').default
 ]
 
 const examineGitRepository = (context, options) => {
