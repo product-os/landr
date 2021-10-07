@@ -20,6 +20,23 @@ const fromNow = require('fromnow')
 const packageJSON = require('../../package.json')
 const debug = require('debug')(`${packageJSON.name}:backends:github`)
 
+const imageFileExtensions = [
+  'apng',
+  'png',
+  'webp',
+  'ico',
+  'cur',
+  'jpg',
+  'jpeg',
+  'jfif',
+  'pjpeg',
+  'pjp',
+  'bmp',
+  'svg',
+  'tiff',
+  'tif'
+]
+
 /**
  * @summary Log GitHub rate-limiting information
  * @function
@@ -127,6 +144,45 @@ module.exports = class GitHubBackend {
 
         throw error
       })
+  }
+
+  async readOrgFile (file) {
+    try {
+      const results = await this.github.repos.getContents({
+        owner: this.owner,
+        repo: this.owner,
+        path: file,
+        ref: this.reference
+      })
+      logGitHubRateLimitingInformation(results.headers)
+      if (!(results.data instanceof Array)) {
+        if (results.data.type === 'file') {
+          const buffer = Buffer.from(
+            results.data.content,
+            results.data.encoding
+          )
+
+          if (
+            results.data.encoding === 'base64' &&
+            imageFileExtensions.includes(
+              results.data.name.split('.').reverse()[0]
+            )
+          ) {
+            return buffer.toString('base64')
+          }
+
+          return buffer.toString()
+        }
+      }
+      throw new Error(`Can't handle response: ${results.data}`)
+    } catch (error) {
+      logGitHubRateLimitingInformation(error.response.headers)
+      if (error.status === 404) {
+        return null
+      }
+
+      throw error
+    }
   }
 
   /**
