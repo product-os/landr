@@ -56,10 +56,10 @@ export const variants = (metadata, _context, _route, routes) => {
     }
   }
 
-  if (metadata.data.images.banner && metadata.data.links.repository) {
+  if ((metadata.data.images.banner || metadata.data.github.owner.logo.base64) && metadata.data.links.repository) {
     combinations.push({
       name: metadata.data.name,
-      logo: metadata.data.images.banner,
+      logo: metadata.data.images.banner || metadata.data.github.owner.logo.base64,
       routes: toplevelRoutes,
       githubUrl: metadata.data.links.repository
     })

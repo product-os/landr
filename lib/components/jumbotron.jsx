@@ -40,6 +40,8 @@ export const name = 'Jumbotron'
 export const variants = (metadata, _context, _route, routes) => {
   const combinations = []
 
+  if (metadata.data.isHumanRepo) return []
+
   const latestDocsVersion = metadata.data.docs.latest
   const entrypoint = get(metadata, [
     'data',
