@@ -1,4 +1,17 @@
 - commits:
+    - subject: Read org file
+      hash: 8c6509f5065844f473708603ec7b7e18248bfd81
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.23.1
+  date: 2021-10-07T11:02:40.520Z
+- commits:
     - subject: Add support for human pages
       hash: ab101cb256713f6ea2c87675c3e07e330502cd04
       body: ''
