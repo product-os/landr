@@ -16,7 +16,7 @@
 
 import React from 'react'
 import {
-  Box, Container, Divider, Flex, Heading, Img, Txt
+  Box, Container, Divider, Flex, Heading, Img, Txt, useTheme
 } from 'rendition'
 import styled from 'styled-components'
 import hexToRgba from 'hex-to-rgba'
@@ -34,6 +34,7 @@ import {
   faFlagCheckered,
   faFootballBall
 } from '@fortawesome/free-solid-svg-icons'
+import color from 'color'
 
 // Coordinates of Seattle, avoid having the map centered in the middle of the sea
 const DEFAULT_LATLNG = {
@@ -160,6 +161,8 @@ export const variants = (metadata) => {
 export const name = 'UserInfo'
 
 export const render = (props, _analytics, config) => {
+  const theme = useTheme()
+  const darkerPrimaryColor = color(theme.colors.primary.main).darken(0.1).hex()
   const {
     envVars: {
       googleMapsKey: apiKey
@@ -247,7 +250,7 @@ export const render = (props, _analytics, config) => {
                 <Txt fontSize="14px" pb={3} color="text.light">
                   @{props.userDetails.handle}
                 </Txt>
-                <Txt fontSize="20px" py={1} color="primary.main">
+                <Txt fontSize="20px" bold italic py={1} color={darkerPrimaryColor}>
                   {props.userDetails.data.hard_problem}
                 </Txt>
                 <Txt fontSize="14px">My hard problem to solve at balena</Txt>
