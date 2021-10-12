@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'Rename current-state, target-state to haves and wants'
+      hash: a842b118a55b3a61b6fbfb0847034924a6107aac
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.25.0
+  date: 2021-10-12T14:51:45.944Z
+- commits:
     - subject: Darken Color of hardproblem in user profile
       hash: 2a9e4faa15c7d8e322230f9dbae06bb3363b56c8
       body: ''
