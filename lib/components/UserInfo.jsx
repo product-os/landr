@@ -274,7 +274,7 @@ export const render = (props, _analytics, config) => {
                     </Txt.span>
                     Pronouns
                   </Txt>
-                  <Txt>{props.userDetails.data.pronouns.join('/')}</Txt>
+                  <Txt>{props.userDetails.data.pronouns && props.userDetails.data.pronouns.join('/')}</Txt>
                 </Box>
                 <Box width={1 / 3}>
                   <Txt bold>
@@ -298,7 +298,7 @@ export const render = (props, _analytics, config) => {
                   </Txt>
                 </Box>
                 <Flex flexWrap="wrap">
-                  {props.userDetails.data['current-state'].map(
+                  {props.userDetails.data.haves.map(
                     (currentSkill) => {
                       return (
                         <Box width={1 / 3} key={currentSkill}>
@@ -322,7 +322,7 @@ export const render = (props, _analytics, config) => {
                   </Txt>
                 </Box>
                 <Flex flexWrap="wrap">
-                  {props.userDetails.data['target-state'].map(
+                  {props.userDetails.data.wants.map(
                     (currentSkill) => {
                       return (
                         <Box width={1 / 3} key={currentSkill}>
