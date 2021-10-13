@@ -47,7 +47,7 @@ const BUILTIN_PLUGINS = [
   require('scrutinizer/build/lib/plugins/deployButtons').default,
   require('scrutinizer/build/lib/plugins/org-logos').default,
   require('scrutinizer/build/lib/plugins/balena').default,
-  require('scrutinizer/build/lib/plugins/netlifyConfig').default
+  require('scrutinizer/build/lib/plugins/netlify').default
 ]
 
 const examineGitRepository = (context, options) => {
