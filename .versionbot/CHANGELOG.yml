@@ -1,4 +1,17 @@
 - commits:
+    - subject: fix build
+      hash: 2b646a1ff52dd380cc9921342493057e0aa35e50
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.29.0
+  date: 2021-10-13T17:24:08.637Z
+- commits:
     - subject: Copy netlify config to netlify.toml before deploy
       hash: b61ed6fc037984fb36e49f087ddbf740519d1a0a
       body: ''
