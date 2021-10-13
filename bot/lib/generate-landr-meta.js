@@ -76,6 +76,7 @@ exports.run = (scrutinizerData) => {
     tagline,
     setup,
     deployWithBalenaUrl,
+    netlifyConfig,
 
     // Public is a reserved keyword
     public: isPublic,
@@ -98,6 +99,7 @@ exports.run = (scrutinizerData) => {
     tags: [],
     links: {},
     active,
+    netlifyConfig,
     data: {
       license,
       name,
