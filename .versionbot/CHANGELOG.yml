@@ -1,4 +1,17 @@
 - commits:
+    - subject: Copy netlify config to netlify.toml before deploy
+      hash: bd4fdec4645c968a0ce474b6b20e17d155da0edb
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.26.0
+  date: 2021-10-13T15:09:58.606Z
+- commits:
     - subject: 'Rename current-state, target-state to haves and wants'
       hash: a842b118a55b3a61b6fbfb0847034924a6107aac
       body: ''
