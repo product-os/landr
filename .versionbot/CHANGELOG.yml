@@ -1,4 +1,17 @@
 - commits:
+    - subject: handle preview site deploy urls
+      hash: dc9b6037edc93a36685269c445cefebda1de708f
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.30.0
+  date: 2021-10-13T18:09:28.338Z
+- commits:
     - subject: fix build
       hash: 2b646a1ff52dd380cc9921342493057e0aa35e50
       body: ''
