@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update user info design
+      hash: dc4df1ce2d062a0bd471c29492100735ad9e4190
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.31.0
+  date: 2021-10-14T13:41:14.346Z
+- commits:
     - subject: Empty commit to trigger build
       hash: 81102fece2be997bae3a2a7eeb9257dbc87b2804
       body: ''
