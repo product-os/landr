@@ -88,7 +88,8 @@ exports.run = (scrutinizerData) => {
     balena,
     version,
     orgLogoFull,
-    orgLogoBrandmark
+    orgLogoBrandmark,
+    contract
   } = scrutinizerData
 
   const data = {
@@ -164,6 +165,7 @@ exports.run = (scrutinizerData) => {
       installation: installationSteps,
       logoBrandMark,
       balena,
+      contract,
 
       // TODO autodetect if the project is a CLI tool in scrutinizer
       isCli: false,
