@@ -1,4 +1,17 @@
 - commits:
+    - subject: Read contracts from a repo
+      hash: ddb604f8baf96430ef26a149446456a63a9c9cfa
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.31.1
+  date: 2021-10-14T16:06:29.261Z
+- commits:
     - subject: Update user info design
       hash: dc4df1ce2d062a0bd471c29492100735ad9e4190
       body: ''
