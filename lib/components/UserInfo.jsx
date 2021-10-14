@@ -16,7 +16,7 @@
 
 import React from 'react'
 import {
-  Box, Container, Divider, Flex, Heading, Img, Txt, useTheme
+  Box, Container, Divider, Flex, Heading, Img, Txt
 } from 'rendition'
 import styled from 'styled-components'
 import hexToRgba from 'hex-to-rgba'
@@ -34,7 +34,9 @@ import {
   faFlagCheckered,
   faFootballBall
 } from '@fortawesome/free-solid-svg-icons'
-import color from 'color'
+import {
+  BlockQuote
+} from './presentational/Blockquote'
 
 // Coordinates of Seattle, avoid having the map centered in the middle of the sea
 const DEFAULT_LATLNG = {
@@ -147,6 +149,27 @@ const AvatarBox = styled(Box) `
     return props.theme.colors.primary.main
   }};
 `
+const getNameImage = (name) => {
+  if (!name) return ''
+  const [ firstName, lastName ] = name.split(' ')
+
+  const firstChar = firstName.charAt(0)
+  let lastChar = ''
+
+  if (lastName) {
+    lastChar = lastName.charAt(0)
+  }
+  return `${firstChar.toUpperCase()}${lastChar}`
+}
+
+const NameAvatar = styled(Txt) `
+  width: 380px;
+  height: 380px;
+  font-size: 300px;
+  text-align: center;
+  background: white;
+`
+
 export const variants = (metadata) => {
   const combinations = []
 
@@ -161,8 +184,6 @@ export const variants = (metadata) => {
 export const name = 'UserInfo'
 
 export const render = (props, _analytics, config) => {
-  const theme = useTheme()
-  const darkerPrimaryColor = color(theme.colors.primary.main).darken(0.1).hex()
   const {
     envVars: {
       googleMapsKey: apiKey
@@ -221,19 +242,20 @@ export const render = (props, _analytics, config) => {
         }}
       >
         <Container>
-          <Flex justifyContent="space-between">
+          <Flex>
             <Flex width={380} flexDirection="column">
               <AvatarBox>
-                {props.userDetails.data.profile_photo && (
+                {props.userDetails.data.profile_photo ? (
                   <Img
-                    src={
-                      props.userDetails.data.profile_photo &&
-                      props.userDetails.data.profile_photo.base64
-                    }
+                    src={props.userDetails.data.profile_photo.base64}
                     style={{
                       width: 380
                     }}
                   />
+                ) : (
+                  <NameAvatar>
+                    {getNameImage(props.userDetails.data.name)}
+                  </NameAvatar>
                 )}
               </AvatarBox>
               <Flex flexDirection="column">
@@ -250,13 +272,20 @@ export const render = (props, _analytics, config) => {
                 <Txt fontSize="14px" pb={3} color="text.light">
                   @{props.userDetails.handle}
                 </Txt>
-                <Txt fontSize="20px" bold italic py={1} color={darkerPrimaryColor}>
+                <BlockQuote py={1}>
                   {props.userDetails.data.hard_problem}
-                </Txt>
+                </BlockQuote>
                 <Txt fontSize="14px">My hard problem to solve at balena</Txt>
               </Flex>
             </Flex>
-            <Flex flexDirection="column" pt="245px" pl={5}>
+            <Flex
+              flexDirection="column"
+              pt="245px"
+              style={{
+                flex: 1
+              }}
+              pl={'100px'}
+            >
               <Flex align="center" justifyContent="space-between">
                 <Box width={1 / 3}>
                   <Txt bold>
@@ -274,7 +303,10 @@ export const render = (props, _analytics, config) => {
                     </Txt.span>
                     Pronouns
                   </Txt>
-                  <Txt>{props.userDetails.data.pronouns && props.userDetails.data.pronouns.join('/')}</Txt>
+                  <Txt>
+                    {props.userDetails.data.pronouns &&
+                      props.userDetails.data.pronouns.join('/')}
+                  </Txt>
                 </Box>
                 <Box width={1 / 3}>
                   <Txt bold>
@@ -294,12 +326,12 @@ export const render = (props, _analytics, config) => {
                     <Txt.span pr={2} color="primary.main">
                       <FontAwesomeIcon icon={faStar} />
                     </Txt.span>
-                    Current State
+                    Haves
                   </Txt>
                 </Box>
                 <Flex flexWrap="wrap">
-                  {props.userDetails.data.haves.map(
-                    (currentSkill) => {
+                  {props.userDetails.data.haves &&
+                    props.userDetails.data.haves.map((currentSkill) => {
                       return (
                         <Box width={1 / 3} key={currentSkill}>
                           <Txt>
@@ -307,8 +339,7 @@ export const render = (props, _analytics, config) => {
                           </Txt>
                         </Box>
                       )
-                    }
-                  )}
+                    })}
                 </Flex>
               </Flex>
               <Divider type="dashed" />
@@ -318,19 +349,20 @@ export const render = (props, _analytics, config) => {
                     <Txt.span pr={2} color="primary.main">
                       <FontAwesomeIcon icon={faFlagCheckered} />
                     </Txt.span>
-                    Target State
+                    Wants
                   </Txt>
                 </Box>
                 <Flex flexWrap="wrap">
-                  {props.userDetails.data.wants.map(
-                    (currentSkill) => {
+                  {props.userDetails.data.wants &&
+                    props.userDetails.data.wants.map((currentSkill) => {
                       return (
                         <Box width={1 / 3} key={currentSkill}>
-                          <Txt>{currentSkill}</Txt>
+                          <Txt>
+                            <li>{currentSkill}</li>
+                          </Txt>
                         </Box>
                       )
-                    }
-                  )}
+                    })}
                 </Flex>
               </Flex>
               <Divider type="dashed" />
@@ -346,7 +378,8 @@ export const render = (props, _analytics, config) => {
                 </Box>
                 <Txt.p>{props.userDetails.data.short_bio}</Txt.p>
                 <Txt.span fontSize={2} color="primary.dark" italic>
-                  {props.userDetails.data.interests.join(', ')}
+                  {props.userDetails.data.interests &&
+                    props.userDetails.data.interests.join(', ')}
                 </Txt.span>
               </Flex>
             </Flex>
