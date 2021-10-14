@@ -1,4 +1,17 @@
 - commits:
+    - subject: Log deploy url for debugging
+      hash: 3782abcd6fe8ea1624ca7efbbcd869cc3161e4b7
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.30.1
+  date: 2021-10-14T04:48:58.961Z
+- commits:
     - subject: handle preview site deploy urls
       hash: dc9b6037edc93a36685269c445cefebda1de708f
       body: ''
