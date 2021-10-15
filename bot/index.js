@@ -84,7 +84,7 @@ const build = async ({
   const scrutinizerData = await scrutinizer.remote(context, repository, {
     reference: branch
   })
-  const contract = metaGenerator.run(scrutinizerData)
+  const contract = await metaGenerator.run(scrutinizerData)
 
   const outputBase = path.resolve(process.cwd(), '.landr-store', owner, repo, branch)
   const outputDir = path.resolve(outputBase, 'dist')

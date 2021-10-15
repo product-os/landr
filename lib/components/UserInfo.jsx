@@ -21,9 +21,6 @@ import {
 import styled from 'styled-components'
 import hexToRgba from 'hex-to-rgba'
 import {
-  GoogleMap, LoadScript, Marker
-} from '@react-google-maps/api'
-import {
   FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
 import {
@@ -37,105 +34,9 @@ import {
 import {
   BlockQuote
 } from './presentational/Blockquote'
-
-// Coordinates of Seattle, avoid having the map centered in the middle of the sea
-const DEFAULT_LATLNG = {
-  lat: 47.6062,
-  lng: -122.3321
-}
-const DEFAULT_ZOOM_LEVEL = 3
-const DETAIL_ZOOM_LEVEL = 12
-
-const defaultMapOptions = {
-  controlSize: 32,
-  scrollwheel: false,
-  disableDefaultUI: true,
-  zoomControl: true,
-  mapTypeControl: true,
-  mapTypeControlOptions: {
-    mapTypeIds: [ 'roadmap', 'hybrid' ]
-  },
-  styles: [
-    {
-      elementType: 'all',
-      featureType: 'all',
-      stylers: [
-        {
-          saturation: -50
-        }
-      ]
-    },
-    {
-      elementType: 'all',
-      featureType: 'administrative.country',
-      stylers: [
-        {
-          gamma: 2
-        }
-      ]
-    },
-    {
-      elementType: 'all',
-      featureType: 'administrative.locality',
-      stylers: [
-        {
-          gamma: 1.5
-        }
-      ]
-    }
-  ]
-}
-
-// Return map bounds based on list of markers
-const getMapBounds = (markers) => {
-  // eslint-disable-next-line no-undef
-  const bounds = new google.maps.LatLngBounds()
-
-  markers.forEach((marker) => {
-    bounds.extend(
-      // eslint-disable-next-line no-undef
-      new google.maps.LatLng(
-        isNaN(marker.lat) ? 0 : marker.lat,
-        isNaN(marker.lng) ? 0 : marker.lng
-      )
-    )
-  })
-  return bounds
-}
-
-// Fit map to its bounds after the api is loaded
-const onGoogleMapsApiLoad = (map, markers) => {
-  if (markers.length) {
-    const bounds = getMapBounds(markers)
-    map.fitBounds(bounds)
-  } else {
-    map.setCenter(DEFAULT_LATLNG)
-    map.setZoom(DEFAULT_ZOOM_LEVEL)
-  }
-
-  // These options depend on the global "google" object, so we set it once the API has loaded.
-  map.setOptions({
-    zoomControlOptions: {
-      // eslint-disable-next-line no-undef
-      position: google.maps.ControlPosition.TOP_RIGHT,
-      // eslint-disable-next-line no-undef
-      style: google.maps.ZoomControlStyle.SMALL
-    }
-  })
-
-  // If we run `setZoom` right after `fitBounds` the map won't refresh.
-  // With this we first wait for the map to be idle (from fitBounds), and then set the zoom level.
-  // eslint-disable-next-line no-undef
-  const listener = google.maps.event.addListenerOnce(map, 'idle', () => {
-    // Don't allow to zoom closer than the defailt detail zoom level on initial load.
-    if (map.getZoom() > DETAIL_ZOOM_LEVEL) {
-      map.setZoom(DETAIL_ZOOM_LEVEL)
-    }
-
-    // eslint-disable-next-line no-undef
-    google.maps.event.removeListener(listener)
-  })
-}
+import {
+  Map
+} from './presentational/map'
 
 const AvatarBox = styled(Box) `
   width: 380px;
@@ -189,51 +90,19 @@ export const render = (props, _analytics, config) => {
       googleMapsKey: apiKey
     }
   } = config
-  const markers = [
-    {
-      lat: '',
-      lng: ''
-    }
-  ]
+
   return (
     <Flex flexDirection="column" width="100%">
       <Box bg="primary.main" height="375px" width="100%">
-        <Box height="100%">
-          {apiKey && (
-            <LoadScript
-              googleMapsApiKey={apiKey}
-              version="3.41"
-              language="en"
-              preventGoogleFontsLoading
-            >
-              <GoogleMap
-                mapContainerStyle={{
-                  height: '100%',
-                  minHeight: '300px',
-                  opacity: 1
-                }}
-                options={defaultMapOptions}
-                // eslint-disable-next-line react/jsx-no-bind
-                onLoad={(map) => {
-                  return onGoogleMapsApiLoad(map, markers)
-                }}
-              >
-                {markers.map((_, index) => {
-                  return (
-                    <Marker
-                      key={index}
-                      position={{
-                        lat: DEFAULT_LATLNG.lat,
-                        lng: DEFAULT_LATLNG.lng
-                      }}
-                      clickable={false}
-                    />
-                  )
-                })}
-              </GoogleMap>
-            </LoadScript>
-          )}
-        </Box>
+        <Map
+          apiKey={apiKey}
+          markers={[
+            {
+              lat: props.userDetails.data.lat,
+              lng: props.userDetails.data.lng
+            }
+          ]}
+        />
       </Box>
       <Box
         marginTop="-172px"
