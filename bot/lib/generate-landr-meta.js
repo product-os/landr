@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const NodeGeocoder = require('node-geocoder')
+
 const markdown = require('markdown').markdown
 const _ = require('lodash')
 
@@ -42,7 +44,27 @@ const parseMarkdown = ({
   }
 }
 
-exports.run = (scrutinizerData) => {
+const geocoder = NodeGeocoder({
+  provider: 'google',
+  apiKey: process.env.LANDR_GOOGLE_GEOCODE_KEY
+})
+
+const getLatLong = async ({
+  city, country
+}) => {
+  const [ {
+    latitude: lat, longitude: lng
+  } ] = await geocoder.geocode(
+    `${city}, ${country}`
+  )
+  return {
+    lat,
+    lng,
+    aye: 'captain'
+  }
+}
+
+exports.run = async (scrutinizerData) => {
   // Unused keys -> readme, lastCommitDate, dependencies
   const {
     active,
@@ -164,7 +186,20 @@ exports.run = (scrutinizerData) => {
       screenshot,
       installation: installationSteps,
       logoBrandMark,
-      balena,
+      balena: {
+        ...balena,
+        yml: balena.yml
+          ? {
+            ...balena.yml,
+            data: balena.yml.data
+              ? {
+                ...balena.yml.data,
+                ...(await getLatLong(balena.yml.data))
+              }
+              : {}
+          }
+          : null
+      },
       contract,
 
       // TODO autodetect if the project is a CLI tool in scrutinizer
