@@ -1,4 +1,17 @@
 - commits:
+    - subject: Force base64 on images
+      hash: 002db12482c0628a088e428c08590ad466a66af2
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.32.1
+  date: 2021-10-15T10:47:08.569Z
+- commits:
     - subject: Add basepath to internal link
       hash: a66490a1a9981fe0fd5a72da650d4e4af3fd8961
       body: ''
