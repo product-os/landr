@@ -1,4 +1,27 @@
 - commits:
+    - subject: 'Refactor map component, run geocoder on server'
+      hash: 5bab53e3d1fd851dd7c2c2d9b2abb9adc54dea14
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+    - subject: Add google maps theme and geo-encode the location
+      hash: 1c8404f0057bab15c35245fc6da7af1dcc11b322
+      body: ''
+      footer:
+        Change-Type: patch
+        change-type: patch
+        Signed-off-by: Nitish Agarwal 1592163+nitishagar@users.noreply.github.com
+        signed-off-by: Nitish Agarwal 1592163+nitishagar@users.noreply.github.com
+      author: Nitish Agarwal
+      nested: []
+  version: 6.33.0
+  date: 2021-10-15T11:06:09.729Z
+- commits:
     - subject: Force base64 on images
       hash: 002db12482c0628a088e428c08590ad466a66af2
       body: ''
