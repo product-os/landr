@@ -18,18 +18,10 @@ import React from 'react'
 import _ from 'lodash'
 import styled from 'styled-components'
 import {
-  Box,
-  Img,
-  Link as RLink,
-  Container,
-  Heading,
-  Flex,
-  useTheme
+  Box, Img, Container, Heading, Flex, useTheme
 } from 'rendition'
-import {
-  Link
-} from 'react-router-dom'
 import GithubBanner from './presentational/github-banner'
+import Link from './presentational/link'
 
 export const name = 'Navigation'
 
@@ -69,7 +61,9 @@ export const variants = (metadata, _context, _route, routes) => {
         (metadata.data.github.owner.logo &&
           metadata.data.github.owner.logo.base64),
       routes: toplevelRoutes,
-      githubUrl: metadata.data.links.repository
+      githubUrl: metadata.data.isHumanRepo
+        ? null
+        : metadata.data.links.repository
     })
   }
 
@@ -77,7 +71,9 @@ export const variants = (metadata, _context, _route, routes) => {
     combinations.push({
       name: metadata.data.name,
       routes: toplevelRoutes,
-      githubUrl: metadata.data.links.repository
+      githubUrl: metadata.data.isHumanRepo
+        ? null
+        : metadata.data.links.repository
     })
   }
 
@@ -114,23 +110,8 @@ const Navigation = (props) => {
     </Heading.h1>
   )
 
-  const links = props.routes.map((route, index) => {
-    return (
-      <RLink
-        color={theme.colors.text.main}
-        key={index}
-        is={Link}
-        px={3}
-        style={{
-          fontSize: '14px',
-          fontWeight: 600
-        }}
-        to={route.url}
-        aria-labelledby={route.name}
-      >
-        {route.name}
-      </RLink>
-    )
+  const links = props.routes.map((route) => {
+    return <Link key={route.name} url={route.url} text={route.name}></Link>
   })
 
   return (
@@ -143,9 +124,9 @@ const Navigation = (props) => {
             position: 'relative'
           }}
         >
-          <RLink color="white" is={Link} to={'/'}>
+          <Link color="white" url={'/'}>
             {Brand}
-          </RLink>
+          </Link>
           <Flex fontSize={2} mx={-2}>
             {links}
           </Flex>
