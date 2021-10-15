@@ -17,8 +17,18 @@
 import React from 'react'
 import _ from 'lodash'
 import {
-  Box, Img, Container, Flex, Link, Heading, Txt, useTheme
+  Box,
+  Img,
+  Container,
+  Flex,
+  Link,
+  Heading,
+  Txt,
+  useTheme
 } from 'rendition'
+import {
+  useBasepath
+} from 'react-static'
 
 export const name = 'Footer'
 
@@ -67,8 +77,9 @@ export const variants = (metadata, context, _route, routes) => {
 
 const Footer = (props) => {
   const theme = useTheme()
+  const basepath = useBasepath()
   const toc = props.toc.map((page, index) => {
-    const url = `/${page.path.join('/')}`
+    const url = `${basepath}/${page.path.join('/')}`
     return (
       <Box key={index} mb={1}>
         <Link color="#527699" fontSize={13} href={url}>
@@ -81,26 +92,34 @@ const Footer = (props) => {
   const links = props.routes.map((route, index) => {
     return (
       <Box key={index} mb={1}>
-        <Link color="#527699" fontSize={13} href={route.url} aria-labelledby={route.name}>
+        <Link color="#527699" fontSize={13} href={route.url}>
           {route.name}
         </Link>
       </Box>
     )
   })
 
-  const brand = (
-    props.logo ? <Img
+  const brand = props.logo ? (
+    <Img
       style={{
         height: '50px'
       }}
       src={props.logo}
-    /> : <Heading.h1 color="#527699" fontSize={26}>{props.name}</Heading.h1>
+    />
+  ) : (
+    <Heading.h1 color="#527699" fontSize={26}>
+      {props.name}
+    </Heading.h1>
   )
 
   const owner = _.isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
       <Txt fontSize={12}>Brought to you by</Txt>{' '}
-      <Link color={theme.colors.text.main} href={props.owner.url} tooltip={props.owner.name}>
+      <Link
+        color={theme.colors.text.main}
+        href={props.owner.url}
+        tooltip={props.owner.name}
+      >
         <Img
           src={props.owner.avatar}
           alt={props.owner.name}
@@ -122,7 +141,7 @@ const Footer = (props) => {
         position: 'relative',
         zIndex: 3
       }}
-      bg='#f8f9fd'
+      bg="#f8f9fd"
     >
       <Container>
         <Flex justifyContent="center">
