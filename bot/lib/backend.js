@@ -165,7 +165,7 @@ module.exports = class GitHubBackend {
           if (
             results.data.encoding === 'base64' &&
             imageFileExtensions.includes(
-              results.data.name.split('.').reverse()[0]
+              results.data.name.split('.').reverse()[0].toLowerCase()
             )
           ) {
             return buffer.toString('base64')
@@ -191,6 +191,7 @@ module.exports = class GitHubBackend {
    * @public
    *
    * @param {String} file - file path
+   * @param {Object} options - options
    * @returns {Promise}
    *
    * @example
@@ -199,7 +200,7 @@ module.exports = class GitHubBackend {
    *   console.log(contents)
    * })
    */
-  readFile (file) {
+  readFile (file, options) {
     return this.github.repos
       .getContents({
         owner: this.owner,
@@ -218,9 +219,14 @@ module.exports = class GitHubBackend {
 
           if (
             results.data.encoding === 'base64' &&
-            (results.data.name.includes('.png') ||
-              results.data.name.includes('.gif'))
+            imageFileExtensions.some((ext) => {
+              return results.data.name.toLowerCase().endsWith(ext)
+            })
           ) {
+            return buffer.toString('base64')
+          }
+
+          if (options && options.base64) {
             return buffer.toString('base64')
           }
 
