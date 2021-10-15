@@ -1,4 +1,17 @@
 - commits:
+    - subject: Add basepath to internal link
+      hash: a66490a1a9981fe0fd5a72da650d4e4af3fd8961
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.32.0
+  date: 2021-10-15T08:38:39.268Z
+- commits:
     - subject: Read contracts from a repo
       hash: ddb604f8baf96430ef26a149446456a63a9c9cfa
       body: ''
