@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix table of contents rendering
+      hash: b6c281882458e897276bc10c876d66773ed3284e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.34.1
+  date: 2021-10-20T12:50:58.494Z
+- commits:
     - subject: Use rendition markdown component for md rendering
       hash: e00c3c526d02b2d636ce49915d157dfe395f2795
       body: ''
