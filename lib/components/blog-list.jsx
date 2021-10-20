@@ -16,25 +16,13 @@
 
 import React from 'react'
 import {
-  markdown
-} from 'markdown'
-import {
-  Box,
-  Link,
-  Container
+  Box, Link, Container
 } from 'rendition'
+import {
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 
 export const name = 'BlogList'
-
-const JsonML = ({
-  data
-}) => {
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(data.jsonml)))
-  return (<div dangerouslySetInnerHTML={{
-    __html: html
-  }}/>)
-}
 
 export const variants = (metadata, context, route) => {
   const combinations = []
@@ -54,13 +42,11 @@ export const render = (props) => {
     return (
       <Container key={index}>
         <Link href={url}>See article</Link>
-        <JsonML data={article.content.data} />
+        <Markdown>{article.content.title}</Markdown>
         <hr />
       </Container>
     )
   })
 
-  return (
-    <Box p={3}>{articles}</Box>
-  )
+  return <Box p={3}>{articles}</Box>
 }

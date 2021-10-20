@@ -41,6 +41,7 @@ export const variants = (metadata, context, route) => {
         context.article.content.author && context.article.content.author.handle,
       current: route.path,
       toc: context.toc,
+      docsTableOfContent: context.docsTableOfContent,
       versions: context.versions || [],
       link: `${metadata.data.links.repository.replace(
         '.git',

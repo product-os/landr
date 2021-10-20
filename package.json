@@ -136,7 +136,7 @@
     "replace-string": "^3.0.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
-    "scrutinizer": "^3.7.0",
+    "scrutinizer": "^3.10.0",
     "serialize-error": "^6.0.0",
     "shelljs": "^0.8.3",
     "smee-client": "^1.1.0",

@@ -11941,7 +11941,6 @@
       "version": "1.0.4",
       "resolved": "https://registry.npmjs.org/fault/-/fault-1.0.4.tgz",
       "integrity": "sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==",
-      "dev": true,
       "requires": {
         "format": "^0.2.0"
       }
@@ -12637,8 +12636,7 @@
     "format": {
       "version": "0.2.2",
       "resolved": "https://registry.npmjs.org/format/-/format-0.2.2.tgz",
-      "integrity": "sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=",
-      "dev": true
+      "integrity": "sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs="
     },
     "format-util": {
       "version": "1.0.5",
@@ -22144,6 +22142,19 @@
         "unist-util-visit": "^2.0.0"
       }
     },
+    "remark-extract-frontmatter": {
+      "version": "3.2.0",
+      "resolved": "https://registry.npmjs.org/remark-extract-frontmatter/-/remark-extract-frontmatter-3.2.0.tgz",
+      "integrity": "sha512-PmYwNCo0cMAUV3oAGg5Hn6YSZgiSDwVdxLJmPIZ804aYuvE5mAzozo5AkO0C8ELroWrtN/f9zzb0jqFPBkMnwg=="
+    },
+    "remark-frontmatter": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/remark-frontmatter/-/remark-frontmatter-2.0.0.tgz",
+      "integrity": "sha512-uNOQt4tO14qBFWXenF0MLC4cqo3dv8qiHPGyjCl1rwOT0LomSHpcElbjjVh5CwzElInB38HD8aSRVugKQjeyHA==",
+      "requires": {
+        "fault": "^1.0.1"
+      }
+    },
     "remark-parse": {
       "version": "8.0.3",
       "resolved": "https://registry.npmjs.org/remark-parse/-/remark-parse-8.0.3.tgz",
@@ -22784,9 +22795,9 @@
       }
     },
     "scrutinizer": {
-      "version": "3.7.0",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-3.7.0.tgz",
-      "integrity": "sha512-PTtwrg2SZaE4vlm5wWIV8GdLBoOB0oAyhJN6CnprzBp5BtftjiTVlhL0qVJF8D5/cwnE84qVj5TTGJ65rTK0zQ==",
+      "version": "3.10.0",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-3.10.0.tgz",
+      "integrity": "sha512-7ofD5UKyVPTmrBf1W7Bvf7LR7kmtnjCgytFyLZzTtypjFLvOjaxXx+1J1948lxdLD9RZDVY31Jigy8iuXsY/aQ==",
       "requires": {
         "@octokit/rest": "^18.9.1",
         "bluebird": "^3.7.2",
@@ -22807,6 +22818,8 @@
         "rehype-remark": "^8.0.0",
         "rehype-slug": "^4.0.1",
         "rehype-stringify": "^8.0.0",
+        "remark-extract-frontmatter": "^3.2.0",
+        "remark-frontmatter": "^2.0.0",
         "remark-parse": "^8.0.2",
         "remark-rehype": "^7.0.0",
         "remark-stringify": "^8.1.0",
@@ -22818,7 +22831,8 @@
         "unified": "^9.0.0",
         "unified-stream": "^1.0.6",
         "unist-util-is": "^4.1.0",
-        "unist-util-visit": "^2.0.3"
+        "unist-util-visit": "^2.0.3",
+        "yaml": "^1.10.2"
       },
       "dependencies": {
         "@octokit/openapi-types": {
@@ -22898,6 +22912,11 @@
           "requires": {
             "rimraf": "^3.0.0"
           }
+        },
+        "yaml": {
+          "version": "1.10.2",
+          "resolved": "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz",
+          "integrity": "sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg=="
         }
       }
     },
