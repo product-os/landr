@@ -22795,9 +22795,9 @@
       }
     },
     "scrutinizer": {
-      "version": "3.10.0",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-3.10.0.tgz",
-      "integrity": "sha512-7ofD5UKyVPTmrBf1W7Bvf7LR7kmtnjCgytFyLZzTtypjFLvOjaxXx+1J1948lxdLD9RZDVY31Jigy8iuXsY/aQ==",
+      "version": "3.10.1",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-3.10.1.tgz",
+      "integrity": "sha512-8/dhQkzZ+DYSm9XU62S+ZcN5cP+ribcxtVkfufvd50xdjvFGrwNpzc55WNx+rZVDzujF50Vhcjr9wY2lbyInAw==",
       "requires": {
         "@octokit/rest": "^18.9.1",
         "bluebird": "^3.7.2",

@@ -10,6 +10,7 @@ import {
 } from 'react-router-hash-link'
 
 const Toc = (props) => {
+  if (!props.toc) return null
   return props.toc.map((page, index) => {
     const url = `/${page.path.join('/')}`
 

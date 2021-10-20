@@ -21,13 +21,15 @@ const _ = require('lodash')
 const parseMarkdown = ({
   filename, contents, tableOfContent, frontmatter
 }) => {
-  const topLevelHeadings = tableOfContent.filter((heading) => {
-    return heading.depth === 1
-  })
+  const topLevelHeadings =
+    tableOfContent &&
+    tableOfContent.filter((heading) => {
+      return heading.depth === 1
+    })
   let title = null
 
   // Use the first h1 in body as the title
-  if (topLevelHeadings.length) {
+  if (topLevelHeadings && topLevelHeadings.length) {
     title = topLevelHeadings[0].title
   }
 
