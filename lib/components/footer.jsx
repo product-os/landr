@@ -59,7 +59,8 @@ export const variants = (metadata, context, _route, routes) => {
       owner: metadata.data.github.owner,
       logo: metadata.data.images.banner,
       routes: toplevelRoutes,
-      toc: context.toc
+      toc: context.toc,
+      docsTableOfContent: context.docsTableOfContent
     })
   }
 
@@ -68,7 +69,8 @@ export const variants = (metadata, context, _route, routes) => {
       name: metadata.data.name,
       owner: metadata.data.github.owner,
       routes: toplevelRoutes,
-      toc: context.toc
+      toc: context.toc,
+      docsTableOfContent: context.docsTableOfContent
     })
   }
 
@@ -78,7 +80,7 @@ export const variants = (metadata, context, _route, routes) => {
 const Footer = (props) => {
   const theme = useTheme()
   const basepath = useBasepath()
-  const toc = props.toc.map((page, index) => {
+  const toc = (props.docsTableOfContent || props.toc).map((page, index) => {
     const url = `${basepath}/${page.path.join('/')}`
     return (
       <Box key={index} mb={1}>

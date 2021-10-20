@@ -16,30 +16,39 @@
 
 const NodeGeocoder = require('node-geocoder')
 
-const markdown = require('markdown').markdown
 const _ = require('lodash')
 
 const parseMarkdown = ({
-  filename, contents, tableOfContent
+  filename, contents, tableOfContent, frontmatter
 }) => {
-  const rawData = _.tail(markdown.parse(contents))
+  const topLevelHeadings = tableOfContent.filter((heading) => {
+    return heading.depth === 1
+  })
+  let title = null
+
+  // Use the first h1 in body as the title
+  if (topLevelHeadings.length) {
+    title = topLevelHeadings[0].title
+  }
+
+  // If we find no h1, then use title in frontmatter
+  if (frontmatter && !title && frontmatter.title) {
+    title = frontmatter.title
+  }
+
+  // If there is no frontmatter, use the file name as the title of the doc
+  if (!title) {
+    title = filename.split('.')[0]
+  }
 
   return {
     filename,
+    frontmatter,
     tableOfContent,
     mime: 'text/markdown',
-
-    // eslint-disable-next-line lodash/matches-shorthand
-    title: _.last(
-      // eslint-disable-next-line lodash/matches-shorthand
-      _.find(rawData, (node) => {
-        return node[0] === 'header' && node[1].level === 1
-      })
-    ),
-
+    title,
     data: {
-      markdown: contents,
-      jsonml: rawData
+      markdown: contents
     }
   }
 }
@@ -206,15 +215,19 @@ exports.run = async (scrutinizerData) => {
       isCli: false,
       isHumanRepo: balena && balena.yml && balena.yml.type === 'human',
 
-      blog: _.map(blog, ({
-        filename, contents, tableOfContent
-      }) => {
-        return parseMarkdown({
-          filename,
-          contents,
-          tableOfContent
-        })
-      }),
+      blog: _.map(
+        blog,
+        ({
+          filename, contents, tableOfContent, frontmatter
+        }) => {
+          return parseMarkdown({
+            filename,
+            contents,
+            tableOfContent,
+            frontmatter
+          })
+        }
+      ),
 
       docs: {
         latest: version,

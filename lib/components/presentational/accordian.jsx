@@ -4,11 +4,11 @@ import React, {
 } from 'react'
 import styled from 'styled-components'
 import {
-  markdown
-} from 'markdown'
-import {
   Box, Divider, Flex, Txt, Heading, useTheme
 } from 'rendition'
+import {
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 
 // TODO: This component doesn't live yet in Rendition.
 // Update it when we use the Grommet equivalent
@@ -49,10 +49,6 @@ const Accordian = ({
   return (
     <Box>
       {items.map((item, index) => {
-        const html = markdown.renderJsonML(
-          markdown.toHTMLTree([ 'markdown' ].concat(item.content))
-        )
-
         const toggleRow = useCallback(
           () => {
             toggle(index)
@@ -89,9 +85,9 @@ const Accordian = ({
               </Flex>
             </Flex>
             <Collapse isOpen={isOpen}>
-              <Content dangerouslySetInnerHTML={{
-                __html: html
-              }} />
+              <Content >
+                <Markdown>{item.content}</Markdown>
+              </Content>
             </Collapse>
             <Divider m={0} />
           </Box>

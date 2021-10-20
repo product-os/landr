@@ -19,8 +19,8 @@ import {
   Box, Container, Heading
 } from 'rendition'
 import {
-  markdown
-} from 'markdown'
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 
 export const name = 'HardwareRequired'
 
@@ -37,10 +37,6 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
-  const html = markdown.renderJsonML(
-    markdown.toHTMLTree([ 'markdown' ].concat(props.hardwareRequired))
-  )
-
   return (
     <Box my={100}>
       <Container>
@@ -48,10 +44,8 @@ export const render = (props) => {
         <Box
           style={{
             maxWidth: 800
-          }}
-          dangerouslySetInnerHTML={{
-            __html: html
           }}>
+          <Markdown>{props.hardwareRequired}</Markdown>
         </Box>
       </Container>
     </Box>

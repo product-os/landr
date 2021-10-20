@@ -19,8 +19,8 @@ import {
   Box, Divider, Container, Heading, Accordion
 } from 'rendition'
 import {
-  markdown
-} from 'markdown'
+  Markdown
+} from 'rendition/dist/extra/Markdown'
 
 export const name = 'Faq'
 
@@ -41,13 +41,9 @@ export const render = (props) => {
     return {
       label: faq.title,
       panel: (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: markdown.renderJsonML(
-              markdown.toHTMLTree([ 'markdown' ].concat(faq.content))
-            )
-          }}
-        />
+        <div>
+          <Markdown>{faq.content}</Markdown>
+        </div>
       )
     }
   })
