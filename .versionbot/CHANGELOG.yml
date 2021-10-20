@@ -1,4 +1,17 @@
 - commits:
+    - subject: Use rendition markdown component for md rendering
+      hash: e00c3c526d02b2d636ce49915d157dfe395f2795
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.34.0
+  date: 2021-10-20T11:44:58.419Z
+- commits:
     - subject: 'Refactor map component, run geocoder on server'
       hash: 5bab53e3d1fd851dd7c2c2d9b2abb9adc54dea14
       body: ''
