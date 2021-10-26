@@ -1,4 +1,17 @@
 - commits:
+    - subject: Adding readme edits that help newcomers who wonder what Landr is for
+      hash: 41b036358d9cbe2a824a7adb9f781d9185cf95d1
+      body: |
+        * needs editing once we're generating landr with landr as what might
+          look nice on readme might not parse correctly in landr
+      footer:
+        Change-type: minor
+        change-type: minor
+      author: andrew
+      nested: []
+  version: 6.35.0
+  date: 2021-10-25T23:50:48.696Z
+- commits:
     - subject: Remove manual basepath addition in links
       hash: 9eab762522cdcf2605af43a2539e312e8be4aa74
       body: ''
