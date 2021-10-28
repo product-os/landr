@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix navigation styles
+      hash: 86bad58b4034e113a1f8084409472025adbdc2eb
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.1
+  date: 2021-10-28T12:29:58.955Z
+- commits:
     - subject: Adding readme edits that help newcomers who wonder what Landr is for
       hash: 41b036358d9cbe2a824a7adb9f781d9185cf95d1
       body: |
