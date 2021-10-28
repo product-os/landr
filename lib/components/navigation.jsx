@@ -111,7 +111,9 @@ const Navigation = (props) => {
   )
 
   const links = props.routes.map((route) => {
-    return <Link key={route.name} url={route.url} text={route.name}></Link>
+    return (
+      <Link mx={2} key={route.name} url={route.url} text={route.name}></Link>
+    )
   })
 
   return (
