@@ -29,22 +29,17 @@ might be broken in its best case! We warmly welcome [new, detailed issues](https
 ## Installation
 
 1. Install the Landr CLI:
-
-```bash
-npm install --global landr
-```
-
+   ```bash
+   npm install --global landr
+   ```
 2. Go to a Balena CI powered repo:
-
-```bash
-cd path/to/repository
-```
-
+   ```bash
+   cd path/to/repository
+   ```
 3. Generate your website:
-
-```bash
-landr
-```
+   ```bash
+   landr
+   ```
 
 [Head over to our docs!](https://github.com/balena-io/landr/tree/master/docs)
 
@@ -55,7 +50,6 @@ Creating a website for a project can be hard and time-consuming. Landr aims to s
 Build a great, well-structured project and let Landr build you a great site.
 
 ### Usage
-
 
 ```bash
 $ npm install -g landr
@@ -68,9 +62,7 @@ USAGE
   $ landr COMMAND
 ```
 
-
 #### Commands
-
 
 - [`landr build`](#landr-build)
 - [`landr help [COMMAND]`](#landr-help-command)
@@ -137,7 +129,6 @@ DESCRIPTION
 ```
 
 _See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v6.16.0/lib/cli/commands/meta.js)_
-
 
 ## Getting Help
 
