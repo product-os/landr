@@ -41,6 +41,7 @@ lsb-release \
 xdg-utils \
 libkrb5-dev \
 build-essential \
+python \
 wget
 
 # Defines our working directory in container
