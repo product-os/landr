@@ -1,4 +1,17 @@
 - commits:
+    - subject: Format installation steps
+      hash: aebae0db74ab2416d3c225ce6bb72e0fa1b09d3c
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.2
+  date: 2021-11-23T10:29:15.126Z
+- commits:
     - subject: Fix navigation styles
       hash: 86bad58b4034e113a1f8084409472025adbdc2eb
       body: ''
