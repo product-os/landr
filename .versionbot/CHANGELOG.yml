@@ -1,4 +1,17 @@
 - commits:
+    - subject: Switch domains from versionbot.com to getlandr.com.
+      hash: 6418268efdba02c28dfd12fb12282937655b1145
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+        signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+      author: Carlo Miguel F. Cruz
+      nested: []
+  version: 6.35.3
+  date: 2021-11-26T10:42:55.246Z
+- commits:
     - subject: Format installation steps
       hash: aebae0db74ab2416d3c225ce6bb72e0fa1b09d3c
       body: ''
