@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update browserslist
+      hash: f547af1ee39a0c67ad6d677d87ab759fc546751b
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.6
+  date: 2021-11-27T13:49:42.410Z
+- commits:
     - subject: Update examples
       hash: 082ba1966ef1081f54c4748b77e2b1419d1ead2c
       body: ''
