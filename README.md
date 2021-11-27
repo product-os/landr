@@ -4,10 +4,6 @@
 
 **Generate great websites for your projects with zero configuration.**
 
-<!-- [![GitHub license](https://img.shields.io/badge/license-Apache-blue.svg)](https://github.com/balena-io/landr/blob/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/landr.svg?style=flat)](https://www.npmjs.com/package/landr)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/balena-io/landr/blob/master/CONTRIBUTING.md) -->
-
 Landr is balena's static site generator that helps edge developers and product builders create quick, usable websites. It uses open source standards, so that as long as the developer uses those conventions, they'll get a nice site. This means they can focus on building their product rather than maintaining their site, blog posts, docs, and versioning.
 
 Our popular test sites in the wild include [balenaSound](https://sound.balenalabs.io/) and [balenaSense](https://sense.balenalabs.io/), with more tests to come. We're also testing Landr sites for some balenaBlocks.
@@ -129,6 +125,12 @@ DESCRIPTION
 ```
 
 _See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v6.16.0/lib/cli/commands/meta.js)_
+
+## Examples
+
+- [balenaSound](https://sound.balenalabs.io/) - balenaSound fleet
+- [balenaSense](https://sense.balenalabs.io/) - balenaSense fleet
+- [balenaltd](https://balenaltd.com/) - balena's org site with team and product pages
 
 ## Getting Help
 
