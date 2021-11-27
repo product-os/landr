@@ -84,7 +84,7 @@ DESCRIPTION
   to use as data for generating the site. The location of the data file can be
   specified using the -m flag.
   By default the site will be written to a folder named landr-dist in the current
-  directory. Ther location that the site will be written to can be specified using
+  directory. The location that the site will be written to can be specified using
   the -o flag.
   You can also optionally deploy your site to netlfiy using the -d flag. Deploying
   to netlify relies on providing the NETLIFY_AUTH_TOKEN env var.
@@ -130,7 +130,7 @@ _See code: [lib/cli/commands/meta.js](https://github.com/balena-io/landr/blob/v6
 
 - [balenaSound](https://sound.balenalabs.io/) - balenaSound fleet
 - [balenaSense](https://sense.balenalabs.io/) - balenaSense fleet
-- [balenaltd](https://balenaltd.com/) - balena's org site with team and product pages
+- [balenaltd](https://balenaltd.com/) - balena's org site with team pages
 
 ## Getting Help
 
