@@ -1,4 +1,4 @@
-FROM balena/open-balena-base:no-systemd-master
+FROM balena/open-balena-base:no-systemd-12.2.0
 
 # Install dependencies required to run puppeteer
 RUN install_packages -f \
