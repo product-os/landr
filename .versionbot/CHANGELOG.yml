@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update probot and octokit
+      hash: 7d6cc569f0e289970643fc4e0dffa8f940e97795
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.7
+  date: 2021-11-28T08:46:34.876Z
+- commits:
     - subject: Update browserslist
       hash: f547af1ee39a0c67ad6d677d87ab759fc546751b
       body: ''
