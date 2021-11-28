@@ -45,7 +45,7 @@ const imageFileExtensions = [
  * @param {Object} headers - HTTP headers
  *
  * @example
- * github.repos.getContents({ ... }).then((results) => {
+ * github.repos.getContent({ ... }).then((results) => {
  *   logGitHubRateLimitingInformation(results.meta)
  * })
  */
@@ -75,7 +75,7 @@ module.exports = class GitHubBackend {
    */
   constructor (context, repository, reference) {
     this.reference = reference
-    this.github = context.github
+    this.github = context.octokit
 
     const parsedUrl = repository.match(/([\w-]+)\/([\w-]+)(\.\w+)?$/)
     this.owner = parsedUrl[1]
@@ -115,7 +115,7 @@ module.exports = class GitHubBackend {
    */
   readDirectoryFilePaths (directory) {
     return this.github.repos
-      .getContents({
+      .getContent({
         owner: this.owner,
         repo: this.repo,
         path: directory,
@@ -137,7 +137,7 @@ module.exports = class GitHubBackend {
         throw new Error('Not a directory')
       })
       .catch((error) => {
-        logGitHubRateLimitingInformation(error.headers)
+        logGitHubRateLimitingInformation(error.response.headers)
         if (error.status === 404) {
           return null
         }
@@ -148,7 +148,7 @@ module.exports = class GitHubBackend {
 
   async readOrgFile (file) {
     try {
-      const results = await this.github.repos.getContents({
+      const results = await this.github.repos.getContent({
         owner: this.owner,
         repo: this.owner,
         path: file,
@@ -202,7 +202,7 @@ module.exports = class GitHubBackend {
    */
   readFile (file, options) {
     return this.github.repos
-      .getContents({
+      .getContent({
         owner: this.owner,
         repo: this.repo,
         path: file,
@@ -236,7 +236,7 @@ module.exports = class GitHubBackend {
         throw new Error(`Can't handle response: ${results.data}`)
       })
       .catch((error) => {
-        logGitHubRateLimitingInformation(error.headers)
+        logGitHubRateLimitingInformation(error.response.headers)
         if (error.status === 404) {
           return null
         }

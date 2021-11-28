@@ -39,7 +39,7 @@ const upsertPRComment = async ({
   // to be issue comments, whereas comments on the code are pull request
   // comments. Here we want to retrieve all comments directly on the PR, so we
   // need to use the issues API.
-  const comments = await context.github.issues.listComments({
+  const comments = await context.octokit.issues.listComments({
     owner,
     repo,
     issue_number: pullNumber
@@ -50,14 +50,14 @@ const upsertPRComment = async ({
   if (existingComment) {
     log('updating existing comment on PR')
 
-    await context.github.issues.updateComment({
+    await context.octokit.issues.updateComment({
       owner,
       repo,
       comment_id: existingComment.id,
       body: message
     })
   } else {
-    await context.github.issues.createComment({
+    await context.octokit.issues.createComment({
       owner,
       repo,
       issue_number: pullNumber,
@@ -122,19 +122,6 @@ const build = async ({
 
 // This is the main entrypoint to your Probot app
 module.exports = (app) => {
-  const makeLogFn = (repository, ref) => {
-    const prefix = `[${repository}#${ref}]`
-    const logFn = (message, ...rest) => {
-      return Reflect.apply(app.log, null, [ `${prefix}: ${message}`, ...rest ])
-    }
-
-    logFn.error = (message, ...rest) => {
-      return Reflect.apply(app.log.error, null, [ `${prefix}: ${message}`, ...rest ])
-    }
-
-    return logFn
-  }
-
   app.on([ 'pull_request.opened', 'pull_request.synchronize' ], async (context) => {
     const {
       url
@@ -143,14 +130,12 @@ module.exports = (app) => {
     const [ owner, repo ] = repository.split('/')
     const pullNumber = context.payload.number
 
-    const log = makeLogFn(repository, pullNumber)
-
     // If (context.payload.repository.private) {
     //   log('Repository is private, skipping landr build')
     //   return
     // }
 
-    log(`Triggering build for PR: ${url}`)
+    context.log(`Triggering build for PR: ${url}`)
 
     const branch = _.get(context, [ 'payload', 'pull_request', 'head', 'ref' ])
 
@@ -159,21 +144,21 @@ module.exports = (app) => {
         app,
         context,
         branch,
-        log,
+        log: context.log,
         pullNumber
       })
       const message = `Your landr site preview has been successfully deployed to ${siteUrl}
 
 *Deployed with Landr ${process.env.npm_package_version}*`
 
-      log(`posting site preview link in comment to PR: ${url}`)
+      context.log(`posting site preview link in comment to PR: ${url}`)
 
       await upsertPRComment({
-        context, owner, repo, pullNumber, message, log
+        context, owner, repo, pullNumber, message, log: context.log
       })
     } catch (error) {
-      log.error('An error occurred', error)
-      log(`Posting error message to PR: ${url}`)
+      context.log.error('An error occurred', error)
+      context.log(`Posting error message to PR: ${url}`)
 
       const reportableError = JSON.stringify(serializeError(error), null, 2)
 
@@ -184,23 +169,23 @@ ${reportableError}
 \`\`\``
 
       await upsertPRComment({
-        context, owner, repo, pullNumber, message, log
+        context, owner, repo, pullNumber, message, log: context.log
       })
     }
   })
 
   app.on('push', async (context) => {
-    const log = makeLogFn(context.payload.repository.full_name, 'master')
+    // Const log = makeLogFn(context.payload.repository.full_name, 'master')
 
     if (context.payload.ref === 'refs/heads/master') {
-      log(`Triggering build for master branch: ${context.payload.repository.html_url}`)
+      context.log(`Triggering build for master branch: ${context.payload.repository.html_url}`)
       const siteUrl = await build({
         app,
         context,
         branch: 'master',
-        log
+        log: context.log
       })
-      log(`Built master branch at ${siteUrl}`)
+      context.log(`Built master branch at ${siteUrl}`)
     }
   })
 }
