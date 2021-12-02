@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix readme typos
+      hash: aff3d70dcb9e141f160b77ed22fe395ceb56ed8e
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.9
+  date: 2021-12-02T17:19:39.649Z
+- commits:
     - subject: Make probot builds async
       hash: f009c921f03beda3bb3f80e76765825856eae2ad
       body: ''
