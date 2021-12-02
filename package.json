@@ -139,7 +139,7 @@
     "rimraf": "^2.6.3",
     "scrutinizer": "^3.12.2",
     "serialize-error": "^6.0.0",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.4",
     "smee-client": "^1.1.0",
     "styled-components": "^5.2.1",
     "tmp": "^0.1.0",
