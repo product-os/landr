@@ -100,7 +100,7 @@ const build = async ({
 
   // TODO: pass the contract data directly to the builder
   // Write the contract to a JSON file next to the output directory
-  await fs.writeFileSync(contractPath, JSON.stringify(contract))
+  await fs.promises.writeFile(contractPath, JSON.stringify(contract))
 
   const results = await runner.run({
     contractPath,
