@@ -1,4 +1,27 @@
 - commits:
+    - subject: Make probot builds async
+      hash: f009c921f03beda3bb3f80e76765825856eae2ad
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+    - subject: Update dependencies
+      hash: 07ee79d73f3b2da971f752c6ab6e77f10043d7c7
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.8
+  date: 2021-12-02T17:01:29.054Z
+- commits:
     - subject: Update probot and octokit
       hash: 7d6cc569f0e289970643fc4e0dffa8f940e97795
       body: ''
