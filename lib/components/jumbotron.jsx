@@ -84,7 +84,7 @@ export const variants = (metadata, _context, _route, routes) => {
       packageName: metadata.data.name,
       action: `/${entryUrl.path.join('/')}`,
       logoBrandMark: metadata.data.logoBrandMark,
-      deployWithBalenaUrl: metadata.data.deployWithBalenaUrl,
+      deployWithBalenaUrl: metadata.data.deployWithBalenaUrl.replace('.git', ''),
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
