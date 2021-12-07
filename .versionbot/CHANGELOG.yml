@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'dwb: remove trailing .git'
+      hash: e4d43679f573413e7eb65c9a9a8100100f9d6626
+      body: ''
+      footer:
+        Resolves: '#384'
+        resolves: '#384'
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Tomás Migone <tomas@balena.io>
+        signed-off-by: Tomás Migone <tomas@balena.io>
+      author: Tomás Migone
+      nested: []
+  version: 6.35.10
+  date: 2021-12-07T18:32:04.531Z
+- commits:
     - subject: Fix readme typos
       hash: aff3d70dcb9e141f160b77ed22fe395ceb56ed8e
       body: ''
