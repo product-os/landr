@@ -8,11 +8,14 @@ import {
 
 const Link = (props) => {
   const theme = useTheme()
+  const isExternal = props.url.startsWith('http')
+  const baseComponent = isExternal ? 'a' : InternalRoute
   return (
     <BaseRoute
       {...props}
       color={theme.colors.text.main}
-      is={InternalRoute}
+      is={baseComponent}
+      blank={isExternal}
       style={{
         fontSize: '14px',
         fontWeight: 600

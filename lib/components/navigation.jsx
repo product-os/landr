@@ -18,7 +18,7 @@ import React from 'react'
 import _ from 'lodash'
 import styled from 'styled-components'
 import {
-  Box, Img, Container, Heading, Flex, useTheme
+  Box, Img, Container, Heading, Flex, useTheme, Link as RLink
 } from 'rendition'
 import GithubBanner from './presentational/github-banner'
 import Link from './presentational/link'
@@ -88,7 +88,7 @@ const Wrapper = styled(Box) `
   }};
 `
 
-const GithubRedirect = styled(Link) `
+const GithubRedirect = styled(RLink) `
   position: absolute;
   right: 0;
   top: -30px;
