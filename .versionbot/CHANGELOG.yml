@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix external links
+      hash: ad8f57e0ae89af6ff7c61100802b34f992d3a681
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.11
+  date: 2021-12-14T06:33:26.761Z
+- commits:
     - subject: 'dwb: remove trailing .git'
       hash: e4d43679f573413e7eb65c9a9a8100100f9d6626
       body: ''
