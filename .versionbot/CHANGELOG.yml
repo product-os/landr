@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix installation steps
+      hash: c70c8a4930438e394ee17e73c33a42a2f86b40dc
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.12
+  date: 2021-12-16T17:59:04.292Z
+- commits:
     - subject: Fix external links
       hash: ad8f57e0ae89af6ff7c61100802b34f992d3a681
       body: ''
