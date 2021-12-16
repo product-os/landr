@@ -16,7 +16,6 @@
 
 import React from 'react'
 import find from 'lodash/find'
-import last from 'lodash/last'
 import get from 'lodash/get'
 import styled from 'styled-components'
 import {
@@ -35,6 +34,9 @@ import Terminal from './presentational/terminal'
 import {
   DeployWithBalena
 } from './presentational/deploy-with-balena'
+import {
+  flatten
+} from 'lodash'
 export const name = 'Jumbotron'
 
 export const variants = (metadata, _context, _route, routes) => {
@@ -62,19 +64,20 @@ export const variants = (metadata, _context, _route, routes) => {
 
   const steps =
     metadata.data.installation &&
-    metadata.data.installation.steps.reduce((accumulator, step) => {
-      accumulator.push({
-        command: last(step[0]).replace(/\n/g, ''),
-        comment: true
-      })
-
-      accumulator.push({
-        command: last(last(last(step))).replace(/\n/g, ''),
-        comment: false
-      })
-
-      return accumulator
-    }, [])
+    flatten(metadata.data.installation.steps.map((step) => {
+      const commands = []
+      if (step.text) {
+        commands.push({
+          command: step.text, comment: true
+        })
+      }
+      if (step.code) {
+        commands.push({
+          command: step.code, comment: false
+        })
+      }
+      return commands
+    }))
 
   if (metadata.data.name && metadata.data.description && entryUrl) {
     combinations.push({
@@ -84,7 +87,9 @@ export const variants = (metadata, _context, _route, routes) => {
       packageName: metadata.data.name,
       action: `/${entryUrl.path.join('/')}`,
       logoBrandMark: metadata.data.logoBrandMark,
-      deployWithBalenaUrl: metadata.data.deployWithBalenaUrl.replace('.git', ''),
+      deployWithBalenaUrl:
+        metadata.data.deployWithBalenaUrl &&
+        metadata.data.deployWithBalenaUrl.replace('.git', ''),
       steps,
       type: metadata.data.type,
       repositoryUrl: metadata.data.links.repository,
