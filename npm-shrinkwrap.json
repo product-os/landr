@@ -23096,9 +23096,9 @@
       }
     },
     "scrutinizer": {
-      "version": "3.12.2",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-3.12.2.tgz",
-      "integrity": "sha512-+olDPA2qqxZCm/LHQZBtWyGdFyLvHiHY1t6t/3uvse3cbfCSoVCFzK4a47hE6cjt839NpTbQ9ZoERZwMcwubWg==",
+      "version": "4.1.0",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.1.0.tgz",
+      "integrity": "sha512-Fos13RbrMKJpR32LsNlpDyGQf4Ry/swd+pQ5+prVqRKxD41ryFPl2Gw0iNxopbbE5BgorMvYcOBV4h4ZtrvPCQ==",
       "requires": {
         "@octokit/rest": "^18.12.0",
         "bluebird": "^3.7.2",
@@ -23258,9 +23258,9 @@
           }
         },
         "puppeteer": {
-          "version": "12.0.0",
-          "resolved": "https://registry.npmjs.org/puppeteer/-/puppeteer-12.0.0.tgz",
-          "integrity": "sha512-a+vLxtwuDLUIq8Vz8X5bX+YMhcQrgyfq0Jo5Wcm49EfUawgCxeCN9/rUAS3VdAAiQZ1PKiv9pGyQN8jj1ypecQ==",
+          "version": "12.0.1",
+          "resolved": "https://registry.npmjs.org/puppeteer/-/puppeteer-12.0.1.tgz",
+          "integrity": "sha512-YQ3GRiyZW0ddxTW+iiQcv2/8TT5c3+FcRUCg7F8q2gHqxd5akZN400VRXr9cHQKLWGukmJLDiE72MrcLK9tFHQ==",
           "requires": {
             "debug": "4.3.2",
             "devtools-protocol": "0.0.937139",
@@ -23977,9 +23977,9 @@
       }
     },
     "simple-git": {
-      "version": "2.47.0",
-      "resolved": "https://registry.npmjs.org/simple-git/-/simple-git-2.47.0.tgz",
-      "integrity": "sha512-+HfCpqPBEZTPWiW9fPdbiPJDslM22MLqrktfzNKyI2pWaJa6DhfNVx4Mds04KZzVv5vjC9/ksw3y5gVf8ECWDg==",
+      "version": "2.48.0",
+      "resolved": "https://registry.npmjs.org/simple-git/-/simple-git-2.48.0.tgz",
+      "integrity": "sha512-z4qtrRuaAFJS4PUd0g+xy7aN4y+RvEt/QTJpR184lhJguBA1S/LsVlvE/CM95RsYMOFJG3NGGDjqFCzKU19S/A==",
       "requires": {
         "@kwsites/file-exists": "^1.1.1",
         "@kwsites/promise-deferred": "^1.1.1",

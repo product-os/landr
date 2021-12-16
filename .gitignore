@@ -89,3 +89,6 @@ eng.traineddata
 
 # Local Netlify folder
 .netlify
+
+# code-editor
+.vscode
