@@ -24,7 +24,7 @@ const {
 
 const metaGenerator = require('./lib/generate-landr-meta')
 const runner = require('../lib/build-runner')
-const scrutinizer = require('./lib/scrutinizer')
+const scrutinizer = require('scrutinizer')
 
 // TODO: Infer this login information automatically
 // This is the identifier GitHub uses for the bot
@@ -81,8 +81,9 @@ const build = async ({
     : context.payload.repository.full_name
   const [ owner, repo ] = repository.split('/')
 
-  const scrutinizerData = await scrutinizer.remote(context, repository, {
-    reference: branch
+  const scrutinizerData = await scrutinizer.remote(repository, {
+    reference: branch,
+    context
   })
   const contract = await metaGenerator.run(scrutinizerData)
 
