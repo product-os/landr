@@ -1,4 +1,17 @@
 - commits:
+    - subject: Improve link component
+      hash: 9e210c15bc7e9a80d7425c521e09bfa49d38dde0
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.35.13
+  date: 2021-12-20T08:19:51.988Z
+- commits:
     - subject: Fix installation steps
       hash: c70c8a4930438e394ee17e73c33a42a2f86b40dc
       body: ''
