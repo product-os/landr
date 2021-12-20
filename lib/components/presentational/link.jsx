@@ -8,19 +8,25 @@ import {
 
 const Link = (props) => {
   const theme = useTheme()
-  const isExternal = props.url.startsWith('http')
-  const baseComponent = isExternal ? 'a' : InternalRoute
+  const isExternal = props.url ? props.url.startsWith('http') : false
+  const baseProps = isExternal
+    ? {
+      href: props.url,
+      blank: true
+    }
+    : {
+      is: InternalRoute,
+      to: props.url
+    }
   return (
     <BaseRoute
       {...props}
       color={theme.colors.text.main}
-      is={baseComponent}
-      blank={isExternal}
       style={{
         fontSize: '14px',
         fontWeight: 600
       }}
-      to={props.url}
+      {...baseProps}
     >
       {props.children || props.text}
     </BaseRoute>
