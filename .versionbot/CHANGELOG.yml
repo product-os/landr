@@ -1,4 +1,17 @@
 - commits:
+    - subject: Move octokit call to scrutinizer
+      hash: 3b0feae297329d09bf5879b2a3fb9867a401d85c
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.36.0
+  date: 2021-12-20T08:45:25.777Z
+- commits:
     - subject: Improve link component
       hash: 9e210c15bc7e9a80d7425c521e09bfa49d38dde0
       body: ''
