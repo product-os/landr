@@ -36,7 +36,7 @@ export const variants = (metadata) => {
   if (metadata.data.setup) {
     combinations.push({
       setup: metadata.data.setup,
-      deployWithBalenaUrl: metadata.data.deployWithBalenaUrl.replace('.git', '')
+      deployWithBalenaUrl: metadata.data.deployWithBalenaUrl ? metadata.data.deployWithBalenaUrl.replace('.git', '') : null
     })
   }
 
