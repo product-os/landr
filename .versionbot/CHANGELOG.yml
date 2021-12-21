@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fix deploy with balena
+      hash: 934ba165dc8ec5bb95e1a79e557ae05cbc1197d7
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.36.1
+  date: 2021-12-21T13:34:14.708Z
+- commits:
     - subject: Move octokit call to scrutinizer
       hash: 3b0feae297329d09bf5879b2a3fb9867a401d85c
       body: ''
