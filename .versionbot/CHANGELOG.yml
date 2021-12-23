@@ -1,4 +1,17 @@
 - commits:
+    - subject: Fallback to markdown for changelog when no release notes are found
+      hash: d7def4dfebceb712e582233de95d9b50b307d79a
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 6.36.2
+  date: 2021-12-23T07:38:21.887Z
+- commits:
     - subject: Fix deploy with balena
       hash: 934ba165dc8ec5bb95e1a79e557ae05cbc1197d7
       body: ''
