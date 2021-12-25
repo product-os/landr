@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
+import trim from 'lodash/trim'
 import React from 'react'
 import {
-  Box, Container, Heading
+  Container
 } from 'rendition'
 import {
   Markdown
 } from 'rendition/dist/extra/Markdown'
-
-export const name = 'HardwareRequired'
+export const name = 'ReadmeLeftover'
 
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.hardwareRequired) {
+  if (trim(metadata.data.readmeLeftover)) {
     combinations.push({
-      hardwareRequired: metadata.data.hardwareRequired
+      readmeLeftover: metadata.data.readmeLeftover
     })
   }
 
@@ -38,16 +38,14 @@ export const variants = (metadata) => {
 
 export const render = (props) => {
   return (
-    <Box my={100}>
-      <Container>
-        <Heading.h2 mb={24}>Hardware Required</Heading.h2>
-        <Box
-          style={{
-            maxWidth: 800
-          }}>
-          <Markdown>{props.hardwareRequired}</Markdown>
-        </Box>
-      </Container>
-    </Box>
+    <Container my={45} maxWidth={998}>
+      <Markdown>{props.readmeLeftover}</Markdown>
+    </Container>
   )
+}
+
+export default {
+  name,
+  render,
+  variants
 }
