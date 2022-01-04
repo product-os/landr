@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/dev-cli": "^1.26.10",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
@@ -93,7 +93,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@oclif/command": "^1.5.19",
+    "@oclif/command": "^1.8.16",
     "@oclif/errors": "^1.2.2",
     "@oclif/plugin-help": "^2.2.3",
     "@reach/router": "^1.2.1",
@@ -144,7 +144,7 @@
     "smee-client": "^1.1.0",
     "styled-components": "^5.2.1",
     "tmp": "^0.1.0",
-    "typed-errors": "^1.1.0",
+    "typed-error": "^3.2.1",
     "uuid": "^8.3.2"
   },
   "nodemonConfig": {
