@@ -14,24 +14,22 @@
  * limitations under the License.
  */
 
-import {
-  trim
-} from 'lodash'
 import React from 'react'
 import {
-  Container
+  Box, Link, Container
 } from 'rendition'
 import {
   Markdown
 } from 'rendition/dist/extra/Markdown'
-export const name = 'ReadmeLeftover'
 
-export const variants = (metadata) => {
+export const name = 'BlogList'
+
+export const variants = (metadata, context, route) => {
   const combinations = []
 
-  if (trim(metadata.data.readmeLeftover)) {
+  if (context.articles) {
     combinations.push({
-      readmeLeftover: metadata.data.readmeLeftover
+      articles: context.articles
     })
   }
 
@@ -39,9 +37,22 @@ export const variants = (metadata) => {
 }
 
 export const render = (props) => {
-  return (
-    <Container my={45} maxWidth={998}>
-      <Markdown>{props.readmeLeftover}</Markdown>
-    </Container>
-  )
+  const articles = props.articles.map((article, index) => {
+    const url = `/${article.path.join('/')}`
+    return (
+      <Container key={index}>
+        <Link href={url}>See article</Link>
+        <Markdown>{article.content.title}</Markdown>
+        <hr />
+      </Container>
+    )
+  })
+
+  return <Box p={3}>{articles}</Box>
+}
+
+export default {
+  name,
+  render,
+  variants
 }

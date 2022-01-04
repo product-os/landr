@@ -111,3 +111,9 @@ export const render = (props) => {
     </Wrapper>
   )
 }
+
+export default {
+  name,
+  render,
+  variants
+}

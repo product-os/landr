@@ -16,20 +16,20 @@
 
 import React from 'react'
 import {
-  Box, Link, Container
+  Box, Container, Heading
 } from 'rendition'
 import {
   Markdown
 } from 'rendition/dist/extra/Markdown'
 
-export const name = 'BlogList'
+export const name = 'HardwareRequired'
 
-export const variants = (metadata, context, route) => {
+export const variants = (metadata) => {
   const combinations = []
 
-  if (context.articles) {
+  if (metadata.data.hardwareRequired) {
     combinations.push({
-      articles: context.articles
+      hardwareRequired: metadata.data.hardwareRequired
     })
   }
 
@@ -37,16 +37,23 @@ export const variants = (metadata, context, route) => {
 }
 
 export const render = (props) => {
-  const articles = props.articles.map((article, index) => {
-    const url = `/${article.path.join('/')}`
-    return (
-      <Container key={index}>
-        <Link href={url}>See article</Link>
-        <Markdown>{article.content.title}</Markdown>
-        <hr />
+  return (
+    <Box my={100}>
+      <Container>
+        <Heading.h2 mb={24}>Hardware Required</Heading.h2>
+        <Box
+          style={{
+            maxWidth: 800
+          }}>
+          <Markdown>{props.hardwareRequired}</Markdown>
+        </Box>
       </Container>
-    )
-  })
+    </Box>
+  )
+}
 
-  return <Box p={3}>{articles}</Box>
+export default {
+  name,
+  render,
+  variants
 }

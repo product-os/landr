@@ -22,14 +22,14 @@ import {
   Markdown
 } from 'rendition/dist/extra/Markdown'
 
-export const name = 'Introduction'
+export const name = 'SoftwareRequired'
 
 export const variants = (metadata) => {
   const combinations = []
 
-  if (metadata.data.introduction) {
+  if (metadata.data.softwareRequired) {
     combinations.push({
-      introduction: metadata.data.introduction
+      softwareRequired: metadata.data.softwareRequired
     })
   }
 
@@ -40,13 +40,14 @@ export const render = (props) => {
   return (
     <Box my={100}>
       <Container>
-        <Heading.h2 mb={24}>Introduction</Heading.h2>
+        <Heading.h2 mb={24}>Software Required</Heading.h2>
         <Box
           style={{
             maxWidth: 800
-          }}
-        >
-          <Markdown>{props.introduction}</Markdown>
+          }}>
+          <Markdown>
+            {props.softwareRequired}
+          </Markdown>
         </Box>
       </Container>
     </Box>

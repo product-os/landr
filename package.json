@@ -102,6 +102,7 @@
     "chalk": "^2.4.2",
     "color": "^4.0.1",
     "date-fns": "^2.0.1",
+    "detectorist": "^1.4.2",
     "file-type": "^12.0.1",
     "generatorics": "^1.1.0",
     "git-branch": "^2.0.1",

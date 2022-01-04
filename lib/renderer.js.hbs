@@ -1,0 +1,29 @@
+
+import React from 'react'
+import {
+  useRouteData
+} from 'react-static'
+import analytics from './analytics'
+import { Layout } from './Layout'
+import LandrComponent from './landr-component'
+{{#each combination}}
+import {{this.component}} from './components/{{this.component}}'
+{{/each}}
+
+const Renderer = () => {
+  const routeData = useRouteData()
+  const combination = routeData.combination
+  const analyticsOptions = routeData.analytics
+  return <Layout>
+    {{#each combination}}
+    <LandrComponent
+      definition={combination[{{@index}}]}
+      component={ {{this.component}} }
+      analytics={analytics(routeData.site, analyticsOptions)}
+      config={routeData.landrConfig}
+    />
+    {{/each}}
+  </Layout>
+}
+
+export default Renderer

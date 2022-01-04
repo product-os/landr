@@ -24,13 +24,23 @@ import {
   FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
 import {
-  faUserCircle,
-  faLightbulb,
-  faAt,
-  faStar,
-  faFlagCheckered,
+  faUserCircle
+} from '@fortawesome/free-solid-svg-icons/faUserCircle'
+import {
+  faLightbulb
+} from '@fortawesome/free-solid-svg-icons/faLightbulb'
+import {
+  faAt
+} from '@fortawesome/free-solid-svg-icons/faAt'
+import {
+  faStar
+} from '@fortawesome/free-solid-svg-icons/faStar'
+import {
+  faFlagCheckered
+} from '@fortawesome/free-solid-svg-icons/faFlagCheckered'
+import {
   faFootballBall
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons/faFootballBall'
 import {
   BlockQuote
 } from './presentational/Blockquote'
@@ -257,4 +267,10 @@ export const render = (props, _analytics, config) => {
       </Box>
     </Flex>
   )
+}
+
+export default {
+  name,
+  render,
+  variants
 }

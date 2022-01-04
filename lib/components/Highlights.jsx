@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 balena.io
+ * Copyright 2019 balena.io
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 
 import React from 'react'
+import size from 'lodash/size'
+import styled from 'styled-components'
 import {
   Box, Container, Heading, Txt, Flex
 } from 'rendition'
@@ -22,34 +24,42 @@ import {
 import {
   Markdown
 } from 'rendition/dist/extra/Markdown'
-import _ from 'lodash'
 
+import hexToRgba from 'hex-to-rgba'
 import {
   FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
 import {
   faCheck
 } from '@fortawesome/free-solid-svg-icons/faCheck'
-export const name = 'ReadmeSections'
+export const name = 'Highlights'
 
 export const variants = (metadata) => {
   const combinations = []
 
-  if (_.size(metadata.data.leftoverSections) > 0) {
+  if (size(metadata.data.highlights) > 0) {
     combinations.push({
-      leftoverSections: metadata.data.leftoverSections
+      highlights: metadata.data.highlights
     })
   }
 
   return combinations
 }
 
+const Wrapper = styled(Box) `
+  background-color: ${({
+    theme
+  }) => {
+    return hexToRgba(theme.colors.primary.main, 0.4)
+  }};
+`
+
 export const render = (props) => {
-  const boxes = props.leftoverSections.map((section, index) => {
+  const boxes = props.highlights.map((highlight, index) => {
     return (
-      <Box key={index} px={3} mb={45} width={[ 1, 1, 1 / 2, 1 / 2 ]}>
+      <Box key={index} px={3} width={[ 1, 1, 1 / 3, 1 / 3 ]}>
         <Flex>
-          <Flex alignItems="flex-start" mt={1} mr={3}>
+          <Flex alignItems="flex-start" mr={3} mt={1}>
             <Box
               bg="primary.main"
               width={24}
@@ -65,58 +75,28 @@ export const render = (props) => {
             </Box>
           </Flex>
           <Flex flexDirection="column">
-            <Markdown
-              componentOverrides={{
-                strong: 'div',
-                // eslint-disable-next-line id-length
-                p: (componentProps) => {
-                  return (
-                    <Txt
-                      {...componentProps}
-                      fontSize="16px"
-                      style={{
-                        lineHeight: 1.63
-                      }}
-                    />
-                  )
-                },
-                h1: (componentProps) => {
-                  return (
-                    <Heading.h3
-                      {...componentProps}
-                      fontSize="20px"
-                      style={{
-                        fontWeight: 600
-                      }}
-                    />
-                  )
-                },
-                h2: (componentProps) => {
-                  return (
-                    <Heading.h2
-                      {...componentProps}
-                      fontSize="20px"
-                      style={{
-                        fontWeight: 600
-                      }}
-                    />
-                  )
-                },
-                h3: (componentProps) => {
-                  return (
-                    <Heading.h3
-                      {...componentProps}
-                      fontSize="20px"
-                      style={{
-                        fontWeight: 600
-                      }}
-                    />
-                  )
-                }
-              }}
-            >
-              {section.title}
-            </Markdown>
+            <Heading.h3 mb={2}>
+              <Markdown
+                componentOverrides={{
+                  // eslint-disable-next-line id-length
+                  p: (componentProps) => {
+                    return (
+                      <Txt
+                        {...componentProps}
+                        fontSize="20px"
+                        style={{
+                          lineHeight: 1.5,
+                          fontWeight: 600
+                        }}
+                      />
+                    )
+                  },
+                  strong: 'div'
+                }}
+              >
+                {highlight.title}
+              </Markdown>
+            </Heading.h3>
             <Markdown
               componentOverrides={{
                 // eslint-disable-next-line id-length
@@ -134,7 +114,7 @@ export const render = (props) => {
                 strong: 'div'
               }}
             >
-              {section.description}
+              {highlight.description}
             </Markdown>
           </Flex>
         </Flex>
@@ -143,12 +123,18 @@ export const render = (props) => {
   })
 
   return (
-    <Box pt={45}>
+    <Wrapper py={45}>
       <Container maxWidth={998}>
-        <Flex flexWrap="wrap" py={65} justifyContent="space-around" mx={-3}>
+        <Flex flexWrap="wrap" justifyContent="space-around" mx={-3}>
           {boxes}
         </Flex>
       </Container>
-    </Box>
+    </Wrapper>
   )
+}
+
+export default {
+  name,
+  render,
+  variants
 }
