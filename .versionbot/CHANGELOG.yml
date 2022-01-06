@@ -1,4 +1,17 @@
 - commits:
+    - subject: Extract base64 images into files.
+      hash: 4101a604ddabc0131334defa90f938d8140b8495
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 7.1.0
+  date: 2022-01-06T07:20:01.473Z
+- commits:
     - subject: Replace typed-errors package with typed-error
       hash: d20ab225443557f3f2c13ce3890e73c7cba5a6f5
       body: ''
