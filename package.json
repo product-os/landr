@@ -65,6 +65,7 @@
     "@storybook/addon-links": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
+    "@types/unzipper": "^0.10.5",
     "ava": "^2.1.0",
     "babel-loader": "^8.0.6",
     "csslint": "^1.0.5",
@@ -138,13 +139,14 @@
     "replace-string": "^3.0.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
-    "scrutinizer": "^4.2.2",
+    "scrutinizer": "^4.5.0",
     "serialize-error": "^6.0.0",
     "shelljs": "^0.8.4",
     "smee-client": "^1.1.0",
     "styled-components": "^5.2.1",
     "tmp": "^0.1.0",
     "typed-error": "^3.2.1",
+    "unzipper": "^0.10.11",
     "uuid": "^8.3.2"
   },
   "nodemonConfig": {
