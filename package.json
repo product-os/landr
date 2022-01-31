@@ -1,6 +1,6 @@
 {
   "name": "landr",
-  "version": "7.1.0",
+  "version": "8.0.0",
   "description": "Generate great websites for your projects with zero configuration",
   "main": "src/cli/index.js",
   "bin": {
@@ -177,6 +177,6 @@
     "access": "public"
   },
   "versionist": {
-    "publishedAt": "2022-01-06T07:20:01.609Z"
+    "publishedAt": "2022-01-31T12:36:50.623Z"
   }
 }
