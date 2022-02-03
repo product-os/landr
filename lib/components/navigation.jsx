@@ -18,41 +18,85 @@ import React from 'react'
 import capitalize from 'lodash/capitalize'
 import styled from 'styled-components'
 import {
-  Box, Img, Container, Heading, Flex, useTheme, Link as RLink
+  Box,
+  Img,
+  Container,
+  Heading,
+  Flex,
+  useTheme,
+  Link as RLink
 } from 'rendition'
 import GithubBanner from './presentational/github-banner'
 import Link from './presentational/link'
 
 export const name = 'Navigation'
 
-export const variants = (metadata, _context, _route, routes) => {
+export const variants = (metadata, context, route, routes) => {
   const combinations = []
 
-  const toplevelRoutes = routes
+  let brandLink = '/'
+  let githubUrl =
+    (metadata.data.links && metadata.data.links.repository) || null
+
+  const topLevelRoutes = routes
     .filter((definition) => {
-      return definition.path.length === 1
+      return (
+        (definition.path.length === 1 ||
+          definition.path
+            .join('/')
+            .replace(route.base.join('/'), '')
+            .split('/')
+            .filter((subRoute) => {
+              return Boolean(subRoute)
+            }).length === 1) &&
+        definition.scope !== 'teamMember'
+      )
     })
     .map((definition) => {
       return {
-        name: capitalize(definition.path[0]),
-        url: `/${definition.path[0]}`
+        name: capitalize(
+          definition.path
+            .join('/')
+            .replace(route.base.join('/'), '')
+            .split('/')
+            .filter((subRoute) => {
+              return Boolean(subRoute)
+            })[0]
+        ),
+        url: `/${definition.path.join('/')}`
       }
     })
 
-  if (metadata.data.links.repository) {
+  const teamMember =
+    metadata.data.teamMembers &&
+    metadata.data.teamMembers.find((item) => {
+      return item.slug === route.base.slice().reverse()[0]
+    })
+
+  if (teamMember) {
+    brandLink = `/${teamMember.slug}`
+  }
+
+  if (metadata.data.isHumanRepo || teamMember) {
+    githubUrl = null
+  }
+
+  if (githubUrl) {
+    githubUrl = githubUrl.replace('.git', '')
+  }
+
+  if (githubUrl && !teamMember) {
     if (metadata.data.version) {
-      toplevelRoutes.push({
+      topLevelRoutes.push({
         name: `v${metadata.data.version}`,
-        url: metadata.data.links.repository.replace('.git', '')
+        url: githubUrl.replace('.git', '')
       })
     }
   }
 
   if (
-    (metadata.data.images.banner ||
-      (metadata.data.github.owner.logo &&
-        metadata.data.github.owner.logo.base64)) &&
-    metadata.data.links.repository
+    metadata.data.images.banner ||
+    (metadata.data.github.owner.logo && metadata.data.github.owner.logo.base64)
   ) {
     combinations.push({
       name: metadata.data.name,
@@ -60,20 +104,18 @@ export const variants = (metadata, _context, _route, routes) => {
         metadata.data.images.banner ||
         (metadata.data.github.owner.logo &&
           metadata.data.github.owner.logo.base64),
-      routes: toplevelRoutes,
-      githubUrl: metadata.data.isHumanRepo
-        ? null
-        : metadata.data.links.repository
+      routes: topLevelRoutes,
+      brandLink,
+      githubUrl
     })
   }
 
-  if (metadata.data.links.repository) {
+  if (githubUrl) {
     combinations.push({
       name: metadata.data.name,
-      routes: toplevelRoutes,
-      githubUrl: metadata.data.isHumanRepo
-        ? null
-        : metadata.data.links.repository
+      routes: topLevelRoutes,
+      brandLink,
+      githubUrl
     })
   }
 
@@ -126,7 +168,7 @@ const Navigation = (props) => {
             position: 'relative'
           }}
         >
-          <Link color="white" url={'/'}>
+          <Link color="white" url={props.brandLink || '/'}>
             {Brand}
           </Link>
           <Flex fontSize={2} mx={-2}>

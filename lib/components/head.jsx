@@ -26,8 +26,8 @@ export const variants = (metadata, context, route, routes, options) => {
 
   if (metadata.data.name) {
     combinations.push({
-      siteUrl: options.siteUrl,
-      pageUrl: `${options.siteUrl}/${route.path.join('/')}`,
+      siteUrl: options.siteUrl || '',
+      pageUrl: `${options.siteUrl || ''}/${route.path.join('/')}`,
       description: metadata.data.description,
       title: route.path.length === 0 ? metadata.data.name : route.title
     })

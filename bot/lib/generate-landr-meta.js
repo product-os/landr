@@ -122,7 +122,8 @@ exports.run = async (scrutinizerData) => {
     version,
     orgLogoFull,
     orgLogoBrandmark,
-    contract
+    contract,
+    teamMembers
   } = scrutinizerData
 
   const data = {
@@ -275,7 +276,8 @@ exports.run = async (scrutinizerData) => {
       releases: {
         latestRelease,
         latestPreRelease
-      }
+      },
+      teamMembers
     }
   }
 
