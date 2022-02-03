@@ -7,7 +7,7 @@ import {
 } from '@react-google-maps/api'
 
 // Coordinates of Seattle, avoid having the map centered in the middle of the sea
-const DEFAULT_LATLNG = {
+const DEFAULT_LAT_LNG = {
   lat: 47.6062,
   lng: -122.3321
 }
@@ -331,7 +331,7 @@ const onGoogleMapsApiLoad = (map, markers) => {
     const bounds = getMapBounds(markers)
     map.fitBounds(bounds)
   } else {
-    map.setCenter(DEFAULT_LATLNG)
+    map.setCenter(DEFAULT_LAT_LNG)
     map.setZoom(DEFAULT_ZOOM_LEVEL)
   }
 
@@ -349,7 +349,7 @@ const onGoogleMapsApiLoad = (map, markers) => {
   // With this we first wait for the map to be idle (from fitBounds), and then set the zoom level.
   // eslint-disable-next-line no-undef
   const listener = google.maps.event.addListenerOnce(map, 'idle', () => {
-    // Don't allow to zoom closer than the defailt detail zoom level on initial load.
+    // Don't allow to zoom closer than the default detail zoom level on initial load.
     if (map.getZoom() > DETAIL_ZOOM_LEVEL) {
       map.setZoom(DETAIL_ZOOM_LEVEL)
     }
@@ -382,13 +382,15 @@ export const Map = ({
               return onGoogleMapsApiLoad(map, markers)
             }}
           >
-            {markers.map((_, index) => {
+            {markers.map(({
+              lat, lng
+            }, index) => {
               return (
                 <Marker
                   key={index}
                   position={{
-                    lat: DEFAULT_LATLNG.lat,
-                    lng: DEFAULT_LATLNG.lng
+                    lat: lat || DEFAULT_LAT_LNG.lat,
+                    lng: lng || DEFAULT_LAT_LNG.lng
                   }}
                   clickable={false}
                 />

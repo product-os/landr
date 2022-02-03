@@ -19,7 +19,6 @@ import {
   Box, Container, Divider, Flex, Heading, Img, Txt
 } from 'rendition'
 import styled from 'styled-components'
-import hexToRgba from 'hex-to-rgba'
 import {
   FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
@@ -47,19 +46,8 @@ import {
 import {
   Map
 } from './presentational/map'
+import AvatarBox from './presentational/AvatarBox'
 
-const AvatarBox = styled(Box) `
-  width: 380px;
-  max-width: 100%;
-  box-shadow: 0 10px 0
-      ${(props) => {
-    return hexToRgba(props.theme.colors.primary.main, 0.1)
-  }},
-    4px 4px 0 0
-      ${(props) => {
-    return props.theme.colors.primary.main
-  }};
-`
 const getNameImage = (name) => {
   if (!name) return ''
   const [ firstName, lastName ] = name.split(' ')
@@ -81,10 +69,24 @@ const NameAvatar = styled(Txt) `
   background: white;
 `
 
-export const variants = (metadata) => {
+export const variants = (metadata, context, route) => {
   const combinations = []
 
-  if (!metadata.data.isHumanRepo) return []
+  const teamMember = metadata.data.teamMembers &&
+    metadata.data.teamMembers.find((item) => {
+      return item.slug === route.base.slice().reverse()[0]
+    })
+
+  if (teamMember && teamMember.data) {
+    return [
+      {
+        userDetails:
+          teamMember.data.balena.yml
+      }
+    ]
+  }
+
+  if (!metadata.data.isHumanRepo) return combinations
 
   combinations.push({
     userDetails: metadata.data.balena.yml

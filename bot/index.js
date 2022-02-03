@@ -22,10 +22,11 @@ const {
   serializeError
 } = require('serialize-error')
 
-const metaGenerator = require('./lib/generate-landr-meta')
 const runner = require('../lib/build-runner')
 
-const scrutinizer = require('scrutinizer')
+const {
+  getMetaData
+} = require('../lib/cli/utils')
 
 // TODO: Infer this login information automatically
 // This is the identifier GitHub uses for the bot
@@ -86,12 +87,7 @@ const build = async ({
     : context.payload.repository.full_name
   const [ owner, repo ] = repository.split('/')
 
-  const scrutinizerData = await scrutinizer.local(repository, {
-    reference: branch,
-    context,
-    downloadRepo: true
-  })
-  const contract = await metaGenerator.run(scrutinizerData)
+  const contract = await getMetaData(repository, branch, context, true)
 
   const outputBase = path.resolve(
     process.cwd(),

@@ -27,30 +27,58 @@ import {
   Txt,
   useTheme
 } from 'rendition'
-import {
-  useBasepath
-} from 'react-static'
 
 export const name = 'Footer'
 
-export const variants = (metadata, context, _route, routes) => {
+export const variants = (metadata, context, route, routes) => {
   const combinations = []
 
-  const toplevelRoutes = routes
+  let githubUrl =
+    (metadata.data.links && metadata.data.links.repository) || null
+
+  const topLevelRoutes = routes
     .filter((definition) => {
-      return definition.path.length === 1
+      return (
+        (definition.path.length === 1 ||
+          definition.path
+            .join('/')
+            .replace(route.base.join('/'), '')
+            .split('/')
+            .filter((subRoute) => {
+              return Boolean(subRoute)
+            }).length === 1) &&
+        definition.scope !== 'teamMember'
+      )
     })
     .map((definition) => {
       return {
-        name: capitalize(definition.path[0]),
-        url: `/${definition.path[0]}`
+        name: capitalize(
+          definition.path
+            .join('/')
+            .replace(route.base.join('/'), '')
+            .split('/')
+            .filter((subRoute) => {
+              return Boolean(subRoute)
+            })[0]
+        ),
+        url: `/${definition.path.join('/')}`
       }
     })
 
-  if (metadata.data.links.repository) {
-    toplevelRoutes.push({
+  const teamMember =
+    metadata.data.teamMembers &&
+    metadata.data.teamMembers.find((item) => {
+      return item.slug === route.base.slice().reverse()[0]
+    })
+
+  if (metadata.data.isHumanRepo || teamMember) {
+    githubUrl = null
+  }
+
+  if (githubUrl && !teamMember) {
+    topLevelRoutes.push({
       name: 'GitHub',
-      url: metadata.data.links.repository.replace('.git', '')
+      url: githubUrl.replace('.git', '')
     })
   }
 
@@ -59,7 +87,7 @@ export const variants = (metadata, context, _route, routes) => {
       name: metadata.data.name,
       owner: metadata.data.github.owner,
       logo: metadata.data.images.banner,
-      routes: toplevelRoutes,
+      routes: topLevelRoutes,
       toc: context.toc,
       docsTableOfContent: context.docsTableOfContent
     })
@@ -69,7 +97,7 @@ export const variants = (metadata, context, _route, routes) => {
     combinations.push({
       name: metadata.data.name,
       owner: metadata.data.github.owner,
-      routes: toplevelRoutes,
+      routes: topLevelRoutes,
       toc: context.toc,
       docsTableOfContent: context.docsTableOfContent
     })
@@ -80,9 +108,8 @@ export const variants = (metadata, context, _route, routes) => {
 
 const Footer = (props) => {
   const theme = useTheme()
-  const basepath = useBasepath()
   const toc = (props.docsTableOfContent || props.toc).map((page, index) => {
-    const url = `${basepath}/${page.path.join('/')}`
+    const url = `/${page.path.join('/')}`
     return (
       <Box key={index} mb={1}>
         <Link color="#527699" fontSize={13} href={url}>
@@ -123,14 +150,17 @@ const Footer = (props) => {
         href={props.owner.url}
         tooltip={props.owner.name}
       >
-        <Img
-          src={props.owner.avatar}
-          alt={props.owner.name}
-          ml={2}
-          style={{
-            height: 26
-          }}
-        />
+        <Flex>
+          <Img
+            src={props.owner.avatar}
+            alt={props.owner.name}
+            ml={2}
+            style={{
+              height: 26
+            }}
+          />
+          <Txt.span>{props.owner.name}</Txt.span>
+        </Flex>
       </Link>
     </Flex>
   )
