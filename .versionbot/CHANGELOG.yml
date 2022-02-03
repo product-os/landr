@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add team page, generate org site for team
+      hash: 6809226eec06a4aeaa5381f461f0fe7d3c2252bf
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.0.0
+  title: Add team page, generate org site for team
+  date: 2022-02-03T11:55:40.117Z
+- commits:
     - subject: Clone remote repo and use scrutinizer in local mode
       hash: 09f4b9145161042ab26ddc7b4a3f02f9f520a9d3
       body: ""
