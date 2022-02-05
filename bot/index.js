@@ -85,9 +85,9 @@ const build = async ({
   const repository = context.payload.pull_request
     ? context.payload.pull_request.head.repo.full_name
     : context.payload.repository.full_name
-  const [ owner, repo ] = repository.split('/')
 
   const contract = await getMetaData(repository, branch, context, true)
+  const [ owner, repo ] = repository.split('/')
 
   const outputBase = path.resolve(
     process.cwd(),
