@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add bot docs
+      hash: 19f2e2f9a83831d6e6051205282ed186db6d336a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.7
+  title: "'Add bot docs'"
+  date: 2022-02-05T16:41:25.475Z
+- commits:
     - subject: Update scrutinizer
       hash: bf70208d7daff458a381bbdd364adfa37519188b
       body: ""
