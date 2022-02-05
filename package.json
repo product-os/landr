@@ -8,7 +8,7 @@
   },
   "scripts": {
     "bot:dev": "nodemon",
-    "bot:start": "LOG_LEVEL=trace NODE_ENV=production probot run ./bot/index.js",
+    "bot:start": "LOG_LEVEL=debug NODE_ENV=production probot run ./bot/index.js",
     "cli:docs": "oclif-dev readme",
     "lint": "eslint --ext .js,.jsx lib bot test scripts && csslint lib/**/*.css",
     "unit": "nyc --exclude scripts --exclude test --reporter=html --extension .js --extension .jsx --compact=false ava",
@@ -139,7 +139,7 @@
     "replace-string": "^3.0.0",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
-    "scrutinizer": "^4.7.1",
+    "scrutinizer": "^4.7.2",
     "serialize-error": "^6.0.0",
     "shelljs": "^0.8.4",
     "smee-client": "^1.1.0",
