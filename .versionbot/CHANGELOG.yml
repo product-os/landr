@@ -1,4 +1,18 @@
 - commits:
+    - subject: Handle null yml on teams page
+      hash: 000094ed36605210516f7d5d7a323e588e36e593
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.1
+  title: "'Handle null yml on teams page'"
+  date: 2022-02-05T09:32:13.507Z
+- commits:
     - subject: Load only required data for user
       hash: 7dee891ee65ec7fe2c59fdbbc421cec55044d3eb
       body: ""
