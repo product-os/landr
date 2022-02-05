@@ -1,4 +1,18 @@
 - commits:
+    - subject: Load only required data for user
+      hash: 7dee891ee65ec7fe2c59fdbbc421cec55044d3eb
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.0
+  title: "'Load only required data for user'"
+  date: 2022-02-05T09:14:09.605Z
+- commits:
     - subject: Fix theme image selection
       hash: 80d5264f1c1723cd98b4db57648b63c0f938e25c
       body: ""
