@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix user avatar image
+      hash: 8461d3c57c70e1e8eecdd0ad9e3fbb62dad2e253
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.4
+  title: "'Fix user avatar image'"
+  date: 2022-02-05T11:59:36.227Z
+- commits:
     - subject: Fix user info details
       hash: 39a2b87970e2e0cc6ce113be212f322d477f3ae4
       body: ""
