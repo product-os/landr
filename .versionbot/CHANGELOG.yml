@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix theme image selection
+      hash: 80d5264f1c1723cd98b4db57648b63c0f938e25c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.0.1
+  title: "'Fix theme image selection'"
+  date: 2022-02-05T07:11:38.820Z
+- commits:
     - subject: Add team page, generate org site for team
       hash: 6809226eec06a4aeaa5381f461f0fe7d3c2252bf
       body: ""
