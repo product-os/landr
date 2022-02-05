@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update scrutinizer
+      hash: bf70208d7daff458a381bbdd364adfa37519188b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.6
+  title: "'Update scrutinizer'"
+  date: 2022-02-05T16:24:41.428Z
+- commits:
     - subject: Add move info logs
       hash: 645fbfadec322eb42d890de63eeee28f7a06d34d
       body: ""
