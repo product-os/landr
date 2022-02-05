@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add move info logs
+      hash: 645fbfadec322eb42d890de63eeee28f7a06d34d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.5
+  title: "'Extra-logging'"
+  date: 2022-02-05T14:20:24.423Z
+- commits:
     - subject: Fix user avatar image
       hash: 8461d3c57c70e1e8eecdd0ad9e3fbb62dad2e253
       body: ""
