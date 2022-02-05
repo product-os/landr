@@ -171,7 +171,7 @@ export const render = (props, _analytics, config) => {
               <AvatarBox>
                 {props.avatar ? (
                   <Img
-                    src={props.avatar.base64}
+                    src={props.avatar}
                     style={{
                       width: 380
                     }}
