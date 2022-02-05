@@ -114,6 +114,8 @@ const getMemberDetails = (userDetails) => {
       details.avatar = userDetails.data.profile_photo
     }
   }
+
+  return details
 }
 
 export const variants = (metadata, context, route) => {
