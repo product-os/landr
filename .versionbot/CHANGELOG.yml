@@ -1,4 +1,18 @@
 - commits:
+    - subject: Remove unused files
+      hash: 2e67c1478ccfe41b6f3086eb0e50a7540552aff9
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.2
+  title: "'Remove unused files'"
+  date: 2022-02-05T09:55:55.687Z
+- commits:
     - subject: Handle null yml on teams page
       hash: 000094ed36605210516f7d5d7a323e588e36e593
       body: ""
