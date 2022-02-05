@@ -14,6 +14,10 @@ you can do with Landr, so check out how we do things there if unsure!
 Landr will parse the `README` file and if it finds an image at the top, it will
 use it as the project banner/logo.
 
+### Logo Brandmark
+
+A brandmark logo only consist of the logo without the text. Landr will look for `logo.png` if present in the root directory, which will be used as favicon
+
 ### Description
 
 The first paragraph in the `README` before any section is considered to be the
