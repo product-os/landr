@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update scrutinizer version
+      hash: ccd82a06b833ac61d38497b1f6e366a996434ddc
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.2.0
+  title: "'Update scrutinizer version'"
+  date: 2022-02-06T17:49:00.750Z
+- commits:
     - subject: Enable scrutinizer debug log
       hash: 1bff3dc3af3eef89bc065f4a804054bfe3edec8e
       body: ""
