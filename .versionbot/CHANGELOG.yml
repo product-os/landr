@@ -1,4 +1,18 @@
 - commits:
+    - subject: Enable scrutinizer debug log
+      hash: 1bff3dc3af3eef89bc065f4a804054bfe3edec8e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.1.8
+  title: "'Enable scrutinizer debug log'"
+  date: 2022-02-06T06:27:10.542Z
+- commits:
     - subject: Add bot docs
       hash: 19f2e2f9a83831d6e6051205282ed186db6d336a
       body: ""
