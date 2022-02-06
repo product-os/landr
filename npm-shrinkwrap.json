@@ -6,7 +6,7 @@
   "packages": {
     "": {
       "name": "landr",
-      "version": "9.1.5",
+      "version": "9.1.8",
       "license": "Apache-2.0",
       "dependencies": {
         "@babel/register": "^7.4.0",
@@ -60,7 +60,7 @@
         "replace-string": "^3.0.0",
         "rfdc": "^1.1.4",
         "rimraf": "^2.6.3",
-        "scrutinizer": "^4.7.2",
+        "scrutinizer": "^4.7.3",
         "serialize-error": "^6.0.0",
         "shelljs": "^0.8.4",
         "smee-client": "^1.1.0",
@@ -29863,9 +29863,9 @@
       }
     },
     "node_modules/scrutinizer": {
-      "version": "4.7.2",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.7.2.tgz",
-      "integrity": "sha512-XIpkY//ElxTYNDnGrlyG3YFUP6pSV6Ye0u/ZJEmZzx5/Zb+qYnWArvVN70Zp+aUY8RpzBvoyFzK0GGLTwQLKeA==",
+      "version": "4.7.3",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.7.3.tgz",
+      "integrity": "sha512-u9PQyf9Ot2zYwAqpXzShExrqusr5fOPq2x8QmdcuiMnepkEcvSh3d8DlgliUAynKg+JvrwuAzIUXkBJsyAK4DQ==",
       "dependencies": {
         "@octokit/rest": "^18.12.0",
         "bluebird": "^3.7.2",
@@ -59815,9 +59815,9 @@
       }
     },
     "scrutinizer": {
-      "version": "4.7.2",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.7.2.tgz",
-      "integrity": "sha512-XIpkY//ElxTYNDnGrlyG3YFUP6pSV6Ye0u/ZJEmZzx5/Zb+qYnWArvVN70Zp+aUY8RpzBvoyFzK0GGLTwQLKeA==",
+      "version": "4.7.3",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.7.3.tgz",
+      "integrity": "sha512-u9PQyf9Ot2zYwAqpXzShExrqusr5fOPq2x8QmdcuiMnepkEcvSh3d8DlgliUAynKg+JvrwuAzIUXkBJsyAK4DQ==",
       "requires": {
         "@octokit/rest": "^18.12.0",
         "bluebird": "^3.7.2",
