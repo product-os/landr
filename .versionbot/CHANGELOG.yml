@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update landrbot link
+      hash: a624c2daf78736f95659c184d31324fd5c06e801
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.2.4
+  title: "'Update landrbot link'"
+  date: 2022-02-07T15:10:11.125Z
+- commits:
     - subject: Update landrbot docs
       hash: d34e259460465ad5777f7153dba88811fe56c218
       body: ""
