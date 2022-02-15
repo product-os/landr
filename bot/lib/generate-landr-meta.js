@@ -123,6 +123,9 @@ exports.run = async (scrutinizerData) => {
     orgLogoFull,
     orgLogoBrandmark,
     contract,
+    masterAgreement,
+    privacyPolicy,
+    termsOfService,
     teamMembers
   } = scrutinizerData
 
@@ -136,6 +139,9 @@ exports.run = async (scrutinizerData) => {
     active,
     netlifyConfig,
     data: {
+      masterAgreement,
+      privacyPolicy,
+      termsOfService,
       license,
       name,
       tagline,
