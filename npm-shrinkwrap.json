@@ -20940,9 +20940,9 @@
       },
       "dependencies": {
         "detect-libc": {
-          "version": "2.0.0",
-          "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.0.tgz",
-          "integrity": "sha512-S55LzUl8HUav8l9E2PBTlC5PAJrHK7tkM+XXFGD+fbsbkTzhCpG6K05LxJcUOEWzMa4v6ptcMZ9s3fOdJDu0Zw=="
+          "version": "2.0.1",
+          "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.0.1.tgz",
+          "integrity": "sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w=="
         }
       }
     },
@@ -24233,9 +24233,9 @@
       }
     },
     "scrutinizer": {
-      "version": "4.7.5",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.7.5.tgz",
-      "integrity": "sha512-I4f7LQC4OhCFDLWl1gFTMBqC0JrvxuItXOVNPxEfZDJ3rpXCmm7JDQ9sI/tfL90B6iIx5QJncseAvmjSsMDW1A==",
+      "version": "4.10.0",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.10.0.tgz",
+      "integrity": "sha512-iaz/0GlzRNEAplEW7OjIkGqaWiuCr5O/ESX0U/kQHDKKVxQ3FOkpzzqU3u/N7qT2LH8ntZptJsN3C7RzkrztjA==",
       "requires": {
         "@octokit/rest": "^18.12.0",
         "bluebird": "^3.7.2",
