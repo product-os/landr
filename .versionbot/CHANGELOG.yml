@@ -1,4 +1,18 @@
 - commits:
+    - subject: Improve navigation links
+      hash: a8bc8bf0c0ffc3a6f008063afa3e92f7c5c9d5b5
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.3.2
+  title: "'Improve navigation links'"
+  date: 2022-02-22T15:30:02.575Z
+- commits:
     - subject: Handle invalid geocode
       hash: 4eec0194f3d3f1813c009388bcb01c13ad765203
       body: ""
