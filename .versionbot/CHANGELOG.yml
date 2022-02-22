@@ -1,4 +1,18 @@
 - commits:
+    - subject: Handle invalid geocode
+      hash: 4eec0194f3d3f1813c009388bcb01c13ad765203
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.3.1
+  title: "'Handle invalid geocode'"
+  date: 2022-02-22T10:11:03.707Z
+- commits:
     - subject: Add legal pages
       hash: b5b0135065a8ffd3944984183f41803ae600b237
       body: ""
