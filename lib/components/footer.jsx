@@ -15,7 +15,6 @@
  */
 
 import React from 'react'
-import capitalize from 'lodash/capitalize'
 import isEmpty from 'lodash/isEmpty'
 import {
   Box,
@@ -27,8 +26,19 @@ import {
   Txt,
   useTheme
 } from 'rendition'
+import {
+  getStructuredRoutes
+} from '../utils'
+import styled from 'styled-components'
 
 export const name = 'Footer'
+
+const Divider = styled(Box).attrs({
+  mx: 2
+}) `
+  border-left: 1px solid;
+  height: 11px;
+`
 
 export const variants = (metadata, context, route, routes) => {
   const combinations = []
@@ -36,34 +46,12 @@ export const variants = (metadata, context, route, routes) => {
   let githubUrl =
     (metadata.data.links && metadata.data.links.repository) || null
 
-  const topLevelRoutes = routes
-    .filter((definition) => {
-      return (
-        (definition.path.length === 1 ||
-          definition.path
-            .join('/')
-            .replace(route.base.join('/'), '')
-            .split('/')
-            .filter((subRoute) => {
-              return Boolean(subRoute)
-            }).length === 1) &&
-        definition.scope !== 'teamMember'
-      )
-    })
-    .map((definition) => {
-      return {
-        name: capitalize(
-          definition.path
-            .join('/')
-            .replace(route.base.join('/'), '')
-            .split('/')
-            .filter((subRoute) => {
-              return Boolean(subRoute)
-            })[0]
-        ),
-        url: `/${definition.path.join('/')}`
-      }
-    })
+  const {
+    topLevelRoutes, secondaryRoutes
+  } = getStructuredRoutes(
+    routes,
+    route
+  )
 
   const teamMember =
     metadata.data.teamMembers &&
@@ -88,6 +76,7 @@ export const variants = (metadata, context, route, routes) => {
       owner: metadata.data.github.owner,
       logo: metadata.data.images.banner,
       routes: topLevelRoutes,
+      secondaryRoutes,
       toc: context.toc,
       docsTableOfContent: context.docsTableOfContent
     })
@@ -98,6 +87,7 @@ export const variants = (metadata, context, route, routes) => {
       name: metadata.data.name,
       owner: metadata.data.github.owner,
       routes: topLevelRoutes,
+      secondaryRoutes,
       toc: context.toc,
       docsTableOfContent: context.docsTableOfContent
     })
@@ -166,46 +156,71 @@ const Footer = (props) => {
   )
 
   return (
-    <Box
-      px={3}
-      py={5}
-      mt={5}
-      style={{
-        position: 'relative',
-        zIndex: 3
-      }}
-      bg="#f8f9fd"
-    >
-      <Container>
-        <Flex justifyContent="center">
-          <Flex
-            width={[ 1, 1, 1, 5 / 6 ]}
-            mx={-16}
-            justifyContent={[ 'flex-start', 'flex-start', 'space-between' ]}
-            flexWrap="wrap"
-          >
-            <Box px={16} width={[ 1, 1, 1 / 2 ]} mb={3}>
-              {brand}
-              {owner}
-            </Box>
-            <Box px={16} pt={14}>
-              <Heading.h4 mb={2} fontSize={14}>
-                Navigation
-              </Heading.h4>
-              {links}
-            </Box>
-            {!isEmpty(toc) && (
+    <>
+      <Box
+        px={3}
+        py={5}
+        mt={5}
+        style={{
+          position: 'relative',
+          zIndex: 3
+        }}
+        bg="#f8f9fd"
+      >
+        <Container>
+          <Flex justifyContent="center">
+            <Flex
+              width={[ 1, 1, 1, 5 / 6 ]}
+              mx={-16}
+              justifyContent={[ 'flex-start', 'flex-start', 'space-between' ]}
+              flexWrap="wrap"
+            >
+              <Box px={16} width={[ 1, 1, 1 / 2 ]} mb={3}>
+                {brand}
+                {owner}
+              </Box>
               <Box px={16} pt={14}>
                 <Heading.h4 mb={2} fontSize={14}>
-                  Docs
+                  Navigation
                 </Heading.h4>
-                {toc}
+                {links}
               </Box>
-            )}
+              {!isEmpty(toc) && (
+                <Box px={16} pt={14}>
+                  <Heading.h4 mb={2} fontSize={14}>
+                    Docs
+                  </Heading.h4>
+                  {toc}
+                </Box>
+              )}
+            </Flex>
           </Flex>
-        </Flex>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+      {props.secondaryRoutes && props.secondaryRoutes.length > 0 && (
+        <Container>
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            p={15}
+            flexWrap="wrap"
+          >
+            {props.secondaryRoutes.map((route, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <Link color="gray.dark" fontSize={13} href={route.url}>
+                    {route.name}
+                  </Link>
+                  {index + 1 === props.secondaryRoutes.length ? null : (
+                    <Divider />
+                  )}
+                </React.Fragment>
+              )
+            })}
+          </Flex>
+        </Container>
+      )}
+    </>
   )
 }
 
