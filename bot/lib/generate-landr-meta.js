@@ -63,15 +63,26 @@ const geocoder = NodeGeocoder({
 const getLatLong = async ({
   city, country
 }) => {
-  const [ {
-    latitude: lat, longitude: lng
-  } ] = await geocoder.geocode(
-    `${city}, ${country}`
-  )
-  return {
-    lat,
-    lng,
-    aye: 'captain'
+  if (!city || !country) {
+    return {
+      lat: null, lng: null
+    }
+  }
+  try {
+    const [ {
+      latitude: lat, longitude: lng
+    } ] = await geocoder.geocode(
+      `${city}, ${country}`
+    )
+    return {
+      lat,
+      lng
+    }
+  } catch (error) {
+    return {
+      lat: null,
+      lng: null
+    }
   }
 }
 
