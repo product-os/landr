@@ -15,7 +15,6 @@
  */
 
 import React from 'react'
-import capitalize from 'lodash/capitalize'
 import styled from 'styled-components'
 import {
   Box,
@@ -28,6 +27,9 @@ import {
 } from 'rendition'
 import GithubBanner from './presentational/github-banner'
 import Link from './presentational/link'
+import {
+  getStructuredRoutes
+} from '../utils'
 
 export const name = 'Navigation'
 
@@ -38,34 +40,9 @@ export const variants = (metadata, context, route, routes) => {
   let githubUrl =
     (metadata.data.links && metadata.data.links.repository) || null
 
-  const topLevelRoutes = routes
-    .filter((definition) => {
-      return (
-        (definition.path.length === 1 ||
-          definition.path
-            .join('/')
-            .replace(route.base.join('/'), '')
-            .split('/')
-            .filter((subRoute) => {
-              return Boolean(subRoute)
-            }).length === 1) &&
-        definition.scope !== 'teamMember'
-      )
-    })
-    .map((definition) => {
-      return {
-        name: capitalize(
-          definition.path
-            .join('/')
-            .replace(route.base.join('/'), '')
-            .split('/')
-            .filter((subRoute) => {
-              return Boolean(subRoute)
-            })[0]
-        ),
-        url: `/${definition.path.join('/')}`
-      }
-    })
+  const {
+    topLevelRoutes
+  } = getStructuredRoutes(routes, route)
 
   const teamMember =
     metadata.data.teamMembers &&
