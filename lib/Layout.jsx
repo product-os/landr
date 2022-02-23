@@ -4,9 +4,6 @@ import {
 } from 'rendition'
 
 import defaultTheme from '../default-theme.json'
-import '@fortawesome/fontawesome/styles.css'
-import './components/global.css'
-import 'react-typist/dist/Typist.css'
 
 const landrTheme = process.env.LANDR_THEME
   ? JSON.parse(process.env.LANDR_THEME)
