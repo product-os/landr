@@ -29,7 +29,7 @@ import GithubBanner from './presentational/github-banner'
 import Link from './presentational/link'
 import {
   getStructuredRoutes
-} from '../utils'
+} from './utils'
 
 export const name = 'Navigation'
 
