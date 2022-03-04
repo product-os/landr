@@ -27,6 +27,9 @@ const runner = require('../lib/build-runner')
 const {
   getMetaData
 } = require('../lib/cli/utils')
+const {
+  findSite, deleteSite
+} = require('../lib/netlify')
 
 // TODO: Infer this login information automatically
 // This is the identifier GitHub uses for the bot
@@ -134,6 +137,41 @@ const build = async ({
 
 // This is the main entrypoint to your Probot app
 module.exports = (app) => {
+  app.on([ 'pull_request.closed' ], async (context) => {
+    if (context.payload.ref !== 'refs/heads/master') {
+      const repository = context.payload.repository.full_name
+      const [ owner, repo ] = repository.split('/')
+      const pullNumber = context.payload.number
+      const branch = _.get(context, [ 'payload', 'pull_request', 'head', 'ref' ])
+      if (branch === 'master') {
+        return
+      }
+      const netlifySiteName = runner.getNetlifySiteName({
+        owner,
+        name: repo,
+        pullNumber,
+        branch
+      })
+      const site = await findSite(
+        process.env.NETLIFY_AUTH_TOKEN,
+        netlifySiteName
+      )
+      if (site) {
+        context.log(`Deleting preview site ${netlifySiteName} from netlify`)
+        await deleteSite(process.env.NETLIFY_AUTH_TOKEN, site.id)
+
+        upsertPRComment({
+          context,
+          owner,
+          repo,
+          pullNumber,
+          message: 'The preview site has been deleted.',
+          log: context.log
+        })
+      }
+    }
+  })
+
   app.on(
     [ 'pull_request.opened', 'pull_request.synchronize' ],
     async (context) => {
