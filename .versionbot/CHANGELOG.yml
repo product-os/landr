@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix utils file import into cjs
+      hash: bc7f27098d232ce585fad20535cdbda4c931c556
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.3.4
+  title: "'Fix utils file import into cjs'"
+  date: 2022-03-04T10:04:04.551Z
+- commits:
     - subject: Fix css loading on node-render
       hash: 422423dea1b8e1e4593aa462a9e2acdcd9626bae
       body: ""
