@@ -1,4 +1,18 @@
 - commits:
+    - subject: Delete preview site when PR is closed
+      hash: 13f3f14b156877beead971db8cd61c098fbfe216
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.0
+  title: "'Delete preview site when PR is closed'"
+  date: 2022-03-04T13:06:26.910Z
+- commits:
     - subject: Fix utils file import into cjs
       hash: bc7f27098d232ce585fad20535cdbda4c931c556
       body: ""
