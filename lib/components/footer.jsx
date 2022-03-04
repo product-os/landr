@@ -28,7 +28,7 @@ import {
 } from 'rendition'
 import {
   getStructuredRoutes
-} from '../utils'
+} from './utils'
 import styled from 'styled-components'
 
 export const name = 'Footer'
