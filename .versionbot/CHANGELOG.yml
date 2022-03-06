@@ -1,4 +1,18 @@
 - commits:
+    - subject: Improve navbar responsiveness
+      hash: d7df09decfacc007e4dcc08eb81ba568af043d9f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.1
+  title: "'Improve navbar responsiveness'"
+  date: 2022-03-06T10:28:50.327Z
+- commits:
     - subject: Delete preview site when PR is closed
       hash: 13f3f14b156877beead971db8cd61c098fbfe216
       body: ""
