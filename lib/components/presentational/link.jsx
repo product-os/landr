@@ -24,7 +24,8 @@ const Link = (props) => {
       color={theme.colors.text.main}
       style={{
         fontSize: '14px',
-        fontWeight: 600
+        fontWeight: 600,
+        ...(props.style || {})
       }}
       {...baseProps}
     >
