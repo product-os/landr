@@ -16,7 +16,7 @@ const Toc = (props) => {
 
     const headings = page.tableOfContent
       ? page.tableOfContent.filter((heading) => {
-        return heading.depth !== 2
+        return heading.depth === 2
       })
       : []
 
