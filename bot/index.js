@@ -26,7 +26,7 @@ const runner = require('../lib/build-runner')
 
 const {
   getMetaData
-} = require('../lib/cli/utils')
+} = require('../lib/meta-generator/getMetaData')
 const {
   findSite, deleteSite
 } = require('../lib/netlify')
