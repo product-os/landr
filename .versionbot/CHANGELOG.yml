@@ -1,4 +1,18 @@
 - commits:
+    - subject: Restructure files, folders
+      hash: 0ddfe7e7549fdcd6952c275e496e5d03149b0c23
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.2
+  title: "'Restructure files, folders'"
+  date: 2022-03-07T13:28:20.603Z
+- commits:
     - subject: Improve navbar responsiveness
       hash: d7df09decfacc007e4dcc08eb81ba568af043d9f
       body: ""
