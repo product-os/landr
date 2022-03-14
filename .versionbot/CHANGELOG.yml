@@ -1,4 +1,18 @@
 - commits:
+    - subject: Extract non-react code into their own files
+      hash: e0224e6f0efc370198ce6981ce8e7c6b0253432e
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.4
+  title: "'Extract non-react code into their own files'"
+  date: 2022-03-14T11:11:50.381Z
+- commits:
     - subject: Fix Table of content rendering for docs
       hash: 1ce743f4fa64db62311288c191a0ae4be4bc8ca2
       body: ""
