@@ -58,14 +58,13 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
+    "@babel/core": "^7.17.5",
     "@oclif/dev-cli": "^1.26.10",
     "@storybook/addon-a11y": "^5.2.5",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
-    "@types/unzipper": "^0.10.5",
     "ava": "^2.1.0",
     "babel-loader": "^8.0.6",
     "csslint": "^1.0.5",
@@ -88,7 +87,7 @@
     "puppeteer": "^1.20.0"
   },
   "dependencies": {
-    "@babel/register": "^7.4.0",
+    "@babel/register": "^7.17.0",
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
@@ -97,7 +96,6 @@
     "@oclif/command": "^1.8.16",
     "@oclif/errors": "^1.2.2",
     "@oclif/plugin-help": "^2.2.3",
-    "@reach/router": "^1.2.1",
     "@react-google-maps/api": "^1.13.0",
     "bluebird": "^3.7.2",
     "chalk": "^2.4.2",
@@ -113,7 +111,6 @@
     "hex-to-rgba": "^2.0.1",
     "json2toml": "^2.2.1",
     "lodash": "^4.17.15",
-    "markdown": "^0.5.0",
     "mixpanel-browser": "^2.29.0",
     "mkdirp": "^0.5.1",
     "netlify": "^6.1.18",
@@ -129,7 +126,6 @@
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^1.2.2",
     "react-static": "^7.6.2",
-    "react-static-plugin-reach-router": "^7.6.2",
     "react-static-plugin-react-router": "^7.6.2",
     "react-static-plugin-sitemap": "^7.6.2",
     "react-static-plugin-styled-components": "^7.6.2",
@@ -144,10 +140,9 @@
     "shelljs": "^0.8.4",
     "simple-git": "^3.1.1",
     "smee-client": "^1.1.0",
-    "styled-components": "^5.2.1",
+    "styled-components": "^5.3.3",
     "tmp": "^0.1.0",
     "typed-error": "^3.2.1",
-    "unzipper": "^0.10.11",
     "uuid": "^8.3.2"
   },
   "nodemonConfig": {
