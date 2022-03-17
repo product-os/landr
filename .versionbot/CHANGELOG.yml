@@ -1,4 +1,18 @@
 - commits:
+    - subject: Link versioned docs with version suffix
+      hash: a7e0461e30bb2cf220115e1030e980c7580fa800
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.10
+  title: "'Link versioned docs with version suffix'"
+  date: 2022-03-17T12:07:25.279Z
+- commits:
     - subject: Handle theme palette error, when reading malformed base64 images
       hash: 5059ad9394b2b44c4ac7e73477c1ed8aacb23d12
       body: ""
