@@ -1,4 +1,18 @@
 - commits:
+    - subject: Upgrade simple git version
+      hash: 19782835c9395723c90a9cdd33d362a70a7c4c6a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.11
+  title: "'Upgrade simple git version'"
+  date: 2022-03-17T17:49:19.358Z
+- commits:
     - subject: Link versioned docs with version suffix
       hash: a7e0461e30bb2cf220115e1030e980c7580fa800
       body: ""
