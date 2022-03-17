@@ -1,4 +1,18 @@
 - commits:
+    - subject: Handle theme palette error, when reading malformed base64 images
+      hash: 5059ad9394b2b44c4ac7e73477c1ed8aacb23d12
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.9
+  title: "'Handle theme palette error, when reading malformed base64 images'"
+  date: 2022-03-17T08:02:42.156Z
+- commits:
     - subject: Fetch all pull request comments
       hash: a26952266b87b9774bc411a8e264848feecd89fe
       body: ""
