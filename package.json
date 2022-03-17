@@ -138,7 +138,7 @@
     "scrutinizer": "^4.10.0",
     "serialize-error": "^6.0.0",
     "shelljs": "^0.8.4",
-    "simple-git": "^3.1.1",
+    "simple-git": "^3.3.0",
     "smee-client": "^1.1.0",
     "styled-components": "^5.3.3",
     "tmp": "^0.1.0",
