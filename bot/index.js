@@ -35,6 +35,32 @@ const {
 // This is the identifier GitHub uses for the bot
 const LANDR_BOT_LOGIN = 'landrbot[bot]'
 
+const fetchComments = async (context, owner, repo, pullNumber) => {
+  let currentPage = 1
+  let comments = []
+  let hasNextPage = true
+  while (hasNextPage) {
+    // In the GitHub API, comments directly on the pull request are considered
+    // to be issue comments, whereas comments on the code are pull request
+    // comments. Here we want to retrieve all comments directly on the PR, so we
+    // need to use the issues API.
+    const response = await context.octokit.issues.listComments({
+      owner,
+      repo,
+      issue_number: pullNumber,
+      per_page: 100,
+      page: currentPage
+    })
+    comments = comments.concat(response.data)
+    if (response.headers.link && response.headers.link.includes('rel="next"')) {
+      currentPage++
+    } else {
+      hasNextPage = false
+    }
+  }
+  return comments
+}
+
 const upsertPRComment = async ({
   context,
   owner,
@@ -45,20 +71,9 @@ const upsertPRComment = async ({
 }) => {
   // Don't post a comment on the PR if landr-bot has already posted one.
 
-  // In the GitHub API, comments directly on the pull request are considered
-  // to be issue comments, whereas comments on the code are pull request
-  // comments. Here we want to retrieve all comments directly on the PR, so we
-  // need to use the issues API.
-  const comments = await context.octokit.issues.listComments({
-    owner,
-    repo,
-    issue_number: pullNumber
-  })
+  const comments = await fetchComments(context, owner, repo, pullNumber)
 
-  const existingComment = _.find(comments.data, [
-    'user.login',
-    LANDR_BOT_LOGIN
-  ])
+  const existingComment = _.find(comments, [ 'user.login', LANDR_BOT_LOGIN ])
 
   if (existingComment) {
     log('updating existing comment on PR')
