@@ -1,4 +1,18 @@
 - commits:
+    - subject: Duplicate contract before replacing the images
+      hash: 3aeff1d2afdab4115c155e372980499ce13ac33a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.12
+  title: "'Duplicate contract before replacing the images'"
+  date: 2022-03-19T08:53:33.426Z
+- commits:
     - subject: Upgrade simple git version
       hash: 19782835c9395723c90a9cdd33d362a70a7c4c6a
       body: ""
