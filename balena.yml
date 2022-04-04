@@ -1,0 +1,6 @@
+type: service-source@1.0.0
+name: Landr
+version: 9.4.12
+
+data:
+  $transformer: {}
