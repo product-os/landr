@@ -58,9 +58,9 @@ export const render = ({
                 <Box key={entry.version} mb={4}>
                   <Flex justifyContent="space-between" alignItems="flex-end">
                     <Tag value={entry.version}></Tag>
-                    <Txt fontSize={0}>
+                    {entry.date && <Txt fontSize={0}>
                       {format(parseISO(entry.date), 'yyyy/MM/dd')}
-                    </Txt>
+                    </Txt>}
                   </Flex>
                   <Divider my={2} />
                   <List px={3} py={2}>
