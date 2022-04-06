@@ -1,4 +1,28 @@
 - commits:
+    - subject: Handle no date found in changelog
+      hash: 45ed2672a320ef0bc7092d89822a536a934d42e4
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+    - subject: Update scrutinizer to add support for github flavored markdown
+      hash: 41cd23cac5ae3f9d4ca8619bbd24f32292e2499a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.13
+  title: "'Handle no date found in changelog'"
+  date: 2022-04-06T09:36:47.521Z
+- commits:
     - subject: Duplicate contract before replacing the images
       hash: 3aeff1d2afdab4115c155e372980499ce13ac33a
       body: ""
