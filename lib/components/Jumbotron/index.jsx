@@ -119,7 +119,7 @@ const Jumbotron = (props) => {
                       fontWeight: 'bold'
                     }}
                   >
-                    Getting started Guide
+                    Getting Started Guide
                   </Txt.span>
                 </Button>
               </Link>
