@@ -16,7 +16,6 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import capitalize from 'lodash/capitalize'
 import {
   Box,
   Container,
@@ -103,7 +102,7 @@ const Downloads = (props) => {
                     return (
                       <tr key={index}>
                         <td>
-                          {capitalize(props.name)} for {asset.os}{' '}
+                          {asset.name}{' '}
                           {asset.installerType ? (
                             <span>{asset.installerType}</span>
                           ) : null}
