@@ -1,4 +1,20 @@
 - commits:
+    - subject: Display download asset name instead of project name
+      hash: 651a73acde8f9acac711fa84d85cdbf6c7545980
+      body: |
+        - Updates scrutinizer to v5
+          - better detect os and arch of a release
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.16
+  title: "'Display download asset name instead of project name'"
+  date: 2022-04-13T12:33:44.456Z
+- commits:
     - subject: Use links provided by scrutinizer
       hash: 849dd976a1237eb4ccbd376b4fd5b5590ce531d1
       body: |
