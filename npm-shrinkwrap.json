@@ -57,7 +57,7 @@
         "replace-string": "^3.0.0",
         "rfdc": "^1.1.4",
         "rimraf": "^2.6.3",
-        "scrutinizer": "^4.11.3",
+        "scrutinizer": "^5.0.0",
         "serialize-error": "^6.0.0",
         "shelljs": "^0.8.4",
         "simple-git": "^3.3.0",
@@ -29809,9 +29809,9 @@
       }
     },
     "node_modules/scrutinizer": {
-      "version": "4.11.3",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.11.3.tgz",
-      "integrity": "sha512-vpO1DWDVTNCj60QDGOkqbCdIFyEDKwfw5kp4EvPpgDZ2U5h9bZMxhMv85VqzxzvdmW2B33UoL4N1QokKxDDpPg==",
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-5.0.0.tgz",
+      "integrity": "sha512-PkHEnq4TTsqmNPKz5SN0AK9AxhSOrd+tO7pEmvbuANbAGbh7Dz9YWF3wxfTY9h+D5zXhxdky79CGcyixBcngEQ==",
       "dependencies": {
         "@octokit/rest": "^18.12.0",
         "bluebird": "^3.7.2",
@@ -59706,9 +59706,9 @@
       }
     },
     "scrutinizer": {
-      "version": "4.11.3",
-      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-4.11.3.tgz",
-      "integrity": "sha512-vpO1DWDVTNCj60QDGOkqbCdIFyEDKwfw5kp4EvPpgDZ2U5h9bZMxhMv85VqzxzvdmW2B33UoL4N1QokKxDDpPg==",
+      "version": "5.0.0",
+      "resolved": "https://registry.npmjs.org/scrutinizer/-/scrutinizer-5.0.0.tgz",
+      "integrity": "sha512-PkHEnq4TTsqmNPKz5SN0AK9AxhSOrd+tO7pEmvbuANbAGbh7Dz9YWF3wxfTY9h+D5zXhxdky79CGcyixBcngEQ==",
       "requires": {
         "@octokit/rest": "^18.12.0",
         "bluebird": "^3.7.2",
