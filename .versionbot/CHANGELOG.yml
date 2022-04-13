@@ -1,4 +1,20 @@
 - commits:
+    - subject: Use links provided by scrutinizer
+      hash: 849dd976a1237eb4ccbd376b4fd5b5590ce531d1
+      body: |
+        - Updates scrutinizer, so landr should work on non-repo folders
+        - Scrutinizer injects absolute images local to the repo into markdown
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.15
+  title: "'Use links provided by scrutinizer'"
+  date: 2022-04-12T15:55:21.273Z
+- commits:
     - subject: Titlecase getting started guide
       hash: ed4edc6870a97c18a5a16842e2e5d8c47757bc7a
       body: ""
