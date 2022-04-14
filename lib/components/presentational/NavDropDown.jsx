@@ -5,12 +5,29 @@ import {
   Link
 } from 'react-router-dom'
 import {
-  Box, Divider, Link as RenditionLink, Txt
+  Box, Divider, Flex, Link as RenditionLink, Txt
 } from 'rendition'
 
 import {
   FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
+import {
+  faChevronDown
+} from '@fortawesome/free-solid-svg-icons/faChevronDown'
+import {
+  faChevronUp
+} from '@fortawesome/free-solid-svg-icons/faChevronUp'
+
+const windowGlobal = typeof window !== 'undefined' && window
+
+const getWindowWidth = () => {
+  if (!windowGlobal) {
+    return 0
+  }
+
+  return windowGlobal.innerWidth
+}
+
 export const invertBreakpoint = (breakpoint) => {
   return breakpoint - 0.01
 }
@@ -69,31 +86,42 @@ const Item = styled(Box) `
   }
 `
 
+const onMobileWidth = () => {
+  return getWindowWidth() <= 992
+}
+
 export const NavDropDown = (props) => {
   const [ dropDownOpen, setDropDownOpen ] = React.useState(false)
 
   const showDropdown = (event) => {
     event.preventDefault()
+    if (onMobileWidth()) {
+      return
+    }
     setDropDownOpen(true)
   }
 
   const hideDropdown = (event) => {
     event.preventDefault()
+    if (onMobileWidth()) {
+      return
+    }
     setDropDownOpen(false)
   }
 
   const toggle = (event) => {
     event.preventDefault()
-    setDropDownOpen((open) => {
-      return !open
-    })
+    if (onMobileWidth()) {
+      setDropDownOpen((open) => {
+        return !open
+      })
+    }
   }
 
   return (
     <Box onMouseLeave={hideDropdown}>
       <RenditionLink
         is={Link}
-        fontSize={0}
         to="#"
         color="text.main"
         onClick={toggle}
@@ -101,19 +129,21 @@ export const NavDropDown = (props) => {
         py={2}
         {...props}
       >
-        <Txt.span
-          bold
-          mr={3}
-          style={{
-            textDecoration: 'underline'
-          }}
-        >
-          {props.title}
-        </Txt.span>
-        <FontAwesomeIcon
-          icon={dropDownOpen ? [ 'fas', 'chevron-up' ] : [ 'fas', 'chevron-down' ]}
-          size="xs"
-        />
+        <Flex alignItems={'center'} justifyContent="center">
+          <Txt.span fontSize="12px" bold mr={2}>
+            {props.title}
+          </Txt.span>
+          <Txt.span
+            fontSize="10px"
+            style={{
+              transform: 'translateY(-4px)'
+            }}
+          >
+            <FontAwesomeIcon
+              icon={dropDownOpen ? faChevronUp : faChevronDown}
+            />
+          </Txt.span>
+        </Flex>
       </RenditionLink>
 
       {dropDownOpen && (

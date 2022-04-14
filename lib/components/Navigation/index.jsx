@@ -30,7 +30,8 @@ import {
   Link as RenditionLink,
   Txt,
   Button,
-  Fixed
+  Fixed,
+  Divider
 } from 'rendition'
 import GithubBanner from '../presentational/github-banner'
 import Link from '../presentational/link'
@@ -46,6 +47,9 @@ import {
 import {
   faTimes
 } from '@fortawesome/free-solid-svg-icons/faTimes'
+import {
+  faLongArrowAltRight
+} from '@fortawesome/free-solid-svg-icons'
 
 const GithubRedirect = styled(RenditionLink) `
   position: absolute;
@@ -157,6 +161,7 @@ const NavigationItems = styled(Flex) `
     bottom: 0;
     justify-content: flex-start;
     transform: translateX(100%);
+    -webkit-box-pack: start;
     transition: transform 200ms ease-in-out;
     padding: 16px;
     overflow: auto;
@@ -188,7 +193,37 @@ const getNavigationRoutes = (routes) => {
     return (
       <NavigationItem pl={[ 0, 0, 3, 3 ]} key={index} mx={[ 2, 2, 15 ]}>
         <Link url={route.url} py={1} px={0} display="auto" color="text.main">
-          <Txt.span bold>{route.name}</Txt.span>
+          {route.logo ? (
+            <>
+              <Flex alignItems="center" justifyContent={'space-between'}>
+                <Box
+                  style={{
+                    minWidth: 130
+                  }}
+                >
+                  <img
+                    style={{
+                      height: 20
+                    }}
+                    alt={route.name}
+                    src={route.logo}
+                  />
+                </Box>
+                <Txt.span
+                  style={{
+                    transform: 'translateY(-4px)'
+                  }}
+                >
+                  <FontAwesomeIcon icon={faLongArrowAltRight} />
+                </Txt.span>
+              </Flex>
+              {route.description && (
+                <Txt fontSize={11}>{route.description}</Txt>
+              )}
+            </>
+          ) : (
+            <Txt.span bold>{route.name}</Txt.span>
+          )}
         </Link>
       </NavigationItem>
     )
@@ -222,6 +257,62 @@ const Navigation = (props) => {
     <Wrapper role="navigation" aria-label="main-navigation">
       <Container>
         <Navbar>
+          {props.organization && (
+            <Box display={[ 'none', 'none', 'flex', 'flex' ]}>
+              <Flex
+                alignItems="center"
+                mt={3}
+                mb={3}
+              >
+                <Link
+                  href="/"
+                  style={{
+                    lineHeight: '13px'
+                  }}
+                >
+                  <Flex alignItems="center">
+                    <Txt.span
+                      fontSize={12}
+                      mr="6px"
+                      style={{
+                        whiteSpace: 'nowrap',
+                        fontWeight: 200
+                      }}
+                    >
+                    A product of
+                    </Txt.span>
+                    {props.organization.logo ? (
+                      <img
+                        style={{
+                          height: 20
+                        }}
+                        alt={props.organization.name}
+                        src={props.organization.logo}
+                      />
+                    ) : (
+                      <Txt.span>{props.organization.name}</Txt.span>
+                    )}
+                    <Txt.span
+                      ml={2}
+                      mr={-2}
+                      style={{
+                        opacity: 0.4
+                      }}
+                    >
+                    |
+                    </Txt.span>
+                  </Flex>
+                </Link>
+                {props.organization.products &&
+                getNavigationRoutes([
+                  {
+                    name: 'More products',
+                    routes: props.organization.products
+                  }
+                ])}
+              </Flex>
+            </Box>
+          )}
           <Flex justifyContent="space-between" alignItems="center" width="100%">
             <Flex alignItems="center">
               <Link
@@ -268,7 +359,43 @@ const Navigation = (props) => {
                   </Flex>
                 )}
                 {getNavigationRoutes(props.routes)}
-
+                {props.organization && (
+                  <Box display={[ 'block', 'block', 'none', 'none' ]} mt="auto" width="100%">
+                    <Flex alignItems="center" justifyContent={'center'}>
+                      <Txt.span
+                        fontSize={15}
+                        mr={1}
+                        style={{
+                          whiteSpace: 'nowrap'
+                        }}
+                      >
+                        A product of
+                      </Txt.span>
+                      <Link
+                        href="/"
+                        style={{
+                          height: '24px'
+                        }}
+                      >
+                        <img
+                          style={{
+                            height: '24px'
+                          }}
+                          alt={props.organization.name}
+                          src={props.organization.logo}
+                        />
+                      </Link>
+                    </Flex>
+                    <Divider mt={20} color="#E8EBF2" />
+                    {props.organization.products &&
+                      getNavigationRoutes([
+                        {
+                          name: 'More Products',
+                          routes: props.organization.products
+                        }
+                      ])}
+                  </Box>
+                )}
                 {props.actions && (
                   <MobileActions
                     mt="auto"
