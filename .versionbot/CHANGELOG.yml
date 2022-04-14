@@ -1,4 +1,28 @@
 - commits:
+    - subject: Add balena yml source type for transformers
+      hash: 4607616884c8a899cc573e78a42bcc1b9e3ec56d
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+    - subject: Update scrutinizer to add support for github flavored markdown
+      hash: 41cd23cac5ae3f9d4ca8619bbd24f32292e2499a
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.13
+  title: "'Add balena yml source type for transformers'"
+  date: 2022-04-14T08:14:41.932Z
+- commits:
     - subject: Duplicate contract before replacing the images
       hash: 3aeff1d2afdab4115c155e372980499ce13ac33a
       body: ""
