@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add forum and org links to products
+      hash: a544b471894d55ee136a8be8efe365e396452f25
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.17
+  title: "'Add forum and org links to products'"
+  date: 2022-04-14T19:13:21.460Z
+- commits:
     - subject: Display download asset name instead of project name
       hash: 651a73acde8f9acac711fa84d85cdbf6c7545980
       body: |
