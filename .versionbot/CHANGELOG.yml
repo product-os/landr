@@ -1,4 +1,16 @@
 - commits:
+    - subject: Add balena yml source type for transformers
+      hash: 14ccba00b868a4304cb541847df8d7805f9863dd
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+  version: 9.4.18
+  date: 2022-04-18T07:43:21.066Z
+- commits:
     - subject: Add forum and org links to products
       hash: a544b471894d55ee136a8be8efe365e396452f25
       body: ""
