@@ -1,0 +1,30 @@
+# Redirect to https://getlandr.io
+[[redirects]]
+  from = "https://www.versionbot.com/*"
+  to = "https://getlandr.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://versionbot.com/*"
+  to = "https://getlandr.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.getlandr.com/*"
+  to = "https://getlandr.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://getlandr.com/*"
+  to = "https://getlandr.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.getlandr.io/*"
+  to = "https://getlandr.io/:splat"
+  status = 301
+  force = true
