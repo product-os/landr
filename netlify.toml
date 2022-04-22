@@ -1,4 +1,3 @@
-# Redirect to https://getlandr.io
 [[redirects]]
   from = "https://www.versionbot.com/*"
   to = "https://getlandr.io/:splat"
