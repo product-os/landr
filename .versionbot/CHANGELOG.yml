@@ -1,4 +1,27 @@
 - commits:
+    - subject: Remove netlify config comment.
+      hash: e1c3ad3d3868303db95805e06a8e37f90e7e0818
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+        signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+      author: Carlo Miguel F. Cruz
+      nested: []
+    - subject: Add getlandr.io Netlify site redirects.
+      hash: 5bf878710aab18a3eb1ef59ef880899a143a172b
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+        signed-off-by: Carlo Miguel F. Cruz <carloc@balena.io>
+      author: Carlo Miguel F. Cruz
+      nested: []
+  version: 9.4.18
+  date: 2022-05-10T09:09:39.694Z
+- commits:
     - subject: Add forum and org links to products
       hash: a544b471894d55ee136a8be8efe365e396452f25
       body: ""
