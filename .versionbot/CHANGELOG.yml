@@ -1,4 +1,18 @@
 - commits:
+    - subject: Use render to string when generating html
+      hash: fa47189f696ac20b2d4440b39aa9e3db5b0ac797
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 9.4.20
+  title: "'Use render to string when generating html'"
+  date: 2022-05-10T11:20:08.336Z
+- commits:
     - subject: Fix storybook build
       hash: 5c46aad76cab524f285a5aff0a7393f539de437e
       body: ""
