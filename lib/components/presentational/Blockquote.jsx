@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import color from 'color'
+import * as color from 'color'
 import {
   Box, Txt, useTheme
 } from 'rendition'

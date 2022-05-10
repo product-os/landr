@@ -11,7 +11,7 @@ import routes from '../lib/routes'
 import allComponents from '../lib/components'
 import {
   theme as renditionTheme
-} from '../lib/renderer'
+} from '../lib/Layout'
 import THEME from '../default-theme.json'
 import CONTRACT from '../meta.json'
 import {
@@ -35,8 +35,14 @@ for (const route of ROUTES) {
       }
     )
 
+    const {
+      render: Component
+    } = require(`../lib/components/${name}/index.jsx`).default
+
     variants.forEach((variant, index) => {
-      const element = definition.render(variant)
+      // If (!variant.length) {
+      //   return
+      // }
       let storyTitle = `${route.path.join('/')}` || 'Home'
 
       // Dots in path don't play nice with storybook categories, replacing with underscores
@@ -50,7 +56,9 @@ for (const route of ROUTES) {
       storiesOf(storyTitle, module).add(`Variant ${index + 1}`, () => {
         return (
           <BrowserRouter>
-            <Provider theme={renditionTheme}>{element}</Provider>
+            <Provider theme={renditionTheme}>
+              <Component {...variant} config={{}} analytics={null} />
+            </Provider>
           </BrowserRouter>
         )
       })
