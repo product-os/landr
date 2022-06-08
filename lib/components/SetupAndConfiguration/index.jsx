@@ -14,29 +14,21 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box, Container, Txt, Flex, Heading, Link
-} from 'rendition'
+import React from "react";
+import { Box, Container, Txt, Flex, Heading, Link } from "rendition";
 
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
-import styled from 'styled-components'
-import hexToRgba from 'hex-to-rgba'
-import {
-  DeployWithBalena
-} from '../presentational/deploy-with-balena'
+import { Markdown } from "rendition/dist/extra/Markdown";
+import styled from "styled-components";
+import hexToRgba from "hex-to-rgba";
+import { DeployWithBalena } from "../presentational/deploy-with-balena";
 
-const Wrapper = styled(Box) `
-  background-color: ${({
-    theme
-  }) => {
-    return hexToRgba(theme.colors.primary.main, 0.4)
+const Wrapper = styled(Box)`
+  background-color: ${({ theme }) => {
+    return hexToRgba(theme.colors.primary.main, 0.4);
   }};
-`
+`;
 
-export const render = (props) => {
+const SetupAndConfiguration = (props) => {
   return (
     <Wrapper py={75}>
       <Container maxWidth={998}>
@@ -46,7 +38,7 @@ export const render = (props) => {
             fontSize="38px"
             style={{
               fontWeight: 400,
-              lineHeight: 1.18
+              lineHeight: 1.18,
             }}
             id="setup"
           >
@@ -64,16 +56,16 @@ export const render = (props) => {
                       {...componentProps}
                       fontSize="16px"
                       style={{
-                        lineHeight: 1.5
+                        lineHeight: 1.5,
                       }}
                     />
-                  )
+                  );
                 },
                 // eslint-disable-next-line id-length
                 a: (componentProps) => {
                   const deployRoot =
                     props.deployWithBalenaUrl &&
-                    props.deployWithBalenaUrl.split('?')[0]
+                    props.deployWithBalenaUrl.split("?")[0];
                   if (
                     deployRoot &&
                     componentProps.href &&
@@ -81,11 +73,11 @@ export const render = (props) => {
                   ) {
                     return (
                       <DeployWithBalena deployUrl={props.deployWithBalenaUrl} />
-                    )
+                    );
                   }
-                  return <Link {...componentProps} />
+                  return <Link {...componentProps} />;
                 },
-                strong: 'div'
+                strong: "div",
               }}
             >
               {props.setup}
@@ -94,9 +86,7 @@ export const render = (props) => {
         </Flex>
       </Container>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default SetupAndConfiguration;

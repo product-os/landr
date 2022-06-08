@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 import {
   Box,
   Container,
@@ -24,10 +24,10 @@ import {
   Link,
   Button,
   Flex,
-  Card
-} from 'rendition'
+  Card,
+} from "rendition";
 
-const Table = styled.table `
+const Table = styled.table`
   width: 100%;
   thead,
   tbody {
@@ -54,10 +54,10 @@ const Table = styled.table `
       }
     }
   }
-`
+`;
 
 const Downloads = (props) => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <Box my={100}>
       <Container>
@@ -102,7 +102,7 @@ const Downloads = (props) => {
                     return (
                       <tr key={index}>
                         <td>
-                          {asset.name}{' '}
+                          {asset.name}{" "}
                           {asset.installerType ? (
                             <span>{asset.installerType}</span>
                           ) : null}
@@ -119,7 +119,7 @@ const Downloads = (props) => {
                           </Flex>
                         </td>
                       </tr>
-                    )
+                    );
                   })}
                 </tbody>
               </Table>
@@ -128,13 +128,13 @@ const Downloads = (props) => {
         </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
 export const render = (props) => {
-  return <Downloads {...props} />
-}
+  return <Downloads {...props} />;
+};
 
 export default {
-  render
-}
+  render,
+};

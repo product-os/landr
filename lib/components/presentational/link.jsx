@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   Link as InternalRoute
-} from 'react-router-dom'
+} from 'gatsby'
 import {
   Link as BaseRoute, useTheme
 } from 'rendition'

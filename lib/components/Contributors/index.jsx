@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from 'react'
+import React from "react";
 import {
   Box,
   Img,
@@ -23,24 +23,24 @@ import {
   Link,
   Heading,
   Txt,
-  useTheme
-} from 'rendition'
-import styled from 'styled-components'
+  useTheme,
+} from "rendition";
+import styled from "styled-components";
 
-import ContributeIcon from '../presentational/contribute-icon'
-import HeartIcon from '../presentational/heart-icon'
+import ContributeIcon from "../presentational/contribute-icon";
+import HeartIcon from "../presentational/heart-icon";
 
-const GITHUB_PROFILE_PATH = 'https://github.com'
+const GITHUB_PROFILE_PATH = "https://github.com";
 
 const ContributorsPageRedirect = () => {
   return (
     <Link ml={2} href="/contributors">
       many awesome people!
     </Link>
-  )
-}
+  );
+};
 
-const PlaceholderPhoto = styled(Flex) `
+const PlaceholderPhoto = styled(Flex)`
   font-size: 11px;
   padding: 6px;
   height: 80px;
@@ -48,20 +48,18 @@ const PlaceholderPhoto = styled(Flex) `
   border-radius: 12px;
   border: 1px dashed
     ${(props) => {
-    return props.theme.colors.primary.main
-  }};
+      return props.theme.colors.primary.main;
+    }};
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const Contributors = (props) => {
-  const theme = useTheme()
-  let {
-    contributors
-  } = props
+  const theme = useTheme();
+  let { contributors } = props;
   if (!props.minimalView) {
-    contributors = contributors.slice(0, 10)
+    contributors = contributors.slice(0, 10);
   }
   const list = contributors.map((contributor) => {
     return (
@@ -74,14 +72,14 @@ const Contributors = (props) => {
           <Img
             src={contributor.avatar}
             style={{
-              height: '80px',
-              borderRadius: 6
+              height: "80px",
+              borderRadius: 6,
             }}
           />
         </Link>
       </Box>
-    )
-  })
+    );
+  });
 
   const CTA = props.repository ? (
     <Box>
@@ -90,13 +88,13 @@ const Contributors = (props) => {
         improving the docs.
       </Txt>
       <Txt>
-        Jump in and get your hands dirty with some selected{' '}
-        <Link blank href={`${props.repository.replace('.git', '')}/contribute`}>
+        Jump in and get your hands dirty with some selected{" "}
+        <Link blank href={`${props.repository.replace(".git", "")}/contribute`}>
           good first issues!
         </Link>
       </Txt>
     </Box>
-  ) : null
+  ) : null;
 
   const ContributePlaceholder = (
     <PlaceholderPhoto>
@@ -105,17 +103,17 @@ const Contributors = (props) => {
       </Box>
       <Txt>Reserved for you</Txt>
     </PlaceholderPhoto>
-  )
+  );
 
   return (
     <Box my={100}>
       <Container textAlign="center">
         <Heading.h2 fontSize={34} mb={30} align="center">
           <Flex alignItems="center" justifyContent="center">
-            Made with{' '}
+            Made with{" "}
             <Txt mx={2}>
               <HeartIcon />
-            </Txt>{' '}
+            </Txt>{" "}
             by {props.minimalView && <ContributorsPageRedirect />}
           </Flex>
         </Heading.h2>
@@ -138,13 +136,7 @@ const Contributors = (props) => {
         )}
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export const render = (props) => {
-  return <Contributors {...props} />
-}
-
-export default {
-  render
-}
+export default Contributors;

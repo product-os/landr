@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import isEmpty from 'lodash/isEmpty'
+import React from "react";
+import isEmpty from "lodash/isEmpty";
 import {
   Box,
   Img,
@@ -24,29 +24,29 @@ import {
   Link,
   Heading,
   Txt,
-  useTheme
-} from 'rendition'
-import styled from 'styled-components'
+  useTheme,
+} from "rendition";
+import styled from "styled-components";
 
 const Divider = styled(Box).attrs({
-  mx: 2
-}) `
+  mx: 2,
+})`
   border-left: 1px solid;
   height: 11px;
-`
+`;
 
 const Footer = (props) => {
-  const theme = useTheme()
+  const theme = useTheme();
   const toc = (props.docsTableOfContent || props.toc).map((page, index) => {
-    const url = `/${page.path.join('/')}`
+    const url = `/${page.path.join("/")}`;
     return (
       <Box key={index} mb={1}>
         <Link color="#527699" fontSize={13} href={url}>
           {page.title}
         </Link>
       </Box>
-    )
-  })
+    );
+  });
 
   const links = props.routes.map((route, index) => {
     return (
@@ -55,13 +55,13 @@ const Footer = (props) => {
           {route.name}
         </Link>
       </Box>
-    )
-  })
+    );
+  });
 
   const brand = props.logo ? (
     <Img
       style={{
-        height: '50px'
+        height: "50px",
       }}
       src={props.logo}
     />
@@ -69,11 +69,11 @@ const Footer = (props) => {
     <Heading.h1 color="#527699" fontSize={26}>
       {props.name}
     </Heading.h1>
-  )
+  );
 
   const owner = isEmpty(props.owner) ? null : (
     <Flex alignItems="center" mt={3}>
-      <Txt fontSize={12}>Brought to you by</Txt>{' '}
+      <Txt fontSize={12}>Brought to you by</Txt>{" "}
       <Link
         color={theme.colors.text.main}
         href={props.owner.url}
@@ -85,14 +85,14 @@ const Footer = (props) => {
             alt={props.owner.name}
             ml={2}
             style={{
-              height: 26
+              height: 26,
             }}
           />
           <Txt.span>{props.owner.name}</Txt.span>
         </Flex>
       </Link>
     </Flex>
-  )
+  );
 
   return (
     <>
@@ -101,20 +101,20 @@ const Footer = (props) => {
         py={5}
         mt={5}
         style={{
-          position: 'relative',
-          zIndex: 3
+          position: "relative",
+          zIndex: 3,
         }}
         bg="#f8f9fd"
       >
         <Container>
           <Flex justifyContent="center">
             <Flex
-              width={[ 1, 1, 1, 5 / 6 ]}
+              width={[1, 1, 1, 5 / 6]}
               mx={-16}
-              justifyContent={[ 'flex-start', 'flex-start', 'space-between' ]}
+              justifyContent={["flex-start", "flex-start", "space-between"]}
               flexWrap="wrap"
             >
-              <Box px={16} width={[ 1, 1, 1 / 2 ]} mb={3}>
+              <Box px={16} width={[1, 1, 1 / 2]} mb={3}>
                 {brand}
                 {owner}
               </Box>
@@ -154,19 +154,12 @@ const Footer = (props) => {
                     <Divider />
                   )}
                 </React.Fragment>
-              )
+              );
             })}
           </Flex>
         </Container>
       )}
     </>
-  )
-}
-
-export const render = (props) => {
-  return <Footer {...props} />
-}
-
-export default {
-  render
-}
+  );
+};
+export default Footer;

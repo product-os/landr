@@ -14,30 +14,25 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box, Container, Heading
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import React from "react";
+import { Box, Container, Heading } from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = (props) => {
+const HardwareRequired = (props) => {
   return (
     <Box my={100}>
       <Container>
         <Heading.h2 mb={24}>Hardware Required</Heading.h2>
         <Box
           style={{
-            maxWidth: 800
-          }}>
+            maxWidth: 800,
+          }}
+        >
           <Markdown>{props.hardwareRequired}</Markdown>
         </Box>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default HardwareRequired;

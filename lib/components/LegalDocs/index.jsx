@@ -14,22 +14,14 @@
  * limitations under the License.
  */
 
-import {
-  FontAwesomeIcon
-} from '@fortawesome/react-fontawesome'
-import React from 'react'
-import {
-  Flex, Heading, Box, Container, Card, Txt
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
-import styled from 'styled-components'
-import {
-  faClock
-} from '@fortawesome/free-solid-svg-icons/faClock'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { Flex, Heading, Box, Container, Card, Txt } from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
+import styled from "styled-components";
+import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
 
-const HtmlOverridesComponent = styled(Card) `
+const HtmlOverridesComponent = styled(Card)`
   th,
   td {
     border: 1px solid black;
@@ -40,27 +32,27 @@ const HtmlOverridesComponent = styled(Card) `
     list-style: disc;
     margin-bottom: 20px;
   }
-`
+`;
 
-export const render = (props) => {
+const LegalDocs = (props) => {
   return (
     <Box
       style={{
-        lineHeight: 1.4
+        lineHeight: 1.4,
       }}
       pb={100}
     >
-      <Heading.h1 pt={200} fontSize={[ 30, 40, 50, 68 ]} align="center">
+      <Heading.h1 pt={200} fontSize={[30, 40, 50, 68]} align="center">
         {props.title}
       </Heading.h1>
-      <Container px={[ 3, 3, 3, 0 ]}>
+      <Container px={[3, 3, 3, 0]}>
         <Flex
           py={120}
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
         >
-          <Box width={[ 1, 1, 3 / 4, 3 / 4 ]}>
+          <Box width={[1, 1, 3 / 4, 3 / 4]}>
             <HtmlOverridesComponent padding="48px 36px">
               <Box mb={4} fontSize={14}>
                 <Txt color="primary.main">
@@ -75,26 +67,26 @@ export const render = (props) => {
                       <Heading.h1 fontSize="26px" margin="40px 0 24px">
                         {componentProps.children}
                       </Heading.h1>
-                    )
+                    );
                   },
                   h2: (componentProps) => {
                     return (
                       <Heading.h2 fontSize="24px" margin="40px 0 24px">
                         {componentProps.children}
                       </Heading.h2>
-                    )
+                    );
                   },
                   h3: (componentProps) => {
                     return (
                       <Heading.h2 fontSize="20px" margin="24px 0 16px">
                         {componentProps.children}
                       </Heading.h2>
-                    )
+                    );
                   },
                   // eslint-disable-next-line id-length
                   p: (componentProps) => {
-                    return <Txt.p mb="16px">{componentProps.children}</Txt.p>
-                  }
+                    return <Txt.p mb="16px">{componentProps.children}</Txt.p>;
+                  },
                 }}
                 sanitizerOptions={null}
               >
@@ -105,9 +97,7 @@ export const render = (props) => {
         </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default LegalDocs;

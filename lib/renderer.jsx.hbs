@@ -1,27 +1,24 @@
-
-import React from 'react'
-import {
-  useRouteData
-} from 'react-static'
-import analytics from './analytics'
-import { Layout } from './Layout'
+import React from 'react';
+import analytics from '../lib/analytics';
+import Layout from '../lib/Layout';
 {{#each combination}}
-import { render as {{this.component}} } from './components/{{this.component}}'
+import {{this.component}} from '../lib/components/{{this.component}}';
 {{/each}}
 
-const Renderer = () => {
-  const routeData = useRouteData();
-  const combination = routeData.combination;
-  const analyticsOptions = routeData.analytics;
-  return (<Layout>
-    {{#each combination}}
-    <{{this.component}}
-      {...combination[{{@index}}].options}
-      config={routeData.landrConfig}
-      analytics={analytics(routeData.site, analyticsOptions)}
-    />
-    {{/each}}
-  </Layout>);
+const Renderer = ({ pageContext }) => {
+  const combination = pageContext.combination;
+  const analyticsOptions = pageContext.analytics;
+  return (
+      <Layout>
+      {{#each combination}}
+      <{{this.component}}
+        {...combination[{{@index}}].options}
+        config={pageContext.landrConfig}
+        analytics={analytics(pageContext.site, analyticsOptions)}
+      />
+      {{/each}}
+    </Layout>
+  );
 }
 
-export default Renderer
+export default Renderer;

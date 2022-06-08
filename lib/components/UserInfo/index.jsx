@@ -14,69 +14,45 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box, Container, Divider, Flex, Heading, Img, Txt
-} from 'rendition'
-import styled from 'styled-components'
-import {
-  FontAwesomeIcon
-} from '@fortawesome/react-fontawesome'
-import {
-  faUserCircle
-} from '@fortawesome/free-solid-svg-icons/faUserCircle'
-import {
-  faLightbulb
-} from '@fortawesome/free-solid-svg-icons/faLightbulb'
-import {
-  faAt
-} from '@fortawesome/free-solid-svg-icons/faAt'
-import {
-  faStar
-} from '@fortawesome/free-solid-svg-icons/faStar'
-import {
-  faFlagCheckered
-} from '@fortawesome/free-solid-svg-icons/faFlagCheckered'
-import {
-  faFootballBall
-} from '@fortawesome/free-solid-svg-icons/faFootballBall'
-import {
-  BlockQuote
-} from '../presentational/Blockquote'
-import {
-  Map
-} from '../presentational/map'
-import AvatarBox from '../presentational/AvatarBox'
+import React from "react";
+import { Box, Container, Divider, Flex, Heading, Img, Txt } from "rendition";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons/faUserCircle";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons/faLightbulb";
+import { faAt } from "@fortawesome/free-solid-svg-icons/faAt";
+import { faStar } from "@fortawesome/free-solid-svg-icons/faStar";
+import { faFlagCheckered } from "@fortawesome/free-solid-svg-icons/faFlagCheckered";
+import { faFootballBall } from "@fortawesome/free-solid-svg-icons/faFootballBall";
+import { BlockQuote } from "../presentational/Blockquote";
+import { Map } from "../presentational/map";
+import AvatarBox from "../presentational/AvatarBox";
 
 const getNameImage = (name) => {
-  if (!name) return ''
-  const [ firstName, lastName ] = name.split(' ')
+  if (!name) return "";
+  const [firstName, lastName] = name.split(" ");
 
-  const firstChar = firstName.charAt(0)
-  let lastChar = ''
+  const firstChar = firstName.charAt(0);
+  let lastChar = "";
 
   if (lastName) {
-    lastChar = lastName.charAt(0)
+    lastChar = lastName.charAt(0);
   }
-  return `${firstChar.toUpperCase()}${lastChar}`
-}
+  return `${firstChar.toUpperCase()}${lastChar}`;
+};
 
-const NameAvatar = styled(Txt) `
+const NameAvatar = styled(Txt)`
   width: 380px;
   height: 380px;
   font-size: 300px;
   text-align: center;
   background: white;
-`
+`;
 
-export const render = ({
-  config, ...props
-}) => {
+const UserInfo = ({ config, ...props }) => {
   const {
-    envVars: {
-      googleMapsKey: apiKey
-    }
-  } = config
+    envVars: { googleMapsKey: apiKey },
+  } = config;
 
   return (
     <Flex flexDirection="column" width="100%">
@@ -86,15 +62,15 @@ export const render = ({
           markers={[
             {
               lat: props.lat,
-              lng: props.lng
-            }
+              lng: props.lng,
+            },
           ]}
         />
       </Box>
       <Box
         marginTop="-172px"
         style={{
-          zIndex: 1
+          zIndex: 1,
         }}
       >
         <Container>
@@ -105,7 +81,7 @@ export const render = ({
                   <Img
                     src={props.avatar}
                     style={{
-                      width: 380
+                      width: 380,
                     }}
                   />
                 ) : (
@@ -116,7 +92,7 @@ export const render = ({
                 <Heading.h3
                   fontSize="34px"
                   style={{
-                    fontWeight: 400
+                    fontWeight: 400,
                   }}
                   pt={4}
                   pb={1}
@@ -134,9 +110,9 @@ export const render = ({
               flexDirection="column"
               pt="245px"
               style={{
-                flex: 1
+                flex: 1,
               }}
-              pl={'100px'}
+              pl={"100px"}
             >
               <Flex align="center" justifyContent="space-between">
                 <Box width={1 / 3}>
@@ -155,7 +131,7 @@ export const render = ({
                     </Txt.span>
                     Pronouns
                   </Txt>
-                  <Txt>{props.pronouns || ''}</Txt>
+                  <Txt>{props.pronouns || ""}</Txt>
                 </Box>
                 <Box width={1 / 3}>
                   <Txt bold>
@@ -187,7 +163,7 @@ export const render = ({
                             <li>{currentSkill}</li>
                           </Txt>
                         </Box>
-                      )
+                      );
                     })}
                 </Flex>
               </Flex>
@@ -210,7 +186,7 @@ export const render = ({
                             <li>{expectedSkill}</li>
                           </Txt>
                         </Box>
-                      )
+                      );
                     })}
                 </Flex>
               </Flex>
@@ -227,7 +203,7 @@ export const render = ({
                 </Box>
                 <Txt.p>{props.shortBio}</Txt.p>
                 <Txt.span fontSize={2} color="primary.dark" italic>
-                  {props.interests || ''}
+                  {props.interests || ""}
                 </Txt.span>
               </Flex>
             </Flex>
@@ -235,9 +211,7 @@ export const render = ({
         </Container>
       </Box>
     </Flex>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default UserInfo;

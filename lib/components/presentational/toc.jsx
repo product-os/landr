@@ -4,10 +4,7 @@ import {
 } from 'rendition'
 import {
   Link as RouterLink
-} from 'react-router-dom'
-import {
-  HashLink
-} from 'react-router-hash-link'
+} from 'gatsby'
 
 const Toc = (props) => {
   if (!props.toc) return null
@@ -35,7 +32,7 @@ const Toc = (props) => {
                 fontSize={1}
                 pl={2}
                 color="text.main"
-                is={HashLink}
+                is={RouterLink}
                 to={`${url}#${heading.id}`}
               >
                 {heading.title}

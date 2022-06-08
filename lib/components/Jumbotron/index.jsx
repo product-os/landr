@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 import {
   Box,
   Button,
@@ -25,35 +25,31 @@ import {
   Heading,
   useTheme,
   Link,
-  Img as RImg
-} from 'rendition'
+  Img as RImg,
+} from "rendition";
 
-import Terminal from '../presentational/terminal'
-import {
-  DeployWithBalena
-} from '../presentational/deploy-with-balena'
+import Terminal from "../presentational/terminal";
+import { DeployWithBalena } from "../presentational/deploy-with-balena";
 
-const Img = styled.img `
+const Img = styled.img`
   border-radius: 10px;
   max-width: 800px;
   margin: 0 auto;
   width: 100%;
   box-shadow: 0px 7px 12px 4px #00000052;
-`
+`;
 
-const Screenshot = ({
-  src
-}) => {
+const Screenshot = ({ src }) => {
   return (
     <Txt align="center">
       <Img src={src} alt="screenshot" />
     </Txt>
-  )
-}
+  );
+};
 
 const Jumbotron = (props) => {
-  const theme = useTheme()
-  const commands = props.steps || []
+  const theme = useTheme();
+  const commands = props.steps || [];
   return (
     <Box pt={5} pb={6}>
       <Container maxWidth={998}>
@@ -73,7 +69,7 @@ const Jumbotron = (props) => {
                 align="center"
                 style={{
                   lineHeight: 1.34,
-                  maxWidth: 800
+                  maxWidth: 800,
                 }}
               >
                 {props.description}
@@ -83,7 +79,7 @@ const Jumbotron = (props) => {
                 fontSize={24}
                 align="center"
                 style={{
-                  maxWidth: 800
+                  maxWidth: 800,
                 }}
               >
                 {props.description}
@@ -97,9 +93,9 @@ const Jumbotron = (props) => {
         {(props.action || props.deployWithBalenaUrl) && (
           <Txt
             style={{
-              display: 'flex',
-              alignItems: 'flex-end',
-              justifyContent: 'center'
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "center",
             }}
             align="center"
             mt={40}
@@ -116,7 +112,7 @@ const Jumbotron = (props) => {
                 <Button primary>
                   <Txt.span
                     style={{
-                      fontWeight: 'bold'
+                      fontWeight: "bold",
                     }}
                   >
                     Getting Started Guide
@@ -128,13 +124,7 @@ const Jumbotron = (props) => {
         )}
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export const render = (props) => {
-  return <Jumbotron {...props} />
-}
-
-export default {
-  render
-}
+export default Jumbotron;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React from 'react'
+import React from "react";
 import {
   Box,
   Button,
@@ -23,31 +23,29 @@ import {
   Link,
   Heading,
   Txt,
-  Card
-} from 'rendition'
-import styled from 'styled-components'
+  Card,
+} from "rendition";
+import styled from "styled-components";
 
-const ProjectCard = styled(Card) `
+const ProjectCard = styled(Card)`
   padding: 0;
-`
+`;
 
-const Screenshot = styled(Box) `
+const Screenshot = styled(Box)`
   background-image: url(${(props) => {
-    return props.bg
+    return props.bg;
   }});
   background-position: top center;
   background-size: cover;
   height: 200px;
   width: 100%;
-`
+`;
 
-export const render = (props) => {
+export const Users = (props) => {
   const list = props.users.map(
-    ({
-      name: projectName, website, description, screenshot
-    }) => {
+    ({ name: projectName, website, description, screenshot }) => {
       return (
-        <Box key={projectName} px={2} width={[ 1, 1 / 2, 1 / 2, 1 / 3 ]} mb={3}>
+        <Box key={projectName} px={2} width={[1, 1 / 2, 1 / 2, 1 / 3]} mb={3}>
           <ProjectCard>
             <Screenshot bg={screenshot} />
             <Flex
@@ -56,7 +54,7 @@ export const render = (props) => {
               flex={1}
               flexDirection="column"
               style={{
-                height: '100%'
+                height: "100%",
               }}
             >
               <Heading.h5 mb={16} fontSize={18} textAlign="center">
@@ -70,7 +68,7 @@ export const render = (props) => {
                 blank
                 href={website}
                 style={{
-                  textAlign: 'center'
+                  textAlign: "center",
                 }}
               >
                 <Button primary>Visit</Button>
@@ -78,15 +76,15 @@ export const render = (props) => {
             </Flex>
           </ProjectCard>
         </Box>
-      )
+      );
     }
-  )
+  );
 
   return (
     <Box my={100}>
       <Container
         style={{
-          maxWidth: 1000
+          maxWidth: 1000,
         }}
       >
         <Heading.h2 mb={4} align="center">
@@ -97,9 +95,7 @@ export const render = (props) => {
         </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default Users;

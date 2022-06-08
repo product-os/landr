@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box, Container, Heading, Txt, Flex
-} from 'rendition'
+import React from "react";
+import { Box, Container, Heading, Txt, Flex } from "rendition";
 
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-import {
-  FontAwesomeIcon
-} from '@fortawesome/react-fontawesome'
-import {
-  faCheck
-} from '@fortawesome/free-solid-svg-icons/faCheck'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 
-export const render = (props) => {
+const ReadmeSections = (props) => {
   const boxes = props.leftoverSections.map((section, index) => {
     return (
-      <Box key={index} px={3} mb={45} width={[ 1, 1, 1 / 2, 1 / 2 ]}>
+      <Box key={index} px={3} mb={45} width={[1, 1, 1 / 2, 1 / 2]}>
         <Flex>
           <Flex alignItems="flex-start" mt={1} mr={3}>
             <Box
@@ -41,7 +33,7 @@ export const render = (props) => {
               width={24}
               height={24}
               style={{
-                borderRadius: '50%'
+                borderRadius: "50%",
               }}
               fontSize={0}
             >
@@ -53,7 +45,7 @@ export const render = (props) => {
           <Flex flexDirection="column">
             <Markdown
               componentOverrides={{
-                strong: 'div',
+                strong: "div",
                 // eslint-disable-next-line id-length
                 p: (componentProps) => {
                   return (
@@ -61,10 +53,10 @@ export const render = (props) => {
                       {...componentProps}
                       fontSize="16px"
                       style={{
-                        lineHeight: 1.63
+                        lineHeight: 1.63,
                       }}
                     />
-                  )
+                  );
                 },
                 h1: (componentProps) => {
                   return (
@@ -72,10 +64,10 @@ export const render = (props) => {
                       {...componentProps}
                       fontSize="20px"
                       style={{
-                        fontWeight: 600
+                        fontWeight: 600,
                       }}
                     />
-                  )
+                  );
                 },
                 h2: (componentProps) => {
                   return (
@@ -83,10 +75,10 @@ export const render = (props) => {
                       {...componentProps}
                       fontSize="20px"
                       style={{
-                        fontWeight: 600
+                        fontWeight: 600,
                       }}
                     />
-                  )
+                  );
                 },
                 h3: (componentProps) => {
                   return (
@@ -94,11 +86,11 @@ export const render = (props) => {
                       {...componentProps}
                       fontSize="20px"
                       style={{
-                        fontWeight: 600
+                        fontWeight: 600,
                       }}
                     />
-                  )
-                }
+                  );
+                },
               }}
             >
               {section.title}
@@ -112,12 +104,12 @@ export const render = (props) => {
                       {...componentProps}
                       fontSize="16px"
                       style={{
-                        lineHeight: 1.63
+                        lineHeight: 1.63,
                       }}
                     />
-                  )
+                  );
                 },
-                strong: 'div'
+                strong: "div",
               }}
             >
               {section.description}
@@ -125,8 +117,8 @@ export const render = (props) => {
           </Flex>
         </Flex>
       </Box>
-    )
-  })
+    );
+  });
 
   return (
     <Box pt={45}>
@@ -136,9 +128,7 @@ export const render = (props) => {
         </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default ReadmeSections;

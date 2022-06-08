@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Container
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import React from "react";
+import { Container } from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = (props) => {
+const ReadmeLeftover = (props) => {
   return (
     <Container my={45} maxWidth={998}>
       <Markdown>{props.readmeLeftover}</Markdown>
     </Container>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default ReadmeLeftover;

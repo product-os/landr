@@ -14,9 +14,6 @@ import {
 } from '../lib/Layout'
 import THEME from '../default-theme.json'
 import CONTRACT from '../meta.json'
-import {
-  BrowserRouter
-} from 'react-router-dom'
 
 const ROUTES = routes(CONTRACT)
 const components = _.omit(allComponents, 'Head')
@@ -55,11 +52,9 @@ for (const route of ROUTES) {
       storyTitle = _.upperFirst(storyTitle)
       storiesOf(storyTitle, module).add(`Variant ${index + 1}`, () => {
         return (
-          <BrowserRouter>
-            <Provider theme={renditionTheme}>
-              <Component {...variant} config={{}} analytics={null} />
-            </Provider>
-          </BrowserRouter>
+          <Provider theme={renditionTheme}>
+            <Component {...variant} config={{}} analytics={null} />
+          </Provider>
         )
       })
     })
