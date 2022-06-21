@@ -1,4 +1,18 @@
 - commits:
+    - subject: Use Gatsby as a renderer instead of react-static
+      hash: 83e0518a21cace1521f10ec612566aab8e94eb30
+      body: ""
+      footer:
+        Change-type: Major
+        change-type: Major
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 10.0.0
+  title: "'Use Gatsby as a renderer instead of react-static'"
+  date: 2022-06-21T18:19:58.652Z
+- commits:
     - subject: Use render to string when generating html
       hash: fa47189f696ac20b2d4440b39aa9e3db5b0ac797
       body: ""
