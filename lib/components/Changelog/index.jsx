@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  format, parseISO
-} from 'date-fns'
+import React from "react";
+import { format, parseISO } from "date-fns";
 import {
   Box,
   Card,
@@ -27,23 +25,19 @@ import {
   Flex,
   List,
   Heading,
-  Txt
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+  Txt,
+} from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = ({
-  changelog
-}) => {
+const ChangeLog = ({ changelog }) => {
   // Fallback to markdown when no release notes are found
-  const isMarkdown = typeof changelog === 'string'
+  const isMarkdown = typeof changelog === "string";
 
   return (
     <Box my={5}>
       <Container
         style={{
-          maxWidth: 800
+          maxWidth: 800,
         }}
       >
         <Heading.h2 mb={4} align="center">
@@ -58,9 +52,11 @@ export const render = ({
                 <Box key={entry.version} mb={4}>
                   <Flex justifyContent="space-between" alignItems="flex-end">
                     <Tag value={entry.version}></Tag>
-                    {entry.date && <Txt fontSize={0}>
-                      {format(parseISO(entry.date), 'yyyy/MM/dd')}
-                    </Txt>}
+                    {entry.date && (
+                      <Txt fontSize={0}>
+                        {format(parseISO(entry.date), "yyyy/MM/dd")}
+                      </Txt>
+                    )}
                   </Flex>
                   <Divider my={2} />
                   <List px={3} py={2}>
@@ -72,19 +68,17 @@ export const render = ({
                           </Txt.span>
                           <Txt.span fontSize={0}>by {commit.author}</Txt.span>
                         </Box>
-                      )
+                      );
                     })}
                   </List>
                 </Box>
-              )
+              );
             })
           )}
         </Card>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default ChangeLog;

@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 
-import React from 'react'
+import React from "react";
 
-import {
-  Box, Container, Heading, Txt
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import { Box, Container, Heading, Txt } from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = (props) => {
+const Motivation = (props) => {
   return (
     <Container my={100} maxWidth={998}>
       <Heading.h2
@@ -31,7 +27,7 @@ export const render = (props) => {
         fontSize="38px"
         style={{
           fontWeight: 400,
-          lineHeight: 1.18
+          lineHeight: 1.18,
         }}
       >
         {props.name}
@@ -49,12 +45,12 @@ export const render = (props) => {
                   {...componentProps}
                   fontSize="16px"
                   style={{
-                    lineHeight: 1.5
+                    lineHeight: 1.5,
                   }}
                 />
-              )
+              );
             },
-            strong: 'div'
+            strong: "div",
           }}
           mb={32}
         >
@@ -68,10 +64,10 @@ export const render = (props) => {
             if (
               componentProps.children &&
               componentProps.children.some((child) => {
-                return child.type === 'img'
+                return child.type === "img";
               })
             ) {
-              return <Box my={3} {...componentProps} />
+              return <Box my={3} {...componentProps} />;
             }
             return (
               <Txt.p
@@ -79,19 +75,17 @@ export const render = (props) => {
                 my={4}
                 fontSize="16px"
                 style={{
-                  lineHeight: 1.63
+                  lineHeight: 1.63,
                 }}
               ></Txt.p>
-            )
-          }
+            );
+          },
         }}
       >
         {props.motivation}
       </Markdown>
     </Container>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default Motivation;

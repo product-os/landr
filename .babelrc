@@ -1,8 +1,0 @@
-{
-  "sourceType": "unambiguous",
-  "presets": [
-    "@babel/preset-env",
-    "@babel/preset-react",
-    "react-static/babel-preset.js"
-  ]
-}

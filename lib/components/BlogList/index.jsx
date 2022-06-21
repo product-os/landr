@@ -14,29 +14,23 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box, Link, Container
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import React from "react";
+import { Box, Link, Container } from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = (props) => {
+const BlogList = (props) => {
   const articles = props.articles.map((article, index) => {
-    const url = `/${article.path.join('/')}`
+    const url = `/${article.path.join("/")}`;
     return (
       <Container key={index}>
         <Link href={url}>See article</Link>
         <Markdown>{article.content.title}</Markdown>
         <hr />
       </Container>
-    )
-  })
+    );
+  });
 
-  return <Box p={3}>{articles}</Box>
-}
+  return <Box p={3}>{articles}</Box>;
+};
 
-export default {
-  render
-}
+export default BlogList;

@@ -14,41 +14,35 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  format, parseISO
-} from 'date-fns'
-import last from 'lodash/last'
-import {
-  Box, Flex, Link, Container, DropDownButton
-} from 'rendition'
-import Toc from '../presentational/toc'
-import Sidebar from '../presentational/sidebar'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import React from "react";
+import { format, parseISO } from "date-fns";
+import last from "lodash/last";
+import { Box, Flex, Link, Container, DropDownButton } from "rendition";
+import Toc from "../presentational/toc";
+import Sidebar from "../presentational/sidebar";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = (props) => {
+const DocViewer = (props) => {
   const versions = props.versions.map((version, index) => {
-    const basePath = [ ...props.current ]
+    const basePath = [...props.current];
 
     // If the current path includes a version at the end, trim it
     if (props.versions.includes(last(basePath))) {
-      basePath.pop()
+      basePath.pop();
     }
-    const url = `/${basePath.join('/')}/${version}`
+    const url = `/${basePath.join("/")}/${version}`;
 
     return (
       <Box key={index}>
         <Link href={url}>{version}</Link>
       </Box>
-    )
-  })
+    );
+  });
 
   return (
     <Box px={3} py={4}>
       <Container>
-        <Flex flexWrap={[ 'wrap', 'nowrap' ]}>
+        <Flex flexWrap={["wrap", "nowrap"]}>
           <Sidebar>
             {versions.length > 0 && (
               <Box mb={3}>
@@ -68,14 +62,14 @@ export const render = (props) => {
           <Box
             style={{
               maxWidth: 900,
-              width: '100%'
+              width: "100%",
             }}
           >
             <Link href={props.link}>Edit on GitHub</Link>
             {props.date && props.author && (
               <p>
-                Published on{' '}
-                {format(parseISO(props.date), 'EEEE, MMMM do yyyy')} by @
+                Published on{" "}
+                {format(parseISO(props.date), "EEEE, MMMM do yyyy")} by @
                 {props.author}
               </p>
             )}
@@ -86,9 +80,7 @@ export const render = (props) => {
         </Flex>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default DocViewer;

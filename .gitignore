@@ -80,6 +80,7 @@ storybook-static/
 # landr cli
 landr-dist/
 meta.json
+templates
 
 # dev test meta
 meta/
@@ -92,3 +93,7 @@ eng.traineddata
 
 # code-editor
 .vscode
+
+# gatsby
+.cache
+public

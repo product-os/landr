@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import {
-  Box, Divider, Container, Heading, Accordion
-} from 'rendition'
-import {
-  Markdown
-} from 'rendition/dist/extra/Markdown'
+import React from "react";
+import { Box, Divider, Container, Heading, Accordion } from "rendition";
+import { Markdown } from "rendition/dist/extra/Markdown";
 
-export const render = (props) => {
+const Faq = (props) => {
   const items = props.faq.map((faq) => {
     return {
       label: faq.title,
@@ -30,9 +26,9 @@ export const render = (props) => {
         <div>
           <Markdown>{faq.content}</Markdown>
         </div>
-      )
-    }
-  })
+      ),
+    };
+  });
 
   return (
     <Box my={100}>
@@ -44,9 +40,7 @@ export const render = (props) => {
         </Box>
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default {
-  render
-}
+export default Faq;

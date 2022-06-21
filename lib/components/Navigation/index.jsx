@@ -16,10 +16,8 @@
  * limitations under the License.
  */
 
-import React from 'react'
-import styled, {
-  css
-} from 'styled-components'
+import React from "react";
+import styled, { css } from "styled-components";
 import {
   Box,
   Img,
@@ -31,50 +29,40 @@ import {
   Txt,
   Button,
   Fixed,
-  Divider
-} from 'rendition'
-import GithubBanner from '../presentational/github-banner'
-import Link from '../presentational/link'
-import NavDropDown from '../presentational/NavDropDown'
+  Divider,
+} from "rendition";
+import GithubBanner from "../presentational/github-banner";
+import Link from "../presentational/link";
+import NavDropDown from "../presentational/NavDropDown";
 
-import {
-  FontAwesomeIcon
-} from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import {
-  faBars
-} from '@fortawesome/free-solid-svg-icons/faBars'
-import {
-  faTimes
-} from '@fortawesome/free-solid-svg-icons/faTimes'
-import {
-  faLongArrowAltRight
-} from '@fortawesome/free-solid-svg-icons'
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 
-const GithubRedirect = styled(RenditionLink) `
+const GithubRedirect = styled(RenditionLink)`
   position: absolute;
   right: 0;
   top: -30px;
-`
+`;
 
 export const invertBreakpoint = (breakpoint) => {
-  return breakpoint - 0.01
-}
+  return breakpoint - 0.01;
+};
 
-export const Wrapper = styled.nav `
+export const Wrapper = styled.nav`
   position: relative;
   width: 100%;
   background: white;
   z-index: 5;
-  color: ${({
-    theme
-  }) => {
-    return theme.colors.text.main
+  color: ${({ theme }) => {
+    return theme.colors.text.main;
   }};
 
   @media (max-width: ${(props) => {
-    return invertBreakpoint(props.theme.breakpoints[1])
-  }}px) {
+      return invertBreakpoint(props.theme.breakpoints[1]);
+    }}px) {
     position: sticky;
     background: white;
     top: 0;
@@ -84,17 +72,17 @@ export const Wrapper = styled.nav `
       margin-top: 80px;
     }
   }
-`
+`;
 
-export const Navbar = styled(Flex) `
+export const Navbar = styled(Flex)`
   min-height: 80px;
   position: relative;
   flex-direction: column;
   justify-content: center;
 
   @media (max-width: ${(props) => {
-    return invertBreakpoint(props.theme.breakpoints[1])
-  }}px) {
+      return invertBreakpoint(props.theme.breakpoints[1]);
+    }}px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -102,32 +90,32 @@ export const Navbar = styled(Flex) `
     padding-top: 16px;
     padding-bottom: 16px;
   }
-`
+`;
 
-const Actions = styled(Box) `
+const Actions = styled(Box)`
   justify-content: flex-end;
   align-items: center;
-`
+`;
 
-const MobileActions = styled(Flex) `
+const MobileActions = styled(Flex)`
   display: none;
   min-height: 84px;
 
   @media (max-width: ${(props) => {
-    return invertBreakpoint(props.theme.breakpoints[1])
-  }}px) {
+      return invertBreakpoint(props.theme.breakpoints[1]);
+    }}px) {
     display: flex;
   }
-`
+`;
 
-const NavigationItem = styled(Box) `
+const NavigationItem = styled(Box)`
   margin: 0;
 
   a {
     margin: 0 !important;
     color: ${(props) => {
-    return props.theme.colors.text.main
-  }};
+      return props.theme.colors.text.main;
+    }};
     display: block !important;
     padding-top: 12px !important;
     padding-bottom: 10px !important;
@@ -144,15 +132,15 @@ const NavigationItem = styled(Box) `
 
     path {
       fill: ${(props) => {
-    return props.theme.colors.text.main
-  }};
+        return props.theme.colors.text.main;
+      }};
     }
   }
-`
-const NavigationItems = styled(Flex) `
+`;
+const NavigationItems = styled(Flex)`
   @media (max-width: ${(props) => {
-    return invertBreakpoint(props.theme.breakpoints[1])
-  }}px) {
+      return invertBreakpoint(props.theme.breakpoints[1]);
+    }}px) {
     position: fixed;
     background: white;
     top: 0;
@@ -168,42 +156,45 @@ const NavigationItems = styled(Flex) `
     flex-wrap: nowrap;
 
     ${(props) => {
-    return props.menuOpen
-      ? css `
+      return props.menuOpen
+        ? css`
             position: fixed;
             transform: translateX(0%);
           `
-      : ''
-  }}
+        : "";
+    }}
   }
-`
+`;
 
 const getNavigationRoutes = (routes) => {
+  if (!routes) {
+    return null;
+  }
   return routes.map((route, index) => {
     if (route.routes) {
       return (
-        <NavigationItem pl={[ 0, 0, 3, 3 ]} key={index} mx={15}>
+        <NavigationItem pl={[0, 0, 3, 3]} key={index} mx={15}>
           <NavDropDown title={route.name} showDividers={route.showDividers}>
             {getNavigationRoutes(route.routes)}
           </NavDropDown>
         </NavigationItem>
-      )
+      );
     }
 
     return (
-      <NavigationItem pl={[ 0, 0, 3, 3 ]} key={index} mx={[ 2, 2, 15 ]}>
+      <NavigationItem pl={[0, 0, 3, 3]} key={index} mx={[2, 2, 15]}>
         <Link url={route.url} py={1} px={0} display="auto" color="text.main">
           {route.logo ? (
             <>
-              <Flex alignItems="center" justifyContent={'space-between'}>
+              <Flex alignItems="center" justifyContent={"space-between"}>
                 <Box
                   style={{
-                    minWidth: 130
+                    minWidth: 130,
                   }}
                 >
                   <img
                     style={{
-                      height: 20
+                      height: 20,
                     }}
                     alt={route.name}
                     src={route.logo}
@@ -211,7 +202,7 @@ const getNavigationRoutes = (routes) => {
                 </Box>
                 <Txt.span
                   style={{
-                    transform: 'translateY(-4px)'
+                    transform: "translateY(-4px)",
                   }}
                 >
                   <FontAwesomeIcon icon={faLongArrowAltRight} />
@@ -226,24 +217,24 @@ const getNavigationRoutes = (routes) => {
           )}
         </Link>
       </NavigationItem>
-    )
-  })
-}
+    );
+  });
+};
 
 const Navigation = (props) => {
-  const theme = useTheme()
-  const [ mobileMenuOpen, setMobileMenuOpen ] = React.useState(false)
+  const theme = useTheme();
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   const closeMenu = () => {
-    setMobileMenuOpen(false)
-  }
+    setMobileMenuOpen(false);
+  };
   const openMenu = () => {
-    setMobileMenuOpen(true)
-  }
+    setMobileMenuOpen(true);
+  };
   const Brand = props.logo ? (
     <Img
       style={{
-        height: '50px'
+        height: "50px",
       }}
       src={props.logo}
     />
@@ -251,23 +242,19 @@ const Navigation = (props) => {
     <Heading.h1 color="#527699" fontSize={26}>
       {props.name}
     </Heading.h1>
-  )
+  );
 
   return (
     <Wrapper role="navigation" aria-label="main-navigation">
       <Container>
         <Navbar>
           {props.organization && (
-            <Box display={[ 'none', 'none', 'flex', 'flex' ]}>
-              <Flex
-                alignItems="center"
-                mt={3}
-                mb={3}
-              >
+            <Box display={["none", "none", "flex", "flex"]}>
+              <Flex alignItems="center" mt={3} mb={3}>
                 <Link
                   href="/"
                   style={{
-                    lineHeight: '13px'
+                    lineHeight: "13px",
                   }}
                 >
                   <Flex alignItems="center">
@@ -275,16 +262,16 @@ const Navigation = (props) => {
                       fontSize={12}
                       mr="6px"
                       style={{
-                        whiteSpace: 'nowrap',
-                        fontWeight: 200
+                        whiteSpace: "nowrap",
+                        fontWeight: 200,
                       }}
                     >
-                    A product of
+                      A product of
                     </Txt.span>
                     {props.organization.logo ? (
                       <img
                         style={{
-                          height: 20
+                          height: 20,
                         }}
                         alt={props.organization.name}
                         src={props.organization.logo}
@@ -296,20 +283,20 @@ const Navigation = (props) => {
                       ml={2}
                       mr={-2}
                       style={{
-                        opacity: 0.4
+                        opacity: 0.4,
                       }}
                     >
-                    |
+                      |
                     </Txt.span>
                   </Flex>
                 </Link>
                 {props.organization.products &&
-                getNavigationRoutes([
-                  {
-                    name: 'More products',
-                    routes: props.organization.products
-                  }
-                ])}
+                  getNavigationRoutes([
+                    {
+                      name: "More products",
+                      routes: props.organization.products,
+                    },
+                  ])}
               </Flex>
             </Box>
           )}
@@ -317,9 +304,9 @@ const Navigation = (props) => {
             <Flex alignItems="center">
               <Link
                 color="white"
-                url={props.brandLink || '/'}
+                url={props.brandLink || "/"}
                 style={{
-                  lineHeight: 1
+                  lineHeight: 1,
                 }}
               >
                 {Brand}
@@ -330,7 +317,7 @@ const Navigation = (props) => {
                 top
                 left
                 bottom
-                display={[ 'block', 'block', 'none', 'none' ]}
+                display={["block", "block", "none", "none"]}
                 right
                 bg="rgba(0, 0, 0, 0.25)"
                 onClick={closeMenu}
@@ -339,13 +326,13 @@ const Navigation = (props) => {
             <Flex>
               <NavigationItems
                 menuOpen={mobileMenuOpen}
-                flexDirection={[ 'column', 'column', 'row', 'row' ]}
+                flexDirection={["column", "column", "row", "row"]}
                 flexWrap="wrap"
-                alignItems={[ 'flex-start', 'flex-start', 'center', 'center' ]}
+                alignItems={["flex-start", "flex-start", "center", "center"]}
               >
                 {mobileMenuOpen && (
                   <Flex
-                    display={[ 'block', 'block', 'none', 'none' ]}
+                    display={["block", "block", "none", "none"]}
                     justifyContent="flex-end"
                   >
                     <Button
@@ -360,13 +347,17 @@ const Navigation = (props) => {
                 )}
                 {getNavigationRoutes(props.routes)}
                 {props.organization && (
-                  <Box display={[ 'block', 'block', 'none', 'none' ]} mt="auto" width="100%">
-                    <Flex alignItems="center" justifyContent={'center'}>
+                  <Box
+                    display={["block", "block", "none", "none"]}
+                    mt="auto"
+                    width="100%"
+                  >
+                    <Flex alignItems="center" justifyContent={"center"}>
                       <Txt.span
                         fontSize={15}
                         mr={1}
                         style={{
-                          whiteSpace: 'nowrap'
+                          whiteSpace: "nowrap",
                         }}
                       >
                         A product of
@@ -374,12 +365,12 @@ const Navigation = (props) => {
                       <Link
                         href="/"
                         style={{
-                          height: '24px'
+                          height: "24px",
                         }}
                       >
                         <img
                           style={{
-                            height: '24px'
+                            height: "24px",
                           }}
                           alt={props.organization.name}
                           src={props.organization.logo}
@@ -390,9 +381,9 @@ const Navigation = (props) => {
                     {props.organization.products &&
                       getNavigationRoutes([
                         {
-                          name: 'More Products',
-                          routes: props.organization.products
-                        }
+                          name: "More Products",
+                          routes: props.organization.products,
+                        },
                       ])}
                   </Box>
                 )}
@@ -408,7 +399,7 @@ const Navigation = (props) => {
                 )}
               </NavigationItems>
               {props.actions && (
-                <Actions display={[ 'none', 'none', 'flex', 'flex' ]} ml={3}>
+                <Actions display={["none", "none", "flex", "flex"]} ml={3}>
                   {props.actions}
                 </Actions>
               )}
@@ -418,10 +409,10 @@ const Navigation = (props) => {
                 <GithubBanner fill={theme.colors.primary.main} />
               </GithubRedirect>
             )}
-            <Box display={[ 'block', 'block', 'none', 'none' ]}>
+            <Box display={["block", "block", "none", "none"]}>
               <Button
                 style={{
-                  fontSize: 20
+                  fontSize: 20,
                 }}
                 icon={<FontAwesomeIcon icon={faBars} />}
                 plain
@@ -432,13 +423,7 @@ const Navigation = (props) => {
         </Navbar>
       </Container>
     </Wrapper>
-  )
-}
+  );
+};
 
-export const render = (props) => {
-  return <Navigation {...props} />
-}
-
-export default {
-  render
-}
+export default Navigation;

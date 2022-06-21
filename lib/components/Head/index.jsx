@@ -16,17 +16,17 @@
 
 import React from 'react'
 import {
-  Head
-} from 'react-static'
+  Helmet
+} from 'react-helmet'
 
-export const render = (props) => {
+const Head = (props) => {
   return (
-    <Head>
+    <Helmet>
       <meta charSet="UTF-8" />
       <meta name="referrer" content="no-referrer" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <title>{props.title} - Home</title>
+      <title>{`${props.title} - Home`}</title>
       <link rel="canonical" href={props.pageUrl} />
       <meta name="description" content={props.description} />
       <link
@@ -100,10 +100,8 @@ export const render = (props) => {
         href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&family=Ubuntu+Mono:wght@400;700&display=fallback"
         rel="stylesheet"
       />
-    </Head>
+    </Helmet>
   )
 }
 
-export default {
-  render
-}
+export default Head
