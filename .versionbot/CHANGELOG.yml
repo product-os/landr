@@ -10,8 +10,8 @@
       author: Amit Solanki
       nested: []
   version: 10.0.1
-  title: "'Fix get git reference'"
-  date: 2022-06-28T10:59:03.723Z
+  title: "'Bump jsdom from 15.2.1 to 16.5.0'"
+  date: 2022-06-28T11:15:45.522Z
 - commits:
     - subject: Use Gatsby as a renderer instead of react-static
       hash: 83e0518a21cace1521f10ec612566aab8e94eb30
