@@ -1,4 +1,18 @@
 - commits:
+    - subject: Fix git reference import
+      hash: b307c8762cf6e5dc9957e090c3e8294eab90b84c
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 10.0.2
+  title: "'Fix git reference import'"
+  date: 2022-06-28T19:33:48.464Z
+- commits:
     - subject: Fix get git reference
       hash: 7763d87277a5018aa1d192d48de791839345ebf1
       body: ""
