@@ -1,4 +1,18 @@
 - commits:
+    - subject: Await until gatsby child process is complete
+      hash: 9e1680d44386fe257771434a3dcd8d6a0f2bcb1f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Amit Solanki <amit@balena.io>
+        signed-off-by: Amit Solanki <amit@balena.io>
+      author: Amit Solanki
+      nested: []
+  version: 10.0.3
+  title: "'Await until gatsby child process is complete'"
+  date: 2022-07-03T18:47:16.178Z
+- commits:
     - subject: Fix git reference import
       hash: b307c8762cf6e5dc9957e090c3e8294eab90b84c
       body: ""
