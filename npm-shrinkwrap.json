@@ -5305,17 +5305,6 @@
           "integrity": "sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==",
           "dev": true
         },
-        "loader-utils": {
-          "version": "2.0.2",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-          "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
-          "dev": true,
-          "requires": {
-            "big.js": "^5.2.2",
-            "emojis-list": "^3.0.0",
-            "json5": "^2.1.2"
-          }
-        },
         "locate-path": {
           "version": "6.0.0",
           "resolved": "https://registry.npmjs.org/locate-path/-/locate-path-6.0.0.tgz",
@@ -6368,10 +6357,16 @@
             "schema-utils": "^3.0.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -6489,6 +6484,26 @@
           "resolved": "https://registry.npmjs.org/isobject/-/isobject-4.0.0.tgz",
           "integrity": "sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==",
           "dev": true
+        },
+        "json5": {
+          "version": "1.0.1",
+          "resolved": "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz",
+          "integrity": "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==",
+          "dev": true,
+          "requires": {
+            "minimist": "^1.2.0"
+          }
+        },
+        "loader-utils": {
+          "version": "1.4.2",
+          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.2.tgz",
+          "integrity": "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==",
+          "dev": true,
+          "requires": {
+            "big.js": "^5.2.2",
+            "emojis-list": "^3.0.0",
+            "json5": "^1.0.1"
+          }
         },
         "locate-path": {
           "version": "5.0.0",
@@ -6623,10 +6638,16 @@
             "semver": "^7.3.4"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -6688,10 +6709,16 @@
             "schema-utils": "^3.0.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -6835,10 +6862,16 @@
             "schema-utils": "^2.7.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -6940,10 +6973,16 @@
             "schema-utils": "^3.0.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -8505,10 +8544,16 @@
             "schema-utils": "^3.0.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -8626,6 +8671,26 @@
           "resolved": "https://registry.npmjs.org/isobject/-/isobject-4.0.0.tgz",
           "integrity": "sha512-S/2fF5wH8SJA/kmwr6HYhK/RI/OkhD84k8ntalo0iJjZikgq1XFvR5M8NPT1x5F7fBwCG3qHfnzeP/Vh/ZxCUA==",
           "dev": true
+        },
+        "json5": {
+          "version": "1.0.1",
+          "resolved": "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz",
+          "integrity": "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==",
+          "dev": true,
+          "requires": {
+            "minimist": "^1.2.0"
+          }
+        },
+        "loader-utils": {
+          "version": "1.4.2",
+          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.2.tgz",
+          "integrity": "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==",
+          "dev": true,
+          "requires": {
+            "big.js": "^5.2.2",
+            "emojis-list": "^3.0.0",
+            "json5": "^1.0.1"
+          }
         },
         "locate-path": {
           "version": "5.0.0",
@@ -8874,10 +8939,16 @@
             "schema-utils": "^2.7.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -8994,10 +9065,16 @@
             "schema-utils": "^3.0.0"
           },
           "dependencies": {
+            "json5": {
+              "version": "2.2.1",
+              "resolved": "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz",
+              "integrity": "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==",
+              "dev": true
+            },
             "loader-utils": {
-              "version": "2.0.2",
-              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-              "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
+              "version": "2.0.4",
+              "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+              "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
               "dev": true,
               "requires": {
                 "big.js": "^5.2.2",
@@ -13606,16 +13683,6 @@
           "requires": {
             "locate-path": "^5.0.0",
             "path-exists": "^4.0.0"
-          }
-        },
-        "loader-utils": {
-          "version": "2.0.2",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-          "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
-          "requires": {
-            "big.js": "^5.2.2",
-            "emojis-list": "^3.0.0",
-            "json5": "^2.1.2"
           }
         },
         "locate-path": {
@@ -21642,16 +21709,6 @@
           "resolved": "https://registry.npmjs.org/loader-runner/-/loader-runner-4.3.0.tgz",
           "integrity": "sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg=="
         },
-        "loader-utils": {
-          "version": "2.0.2",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-          "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
-          "requires": {
-            "big.js": "^5.2.2",
-            "emojis-list": "^3.0.0",
-            "json5": "^2.1.2"
-          }
-        },
         "locate-path": {
           "version": "5.0.0",
           "resolved": "https://registry.npmjs.org/locate-path/-/locate-path-5.0.0.tgz",
@@ -24841,16 +24898,6 @@
         "strip-comments": "^2.0.1"
       },
       "dependencies": {
-        "loader-utils": {
-          "version": "2.0.2",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-          "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
-          "requires": {
-            "big.js": "^5.2.2",
-            "emojis-list": "^3.0.0",
-            "json5": "^2.1.2"
-          }
-        },
         "schema-utils": {
           "version": "3.1.1",
           "resolved": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz",
@@ -26292,23 +26339,13 @@
       "dev": true
     },
     "loader-utils": {
-      "version": "1.4.0",
-      "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.0.tgz",
-      "integrity": "sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==",
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.4.tgz",
+      "integrity": "sha512-xXqpXoINfFhgua9xiqD8fPFHgkoq1mmmpE92WlDbm9rNRd/EbRb+Gqf908T2DMfuHjjJlksiK2RbHVOdD/MqSw==",
       "requires": {
         "big.js": "^5.2.2",
         "emojis-list": "^3.0.0",
-        "json5": "^1.0.1"
-      },
-      "dependencies": {
-        "json5": {
-          "version": "1.0.1",
-          "resolved": "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz",
-          "integrity": "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==",
-          "requires": {
-            "minimist": "^1.2.0"
-          }
-        }
+        "json5": "^2.1.2"
       }
     },
     "locate-path": {
@@ -27337,16 +27374,6 @@
         "webpack-sources": "^1.1.0"
       },
       "dependencies": {
-        "loader-utils": {
-          "version": "2.0.2",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.2.tgz",
-          "integrity": "sha512-TM57VeHptv569d/GKh6TAYdzKblwDNiumOdkFnejjD0XwTH87K90w3O7AiJRqdQoXygvi1VQTJTLGhJl7WqA7A==",
-          "requires": {
-            "big.js": "^5.2.2",
-            "emojis-list": "^3.0.0",
-            "json5": "^2.1.2"
-          }
-        },
         "schema-utils": {
           "version": "3.1.1",
           "resolved": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz",
@@ -28169,16 +28196,6 @@
         "schema-utils": "^3.0.0"
       },
       "dependencies": {
-        "loader-utils": {
-          "version": "2.0.0",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.0.tgz",
-          "integrity": "sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==",
-          "requires": {
-            "big.js": "^5.2.2",
-            "emojis-list": "^3.0.0",
-            "json5": "^2.1.2"
-          }
-        },
         "schema-utils": {
           "version": "3.1.1",
           "resolved": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz",
@@ -30625,9 +30642,9 @@
           }
         },
         "loader-utils": {
-          "version": "3.2.0",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-3.2.0.tgz",
-          "integrity": "sha512-HVl9ZqccQihZ7JM85dco1MvO9G+ONvxoGa9rkhzFsneGLKSUg1gJf9bWzhRhcvm2qChhWpebQhP44qxjKIUCaQ=="
+          "version": "3.2.1",
+          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-3.2.1.tgz",
+          "integrity": "sha512-ZvFw1KWS3GVyYBYb7qkmRM/WwL2TQQBxgCK62rlvm4WpVQ23Nb4tYjApUlfjrEGvOs7KHEsmyUn75OHZrJMWPw=="
         },
         "locate-path": {
           "version": "6.0.0",
@@ -35754,6 +35771,26 @@
             }
           }
         },
+        "json5": {
+          "version": "1.0.1",
+          "resolved": "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz",
+          "integrity": "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==",
+          "dev": true,
+          "requires": {
+            "minimist": "^1.2.0"
+          }
+        },
+        "loader-utils": {
+          "version": "1.4.2",
+          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.2.tgz",
+          "integrity": "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==",
+          "dev": true,
+          "requires": {
+            "big.js": "^5.2.2",
+            "emojis-list": "^3.0.0",
+            "json5": "^1.0.1"
+          }
+        },
         "micromatch": {
           "version": "3.1.10",
           "resolved": "https://registry.npmjs.org/micromatch/-/micromatch-3.1.10.tgz",
@@ -36187,6 +36224,26 @@
       "requires": {
         "loader-utils": "^1.4.0",
         "yaml": "^1.8.3"
+      },
+      "dependencies": {
+        "json5": {
+          "version": "1.0.1",
+          "resolved": "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz",
+          "integrity": "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==",
+          "requires": {
+            "minimist": "^1.2.0"
+          }
+        },
+        "loader-utils": {
+          "version": "1.4.2",
+          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.2.tgz",
+          "integrity": "sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==",
+          "requires": {
+            "big.js": "^5.2.2",
+            "emojis-list": "^3.0.0",
+            "json5": "^1.0.1"
+          }
+        }
       }
     },
     "yamljs": {
