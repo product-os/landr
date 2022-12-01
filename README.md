@@ -1,3 +1,5 @@
+** This project has been archived and is no longer being maintained. **
+
 <p align="center">
 	<img src="./landr.svg" height="160" />
 </p>
