@@ -133,7 +133,7 @@
     "rendition": "^21.7.1",
     "rfdc": "^1.1.4",
     "rimraf": "^2.6.3",
-    "scrutinizer": "^5.0.0",
+    "scrutinizer": "5.0.1-test-branch-cf-29faafba5dc71dfdf2f320187fe114c15395a9ae",
     "serialize-error": "^6.0.0",
     "shelljs": "^0.8.4",
     "simple-git": "^3.3.0",
